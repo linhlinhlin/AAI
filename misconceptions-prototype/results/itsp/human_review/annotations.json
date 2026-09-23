@@ -1,0 +1,497 @@
+{
+  "schema_version": 1,
+  "assignments_sha256": "bffe0aa482f5a0f47beaa803dbee82b55ad70d320f00935d17314af6fe645c22",
+  "codebook": {
+    "approved_by": null,
+    "version": "human-review-draft-v1",
+    "label_policy": null,
+    "misconception_types": [
+      "C_IO_CONTRACT",
+      "C_EXPRESSION_SEMANTICS",
+      "C_BRANCH_SELECTION",
+      "C_ITERATION_MODEL",
+      "MATH_MODEL",
+      "ENUMERATION_IDENTITY",
+      "NUMERIC_REPRESENTATION",
+      "OTHER_CONCEPT"
+    ]
+  },
+  "samples": [
+    {
+      "submission_id": "itsp-2812-270276_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2812-270277_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2812-270283_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2812-270285_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2812-270293_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271154_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271163_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271173_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271188_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271203_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271213_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271912_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271916_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271920_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271965_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271975_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271986_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    }
+  ]
+}

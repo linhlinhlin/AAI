@@ -1,0 +1,11 @@
+{
+  "reconstruction": "Exact current byte prefix before appended intake/reporting section, retaining original terminal newline bytes confirmed by historical SHA-256",
+  "current_sha256": "1cc8ce739a1497bf6d64c4621f5388f1ff7192272d23bca019bbcf6a491a2cd2",
+  "historical_sha256": "9fdba3fd66d512a1775699f0501eff0a5bcc3750a9196829a6db26c2fcd783bb",
+  "prefix_bytes": 8682,
+  "terminal_bytes_hex": "0d0a",
+  "matching_historical_records": [
+    "results/itsp/ai_review_integrity_baseline.json",
+    "results/itsp/reviewer_sources.md"
+  ]
+}

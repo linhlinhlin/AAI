@@ -1,0 +1,1184 @@
+{
+  "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+  "cohorts": [
+    {
+      "problem_id": "3237",
+      "lab": "Lab-10",
+      "raw_buggy": 3,
+      "imported": 3,
+      "tests": 3,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 3
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3238",
+      "lab": "Lab-10",
+      "raw_buggy": 5,
+      "imported": 5,
+      "tests": 5,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 5
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3239",
+      "lab": "Lab-10",
+      "raw_buggy": 10,
+      "imported": 10,
+      "tests": 9,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 10
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 3
+    },
+    {
+      "problem_id": "3240",
+      "lab": "Lab-10",
+      "raw_buggy": 9,
+      "imported": 9,
+      "tests": 8,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 9
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3241",
+      "lab": "Lab-10",
+      "raw_buggy": 8,
+      "imported": 8,
+      "tests": 5,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 8
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 4
+    },
+    {
+      "problem_id": "3242",
+      "lab": "Lab-10",
+      "raw_buggy": 2,
+      "imported": 2,
+      "tests": 4,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 2
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3243",
+      "lab": "Lab-10",
+      "raw_buggy": 5,
+      "imported": 5,
+      "tests": 9,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 5
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3244",
+      "lab": "Lab-10",
+      "raw_buggy": 11,
+      "imported": 11,
+      "tests": 9,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 11
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3291",
+      "lab": "Lab-11",
+      "raw_buggy": 5,
+      "imported": 5,
+      "tests": 6,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 5
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 3,
+      "formatting_any_suspected": 3,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3293",
+      "lab": "Lab-11",
+      "raw_buggy": 7,
+      "imported": 7,
+      "tests": 6,
+      "outcome_signatures": 3,
+      "routing": {
+        "eligible": 7
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 2,
+      "formatting_any_suspected": 2,
+      "empty_failed_output_submissions": 3
+    },
+    {
+      "problem_id": "3294",
+      "lab": "Lab-11",
+      "raw_buggy": 14,
+      "imported": 5,
+      "tests": 5,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 5
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 1,
+      "formatting_any_suspected": 1,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3295",
+      "lab": "Lab-11",
+      "raw_buggy": 6,
+      "imported": 6,
+      "tests": 7,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 6
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3296",
+      "lab": "Lab-11",
+      "raw_buggy": 1,
+      "imported": 1,
+      "tests": 5,
+      "outcome_signatures": 1,
+      "routing": {
+        "eligible": 1
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3297",
+      "lab": "Lab-11",
+      "raw_buggy": 11,
+      "imported": 11,
+      "tests": 8,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 11
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 1,
+      "formatting_any_suspected": 1,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3298",
+      "lab": "Lab-11",
+      "raw_buggy": 2,
+      "imported": 2,
+      "tests": 7,
+      "outcome_signatures": 1,
+      "routing": {
+        "eligible": 2
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3299",
+      "lab": "Lab-11",
+      "raw_buggy": 9,
+      "imported": 9,
+      "tests": 7,
+      "outcome_signatures": 3,
+      "routing": {
+        "eligible": 8,
+        "parse_error": 1
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 1,
+      "empty_failed_output_submissions": 7
+    },
+    {
+      "problem_id": "3355",
+      "lab": "Lab-12",
+      "raw_buggy": 12,
+      "imported": 12,
+      "tests": 9,
+      "outcome_signatures": 10,
+      "routing": {
+        "eligible": 12
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3356",
+      "lab": "Lab-12",
+      "raw_buggy": 9,
+      "imported": 9,
+      "tests": 7,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 9
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3357",
+      "lab": "Lab-12",
+      "raw_buggy": 7,
+      "imported": 7,
+      "tests": 7,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 7
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3358",
+      "lab": "Lab-12",
+      "raw_buggy": 12,
+      "imported": 12,
+      "tests": 7,
+      "outcome_signatures": 3,
+      "routing": {
+        "eligible": 12
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 7,
+      "formatting_any_suspected": 7,
+      "empty_failed_output_submissions": 3
+    },
+    {
+      "problem_id": "3359",
+      "lab": "Lab-12",
+      "raw_buggy": 10,
+      "imported": 10,
+      "tests": 7,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 10
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3360",
+      "lab": "Lab-12",
+      "raw_buggy": 7,
+      "imported": 7,
+      "tests": 6,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 7
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3361",
+      "lab": "Lab-12",
+      "raw_buggy": 1,
+      "imported": 1,
+      "tests": 9,
+      "outcome_signatures": 1,
+      "routing": {
+        "eligible": 1
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3362",
+      "lab": "Lab-12",
+      "raw_buggy": 2,
+      "imported": 2,
+      "tests": 6,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 2
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 1,
+      "formatting_any_suspected": 1,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "2810",
+      "lab": "Lab-3",
+      "raw_buggy": 16,
+      "imported": 16,
+      "tests": 4,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 16
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 7,
+      "formatting_any_suspected": 7,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "2811",
+      "lab": "Lab-3",
+      "raw_buggy": 11,
+      "imported": 11,
+      "tests": 6,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 11
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "2812",
+      "lab": "Lab-3",
+      "raw_buggy": 19,
+      "imported": 19,
+      "tests": 7,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 19
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "2813",
+      "lab": "Lab-3",
+      "raw_buggy": 17,
+      "imported": 17,
+      "tests": 6,
+      "outcome_signatures": 7,
+      "routing": {
+        "eligible": 17
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 3
+    },
+    {
+      "problem_id": "2824",
+      "lab": "Lab-4",
+      "raw_buggy": 14,
+      "imported": 14,
+      "tests": 8,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 14
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "2825",
+      "lab": "Lab-4",
+      "raw_buggy": 22,
+      "imported": 22,
+      "tests": 7,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 22
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "2827",
+      "lab": "Lab-4",
+      "raw_buggy": 13,
+      "imported": 13,
+      "tests": 9,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 13
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "2828",
+      "lab": "Lab-4",
+      "raw_buggy": 14,
+      "imported": 14,
+      "tests": 7,
+      "outcome_signatures": 8,
+      "routing": {
+        "eligible": 14
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 5
+    },
+    {
+      "problem_id": "2830",
+      "lab": "Lab-4",
+      "raw_buggy": 11,
+      "imported": 11,
+      "tests": 5,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 11
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "2831",
+      "lab": "Lab-4",
+      "raw_buggy": 8,
+      "imported": 8,
+      "tests": 5,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 8
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "2832",
+      "lab": "Lab-4",
+      "raw_buggy": 17,
+      "imported": 17,
+      "tests": 7,
+      "outcome_signatures": 7,
+      "routing": {
+        "eligible": 17
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 3
+    },
+    {
+      "problem_id": "2833",
+      "lab": "Lab-4",
+      "raw_buggy": 18,
+      "imported": 18,
+      "tests": 6,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 18
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "2864",
+      "lab": "Lab-5",
+      "raw_buggy": 16,
+      "imported": 16,
+      "tests": 5,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 16
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 1,
+      "formatting_any_suspected": 2,
+      "empty_failed_output_submissions": 3
+    },
+    {
+      "problem_id": "2865",
+      "lab": "Lab-5",
+      "raw_buggy": 8,
+      "imported": 8,
+      "tests": 5,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 8
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 1,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "2866",
+      "lab": "Lab-5",
+      "raw_buggy": 11,
+      "imported": 11,
+      "tests": 9,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 11
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "2867",
+      "lab": "Lab-5",
+      "raw_buggy": 7,
+      "imported": 7,
+      "tests": 6,
+      "outcome_signatures": 3,
+      "routing": {
+        "eligible": 7
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "2868",
+      "lab": "Lab-5",
+      "raw_buggy": 7,
+      "imported": 7,
+      "tests": 6,
+      "outcome_signatures": 3,
+      "routing": {
+        "eligible": 7
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "2869",
+      "lab": "Lab-5",
+      "raw_buggy": 6,
+      "imported": 6,
+      "tests": 6,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 6
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 1,
+      "formatting_any_suspected": 1,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "2870",
+      "lab": "Lab-5",
+      "raw_buggy": 13,
+      "imported": 13,
+      "tests": 7,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 13
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 4
+    },
+    {
+      "problem_id": "2871",
+      "lab": "Lab-5",
+      "raw_buggy": 14,
+      "imported": 14,
+      "tests": 7,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 14
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 3,
+      "formatting_any_suspected": 4,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "2932",
+      "lab": "Lab-6",
+      "raw_buggy": 13,
+      "imported": 11,
+      "tests": 7,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 11
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "2933",
+      "lab": "Lab-6",
+      "raw_buggy": 5,
+      "imported": 5,
+      "tests": 5,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 5
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "2934",
+      "lab": "Lab-6",
+      "raw_buggy": 10,
+      "imported": 10,
+      "tests": 5,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 10
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 6,
+      "formatting_any_suspected": 6,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "2935",
+      "lab": "Lab-6",
+      "raw_buggy": 7,
+      "imported": 7,
+      "tests": 4,
+      "outcome_signatures": 3,
+      "routing": {
+        "eligible": 7
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "2936",
+      "lab": "Lab-6",
+      "raw_buggy": 11,
+      "imported": 11,
+      "tests": 5,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 11
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 3
+    },
+    {
+      "problem_id": "2937",
+      "lab": "Lab-6",
+      "raw_buggy": 9,
+      "imported": 9,
+      "tests": 5,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 9
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "2938",
+      "lab": "Lab-6",
+      "raw_buggy": 16,
+      "imported": 16,
+      "tests": 5,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 16
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 1,
+      "formatting_any_suspected": 1,
+      "empty_failed_output_submissions": 5
+    },
+    {
+      "problem_id": "2939",
+      "lab": "Lab-6",
+      "raw_buggy": 8,
+      "imported": 8,
+      "tests": 7,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 8
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3075",
+      "lab": "Lab-7",
+      "raw_buggy": 8,
+      "imported": 8,
+      "tests": 9,
+      "outcome_signatures": 3,
+      "routing": {
+        "eligible": 8
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3076",
+      "lab": "Lab-7",
+      "raw_buggy": 12,
+      "imported": 12,
+      "tests": 9,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 12
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3077",
+      "lab": "Lab-7",
+      "raw_buggy": 11,
+      "imported": 11,
+      "tests": 8,
+      "outcome_signatures": 8,
+      "routing": {
+        "eligible": 11
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 4
+    },
+    {
+      "problem_id": "3078",
+      "lab": "Lab-7",
+      "raw_buggy": 15,
+      "imported": 15,
+      "tests": 9,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 15
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 6
+    },
+    {
+      "problem_id": "3079",
+      "lab": "Lab-7",
+      "raw_buggy": 4,
+      "imported": 4,
+      "tests": 8,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 4
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3080",
+      "lab": "Lab-7",
+      "raw_buggy": 9,
+      "imported": 9,
+      "tests": 8,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 9
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3089",
+      "lab": "Lab-7",
+      "raw_buggy": 8,
+      "imported": 8,
+      "tests": 9,
+      "outcome_signatures": 6,
+      "routing": {
+        "eligible": 8
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3090",
+      "lab": "Lab-7",
+      "raw_buggy": 4,
+      "imported": 4,
+      "tests": 9,
+      "outcome_signatures": 4,
+      "routing": {
+        "eligible": 4
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3081",
+      "lab": "Lab-8",
+      "raw_buggy": 5,
+      "imported": 5,
+      "tests": 8,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 5
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3082",
+      "lab": "Lab-8",
+      "raw_buggy": 11,
+      "imported": 11,
+      "tests": 5,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 11
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 1,
+      "formatting_any_suspected": 1,
+      "empty_failed_output_submissions": 6
+    },
+    {
+      "problem_id": "3083",
+      "lab": "Lab-8",
+      "raw_buggy": 1,
+      "imported": 1,
+      "tests": 7,
+      "outcome_signatures": 1,
+      "routing": {
+        "eligible": 1
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3084",
+      "lab": "Lab-8",
+      "raw_buggy": 12,
+      "imported": 12,
+      "tests": 4,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 12
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3086",
+      "lab": "Lab-8",
+      "raw_buggy": 2,
+      "imported": 2,
+      "tests": 5,
+      "outcome_signatures": 1,
+      "routing": {
+        "eligible": 2
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3087",
+      "lab": "Lab-8",
+      "raw_buggy": 2,
+      "imported": 2,
+      "tests": 8,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 2
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3105",
+      "lab": "Lab-9",
+      "raw_buggy": 9,
+      "imported": 8,
+      "tests": 4,
+      "outcome_signatures": 1,
+      "routing": {
+        "eligible": 8
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3106",
+      "lab": "Lab-9",
+      "raw_buggy": 9,
+      "imported": 9,
+      "tests": 4,
+      "outcome_signatures": 3,
+      "routing": {
+        "eligible": 9
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3107",
+      "lab": "Lab-9",
+      "raw_buggy": 10,
+      "imported": 10,
+      "tests": 9,
+      "outcome_signatures": 5,
+      "routing": {
+        "eligible": 10
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3108",
+      "lab": "Lab-9",
+      "raw_buggy": 7,
+      "imported": 7,
+      "tests": 7,
+      "outcome_signatures": 3,
+      "routing": {
+        "eligible": 7
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 0
+    },
+    {
+      "problem_id": "3109",
+      "lab": "Lab-9",
+      "raw_buggy": 4,
+      "imported": 4,
+      "tests": 6,
+      "outcome_signatures": 2,
+      "routing": {
+        "eligible": 4
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3110",
+      "lab": "Lab-9",
+      "raw_buggy": 2,
+      "imported": 2,
+      "tests": 7,
+      "outcome_signatures": 1,
+      "routing": {
+        "eligible": 2
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 0,
+      "formatting_any_suspected": 0,
+      "empty_failed_output_submissions": 1
+    },
+    {
+      "problem_id": "3111",
+      "lab": "Lab-9",
+      "raw_buggy": 6,
+      "imported": 6,
+      "tests": 5,
+      "outcome_signatures": 1,
+      "routing": {
+        "eligible": 6
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 4,
+      "formatting_any_suspected": 4,
+      "empty_failed_output_submissions": 2
+    },
+    {
+      "problem_id": "3112",
+      "lab": "Lab-9",
+      "raw_buggy": 1,
+      "imported": 1,
+      "tests": 5,
+      "outcome_signatures": 1,
+      "routing": {
+        "eligible": 1
+      },
+      "all_pass": 0,
+      "formatting_only_suspected": 1,
+      "formatting_any_suspected": 1,
+      "empty_failed_output_submissions": 0
+    }
+  ],
+  "exclusions": [
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-11/3294/305975_buggy.c",
+      "problem_id": "3294",
+      "reason": "test_count_mismatch: logged=4, declared=4, canonical=5"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-11/3294/305979_buggy.c",
+      "problem_id": "3294",
+      "reason": "test_count_mismatch: logged=4, declared=4, canonical=5"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-11/3294/305984_buggy.c",
+      "problem_id": "3294",
+      "reason": "test_count_mismatch: logged=4, declared=4, canonical=5"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-11/3294/305992_buggy.c",
+      "problem_id": "3294",
+      "reason": "test_count_mismatch: logged=4, declared=4, canonical=5"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-11/3294/305993_buggy.c",
+      "problem_id": "3294",
+      "reason": "test_count_mismatch: logged=4, declared=4, canonical=5"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-11/3294/305996_buggy.c",
+      "problem_id": "3294",
+      "reason": "test_count_mismatch: logged=4, declared=4, canonical=5"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-11/3294/306003_buggy.c",
+      "problem_id": "3294",
+      "reason": "test_count_mismatch: logged=4, declared=4, canonical=5"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-11/3294/306036_buggy.c",
+      "problem_id": "3294",
+      "reason": "test_count_mismatch: logged=4, declared=4, canonical=5"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-11/3294/306056_buggy.c",
+      "problem_id": "3294",
+      "reason": "test_count_mismatch: logged=4, declared=4, canonical=5"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-6/2932/279952_buggy.c",
+      "problem_id": "2932",
+      "reason": "test_count_mismatch: logged=6, declared=6, canonical=7"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-6/2932/279991_buggy.c",
+      "problem_id": "2932",
+      "reason": "test_count_mismatch: logged=6, declared=6, canonical=7"
+    },
+    {
+      "raw_path": "data/raw/itsp/dataset/Lab-9/3105/300001_buggy.c",
+      "problem_id": "3105",
+      "reason": "test_count_mismatch: logged=3, declared=3, canonical=4"
+    }
+  ],
+  "identity": "student_id unavailable; source grouping is not student-disjoint",
+  "formatting_policy": "Whitespace-deletion diagnostic only; verdicts unchanged",
+  "execution": "Historical logs only; student code never executed",
+  "verdict_caveat": "Historical WRONG_ANSWER does not establish normal termination or a logic-only error; empty failed outputs are flagged for human review, not reclassified.",
+  "total_raw_buggy": 661,
+  "total_imported": 649
+}

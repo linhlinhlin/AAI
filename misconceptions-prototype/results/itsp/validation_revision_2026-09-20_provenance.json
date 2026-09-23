@@ -1,0 +1,42 @@
+{
+  "artifact": "docs/itsp_human_review_protocol.md",
+  "previous_sha256": "9fdba3fd66d512a1775699f0501eff0a5bcc3750a9196829a6db26c2fcd783bb",
+  "current_sha256": "1cc8ce739a1497bf6d64c4621f5388f1ff7192272d23bca019bbcf6a491a2cd2",
+  "revision_status": "editorial",
+  "semantic_classification": "B_protocol_clarification_non_material",
+  "reconciliation_status": "RESOLVED_SAME_SEMANTIC_VERSION",
+  "previous_version_preserved": true,
+  "previous_snapshot": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/protocol_snapshot_hash_9fdba3fd.md",
+  "current_snapshot": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/protocol_snapshot_current_1cc8ce73.md",
+  "change_summary": [
+    "A: append blank lines and section heading.",
+    "B: document merge/reporting tools that implement previously stated one-reviewer/common-codebook, immutable-round1, human-only, no-auto-adjudication requirements.",
+    "No material change to blinding, sample, eligibility, taxonomy, adjudication authority or metric formula in this document diff."
+  ],
+  "packet_dependencies_checked": true,
+  "packet_generation_protocol_unknown": [
+    "human_review_packet.zip",
+    "human_review_round2_packet.zip"
+  ],
+  "packet_regeneration_required_for_this_revision": false,
+  "review_required": true,
+  "git_provenance": "unavailable",
+  "author_commit_time": "unknown; not inferred from file timestamps",
+  "source_manifest_correction": {
+    "action": "Rebind historical source link to exact preserved historical bytes; retain old hash",
+    "before_sha256": "16ec7e064f43030199bc0818410e28f97bff74f879294e72a82f3ed85514a168",
+    "after_sha256": "2100f554b858ccae93bbfc902134da7f35f980481d05a9356a57536dc553d132",
+    "before_snapshot": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/reviewer_sources_before.md"
+  },
+  "historical_audits_preserved": true,
+  "scope": "Forensic reconciliation only, no annotation/adjudication/evaluation sampling.",
+  "verification_pending": false,
+  "verification": {
+    "pytest": "106 passed, 3 subtests passed",
+    "ruff": "All checks passed",
+    "provenance_audit": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/provenance_audit.json",
+    "provenance_audit_sha256": "f5b751c9362d8d5f294dc6126b631b9eeae5e11859e854fff998d7ea32e1467e"
+  },
+  "resume_status": "READY_FOR_MULTI_AGENT_PREFLIGHT",
+  "validation_resumed": false
+}

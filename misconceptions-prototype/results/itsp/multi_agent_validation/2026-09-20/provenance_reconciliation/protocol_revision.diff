@@ -1,0 +1,11 @@
+--- protocol@9fdba3fd
++++ protocol@1cc8ce73
+@@ -54,3 +54,8 @@
+ **Discussion hiện tại:** quan sát kỹ thuật cho thấy có thể trộn nhiều cơ chế lỗi; chưa có xác nhận giáo dục. Không tuyên bố OAV tốt hơn, clustering đã được expert-validated hay AI là ground truth.
+ 
+ Khi có dữ liệu, cập nhật `docs/itsp_validation.md`, `docs/itsp_progress.md`, README và báo cáo kết quả cùng ngày/hash input, phiên bản codebook, số người/mẫu, phần adjudicated, per-problem/A/B/C metrics, coverage và các bất đồng chưa giải quyết. Tách bảng AI tham khảo khỏi bảng human. Không thay null bằng 0; không báo purity toàn cohort từ 17 mẫu có chủ đích. Nêu hạn chế taxonomy, coverage thấp, singleton, tính không mù, không có student ID và sai khác đề/oracle. Chỉ gọi là human expert validation trong đúng phạm vi đã được người thật đánh giá, không mặc nhiên là ground truth tuyệt đối.
++
++
++## Công cụ intake và báo cáo đã bổ sung
++
++Đọc [hướng dẫn hoàn thiện kỹ thuật](itsp_completion_review.md). Dùng `scripts/merge_itsp_annotations.py` cho file round-one người thật, một reviewer/file, codebook đã duyệt giống nhau. Công cụ ghi output mới và provenance; không adjudicate tự động. Bản round1 giữ bất biến; vòng2/adjudication làm trên bản sao. Dùng `scripts/report_itsp_experts.py` xuất bảng từng cụm sau khi có file annotation thích hợp; input AI được loại, không tạo ground truth. Các lệnh cụ thể và giới hạn có trong hướng dẫn liên kết.

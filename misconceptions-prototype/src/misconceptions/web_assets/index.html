@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misconceptions Lab · Bàn thử nghiệm</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script><script src="/teacher.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#experiment"><span class="brand-mark">m<span>·</span></span><span>Misconceptions<br><b>RESEARCH LAB</b></span></a>
+    <div class="nav-label">KHÔNG GIAN THỬ NGHIỆM</div>
+    <nav aria-label="Điều hướng chính">
+      <button data-page="experiment" class="active"><span>01</span>Giảng viên Dashboard</button>
+      <button data-page="data"><span>02</span>Dữ liệu & OAV</button>
+      <button data-page="compare"><span>03</span>So sánh A / B / C</button>
+      <button data-page="review"><span>04</span>Hồ sơ reviewer</button>
+      <button data-page="checks"><span>05</span>Kiểm tra kỹ thuật</button>
+      <button data-page="library"><span>06</span>Kho báo cáo</button>
+      <button data-page="roadmap"><span>07</span>Chức năng sắp có</button>
+    </nav>
+    <div class="sidebar-bottom"><span class="live-dot"></span> Chạy trên máy của bạn<p>Prototype nghiên cứu<br>Test outcomes → OAV → Clusters</p></div>
+  </aside>
+  <main>
+    <header class="topbar"><span>ĐỀ TÀI 05 <span class="slash">/</span> Bàn thử nghiệm</span><span class="badge">LOCAL · CPU</span></header>
+    <div id="error" class="message error" role="alert" hidden></div>
+    <div id="job-status" class="message progress" role="status" hidden></div>
+
+    <section id="page-experiment" class="page">
+      <div class="page-heading"><div class="eyebrow">TỪ BÀI LÀM SAI ĐẾN NHÓM LỖI</div><h1>Lớp đang gặp<br><em>vấn đề gì?</em></h1><p>Chọn dữ liệu → phân nhóm → giảng viên gắn nhãn → xem nội dung cần giảng lại.<br>Tỷ lệ được tính trong bộ dữ liệu đang chọn.</p></div>
+      <div class="workspace">
+        <form id="experiment-form" class="panel settings">
+          <div class="panel-heading"><h2>Phân tích bài làm</h2><span class="tiny-tag">01 → 03</span></div>
+          <label for="dataset">Bộ dữ liệu / bài tập</label><select id="dataset" required></select>
+          <div id="dataset-summary" class="dataset-summary"></div>
+          <p class="caption">Mặc định: K-means. Xem bằng chứng, gắn nhãn nhóm rồi chọn nội dung giảng lại.</p><details id="advanced-settings"><summary>Advanced Settings · dành cho nghiên cứu</summary><label for="method">Thuật toán</label><select id="method"><option value="kmeans" selected>K-means · Euclid trên one-hot có trọng số</option><option value="agglomerative">HAC · baseline nghiên cứu</option><option value="exact">Chữ ký test · baseline nghiên cứu</option><option disabled>ILA cải tiến · chưa triển khai</option></select>
+          <label for="feature-mode">Nguồn đặc trưng</label><select id="feature-mode"><option value="combined">Test + cấu trúc (C)</option><option value="outcomes">Chỉ kết quả test (A)</option><option value="structural">Chỉ cấu trúc mã (B)</option></select>
+          <div class="form-row"><div><label for="k">Số cụm k</label><input id="k" type="number" min="2" max="50" value="3" required></div><div><label for="seed">Random seed</label><input id="seed" type="number" min="0" max="4294967295" value="42" required></div></div>
+          <label for="test-weight">Trọng số test <output id="weight-value">80%</output></label><input id="test-weight" type="range" min="5" max="100" step="5" value="80">
+          <label for="fraction">Tỷ lệ holdout</label><select id="fraction"><option value="0.25">25%</option><option value="0.2">20%</option><option value="0.3">30%</option></select>
+          <p id="method-note" class="caption">Cùng bài, cùng test suite. Chỉ đọc log đã có; không chạy mã sinh viên.</p>
+          </details><button class="primary run-button" type="submit">Phân tích bài làm <span>↗</span></button>
+        </form>
+        <div class="result-column">
+          <div id="empty-result" class="empty-result panel"><div class="diagram" aria-hidden="true"><span>×</span><span>×</span><span>×</span><i>→</i><b>●<br>● ●</b></div><div class="eyebrow">BẰNG CHỨNG TRƯỚC, KẾT LUẬN SAU</div><h2>Một lượt chạy.<br>Nhiều góc nhìn.</h2><p>Kết quả sẽ gồm cụm, bài đại diện, ma trận OAV<br>và các luật giải thích dễ kiểm tra.</p><div class="steps"><span>01 · Chọn dữ liệu</span><span>02 · Gom cụm</span><span>03 · Xem bằng chứng</span></div></div>
+          <div id="run-result" hidden></div>
+          <div class="research-note"><span>i</span><p><strong>Cụm là mẫu lỗi quan sát được.</strong> Chưa phải chẩn đoán misconception. Nhãn và nhận định về người học cần người có chuyên môn xác nhận.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="page-data" class="page" hidden>
+      <div class="page-heading compact"><div class="eyebrow">NGUỒN & BẰNG CHỨNG</div><h1>Dữ liệu <em>& OAV.</em></h1><p>Xem source, trạng thái từng test và đặc trưng được trích từ mã.</p></div>
+      <div class="panel"><div class="panel-heading"><h2>Khám phá bài làm</h2><button id="inspect-current" class="secondary">Mở dữ liệu đang chọn</button></div><div id="data-title" class="caption">Chọn bài tập trong trang Thí nghiệm, rồi mở dữ liệu.</div><label for="sample-search">Tìm submission ID</label><input id="sample-search" placeholder="Nhập một phần ID…"><div id="sample-list" class="table-wrap"></div></div>
+      <div class="panel spaced"><h2>Nhập bộ dữ liệu riêng</h2><p class="caption">Một manifest JSON và một file submissions JSONL theo schema của dự án, tối đa 16 MB tổng yêu cầu. File gốc được giữ nguyên.</p><div class="form-row"><div><label for="manifest-file">manifest.json</label><input id="manifest-file" type="file" accept=".json"></div><div><label for="submissions-file">submissions.jsonl</label><input id="submissions-file" type="file" accept=".jsonl"></div></div><label for="evidence-file">review.jsonl · tùy chọn, log input / expected / output để giải thích cơ chế</label><input id="evidence-file" type="file" accept=".jsonl"><div class="actions"><button id="upload-dataset" class="primary run-button">Kiểm tra & nhập dữ liệu</button><a class="text-link" href="/api/artifact?id=data%2Fdemo%2Fmanifest.json&download=1">Tải manifest mẫu ↓</a><a class="text-link" href="/api/artifact?id=data%2Fdemo%2Fsubmissions.jsonl&download=1">Tải submissions mẫu ↓</a></div><p class="caption">Mẫu demo là dữ liệu tổng hợp. Dataset mới cần cùng problem, language và suite_version.</p></div>
+    </section>
+
+    <section id="page-compare" class="page" hidden>
+      <div class="page-heading compact"><div class="eyebrow">ABLATION STUDY</div><h1>Điều gì <em>tạo khác biệt?</em></h1><p>Ba nguồn đặc trưng, cùng dữ liệu và cấu hình chia tập.</p></div>
+      <div class="arm-grid"><article class="panel"><b class="arm-letter">A</b><h2>Test outcomes</h2><p>Nhóm theo hành vi pass / fail.</p></article><article class="panel"><b class="arm-letter">B</b><h2>Cấu trúc mã</h2><p>Nhóm theo chỉ báo cú pháp.</p></article><article class="panel"><b class="arm-letter">C</b><h2>Kết hợp</h2><p>Cân trọng số hai nguồn bằng chứng.</p></article></div>
+      <div class="panel spaced"><div class="panel-heading"><div><h2>Chạy đối chiếu</h2><p id="compare-config" class="caption"></p></div><button id="compare-run" class="primary run-button">Chạy A / B / C ↗</button></div><p class="caption">Sử dụng cấu hình ở trang Thí nghiệm. Exact signatures là baseline outcomes-only; chọn average-linkage hoặc K-means để so sánh A/B/C.</p><div id="compare-result" class="table-wrap"><div class="empty-small">Chưa có kết quả so sánh trong phiên này.</div></div></div>
+      <div class="research-note"><span>i</span><p>Silhouette ở các không gian khác nhau không phải thước đo trực tiếp chất lượng misconception. Fidelity đo mức luật tái hiện cluster ID, không phải độ chính xác giáo dục.</p></div>
+    </section>
+
+    <section id="page-review" class="page" hidden>
+      <div class="page-heading compact"><div class="eyebrow">HUMAN REVIEW WORKSPACE</div><h1>Hồ sơ <em>& phản biện.</em></h1><p>Tải gói chấm riêng, kiểm tra file trả về và xuất kết quả vào bản mới.</p></div>
+      <div class="research-note amber"><span>!</span><p>Đây là giao diện quản lý có thể hiển thị cụm, không phải môi trường chấm mù. Người chấm vòng 1 sử dụng gói ZIP riêng trước khi xem cụm hoặc nhãn AI.</p></div>
+      <div class="arm-grid"><article class="panel"><span class="tiny-tag">VÒNG 1</span><h2>Gói chấm độc lập</h2><p>17 hồ sơ, codebook dự thảo và phiếu trống.</p><a class="secondary link-button" href="/api/artifact?id=results%2Fitsp%2Fhuman_review_packet.zip&download=1">Tải gói ZIP ↓</a></article><article class="panel"><span class="tiny-tag">VÒNG 2</span><h2>Ngữ cảnh cụm</h2><p>Chỉ phát sau khi đã khóa kết quả vòng 1.</p><a class="secondary link-button" href="/api/artifact?id=results%2Fitsp%2Fhuman_review_round2_packet.zip&download=1">Tải gói ZIP ↓</a></article><article class="panel"><span class="tiny-tag">HƯỚNG DẪN</span><h2>Protocol & codebook</h2><p>AI không phê duyệt codebook hoặc adjudicate.</p><button class="secondary" id="open-codebook">Đọc codebook →</button></article></div>
+      <div class="panel spaced"><h2>Xử lý file annotation</h2><p class="caption">Áp dụng cho 17 mẫu ITSP cố định, không phải các cụm mới bạn vừa chạy. Kiểm tra schema không xác nhận người gửi là chuyên gia.</p><label for="annotation-files">File JSON (có thể chọn nhiều để hợp nhất)</label><input id="annotation-files" type="file" accept=".json" multiple><label class="checkbox"><input id="coordinator-confirmed" type="checkbox"> Tôi đã kiểm tra nguồn file, danh tính và điều kiện review; dữ liệu dùng để tính metrics không phải nhãn AI đổi tên.</label><div class="actions"><button data-annotation="validate" class="secondary run-button">Kiểm tra schema</button><button data-annotation="merge" class="secondary run-button">Hợp nhất vòng 1</button><button data-annotation="score" class="primary run-button">Tính metrics từ file</button></div><div id="annotation-result"></div></div>
+    </section>
+
+    <section id="page-checks" class="page" hidden>
+      <div class="page-heading compact"><div class="eyebrow">TECHNICAL HEALTH</div><h1>Kiểm tra <em>trước khi kết luận.</em></h1><p>Chạy các kiểm tra hiện có. Mỗi lượt lưu log và trạng thái riêng.</p></div>
+      <div class="check-grid"><article class="panel"><span class="tiny-tag">PYTEST</span><h2>Bộ kiểm thử</h2><p>Kiểm thử pipeline, adapters, annotation và web.</p><button class="secondary run-button" data-check="tests">Chạy tests →</button></article><article class="panel"><span class="tiny-tag">RUFF</span><h2>Chất lượng mã</h2><p>Kiểm tra lint của toàn bộ dự án.</p><button class="secondary run-button" data-check="lint">Chạy lint →</button></article><article class="panel"><span class="tiny-tag">ROUND 1</span><h2>Toàn vẹn packet</h2><p>Đối chiếu ZIP, phiếu trống và evidence gốc.</p><button class="secondary run-button" data-check="packet">Audit packet →</button></article><article class="panel"><span class="tiny-tag">SHA-256</span><h2>Nguồn reviewer</h2><p>Đối chiếu các file với manifest đã reconciled.</p><button class="secondary run-button" data-check="provenance">Kiểm tra hash →</button></article></div>
+      <div id="check-result" class="panel spaced"><div class="empty-small">Chọn một kiểm tra để xem log.</div></div>
+    </section>
+
+    <section id="page-library" class="page" hidden>
+      <div class="page-heading compact"><div class="eyebrow">RESEARCH ARCHIVE</div><h1>Mọi kết quả, <em>có dấu vết.</em></h1><p>Báo cáo nghiên cứu, audit và kết quả các lượt chạy web.</p></div>
+      <div class="panel"><label for="artifact-search">Tìm tên hoặc đường dẫn</label><input id="artifact-search" placeholder="Ví dụ: web_runs, summary, reconciliation…"><div id="artifact-list" class="table-wrap"></div></div>
+    </section>
+
+    <section id="page-roadmap" class="page" hidden>
+      <div class="page-heading compact"><div class="eyebrow">PHẠM VI PROTOTYPE</div><h1>Những bước <em>tiếp theo.</em></h1><p>Các tính năng dưới đây chưa được triển khai. Nút đang được vô hiệu hóa.</p></div>
+      <div class="check-grid" id="future-features"></div>
+    </section>
+    <footer>Misconceptions Lab <span>·</span> Bài làm là bằng chứng. Hiểu sai là giả thuyết cần kiểm chứng.</footer>
+  </main>
+  <dialog id="detail-dialog"><div class="dialog-top"><h2 id="dialog-title">Chi tiết</h2><button id="close-dialog" class="secondary" aria-label="Đóng chi tiết">Đóng ×</button></div><div id="dialog-body"></div></dialog>
+</body>
+</html>

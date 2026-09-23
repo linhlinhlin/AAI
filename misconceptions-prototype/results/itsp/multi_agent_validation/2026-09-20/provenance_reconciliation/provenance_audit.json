@@ -1,0 +1,42 @@
+{
+  "status": "PASS",
+  "resolved_source_entries": 255,
+  "historical_hash_retained": "9fdba3fd66d512a1775699f0501eff0a5bcc3750a9196829a6db26c2fcd783bb",
+  "protocol_snapshots_verified": true,
+  "current_protocol_unchanged": true,
+  "existing_artifacts_checked": 777,
+  "changed_existing_artifacts": [
+    "results/itsp/reviewer_sources.md"
+  ],
+  "historical_audits_annotations_packets_unchanged": true,
+  "round1_audit": {
+    "status": "ready_for_expert_codebook_confirmation_then_blind_round1",
+    "n_samples": 17,
+    "n_source_files_verified": 51,
+    "n_test_logs_verified": 17,
+    "n_logged_tests": 113,
+    "n_zip_files": 72,
+    "zip_sha256": "b6ad02268216aed40c35ac82d606f7f2861776964493f56d54df448ac63288a1",
+    "assignments_sha256": "bffe0aa482f5a0f47beaa803dbee82b55ad70d320f00935d17314af6fe645c22",
+    "checks": [
+      "ZIP CRC and exact file allowlist",
+      "blank human-only forms",
+      "51 source files match originals and manifest SHA-256",
+      "all historical test records match",
+      "all reviewer Markdown links are offline",
+      "codebook definitions present, no sample-specific labels",
+      "no cluster assignments, AI reviews or reports packaged"
+    ],
+    "human_completed": 0,
+    "cluster_purity": null,
+    "raw_agreement": null,
+    "cohen_kappa": null,
+    "sent_to_experts": false
+  },
+  "zip_disk_byte_equality": {
+    "human_review_packet.zip": 72,
+    "human_review_round2_packet.zip": 240
+  },
+  "generation_protocol_for_zips": "UNKNOWN; not inferred by compatibility audit",
+  "scope": "Provenance reconciliation, not research validation or human annotation."
+}

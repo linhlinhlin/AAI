@@ -1,0 +1,114 @@
+{
+  "checked_at_utc": "2026-09-20T02:50:46.848892+00:00",
+  "checks": [
+    {
+      "name": "Toàn vẹn 523 file gốc và AI snapshot",
+      "passed": true,
+      "detail": 523
+    },
+    {
+      "name": "17 hồ sơ, evidence, đối chiếu và human null",
+      "passed": true,
+      "detail": {
+        "decisions": {
+          "Unclear": 3,
+          "No": 8,
+          "Yes": 6
+        },
+        "disagreements": [
+          {
+            "submission_id": "itsp-2825-271154_buggy",
+            "old_ai": {
+              "reviewer_id": "ai:codex:2026-09-19",
+              "misconception": "Yes",
+              "misconception_type": "squared_distance_radius_mismatch",
+              "confidence": 3
+            },
+            "new_ai": {
+              "reviewer_id": "ai:independent-review-2026-09-20",
+              "misconception": "Unclear",
+              "misconception_type": null,
+              "confidence": 4
+            },
+            "decision_disagreement": true,
+            "raw_type_difference": true,
+            "old_type_mapped_to_draft": "MATH_MODEL",
+            "type_comparison": "not_comparable_decision_differs",
+            "confidence_difference": 1,
+            "priority": "P1",
+            "priority_reason": "Bất đồng quyết định; cần human phân giải ngưỡng evidence.",
+            "human_check": "Ưu tiên phân biệt công thức power of point sai với thiếu một toán hạng; yêu cầu lý do nếu chọn Yes."
+          },
+          {
+            "submission_id": "itsp-2825-271188_buggy",
+            "old_ai": {
+              "reviewer_id": "ai:codex:2026-09-19",
+              "misconception": "Unclear",
+              "misconception_type": null,
+              "confidence": 3
+            },
+            "new_ai": {
+              "reviewer_id": "ai:independent-review-2026-09-20",
+              "misconception": "No",
+              "misconception_type": null,
+              "confidence": 4
+            },
+            "decision_disagreement": true,
+            "raw_type_difference": false,
+            "old_type_mapped_to_draft": null,
+            "type_comparison": "not_comparable_decision_differs",
+            "confidence_difference": 1,
+            "priority": "P1",
+            "priority_reason": "Bất đồng quyết định; cần human phân giải ngưỡng evidence.",
+            "human_check": "Kiểm tra liệu có bằng chứng ngoài literal để gán MATH_MODEL hoặc C_BRANCH_SELECTION; không suy từ bản sửa thêm điều kiện."
+          },
+          {
+            "submission_id": "itsp-2825-271213_buggy",
+            "old_ai": {
+              "reviewer_id": "ai:codex:2026-09-19",
+              "misconception": "Unclear",
+              "misconception_type": null,
+              "confidence": 3
+            },
+            "new_ai": {
+              "reviewer_id": "ai:independent-review-2026-09-20",
+              "misconception": "No",
+              "misconception_type": null,
+              "confidence": 4
+            },
+            "decision_disagreement": true,
+            "raw_type_difference": false,
+            "old_type_mapped_to_draft": null,
+            "type_comparison": "not_comparable_decision_differs",
+            "confidence_difference": 1,
+            "priority": "P1",
+            "priority_reason": "Bất đồng quyết định; cần human phân giải ngưỡng evidence.",
+            "human_check": "Xác nhận lỗi ánh xạ input theo đề; chỉ gán C_IO_CONTRACT khi có thêm evidence về cách scanf hoạt động."
+          }
+        ]
+      }
+    },
+    {
+      "name": "Schema expert (validate-only)",
+      "passed": true,
+      "detail": "Annotation schema, sample IDs and assignment hash are valid; no metrics computed"
+    },
+    {
+      "name": "Toàn bộ tests",
+      "passed": true,
+      "detail": "..................................................................... [ 74%]\n........................                                                 [100%]\n93 passed, 3 subtests passed in 4.46s"
+    },
+    {
+      "name": "Lint",
+      "passed": true,
+      "detail": "All checks passed!"
+    },
+    {
+      "name": "Toàn vẹn sau tests/lint",
+      "passed": true,
+      "detail": 523
+    }
+  ],
+  "human_validation": "PENDING — kiểm tra tự động không xác nhận misconception",
+  "passed": true
+}

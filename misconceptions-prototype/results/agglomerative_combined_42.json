@@ -1,0 +1,718 @@
+{
+  "status": "ok",
+  "method": "agglomerative",
+  "feature_mode": "combined",
+  "seed": 42,
+  "config": {
+    "k": 3,
+    "test_fraction": 0.25,
+    "test_weight": 0.8,
+    "effective_feature_mode": "combined",
+    "k_used": true
+  },
+  "silhouette_metric": "weighted_hamming_common_comparison_not_kmeans_native_geometry",
+  "routes": {
+    "demo_exclude_upper_00": "eligible",
+    "demo_exclude_upper_01": "eligible",
+    "demo_exclude_upper_02": "eligible",
+    "demo_exclude_upper_03": "eligible",
+    "demo_exclude_upper_04": "eligible",
+    "demo_exclude_upper_05": "eligible",
+    "demo_exclude_upper_06": "eligible",
+    "demo_exclude_upper_07": "eligible",
+    "demo_exclude_upper_08": "eligible",
+    "demo_exclude_upper_09": "eligible",
+    "demo_exclude_upper_10": "eligible",
+    "demo_exclude_upper_11": "eligible",
+    "demo_exclude_upper_12": "eligible",
+    "demo_exclude_upper_13": "eligible",
+    "demo_exclude_upper_14": "eligible",
+    "demo_exclude_upper_15": "eligible",
+    "demo_square_00": "eligible",
+    "demo_square_01": "eligible",
+    "demo_square_02": "eligible",
+    "demo_square_03": "eligible",
+    "demo_square_04": "eligible",
+    "demo_square_05": "eligible",
+    "demo_square_06": "eligible",
+    "demo_square_07": "eligible",
+    "demo_square_08": "eligible",
+    "demo_square_09": "eligible",
+    "demo_square_10": "eligible",
+    "demo_square_11": "eligible",
+    "demo_square_12": "eligible",
+    "demo_square_13": "eligible",
+    "demo_square_14": "eligible",
+    "demo_square_15": "eligible",
+    "demo_odd_only_00": "eligible",
+    "demo_odd_only_01": "eligible",
+    "demo_odd_only_02": "eligible",
+    "demo_odd_only_03": "eligible",
+    "demo_odd_only_04": "eligible",
+    "demo_odd_only_05": "eligible",
+    "demo_odd_only_06": "eligible",
+    "demo_odd_only_07": "eligible",
+    "demo_odd_only_08": "eligible",
+    "demo_odd_only_09": "eligible",
+    "demo_odd_only_10": "eligible",
+    "demo_odd_only_11": "eligible",
+    "demo_odd_only_12": "eligible",
+    "demo_odd_only_13": "eligible",
+    "demo_odd_only_14": "eligible",
+    "demo_odd_only_15": "eligible",
+    "demo_partial": "incomplete",
+    "demo_runtime": "execution_error",
+    "demo_correct": "no_failure",
+    "demo_syntax": "parse_error"
+  },
+  "route_counts": {
+    "eligible": 48,
+    "incomplete": 1,
+    "execution_error": 1,
+    "no_failure": 1,
+    "parse_error": 1
+  },
+  "n_eligible": 48,
+  "warnings": [
+    "Clusters and surrogate rules are behavioral hypotheses requiring instructor validation.",
+    "Exact source grouping does not detect renamed or otherwise near-duplicate code.",
+    "AST presence indicators are syntactic evidence, not semantic fault detectors."
+  ],
+  "split": {
+    "train_ids": [
+      "demo_exclude_upper_00",
+      "demo_exclude_upper_01",
+      "demo_exclude_upper_02",
+      "demo_exclude_upper_05",
+      "demo_exclude_upper_06",
+      "demo_exclude_upper_07",
+      "demo_exclude_upper_09",
+      "demo_exclude_upper_10",
+      "demo_exclude_upper_11",
+      "demo_exclude_upper_13",
+      "demo_exclude_upper_14",
+      "demo_exclude_upper_15",
+      "demo_square_00",
+      "demo_square_01",
+      "demo_square_02",
+      "demo_square_04",
+      "demo_square_05",
+      "demo_square_06",
+      "demo_square_07",
+      "demo_square_12",
+      "demo_square_13",
+      "demo_square_14",
+      "demo_square_15",
+      "demo_odd_only_00",
+      "demo_odd_only_01",
+      "demo_odd_only_02",
+      "demo_odd_only_03",
+      "demo_odd_only_04",
+      "demo_odd_only_06",
+      "demo_odd_only_07",
+      "demo_odd_only_09",
+      "demo_odd_only_10",
+      "demo_odd_only_12",
+      "demo_odd_only_13",
+      "demo_odd_only_14",
+      "demo_odd_only_15"
+    ],
+    "holdout_ids": [
+      "demo_exclude_upper_03",
+      "demo_exclude_upper_04",
+      "demo_exclude_upper_08",
+      "demo_exclude_upper_12",
+      "demo_square_03",
+      "demo_square_08",
+      "demo_square_09",
+      "demo_square_10",
+      "demo_square_11",
+      "demo_odd_only_05",
+      "demo_odd_only_08",
+      "demo_odd_only_11"
+    ],
+    "train_groups": 36,
+    "holdout_groups": 12
+  },
+  "n_clusters": 3,
+  "features": [
+    {
+      "name": "test:n_0",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:n_1",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:n_2",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:n_3",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:n_5",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:n_8",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "ast:range",
+      "weight": 0.19999999999999996
+    }
+  ],
+  "oav": {
+    "demo_exclude_upper_00": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_01": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_02": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_05": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_06": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_07": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_09": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_10": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_11": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_13": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_14": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_15": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_square_00": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_01": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_02": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_04": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_05": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_06": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_07": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_12": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_13": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_14": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_15": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_odd_only_00": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_01": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_02": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_03": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_04": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_06": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_07": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_09": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_10": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_12": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_13": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_14": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_15": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_03": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_04": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_08": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_exclude_upper_12": {
+      "test:n_0": "pass",
+      "test:n_1": "fail",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_square_03": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_08": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_09": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_10": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_square_11": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "0"
+    },
+    "demo_odd_only_05": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_08": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    },
+    "demo_odd_only_11": {
+      "test:n_0": "pass",
+      "test:n_1": "pass",
+      "test:n_2": "fail",
+      "test:n_3": "fail",
+      "test:n_5": "fail",
+      "test:n_8": "fail",
+      "ast:range": "1"
+    }
+  },
+  "train_assignments": {
+    "demo_exclude_upper_00": 2,
+    "demo_exclude_upper_01": 2,
+    "demo_exclude_upper_02": 2,
+    "demo_exclude_upper_05": 2,
+    "demo_exclude_upper_06": 2,
+    "demo_exclude_upper_07": 2,
+    "demo_exclude_upper_09": 2,
+    "demo_exclude_upper_10": 2,
+    "demo_exclude_upper_11": 2,
+    "demo_exclude_upper_13": 2,
+    "demo_exclude_upper_14": 2,
+    "demo_exclude_upper_15": 2,
+    "demo_square_00": 0,
+    "demo_square_01": 0,
+    "demo_square_02": 0,
+    "demo_square_04": 0,
+    "demo_square_05": 0,
+    "demo_square_06": 0,
+    "demo_square_07": 0,
+    "demo_square_12": 0,
+    "demo_square_13": 0,
+    "demo_square_14": 0,
+    "demo_square_15": 0,
+    "demo_odd_only_00": 1,
+    "demo_odd_only_01": 1,
+    "demo_odd_only_02": 1,
+    "demo_odd_only_03": 1,
+    "demo_odd_only_04": 1,
+    "demo_odd_only_06": 1,
+    "demo_odd_only_07": 1,
+    "demo_odd_only_09": 1,
+    "demo_odd_only_10": 1,
+    "demo_odd_only_12": 1,
+    "demo_odd_only_13": 1,
+    "demo_odd_only_14": 1,
+    "demo_odd_only_15": 1
+  },
+  "holdout_assignments": {
+    "demo_exclude_upper_03": 2,
+    "demo_exclude_upper_04": 2,
+    "demo_exclude_upper_08": 2,
+    "demo_exclude_upper_12": 2,
+    "demo_square_03": 0,
+    "demo_square_08": 0,
+    "demo_square_09": 0,
+    "demo_square_10": 0,
+    "demo_square_11": 0,
+    "demo_odd_only_05": 1,
+    "demo_odd_only_08": 1,
+    "demo_odd_only_11": 1
+  },
+  "medoids": {
+    "0": "demo_square_00",
+    "1": "demo_odd_only_00",
+    "2": "demo_exclude_upper_00"
+  },
+  "silhouette_train": 1.0,
+  "holdout_distance_to_medoid": {
+    "demo_exclude_upper_03": 0.0,
+    "demo_exclude_upper_04": 0.0,
+    "demo_exclude_upper_08": 0.0,
+    "demo_exclude_upper_12": 0.0,
+    "demo_square_03": 0.0,
+    "demo_square_08": 0.0,
+    "demo_square_09": 0.0,
+    "demo_square_10": 0.0,
+    "demo_square_11": 0.0,
+    "demo_odd_only_05": 0.0,
+    "demo_odd_only_08": 0.0,
+    "demo_odd_only_11": 0.0
+  },
+  "holdout_assignment_ties": 0,
+  "assignment_policy": "nearest_training_medoid_weighted_hamming; ties select lowest cluster id",
+  "explanation": {
+    "target": "cluster_id_only_not_validated_misconception",
+    "train_fidelity": 1.0,
+    "holdout_fidelity": 1.0,
+    "rules": [
+      {
+        "if": [
+          "NOT (test:n_1=pass)"
+        ],
+        "then_cluster": 2,
+        "train_support": 12,
+        "train_precision": 1.0,
+        "holdout_support": 4,
+        "holdout_precision": 1.0
+      },
+      {
+        "if": [
+          "test:n_1=pass",
+          "NOT (ast:range=0)"
+        ],
+        "then_cluster": 1,
+        "train_support": 13,
+        "train_precision": 1.0,
+        "holdout_support": 3,
+        "holdout_precision": 1.0
+      },
+      {
+        "if": [
+          "test:n_1=pass",
+          "ast:range=0"
+        ],
+        "then_cluster": 0,
+        "train_support": 11,
+        "train_precision": 1.0,
+        "holdout_support": 5,
+        "holdout_precision": 1.0
+      }
+    ]
+  },
+  "ari_vs_exact_signature_train": 0.5599226237580234,
+  "elapsed_seconds": 0.01252829993609339,
+  "data_kind": "synthetic_integration_fixture"
+}

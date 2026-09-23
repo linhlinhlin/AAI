@@ -1,0 +1,2 @@
+{"submission_id":"synthetic-value-swap","logged_tests":[{"test_id":"different","input":"2 7","expected":"7 2","output":"2 7","verdict":"WRONG_ANSWER"},{"test_id":"equal","input":"3 3","expected":"3 3","output":"3 3","verdict":"ACCEPTED"}]}
+{"submission_id":"synthetic-pointer-swap","logged_tests":[{"test_id":"different","input":"2 7","expected":"7 2","output":"7 2","verdict":"ACCEPTED"},{"test_id":"equal","input":"3 3","expected":"3 3","output":"3 3","verdict":"ACCEPTED"}]}

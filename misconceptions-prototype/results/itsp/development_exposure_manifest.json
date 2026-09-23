@@ -1,0 +1,361 @@
+{
+  "date": "2026-09-20",
+  "scope": "Conservative exclusion of all 59 exposed submissions, not a claim that every sample was individually used to design features",
+  "samples": [
+    {
+      "submission_id": "itsp-2812-270272_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270276_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270277_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270280_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270283_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270285_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270293_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270294_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270296_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270297_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270304_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270305_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270310_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270324_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270327_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270330_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270334_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270349_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2812-270357_buggy",
+      "problem_id": "2812",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271150_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271152_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271154_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271163_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271173_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271188_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271191_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271192_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271203_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271205_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271206_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271209_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271211_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271213_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271216_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271217_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271220_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271224_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271226_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271228_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271239_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2825-271241_buggy",
+      "problem_id": "2825",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271912_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271916_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271920_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271922_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271927_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271944_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271946_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271965_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271975_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271977_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271982_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271983_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271986_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271987_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271989_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271990_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-271993_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    },
+    {
+      "submission_id": "itsp-2833-272004_buggy",
+      "problem_id": "2833",
+      "evaluation_role": "development_exposed",
+      "reason": "Included in reviewed evidence/cluster context; exclude from a new independent feature-validation set"
+    }
+  ],
+  "new_evaluation_sample_selected": false
+}

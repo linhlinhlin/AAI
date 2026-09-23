@@ -1,0 +1,51 @@
+[
+  {
+    "test_id": "1",
+    "verdict": "WRONG_ANSWER",
+    "input": "-12",
+    "expected": "-12.0000 is negative",
+    "output": "-12.0000 -12.000000 is negative"
+  },
+  {
+    "test_id": "2",
+    "verdict": "WRONG_ANSWER",
+    "input": "0",
+    "expected": "input is zero",
+    "output": "0.0000input is zero"
+  },
+  {
+    "test_id": "3",
+    "verdict": "WRONG_ANSWER",
+    "input": "1",
+    "expected": "1.0000 is positive",
+    "output": "1.00001.000000 is positive"
+  },
+  {
+    "test_id": "4",
+    "verdict": "WRONG_ANSWER",
+    "input": "0.0000001",
+    "expected": "0.0000 is positive",
+    "output": "0.00000.000000 is positive"
+  },
+  {
+    "test_id": "5",
+    "verdict": "WRONG_ANSWER",
+    "input": "-0.0000001",
+    "expected": "-0.0000 is negative",
+    "output": "-0.0000 -0.000000 is negative"
+  },
+  {
+    "test_id": "6",
+    "verdict": "WRONG_ANSWER",
+    "input": "101",
+    "expected": "101.0000 is positive",
+    "output": "101.0000101.000000 is positive"
+  },
+  {
+    "test_id": "7",
+    "verdict": "WRONG_ANSWER",
+    "input": "0000000",
+    "expected": "input is zero",
+    "output": "0.0000input is zero"
+  }
+]

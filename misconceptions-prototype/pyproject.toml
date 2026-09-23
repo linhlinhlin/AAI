@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "misconceptions-prototype"
+version = "0.1.0"
+description = "Small, auditable error-pattern clustering prototype; no official dataset assumed"
+requires-python = ">=3.11"
+dependencies = [
+    "python-dotenv>=1.0,<2",
+    "numpy>=1.26,<3", "scipy>=1.11,<2", "scikit-learn>=1.5,<2",
+    "tree-sitter>=0.25,<0.27", "tree-sitter-c>=0.24,<0.25",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.11,<1"]
+
+[project.scripts]
+misconceptions = "misconceptions.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+misconceptions = ["web_assets/*.html", "web_assets/*.css", "web_assets/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

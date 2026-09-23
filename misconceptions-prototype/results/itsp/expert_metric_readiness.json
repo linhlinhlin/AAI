@@ -1,0 +1,31 @@
+{
+  "n_review_candidates": 17,
+  "n_pending": 17,
+  "n_candidates_with_labels": 0,
+  "cluster_purity": null,
+  "inter_rater_agreement": null,
+  "reason": "No completed human expert annotations, human-approved codebook or adjudications. AI reviews are separate, not ground truth.",
+  "required": [
+    "Agreed label codebook and single/multi-label policy",
+    "Independent expert labels with reviewer IDs",
+    "Adjudicated labels for purity; two pre-adjudication raters for agreement",
+    "Per-problem/configuration results and coverage; no population claim from purposive sample"
+  ],
+  "annotation_source": "human_expert_annotation",
+  "ai_annotation": {
+    "n_completed": 17,
+    "n_reviewers": 1,
+    "n_independent_blind": 0,
+    "decision_counts": {
+      "Unclear": 4,
+      "No": 6,
+      "Yes": 7
+    },
+    "metrics_file": "results/itsp/expert_validation_metrics.json",
+    "metrics_section": "ai_annotation",
+    "status": "reference_only_not_expert_validated",
+    "raw_agreement": null,
+    "cohen_kappa": null,
+    "cluster_purity": null
+  }
+}

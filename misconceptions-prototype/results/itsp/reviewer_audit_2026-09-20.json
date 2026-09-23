@@ -1,0 +1,36 @@
+{
+  "review_date": "2026-09-20",
+  "literature_cutoff": "2026-09-19",
+  "packet_sha256": "7c67f5fad19740cf834881781f967311743df854a54553931983120b1420c2e2",
+  "sources_sha256": "daa8b6398c329f7b387b8406aecb10f65ec4e4c5c1bb5725890d6b9bcc12bb3e",
+  "source_hash_entries_verified": 255,
+  "source_hash_mismatches": 0,
+  "sample_count": 17,
+  "context_count": 42,
+  "unique_submissions": 59,
+  "embedded_C_blocks_verified_against_raw": 135,
+  "sample_test_records_verified": 113,
+  "total_test_records_verified": 395,
+  "sample_arm_oav_weights_assignments_memberships_verified": 51,
+  "internal_link_count_verified": 551,
+  "blank_review_forms": 17,
+  "A_C_partition_comparison": [
+    {
+      "problem": "2812",
+      "n": 19,
+      "ari_A_C_seed42": 1.0
+    },
+    {
+      "problem": "2825",
+      "n": 22,
+      "ari_A_C_seed42": 1.0
+    },
+    {
+      "problem": "2833",
+      "n": 18,
+      "ari_A_C_seed42": 1.0
+    }
+  ],
+  "replacement_character_count": 0,
+  "scope": "Read-only evidence audit; no student execution, model fitting, human labels or misconception metrics."
+}

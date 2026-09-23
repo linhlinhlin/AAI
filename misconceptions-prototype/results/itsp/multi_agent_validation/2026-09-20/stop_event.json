@@ -1,0 +1,23 @@
+{
+  "status": "BLOCKED",
+  "blocked_at": "Preflight provenance gate; independent audit wave 1 interrupted",
+  "detected_at_utc": "2026-09-20T05:23:40.522321+00:00",
+  "stop_rule": "User MULTI-AGENT RESEARCH VALIDATION PROTOCOL section 22: provenance/hash mismatch",
+  "manifest_path": "results/itsp/reviewer_sources.md",
+  "manifest_line": 216,
+  "affected_source": "docs/itsp_human_review_protocol.md",
+  "expected_sha256": "9fdba3fd66d512a1775699f0501eff0a5bcc3750a9196829a6db26c2fcd783bb",
+  "actual_sha256": "1cc8ce739a1497bf6d64c4621f5388f1ff7192272d23bca019bbcf6a491a2cd2",
+  "source_manifest_sha256": "16ec7e064f43030199bc0818410e28f97bff74f879294e72a82f3ed85514a168",
+  "request_protocol_sha256": "5b287ab6055ca09b11d0375e9f92acdd20d5d6e13c8f17103718c1b31abf51cc",
+  "new_ai_sample_annotations": 0,
+  "human_labels_modified": false,
+  "evaluation_samples_selected": 0,
+  "source_or_manifest_modified": false,
+  "notes": [
+    "255 source manifest entries compared, one mismatch found.",
+    "Historical reviewer audit is explicitly superseded for packet title; that documented change is not the stop cause.",
+    "Full repository baseline scan was interrupted; no claim of completed whole-repository integrity audit.",
+    "Cause of protocol file change not determined; stale manifest is a hypothesis, not established provenance."
+  ]
+}

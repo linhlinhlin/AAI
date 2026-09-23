@@ -1,0 +1,22 @@
+{
+  "scope": "Technical completion of annotation intake and reporting; human validation still pending",
+  "pytest": "106 passed, 3 subtests passed",
+  "ruff": "All checks passed",
+  "existing_protected_files_unchanged": 37,
+  "expected_changed_existing_files": [
+    "src\\misconceptions\\expert_validation.py"
+  ],
+  "clustering_outputs_unchanged": 27,
+  "human_completed": 0,
+  "adjudicated": 0,
+  "cluster_purity": null,
+  "agreement": null,
+  "new_artifacts": [
+    "scripts/merge_itsp_annotations.py",
+    "src/misconceptions/annotation_intake.py",
+    "scripts/report_itsp_experts.py",
+    "tests/test_annotation_intake.py",
+    "docs/itsp_completion_review.md",
+    "results/itsp/human_cluster_review_2026-09-20.md"
+  ]
+}

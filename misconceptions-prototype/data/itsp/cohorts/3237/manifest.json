@@ -1,0 +1,21 @@
+{
+  "schema_version": 2,
+  "dataset_name": "ITSP public prototype",
+  "provenance": "https://github.com/jyi/ITSP",
+  "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+  "problem_id": "3237",
+  "language": "c",
+  "suite_version": "itsp-39275d4a76beb668",
+  "test_ids": [
+    "1",
+    "2",
+    "3"
+  ],
+  "official_course_dataset": false,
+  "identity_policy": "unknown; source-hash-grouped split only",
+  "outcome_policy": "unaltered historical verdicts; exact canonical input/oracle matching",
+  "license": "MIT repository LICENSE; cite Yi et al., ESEC/FSE 2017",
+  "compiler_runtime": "historical environment, not replayed",
+  "lab": "Lab-10",
+  "problem_reference": "E:/AAI/misconceptions-prototype/data/raw/itsp/dataset/Lab-10/3237/Main.c"
+}

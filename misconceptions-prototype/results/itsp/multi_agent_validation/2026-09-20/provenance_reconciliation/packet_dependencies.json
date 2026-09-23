@@ -1,0 +1,117 @@
+{
+  "note": "UNKNOWN is not inferred from timestamp, shared codebook or co-presence in a baseline.",
+  "artifacts": [
+    {
+      "artifact": "results/itsp/reviewer_packet.md",
+      "sha256": "67cf138ef954025a4811f23ac72f3e0f5b70a29fc67964cac5966cb20007d583",
+      "historical_integrity_baseline_sha256": null,
+      "unchanged_since_integrity_baseline": null,
+      "generation_protocol_sha256": "9fdba3fd66d512a1775699f0501eff0a5bcc3750a9196829a6db26c2fcd783bb",
+      "protocol_binding": "Declared source dependency in reviewer_sources.md:216; current packet title revision separately recorded, not a claim of execution trace."
+    },
+    {
+      "artifact": "results/itsp/human_review_packet.zip",
+      "sha256": "b6ad02268216aed40c35ac82d606f7f2861776964493f56d54df448ac63288a1",
+      "historical_integrity_baseline_sha256": "b6ad02268216aed40c35ac82d606f7f2861776964493f56d54df448ac63288a1",
+      "unchanged_since_integrity_baseline": true,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "results/itsp/human_review_round2_packet.zip",
+      "sha256": "f4c6f78941ffb7bde1721b6c637c4455e7c17f163e35c3cf328ffbbc46f96968",
+      "historical_integrity_baseline_sha256": "f4c6f78941ffb7bde1721b6c637c4455e7c17f163e35c3cf328ffbbc46f96968",
+      "unchanged_since_integrity_baseline": true,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "results/itsp/human_review/README.md",
+      "sha256": "731b036c9cfbfc79c9910991c406e128c3448caed673f0a89c006c40f678c141",
+      "historical_integrity_baseline_sha256": "731b036c9cfbfc79c9910991c406e128c3448caed673f0a89c006c40f678c141",
+      "unchanged_since_integrity_baseline": true,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "results/itsp/human_review/CODEBOOK.md",
+      "sha256": "faa09fe6b5f72a04f907d094a87bcc203f1049f6c8aec7c6033e0f7babe05601",
+      "historical_integrity_baseline_sha256": "faa09fe6b5f72a04f907d094a87bcc203f1049f6c8aec7c6033e0f7babe05601",
+      "unchanged_since_integrity_baseline": true,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "results/itsp/human_review/annotations.json",
+      "sha256": "4d534e3df57d7e5bf022654376ea7b0b726256b329716ebdd9d0a86e7bd154bd",
+      "historical_integrity_baseline_sha256": "4d534e3df57d7e5bf022654376ea7b0b726256b329716ebdd9d0a86e7bd154bd",
+      "unchanged_since_integrity_baseline": true,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "data/itsp/expert_annotations.json",
+      "sha256": "f08a372235c9496cfde9ad587b7a8593db65071014e9b034eb9a3e7459f9e914",
+      "historical_integrity_baseline_sha256": "f08a372235c9496cfde9ad587b7a8593db65071014e9b034eb9a3e7459f9e914",
+      "unchanged_since_integrity_baseline": true,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "data/itsp/ai_independent_review.json",
+      "sha256": "6e159b2db8975a1f4d6d70a85cc464ba319148b238ed24a27a47db3a20ed27bd",
+      "historical_integrity_baseline_sha256": null,
+      "unchanged_since_integrity_baseline": null,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "results/itsp/human_review_packet_audit.json",
+      "sha256": "5e170c8856e92d11badd71404ef7206ce7c30f01997a083415cb281d921603d1",
+      "historical_integrity_baseline_sha256": "5e170c8856e92d11badd71404ef7206ce7c30f01997a083415cb281d921603d1",
+      "unchanged_since_integrity_baseline": true,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "results/itsp/review_handoff_audit.json",
+      "sha256": "cc3da291cb057129ae71e74702e1345f8de3474e37d6244a3cab651f95026703",
+      "historical_integrity_baseline_sha256": "cc3da291cb057129ae71e74702e1345f8de3474e37d6244a3cab651f95026703",
+      "unchanged_since_integrity_baseline": true,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "results/itsp/ai_review_integrity_baseline.json",
+      "sha256": "8ce3385c40cfc54fbf2cd4b533e954e1955556ca7a0a4124c0674128cf9e2764",
+      "historical_integrity_baseline_sha256": null,
+      "unchanged_since_integrity_baseline": null,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "results/itsp/validation_revision_2026-09-20.json",
+      "sha256": "90c893170f44fad59e9f911c9b5e66c49558847107cd31bc44afebd37823ef0e",
+      "historical_integrity_baseline_sha256": null,
+      "unchanged_since_integrity_baseline": null,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "results/itsp/completion_verification.json",
+      "sha256": "b331e00de54e8e645bf0367640c61a7f3bf2cedb5770305ffd3ffed9ffb2c715",
+      "historical_integrity_baseline_sha256": null,
+      "unchanged_since_integrity_baseline": null,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    },
+    {
+      "artifact": "docs/itsp_completion_review.md",
+      "sha256": "08bd087d42c9690a5989a31f994ab16aa644269fbd155aead07a8b918a24b99b",
+      "historical_integrity_baseline_sha256": null,
+      "unchanged_since_integrity_baseline": null,
+      "generation_protocol_sha256": null,
+      "protocol_binding": "UNKNOWN: no generation-time protocol hash established"
+    }
+  ]
+}

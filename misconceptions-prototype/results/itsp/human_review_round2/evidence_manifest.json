@@ -1,0 +1,710 @@
+{
+  "itsp-2812-270272_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270272_buggy.c",
+    "sha256": "499d7224eea79125d1307f9395b7b48644a1d6766f6640ee115af6811bb1e489"
+  },
+  "itsp-2812-270272_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270272_correct.c",
+    "sha256": "21c4908a29c698239c37cef6ad5035e98422dbe8c4c56d6d87cbed1879de3ff2"
+  },
+  "itsp-2812-270272_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270276_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270276_buggy.c",
+    "sha256": "ff19d1a2d476d2c3a25a156b69312f6c749028091ece9b394994aa14898c4021"
+  },
+  "itsp-2812-270276_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270276_correct.c",
+    "sha256": "0d0deca5ea35db7bda66d78fc1a61d1947c152f92df1ec9c7df9657733a2b423"
+  },
+  "itsp-2812-270276_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270277_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270277_buggy.c",
+    "sha256": "2ad31711fdcd748f5ef28ef1cf26f590cf3c233ed0c058aa9237f22ebbc4c5f4"
+  },
+  "itsp-2812-270277_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270277_correct.c",
+    "sha256": "78baf9f07f5fa3578381fc5dbed99c69b3b0b155bc6fc020c25edce7f362d9fd"
+  },
+  "itsp-2812-270277_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270280_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270280_buggy.c",
+    "sha256": "2a41c1a3eabdb0e976e8d718c42bf0520102a02b91cbb8ec0027dfd741092e5c"
+  },
+  "itsp-2812-270280_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270280_correct.c",
+    "sha256": "78a322f80d754c25ebd8cc017c0f189d9dc0b0dda632a736fd6028c0ea873f63"
+  },
+  "itsp-2812-270280_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270283_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270283_buggy.c",
+    "sha256": "9c342c1e37686b58b8d50f9d9fe6472f32f559bf20fee222ed1cfe9f2d759ddb"
+  },
+  "itsp-2812-270283_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270283_correct.c",
+    "sha256": "4da0c9b5a071dc8d60a90579576914abeb87cdb6aec5502da4b97738a605f233"
+  },
+  "itsp-2812-270283_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270285_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270285_buggy.c",
+    "sha256": "1d0118660a78a8ecad3b062402ed9efd0a925a66de4e48c5676db3fc03dec922"
+  },
+  "itsp-2812-270285_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270285_correct.c",
+    "sha256": "807ab3c2572660961fabfb2eb0ab24b393c8944a1ab1bfe79ce52086aa107110"
+  },
+  "itsp-2812-270285_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270293_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270293_buggy.c",
+    "sha256": "5bef36c9de0d2ebf222a4ee1274feac9882f4ea7a647464712138454ba33bb1d"
+  },
+  "itsp-2812-270293_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270293_correct.c",
+    "sha256": "9040611d93cb9cd960c8da36e5d4dade85f486145a41f7db8282e2717f3b2e83"
+  },
+  "itsp-2812-270293_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270294_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270294_buggy.c",
+    "sha256": "222d28e189d69ddf70e222148d1975edd8f4aacb102c484195ed6853b5989f20"
+  },
+  "itsp-2812-270294_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270294_correct.c",
+    "sha256": "dace4b43d2e5fc6f7292d6d056eb7aa39624821c6e6a0185111716f033912416"
+  },
+  "itsp-2812-270294_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270296_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270296_buggy.c",
+    "sha256": "ec10a96b7dd311c63c12c8b805e387257c1aef1d4fdeaf59622cd65514922a55"
+  },
+  "itsp-2812-270296_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270296_correct.c",
+    "sha256": "b94850fdb101fd616c635653d2e0b0a74173f95e972852d6d4e9fb4ab02e4823"
+  },
+  "itsp-2812-270296_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270297_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270297_buggy.c",
+    "sha256": "50343c91b23fbddb3b0d2bac47ca2e38d4f59fa5aa223ed45aae3ca00984df27"
+  },
+  "itsp-2812-270297_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270297_correct.c",
+    "sha256": "358a38873e7131f4ad347d2c147b34f047a068a9c78ea1524553046689735729"
+  },
+  "itsp-2812-270297_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270304_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270304_buggy.c",
+    "sha256": "7c2af047b002132926ce282f04783c2954ab7c2f2f5c84443cfa45b078ab20f0"
+  },
+  "itsp-2812-270304_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270304_correct.c",
+    "sha256": "026d5514c04f1ed9bd3ed392b2444733521d76490e3afab1fa0a0305487750e6"
+  },
+  "itsp-2812-270304_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270305_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270305_buggy.c",
+    "sha256": "47bcb7afbf53989a0b9136b52f114cde5c88d7cae53ff1facd3d66d0bfcd0376"
+  },
+  "itsp-2812-270305_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270305_correct.c",
+    "sha256": "def0e8c39f625d7d360aca202b249ae7ec223421a051c3bb4b8e33dfdfee44aa"
+  },
+  "itsp-2812-270305_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270310_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270310_buggy.c",
+    "sha256": "96a59f8aaf061fe15e01557f9052e5b045c8768dc7d46712c574f54302db625e"
+  },
+  "itsp-2812-270310_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270310_correct.c",
+    "sha256": "584532917c979a10437d58bf3f1bda2cc3d0a759e411daec86854e9afa3ddcd7"
+  },
+  "itsp-2812-270310_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270324_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270324_buggy.c",
+    "sha256": "a9ee622486a7227c482fa9cf1ee93d788edafcd437b90029c59be5e7a25e274b"
+  },
+  "itsp-2812-270324_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270324_correct.c",
+    "sha256": "46d2d8521766cf324895c783ec7c0126e5aa6e3b7680a9dcee465abed77a8b77"
+  },
+  "itsp-2812-270324_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270327_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270327_buggy.c",
+    "sha256": "06bf0c2fe04cc39dcf3d4e1de105abb1c9e0fa2a9a4d1f1ce0f49ad8a2ab2f05"
+  },
+  "itsp-2812-270327_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270327_correct.c",
+    "sha256": "979fd7048fdb43b11ce561f4a9af37e62f82098576b0c89ed3ad4e13c615306b"
+  },
+  "itsp-2812-270327_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270330_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270330_buggy.c",
+    "sha256": "10ac2e8afe48dd4603216f496a5d82ab69bb50b800d444bc7f64d508c7f47c33"
+  },
+  "itsp-2812-270330_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270330_correct.c",
+    "sha256": "d8a77ce1e96b3ab4dae53a166c5c4fb7074a6fc8668ff92d972fbfbe29a0a4d6"
+  },
+  "itsp-2812-270330_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270334_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270334_buggy.c",
+    "sha256": "f005170715993bf6910d5f4f259bdcc5101fb1f0682d388a0282d18ff01bebcd"
+  },
+  "itsp-2812-270334_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270334_correct.c",
+    "sha256": "93b5aa4edad86a654022dd07425887c696fefe260c97f68ed92b7859c3dd8c40"
+  },
+  "itsp-2812-270334_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270349_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270349_buggy.c",
+    "sha256": "9f3567408c54c0c7a2784e68e18a598a51b91b2db34650a93d532ae7659a4aef"
+  },
+  "itsp-2812-270349_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270349_correct.c",
+    "sha256": "b69e06c55f57ddb476160b42816410c00abdeb521ad85cac672f92f12c061649"
+  },
+  "itsp-2812-270349_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2812-270357_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270357_buggy.c",
+    "sha256": "ad87261d79ee0bdccc11f6617a2345811e2c741fb76863d088c1dacbb1686cc7"
+  },
+  "itsp-2812-270357_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/270357_correct.c",
+    "sha256": "a25d2bcd2be4c9ff61583b50c569d93af576487b02fdb2bcaa5f196d680e98b3"
+  },
+  "itsp-2812-270357_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-3/2812/Main.c",
+    "sha256": "428eb6fbdabe2721c0bd4d2509e5364d649b12d99f26f778b47ee1f698c9e1af"
+  },
+  "itsp-2825-271150_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271150_buggy.c",
+    "sha256": "4743fd52f5ff2be8022faf7a29c0fc919cd52becb14256e4b2524335fad1e6c5"
+  },
+  "itsp-2825-271150_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271150_correct.c",
+    "sha256": "58e7b373b112f79b0df9a99ce6bfec58e6e8a1967ca73e42eccc720bd1d01945"
+  },
+  "itsp-2825-271150_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271152_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271152_buggy.c",
+    "sha256": "222376a12a8f4fe0a6f93db76e638b2d6dc256b9ffbe49b44f3f739cf76e0640"
+  },
+  "itsp-2825-271152_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271152_correct.c",
+    "sha256": "675452da6096449bab3c8ff34faa08fe122cdfb379d90fa3d5af6492580e96c5"
+  },
+  "itsp-2825-271152_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271154_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271154_buggy.c",
+    "sha256": "3350cb14ccc80bb3906ce2d8c414066ceea0bac45eb30780ef71ff677a43f75b"
+  },
+  "itsp-2825-271154_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271154_correct.c",
+    "sha256": "af1bed13e7458f344109c2845a49e7aa027298488a12b85ba4be61fd29a8a9da"
+  },
+  "itsp-2825-271154_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271163_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271163_buggy.c",
+    "sha256": "50ed6c65fed66b62016803cfa0f49535ab2aad42b794766c428605edc0495046"
+  },
+  "itsp-2825-271163_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271163_correct.c",
+    "sha256": "46fa5543e65d394bf6722bd144ce5e905961dad84bcd9549ec8d351fb69c493a"
+  },
+  "itsp-2825-271163_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271173_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271173_buggy.c",
+    "sha256": "ab3b46b5b1c5b92028e54f7c705cf21304e9d8c0a79eacff5ee4b77d1a9f692b"
+  },
+  "itsp-2825-271173_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271173_correct.c",
+    "sha256": "bff4b955aa6db4c8098c51811264328dafda7bb47a7bff770d4c57156e3ddea4"
+  },
+  "itsp-2825-271173_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271188_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271188_buggy.c",
+    "sha256": "0cb851ea358529d6df4b17756f0dbc5d3e953b5d98a54ddbfae82b9b1a7108c5"
+  },
+  "itsp-2825-271188_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271188_correct.c",
+    "sha256": "14fca4780df66f4c54c6ec3b2b6a559348270cdbe6e6d6796b14a8358e27d777"
+  },
+  "itsp-2825-271188_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271191_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271191_buggy.c",
+    "sha256": "80784e392ab869604bf1097952f6c615eda53c72f7aa598668ec9de6f20a472c"
+  },
+  "itsp-2825-271191_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271191_correct.c",
+    "sha256": "879c244ec6974d0a72bca2a68b72da880883a9d76823746f8fbb4250f84fb702"
+  },
+  "itsp-2825-271191_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271192_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271192_buggy.c",
+    "sha256": "c275ce82cb14b873714f19db6d3444d50bf9da681a643d3c11cf0d3e78f23b40"
+  },
+  "itsp-2825-271192_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271192_correct.c",
+    "sha256": "76b6c4b83777322d4b6a381732bef09e33a91b26e1d0bbf2c16734d4226ce5b1"
+  },
+  "itsp-2825-271192_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271203_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271203_buggy.c",
+    "sha256": "71b887bddc2187b9739bf706e0d05c832570b6078091a23caab42d62835716b9"
+  },
+  "itsp-2825-271203_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271203_correct.c",
+    "sha256": "81bfce4bf71fcdfafb54d57fc30620382ffe91036e57b8cd5dc8cfcdc0db36d6"
+  },
+  "itsp-2825-271203_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271205_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271205_buggy.c",
+    "sha256": "949eb18853a36fa10777a1d62dd1a8faa225ebec7e891d179447aad7f3ed20f5"
+  },
+  "itsp-2825-271205_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271205_correct.c",
+    "sha256": "8d730398d3996a82eb588cf5e2de6b34278f99c2f846ad9b2320b85f085f7631"
+  },
+  "itsp-2825-271205_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271206_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271206_buggy.c",
+    "sha256": "3c3f9188096d72228d9dbb02e3b7748ad12e700d4444f915161f6f8eb96ed389"
+  },
+  "itsp-2825-271206_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271206_correct.c",
+    "sha256": "6de391500cd287cc7e6fc11be6c06d5e80078e6d865aea8d598ac6d4c01b5348"
+  },
+  "itsp-2825-271206_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271209_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271209_buggy.c",
+    "sha256": "77e573f835369731853c0bbc83dd36f71f7aab648dc8245b06e6d8d8510155df"
+  },
+  "itsp-2825-271209_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271209_correct.c",
+    "sha256": "f537d45cc898a433d5b3b6629df06e10e5fd27ce31df05943a1b198a666e358b"
+  },
+  "itsp-2825-271209_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271211_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271211_buggy.c",
+    "sha256": "fe9b98c47af05672135f7896844cf4c726661565049fcb6813ef33ebe23e7a0d"
+  },
+  "itsp-2825-271211_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271211_correct.c",
+    "sha256": "c089429287ae244886377cce4fce7a429da7420a287fb605ae7529eb8bb6c503"
+  },
+  "itsp-2825-271211_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271213_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271213_buggy.c",
+    "sha256": "6a7b17fce954ddcbca2c221b4b1071be71314ac68123feec5b0526fa92c2dcf3"
+  },
+  "itsp-2825-271213_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271213_correct.c",
+    "sha256": "a3fbadb360d09d73357b5cf9f28d8d30083160815eee44b193ee7177a3d7a718"
+  },
+  "itsp-2825-271213_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271216_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271216_buggy.c",
+    "sha256": "e8a480a5021c92b035e02cf175d565c2874871d1e32b7502aa4a39d964ace455"
+  },
+  "itsp-2825-271216_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271216_correct.c",
+    "sha256": "4e38ab5956767d1df699a9febb309a29b15c0ae5327b1042bdc0bd625d115e4e"
+  },
+  "itsp-2825-271216_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271217_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271217_buggy.c",
+    "sha256": "3541a138e30db6aff2c40ac94debd3dc4a8dc17ad64e09f3705c8d37d0ebe747"
+  },
+  "itsp-2825-271217_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271217_correct.c",
+    "sha256": "84a929ab3ded3835517c26db3ed6c070ba37d535819a4533f2e9660b6ac4e83f"
+  },
+  "itsp-2825-271217_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271220_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271220_buggy.c",
+    "sha256": "f942ea6d5aeff49d89426c2dd1cc2b9c674f16f4aca5b2abff30bc7dc06677e6"
+  },
+  "itsp-2825-271220_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271220_correct.c",
+    "sha256": "795672e8827924ef470e0f5af5424c9572fbaa05c042bf749350c10824c2d2ea"
+  },
+  "itsp-2825-271220_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271224_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271224_buggy.c",
+    "sha256": "6890729cdc01687109a3dcb7157cb5ccdbdc2325baea9f17b19bd23a3391ff01"
+  },
+  "itsp-2825-271224_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271224_correct.c",
+    "sha256": "e94b0f81eb0f6f7d92a7773cc20b1883c3c1089592240c55c43e7716dac5f5f2"
+  },
+  "itsp-2825-271224_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271226_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271226_buggy.c",
+    "sha256": "d80fbf16df11a773580287b8fd038eec5865050da398ba6ce2aea468a7546894"
+  },
+  "itsp-2825-271226_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271226_correct.c",
+    "sha256": "37d69d595101606c7db704e2475ffb80a30f1458b86508b7f87f9523c0a9b77f"
+  },
+  "itsp-2825-271226_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271228_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271228_buggy.c",
+    "sha256": "84e5348296ec51a011b27cf051a9c495022a509810ecb581f678032a908d9cc2"
+  },
+  "itsp-2825-271228_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271228_correct.c",
+    "sha256": "21d361749c5f44c4b12602e600069e4db4576eb83fc3d7cd3f19c91f1a98d3d0"
+  },
+  "itsp-2825-271228_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271239_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271239_buggy.c",
+    "sha256": "e901c971df730e3548e60d7474da0fa153ce2aec223bc4ff3cc74e5c9033877a"
+  },
+  "itsp-2825-271239_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271239_correct.c",
+    "sha256": "f927eae3f8556d931c9f5fd5f67f12420804d84b4a3652c823d7f56dc32bdc3d"
+  },
+  "itsp-2825-271239_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2825-271241_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271241_buggy.c",
+    "sha256": "4a04af03089e4552ddc159e6db858f6537b1c903f1e61a6b3be1ab8f228244b0"
+  },
+  "itsp-2825-271241_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/271241_correct.c",
+    "sha256": "6c0ef2d49bdcfa978ed4c6a9fed530b7453cc24c24e6910d11fedc24ca90d18b"
+  },
+  "itsp-2825-271241_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2825/Main.c",
+    "sha256": "c18c4c6eb70b46358e84efa53e6b2e3ab86058377039bd21d48d77e49501b30e"
+  },
+  "itsp-2833-271912_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271912_buggy.c",
+    "sha256": "8b10d836598682641bfbb5e24f18105c1ca37e114f281a4979cde60cc0838e64"
+  },
+  "itsp-2833-271912_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271912_correct.c",
+    "sha256": "543b868d13e6e992f0ea30d3121e59b4702565c9b8b6a9abc988f6ee7eafb8f1"
+  },
+  "itsp-2833-271912_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271916_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271916_buggy.c",
+    "sha256": "dfec0cc0fd4d9e6826b636654635ee24dfaa89c9d1414c360649a99228d19d3d"
+  },
+  "itsp-2833-271916_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271916_correct.c",
+    "sha256": "8096c306fbf4626e8168ed58a2d88d721faceff7c190e253dbaafa48ad64eeae"
+  },
+  "itsp-2833-271916_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271920_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271920_buggy.c",
+    "sha256": "12ed377d68d1b106d3eca8513ede3fe5751cb8f6fc3091f95f104ad1154df515"
+  },
+  "itsp-2833-271920_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271920_correct.c",
+    "sha256": "12080367342fc7d104d2b8a95898ae35bc63c2d09e45a863de1f431ebcb9478a"
+  },
+  "itsp-2833-271920_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271922_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271922_buggy.c",
+    "sha256": "a24aa774719baeb2261d2f94e9a049faba3a232306529426cec3e1e34abe0108"
+  },
+  "itsp-2833-271922_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271922_correct.c",
+    "sha256": "2e38bff8613ff1ada84bbfb4820aacf831cc1b8d1557157978805c1743c22ddd"
+  },
+  "itsp-2833-271922_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271927_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271927_buggy.c",
+    "sha256": "e39faef319e981658150f57796d7f74abd50f04b492097ed61ed3a766c2e501b"
+  },
+  "itsp-2833-271927_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271927_correct.c",
+    "sha256": "da7fb2a29ffb5c7e4df6007433c3571d118b10ea4f3a9a2d76c0bf3867f636d2"
+  },
+  "itsp-2833-271927_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271944_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271944_buggy.c",
+    "sha256": "4c4c75f054c1197642abefef7eb385ef4e9c2169b1372b28cbfccaf21fdf4ddd"
+  },
+  "itsp-2833-271944_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271944_correct.c",
+    "sha256": "d8a5c320edd9822a41f732004309d09dc21159edab24bbca5e07667393edb521"
+  },
+  "itsp-2833-271944_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271946_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271946_buggy.c",
+    "sha256": "ab3613a074ac8e211db73f8e5b2079f2ba6b1a6431a6a508c23f2a532f9a8133"
+  },
+  "itsp-2833-271946_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271946_correct.c",
+    "sha256": "5fcf3451b618b46ce30e183d8d5e2f9c2c678c216165986354ce98fb2e117b4e"
+  },
+  "itsp-2833-271946_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271965_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271965_buggy.c",
+    "sha256": "bdd29bb1fc3ca81ceb7617b52cd3a9aef86dfbe149af2fc5abc164c5314cdb20"
+  },
+  "itsp-2833-271965_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271965_correct.c",
+    "sha256": "460a6741c4c04447e169201d799465cca3466f273f2df3c0cc4c51fa04b13c01"
+  },
+  "itsp-2833-271965_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271975_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271975_buggy.c",
+    "sha256": "d9b326d0d51b154eb2bc00d3e8661a8745b413ad688d560ebeeec00c8f94a129"
+  },
+  "itsp-2833-271975_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271975_correct.c",
+    "sha256": "915234cde207c53cc0001e284b63f0e77c6adcb67244002defc7ba80cc57518c"
+  },
+  "itsp-2833-271975_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271977_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271977_buggy.c",
+    "sha256": "577521192adc5c4fe611b2fb08c7733cf7777b8678a43881230cc8dfc5596c6a"
+  },
+  "itsp-2833-271977_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271977_correct.c",
+    "sha256": "457b5c4a6ad3a0840538e16b2f77c6f9d1e7ff236a684cee7a6e34879bd002e2"
+  },
+  "itsp-2833-271977_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271982_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271982_buggy.c",
+    "sha256": "ffe8fa76a31707b4603d1bc45853646f9e6d4d4954fa6fd5cc2f06a181952f6a"
+  },
+  "itsp-2833-271982_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271982_correct.c",
+    "sha256": "a99d023541d68f820c1e661876eac1015d67b73d1108364741981be1ed1d998c"
+  },
+  "itsp-2833-271982_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271983_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271983_buggy.c",
+    "sha256": "55ec3aeba36ef27bf5575c343e6ce89cc916c9f12cebee4f2b5a4ab55d9acfb4"
+  },
+  "itsp-2833-271983_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271983_correct.c",
+    "sha256": "31194ae5cbe6e0a7b52dad150c121eaae23287092b4dabb89cc4ec4b8a8fe1a2"
+  },
+  "itsp-2833-271983_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271986_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271986_buggy.c",
+    "sha256": "556a9d924d6bb1afad312af990ee9664b422461e390707b7442cce724a229735"
+  },
+  "itsp-2833-271986_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271986_correct.c",
+    "sha256": "1093120850fb2fa18e40bdb6241a40280d02f4e17c09090361f6e8f67532eb5d"
+  },
+  "itsp-2833-271986_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271987_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271987_buggy.c",
+    "sha256": "951987c9bc29eaec7eb08071c52cf905820061a6d227fadc9bd0394ef6605921"
+  },
+  "itsp-2833-271987_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271987_correct.c",
+    "sha256": "3476cb5c218831bb8a93e4296c540308c9dafc1f7d5552022a09ccf9d8bdc6b5"
+  },
+  "itsp-2833-271987_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271989_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271989_buggy.c",
+    "sha256": "60040ff61b9329754bef2af4a3d1a31638692ee1b55ef15bf21b86b311ec5097"
+  },
+  "itsp-2833-271989_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271989_correct.c",
+    "sha256": "993ed0b010f800e85c51025b47160d456c721390d8258abdf2725b94adb94340"
+  },
+  "itsp-2833-271989_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271990_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271990_buggy.c",
+    "sha256": "4cf5981d30c8cd86bf0814b5b5629be252fc3315c8ad3445da819b1a8e41ddd6"
+  },
+  "itsp-2833-271990_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271990_correct.c",
+    "sha256": "fa739ad8a99d5b0e37de1bf308b41dd74523911f9a6096e7f60bb8c6ab2cfe96"
+  },
+  "itsp-2833-271990_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-271993_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271993_buggy.c",
+    "sha256": "3f02963dc91c89423da06586a1323c25dc1760bb613cdba4562d09faedbc6a76"
+  },
+  "itsp-2833-271993_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/271993_correct.c",
+    "sha256": "b7d4410efbbad868d5218262ea196ba9c30a892bbc6fd6423eb775af78b417e3"
+  },
+  "itsp-2833-271993_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  },
+  "itsp-2833-272004_buggy/buggy.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/272004_buggy.c",
+    "sha256": "32375a60defb0fa063fc6f36a03fe5d8ebc161abc5379946a95d5c0dcb7f96bd"
+  },
+  "itsp-2833-272004_buggy/paired_correct.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/272004_correct.c",
+    "sha256": "3937a64031cab2668030c011860eaa3bee7f949883c8d8233ab57921d9fc5093"
+  },
+  "itsp-2833-272004_buggy/Main.c": {
+    "source": "data/raw/itsp/dataset/Lab-4/2833/Main.c",
+    "sha256": "b40f53ca6973fa56fc039d6d3b619b6746b47b1e7cf0972dc4e416f7b044b0ea"
+  }
+}

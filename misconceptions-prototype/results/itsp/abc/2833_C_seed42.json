@@ -1,0 +1,494 @@
+{
+  "status": "ok",
+  "method": "agglomerative",
+  "feature_mode": "combined",
+  "seed": 42,
+  "config": {
+    "k": 3,
+    "test_fraction": 0.25,
+    "test_weight": 0.8,
+    "effective_feature_mode": "combined",
+    "k_used": true
+  },
+  "silhouette_metric": "weighted_hamming_common_comparison_not_kmeans_native_geometry",
+  "routes": {
+    "itsp-2833-271912_buggy": "eligible",
+    "itsp-2833-271916_buggy": "eligible",
+    "itsp-2833-271920_buggy": "eligible",
+    "itsp-2833-271922_buggy": "eligible",
+    "itsp-2833-271927_buggy": "eligible",
+    "itsp-2833-271944_buggy": "eligible",
+    "itsp-2833-271946_buggy": "eligible",
+    "itsp-2833-271965_buggy": "eligible",
+    "itsp-2833-271975_buggy": "eligible",
+    "itsp-2833-271977_buggy": "eligible",
+    "itsp-2833-271982_buggy": "eligible",
+    "itsp-2833-271983_buggy": "eligible",
+    "itsp-2833-271986_buggy": "eligible",
+    "itsp-2833-271987_buggy": "eligible",
+    "itsp-2833-271989_buggy": "eligible",
+    "itsp-2833-271990_buggy": "eligible",
+    "itsp-2833-271993_buggy": "eligible",
+    "itsp-2833-272004_buggy": "eligible"
+  },
+  "route_counts": {
+    "eligible": 18
+  },
+  "n_eligible": 18,
+  "identity": {
+    "missing_student_ids": 18,
+    "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+  },
+  "warnings": [
+    "Clusters and surrogate rules are behavioral hypotheses requiring instructor validation.",
+    "Exact source grouping does not detect renamed or otherwise near-duplicate code.",
+    "AST presence indicators are syntactic evidence, not semantic fault detectors.",
+    "Student identity is missing: holdout is exploratory, not a student-disjoint benchmark."
+  ],
+  "split": {
+    "train_ids": [
+      "itsp-2833-271920_buggy",
+      "itsp-2833-271927_buggy",
+      "itsp-2833-271946_buggy",
+      "itsp-2833-271965_buggy",
+      "itsp-2833-271977_buggy",
+      "itsp-2833-271982_buggy",
+      "itsp-2833-271983_buggy",
+      "itsp-2833-271986_buggy",
+      "itsp-2833-271987_buggy",
+      "itsp-2833-271989_buggy",
+      "itsp-2833-271990_buggy",
+      "itsp-2833-271993_buggy",
+      "itsp-2833-272004_buggy"
+    ],
+    "holdout_ids": [
+      "itsp-2833-271912_buggy",
+      "itsp-2833-271916_buggy",
+      "itsp-2833-271922_buggy",
+      "itsp-2833-271944_buggy",
+      "itsp-2833-271975_buggy"
+    ],
+    "train_groups": 13,
+    "holdout_groups": 5
+  },
+  "n_clusters": 3,
+  "features": [
+    {
+      "name": "test:1",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:2",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:3",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:4",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:5",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "test:6",
+      "weight": 0.13333333333333333
+    },
+    {
+      "name": "ast:c_for",
+      "weight": 0.033333333333333326
+    },
+    {
+      "name": "ast:c_while",
+      "weight": 0.033333333333333326
+    },
+    {
+      "name": "ast:c_if",
+      "weight": 0.033333333333333326
+    },
+    {
+      "name": "ast:c_inclusive_comparison",
+      "weight": 0.033333333333333326
+    },
+    {
+      "name": "ast:c_strict_comparison",
+      "weight": 0.033333333333333326
+    },
+    {
+      "name": "ast:c_update",
+      "weight": 0.033333333333333326
+    }
+  ],
+  "oav": {
+    "itsp-2833-271920_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271927_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271946_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271965_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "0"
+    },
+    "itsp-2833-271977_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "0"
+    },
+    "itsp-2833-271982_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "0"
+    },
+    "itsp-2833-271983_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "0"
+    },
+    "itsp-2833-271986_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "pass",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "pass",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271987_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271989_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_update": "0"
+    },
+    "itsp-2833-271990_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "0"
+    },
+    "itsp-2833-271993_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-272004_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271912_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271916_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "pass",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "pass",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271922_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "pass",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271944_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "1"
+    },
+    "itsp-2833-271975_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "pass",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_update": "0"
+    }
+  },
+  "train_assignments": {
+    "itsp-2833-271920_buggy": 0,
+    "itsp-2833-271927_buggy": 0,
+    "itsp-2833-271946_buggy": 2,
+    "itsp-2833-271965_buggy": 2,
+    "itsp-2833-271977_buggy": 2,
+    "itsp-2833-271982_buggy": 2,
+    "itsp-2833-271983_buggy": 2,
+    "itsp-2833-271986_buggy": 1,
+    "itsp-2833-271987_buggy": 2,
+    "itsp-2833-271989_buggy": 0,
+    "itsp-2833-271990_buggy": 2,
+    "itsp-2833-271993_buggy": 0,
+    "itsp-2833-272004_buggy": 0
+  },
+  "holdout_assignments": {
+    "itsp-2833-271912_buggy": 0,
+    "itsp-2833-271916_buggy": 1,
+    "itsp-2833-271922_buggy": 2,
+    "itsp-2833-271944_buggy": 2,
+    "itsp-2833-271975_buggy": 2
+  },
+  "medoids": {
+    "0": "itsp-2833-271920_buggy",
+    "1": "itsp-2833-271986_buggy",
+    "2": "itsp-2833-271965_buggy"
+  },
+  "silhouette_train": 0.6783031814440984,
+  "holdout_distance_to_medoid": {
+    "itsp-2833-271912_buggy": 0.0,
+    "itsp-2833-271916_buggy": 0.13333333333333333,
+    "itsp-2833-271922_buggy": 0.16666666666666666,
+    "itsp-2833-271944_buggy": 0.033333333333333326,
+    "itsp-2833-271975_buggy": 0.2333333333333333
+  },
+  "holdout_assignment_ties": 0,
+  "assignment_policy": "nearest_training_medoid_weighted_hamming; ties select lowest cluster id",
+  "explanation": {
+    "target": "cluster_id_only_not_validated_misconception",
+    "train_fidelity": 0.9230769230769231,
+    "holdout_fidelity": 0.8,
+    "holdout_majority_baseline_fidelity": 0.6,
+    "rules": [
+      {
+        "if": [
+          "NOT (test:2=pass)"
+        ],
+        "then_cluster": 0,
+        "train_support": 5,
+        "train_precision": 1.0,
+        "holdout_support": 1,
+        "holdout_precision": 1.0
+      },
+      {
+        "if": [
+          "test:2=pass",
+          "NOT (ast:c_update=1)"
+        ],
+        "then_cluster": 2,
+        "train_support": 5,
+        "train_precision": 1.0,
+        "holdout_support": 1,
+        "holdout_precision": 1.0
+      },
+      {
+        "if": [
+          "test:2=pass",
+          "ast:c_update=1"
+        ],
+        "then_cluster": 2,
+        "train_support": 3,
+        "train_precision": 0.6666666666666666,
+        "holdout_support": 3,
+        "holdout_precision": 0.6666666666666666
+      }
+    ]
+  },
+  "ari_vs_exact_signature_train": 1.0,
+  "provenance": {
+    "dataset": {
+      "schema_version": 2,
+      "dataset_name": "ITSP public prototype",
+      "provenance": "https://github.com/jyi/ITSP",
+      "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+      "problem_id": "2833",
+      "language": "c",
+      "suite_version": "itsp-e1116cbdb78d65ae",
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "official_course_dataset": false,
+      "identity_policy": "unknown; source-hash-grouped split only",
+      "outcome_policy": "unaltered historical verdicts; exact canonical input/oracle matching",
+      "license": "MIT repository LICENSE; cite Yi et al., ESEC/FSE 2017",
+      "compiler_runtime": "historical environment, not replayed",
+      "lab": "Lab-4",
+      "problem_reference": "E:/AAI/misconceptions-prototype/data/raw/itsp/dataset/Lab-4/2833/Main.c"
+    },
+    "input_sha256": "1bfb0f162bb996c79776307ac5cafec93943cd0d94ca731b8b472eb74d704a3e",
+    "manifest_sha256": "229f9e18c5ddd831d144346d3a342b540c8041525d7ae4c94d646633a8b3f909",
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "tree-sitter": "0.26.0",
+      "tree-sitter-c": "0.24.2"
+    },
+    "interpretation": "Clusters are observable error patterns, not verified misconceptions."
+  }
+}

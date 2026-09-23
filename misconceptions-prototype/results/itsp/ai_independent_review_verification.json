@@ -1,0 +1,30 @@
+{
+  "checked_at_utc": "2026-09-20T02:32:53.570911+00:00",
+  "protected_existing_files_checked": 523,
+  "changed_existing_files": [],
+  "baseline_path": "results/itsp/ai_review_integrity_baseline.json",
+  "baseline_sha256": "8ce3385c40cfc54fbf2cd4b533e954e1955556ca7a0a4124c0674128cf9e2764",
+  "independent_review_sha256": "6e159b2db8975a1f4d6d70a85cc464ba319148b238ed24a27a47db3a20ed27bd",
+  "coverage": {
+    "samples": 17,
+    "evidence_files": 68,
+    "historical_tests": 113
+  },
+  "human_completed": 0,
+  "adjudicated": 0,
+  "expert_annotations_unchanged": true,
+  "existing_results_and_pipeline_unchanged": true,
+  "ai_review_used_for_expert_metrics": false,
+  "tests": {
+    "command": ".venv/Scripts/python.exe -m pytest -q",
+    "exit_code": 0,
+    "passed": 64,
+    "subtests_passed": 3
+  },
+  "lint": {
+    "command": ".venv/Scripts/python.exe -m ruff check .",
+    "exit_code": 0,
+    "result": "All checks passed"
+  },
+  "artifact_validation": "IDs, enums, null rules, codebook types, packet evidence hashes, quoted test records, source line bounds, frozen review hash and comparison IDs passed"
+}

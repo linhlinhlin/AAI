@@ -1,0 +1,45 @@
+{
+  "status": "READY_FOR_MULTI_AGENT_PREFLIGHT",
+  "artifacts": [
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/before_hashes.json",
+      "sha256": "34623c707812fc7787fa98377531b753eca6d3fed1f43f999693a05c90f5c62a"
+    },
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/old_snapshot_origin.json",
+      "sha256": "57e158bd8720df77e93df066f46192ee8d320151db4aef6240bf5799cabd6d6c"
+    },
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/packet_dependencies.json",
+      "sha256": "dd90a069eb08a1eacd07a78a8d389d3a45e129c7ab2d3b3507d60f9a0b44b696"
+    },
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/protocol_revision.diff",
+      "sha256": "3e5f360f2cad19d25c536dd0f60b5770a17be0a9379da024649a6b80bb7d3deb"
+    },
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/protocol_snapshot_current_1cc8ce73.md",
+      "sha256": "1cc8ce739a1497bf6d64c4621f5388f1ff7192272d23bca019bbcf6a491a2cd2"
+    },
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/protocol_snapshot_hash_9fdba3fd.md",
+      "sha256": "9fdba3fd66d512a1775699f0501eff0a5bcc3750a9196829a6db26c2fcd783bb"
+    },
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/provenance_audit.json",
+      "sha256": "f5b751c9362d8d5f294dc6126b631b9eeae5e11859e854fff998d7ea32e1467e"
+    },
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/reconciliation_report.md",
+      "sha256": "c25fc15657a714ee09593643d513115cf90041ccfdee410a9a2818e1f1aae67f"
+    },
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/reconciliation_request.md",
+      "sha256": "b5fbf43988db98b3e190ce871ec51da8e8d3e06a6609deb05912d7f52d94aeb7"
+    },
+    {
+      "path": "results/itsp/multi_agent_validation/2026-09-20/provenance_reconciliation/reviewer_sources_before.md",
+      "sha256": "16ec7e064f43030199bc0818410e28f97bff74f879294e72a82f3ed85514a168"
+    }
+  ]
+}

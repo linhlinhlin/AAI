@@ -1,0 +1,451 @@
+{
+  "policy": "Top 3 by eligible count, >=12 eligible and >=3 outcome signatures; no metric tuning",
+  "explicit_problem_override": null,
+  "empty_cohorts": [],
+  "cohorts": [
+    {
+      "problem_id": "2825",
+      "eligible": 22,
+      "signatures": 6,
+      "selected": true
+    },
+    {
+      "problem_id": "2812",
+      "eligible": 19,
+      "signatures": 6,
+      "selected": true
+    },
+    {
+      "problem_id": "2833",
+      "eligible": 18,
+      "signatures": 5,
+      "selected": true
+    },
+    {
+      "problem_id": "2813",
+      "eligible": 17,
+      "signatures": 7,
+      "selected": false
+    },
+    {
+      "problem_id": "2832",
+      "eligible": 17,
+      "signatures": 7,
+      "selected": false
+    },
+    {
+      "problem_id": "2810",
+      "eligible": 16,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "2864",
+      "eligible": 16,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "2938",
+      "eligible": 16,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3078",
+      "eligible": 15,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "2824",
+      "eligible": 14,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "2828",
+      "eligible": 14,
+      "signatures": 8,
+      "selected": false
+    },
+    {
+      "problem_id": "2871",
+      "eligible": 14,
+      "signatures": 6,
+      "selected": false
+    },
+    {
+      "problem_id": "2827",
+      "eligible": 13,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "2870",
+      "eligible": 13,
+      "signatures": 6,
+      "selected": false
+    },
+    {
+      "problem_id": "3076",
+      "eligible": 12,
+      "signatures": 6,
+      "selected": false
+    },
+    {
+      "problem_id": "3084",
+      "eligible": 12,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "3355",
+      "eligible": 12,
+      "signatures": 10,
+      "selected": false
+    },
+    {
+      "problem_id": "3358",
+      "eligible": 12,
+      "signatures": 3,
+      "selected": false
+    },
+    {
+      "problem_id": "2811",
+      "eligible": 11,
+      "signatures": 6,
+      "selected": false
+    },
+    {
+      "problem_id": "2830",
+      "eligible": 11,
+      "signatures": 6,
+      "selected": false
+    },
+    {
+      "problem_id": "2866",
+      "eligible": 11,
+      "signatures": 6,
+      "selected": false
+    },
+    {
+      "problem_id": "2932",
+      "eligible": 11,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "2936",
+      "eligible": 11,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "3077",
+      "eligible": 11,
+      "signatures": 8,
+      "selected": false
+    },
+    {
+      "problem_id": "3082",
+      "eligible": 11,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "3244",
+      "eligible": 11,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "3297",
+      "eligible": 11,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "2934",
+      "eligible": 10,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3107",
+      "eligible": 10,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "3239",
+      "eligible": 10,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "3359",
+      "eligible": 10,
+      "signatures": 6,
+      "selected": false
+    },
+    {
+      "problem_id": "2937",
+      "eligible": 9,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "3080",
+      "eligible": 9,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "3106",
+      "eligible": 9,
+      "signatures": 3,
+      "selected": false
+    },
+    {
+      "problem_id": "3240",
+      "eligible": 9,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "3356",
+      "eligible": 9,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "2831",
+      "eligible": 8,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "2865",
+      "eligible": 8,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "2939",
+      "eligible": 8,
+      "signatures": 6,
+      "selected": false
+    },
+    {
+      "problem_id": "3075",
+      "eligible": 8,
+      "signatures": 3,
+      "selected": false
+    },
+    {
+      "problem_id": "3089",
+      "eligible": 8,
+      "signatures": 6,
+      "selected": false
+    },
+    {
+      "problem_id": "3105",
+      "eligible": 8,
+      "signatures": 1,
+      "selected": false
+    },
+    {
+      "problem_id": "3241",
+      "eligible": 8,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "3299",
+      "eligible": 8,
+      "signatures": 3,
+      "selected": false
+    },
+    {
+      "problem_id": "2867",
+      "eligible": 7,
+      "signatures": 3,
+      "selected": false
+    },
+    {
+      "problem_id": "2868",
+      "eligible": 7,
+      "signatures": 3,
+      "selected": false
+    },
+    {
+      "problem_id": "2935",
+      "eligible": 7,
+      "signatures": 3,
+      "selected": false
+    },
+    {
+      "problem_id": "3108",
+      "eligible": 7,
+      "signatures": 3,
+      "selected": false
+    },
+    {
+      "problem_id": "3293",
+      "eligible": 7,
+      "signatures": 3,
+      "selected": false
+    },
+    {
+      "problem_id": "3357",
+      "eligible": 7,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "3360",
+      "eligible": 7,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "2869",
+      "eligible": 6,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3111",
+      "eligible": 6,
+      "signatures": 1,
+      "selected": false
+    },
+    {
+      "problem_id": "3295",
+      "eligible": 6,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "2933",
+      "eligible": 5,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "3081",
+      "eligible": 5,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "3238",
+      "eligible": 5,
+      "signatures": 5,
+      "selected": false
+    },
+    {
+      "problem_id": "3243",
+      "eligible": 5,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "3291",
+      "eligible": 5,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3294",
+      "eligible": 5,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3079",
+      "eligible": 4,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "3090",
+      "eligible": 4,
+      "signatures": 4,
+      "selected": false
+    },
+    {
+      "problem_id": "3109",
+      "eligible": 4,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3237",
+      "eligible": 3,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3086",
+      "eligible": 2,
+      "signatures": 1,
+      "selected": false
+    },
+    {
+      "problem_id": "3087",
+      "eligible": 2,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3110",
+      "eligible": 2,
+      "signatures": 1,
+      "selected": false
+    },
+    {
+      "problem_id": "3242",
+      "eligible": 2,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3298",
+      "eligible": 2,
+      "signatures": 1,
+      "selected": false
+    },
+    {
+      "problem_id": "3362",
+      "eligible": 2,
+      "signatures": 2,
+      "selected": false
+    },
+    {
+      "problem_id": "3083",
+      "eligible": 1,
+      "signatures": 1,
+      "selected": false
+    },
+    {
+      "problem_id": "3112",
+      "eligible": 1,
+      "signatures": 1,
+      "selected": false
+    },
+    {
+      "problem_id": "3296",
+      "eligible": 1,
+      "signatures": 1,
+      "selected": false
+    },
+    {
+      "problem_id": "3361",
+      "eligible": 1,
+      "signatures": 1,
+      "selected": false
+    }
+  ]
+}

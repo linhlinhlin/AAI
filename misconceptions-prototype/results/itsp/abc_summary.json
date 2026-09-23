@@ -1,0 +1,2183 @@
+{
+  "protocol": {
+    "problems": [
+      "2825",
+      "2812",
+      "2833"
+    ],
+    "arms": {
+      "A": "outcomes",
+      "B": "structural",
+      "C": "combined"
+    },
+    "method": "agglomerative",
+    "linkage": "average",
+    "k": 3,
+    "seeds": [
+      7,
+      42,
+      91
+    ],
+    "test_fraction": 0.25,
+    "combined_test_mass": 0.8,
+    "routing_and_splits_asserted_identical": true,
+    "legacy_A_C_asserted_unchanged": true,
+    "selection_sha256": "ee4a13aeadc8eae62878cc1047f30cef35420343f6e9e707db715d17750b1231",
+    "review_template_sha256": "2082bc583c935aae6b50852a6533b0b730d5f8f254ed2aef3893911c485d2ce9",
+    "metric_caveat": "Silhouette and medoid distances use different feature geometries in A/B/C; not a direct educational-quality ranking.",
+    "identity_caveat": "No student IDs: no unseen-student generalization claim.",
+    "review_sampling": "9 train medoids + 8 farthest holdout members from original C seed42; purposive, not random or representative."
+  },
+  "experiments": [
+    {
+      "problem_id": "2825",
+      "arm": "A",
+      "mode": "outcomes",
+      "seed": 7,
+      "n_input": 22,
+      "n_eligible": 22,
+      "n_train": 16,
+      "n_holdout": 6,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 7,
+      "train_cluster_sizes": {
+        "0": 13,
+        "1": 2,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 2,
+        "1": 3,
+        "2": 1
+      },
+      "combined_cluster_sizes": {
+        "0": 15,
+        "1": 5,
+        "2": 2
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.7208333333333334,
+      "ari_vs_exact_signature_train": 0.5009097998440343,
+      "rule_train_fidelity": 0.9375,
+      "rule_holdout_fidelity": 0.8333333333333334,
+      "majority_holdout_fidelity": 0.3333333333333333,
+      "holdout_ties": 3,
+      "mean_holdout_distance": 0.23809523809523814,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:2",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:3",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:4",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:5",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:6",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:7",
+          "weight": 0.14285714285714285
+        }
+      ],
+      "routing": {
+        "eligible": 22
+      },
+      "identity": {
+        "missing_student_ids": 22,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2825",
+      "arm": "B",
+      "mode": "structural",
+      "seed": 7,
+      "n_input": 22,
+      "n_eligible": 22,
+      "n_train": 16,
+      "n_holdout": 6,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 3,
+      "train_cluster_sizes": {
+        "0": 14,
+        "1": 1,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 6
+      },
+      "combined_cluster_sizes": {
+        "0": 20,
+        "1": 1,
+        "2": 1
+      },
+      "train_singleton_clusters": 2,
+      "silhouette_train": 0.875,
+      "ari_vs_exact_signature_train": -0.16912315763177616,
+      "rule_train_fidelity": 0.875,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 1.0,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.0,
+      "feature_weights": [
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.3333333333333333
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.3333333333333333
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.3333333333333333
+        }
+      ],
+      "routing": {
+        "eligible": 22
+      },
+      "identity": {
+        "missing_student_ids": 22,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2825",
+      "arm": "C",
+      "mode": "combined",
+      "seed": 7,
+      "n_input": 22,
+      "n_eligible": 22,
+      "n_train": 16,
+      "n_holdout": 6,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 10,
+      "train_cluster_sizes": {
+        "0": 3,
+        "1": 12,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 4,
+        "1": 1,
+        "2": 1
+      },
+      "combined_cluster_sizes": {
+        "0": 7,
+        "1": 13,
+        "2": 2
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.6749085362950832,
+      "ari_vs_exact_signature_train": 0.6448748991121872,
+      "rule_train_fidelity": 0.9375,
+      "rule_holdout_fidelity": 0.8333333333333334,
+      "majority_holdout_fidelity": 0.16666666666666666,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.1904761904761905,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:2",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:3",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:4",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:5",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:6",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:7",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.06666666666666665
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.06666666666666665
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.06666666666666665
+        }
+      ],
+      "routing": {
+        "eligible": 22
+      },
+      "identity": {
+        "missing_student_ids": 22,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2825",
+      "arm": "A",
+      "mode": "outcomes",
+      "seed": 42,
+      "n_input": 22,
+      "n_eligible": 22,
+      "n_train": 16,
+      "n_holdout": 6,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 7,
+      "train_cluster_sizes": {
+        "0": 5,
+        "1": 1,
+        "2": 10
+      },
+      "holdout_cluster_sizes": {
+        "0": 2,
+        "1": 1,
+        "2": 3
+      },
+      "combined_cluster_sizes": {
+        "0": 7,
+        "1": 2,
+        "2": 13
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.7415384739422085,
+      "ari_vs_exact_signature_train": 0.7253218884120172,
+      "rule_train_fidelity": 0.9375,
+      "rule_holdout_fidelity": 0.8333333333333334,
+      "majority_holdout_fidelity": 0.5,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.14285714285714288,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:2",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:3",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:4",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:5",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:6",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:7",
+          "weight": 0.14285714285714285
+        }
+      ],
+      "routing": {
+        "eligible": 22
+      },
+      "identity": {
+        "missing_student_ids": 22,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2825",
+      "arm": "B",
+      "mode": "structural",
+      "seed": 42,
+      "n_input": 22,
+      "n_eligible": 22,
+      "n_train": 16,
+      "n_holdout": 6,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 3,
+      "train_cluster_sizes": {
+        "0": 14,
+        "1": 1,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 6
+      },
+      "combined_cluster_sizes": {
+        "0": 20,
+        "1": 1,
+        "2": 1
+      },
+      "train_singleton_clusters": 2,
+      "silhouette_train": 0.875,
+      "ari_vs_exact_signature_train": -0.15737473535638674,
+      "rule_train_fidelity": 0.875,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 1.0,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.0,
+      "feature_weights": [
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.3333333333333333
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.3333333333333333
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.3333333333333333
+        }
+      ],
+      "routing": {
+        "eligible": 22
+      },
+      "identity": {
+        "missing_student_ids": 22,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2825",
+      "arm": "C",
+      "mode": "combined",
+      "seed": 42,
+      "n_input": 22,
+      "n_eligible": 22,
+      "n_train": 16,
+      "n_holdout": 6,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 10,
+      "train_cluster_sizes": {
+        "0": 5,
+        "1": 1,
+        "2": 10
+      },
+      "holdout_cluster_sizes": {
+        "0": 2,
+        "1": 1,
+        "2": 3
+      },
+      "combined_cluster_sizes": {
+        "0": 7,
+        "1": 2,
+        "2": 13
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.6958496623706338,
+      "ari_vs_exact_signature_train": 0.7253218884120172,
+      "rule_train_fidelity": 0.9375,
+      "rule_holdout_fidelity": 0.8333333333333334,
+      "majority_holdout_fidelity": 0.5,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.11428571428571428,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:2",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:3",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:4",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:5",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:6",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:7",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.06666666666666665
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.06666666666666665
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.06666666666666665
+        }
+      ],
+      "routing": {
+        "eligible": 22
+      },
+      "identity": {
+        "missing_student_ids": 22,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2825",
+      "arm": "A",
+      "mode": "outcomes",
+      "seed": 91,
+      "n_input": 22,
+      "n_eligible": 22,
+      "n_train": 16,
+      "n_holdout": 6,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 7,
+      "train_cluster_sizes": {
+        "0": 7,
+        "1": 7,
+        "2": 2
+      },
+      "holdout_cluster_sizes": {
+        "1": 6
+      },
+      "combined_cluster_sizes": {
+        "0": 7,
+        "1": 13,
+        "2": 2
+      },
+      "train_singleton_clusters": 0,
+      "silhouette_train": 0.7302146464646465,
+      "ari_vs_exact_signature_train": 0.550561797752809,
+      "rule_train_fidelity": 1.0,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 0.0,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.04761904761904762,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:2",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:3",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:4",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:5",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:6",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:7",
+          "weight": 0.14285714285714285
+        }
+      ],
+      "routing": {
+        "eligible": 22
+      },
+      "identity": {
+        "missing_student_ids": 22,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2825",
+      "arm": "B",
+      "mode": "structural",
+      "seed": 91,
+      "n_input": 22,
+      "n_eligible": 22,
+      "n_train": 16,
+      "n_holdout": 6,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 3,
+      "train_cluster_sizes": {
+        "0": 14,
+        "1": 1,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 6
+      },
+      "combined_cluster_sizes": {
+        "0": 20,
+        "1": 1,
+        "2": 1
+      },
+      "train_singleton_clusters": 2,
+      "silhouette_train": 0.875,
+      "ari_vs_exact_signature_train": -0.09794135995009358,
+      "rule_train_fidelity": 0.875,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 1.0,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.0,
+      "feature_weights": [
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.3333333333333333
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.3333333333333333
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.3333333333333333
+        }
+      ],
+      "routing": {
+        "eligible": 22
+      },
+      "identity": {
+        "missing_student_ids": 22,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2825",
+      "arm": "C",
+      "mode": "combined",
+      "seed": 91,
+      "n_input": 22,
+      "n_eligible": 22,
+      "n_train": 16,
+      "n_holdout": 6,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 10,
+      "train_cluster_sizes": {
+        "0": 7,
+        "1": 7,
+        "2": 2
+      },
+      "holdout_cluster_sizes": {
+        "1": 6
+      },
+      "combined_cluster_sizes": {
+        "0": 7,
+        "1": 13,
+        "2": 2
+      },
+      "train_singleton_clusters": 0,
+      "silhouette_train": 0.6923511737643497,
+      "ari_vs_exact_signature_train": 0.550561797752809,
+      "rule_train_fidelity": 1.0,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 0.0,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.0380952380952381,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:2",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:3",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:4",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:5",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:6",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:7",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.06666666666666665
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.06666666666666665
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.06666666666666665
+        }
+      ],
+      "routing": {
+        "eligible": 22
+      },
+      "identity": {
+        "missing_student_ids": 22,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2812",
+      "arm": "A",
+      "mode": "outcomes",
+      "seed": 7,
+      "n_input": 19,
+      "n_eligible": 19,
+      "n_train": 14,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 7,
+      "train_cluster_sizes": {
+        "0": 3,
+        "1": 1,
+        "2": 10
+      },
+      "holdout_cluster_sizes": {
+        "0": 2,
+        "1": 1,
+        "2": 2
+      },
+      "combined_cluster_sizes": {
+        "0": 5,
+        "1": 2,
+        "2": 12
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.778676085818943,
+      "ari_vs_exact_signature_train": 0.7606980635907243,
+      "rule_train_fidelity": 0.9285714285714286,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 0.4,
+      "holdout_ties": 1,
+      "mean_holdout_distance": 0.08571428571428572,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:2",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:3",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:4",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:5",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:6",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:7",
+          "weight": 0.14285714285714285
+        }
+      ],
+      "routing": {
+        "eligible": 19
+      },
+      "identity": {
+        "missing_student_ids": 19,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2812",
+      "arm": "B",
+      "mode": "structural",
+      "seed": 7,
+      "n_input": 19,
+      "n_eligible": 19,
+      "n_train": 14,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 3,
+      "train_cluster_sizes": {
+        "0": 2,
+        "1": 11,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "1": 5
+      },
+      "combined_cluster_sizes": {
+        "0": 2,
+        "1": 16,
+        "2": 1
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.8214285714285714,
+      "ari_vs_exact_signature_train": -0.03241491085899514,
+      "rule_train_fidelity": 0.9285714285714286,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 1.0,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.0,
+      "feature_weights": [
+        {
+          "name": "ast:c_if",
+          "weight": 0.3333333333333333
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.3333333333333333
+        },
+        {
+          "name": "ast:c_return",
+          "weight": 0.3333333333333333
+        }
+      ],
+      "routing": {
+        "eligible": 19
+      },
+      "identity": {
+        "missing_student_ids": 19,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2812",
+      "arm": "C",
+      "mode": "combined",
+      "seed": 7,
+      "n_input": 19,
+      "n_eligible": 19,
+      "n_train": 14,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 10,
+      "train_cluster_sizes": {
+        "0": 3,
+        "1": 1,
+        "2": 10
+      },
+      "holdout_cluster_sizes": {
+        "0": 2,
+        "1": 1,
+        "2": 2
+      },
+      "combined_cluster_sizes": {
+        "0": 5,
+        "1": 2,
+        "2": 12
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.7078827932164368,
+      "ari_vs_exact_signature_train": 0.7606980635907243,
+      "rule_train_fidelity": 0.9285714285714286,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 0.4,
+      "holdout_ties": 1,
+      "mean_holdout_distance": 0.06857142857142857,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:2",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:3",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:4",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:5",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:6",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:7",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "ast:c_if",
+          "weight": 0.06666666666666665
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.06666666666666665
+        },
+        {
+          "name": "ast:c_return",
+          "weight": 0.06666666666666665
+        }
+      ],
+      "routing": {
+        "eligible": 19
+      },
+      "identity": {
+        "missing_student_ids": 19,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2812",
+      "arm": "A",
+      "mode": "outcomes",
+      "seed": 42,
+      "n_input": 19,
+      "n_eligible": 19,
+      "n_train": 14,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 7,
+      "train_cluster_sizes": {
+        "0": 11,
+        "1": 2,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 1,
+        "2": 4
+      },
+      "combined_cluster_sizes": {
+        "0": 12,
+        "1": 2,
+        "2": 5
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.8690476190476188,
+      "ari_vs_exact_signature_train": 0.7796610169491526,
+      "rule_train_fidelity": 0.9285714285714286,
+      "rule_holdout_fidelity": 0.2,
+      "majority_holdout_fidelity": 0.2,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.20000000000000004,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:2",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:3",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:4",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:5",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:6",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:7",
+          "weight": 0.14285714285714285
+        }
+      ],
+      "routing": {
+        "eligible": 19
+      },
+      "identity": {
+        "missing_student_ids": 19,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2812",
+      "arm": "B",
+      "mode": "structural",
+      "seed": 42,
+      "n_input": 19,
+      "n_eligible": 19,
+      "n_train": 14,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 4,
+      "train_cluster_sizes": {
+        "0": 11,
+        "1": 2,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 5
+      },
+      "combined_cluster_sizes": {
+        "0": 16,
+        "1": 2,
+        "2": 1
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.7217908902691512,
+      "ari_vs_exact_signature_train": 0.030508474576271188,
+      "rule_train_fidelity": 0.9285714285714286,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 1.0,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.0,
+      "feature_weights": [
+        {
+          "name": "ast:c_if",
+          "weight": 0.25
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.25
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.25
+        },
+        {
+          "name": "ast:c_return",
+          "weight": 0.25
+        }
+      ],
+      "routing": {
+        "eligible": 19
+      },
+      "identity": {
+        "missing_student_ids": 19,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2812",
+      "arm": "C",
+      "mode": "combined",
+      "seed": 42,
+      "n_input": 19,
+      "n_eligible": 19,
+      "n_train": 14,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 11,
+      "train_cluster_sizes": {
+        "0": 11,
+        "1": 2,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 1,
+        "2": 4
+      },
+      "combined_cluster_sizes": {
+        "0": 12,
+        "1": 2,
+        "2": 5
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.7501268161186638,
+      "ari_vs_exact_signature_train": 0.7796610169491526,
+      "rule_train_fidelity": 0.9285714285714286,
+      "rule_holdout_fidelity": 0.2,
+      "majority_holdout_fidelity": 0.2,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.15999999999999998,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:2",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:3",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:4",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:5",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:6",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:7",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "ast:c_if",
+          "weight": 0.04999999999999999
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.04999999999999999
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.04999999999999999
+        },
+        {
+          "name": "ast:c_return",
+          "weight": 0.04999999999999999
+        }
+      ],
+      "routing": {
+        "eligible": 19
+      },
+      "identity": {
+        "missing_student_ids": 19,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2812",
+      "arm": "A",
+      "mode": "outcomes",
+      "seed": 91,
+      "n_input": 19,
+      "n_eligible": 19,
+      "n_train": 14,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 7,
+      "train_cluster_sizes": {
+        "0": 10,
+        "1": 1,
+        "2": 3
+      },
+      "holdout_cluster_sizes": {
+        "0": 4,
+        "1": 1
+      },
+      "combined_cluster_sizes": {
+        "0": 14,
+        "1": 2,
+        "2": 3
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.7234214198499914,
+      "ari_vs_exact_signature_train": 0.6116642958748222,
+      "rule_train_fidelity": 0.9285714285714286,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 0.8,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.028571428571428574,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:2",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:3",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:4",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:5",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:6",
+          "weight": 0.14285714285714285
+        },
+        {
+          "name": "test:7",
+          "weight": 0.14285714285714285
+        }
+      ],
+      "routing": {
+        "eligible": 19
+      },
+      "identity": {
+        "missing_student_ids": 19,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2812",
+      "arm": "B",
+      "mode": "structural",
+      "seed": 91,
+      "n_input": 19,
+      "n_eligible": 19,
+      "n_train": 14,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 4,
+      "train_cluster_sizes": {
+        "0": 12,
+        "1": 1,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 5
+      },
+      "combined_cluster_sizes": {
+        "0": 17,
+        "1": 1,
+        "2": 1
+      },
+      "train_singleton_clusters": 2,
+      "silhouette_train": 0.7499999999999999,
+      "ari_vs_exact_signature_train": -0.18132328308207704,
+      "rule_train_fidelity": 0.8571428571428571,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 1.0,
+      "holdout_ties": 1,
+      "mean_holdout_distance": 0.05,
+      "feature_weights": [
+        {
+          "name": "ast:c_if",
+          "weight": 0.25
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.25
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.25
+        },
+        {
+          "name": "ast:c_return",
+          "weight": 0.25
+        }
+      ],
+      "routing": {
+        "eligible": 19
+      },
+      "identity": {
+        "missing_student_ids": 19,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2812",
+      "arm": "C",
+      "mode": "combined",
+      "seed": 91,
+      "n_input": 19,
+      "n_eligible": 19,
+      "n_train": 14,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 11,
+      "train_cluster_sizes": {
+        "0": 10,
+        "1": 1,
+        "2": 3
+      },
+      "holdout_cluster_sizes": {
+        "0": 4,
+        "1": 1
+      },
+      "combined_cluster_sizes": {
+        "0": 14,
+        "1": 2,
+        "2": 3
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.6681846324062863,
+      "ari_vs_exact_signature_train": 0.6116642958748222,
+      "rule_train_fidelity": 0.9285714285714286,
+      "rule_holdout_fidelity": 0.8,
+      "majority_holdout_fidelity": 0.8,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.03285714285714285,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:2",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:3",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:4",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:5",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:6",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "test:7",
+          "weight": 0.1142857142857143
+        },
+        {
+          "name": "ast:c_if",
+          "weight": 0.04999999999999999
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.04999999999999999
+        },
+        {
+          "name": "ast:c_address_of",
+          "weight": 0.04999999999999999
+        },
+        {
+          "name": "ast:c_return",
+          "weight": 0.04999999999999999
+        }
+      ],
+      "routing": {
+        "eligible": 19
+      },
+      "identity": {
+        "missing_student_ids": 19,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2833",
+      "arm": "A",
+      "mode": "outcomes",
+      "seed": 7,
+      "n_input": 18,
+      "n_eligible": 18,
+      "n_train": 13,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 6,
+      "train_cluster_sizes": {
+        "0": 2,
+        "1": 4,
+        "2": 7
+      },
+      "holdout_cluster_sizes": {
+        "0": 2,
+        "1": 2,
+        "2": 1
+      },
+      "combined_cluster_sizes": {
+        "0": 4,
+        "1": 6,
+        "2": 8
+      },
+      "train_singleton_clusters": 0,
+      "silhouette_train": 0.8846153846153846,
+      "ari_vs_exact_signature_train": 0.9719222462203023,
+      "rule_train_fidelity": 1.0,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 0.2,
+      "holdout_ties": 1,
+      "mean_holdout_distance": 0.06666666666666668,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:2",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:3",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:4",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:5",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:6",
+          "weight": 0.16666666666666666
+        }
+      ],
+      "routing": {
+        "eligible": 18
+      },
+      "identity": {
+        "missing_student_ids": 18,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2833",
+      "arm": "B",
+      "mode": "structural",
+      "seed": 7,
+      "n_input": 18,
+      "n_eligible": 18,
+      "n_train": 13,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 4,
+      "train_cluster_sizes": {
+        "0": 4,
+        "1": 1,
+        "2": 8
+      },
+      "holdout_cluster_sizes": {
+        "0": 1,
+        "1": 1,
+        "2": 3
+      },
+      "combined_cluster_sizes": {
+        "0": 5,
+        "1": 2,
+        "2": 11
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.8076923076923077,
+      "ari_vs_exact_signature_train": 0.06570841889117043,
+      "rule_train_fidelity": 0.9230769230769231,
+      "rule_holdout_fidelity": 0.8,
+      "majority_holdout_fidelity": 0.6,
+      "holdout_ties": 1,
+      "mean_holdout_distance": 0.15,
+      "feature_weights": [
+        {
+          "name": "ast:c_for",
+          "weight": 0.25
+        },
+        {
+          "name": "ast:c_while",
+          "weight": 0.25
+        },
+        {
+          "name": "ast:c_if",
+          "weight": 0.25
+        },
+        {
+          "name": "ast:c_update",
+          "weight": 0.25
+        }
+      ],
+      "routing": {
+        "eligible": 18
+      },
+      "identity": {
+        "missing_student_ids": 18,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2833",
+      "arm": "C",
+      "mode": "combined",
+      "seed": 7,
+      "n_input": 18,
+      "n_eligible": 18,
+      "n_train": 13,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 10,
+      "train_cluster_sizes": {
+        "0": 2,
+        "1": 7,
+        "2": 4
+      },
+      "holdout_cluster_sizes": {
+        "0": 1,
+        "1": 2,
+        "2": 2
+      },
+      "combined_cluster_sizes": {
+        "0": 3,
+        "1": 9,
+        "2": 6
+      },
+      "train_singleton_clusters": 0,
+      "silhouette_train": 0.7236998295821825,
+      "ari_vs_exact_signature_train": 0.9719222462203023,
+      "rule_train_fidelity": 1.0,
+      "rule_holdout_fidelity": 0.8,
+      "majority_holdout_fidelity": 0.4,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.12333333333333334,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:2",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:3",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:4",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:5",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:6",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "ast:c_for",
+          "weight": 0.04999999999999999
+        },
+        {
+          "name": "ast:c_while",
+          "weight": 0.04999999999999999
+        },
+        {
+          "name": "ast:c_if",
+          "weight": 0.04999999999999999
+        },
+        {
+          "name": "ast:c_update",
+          "weight": 0.04999999999999999
+        }
+      ],
+      "routing": {
+        "eligible": 18
+      },
+      "identity": {
+        "missing_student_ids": 18,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2833",
+      "arm": "A",
+      "mode": "outcomes",
+      "seed": 42,
+      "n_input": 18,
+      "n_eligible": 18,
+      "n_train": 13,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 6,
+      "train_cluster_sizes": {
+        "0": 5,
+        "1": 1,
+        "2": 7
+      },
+      "holdout_cluster_sizes": {
+        "0": 1,
+        "1": 1,
+        "2": 3
+      },
+      "combined_cluster_sizes": {
+        "0": 6,
+        "1": 2,
+        "2": 10
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.9230769230769231,
+      "ari_vs_exact_signature_train": 1.0,
+      "rule_train_fidelity": 0.9230769230769231,
+      "rule_holdout_fidelity": 0.8,
+      "majority_holdout_fidelity": 0.6,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.1,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:2",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:3",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:4",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:5",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:6",
+          "weight": 0.16666666666666666
+        }
+      ],
+      "routing": {
+        "eligible": 18
+      },
+      "identity": {
+        "missing_student_ids": 18,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2833",
+      "arm": "B",
+      "mode": "structural",
+      "seed": 42,
+      "n_input": 18,
+      "n_eligible": 18,
+      "n_train": 13,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 6,
+      "train_cluster_sizes": {
+        "0": 11,
+        "1": 1,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 4,
+        "2": 1
+      },
+      "combined_cluster_sizes": {
+        "0": 15,
+        "1": 1,
+        "2": 2
+      },
+      "train_singleton_clusters": 2,
+      "silhouette_train": 0.6205128205128205,
+      "ari_vs_exact_signature_train": -0.04063068526379624,
+      "rule_train_fidelity": 0.9230769230769231,
+      "rule_holdout_fidelity": 0.8,
+      "majority_holdout_fidelity": 0.8,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.03333333333333334,
+      "feature_weights": [
+        {
+          "name": "ast:c_for",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_while",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_if",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_update",
+          "weight": 0.16666666666666666
+        }
+      ],
+      "routing": {
+        "eligible": 18
+      },
+      "identity": {
+        "missing_student_ids": 18,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2833",
+      "arm": "C",
+      "mode": "combined",
+      "seed": 42,
+      "n_input": 18,
+      "n_eligible": 18,
+      "n_train": 13,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 12,
+      "train_cluster_sizes": {
+        "0": 5,
+        "1": 1,
+        "2": 7
+      },
+      "holdout_cluster_sizes": {
+        "0": 1,
+        "1": 1,
+        "2": 3
+      },
+      "combined_cluster_sizes": {
+        "0": 6,
+        "1": 2,
+        "2": 10
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.6783031814440984,
+      "ari_vs_exact_signature_train": 1.0,
+      "rule_train_fidelity": 0.9230769230769231,
+      "rule_holdout_fidelity": 0.8,
+      "majority_holdout_fidelity": 0.6,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.11333333333333333,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:2",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:3",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:4",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:5",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:6",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "ast:c_for",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_while",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_if",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_update",
+          "weight": 0.033333333333333326
+        }
+      ],
+      "routing": {
+        "eligible": 18
+      },
+      "identity": {
+        "missing_student_ids": 18,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2833",
+      "arm": "A",
+      "mode": "outcomes",
+      "seed": 91,
+      "n_input": 18,
+      "n_eligible": 18,
+      "n_train": 13,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 6,
+      "train_cluster_sizes": {
+        "0": 2,
+        "1": 6,
+        "2": 5
+      },
+      "holdout_cluster_sizes": {
+        "0": 2,
+        "2": 3
+      },
+      "combined_cluster_sizes": {
+        "0": 4,
+        "1": 6,
+        "2": 8
+      },
+      "train_singleton_clusters": 0,
+      "silhouette_train": 0.8846153846153846,
+      "ari_vs_exact_signature_train": 0.970873786407767,
+      "rule_train_fidelity": 1.0,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 0.0,
+      "holdout_ties": 1,
+      "mean_holdout_distance": 0.06666666666666668,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:2",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:3",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:4",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:5",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "test:6",
+          "weight": 0.16666666666666666
+        }
+      ],
+      "routing": {
+        "eligible": 18
+      },
+      "identity": {
+        "missing_student_ids": 18,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2833",
+      "arm": "B",
+      "mode": "structural",
+      "seed": 91,
+      "n_input": 18,
+      "n_eligible": 18,
+      "n_train": 13,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 6,
+      "train_cluster_sizes": {
+        "0": 10,
+        "1": 1,
+        "2": 2
+      },
+      "holdout_cluster_sizes": {
+        "0": 5
+      },
+      "combined_cluster_sizes": {
+        "0": 15,
+        "1": 1,
+        "2": 2
+      },
+      "train_singleton_clusters": 1,
+      "silhouette_train": 0.723413750999958,
+      "ari_vs_exact_signature_train": 0.06053119209388511,
+      "rule_train_fidelity": 0.9230769230769231,
+      "rule_holdout_fidelity": 1.0,
+      "majority_holdout_fidelity": 1.0,
+      "holdout_ties": 0,
+      "mean_holdout_distance": 0.06666666666666668,
+      "feature_weights": [
+        {
+          "name": "ast:c_for",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_while",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_if",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.16666666666666666
+        },
+        {
+          "name": "ast:c_update",
+          "weight": 0.16666666666666666
+        }
+      ],
+      "routing": {
+        "eligible": 18
+      },
+      "identity": {
+        "missing_student_ids": 18,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    },
+    {
+      "problem_id": "2833",
+      "arm": "C",
+      "mode": "combined",
+      "seed": 91,
+      "n_input": 18,
+      "n_eligible": 18,
+      "n_train": 13,
+      "n_holdout": 5,
+      "status": "ok",
+      "reason": null,
+      "n_clusters": 3,
+      "n_features": 12,
+      "train_cluster_sizes": {
+        "0": 11,
+        "1": 1,
+        "2": 1
+      },
+      "holdout_cluster_sizes": {
+        "0": 3,
+        "1": 1,
+        "2": 1
+      },
+      "combined_cluster_sizes": {
+        "0": 14,
+        "1": 2,
+        "2": 2
+      },
+      "train_singleton_clusters": 2,
+      "silhouette_train": 0.45126170126170134,
+      "ari_vs_exact_signature_train": 0.32951289398280803,
+      "rule_train_fidelity": 0.9230769230769231,
+      "rule_holdout_fidelity": 0.8,
+      "majority_holdout_fidelity": 0.6,
+      "holdout_ties": 1,
+      "mean_holdout_distance": 0.14666666666666664,
+      "feature_weights": [
+        {
+          "name": "test:1",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:2",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:3",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:4",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:5",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "test:6",
+          "weight": 0.13333333333333333
+        },
+        {
+          "name": "ast:c_for",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_while",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_if",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_inclusive_comparison",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_strict_comparison",
+          "weight": 0.033333333333333326
+        },
+        {
+          "name": "ast:c_update",
+          "weight": 0.033333333333333326
+        }
+      ],
+      "routing": {
+        "eligible": 18
+      },
+      "identity": {
+        "missing_student_ids": 18,
+        "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+      }
+    }
+  ],
+  "partition_agreement": [
+    {
+      "problem_id": "2825",
+      "seed": 7,
+      "pair": "AB",
+      "train_partition_ari": -0.1557622052474261
+    },
+    {
+      "problem_id": "2825",
+      "seed": 7,
+      "pair": "AC",
+      "train_partition_ari": 0.7550306211723534
+    },
+    {
+      "problem_id": "2825",
+      "seed": 7,
+      "pair": "BC",
+      "train_partition_ari": -0.15627822944896116
+    },
+    {
+      "problem_id": "2825",
+      "seed": 42,
+      "pair": "AB",
+      "train_partition_ari": -0.118508655126498
+    },
+    {
+      "problem_id": "2825",
+      "seed": 42,
+      "pair": "AC",
+      "train_partition_ari": 1.0
+    },
+    {
+      "problem_id": "2825",
+      "seed": 42,
+      "pair": "BC",
+      "train_partition_ari": -0.118508655126498
+    },
+    {
+      "problem_id": "2825",
+      "seed": 91,
+      "pair": "AB",
+      "train_partition_ari": -0.01768839350617882
+    },
+    {
+      "problem_id": "2825",
+      "seed": 91,
+      "pair": "AC",
+      "train_partition_ari": 1.0
+    },
+    {
+      "problem_id": "2825",
+      "seed": 91,
+      "pair": "BC",
+      "train_partition_ari": -0.01768839350617882
+    },
+    {
+      "problem_id": "2812",
+      "seed": 7,
+      "pair": "AB",
+      "train_partition_ari": -0.20205479452054795
+    },
+    {
+      "problem_id": "2812",
+      "seed": 7,
+      "pair": "AC",
+      "train_partition_ari": 1.0
+    },
+    {
+      "problem_id": "2812",
+      "seed": 7,
+      "pair": "BC",
+      "train_partition_ari": -0.20205479452054795
+    },
+    {
+      "problem_id": "2812",
+      "seed": 42,
+      "pair": "AB",
+      "train_partition_ari": -0.20714285714285716
+    },
+    {
+      "problem_id": "2812",
+      "seed": 42,
+      "pair": "AC",
+      "train_partition_ari": 1.0
+    },
+    {
+      "problem_id": "2812",
+      "seed": 42,
+      "pair": "BC",
+      "train_partition_ari": -0.20714285714285716
+    },
+    {
+      "problem_id": "2812",
+      "seed": 91,
+      "pair": "AB",
+      "train_partition_ari": -0.17186726102030708
+    },
+    {
+      "problem_id": "2812",
+      "seed": 91,
+      "pair": "AC",
+      "train_partition_ari": 1.0
+    },
+    {
+      "problem_id": "2812",
+      "seed": 91,
+      "pair": "BC",
+      "train_partition_ari": -0.17186726102030708
+    },
+    {
+      "problem_id": "2833",
+      "seed": 7,
+      "pair": "AB",
+      "train_partition_ari": 0.09549795361527967
+    },
+    {
+      "problem_id": "2833",
+      "seed": 7,
+      "pair": "AC",
+      "train_partition_ari": 1.0
+    },
+    {
+      "problem_id": "2833",
+      "seed": 7,
+      "pair": "BC",
+      "train_partition_ari": 0.09549795361527967
+    },
+    {
+      "problem_id": "2833",
+      "seed": 42,
+      "pair": "AB",
+      "train_partition_ari": -0.04063068526379624
+    },
+    {
+      "problem_id": "2833",
+      "seed": 42,
+      "pair": "AC",
+      "train_partition_ari": 1.0
+    },
+    {
+      "problem_id": "2833",
+      "seed": 42,
+      "pair": "BC",
+      "train_partition_ari": -0.04063068526379624
+    },
+    {
+      "problem_id": "2833",
+      "seed": 91,
+      "pair": "AB",
+      "train_partition_ari": 0.03225806451612903
+    },
+    {
+      "problem_id": "2833",
+      "seed": 91,
+      "pair": "AC",
+      "train_partition_ari": 0.3007518796992481
+    },
+    {
+      "problem_id": "2833",
+      "seed": 91,
+      "pair": "BC",
+      "train_partition_ari": 0.19730305180979418
+    }
+  ]
+}

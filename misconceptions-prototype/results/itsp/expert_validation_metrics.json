@@ -1,0 +1,604 @@
+{
+  "status": "waiting_for_human_expert_annotation",
+  "n_candidates": 17,
+  "n_completed_independent_records": 0,
+  "n_completed_records": 0,
+  "n_adjudicated": 0,
+  "codebook_ready": false,
+  "cluster_purity": null,
+  "purity_details": [
+    {
+      "problem_id": "2812",
+      "arm": "A",
+      "n_review_candidates": 5,
+      "decision_counts": {
+        "pending": 5
+      },
+      "n_typed_adjudicated_yes": 0,
+      "n_yes_without_type": 0,
+      "type_coverage_of_candidates": 0.0,
+      "review_candidates_per_cluster": {
+        "2": 2,
+        "1": 1,
+        "0": 2
+      },
+      "typed_counts_per_cluster": {},
+      "purity_numerator": null,
+      "cluster_details": [
+        {
+          "cluster_id": "0",
+          "reviewed_sample_ids": [
+            "itsp-2812-270285_buggy",
+            "itsp-2812-270293_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "1",
+          "reviewed_sample_ids": [
+            "itsp-2812-270277_buggy"
+          ],
+          "n_candidates": 1,
+          "decision_counts": {
+            "pending": 1
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "2",
+          "reviewed_sample_ids": [
+            "itsp-2812-270276_buggy",
+            "itsp-2812-270283_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        }
+      ],
+      "cluster_purity": null,
+      "reason": "codebook_not_approved",
+      "scope": "misconception_type_purity_among_adjudicated_Yes_only_in_selected_sample"
+    },
+    {
+      "problem_id": "2812",
+      "arm": "B",
+      "n_review_candidates": 5,
+      "decision_counts": {
+        "pending": 5
+      },
+      "n_typed_adjudicated_yes": 0,
+      "n_yes_without_type": 0,
+      "type_coverage_of_candidates": 0.0,
+      "review_candidates_per_cluster": {
+        "0": 5
+      },
+      "typed_counts_per_cluster": {},
+      "purity_numerator": null,
+      "cluster_details": [
+        {
+          "cluster_id": "0",
+          "reviewed_sample_ids": [
+            "itsp-2812-270276_buggy",
+            "itsp-2812-270277_buggy",
+            "itsp-2812-270283_buggy",
+            "itsp-2812-270285_buggy",
+            "itsp-2812-270293_buggy"
+          ],
+          "n_candidates": 5,
+          "decision_counts": {
+            "pending": 5
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        }
+      ],
+      "cluster_purity": null,
+      "reason": "codebook_not_approved",
+      "scope": "misconception_type_purity_among_adjudicated_Yes_only_in_selected_sample"
+    },
+    {
+      "problem_id": "2812",
+      "arm": "C",
+      "n_review_candidates": 5,
+      "decision_counts": {
+        "pending": 5
+      },
+      "n_typed_adjudicated_yes": 0,
+      "n_yes_without_type": 0,
+      "type_coverage_of_candidates": 0.0,
+      "review_candidates_per_cluster": {
+        "2": 2,
+        "1": 1,
+        "0": 2
+      },
+      "typed_counts_per_cluster": {},
+      "purity_numerator": null,
+      "cluster_details": [
+        {
+          "cluster_id": "0",
+          "reviewed_sample_ids": [
+            "itsp-2812-270285_buggy",
+            "itsp-2812-270293_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "1",
+          "reviewed_sample_ids": [
+            "itsp-2812-270277_buggy"
+          ],
+          "n_candidates": 1,
+          "decision_counts": {
+            "pending": 1
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "2",
+          "reviewed_sample_ids": [
+            "itsp-2812-270276_buggy",
+            "itsp-2812-270283_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        }
+      ],
+      "cluster_purity": null,
+      "reason": "codebook_not_approved",
+      "scope": "misconception_type_purity_among_adjudicated_Yes_only_in_selected_sample"
+    },
+    {
+      "problem_id": "2825",
+      "arm": "A",
+      "n_review_candidates": 6,
+      "decision_counts": {
+        "pending": 6
+      },
+      "n_typed_adjudicated_yes": 0,
+      "n_yes_without_type": 0,
+      "type_coverage_of_candidates": 0.0,
+      "review_candidates_per_cluster": {
+        "0": 2,
+        "2": 2,
+        "1": 2
+      },
+      "typed_counts_per_cluster": {},
+      "purity_numerator": null,
+      "cluster_details": [
+        {
+          "cluster_id": "0",
+          "reviewed_sample_ids": [
+            "itsp-2825-271154_buggy",
+            "itsp-2825-271203_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "1",
+          "reviewed_sample_ids": [
+            "itsp-2825-271173_buggy",
+            "itsp-2825-271188_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "2",
+          "reviewed_sample_ids": [
+            "itsp-2825-271163_buggy",
+            "itsp-2825-271213_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        }
+      ],
+      "cluster_purity": null,
+      "reason": "codebook_not_approved",
+      "scope": "misconception_type_purity_among_adjudicated_Yes_only_in_selected_sample"
+    },
+    {
+      "problem_id": "2825",
+      "arm": "B",
+      "n_review_candidates": 6,
+      "decision_counts": {
+        "pending": 6
+      },
+      "n_typed_adjudicated_yes": 0,
+      "n_yes_without_type": 0,
+      "type_coverage_of_candidates": 0.0,
+      "review_candidates_per_cluster": {
+        "0": 6
+      },
+      "typed_counts_per_cluster": {},
+      "purity_numerator": null,
+      "cluster_details": [
+        {
+          "cluster_id": "0",
+          "reviewed_sample_ids": [
+            "itsp-2825-271154_buggy",
+            "itsp-2825-271163_buggy",
+            "itsp-2825-271173_buggy",
+            "itsp-2825-271188_buggy",
+            "itsp-2825-271203_buggy",
+            "itsp-2825-271213_buggy"
+          ],
+          "n_candidates": 6,
+          "decision_counts": {
+            "pending": 6
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        }
+      ],
+      "cluster_purity": null,
+      "reason": "codebook_not_approved",
+      "scope": "misconception_type_purity_among_adjudicated_Yes_only_in_selected_sample"
+    },
+    {
+      "problem_id": "2825",
+      "arm": "C",
+      "n_review_candidates": 6,
+      "decision_counts": {
+        "pending": 6
+      },
+      "n_typed_adjudicated_yes": 0,
+      "n_yes_without_type": 0,
+      "type_coverage_of_candidates": 0.0,
+      "review_candidates_per_cluster": {
+        "0": 2,
+        "2": 2,
+        "1": 2
+      },
+      "typed_counts_per_cluster": {},
+      "purity_numerator": null,
+      "cluster_details": [
+        {
+          "cluster_id": "0",
+          "reviewed_sample_ids": [
+            "itsp-2825-271154_buggy",
+            "itsp-2825-271203_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "1",
+          "reviewed_sample_ids": [
+            "itsp-2825-271173_buggy",
+            "itsp-2825-271188_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "2",
+          "reviewed_sample_ids": [
+            "itsp-2825-271163_buggy",
+            "itsp-2825-271213_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        }
+      ],
+      "cluster_purity": null,
+      "reason": "codebook_not_approved",
+      "scope": "misconception_type_purity_among_adjudicated_Yes_only_in_selected_sample"
+    },
+    {
+      "problem_id": "2833",
+      "arm": "A",
+      "n_review_candidates": 6,
+      "decision_counts": {
+        "pending": 6
+      },
+      "n_typed_adjudicated_yes": 0,
+      "n_yes_without_type": 0,
+      "type_coverage_of_candidates": 0.0,
+      "review_candidates_per_cluster": {
+        "0": 2,
+        "1": 2,
+        "2": 2
+      },
+      "typed_counts_per_cluster": {},
+      "purity_numerator": null,
+      "cluster_details": [
+        {
+          "cluster_id": "0",
+          "reviewed_sample_ids": [
+            "itsp-2833-271912_buggy",
+            "itsp-2833-271920_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "1",
+          "reviewed_sample_ids": [
+            "itsp-2833-271916_buggy",
+            "itsp-2833-271986_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "2",
+          "reviewed_sample_ids": [
+            "itsp-2833-271965_buggy",
+            "itsp-2833-271975_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        }
+      ],
+      "cluster_purity": null,
+      "reason": "codebook_not_approved",
+      "scope": "misconception_type_purity_among_adjudicated_Yes_only_in_selected_sample"
+    },
+    {
+      "problem_id": "2833",
+      "arm": "B",
+      "n_review_candidates": 6,
+      "decision_counts": {
+        "pending": 6
+      },
+      "n_typed_adjudicated_yes": 0,
+      "n_yes_without_type": 0,
+      "type_coverage_of_candidates": 0.0,
+      "review_candidates_per_cluster": {
+        "0": 5,
+        "2": 1
+      },
+      "typed_counts_per_cluster": {},
+      "purity_numerator": null,
+      "cluster_details": [
+        {
+          "cluster_id": "0",
+          "reviewed_sample_ids": [
+            "itsp-2833-271912_buggy",
+            "itsp-2833-271916_buggy",
+            "itsp-2833-271920_buggy",
+            "itsp-2833-271965_buggy",
+            "itsp-2833-271986_buggy"
+          ],
+          "n_candidates": 5,
+          "decision_counts": {
+            "pending": 5
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "2",
+          "reviewed_sample_ids": [
+            "itsp-2833-271975_buggy"
+          ],
+          "n_candidates": 1,
+          "decision_counts": {
+            "pending": 1
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        }
+      ],
+      "cluster_purity": null,
+      "reason": "codebook_not_approved",
+      "scope": "misconception_type_purity_among_adjudicated_Yes_only_in_selected_sample"
+    },
+    {
+      "problem_id": "2833",
+      "arm": "C",
+      "n_review_candidates": 6,
+      "decision_counts": {
+        "pending": 6
+      },
+      "n_typed_adjudicated_yes": 0,
+      "n_yes_without_type": 0,
+      "type_coverage_of_candidates": 0.0,
+      "review_candidates_per_cluster": {
+        "0": 2,
+        "1": 2,
+        "2": 2
+      },
+      "typed_counts_per_cluster": {},
+      "purity_numerator": null,
+      "cluster_details": [
+        {
+          "cluster_id": "0",
+          "reviewed_sample_ids": [
+            "itsp-2833-271912_buggy",
+            "itsp-2833-271920_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "1",
+          "reviewed_sample_ids": [
+            "itsp-2833-271916_buggy",
+            "itsp-2833-271986_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        },
+        {
+          "cluster_id": "2",
+          "reviewed_sample_ids": [
+            "itsp-2833-271965_buggy",
+            "itsp-2833-271975_buggy"
+          ],
+          "n_candidates": 2,
+          "decision_counts": {
+            "pending": 2
+          },
+          "n_typed_yes": 0,
+          "typed_coverage": 0.0,
+          "type_counts": {},
+          "modal_types": [],
+          "multiple_observed_types": null
+        }
+      ],
+      "cluster_purity": null,
+      "reason": "codebook_not_approved",
+      "scope": "misconception_type_purity_among_adjudicated_Yes_only_in_selected_sample"
+    }
+  ],
+  "agreement": null,
+  "agreement_details": [],
+  "limitations": [
+    "Purposive 17-sample selection from C, not whole-cohort purity.",
+    "No student IDs; no unseen-student generalization.",
+    "No/Unclear/pending are excluded from TYPE purity; inspect coverage and decision counts.",
+    "Confidence is recorded but not used as a statistical weight.",
+    "Same-cause ratings are post-cluster judgments, not independent misconception labels."
+  ],
+  "annotation_source": "human_expert_annotation",
+  "ai_annotation": [
+    {
+      "annotation_source": "AI annotation",
+      "reviewer_id": "ai:codex:2026-09-19",
+      "status": "reference_only_not_expert_validated",
+      "n_completed": 17,
+      "n_independent_blind": 0,
+      "decision_counts": {
+        "Unclear": 4,
+        "No": 6,
+        "Yes": 7
+      },
+      "cluster_purity": null,
+      "raw_agreement": null,
+      "cohen_kappa": null,
+      "reason": "AI reference annotations are not eligible for expert validation metrics."
+    }
+  ],
+  "provenance": {
+    "annotations_sha256": "f08a372235c9496cfde9ad587b7a8593db65071014e9b034eb9a3e7459f9e914",
+    "assignments_sha256": "bffe0aa482f5a0f47beaa803dbee82b55ad70d320f00935d17314af6fe645c22"
+  }
+}

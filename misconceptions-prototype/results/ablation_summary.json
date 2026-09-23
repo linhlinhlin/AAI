@@ -1,0 +1,133 @@
+{
+  "warning": "Synthetic near-duplicate variants; NOT an unbiased generalization benchmark.",
+  "experiments": [
+    {
+      "method": "exact",
+      "features": "outcomes",
+      "k_configured": 2,
+      "seeds": [
+        7,
+        42,
+        91
+      ],
+      "clusters": [
+        2,
+        2,
+        2
+      ],
+      "silhouette_train": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rule_holdout_fidelity": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "elapsed_seconds": [
+        0.018013700027950108,
+        0.013529599993489683,
+        0.01677159999962896
+      ],
+      "common_train_count_seed7_42": 26,
+      "common_train_ARI_seed7_42": 1.0
+    },
+    {
+      "method": "agglomerative",
+      "features": "outcomes",
+      "k_configured": 2,
+      "seeds": [
+        7,
+        42,
+        91
+      ],
+      "clusters": [
+        2,
+        2,
+        2
+      ],
+      "silhouette_train": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rule_holdout_fidelity": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "elapsed_seconds": [
+        0.04953870002645999,
+        0.01544870005454868,
+        0.018444100045599043
+      ],
+      "common_train_count_seed7_42": 26,
+      "common_train_ARI_seed7_42": 1.0
+    },
+    {
+      "method": "agglomerative",
+      "features": "combined",
+      "k_configured": 3,
+      "seeds": [
+        7,
+        42,
+        91
+      ],
+      "clusters": [
+        3,
+        3,
+        3
+      ],
+      "silhouette_train": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rule_holdout_fidelity": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "elapsed_seconds": [
+        0.012844300013966858,
+        0.01252829993609339,
+        0.013616399955935776
+      ],
+      "common_train_count_seed7_42": 26,
+      "common_train_ARI_seed7_42": 1.0
+    },
+    {
+      "method": "kmeans",
+      "features": "combined",
+      "k_configured": 3,
+      "seeds": [
+        7,
+        42,
+        91
+      ],
+      "clusters": [
+        3,
+        3,
+        3
+      ],
+      "silhouette_train": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "rule_holdout_fidelity": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "elapsed_seconds": [
+        0.10236530005931854,
+        0.053356199990957975,
+        0.04873269994277507
+      ],
+      "common_train_count_seed7_42": 26,
+      "common_train_ARI_seed7_42": 1.0
+    }
+  ]
+}

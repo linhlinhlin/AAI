@@ -1,0 +1,189 @@
+[
+  {
+    "submission_id": "itsp-2812-270276_buggy",
+    "problem_id": "2812",
+    "split": "holdout",
+    "selection_reason": "farthest_holdout_member",
+    "clusters_seed42": {
+      "A": 2,
+      "B": 0,
+      "C": 2
+    }
+  },
+  {
+    "submission_id": "itsp-2812-270277_buggy",
+    "problem_id": "2812",
+    "split": "train",
+    "selection_reason": "training_medoid",
+    "clusters_seed42": {
+      "A": 1,
+      "B": 0,
+      "C": 1
+    }
+  },
+  {
+    "submission_id": "itsp-2812-270283_buggy",
+    "problem_id": "2812",
+    "split": "train",
+    "selection_reason": "training_medoid",
+    "clusters_seed42": {
+      "A": 2,
+      "B": 0,
+      "C": 2
+    }
+  },
+  {
+    "submission_id": "itsp-2812-270285_buggy",
+    "problem_id": "2812",
+    "split": "holdout",
+    "selection_reason": "farthest_holdout_member",
+    "clusters_seed42": {
+      "A": 0,
+      "B": 0,
+      "C": 0
+    }
+  },
+  {
+    "submission_id": "itsp-2812-270293_buggy",
+    "problem_id": "2812",
+    "split": "train",
+    "selection_reason": "training_medoid",
+    "clusters_seed42": {
+      "A": 0,
+      "B": 0,
+      "C": 0
+    }
+  },
+  {
+    "submission_id": "itsp-2825-271154_buggy",
+    "problem_id": "2825",
+    "split": "train",
+    "selection_reason": "training_medoid",
+    "clusters_seed42": {
+      "A": 0,
+      "B": 0,
+      "C": 0
+    }
+  },
+  {
+    "submission_id": "itsp-2825-271163_buggy",
+    "problem_id": "2825",
+    "split": "train",
+    "selection_reason": "training_medoid",
+    "clusters_seed42": {
+      "A": 2,
+      "B": 0,
+      "C": 2
+    }
+  },
+  {
+    "submission_id": "itsp-2825-271173_buggy",
+    "problem_id": "2825",
+    "split": "train",
+    "selection_reason": "training_medoid",
+    "clusters_seed42": {
+      "A": 1,
+      "B": 0,
+      "C": 1
+    }
+  },
+  {
+    "submission_id": "itsp-2825-271188_buggy",
+    "problem_id": "2825",
+    "split": "holdout",
+    "selection_reason": "farthest_holdout_member",
+    "clusters_seed42": {
+      "A": 1,
+      "B": 0,
+      "C": 1
+    }
+  },
+  {
+    "submission_id": "itsp-2825-271203_buggy",
+    "problem_id": "2825",
+    "split": "holdout",
+    "selection_reason": "farthest_holdout_member",
+    "clusters_seed42": {
+      "A": 0,
+      "B": 0,
+      "C": 0
+    }
+  },
+  {
+    "submission_id": "itsp-2825-271213_buggy",
+    "problem_id": "2825",
+    "split": "holdout",
+    "selection_reason": "farthest_holdout_member",
+    "clusters_seed42": {
+      "A": 2,
+      "B": 0,
+      "C": 2
+    }
+  },
+  {
+    "submission_id": "itsp-2833-271912_buggy",
+    "problem_id": "2833",
+    "split": "holdout",
+    "selection_reason": "farthest_holdout_member",
+    "clusters_seed42": {
+      "A": 0,
+      "B": 0,
+      "C": 0
+    }
+  },
+  {
+    "submission_id": "itsp-2833-271916_buggy",
+    "problem_id": "2833",
+    "split": "holdout",
+    "selection_reason": "farthest_holdout_member",
+    "clusters_seed42": {
+      "A": 1,
+      "B": 0,
+      "C": 1
+    }
+  },
+  {
+    "submission_id": "itsp-2833-271920_buggy",
+    "problem_id": "2833",
+    "split": "train",
+    "selection_reason": "training_medoid",
+    "clusters_seed42": {
+      "A": 0,
+      "B": 0,
+      "C": 0
+    }
+  },
+  {
+    "submission_id": "itsp-2833-271965_buggy",
+    "problem_id": "2833",
+    "split": "train",
+    "selection_reason": "training_medoid",
+    "clusters_seed42": {
+      "A": 2,
+      "B": 0,
+      "C": 2
+    }
+  },
+  {
+    "submission_id": "itsp-2833-271975_buggy",
+    "problem_id": "2833",
+    "split": "holdout",
+    "selection_reason": "farthest_holdout_member",
+    "clusters_seed42": {
+      "A": 2,
+      "B": 2,
+      "C": 2
+    }
+  },
+  {
+    "submission_id": "itsp-2833-271986_buggy",
+    "problem_id": "2833",
+    "split": "train",
+    "selection_reason": "training_medoid",
+    "clusters_seed42": {
+      "A": 1,
+      "B": 0,
+      "C": 1
+    }
+  }
+]

@@ -1,0 +1,735 @@
+{
+  "schema_version": 1,
+  "assignments_sha256": "bffe0aa482f5a0f47beaa803dbee82b55ad70d320f00935d17314af6fe645c22",
+  "codebook": {
+    "approved_by": null,
+    "version": "human-review-draft-v1",
+    "label_policy": null,
+    "misconception_types": [
+      "C_IO_CONTRACT",
+      "C_EXPRESSION_SEMANTICS",
+      "C_BRANCH_SELECTION",
+      "C_ITERATION_MODEL",
+      "MATH_MODEL",
+      "ENUMERATION_IDENTITY",
+      "NUMERIC_REPRESENTATION",
+      "OTHER_CONCEPT"
+    ]
+  },
+  "samples": [
+    {
+      "submission_id": "itsp-2812-270276_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Unclear",
+          "misconception_type": null,
+          "confidence": 3,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2812-270276_buggy; L22 thiếu đối số a cho %.4f trong nhánh dương; nhánh âm L16 dùng đúng. Input 1: expected 1.0000 is positive, actual 0.0000 is positive; 101 cũng sai, tổng pass 5/7. Bản correct chỉ thêm a. Đây là lỗi variadic có hành vi không xác định; không coi 0 là output tất định. Một nhánh bỏ sót chưa phân biệt được sơ suất với hiểu sai printf. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 2: 5 thành viên: thiếu đối số printf (270276/270283/270296), phạm vi nhánh sai (270272), dấu chấm nhánh dương (270305). B/0 trộn các cơ chế trên, 16 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-3/2812/270276_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-3/2812/270276_correct.c; problem=data/raw/itsp/dataset/Lab-3/2812/Main.c; log=data/itsp/cohorts/2812/review.jsonl (submission_id=itsp-2812-270276_buggy); failed_test_ids=[3, 6]; passed=5/7. Đây là log lịch sử, không phải kết quả chạy lại. Evidence còn thiếu để phân giải Unclear: Cần người học giải thích vì sao %.4f cần đối số và tự sửa nhánh dương; đối chiếu với nhánh âm đang dùng a đúng. Một lỗi bỏ sót đơn lẻ chưa đủ nâng Unclear thành Yes.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2812-270277_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "No",
+          "misconception_type": null,
+          "confidence": 4,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2812-270277_buggy; L18–19 kiểm tra a==0 đúng nhưng in thêm %f. Input 0 và 0000000: expected input is zero, actual 0.000000 input is zero; 5/7 pass. Bản correct bỏ %f, giữ logic. Bằng chứng là sai chuỗi output, không phải hiểu sai số zero hay đối số printf. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 1: 2 thành viên: 270277 in thừa số zero; 270297 so a với ký tự zero (a=='0'), log input 0 output rỗng. Không cùng cơ chế. B/0 trộn các cơ chế trên, 16 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-3/2812/270277_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-3/2812/270277_correct.c; problem=data/raw/itsp/dataset/Lab-3/2812/Main.c; log=data/itsp/cohorts/2812/review.jsonl (submission_id=itsp-2812-270277_buggy); failed_test_ids=[2, 7]; passed=5/7. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "No",
+            "B": "Partially",
+            "C": "No"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2812-270283_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Yes",
+          "misconception_type": "printf_format_argument_contract",
+          "confidence": 3,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2812-270283_buggy; L17 và L23 lặp lại %.4f và %n mà không truyền đối số. Input -12: expected -12.0000 is negative, actual 0.0000 is negative,; cả 5 test khác zero fail, pass 2/7. Bản correct thêm n và bỏ ,%n. Mẫu lặp ở hai nhánh ủng hộ giả thuyết hiểu sai quan hệ format–đối số; %n cần con trỏ, không phải newline. Có thêm lỗi dấu phẩy và hành vi không xác định; không khẳng định crash hay hiểu sai bền vững, copy/paste vẫn là khả năng thay thế. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 2: 5 thành viên: thiếu đối số printf (270276/270283/270296), phạm vi nhánh sai (270272), dấu chấm nhánh dương (270305). B/0 trộn các cơ chế trên, 16 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-3/2812/270283_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-3/2812/270283_correct.c; problem=data/raw/itsp/dataset/Lab-3/2812/Main.c; log=data/itsp/cohorts/2812/review.jsonl (submission_id=itsp-2812-270283_buggy); failed_test_ids=[1, 3, 4, 5, 6]; passed=2/7. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2812-270285_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "No",
+          "misconception_type": null,
+          "confidence": 5,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2812-270285_buggy; L16,19,21 chỉ thêm dấu chấm cuối output. Input -12: expected -12.0000 is negative, actual -12.0000 is negative.; cả 7 test có số và phân loại đúng nhưng fail. Bản correct chỉ bỏ dấu chấm. Main.c mô tả và ví dụ lại có dấu chấm: xung đột đề/oracle, không quy thành misconception. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 0: 12 thành viên: dấu chấm (270285/270293 và 5 mẫu khác), hard-code -12 (270280), thiếu phân loại (270330), precision/zero (270334), in thừa (270349), sai scanf (270357). B/0 trộn các cơ chế trên, 16 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-3/2812/270285_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-3/2812/270285_correct.c; problem=data/raw/itsp/dataset/Lab-3/2812/Main.c; log=data/itsp/cohorts/2812/review.jsonl (submission_id=itsp-2812-270285_buggy); failed_test_ids=[1, 2, 3, 4, 5, 6, 7]; passed=0/7. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2812-270293_buggy",
+      "problem_id": "2812",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "No",
+          "misconception_type": null,
+          "confidence": 5,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2812-270293_buggy; L16,18,20 in đúng dấu/số nhưng có dấu chấm cuối. Input 0: expected input is zero, actual input is zero.; 7/7 fail chỉ khác dấu chấm. Bản correct chỉ bỏ dấu chấm. Mô tả và ví dụ Main.c có dấu chấm; đây là xung đột đề/oracle, không phải misconception về phân nhánh. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 0: 12 thành viên: dấu chấm (270285/270293 và 5 mẫu khác), hard-code -12 (270280), thiếu phân loại (270330), precision/zero (270334), in thừa (270349), sai scanf (270357). B/0 trộn các cơ chế trên, 16 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-3/2812/270293_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-3/2812/270293_correct.c; problem=data/raw/itsp/dataset/Lab-3/2812/Main.c; log=data/itsp/cohorts/2812/review.jsonl (submission_id=itsp-2812-270293_buggy); failed_test_ids=[1, 2, 3, 4, 5, 6, 7]; passed=0/7. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271154_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Yes",
+          "misconception_type": "squared_distance_radius_mismatch",
+          "confidence": 3,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2825-271154_buggy; L15 ghi s là power of point nhưng tính d²-r thay vì d²-r². Input 0 0 5 3 4 cho s=20 nên in outside, expected on; bốn test inside/on sai, pass 3/7. Bản correct đổi -r thành -r*r. Công thức và chú thích ủng hộ nhầm đại lượng bình phương; vẫn có thể bỏ sót phép nhân, nên confidence Medium. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 0: 7 thành viên: d² so với r (271154/271211); else (271203/271205); thiếu on (271152), dấu chấm (271216), so r thay k (271228). B/0 trộn các cơ chế trên, 20 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2825/271154_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2825/271154_correct.c; problem=data/raw/itsp/dataset/Lab-4/2825/Main.c; log=data/itsp/cohorts/2825/review.jsonl (submission_id=itsp-2825-271154_buggy); failed_test_ids=[3, 4, 5, 6]; passed=3/7. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271163_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "No",
+          "misconception_type": null,
+          "confidence": 5,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2825-271163_buggy; L25,28,31 thiếu dấu chấm; khoảng cách và ba nhánh đúng. Input 0 0 5 3 7: expected Point is outside the Circle., actual Point is outside the Circle; cả 7 kết quả phân loại đúng, pass 0/7. Bản correct chỉ thêm dấu chấm. Lỗi output contract, không có bằng chứng misconception hình học. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 2: 13 thành viên: dấu chấm (271150/271163/271191/271192/271217/271226); thứ tự input (271213/271220); chữ hoa (271209/271239/271241); debug output (271224); thiếu & scanf (271206). B/0 trộn các cơ chế trên, 20 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2825/271163_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2825/271163_correct.c; problem=data/raw/itsp/dataset/Lab-4/2825/Main.c; log=data/itsp/cohorts/2825/review.jsonl (submission_id=itsp-2825-271163_buggy); failed_test_ids=[1, 2, 3, 4, 5, 6, 7]; passed=0/7. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271173_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "No",
+          "misconception_type": null,
+          "confidence": 5,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2825-271173_buggy; L25 viết Cicle thay Circle. Input 0 0 5 3 7: expected Point is outside the Circle., actual Point is outside the Cicle.; ba test outside fail, bốn inside/on pass. Bản correct chỉ thêm chữ r. Đây là typo, công thức và phân loại đúng. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 1: 2 thành viên: typo Cicle (271173); in on cho outside (271188). Không cùng cơ chế dù cùng test fail. B/0 trộn các cơ chế trên, 20 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2825/271173_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2825/271173_correct.c; problem=data/raw/itsp/dataset/Lab-4/2825/Main.c; log=data/itsp/cohorts/2825/review.jsonl (submission_id=itsp-2825-271173_buggy); failed_test_ids=[1, 2, 7]; passed=4/7. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "No",
+            "B": "Partially",
+            "C": "No"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271188_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Unclear",
+          "misconception_type": null,
+          "confidence": 3,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2825-271188_buggy; L16 tính d²-r² đúng; L17–25 phân nhánh loại trừ nhau nhưng nhánh dương in on thay outside. Input 0 0 5 3 7: expected outside, actual on; pass 4/7. Bản correct đổi chuỗi và thêm l>0. Không phân biệt được copy/paste chuỗi với hiểu sai ánh xạ dấu sang vị trí; không gán nhãn hình học chắc chắn. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 1: 2 thành viên: typo Cicle (271173); in on cho outside (271188). Không cùng cơ chế dù cùng test fail. B/0 trộn các cơ chế trên, 20 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2825/271188_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2825/271188_correct.c; problem=data/raw/itsp/dataset/Lab-4/2825/Main.c; log=data/itsp/cohorts/2825/review.jsonl (submission_id=itsp-2825-271188_buggy); failed_test_ids=[1, 2, 7]; passed=4/7. Đây là log lịch sử, không phải kết quả chạy lại. Evidence còn thiếu để phân giải Unclear: Cần người học giải thích vị trí điểm khi d²-r²>0 và lý do hai nhánh cùng in on. Câu trả lời giúp phân biệt copy/paste với hiểu sai hình học.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "No",
+            "B": "Partially",
+            "C": "No"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271203_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Yes",
+          "misconception_type": "independent_if_else_binding",
+          "confidence": 3,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2825-271203_buggy; L22–27 dùng hai if độc lập, else gắn với if(n>0), không phải toàn bộ ba trường hợp. Input 3 4 5 5.6 6.2: expected Point is inside the Circle., actual Point is inside the Circle.Point is on the Circle.; hai test inside fail, pass 5/7. Bản correct tạo chuỗi loại trừ nhau. Bằng chứng cấu trúc ủng hộ nhầm else/if độc lập; thiếu else khi gõ vẫn có thể xảy ra. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 0: 7 thành viên: d² so với r (271154/271211); else (271203/271205); thiếu on (271152), dấu chấm (271216), so r thay k (271228). B/0 trộn các cơ chế trên, 20 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2825/271203_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2825/271203_correct.c; problem=data/raw/itsp/dataset/Lab-4/2825/Main.c; log=data/itsp/cohorts/2825/review.jsonl (submission_id=itsp-2825-271203_buggy); failed_test_ids=[4, 5]; passed=5/7. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2825-271213_buggy",
+      "problem_id": "2825",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Unclear",
+          "misconception_type": null,
+          "confidence": 3,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2825-271213_buggy; L15 đọc x,y,x1,y1,r trái đề x,y,r,x1,y1. Input 0 0 5 3 7 thành điểm (5,3), r=7 nên in inside thay outside; pass 2/7. Bản correct chỉ sửa thứ tự địa chỉ. Đây là lỗi ánh xạ input nhưng chưa phân biệt sơ suất đọc đề với misconception scanf. Cả hai bản thiếu math.h cho sqrt; không suy diễn tính portable từ log lịch sử. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 2: 13 thành viên: dấu chấm (271150/271163/271191/271192/271217/271226); thứ tự input (271213/271220); chữ hoa (271209/271239/271241); debug output (271224); thiếu & scanf (271206). B/0 trộn các cơ chế trên, 20 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2825/271213_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2825/271213_correct.c; problem=data/raw/itsp/dataset/Lab-4/2825/Main.c; log=data/itsp/cohorts/2825/review.jsonl (submission_id=itsp-2825-271213_buggy); failed_test_ids=[1, 2, 3, 5, 6]; passed=2/7. Đây là log lịch sử, không phải kết quả chạy lại. Evidence còn thiếu để phân giải Unclear: Cần người học ánh xạ từng token của input 0 0 5 3 7 vào biến và giải thích thứ tự đối số scanf; phân biệt đọc nhầm đề với hiểu sai cơ chế nhập.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271912_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "No",
+          "misconception_type": null,
+          "confidence": 5,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2833-271912_buggy; L15–19 duyệt cạnh có thứ tự chuẩn và lọc tam giác đúng; L23 dùng triangle thay triangles. N=4: expected Number of possible triangles is 13, actual Number of possible triangle is 13; cả 6 số đếm đúng nhưng pass 0/6. Bản correct chỉ thêm s, không có bằng chứng hiểu sai tổ hợp. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 0: 6 thành viên: thiếu s (271912/271927/271993), hướng cập nhật vòng (271920), chưa có thuật toán/output (271989), thiếu tiền tố (272004). B/0 trộn các cơ chế trên, 15 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2833/271912_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2833/271912_correct.c; problem=data/raw/itsp/dataset/Lab-4/2833/Main.c; log=data/itsp/cohorts/2833/review.jsonl (submission_id=itsp-2833-271912_buggy); failed_test_ids=[1, 2, 3, 4, 5, 6]; passed=0/6. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271916_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Yes",
+          "misconception_type": "invalid_permutation_correction",
+          "confidence": 4,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2833-271916_buggy; L15–27 duyệt mọi bộ ba có thứ tự rồi L28 tính ((count-n)/n)+n. N=4: expected 13, actual 11; N=5:22/17, N=7:50/31; pass 3/6. Số hoán vị phụ thuộc cạnh bằng nhau (1/3/6), không phụ thuộc N theo phép chia này. Bản correct bỏ công thức và đặt b>=a,c>=b. Công thức hiệu chỉnh chủ động ủng hộ hiểu sai bội số hoán vị; khác với không khử trùng lặp ở 271965. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 1: 2 thành viên: hiệu chỉnh hoán vị (271916); gán trong điều kiện góc (271986). Không cùng cơ chế. B/0 trộn các cơ chế trên, 15 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2833/271916_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2833/271916_correct.c; problem=data/raw/itsp/dataset/Lab-4/2833/Main.c; log=data/itsp/cohorts/2833/review.jsonl (submission_id=itsp-2833-271916_buggy); failed_test_ids=[1, 4, 5]; passed=3/6. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "No",
+            "B": "Partially",
+            "C": "No"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271920_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Unclear",
+          "misconception_type": null,
+          "confidence": 3,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2833-271920_buggy; L15 for(i=n;i>=1;i++) tăng biến trong vòng cần giảm; hai vòng trong L17,19 lại dùng -- đúng. N=4: expected Number of possible triangles is 13, actual rỗng; cả 6 log WRONG_ANSWER, không phải verdict timeout. Bản correct chỉ đổi i++ thành i--. Cơ chế không tiến về điều kiện dừng rõ nhưng có thể là typo; không khẳng định misconception hoặc vòng vô hạn tất định vì signed overflow có thể gây UB. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 0: 6 thành viên: thiếu s (271912/271927/271993), hướng cập nhật vòng (271920), chưa có thuật toán/output (271989), thiếu tiền tố (272004). B/0 trộn các cơ chế trên, 15 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2833/271920_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2833/271920_correct.c; problem=data/raw/itsp/dataset/Lab-4/2833/Main.c; log=data/itsp/cohorts/2833/review.jsonl (submission_id=itsp-2833-271920_buggy); failed_test_ids=[1, 2, 3, 4, 5, 6]; passed=0/6. Đây là log lịch sử, không phải kết quả chạy lại. Evidence còn thiếu để phân giải Unclear: Cần người học truy vết i ở các lượt đầu và chọn cập nhật để đạt i<1; đối chiếu hai vòng trong dùng -- đúng để phân biệt typo với hiểu sai điều kiện dừng.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "No",
+            "B": "Partially",
+            "C": "No"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271965_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Yes",
+          "misconception_type": "ordered_vs_unordered_triangle_count",
+          "confidence": 4,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2833-271965_buggy; L16–20 cho a,b,c độc lập từ 1..N nên đếm lại các hoán vị cùng tam giác. N=4: expected 13, actual 34; N=3:7/15, chỉ N=1 pass (1/6). Bản correct đặt b=a,c=b. Thiếu ràng buộc đại diện hoặc hiệu chỉnh trong toàn thuật toán ủng hộ nhầm bộ ba có thứ tự với tam giác không phân biệt hoán vị, không phải sai bất đẳng thức. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 2: 10 thành viên: hoán vị (271965/271977/271982), dừng sớm (271975/271922), OR (271944/271946), OR và hoán vị (271983), dấu ; sau for (271987), phạm vi count (271990). B/0 trộn các cơ chế trên, 15 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2833/271965_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2833/271965_correct.c; problem=data/raw/itsp/dataset/Lab-4/2833/Main.c; log=data/itsp/cohorts/2833/review.jsonl (submission_id=itsp-2833-271965_buggy); failed_test_ids=[1, 3, 4, 5, 6]; passed=1/6. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "Partially",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271975_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Yes",
+          "misconception_type": "candidate_filter_as_loop_guard",
+          "confidence": 4,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2833-271975_buggy; L19–23 đặt a<c+b vào while khi c bắt đầu từ 1 và tăng. Với a=3,b=2,c=1 guard false, bỏ luôn c=2 dù (3,2,2) hợp lệ. N=3: expected 7, actual 6; N=4:13/10; pass 2/6. Bản correct duyệt c<=b rồi lọc bằng if. Đây là nhầm điều kiện chọn ứng viên với điều kiện kết thúc duyệt; comment N-1 ở L31 cũng không được dùng để chữa lỗi. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 2: 10 thành viên: hoán vị (271965/271977/271982), dừng sớm (271975/271922), OR (271944/271946), OR và hoán vị (271983), dấu ; sau for (271987), phạm vi count (271990). B/2 có 2 thành viên: 271975 dừng sớm; 271983 OR và hoán vị (N=4: expected 13, actual 64). Không cùng cơ chế dù cùng while. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2833/271975_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2833/271975_correct.c; problem=data/raw/itsp/dataset/Lab-4/2833/Main.c; log=data/itsp/cohorts/2833/review.jsonl (submission_id=itsp-2833-271975_buggy); failed_test_ids=[1, 3, 4, 5]; passed=2/6. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "Partially",
+            "B": "No",
+            "C": "Partially"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    },
+    {
+      "submission_id": "itsp-2833-271986_buggy",
+      "problem_id": "2833",
+      "reviews": [
+        {
+          "status": "complete",
+          "reviewer_id": "ai:codex:2026-09-19",
+          "misconception": "Yes",
+          "misconception_type": "assignment_in_boolean_equality_test",
+          "confidence": 3,
+          "evidence": "AI annotation, không phải human expert annotation hoặc ground truth. Source itsp-2833-271986_buggy; L19–22 tính cosine và kiểm tra tam giác; L23 lặp (x=0&&...), (y=0&&...), (z=0&&...) thay phép so sánh. Các biểu thức gán nhận giá trị 0 và false, nên nhánh góc vuông không được đếm. N=5: expected 22, actual 21; N=7:50/49, tương thích thiếu (5,4,3); pass 4/6. Bản correct bỏ toàn bộ điều kiện phụ. Lặp cùng mẫu cú pháp ủng hộ nhầm gán/so sánh; có thể copy/paste, và diff không chứng minh thay == là sửa duy nhất. Không gán thêm misconception hình học chỉ vì có bộ lọc góc. Vòng 2: đã đọc source, log và diff correct của 59 thành viên ngữ cảnh trong results/itsp/expert_cluster_context.md; chỉ 17 mẫu có phiếu. A/C cluster 1: 2 thành viên: hiệu chỉnh hoán vị (271916); gán trong điều kiện góc (271986). Không cùng cơ chế. B/0 trộn các cơ chế trên, 15 thành viên. Mixed-cause; Partially nghĩa là cụm trộn nguyên nhân, No nghĩa là không chung cơ chế cụ thể với các mẫu còn lại. Đã xem review trước nên independent_blind_review=false. Truy vết evidence: source=data/raw/itsp/dataset/Lab-4/2833/271986_buggy.c; paired_correct=data/raw/itsp/dataset/Lab-4/2833/271986_correct.c; problem=data/raw/itsp/dataset/Lab-4/2833/Main.c; log=data/itsp/cohorts/2833/review.jsonl (submission_id=itsp-2833-271986_buggy); failed_test_ids=[4, 5]; passed=4/6. Đây là log lịch sử, không phải kết quả chạy lại.",
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": "No",
+            "B": "Partially",
+            "C": "No"
+          }
+        },
+        {
+          "status": "pending",
+          "reviewer_id": null,
+          "misconception": null,
+          "misconception_type": null,
+          "confidence": null,
+          "evidence": null,
+          "independent_blind_review": false,
+          "same_cause_as_cluster": {
+            "A": null,
+            "B": null,
+            "C": null
+          }
+        }
+      ],
+      "adjudication": {
+        "status": "pending",
+        "reviewer_id": null,
+        "misconception": null,
+        "misconception_type": null,
+        "confidence": null,
+        "evidence": null
+      }
+    }
+  ]
+}

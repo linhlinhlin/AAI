@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "dataset_name": "synthetic-sum-demo-NOT-student-data",
+  "provenance": "Hand-authored synthetic fixtures; integration testing only.",
+  "problem_id": "demo_sum_0_through_n",
+  "language": "python",
+  "suite_version": "sum-v1",
+  "test_ids": [
+    "n_0",
+    "n_1",
+    "n_2",
+    "n_3",
+    "n_5",
+    "n_8"
+  ],
+  "test_inputs": {
+    "n_0": 0,
+    "n_1": 1,
+    "n_2": 2,
+    "n_3": 3,
+    "n_5": 5,
+    "n_8": 8
+  },
+  "specification": "For integer n >= 0, return sum of integers 0 through n inclusive."
+}

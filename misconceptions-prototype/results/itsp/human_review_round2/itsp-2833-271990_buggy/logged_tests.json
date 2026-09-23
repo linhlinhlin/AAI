@@ -1,0 +1,44 @@
+[
+  {
+    "test_id": "1",
+    "verdict": "WRONG_ANSWER",
+    "input": "4",
+    "expected": "Number of possible triangles is 13",
+    "output": "Number of possible triangles is 4"
+  },
+  {
+    "test_id": "2",
+    "verdict": "ACCEPTED",
+    "input": "1",
+    "expected": "Number of possible triangles is 1",
+    "output": "Number of possible triangles is 1"
+  },
+  {
+    "test_id": "3",
+    "verdict": "WRONG_ANSWER",
+    "input": "3",
+    "expected": "Number of possible triangles is 7",
+    "output": "Number of possible triangles is 3"
+  },
+  {
+    "test_id": "4",
+    "verdict": "WRONG_ANSWER",
+    "input": "5",
+    "expected": "Number of possible triangles is 22",
+    "output": "Number of possible triangles is 5"
+  },
+  {
+    "test_id": "5",
+    "verdict": "WRONG_ANSWER",
+    "input": "7",
+    "expected": "Number of possible triangles is 50",
+    "output": "Number of possible triangles is 7"
+  },
+  {
+    "test_id": "6",
+    "verdict": "WRONG_ANSWER",
+    "input": "2",
+    "expected": "Number of possible triangles is 3",
+    "output": "Number of possible triangles is 2"
+  }
+]

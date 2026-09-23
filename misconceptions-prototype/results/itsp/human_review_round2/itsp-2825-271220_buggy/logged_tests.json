@@ -1,0 +1,51 @@
+[
+  {
+    "test_id": "1",
+    "verdict": "WRONG_ANSWER",
+    "input": "1.2 2.3 2.7 5.3 7.6",
+    "expected": "Point is outside the Circle.",
+    "output": "Point is inside the Circle."
+  },
+  {
+    "test_id": "2",
+    "verdict": "WRONG_ANSWER",
+    "input": "0.0 0.0 5.0 3.0 7.0",
+    "expected": "Point is outside the Circle.",
+    "output": "Point is inside the Circle."
+  },
+  {
+    "test_id": "3",
+    "verdict": "WRONG_ANSWER",
+    "input": "3.0 4.0 5.0 7.0 7.0",
+    "expected": "Point is on the Circle.",
+    "output": "Point is inside the Circle."
+  },
+  {
+    "test_id": "4",
+    "verdict": "ACCEPTED",
+    "input": "3.0 4.0 5.0 5.6 6.2",
+    "expected": "Point is inside the Circle.",
+    "output": "Point is inside the Circle."
+  },
+  {
+    "test_id": "5",
+    "verdict": "WRONG_ANSWER",
+    "input": "-1.0 -2.0 5.0 1.5 2.0",
+    "expected": "Point is inside the Circle.",
+    "output": "Point is outside the Circle."
+  },
+  {
+    "test_id": "6",
+    "verdict": "WRONG_ANSWER",
+    "input": "0.0 0.0 5.0 3.0 4.0",
+    "expected": "Point is on the Circle.",
+    "output": "Point is outside the Circle."
+  },
+  {
+    "test_id": "7",
+    "verdict": "ACCEPTED",
+    "input": "0.0 0.0 5.0 3.0 5.0",
+    "expected": "Point is outside the Circle.",
+    "output": "Point is outside the Circle."
+  }
+]
