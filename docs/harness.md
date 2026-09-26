@@ -25,6 +25,11 @@ split ITSP trên toàn corpus rồi chạy 27 cấu hình của ba bài 2812/282
 ghi đè dữ liệu hay kết quả nghiên cứu cũ. GitHub Actions gọi chính các lệnh này.
 CI chưa được xác nhận trên GitHub cho tới khi workflow thực sự chạy ở đó.
 
+`.gitattributes` giữ nguyên byte của JSON kết quả/split mới. Riêng
+`abc_review_assignments.json` cũ được checkout bằng CRLF trên cả Windows/Linux,
+đúng SHA-256 đã ghi trong packet annotation; không thay hash hoặc bỏ kiểm tra
+toàn vẹn chỉ để phù hợp với hệ điều hành.
+
 ## Lấy dữ liệu và khóa split
 
 Từ `misconceptions-prototype`, với Python của môi trường đã cài:

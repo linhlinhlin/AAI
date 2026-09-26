@@ -2,3 +2,5 @@
 /research/splits/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol linguist-generated=true
 /research/runs/**/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol linguist-generated=true
 *.zip binary
+# The existing annotation packet records the SHA-256 of this CRLF file.
+/misconceptions-prototype/results/itsp/abc_review_assignments.json text eol=crlf
