@@ -6,6 +6,9 @@ chia sẻ phiên đăng nhập; app học viên không mở API của bàn nghi�
 
 ## Cài và chạy
 
+Người nhận bản bàn giao xem [hướng dẫn đồng nghiệp](ban_giao_dong_nghiep.md)
+để cài một lần, dùng tài khoản trong gói riêng hoặc tự đăng ký từ bản clone.
+
 Cài Python 3.12 theo [harness](harness.md), mở Docker Desktop với Linux engine.
 Từ `misconceptions-prototype`:
 

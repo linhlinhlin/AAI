@@ -8,6 +8,9 @@ Mã nguồn, dữ liệu demo/ITSP và hồ sơ nghiên cứu nằm tại
 
 ## App học viên và giảng viên
 
+[Bàn giao cho đồng nghiệp và tài khoản riêng](docs/ban_giao_dong_nghiep.md) ·
+[Báo cáo dễ hiểu: hướng nghiên cứu, mô hình, kết quả](docs/bao_cao_de5_de_hieu.md).
+
 [AAI Learning](docs/learning_app.md) có tài khoản, 6 bài C17, editor, chạy test
 thật trong Docker, phản hồi theo bằng chứng và lịch sử sửa bài. Giảng viên xem
 OAV, nhóm lỗi, luật IF–THEN và ghi nội dung giảng lại từ bài nộp mới.
