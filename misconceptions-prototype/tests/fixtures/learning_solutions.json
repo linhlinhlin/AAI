@@ -1,0 +1,8 @@
+{
+  "sum-range": "#include <stdio.h>\nint main(void){int n;scanf(\"%d\",&n);long long s=0;for(int i=1;i<=n;i++)s+=i;printf(\"%lld\\n\",s);return 0;}\n",
+  "mean-two": "#include <stdio.h>\nint main(void){int a,b;scanf(\"%d %d\",&a,&b);printf(\"%.2f\\n\",(a+b)/2.0);return 0;}\n",
+  "max-array": "#include <stdio.h>\nint main(void){int n,x,m;scanf(\"%d %d\",&n,&m);for(int i=1;i<n;i++){scanf(\"%d\",&x);if(x>m)m=x;}printf(\"%d\\n\",m);return 0;}\n",
+  "count-positive": "#include <stdio.h>\nint main(void){int n,x,c=0;scanf(\"%d\",&n);for(int i=0;i<n;i++){scanf(\"%d\",&x);if(x>0)c++;}printf(\"%d\\n\",c);return 0;}\n",
+  "swap": "#include <stdio.h>\nvoid swap(int*a,int*b){int t=*a;*a=*b;*b=t;}\nint main(void){int a,b;scanf(\"%d %d\",&a,&b);swap(&a,&b);printf(\"%d %d\\n\",a,b);return 0;}\n",
+  "circle-position": "#include <stdio.h>\nint main(void){int x,y,r;scanf(\"%d %d %d\",&x,&y,&r);int d=x*x+y*y;if(d<r*r)puts(\"INSIDE\");else if(d==r*r)puts(\"ON\");else puts(\"OUTSIDE\");return 0;}\n"
+}

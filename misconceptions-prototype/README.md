@@ -1,12 +1,22 @@
 # Misconceptions Clustering — nghiên cứu đề 5
 
-**Hiện tại (26/09/2026):** nhóm tự tìm dữ liệu; không chờ dataset giảng viên.
+**Hiện tại (27/09/2026):** nhóm tự tìm dữ liệu; không chờ dataset giảng viên.
 Xem [harness](../docs/harness.md), [tiêu chí đề 5](../docs/topic5-contract.md)
 và [trạng thái nghiên cứu](../research/STATE.md). Các mục có ngày bên dưới mô tả
 lịch sử prototype; hướng hiện tại có thêm C-Pack-IPAs, split toàn corpus và
-baseline stdout. Web vẫn là công cụ kiểm tra, chưa phải hệ thống lớp học triển khai.
+baseline stdout. Đã có app học viên và giảng viên chạy local nhiều tài khoản.
 
-## Giao diện web để test
+## App học viên và giảng viên
+
+Mở Docker Desktop Linux engine. Từ thư mục này, chạy
+`& .venv/Scripts/python.exe scripts/setup_learning.py`, sau đó
+`./start_learning.ps1` và mở **http://127.0.0.1:8766**.
+Đăng ký học viên, làm bài C17, chạy test thật, sửa bài và xem lịch sử.
+Tài khoản giảng viên xem lớp, OAV, cụm lỗi, luật IF–THEN và lưu nhận xét.
+[Cài đặt, tạo giảng viên, kiểm chứng và giới hạn](../docs/learning_app.md).
+App chưa được triển khai công khai; chưa có nghiên cứu hiệu quả học tập trên người.
+
+## Bàn nghiên cứu và kiểm thử
 
 Tại thư mục project, chạy `& .venv/Scripts/python.exe -m misconceptions.web --port 8765`,
 rồi mở **http://127.0.0.1:8765**. Giao diện tiếng Việt có chạy thí nghiệm, xem cụm/OAV/luật,

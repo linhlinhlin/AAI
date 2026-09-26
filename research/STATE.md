@@ -1,10 +1,28 @@
-# Trạng thái nghiên cứu — 26/09/2026
+# Trạng thái nghiên cứu — 27/09/2026
 
 **Đã triển khai harness và nền thực nghiệm offline cho đề 5.** Mục tiêu bài báo
 vẫn là khám phá cơ chế lỗi có bằng chứng, với quan niệm sai là giả thuyết cần
 xác nhận. Kết quả hiện tại chưa chứng minh SOTA hay niềm tin thật của người học.
 
-## Phần đã chạy được
+## App học viên và giảng viên — 27/09/2026
+
+Đã bổ sung app local nhiều tài khoản tại cổng 8766: đăng ký/đăng nhập, sáu bài
+C17, chạy code thật trong Docker có hạn mức, bằng chứng từng test, sửa/nộp lại,
+lịch sử và tiến độ lưu SQLite. Giảng viên xem lớp, phân cụm bài sai gần nhất
+của mỗi học viên, truy xuất OAV/source/test, luật IF–THEN và lưu/mở lại review.
+Không tạo học viên giả trong database sử dụng thực tế.
+
+[Cách chạy và giới hạn triển khai](../docs/learning_app.md),
+[hồ sơ nghiệm thu app](learning-app/README.md). Kiểm tra hiện tại: **184 tests
++ 3 subtests pass**, Ruff pass, **27/27 research smoke**; **14 checks Docker
+pass** trên các chương trình do dự án tự viết. Bộ kiểm tra mặc định bỏ qua
+13 ca yêu cầu Docker; chúng đã được chạy trong nhóm 14 checks riêng.
+
+App đáp ứng luồng kỹ thuật tương tác của đề 5. Các test luyện tập, tài khoản
+browser test và review trên dashboard không phải dữ liệu đánh giá phương pháp
+hay bằng chứng hiệu quả học tập. Corpus nghiên cứu và sealed test vẫn độc lập.
+
+## Harness và nền thực nghiệm — 26/09/2026
 
 | Thành phần | Bằng chứng |
 |---|---|
@@ -119,7 +137,7 @@ viên, kèm nguồn/test khi khớp; không phải nhãn đánh giá độc lậ
 
 Hồ sơ ITSP vẫn có **0 annotation chuyên gia thật hoàn tất**. Không dùng AI
 reviews làm gold. Baseline AST hiện là presence indicators, chưa phải biểu
-diễn binding/def-use đầy đủ. Chưa thực hiện replay C có sandbox, kiểm chứng
+diễn binding/def-use đầy đủ. Chưa thực hiện replay corpus C nghiên cứu, kiểm chứng
 candidate edits, adaptive probes, huấn luyện encoder, hoặc đánh giá locked test.
 
 [Protocol](protocol.json) mô tả thiết kế toàn bộ hướng bài báo, gồm cả phần
@@ -129,7 +147,7 @@ và [sổ nguồn](literature/nguon_nghien_cuu.csv) giữ cutoff 26/09/2026.
 
 Quyết định nghiên cứu tiếp theo: kiểm tra liệu cấu trúc quan hệ và can thiệp
 được xác minh có phân biệt cơ chế tốt hơn baseline stdout ở cùng chi phí và
-coverage. Cần thiết lập runner Linux có sandbox và oracle audit, rồi xây gold
+coverage. Cần áp dụng runner cách ly vào oracle audit của corpus, rồi xây gold
 cơ chế bằng review độc lập trước khi chốt so sánh chính. Encoder/LLM trên GPU
 thuê là một phương tiện ở giai đoạn đó; tăng kích thước model chưa thay thế
 được bằng chứng còn thiếu. Không cần hệ thống sinh viên đang vận hành để làm
@@ -138,6 +156,6 @@ benchmark offline; tuyên bố về hiệu quả học tập cần dữ liệu n
 Checkout làm việc nằm ở `AAI/`, branch `research/topic5-harness`, dựa trên
 `3c67734c25236b7fdcd9d84b8d4c2fa589add36e`. Đã đẩy lên
 [fork meiiie/AAI](https://github.com/meiiie/AAI/tree/research/topic5-harness)
-và mở [draft PR #1 về repo nhóm](https://github.com/linhlinhlin/AAI/pull/1),
+và mở [PR #1 về repo nhóm, sẵn sàng review](https://github.com/linhlinhlin/AAI/pull/1),
 chưa merge vào `main`. Tài khoản bàn giao chỉ có quyền đọc repo nhóm. Bản bàn
 giao giữ nguyên snapshot mã và các kết quả đã ghi; CI có trạng thái theo commit.

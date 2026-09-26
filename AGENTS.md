@@ -31,8 +31,11 @@ to data, splits, representations, experiments and scientific claims.
   reviewer notes or source paths into clustering features.
 - Preserve existing `results/itsp/` as historical evidence. New runs use new
   directories with input, code, configuration and environment fingerprints.
-- Local tests use disposable fixtures and recorded public logs, with no paid
-  APIs or execution of student programs. Run and repair affected checks within
+- Default local tests use disposable fixtures and recorded public logs, with no
+  paid APIs. The learning app executes newly submitted C only in the constrained
+  Docker runner; opt-in integration tests execute authored fixtures, never the
+  historical research corpus. Keep live learner data out of Git and sealed splits.
+  Run and repair affected checks within
   the requested work without repeated permission requests.
 
 ## Code Review Rules

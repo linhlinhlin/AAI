@@ -76,6 +76,17 @@ def describe_condition(condition, test_labels):
         if value in {"0", "1"}:
             return ("mã có " if value == "1" else "không ghi nhận trong mã: ") + label
         return f"{label}: {STATES.get(value, value)}"
+    if feature.startswith("stdout:"):
+        test, _, descriptor = feature[7:].rpartition(":")
+        relation = {"exact": "output khớp chính xác đáp án", "whitespace": "chỉ khác khoảng trắng",
+                    "empty": "không có output", "other_oracle": "output khớp đáp án của ca khác",
+                    "different": "output khác đáp án", "__unknown__": "chưa biết output"}
+        bands = {"zero": "không có sai khác ký tự", "small": "sai khác ký tự ít",
+                 "medium": "sai khác ký tự mức giữa", "large": "sai khác ký tự nhiều",
+                 "not_computed_large_output": "output dài, chưa tính độ tương tự",
+                 "__unknown__": "chưa biết mức sai khác"}
+        description = (relation if descriptor == 'relation' else bands).get(value, value)
+        return f"{test_labels.get(test, 'Ca kiểm thử ' + test)}: {description}"
     return condition
 
 

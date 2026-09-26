@@ -6,6 +6,23 @@ quan niệm sai lầm để giảng viên duyệt.
 Mã nguồn, dữ liệu demo/ITSP và hồ sơ nghiên cứu nằm tại
 [`misconceptions-prototype`](misconceptions-prototype/README.md).
 
+## App học viên và giảng viên
+
+[AAI Learning](docs/learning_app.md) có tài khoản, 6 bài C17, editor, chạy test
+thật trong Docker, phản hồi theo bằng chứng và lịch sử sửa bài. Giảng viên xem
+OAV, nhóm lỗi, luật IF–THEN và ghi nội dung giảng lại từ bài nộp mới.
+
+Từ `misconceptions-prototype`, sau khi cài môi trường Python và mở Docker:
+
+```powershell
+& .venv/Scripts/python.exe scripts/setup_learning.py
+./start_learning.ps1
+```
+
+Mở `http://127.0.0.1:8766` để đăng ký học viên. Đường dẫn thiết lập giảng viên
+đầu tiên được in trong terminal. Đây là app local; xem hướng dẫn trước khi
+vận hành qua Internet. Dữ liệu lớp học mới tách khỏi bộ dữ liệu nghiên cứu.
+
 ## Nghiên cứu đề 5 — cập nhật 26/09/2026
 
 Nhóm tự tìm dữ liệu công khai; mục tiêu là nghiên cứu cơ chế lỗi có bằng chứng,

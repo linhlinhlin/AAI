@@ -16,3 +16,21 @@ jobs:
       - run: python -m pip install --no-deps --no-build-isolation -e misconceptions-prototype
       - run: python scripts/harness.py check
       - run: python scripts/harness.py smoke
+  learning-app:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: misconceptions-prototype/requirements-lock.txt
+      - run: python -m pip install -r misconceptions-prototype/requirements-lock.txt -r misconceptions-prototype/requirements-web-test.txt
+      - run: python -m pip install --no-deps --no-build-isolation -e misconceptions-prototype
+      - run: python -m playwright install --with-deps chromium
+      - run: python misconceptions-prototype/scripts/setup_learning.py
+      - run: python -m pytest -q misconceptions-prototype/tests/test_learning_sandbox.py
+        env:
+          AAI_RUN_DOCKER_TESTS: '1'
+      - run: python misconceptions-prototype/scripts/learning_browser_smoke.py --output artifacts/learning-browser-ci

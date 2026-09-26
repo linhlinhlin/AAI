@@ -17,6 +17,18 @@ K-means; sử dụng K-means và weighted Hamming là đúng hướng yêu cầu
 con trỏ cũng được truyền theo giá trị. Các ví dụ đề bài không được biến thành
 nhãn đúng mặc định cho dữ liệu chưa xem xét.
 
+## Nghiệm thu app tương tác
+
+[AAI Learning](learning_app.md) bổ sung luồng học viên đăng nhập → nộp C17 →
+chạy test trong Docker → xem bằng chứng → sửa bài → lưu lịch sử. Giảng viên
+chọn bài, lấy lần nộp hoàn tất gần nhất của mỗi học viên, xem OAV → K-means →
+luật IF–THEN → nhận xét/đề xuất giảng lại. Báo cáo lưu snapshot và review;
+không đủ bằng chứng thì từ chối tạo cụm, không tự thêm dữ liệu minh họa.
+
+Sáu bộ test luyện tập được viết riêng, không nhập vào corpus nghiên cứu.
+[Hồ sơ nghiệm thu](../research/learning-app/README.md) kiểm tra chức năng bằng
+code/tài khoản tự viết; không thay thế cổng công bố bên dưới.
+
 ## Thiết kế dữ liệu
 
 C-Pack-IPAs: chỉ nhập `all_submissions` từ commit khóa, không cộng thêm các thư
