@@ -23,7 +23,7 @@ Linux/Kaggle: dùng Python 3.12 và `.venv/bin/python`; các script không phụ
 PowerShell. `check` chạy Ruff + pytest offline. `smoke` dùng thư mục tạm, khóa
 split ITSP trên toàn corpus rồi chạy 27 cấu hình của ba bài 2812/2825/2833; không
 ghi đè dữ liệu hay kết quả nghiên cứu cũ. GitHub Actions gọi chính các lệnh này.
-CI chưa được xác nhận trên GitHub cho tới khi workflow thực sự chạy ở đó.
+Theo dõi trạng thái từng lần chạy trên [GitHub Actions của nhánh bàn giao](https://github.com/meiiie/AAI/actions?query=branch%3Aresearch%2Ftopic5-harness).
 
 `.gitattributes` giữ nguyên byte của JSON kết quả/split mới. Riêng
 `abc_review_assignments.json` cũ được checkout bằng CRLF trên cả Windows/Linux,

@@ -18,8 +18,11 @@ xác nhận. Kết quả hiện tại chưa chứng minh SOTA hay niềm tin th�
 | Kiểm chứng phần mềm | **175 tests + 3 subtests pass**, Ruff pass; **27/27 smoke configurations pass**; skill validator pass |
 
 [Log kiểm tra](verification-20260926.txt), [smoke](smoke-20260926.txt). Các kiểm tra chạy local trên Windows,
-Python 3.12.14. Workflow GitHub Actions đã viết nhưng chưa có run CI trên GitHub
-để xác nhận. Chi tiết cài đặt và cách tái lập: [harness](../docs/harness.md).
+Python 3.12.14. Workflow GitHub Actions cũng chạy trên Linux; xem trạng thái
+từng commit tại [CI của nhánh bàn giao](https://github.com/meiiie/AAI/actions?query=branch%3Aresearch%2Ftopic5-harness).
+Lần CI đầu phát hiện Git đổi line ending của assignment JSON cũ làm sai hash;
+`.gitattributes` đã giữ CRLF của file đó theo checksum gốc, không đổi hồ sơ
+hay nới lỏng kiểm tra. Chi tiết cài đặt và cách tái lập: [harness](../docs/harness.md).
 
 ## C-Pack-IPAs: dữ liệu thực đã nhập
 
@@ -133,5 +136,8 @@ thuê là một phương tiện ở giai đoạn đó; tăng kích thước mode
 benchmark offline; tuyên bố về hiệu quả học tập cần dữ liệu nghiên cứu khác.
 
 Checkout làm việc nằm ở `AAI/`, branch `research/topic5-harness`, dựa trên
-`3c67734c25236b7fdcd9d84b8d4c2fa589add36e`. Bản bàn giao giữ nguyên snapshot
-mã và các kết quả đã ghi; trạng thái push/CI được xác nhận riêng trên GitHub.
+`3c67734c25236b7fdcd9d84b8d4c2fa589add36e`. Đã đẩy lên
+[fork meiiie/AAI](https://github.com/meiiie/AAI/tree/research/topic5-harness)
+và mở [draft PR #1 về repo nhóm](https://github.com/linhlinhlin/AAI/pull/1),
+chưa merge vào `main`. Tài khoản bàn giao chỉ có quyền đọc repo nhóm. Bản bàn
+giao giữ nguyên snapshot mã và các kết quả đã ghi; CI có trạng thái theo commit.
