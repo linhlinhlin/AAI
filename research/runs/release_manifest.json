@@ -1,0 +1,15 @@
+{
+  "archive": "cpack-baselines-20260926.zip",
+  "archive_sha256": "fd508a04dddd4889da0e6e9658c0ee1a29ae9c0fce390640a72e1d778e05f16e",
+  "archive_bytes": 6839683,
+  "archive_files": 787,
+  "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.12.14",
+  "result_counts": {
+    "ok": 624,
+    "abstained": 51
+  },
+  "human_validated": false,
+  "test_evaluated": false
+}

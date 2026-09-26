@@ -1,0 +1,205 @@
+{
+  "status": "proposal_not_executed",
+  "cutoff": "2026-09-26",
+  "task": "Evidence-grounded discovery of error mechanisms in novice C programs",
+  "constraints": {
+    "teacher_data": false,
+    "live_student_system": false,
+    "primary_evaluation": "offline",
+    "human_cognitive_belief_claim": false
+  },
+  "datasets": {
+    "primary": {
+      "name": "C-Pack-IPAs",
+      "tag": "C-Pack-IPAs-26",
+      "commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+      "canonical_directory": "all_submissions"
+    },
+    "secondary": {
+      "name": "ITSP",
+      "development_problems": [
+        "2812",
+        "2825",
+        "2833"
+      ],
+      "student_identity": "unavailable_in_current_adapter"
+    },
+    "auxiliary": {
+      "name": "McMining",
+      "language": "Python",
+      "use": "Separate task reproduction, not pooled scores"
+    },
+    "optional": {
+      "name": "CodeInsight",
+      "access": "gated",
+      "version_mismatch_unresolved": true
+    }
+  },
+  "targets": {
+    "primary": "program_error_mechanism",
+    "secondary": "potential_misconception_with_explicit_evidence_limits",
+    "labels": "multi-label and uncertain allowed",
+    "output_statuses": [
+      "supported_mechanism",
+      "multiple_supported_mechanisms",
+      "insufficient_evidence",
+      "unknown_mechanism",
+      "oracle_conflict",
+      "unsupported_execution",
+      "no_observed_target_error"
+    ]
+  },
+  "primary_hypothesis": "At matched execution/model budgets and coverage, evidence-guided diagnosis reduces incorrect same-mechanism matches relative to output-aware and LLM-with-logs baselines on unseen problems.",
+  "split_tracks": [
+    "student_disjoint_seen_problems",
+    "problem_family_disjoint",
+    "joint_student_and_problem_disjoint_if_sufficient",
+    "cross_dataset",
+    "held_out_mechanisms_and_combinations"
+  ],
+  "grouping": [
+    "student_id",
+    "problem_family",
+    "source_duplicate_component",
+    "near_duplicate_component",
+    "all_revisions_of_an_attempt",
+    "mutation_parent",
+    "generator_template_family"
+  ],
+  "forbidden_features": [
+    "future_correct_submission_in_online_like_track",
+    "test_set_annotations",
+    "test_label_derived_prompts",
+    "student_identity_as_model_feature",
+    "hidden_evaluation_oracles_in_probe_policy"
+  ],
+  "evidence_views": [
+    "raw_stdout_expected_actual_difference",
+    "execution_status",
+    "binding_aware_structural_relations",
+    "bounded_execution_trace",
+    "verified_candidate_edits",
+    "probe_discrimination_outcomes"
+  ],
+  "baseline_ids": {
+    "B0": "exact_test_signature",
+    "B1": "output_difference_plus_structural_relations",
+    "B2": "frozen_code_embedding",
+    "B3": "invariants_AAST_with_coverage_reporting",
+    "B4": "same_LLM_code_only_and_code_plus_logs",
+    "B5": "McMiner_S_M_separate_Python_benchmark_and_explicit_C_adaptation",
+    "B6": "code_edit_representation"
+  },
+  "metrics": {
+    "primary": [
+      "pairwise_precision_recall_F1",
+      "risk_coverage_curve",
+      "coverage_at_dev_selected_risk_target"
+    ],
+    "secondary": [
+      "macro_F1_when_taxonomy_applies",
+      "retrieval_mAP",
+      "hypothesis_set_coverage_and_size",
+      "invalid_evidence_rate",
+      "held_out_test_regression",
+      "eligibility_coverage",
+      "execution_model_cost"
+    ],
+    "diagnostic_only": [
+      "silhouette",
+      "surrogate_fidelity"
+    ],
+    "restrictions": [
+      "ARI only when gold is a partition",
+      "No learning_gain metric without intervention data",
+      "No independent-pair assumption for repeated submissions or students"
+    ]
+  },
+  "budget_grid_proposal": {
+    "extra_probe_counts": [
+      0,
+      4,
+      16,
+      64
+    ],
+    "candidate_edits_per_submission": [
+      0,
+      2,
+      4
+    ],
+    "context_tokens": [
+      2048,
+      4096
+    ],
+    "seeds": [
+      7,
+      42,
+      91
+    ],
+    "note": "Development grid only; model/backend settings and final choice must be frozen before evaluation. Count every candidate execution and generation call."
+  },
+  "labels": {
+    "pilot_goal": "Develop codebook and estimate label prevalence/dependence",
+    "evaluation_sample_target_range": [
+      400,
+      800
+    ],
+    "sample_size_status": "planning range; not power-validated",
+    "reviewers": 2,
+    "blind_to": [
+      "model_label",
+      "cluster_assignment",
+      "AI_suggestion"
+    ],
+    "adjudication": "documented human decisions; preserve pre-adjudication labels",
+    "annotation_unit": [
+      "observable_mechanism",
+      "supporting_span_and_test",
+      "alternative_explanations",
+      "uncertainty",
+      "multi_error_set"
+    ],
+    "sampling": "stratified sampling; include natural-distribution random sample and separate challenge set"
+  },
+  "execution": {
+    "network": false,
+    "timeout_required": true,
+    "memory_limit_required": true,
+    "compiler_pinned": true,
+    "c_dialect_pinned": true,
+    "sanitizer_status_separate": true,
+    "oracle_checks": true,
+    "probe_suite_separate_from_hidden_evaluation_suite": true
+  },
+  "ablation": [
+    "remove_stdout",
+    "remove_relational_structure",
+    "remove_trace_and_edit_evidence",
+    "random_instead_of_adaptive_probes",
+    "remove_hard_negatives",
+    "frozen_instead_of_trained_encoder",
+    "disable_abstention"
+  ],
+  "failure_conditions": [
+    "No improvement over output-aware baseline on locked test",
+    "Apparent gain explained by coverage loss",
+    "Gain disappears with problem-family disjoint split",
+    "Synthetic-only gain does not transfer to authentic data",
+    "Proposed explanation contradicted by valid execution evidence"
+  ],
+  "publication_claims_not_supported": [
+    "confirmed_personal_beliefs",
+    "improved_learning_outcomes",
+    "global_SOTA",
+    "clinical_or_psychological_diagnosis"
+  ],
+  "next_deliverables": [
+    "C-Pack adapter and provenance manifest",
+    "independent split specification",
+    "replay and oracle audit",
+    "output-aware baseline",
+    "codebook and labeled benchmark",
+    "matched-budget experiments",
+    "reproducible artifact"
+  ]
+}

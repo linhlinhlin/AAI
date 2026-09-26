@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-27",
+  "environment": "Windows host, Python 3.12.14, Docker Linux 29.7.2, Chromium 153 / Playwright 1.63.0",
+  "offline": {
+    "passed": 184,
+    "subtests_passed": 3,
+    "docker_cases_skipped_in_offline_suite": 13,
+    "ruff": "passed",
+    "research_smoke_passed": 27
+  },
+  "docker_integration": {
+    "passed": 14,
+    "seconds": 52.37,
+    "scope": "Authored C fixtures only; includes the command-construction check also counted in offline tests."
+  },
+  "browser": "acceptance.json",
+  "code_hash_semantics": "SHA256 of UTF-8 files after CRLF to LF normalization; excludes byte-frozen historical research artifacts.",
+  "source_files": {
+    "misconceptions-prototype/sandbox/compile.py": "4c8edb9a027ea023f6e9e9f57a044e5b59d20e288e2bbbf9a588d7207b02e5af",
+    "misconceptions-prototype/sandbox/Dockerfile": "bdeb4ca800dca7e08d710498fa5d6d1df1388a34dc79849b760e672c559b2acc",
+    "misconceptions-prototype/sandbox/execute.py": "60cebc15bb8636815fcd15e214769957eb61b7fe0ea5b7cf4528dbdb3441ed4d",
+    "misconceptions-prototype/scripts/learning_browser_smoke.py": "9e52e0b4c4a567b8c95dbda83ea1e88c6d24664994ec29f6c9a6e9291b825148",
+    "misconceptions-prototype/src/misconceptions/learning_problems.py": "a376db67a1efd06e0c9122998f646312b33e5cfed823984604c024ed2876e5ba",
+    "misconceptions-prototype/src/misconceptions/learning_sandbox.py": "cebd881d03cf67f5f6122201cb4aa2558d6d44e1eb9c91f3d6b8818a737cc306",
+    "misconceptions-prototype/src/misconceptions/learning_service.py": "8482fbcf3e80c244168ac627a29d50c4547d89fa8342a7d5ba6d873fbd023b93",
+    "misconceptions-prototype/src/misconceptions/learning_store.py": "1e5d254013a336ebe8bf3db4925e89a501fdd4377756aab9ec512f6e66d76e1a",
+    "misconceptions-prototype/src/misconceptions/learning_web.py": "20150005e85c99bc4ee3ce14a60830acc3f652fd4aad16b1dce567a9d3434ba8",
+    "misconceptions-prototype/src/misconceptions/semantic_rules.py": "87284f6d00f3ba234836e13b43beb2c40a9994708e2e3dd3f6a433be00f43fcb",
+    "misconceptions-prototype/src/misconceptions/web_assets/learning.css": "8730c06e5f0ac6c613bd59c441c4efe866140de85dcfbcb57bb617928b146e5d",
+    "misconceptions-prototype/src/misconceptions/web_assets/learning.html": "81de04e9f35de5f23eb461f4be90012bdb1f6577a40afdf3a2e144a386c21581",
+    "misconceptions-prototype/src/misconceptions/web_assets/learning.js": "24bda3f76c4d34d83d40990c7cdf2f7245aa1810b60f30cf112bdabcf3b85eef",
+    "misconceptions-prototype/tests/fixtures/learning_solutions.json": "df05cecbe37a9d2ac13f43e73a8cdf0550ece38dfd590515c1da8a739c09df0f"
+  }
+}

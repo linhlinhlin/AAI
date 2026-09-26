@@ -1,0 +1,591 @@
+{
+  "status": "ok",
+  "method": "agglomerative",
+  "feature_mode": "outcomes_stdout",
+  "seed": 7,
+  "config": {
+    "k": 3,
+    "test_fraction": 0.25,
+    "test_weight": 0.8,
+    "effective_feature_mode": "outcomes_stdout",
+    "k_used": true
+  },
+  "silhouette_metric": "weighted_hamming_common_comparison_not_kmeans_native_geometry",
+  "routes": {
+    "itsp-2833-271912_buggy": "eligible",
+    "itsp-2833-271916_buggy": "eligible",
+    "itsp-2833-271920_buggy": "eligible",
+    "itsp-2833-271922_buggy": "eligible",
+    "itsp-2833-271927_buggy": "eligible",
+    "itsp-2833-271944_buggy": "eligible",
+    "itsp-2833-271946_buggy": "eligible",
+    "itsp-2833-271965_buggy": "eligible",
+    "itsp-2833-271975_buggy": "eligible",
+    "itsp-2833-271977_buggy": "eligible",
+    "itsp-2833-271982_buggy": "eligible",
+    "itsp-2833-271983_buggy": "eligible",
+    "itsp-2833-271986_buggy": "eligible",
+    "itsp-2833-271987_buggy": "eligible",
+    "itsp-2833-271989_buggy": "eligible",
+    "itsp-2833-271990_buggy": "eligible",
+    "itsp-2833-271993_buggy": "eligible",
+    "itsp-2833-272004_buggy": "eligible"
+  },
+  "route_counts": {
+    "eligible": 18
+  },
+  "n_eligible": 18,
+  "identity": {
+    "missing_student_ids": 18,
+    "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+  },
+  "warnings": [
+    "Clusters and surrogate rules are behavioral hypotheses requiring instructor validation.",
+    "Exact source grouping does not detect renamed or otherwise near-duplicate code.",
+    "AST presence indicators are syntactic evidence, not semantic fault detectors.",
+    "Student identity is missing: holdout is exploratory, not a student-disjoint benchmark."
+  ],
+  "split": {
+    "train_ids": [
+      "itsp-2833-271916_buggy",
+      "itsp-2833-271920_buggy",
+      "itsp-2833-271922_buggy",
+      "itsp-2833-271927_buggy",
+      "itsp-2833-271965_buggy",
+      "itsp-2833-271975_buggy",
+      "itsp-2833-271977_buggy",
+      "itsp-2833-271982_buggy",
+      "itsp-2833-271987_buggy",
+      "itsp-2833-271989_buggy"
+    ],
+    "holdout_ids": [
+      "itsp-2833-271912_buggy",
+      "itsp-2833-271983_buggy",
+      "itsp-2833-271993_buggy"
+    ],
+    "train_groups": 10,
+    "holdout_groups": 3,
+    "policy": "corpus_lock",
+    "evaluation_partition": "validation"
+  },
+  "n_clusters": 3,
+  "features": [
+    {
+      "name": "test:1",
+      "weight": 0.09999999999999999
+    },
+    {
+      "name": "test:2",
+      "weight": 0.09999999999999999
+    },
+    {
+      "name": "test:3",
+      "weight": 0.09999999999999999
+    },
+    {
+      "name": "test:4",
+      "weight": 0.09999999999999999
+    },
+    {
+      "name": "test:5",
+      "weight": 0.09999999999999999
+    },
+    {
+      "name": "test:6",
+      "weight": 0.09999999999999999
+    },
+    {
+      "name": "stdout:1:relation",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:1:edit_band",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:2:relation",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:2:edit_band",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:3:relation",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:3:edit_band",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:4:relation",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:4:edit_band",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:5:relation",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:5:edit_band",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:6:relation",
+      "weight": 0.03333333333333333
+    },
+    {
+      "name": "stdout:6:edit_band",
+      "weight": 0.03333333333333333
+    }
+  ],
+  "oav": {
+    "itsp-2833-271916_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "pass",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "pass",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "exact",
+      "stdout:2:edit_band": "zero",
+      "stdout:3:relation": "exact",
+      "stdout:3:edit_band": "zero",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "exact",
+      "stdout:6:edit_band": "zero"
+    },
+    "itsp-2833-271920_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "empty",
+      "stdout:1:edit_band": "large",
+      "stdout:2:relation": "empty",
+      "stdout:2:edit_band": "large",
+      "stdout:3:relation": "empty",
+      "stdout:3:edit_band": "large",
+      "stdout:4:relation": "empty",
+      "stdout:4:edit_band": "large",
+      "stdout:5:relation": "empty",
+      "stdout:5:edit_band": "large",
+      "stdout:6:relation": "empty",
+      "stdout:6:edit_band": "large"
+    },
+    "itsp-2833-271922_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "pass",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "exact",
+      "stdout:2:edit_band": "zero",
+      "stdout:3:relation": "different",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "exact",
+      "stdout:6:edit_band": "zero"
+    },
+    "itsp-2833-271927_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "different",
+      "stdout:2:edit_band": "small",
+      "stdout:3:relation": "different",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "different",
+      "stdout:6:edit_band": "small"
+    },
+    "itsp-2833-271965_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "exact",
+      "stdout:2:edit_band": "zero",
+      "stdout:3:relation": "different",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "different",
+      "stdout:6:edit_band": "small"
+    },
+    "itsp-2833-271975_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "pass",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "exact",
+      "stdout:2:edit_band": "zero",
+      "stdout:3:relation": "different",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "exact",
+      "stdout:6:edit_band": "zero"
+    },
+    "itsp-2833-271977_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "exact",
+      "stdout:2:edit_band": "zero",
+      "stdout:3:relation": "different",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "different",
+      "stdout:6:edit_band": "small"
+    },
+    "itsp-2833-271982_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "exact",
+      "stdout:2:edit_band": "zero",
+      "stdout:3:relation": "different",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "different",
+      "stdout:6:edit_band": "small"
+    },
+    "itsp-2833-271987_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "other_oracle",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "exact",
+      "stdout:2:edit_band": "zero",
+      "stdout:3:relation": "other_oracle",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "other_oracle",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "other_oracle",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "other_oracle",
+      "stdout:6:edit_band": "small"
+    },
+    "itsp-2833-271989_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "empty",
+      "stdout:1:edit_band": "large",
+      "stdout:2:relation": "empty",
+      "stdout:2:edit_band": "large",
+      "stdout:3:relation": "empty",
+      "stdout:3:edit_band": "large",
+      "stdout:4:relation": "empty",
+      "stdout:4:edit_band": "large",
+      "stdout:5:relation": "empty",
+      "stdout:5:edit_band": "large",
+      "stdout:6:relation": "empty",
+      "stdout:6:edit_band": "large"
+    },
+    "itsp-2833-271912_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "different",
+      "stdout:2:edit_band": "small",
+      "stdout:3:relation": "different",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "different",
+      "stdout:6:edit_band": "small"
+    },
+    "itsp-2833-271983_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "exact",
+      "stdout:2:edit_band": "zero",
+      "stdout:3:relation": "different",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "different",
+      "stdout:6:edit_band": "small"
+    },
+    "itsp-2833-271993_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "stdout:1:relation": "different",
+      "stdout:1:edit_band": "small",
+      "stdout:2:relation": "different",
+      "stdout:2:edit_band": "small",
+      "stdout:3:relation": "different",
+      "stdout:3:edit_band": "small",
+      "stdout:4:relation": "different",
+      "stdout:4:edit_band": "small",
+      "stdout:5:relation": "different",
+      "stdout:5:edit_band": "small",
+      "stdout:6:relation": "different",
+      "stdout:6:edit_band": "small"
+    }
+  },
+  "train_assignments": {
+    "itsp-2833-271916_buggy": 2,
+    "itsp-2833-271920_buggy": 1,
+    "itsp-2833-271922_buggy": 2,
+    "itsp-2833-271927_buggy": 0,
+    "itsp-2833-271965_buggy": 0,
+    "itsp-2833-271975_buggy": 2,
+    "itsp-2833-271977_buggy": 0,
+    "itsp-2833-271982_buggy": 0,
+    "itsp-2833-271987_buggy": 0,
+    "itsp-2833-271989_buggy": 1
+  },
+  "holdout_assignments": {
+    "itsp-2833-271912_buggy": 0,
+    "itsp-2833-271983_buggy": 0,
+    "itsp-2833-271993_buggy": 0
+  },
+  "medoids": {
+    "0": "itsp-2833-271965_buggy",
+    "1": "itsp-2833-271920_buggy",
+    "2": "itsp-2833-271922_buggy"
+  },
+  "silhouette_train": 0.6568118404202615,
+  "holdout_distance_to_medoid": {
+    "itsp-2833-271912_buggy": 0.16666666666666666,
+    "itsp-2833-271983_buggy": 0.0,
+    "itsp-2833-271993_buggy": 0.16666666666666666
+  },
+  "holdout_assignment_ties": 0,
+  "assignment_policy": "nearest_training_medoid_weighted_hamming; ties select lowest cluster id",
+  "explanation": {
+    "target": "cluster_id_only_not_validated_misconception",
+    "train_fidelity": 1.0,
+    "holdout_fidelity": 1.0,
+    "holdout_majority_baseline_fidelity": 1.0,
+    "rules": [
+      {
+        "if": [
+          "NOT (stdout:6:edit_band=small)",
+          "NOT (stdout:2:edit_band=large)"
+        ],
+        "then_cluster": 2,
+        "train_support": 3,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "if": [
+          "NOT (stdout:6:edit_band=small)",
+          "stdout:2:edit_band=large"
+        ],
+        "then_cluster": 1,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "if": [
+          "stdout:6:edit_band=small"
+        ],
+        "then_cluster": 0,
+        "train_support": 5,
+        "train_precision": 1.0,
+        "holdout_support": 3,
+        "holdout_precision": 1.0
+      }
+    ]
+  },
+  "ari_vs_exact_signature_train": 0.55,
+  "elapsed_seconds": 0.04537700000219047,
+  "provenance": {
+    "dataset": {
+      "schema_version": 2,
+      "dataset_name": "ITSP public prototype",
+      "provenance": "https://github.com/jyi/ITSP",
+      "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+      "problem_id": "2833",
+      "language": "c",
+      "suite_version": "itsp-e1116cbdb78d65ae",
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "official_course_dataset": false,
+      "identity_policy": "unknown; source-hash-grouped split only",
+      "outcome_policy": "unaltered historical verdicts; exact canonical input/oracle matching",
+      "license": "MIT repository LICENSE; cite Yi et al., ESEC/FSE 2017",
+      "compiler_runtime": "historical environment, not replayed",
+      "lab": "Lab-4",
+      "problem_reference": "E:/AAI/misconceptions-prototype/data/raw/itsp/dataset/Lab-4/2833/Main.c"
+    },
+    "input_sha256": "1bfb0f162bb996c79776307ac5cafec93943cd0d94ca731b8b472eb74d704a3e",
+    "manifest_sha256": "229f9e18c5ddd831d144346d3a342b540c8041525d7ae4c94d646633a8b3f909",
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "tree-sitter": "0.26.0",
+      "tree-sitter-c": "0.24.2"
+    },
+    "interpretation": "Clusters are observable error patterns, not verified misconceptions.",
+    "evidence_sha256": "3a5ae5d42e47d345f3c20ecb479c9dfb7f8bf62783a2dde48aa77d230c814c29"
+  },
+  "run_manifest": "run_manifest.json",
+  "teaching": {
+    "version": "teaching-rules-v2",
+    "style_version": "vi-rule-v1",
+    "origin": "hand_authored_evidence_rules_not_learned_labels",
+    "human_validated": false,
+    "findings": [],
+    "summaries": [],
+    "cluster_rules": [
+      {
+        "if": [
+          "NOT (stdout:6:edit_band=small)",
+          "NOT (stdout:2:edit_band=large)"
+        ],
+        "then_cluster": 2,
+        "train_support": 3,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "không thỏa điều kiện: [stdout:6:edit_band=small]",
+          "không thỏa điều kiện: [stdout:2:edit_band=large]"
+        ]
+      },
+      {
+        "if": [
+          "NOT (stdout:6:edit_band=small)",
+          "stdout:2:edit_band=large"
+        ],
+        "then_cluster": 1,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "không thỏa điều kiện: [stdout:6:edit_band=small]",
+          "stdout:2:edit_band=large"
+        ]
+      },
+      {
+        "if": [
+          "stdout:6:edit_band=small"
+        ],
+        "then_cluster": 0,
+        "train_support": 5,
+        "train_precision": 1.0,
+        "holdout_support": 3,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "stdout:6:edit_band=small"
+        ]
+      }
+    ],
+    "n_analyzed": 13,
+    "n_with_logs": 13,
+    "n_matched": 0,
+    "unmatched_ids": [
+      "itsp-2833-271912_buggy",
+      "itsp-2833-271916_buggy",
+      "itsp-2833-271920_buggy",
+      "itsp-2833-271922_buggy",
+      "itsp-2833-271927_buggy",
+      "itsp-2833-271965_buggy",
+      "itsp-2833-271975_buggy",
+      "itsp-2833-271977_buggy",
+      "itsp-2833-271982_buggy",
+      "itsp-2833-271983_buggy",
+      "itsp-2833-271987_buggy",
+      "itsp-2833-271989_buggy",
+      "itsp-2833-271993_buggy"
+    ],
+    "interpretation": "Số bài khớp điều kiện, không phải precision hay số sinh viên hiểu sai. Không có luật khớp không có nghĩa bài đúng. Không dùng làm nhãn đánh giá clustering."
+  }
+}

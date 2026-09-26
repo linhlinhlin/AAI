@@ -1,0 +1,36 @@
+{
+  "definition": "within-problem pairs identical on all fitted positive-weight OAV columns; train plus validation only",
+  "interpretation": "Representation collisions only. Fewer collisions is not demonstrated improvement in mechanism diagnosis. No gold labels.",
+  "formula": "sum over identical-vector buckets of n*(n-1)/2",
+  "inputs_sha256": {
+    "2812/kmeans_combined_seed42.json": "1a17396ecd51c3722813b3692b84dd95d21758155f9de8099bebf97654994221",
+    "2812/kmeans_combined_stdout_seed42.json": "3136816a380f13369e4ba80bd055b030f24cbbe8b5c1ce8ad4895738814f04d3",
+    "2825/kmeans_combined_seed42.json": "4fac1ad8041b52c5f678aa3f8b8d9278684dc86463243e29c6958a105d064580",
+    "2825/kmeans_combined_stdout_seed42.json": "7e549004ade9c430306cb76998181850f9b617f7156aaf0fc6dc97a99ca86c4c",
+    "2833/kmeans_combined_seed42.json": "d392cb93d744e41c51389782ae753fc52cc86ff046aadfe15c99176f951f3e79",
+    "2833/kmeans_combined_stdout_seed42.json": "5165f98575e89bcb0f17a34c711410e039645573ddadcf0db5a59c92bbb9b766"
+  },
+  "cohorts": [
+    {
+      "problem": "2812",
+      "combined_identical_pairs": 6,
+      "n_train_validation": 13,
+      "all_pairs": 78,
+      "combined_stdout_identical_pairs": 3
+    },
+    {
+      "problem": "2825",
+      "combined_identical_pairs": 52,
+      "n_train_validation": 22,
+      "all_pairs": 231,
+      "combined_stdout_identical_pairs": 33
+    },
+    {
+      "problem": "2833",
+      "combined_identical_pairs": 9,
+      "n_train_validation": 13,
+      "all_pairs": 78,
+      "combined_stdout_identical_pairs": 6
+    }
+  ]
+}
