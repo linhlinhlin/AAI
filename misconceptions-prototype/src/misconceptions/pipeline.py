@@ -1,6 +1,5 @@
 """Small offline experiment: split, fit clusters, freeze medoids, explain."""
 
-import hashlib
 from collections import Counter
 
 import numpy as np
@@ -11,29 +10,8 @@ from sklearn.tree import DecisionTreeClassifier
 
 from .domain import Submission
 from .features import FeatureSpace, route_submission, weighted_hamming
-
-
-def leakage_groups(rows: list[Submission]) -> np.ndarray:
-    """Connected components of shared student OR exact UTF-8 source hash."""
-    parents = list(range(len(rows)))
-
-    def root(i: int) -> int:
-        while parents[i] != i:
-            parents[i] = parents[parents[i]]
-            i = parents[i]
-        return i
-
-    seen = {}
-    for i, row in enumerate(rows):
-        digest = hashlib.sha256(row.source_code.encode("utf-8")).hexdigest()
-        keys = [("source", digest)]
-        if row.student_id is not None:
-            keys.append(("student", row.student_id))
-        for key in keys:
-            if key in seen:
-                parents[root(i)] = root(seen[key])
-            seen[key] = i
-    return np.asarray([root(i) for i in range(len(rows))])
+from .output_features import validate_output_logs
+from .splits import leakage_groups, validate_assignments
 
 
 def cluster_labels(
@@ -121,6 +99,9 @@ def run_experiment(
     test_fraction: float = 0.25,
     feature_mode: str = "combined",
     test_weight: float = 0.8,
+    logs: dict | None = None,
+    split_assignments: dict[str, str] | None = None,
+    evaluation_partition: str = "validation",
 ) -> dict:
     """No code execution. A cluster is a review candidate, never a diagnosis.
 
@@ -134,7 +115,9 @@ def run_experiment(
         raise ValueError("k must be an integer >= 2")
     if not 0 < test_fraction < 1:
         raise ValueError("test_fraction must be between 0 and 1")
-    if feature_mode not in ("outcomes", "structural", "combined") or not 0 < test_weight <= 1:
+    if feature_mode not in (
+        "outcomes", "structural", "combined", "outcomes_stdout", "combined_stdout"
+    ) or not 0 < test_weight <= 1:
         raise ValueError("Invalid feature mode or test weight")
     if method == "exact":
         feature_mode = "outcomes"
@@ -159,6 +142,12 @@ def run_experiment(
             raise ValueError("Unsupported test outcome")
     routes = {row.submission_id: route_submission(row, test_ids) for row in submissions}
     rows = [row for row in submissions if routes[row.submission_id] == "eligible"]
+    if feature_mode.endswith("_stdout"):
+        validate_output_logs(rows, test_ids, logs or {})
+    if split_assignments is not None:
+        validate_assignments(submissions, split_assignments)
+        if evaluation_partition not in ("validation", "test"):
+            raise ValueError("Evaluation partition must be validation or test")
     result = {
         "status": "abstained",
         "method": method,
@@ -200,21 +189,32 @@ def run_experiment(
     groups = all_groups[[routes[row.submission_id] == "eligible" for row in submissions]]
     if len(set(groups.tolist())) < 2:
         return dict(result, reason="fewer_than_two_independent_groups")
-    splitter = GroupShuffleSplit(n_splits=1, test_size=test_fraction, random_state=seed)
-    train_i, held_i = next(splitter.split(rows, groups=groups))
+    if split_assignments is None:
+        splitter = GroupShuffleSplit(n_splits=1, test_size=test_fraction, random_state=seed)
+        train_i, held_i = next(splitter.split(rows, groups=groups))
+    else:
+        train_i = np.asarray([i for i, row in enumerate(rows)
+                              if split_assignments[row.submission_id] == "train"], dtype=int)
+        held_i = np.asarray([i for i, row in enumerate(rows)
+                             if split_assignments[row.submission_id] == evaluation_partition],
+                            dtype=int)
     train_rows, held_rows = [rows[i] for i in train_i], [rows[i] for i in held_i]
     result["split"] = {
         "train_ids": [r.submission_id for r in train_rows],
         "holdout_ids": [r.submission_id for r in held_rows],
         "train_groups": len(set(groups[train_i].tolist())),
         "holdout_groups": len(set(groups[held_i].tolist())),
+        "policy": "corpus_lock" if split_assignments is not None else "group_shuffle",
+        "evaluation_partition": evaluation_partition if split_assignments is not None else "holdout",
     }
     if len(train_rows) < 3:
         return dict(result, reason="fewer_than_three_training_rows")
-    space = FeatureSpace.fit(train_rows, test_ids, test_weight, feature_mode)
+    if not held_rows:
+        return dict(result, reason="empty_evaluation_partition")
+    space = FeatureSpace.fit(train_rows, test_ids, test_weight, feature_mode, logs)
     if not space.names:
         return dict(result, reason="no_varying_structural_features", features=[])
-    train, held = space.transform(train_rows), space.transform(held_rows)
+    train, held = space.transform(train_rows, logs), space.transform(held_rows, logs)
     active = space.weights > 0
     unique_count = len(np.unique(train[:, active].astype(str), axis=0))
     if unique_count < 2:

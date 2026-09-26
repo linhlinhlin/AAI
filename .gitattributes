@@ -1,0 +1,4 @@
+# Recorded checksums refer to exact bytes, including line endings.
+/research/splits/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol linguist-generated=true
+/research/runs/**/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol linguist-generated=true
+*.zip binary

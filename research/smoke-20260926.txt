@@ -1,0 +1,8 @@
++ E:\Sach\baiThayPhuc\BaiLinh\AAI\misconceptions-prototype\.venv\Scripts\python.exe scripts/lock_splits.py --data data/itsp --output C:\Users\Admin\AppData\Local\Temp\aai-smoke-iygyrzk4\split.json
+{"schema_version": 1, "seed": 42, "corpus_sha256": "7a12ac36896aad805832255d6b31d424c3fdbd98b288552b19b235739b03033e", "policy": "sha256_component_min_id_70_15_15_v1", "independence": "exact_source_only_student_identity_incomplete", "counts": {"train": 459, "validation": 103, "test": 87}, "groups": {"train": 458, "validation": 103, "test": 87}}
++ E:\Sach\baiThayPhuc\BaiLinh\AAI\misconceptions-prototype\.venv\Scripts\python.exe scripts/run_topic5.py --data data/itsp --split-lock C:\Users\Admin\AppData\Local\Temp\aai-smoke-iygyrzk4\split.json --problems 2812 2825 2833 --seeds 42 --output C:\Users\Admin\AppData\Local\Temp\aai-smoke-iygyrzk4\run
+Completed 2812
+Completed 2825
+Completed 2833
+Saved 27 runs to C:\Users\Admin\AppData\Local\Temp\aai-smoke-iygyrzk4\run
+Topic 5 smoke: 27/27 runs produced OAV, clusters, rules and feedback.

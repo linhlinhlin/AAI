@@ -1,0 +1,405 @@
+{
+  "status": "ok",
+  "method": "kmeans",
+  "feature_mode": "outcomes",
+  "seed": 91,
+  "config": {
+    "k": 3,
+    "test_fraction": 0.25,
+    "test_weight": 0.8,
+    "effective_feature_mode": "outcomes",
+    "k_used": true
+  },
+  "silhouette_metric": "weighted_hamming_common_comparison_not_kmeans_native_geometry",
+  "routes": {
+    "itsp-2812-270272_buggy": "eligible",
+    "itsp-2812-270276_buggy": "eligible",
+    "itsp-2812-270277_buggy": "eligible",
+    "itsp-2812-270280_buggy": "eligible",
+    "itsp-2812-270283_buggy": "eligible",
+    "itsp-2812-270285_buggy": "eligible",
+    "itsp-2812-270293_buggy": "eligible",
+    "itsp-2812-270294_buggy": "eligible",
+    "itsp-2812-270296_buggy": "eligible",
+    "itsp-2812-270297_buggy": "eligible",
+    "itsp-2812-270304_buggy": "eligible",
+    "itsp-2812-270305_buggy": "eligible",
+    "itsp-2812-270310_buggy": "eligible",
+    "itsp-2812-270324_buggy": "eligible",
+    "itsp-2812-270327_buggy": "eligible",
+    "itsp-2812-270330_buggy": "eligible",
+    "itsp-2812-270334_buggy": "eligible",
+    "itsp-2812-270349_buggy": "eligible",
+    "itsp-2812-270357_buggy": "eligible"
+  },
+  "route_counts": {
+    "eligible": 19
+  },
+  "n_eligible": 19,
+  "identity": {
+    "missing_student_ids": 19,
+    "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+  },
+  "warnings": [
+    "Clusters and surrogate rules are behavioral hypotheses requiring instructor validation.",
+    "Exact source grouping does not detect renamed or otherwise near-duplicate code.",
+    "AST presence indicators are syntactic evidence, not semantic fault detectors.",
+    "Student identity is missing: holdout is exploratory, not a student-disjoint benchmark."
+  ],
+  "split": {
+    "train_ids": [
+      "itsp-2812-270272_buggy",
+      "itsp-2812-270277_buggy",
+      "itsp-2812-270280_buggy",
+      "itsp-2812-270285_buggy",
+      "itsp-2812-270293_buggy",
+      "itsp-2812-270294_buggy",
+      "itsp-2812-270296_buggy",
+      "itsp-2812-270305_buggy",
+      "itsp-2812-270330_buggy",
+      "itsp-2812-270349_buggy",
+      "itsp-2812-270357_buggy"
+    ],
+    "holdout_ids": [
+      "itsp-2812-270283_buggy",
+      "itsp-2812-270297_buggy"
+    ],
+    "train_groups": 11,
+    "holdout_groups": 2,
+    "policy": "corpus_lock",
+    "evaluation_partition": "validation"
+  },
+  "n_clusters": 3,
+  "features": [
+    {
+      "name": "test:1",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:2",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:3",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:4",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:5",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:6",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:7",
+      "weight": 0.14285714285714285
+    }
+  ],
+  "oav": {
+    "itsp-2812-270272_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2812-270277_buggy": {
+      "test:1": "pass",
+      "test:2": "fail",
+      "test:3": "pass",
+      "test:4": "pass",
+      "test:5": "pass",
+      "test:6": "pass",
+      "test:7": "fail"
+    },
+    "itsp-2812-270280_buggy": {
+      "test:1": "pass",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2812-270285_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2812-270293_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2812-270294_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2812-270296_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "pass",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2812-270305_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "pass",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2812-270330_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2812-270349_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2812-270357_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2812-270283_buggy": {
+      "test:1": "fail",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2812-270297_buggy": {
+      "test:1": "pass",
+      "test:2": "fail",
+      "test:3": "pass",
+      "test:4": "pass",
+      "test:5": "pass",
+      "test:6": "pass",
+      "test:7": "fail"
+    }
+  },
+  "train_assignments": {
+    "itsp-2812-270272_buggy": 1,
+    "itsp-2812-270277_buggy": 0,
+    "itsp-2812-270280_buggy": 2,
+    "itsp-2812-270285_buggy": 2,
+    "itsp-2812-270293_buggy": 2,
+    "itsp-2812-270294_buggy": 2,
+    "itsp-2812-270296_buggy": 1,
+    "itsp-2812-270305_buggy": 1,
+    "itsp-2812-270330_buggy": 2,
+    "itsp-2812-270349_buggy": 2,
+    "itsp-2812-270357_buggy": 2
+  },
+  "holdout_assignments": {
+    "itsp-2812-270283_buggy": 1,
+    "itsp-2812-270297_buggy": 0
+  },
+  "medoids": {
+    "0": "itsp-2812-270277_buggy",
+    "1": "itsp-2812-270296_buggy",
+    "2": "itsp-2812-270285_buggy"
+  },
+  "silhouette_train": 0.7195286195286196,
+  "holdout_distance_to_medoid": {
+    "itsp-2812-270283_buggy": 0.28571428571428575,
+    "itsp-2812-270297_buggy": 0.0
+  },
+  "holdout_assignment_ties": 1,
+  "assignment_policy": "nearest_training_medoid_weighted_hamming; ties select lowest cluster id",
+  "explanation": {
+    "target": "cluster_id_only_not_validated_misconception",
+    "train_fidelity": 0.9090909090909091,
+    "holdout_fidelity": 1.0,
+    "holdout_majority_baseline_fidelity": 0.0,
+    "rules": [
+      {
+        "if": [
+          "NOT (test:7=pass)",
+          "NOT (test:1=pass)"
+        ],
+        "then_cluster": 2,
+        "train_support": 6,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "if": [
+          "NOT (test:7=pass)",
+          "test:1=pass"
+        ],
+        "then_cluster": 0,
+        "train_support": 2,
+        "train_precision": 0.5,
+        "holdout_support": 1,
+        "holdout_precision": 1.0
+      },
+      {
+        "if": [
+          "test:7=pass"
+        ],
+        "then_cluster": 1,
+        "train_support": 3,
+        "train_precision": 1.0,
+        "holdout_support": 1,
+        "holdout_precision": 1.0
+      }
+    ]
+  },
+  "ari_vs_exact_signature_train": 0.6927374301675978,
+  "elapsed_seconds": 0.053345799999078736,
+  "provenance": {
+    "dataset": {
+      "schema_version": 2,
+      "dataset_name": "ITSP public prototype",
+      "provenance": "https://github.com/jyi/ITSP",
+      "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+      "problem_id": "2812",
+      "language": "c",
+      "suite_version": "itsp-76fea3dca9be741f",
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "official_course_dataset": false,
+      "identity_policy": "unknown; source-hash-grouped split only",
+      "outcome_policy": "unaltered historical verdicts; exact canonical input/oracle matching",
+      "license": "MIT repository LICENSE; cite Yi et al., ESEC/FSE 2017",
+      "compiler_runtime": "historical environment, not replayed",
+      "lab": "Lab-3",
+      "problem_reference": "E:/AAI/misconceptions-prototype/data/raw/itsp/dataset/Lab-3/2812/Main.c"
+    },
+    "input_sha256": "25f2efad35022d7f100a47161f181ddd6b7926b8b1cd92b8661bbb18802f5a94",
+    "manifest_sha256": "3a04cac54c2b0c038a401eae52baad77c622efc17cfd3941ba2d2219abfddec8",
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "tree-sitter": "0.26.0",
+      "tree-sitter-c": "0.24.2"
+    },
+    "interpretation": "Clusters are observable error patterns, not verified misconceptions.",
+    "evidence_sha256": "60b674a0947c7b696efae295b3fbdac39767dcf1e799c68ddbec1da9139e32f5"
+  },
+  "run_manifest": "run_manifest.json",
+  "teaching": {
+    "version": "teaching-rules-v2",
+    "style_version": "vi-rule-v1",
+    "origin": "hand_authored_evidence_rules_not_learned_labels",
+    "human_validated": false,
+    "findings": [],
+    "summaries": [],
+    "cluster_rules": [
+      {
+        "if": [
+          "NOT (test:7=pass)",
+          "NOT (test:1=pass)"
+        ],
+        "then_cluster": 2,
+        "train_support": 6,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "không thỏa điều kiện: [Ca kiểm thử 7: đạt]",
+          "không thỏa điều kiện: [Ca kiểm thử 1: đạt]"
+        ]
+      },
+      {
+        "if": [
+          "NOT (test:7=pass)",
+          "test:1=pass"
+        ],
+        "then_cluster": 0,
+        "train_support": 2,
+        "train_precision": 0.5,
+        "holdout_support": 1,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "không thỏa điều kiện: [Ca kiểm thử 7: đạt]",
+          "Ca kiểm thử 1: đạt"
+        ]
+      },
+      {
+        "if": [
+          "test:7=pass"
+        ],
+        "then_cluster": 1,
+        "train_support": 3,
+        "train_precision": 1.0,
+        "holdout_support": 1,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "Ca kiểm thử 7: đạt"
+        ]
+      }
+    ],
+    "n_analyzed": 13,
+    "n_with_logs": 13,
+    "n_matched": 0,
+    "unmatched_ids": [
+      "itsp-2812-270272_buggy",
+      "itsp-2812-270277_buggy",
+      "itsp-2812-270280_buggy",
+      "itsp-2812-270283_buggy",
+      "itsp-2812-270285_buggy",
+      "itsp-2812-270293_buggy",
+      "itsp-2812-270294_buggy",
+      "itsp-2812-270296_buggy",
+      "itsp-2812-270297_buggy",
+      "itsp-2812-270305_buggy",
+      "itsp-2812-270330_buggy",
+      "itsp-2812-270349_buggy",
+      "itsp-2812-270357_buggy"
+    ],
+    "interpretation": "Số bài khớp điều kiện, không phải precision hay số sinh viên hiểu sai. Không có luật khớp không có nghĩa bài đúng. Không dùng làm nhãn đánh giá clustering."
+  }
+}

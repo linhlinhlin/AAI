@@ -5,3 +5,7 @@
 !**/.env.example
 **/*.pem
 **/*.key
+/.cache/
+/artifacts/
+**/__pycache__/
+**/*.py[cod]

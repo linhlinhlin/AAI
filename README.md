@@ -6,6 +6,21 @@ quan niệm sai lầm để giảng viên duyệt.
 Mã nguồn, dữ liệu demo/ITSP và hồ sơ nghiên cứu nằm tại
 [`misconceptions-prototype`](misconceptions-prototype/README.md).
 
+## Nghiên cứu đề 5 — cập nhật 26/09/2026
+
+Nhóm tự tìm dữ liệu công khai; mục tiêu là nghiên cứu cơ chế lỗi có bằng chứng,
+với quan niệm sai là giả thuyết cần xác nhận. Không giả định hệ thống lớp học
+hay dataset sẽ được giảng viên cung cấp.
+
+- [Harness: cài đặt, kiểm tra, tái lập thí nghiệm](docs/harness.md)
+- [Đối chiếu chính xác tiêu chí đề 5](docs/topic5-contract.md)
+- [Trạng thái và kết quả có bằng chứng](research/STATE.md)
+- [Khảo sát nghiên cứu đến 26/09/2026](research/literature/bao_cao_nghien_cuu.md)
+- [Hướng dẫn agent](AGENTS.md) và [skill thực nghiệm](.agents/skills/aai-experiment/SKILL.md)
+
+Harness thêm C-Pack-IPAs adapter, split toàn corpus và baseline dùng stdout.
+Các hồ sơ tháng 9 trước đây được giữ làm lịch sử; STATE.md là nguồn trạng thái hiện tại.
+
 ## Chạy web trên Windows
 
 ```powershell

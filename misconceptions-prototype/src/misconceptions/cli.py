@@ -9,7 +9,7 @@ from pathlib import Path
 
 from .adapters import load_dataset
 from .pipeline import run_experiment
-from .teaching_report import attach_teaching_report
+from .teaching_report import attach_teaching_report, load_evidence
 
 
 def build_provenance(manifest: dict, manifest_path: Path, submissions_path: Path) -> dict:
@@ -39,12 +39,15 @@ def main():
     parser.add_argument("--k", type=int, default=3)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument(
-        "--feature-mode", choices=["outcomes", "structural", "combined"], default="combined"
+        "--feature-mode", choices=["outcomes", "structural", "combined", "outcomes_stdout",
+                                   "combined_stdout"], default="combined"
     )
     parser.add_argument("--test-weight", type=float, default=0.8)
     args = parser.parse_args()
     try:
         manifest, rows = load_dataset(args.manifest, args.submissions)
+        evidence_path = args.evidence or args.submissions.with_name("review.jsonl")
+        logs = load_evidence(evidence_path, rows) if args.feature_mode.endswith("_stdout") else None
         result = run_experiment(
             rows,
             test_ids=manifest["test_ids"],
@@ -53,6 +56,7 @@ def main():
             seed=args.seed,
             feature_mode=args.feature_mode,
             test_weight=args.test_weight,
+            logs=logs,
         )
         if args.evidence and not args.evidence.is_file():
             raise ValueError("Evidence file does not exist")

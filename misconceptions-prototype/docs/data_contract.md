@@ -1,5 +1,19 @@
 # Hợp đồng dữ liệu v1/v2
 
+## Cập nhật 26/09/2026
+
+Nhóm tự tìm dữ liệu; không chờ dataset giảng viên. Schema v2 còn cho phép
+`source_code: ""` khi đó là bài nộp thật sự rỗng, để giữ ID trong audit; v1 vẫn
+yêu cầu source không rỗng. Source rỗng không được dùng nối duplicate giữa người
+học. Bộ nhập C-Pack-IPAs giữ verdict `@@` cho timeout/signal/exit code/giới hạn
+output; lỗi nội bộ hệ thống chấm là `not_run`.
+
+Các mode `outcomes_stdout`/`combined_stdout` dùng duy nhất
+test_id/input/expected/output đã kiểm tra từ sidecar; các đường dẫn bài sửa,
+nhãn và ghi chú vẫn không phải feature. Xem [harness hiện tại](../../docs/harness.md)
+cho adapter, split toàn corpus, trọng số và kiểm tra hash. Các mục bên dưới giữ
+mô tả lịch sử khi C-Pack-IPAs chưa được nhập.
+
 ## Cập nhật 19/09/2026: ID chưa biết và dữ liệu C
 
 Schema v1 giữ nguyên yêu cầu `student_id` là chuỗi không rỗng. Schema v2 dùng cùng các trường,
