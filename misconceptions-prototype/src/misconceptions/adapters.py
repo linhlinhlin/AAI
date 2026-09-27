@@ -40,6 +40,8 @@ def load_dataset(manifest_path: Path, submissions_path: Path):
             for key in required - {"outcomes"}:
                 if key == "student_id" and manifest["schema_version"] == 2 and row[key] is None:
                     continue
+                if key == "source_code" and manifest["schema_version"] == 2 and isinstance(row[key], str):
+                    continue  # An actually empty submission is evidence, not a missing ID.
                 if not isinstance(row[key], str) or not row[key].strip():
                     raise ValueError(f"line {line_number}: {key} must be a nonempty string")
             sid = row["submission_id"]

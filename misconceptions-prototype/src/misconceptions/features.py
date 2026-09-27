@@ -9,6 +9,7 @@ import tree_sitter_c
 from tree_sitter import Language, Node, Parser
 
 from .domain import Submission
+from .output_features import OUTPUT_CATEGORIES, output_oav
 
 AST_NAMES = ("for", "while", "range", "inclusive_comparison", "subscript", "return", "augassign")
 C_AST_NAMES = (
@@ -146,6 +147,7 @@ class FeatureSpace:
     names: list[str]
     weights: np.ndarray
     categories: list[tuple[str, ...]]
+    include_stdout: bool = False
 
     @classmethod
     def fit(
@@ -154,11 +156,17 @@ class FeatureSpace:
         test_ids: list[str],
         test_weight: float = 0.8,
         feature_mode: str = "combined",
+        logs: dict | None = None,
     ) -> "FeatureSpace":
         if not train or not test_ids or len(test_ids) != len(set(test_ids)):
             raise ValueError("Nonempty training rows and unique test IDs are required")
-        if feature_mode not in ("outcomes", "structural", "combined") or not 0 < test_weight <= 1:
+        include_stdout = feature_mode.endswith("_stdout")
+        base_mode = feature_mode.removesuffix("_stdout")
+        if feature_mode not in (
+            "outcomes", "structural", "combined", "outcomes_stdout", "combined_stdout"
+        ) or not 0 < test_weight <= 1:
             raise ValueError("Invalid feature mode or test weight")
+        feature_mode = base_mode
         names = (
             [] if feature_mode == "structural" else [f"test:{name}" for name in sorted(test_ids)]
         )
@@ -178,10 +186,27 @@ class FeatureSpace:
         if ast_names:
             weights += [(1 - outcome_mass) / len(ast_names)] * len(ast_names)
             categories += [("0", "1", "__unknown__")] * len(ast_names)
-        return cls(names + ast_names, np.asarray(weights), categories)
+        names += ast_names
+        if include_stdout:
+            observed_outputs = [output_oav(row, logs or {}) for row in train]
+            output_names = [
+                f"stdout:{tid}:{descriptor}"
+                for tid in sorted(test_ids) for descriptor in OUTPUT_CATEGORIES
+                if len({o.get(f"stdout:{tid}:{descriptor}", "__unknown__")
+                        for o in observed_outputs}) > 1
+            ]
+            if output_names:
+                weights = [weight * 0.6 for weight in weights]
+                weights += [0.4 / len(output_names)] * len(output_names)
+                categories += [OUTPUT_CATEGORIES[name.rsplit(":", 1)[1]] for name in output_names]
+                names += output_names
+        return cls(names, np.asarray(weights), categories, include_stdout)
 
-    def transform(self, rows: list[Submission]) -> np.ndarray:
-        observations = [extract_oav(row) for row in rows]
+    def transform(self, rows: list[Submission], logs: dict | None = None) -> np.ndarray:
+        observations = [
+            extract_oav(row) | (output_oav(row, logs or {}) if self.include_stdout else {})
+            for row in rows
+        ]
         return np.asarray(
             [[values.get(name, "__unknown__") for name in self.names] for values in observations],
             dtype=object,

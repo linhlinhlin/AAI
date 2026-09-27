@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "authored_classroom_accounts": 9,
+  "learner_revision": {
+    "before": "1/6",
+    "after": "6/6"
+  },
+  "teacher_clusters": 2,
+  "review_saved": true,
+  "review_reopened_after_reload": true,
+  "session_survived_reload": true,
+  "mobile_practice_no_overflow": true,
+  "browser_errors": [],
+  "runner": {
+    "ready": true,
+    "message": "Sẵn sàng chạy C17",
+    "image_id": "sha256:127f356e6dfe36395deadf3802fab1a87b1328b932c90f4edf3a8efa460bf00c"
+  },
+  "scope": "Software acceptance with authored fixtures; not a learning-effect study."
+}

@@ -87,3 +87,13 @@ def test_boolean_schema_version_rejected(tmp_path):
     m.write_text(json.dumps(manifest))
     with pytest.raises(ValueError, match="schema_version"):
         load_dataset(m, s)
+
+
+def test_v2_retains_empty_program_for_identity_audit(tmp_path):
+    m, s = write_data(tmp_path, source_code="", outcomes={})
+    manifest = json.loads(m.read_text())
+    manifest["schema_version"] = 2
+    m.write_text(json.dumps(manifest))
+    _, rows = load_dataset(m, s)
+    assert rows[0].source_code == ""
+    assert set(rows[0].outcomes.values()) == {"not_run"}

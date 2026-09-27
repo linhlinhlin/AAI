@@ -1,6 +1,22 @@
-# Misconceptions Clustering — prototype trước khi có dữ liệu giảng viên
+# Misconceptions Clustering — nghiên cứu đề 5
 
-## Giao diện web để test
+**Hiện tại (27/09/2026):** nhóm tự tìm dữ liệu; không chờ dataset giảng viên.
+Xem [harness](../docs/harness.md), [tiêu chí đề 5](../docs/topic5-contract.md)
+và [trạng thái nghiên cứu](../research/STATE.md). Các mục có ngày bên dưới mô tả
+lịch sử prototype; hướng hiện tại có thêm C-Pack-IPAs, split toàn corpus và
+baseline stdout. Đã có app học viên và giảng viên chạy local nhiều tài khoản.
+
+## App học viên và giảng viên
+
+Mở Docker Desktop Linux engine. Từ thư mục này, chạy
+`& .venv/Scripts/python.exe scripts/setup_learning.py`, sau đó
+`./start_learning.ps1` và mở **http://127.0.0.1:8766**.
+Đăng ký học viên, làm bài C17, chạy test thật, sửa bài và xem lịch sử.
+Tài khoản giảng viên xem lớp, OAV, cụm lỗi, luật IF–THEN và lưu nhận xét.
+[Cài đặt, tạo giảng viên, kiểm chứng và giới hạn](../docs/learning_app.md).
+App chưa được triển khai công khai; chưa có nghiên cứu hiệu quả học tập trên người.
+
+## Bàn nghiên cứu và kiểm thử
 
 Tại thư mục project, chạy `& .venv/Scripts/python.exe -m misconceptions.web --port 8765`,
 rồi mở **http://127.0.0.1:8765**. Giao diện tiếng Việt có chạy thí nghiệm, xem cụm/OAV/luật,
@@ -78,7 +94,7 @@ Linux/macOS: dùng `python3 -m venv .venv` và `.venv/bin/python` thay đường
 
 ## Chưa triển khai có chủ đích
 
-Không chạy code sinh viên, không thu thập dữ liệu riêng tư, không gọi LLM trả phí. Có trích cấu trúc cú pháp C bằng tree-sitter; chưa có phân tích ngữ nghĩa/alias/con trỏ, extractor C++/Java, nhãn misconception thật, giao diện web hay triển khai production. Ngôn ngữ chưa hỗ trợ vẫn có thể chạy outcomes và AST được đánh dấu unknown. Đây là ranh giới rõ ràng của prototype.
+Pipeline offline không chạy code sinh viên hoặc gọi API trả phí. Web có cấu hình LLM tùy chọn và đã có giao diện. Chưa có phân tích ngữ nghĩa/alias/con trỏ đầy đủ, extractor C++/Java, nhãn misconception thật hay triển khai production. Ngôn ngữ chưa hỗ trợ vẫn có thể chạy outcomes và AST được đánh dấu unknown.
 
 Không dùng các chỉ số fixture để báo “độ chính xác phát hiện misconception”. Các biến thể đổi tên trong demo là near-duplicate cố ý; guard exact-source không loại được tất cả near-duplicates. Cần protocol nghiêm ngặt hơn trên dữ liệu thật.
 

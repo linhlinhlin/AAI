@@ -1,0 +1,1870 @@
+{
+  "status": "ok",
+  "method": "exact",
+  "feature_mode": "outcomes",
+  "seed": 91,
+  "config": {
+    "k": 3,
+    "test_fraction": 0.25,
+    "test_weight": 0.8,
+    "effective_feature_mode": "outcomes",
+    "k_used": false
+  },
+  "silhouette_metric": "weighted_hamming_common_comparison_not_kmeans_native_geometry",
+  "routes": {
+    "itsp-2825-271150_buggy": "eligible",
+    "itsp-2825-271152_buggy": "eligible",
+    "itsp-2825-271154_buggy": "eligible",
+    "itsp-2825-271163_buggy": "eligible",
+    "itsp-2825-271173_buggy": "eligible",
+    "itsp-2825-271188_buggy": "eligible",
+    "itsp-2825-271191_buggy": "eligible",
+    "itsp-2825-271192_buggy": "eligible",
+    "itsp-2825-271203_buggy": "eligible",
+    "itsp-2825-271205_buggy": "eligible",
+    "itsp-2825-271206_buggy": "eligible",
+    "itsp-2825-271209_buggy": "eligible",
+    "itsp-2825-271211_buggy": "eligible",
+    "itsp-2825-271213_buggy": "eligible",
+    "itsp-2825-271216_buggy": "eligible",
+    "itsp-2825-271217_buggy": "eligible",
+    "itsp-2825-271220_buggy": "eligible",
+    "itsp-2825-271224_buggy": "eligible",
+    "itsp-2825-271226_buggy": "eligible",
+    "itsp-2825-271228_buggy": "eligible",
+    "itsp-2825-271239_buggy": "eligible",
+    "itsp-2825-271241_buggy": "eligible"
+  },
+  "route_counts": {
+    "eligible": 22
+  },
+  "n_eligible": 22,
+  "identity": {
+    "missing_student_ids": 22,
+    "split_guarantee": "exact_source_disjoint_only_student_independence_unverified"
+  },
+  "warnings": [
+    "Clusters and surrogate rules are behavioral hypotheses requiring instructor validation.",
+    "Exact source grouping does not detect renamed or otherwise near-duplicate code.",
+    "AST presence indicators are syntactic evidence, not semantic fault detectors.",
+    "Student identity is missing: holdout is exploratory, not a student-disjoint benchmark."
+  ],
+  "split": {
+    "train_ids": [
+      "itsp-2825-271150_buggy",
+      "itsp-2825-271152_buggy",
+      "itsp-2825-271154_buggy",
+      "itsp-2825-271163_buggy",
+      "itsp-2825-271173_buggy",
+      "itsp-2825-271188_buggy",
+      "itsp-2825-271191_buggy",
+      "itsp-2825-271192_buggy",
+      "itsp-2825-271203_buggy",
+      "itsp-2825-271205_buggy",
+      "itsp-2825-271209_buggy",
+      "itsp-2825-271211_buggy",
+      "itsp-2825-271213_buggy",
+      "itsp-2825-271216_buggy",
+      "itsp-2825-271220_buggy",
+      "itsp-2825-271224_buggy",
+      "itsp-2825-271226_buggy",
+      "itsp-2825-271228_buggy",
+      "itsp-2825-271239_buggy",
+      "itsp-2825-271241_buggy"
+    ],
+    "holdout_ids": [
+      "itsp-2825-271206_buggy",
+      "itsp-2825-271217_buggy"
+    ],
+    "train_groups": 20,
+    "holdout_groups": 2,
+    "policy": "corpus_lock",
+    "evaluation_partition": "validation"
+  },
+  "n_clusters": 6,
+  "features": [
+    {
+      "name": "test:1",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:2",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:3",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:4",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:5",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:6",
+      "weight": 0.14285714285714285
+    },
+    {
+      "name": "test:7",
+      "weight": 0.14285714285714285
+    }
+  ],
+  "oav": {
+    "itsp-2825-271150_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271152_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "pass",
+      "test:5": "pass",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2825-271154_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2825-271163_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271173_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "pass",
+      "test:4": "pass",
+      "test:5": "pass",
+      "test:6": "pass",
+      "test:7": "fail"
+    },
+    "itsp-2825-271188_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "pass",
+      "test:4": "pass",
+      "test:5": "pass",
+      "test:6": "pass",
+      "test:7": "fail"
+    },
+    "itsp-2825-271191_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271192_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271203_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "pass",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "pass",
+      "test:7": "pass"
+    },
+    "itsp-2825-271205_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "pass",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "pass",
+      "test:7": "pass"
+    },
+    "itsp-2825-271209_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271211_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2825-271213_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "pass",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2825-271216_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "pass",
+      "test:5": "pass",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2825-271220_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "pass",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2825-271224_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271226_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271228_buggy": {
+      "test:1": "pass",
+      "test:2": "pass",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "pass"
+    },
+    "itsp-2825-271239_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271241_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271206_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    },
+    "itsp-2825-271217_buggy": {
+      "test:1": "fail",
+      "test:2": "fail",
+      "test:3": "fail",
+      "test:4": "fail",
+      "test:5": "fail",
+      "test:6": "fail",
+      "test:7": "fail"
+    }
+  },
+  "train_assignments": {
+    "itsp-2825-271150_buggy": 0,
+    "itsp-2825-271152_buggy": 4,
+    "itsp-2825-271154_buggy": 3,
+    "itsp-2825-271163_buggy": 0,
+    "itsp-2825-271173_buggy": 2,
+    "itsp-2825-271188_buggy": 2,
+    "itsp-2825-271191_buggy": 0,
+    "itsp-2825-271192_buggy": 0,
+    "itsp-2825-271203_buggy": 5,
+    "itsp-2825-271205_buggy": 5,
+    "itsp-2825-271209_buggy": 0,
+    "itsp-2825-271211_buggy": 3,
+    "itsp-2825-271213_buggy": 1,
+    "itsp-2825-271216_buggy": 4,
+    "itsp-2825-271220_buggy": 1,
+    "itsp-2825-271224_buggy": 0,
+    "itsp-2825-271226_buggy": 0,
+    "itsp-2825-271228_buggy": 3,
+    "itsp-2825-271239_buggy": 0,
+    "itsp-2825-271241_buggy": 0
+  },
+  "holdout_assignments": {
+    "itsp-2825-271206_buggy": 0,
+    "itsp-2825-271217_buggy": 0
+  },
+  "medoids": {
+    "0": "itsp-2825-271150_buggy",
+    "1": "itsp-2825-271213_buggy",
+    "2": "itsp-2825-271173_buggy",
+    "3": "itsp-2825-271154_buggy",
+    "4": "itsp-2825-271152_buggy",
+    "5": "itsp-2825-271203_buggy"
+  },
+  "silhouette_train": 1.0,
+  "holdout_distance_to_medoid": {
+    "itsp-2825-271206_buggy": 0.0,
+    "itsp-2825-271217_buggy": 0.0
+  },
+  "holdout_assignment_ties": 0,
+  "assignment_policy": "nearest_training_medoid_weighted_hamming; ties select lowest cluster id",
+  "explanation": {
+    "target": "cluster_id_only_not_validated_misconception",
+    "train_fidelity": 1.0,
+    "holdout_fidelity": 1.0,
+    "holdout_majority_baseline_fidelity": 1.0,
+    "rules": [
+      {
+        "if": [
+          "NOT (test:7=pass)",
+          "NOT (test:3=pass)"
+        ],
+        "then_cluster": 0,
+        "train_support": 9,
+        "train_precision": 1.0,
+        "holdout_support": 2,
+        "holdout_precision": 1.0
+      },
+      {
+        "if": [
+          "NOT (test:7=pass)",
+          "test:3=pass"
+        ],
+        "then_cluster": 2,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "if": [
+          "test:7=pass",
+          "NOT (test:4=fail)",
+          "NOT (test:2=fail)"
+        ],
+        "then_cluster": 4,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "if": [
+          "test:7=pass",
+          "NOT (test:4=fail)",
+          "test:2=fail"
+        ],
+        "then_cluster": 1,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "if": [
+          "test:7=pass",
+          "test:4=fail",
+          "NOT (test:3=fail)"
+        ],
+        "then_cluster": 5,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "if": [
+          "test:7=pass",
+          "test:4=fail",
+          "test:3=fail"
+        ],
+        "then_cluster": 3,
+        "train_support": 3,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      }
+    ]
+  },
+  "ari_vs_exact_signature_train": 1.0,
+  "elapsed_seconds": 0.0574239999987185,
+  "provenance": {
+    "dataset": {
+      "schema_version": 2,
+      "dataset_name": "ITSP public prototype",
+      "provenance": "https://github.com/jyi/ITSP",
+      "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+      "problem_id": "2825",
+      "language": "c",
+      "suite_version": "itsp-c96bee8ccdc960e4",
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "official_course_dataset": false,
+      "identity_policy": "unknown; source-hash-grouped split only",
+      "outcome_policy": "unaltered historical verdicts; exact canonical input/oracle matching",
+      "license": "MIT repository LICENSE; cite Yi et al., ESEC/FSE 2017",
+      "compiler_runtime": "historical environment, not replayed",
+      "lab": "Lab-4",
+      "problem_reference": "E:/AAI/misconceptions-prototype/data/raw/itsp/dataset/Lab-4/2825/Main.c"
+    },
+    "input_sha256": "131e151709770f24b03a0fde6820952cc9ffb0aad9dd68b9b482ea1975e227c1",
+    "manifest_sha256": "e78cf9cd2cd318fc20a4eef5d4bb74658bdde82a088aac3e5cdb5482f9f8f29b",
+    "python": "3.12.14",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "tree-sitter": "0.26.0",
+      "tree-sitter-c": "0.24.2"
+    },
+    "interpretation": "Clusters are observable error patterns, not verified misconceptions.",
+    "evidence_sha256": "3a2e48c9516fa9c5b95be9eaf1ff20a7853999ac2f88badcb4cbdc7e71e1e385"
+  },
+  "run_manifest": "run_manifest.json",
+  "teaching": {
+    "version": "teaching-rules-v2",
+    "style_version": "vi-rule-v1",
+    "origin": "hand_authored_evidence_rules_not_learned_labels",
+    "human_validated": false,
+    "findings": [
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271150_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"Point is on the Circle\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"Point is outside the Circle\""
+          },
+          {
+            "line_start": 19,
+            "line_end": 19,
+            "code": "\"Point is inside the Circle\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271163_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 16,
+            "line_end": 16,
+            "code": "\"Point is outside the Circle\""
+          },
+          {
+            "line_start": 19,
+            "line_end": 19,
+            "code": "\"Point is inside the Circle\""
+          },
+          {
+            "line_start": 22,
+            "line_end": 22,
+            "code": "\"Point is on the Circle\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271191_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 7,
+            "line_end": 7,
+            "code": "\"Point is inside the Circle\""
+          },
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"Point is on the Circle\""
+          },
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"Point is outside the Circle\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271192_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 6,
+            "line_end": 6,
+            "code": "\"Point is on the Circle\""
+          },
+          {
+            "line_start": 7,
+            "line_end": 7,
+            "code": "\"Point is inside the Circle\""
+          },
+          {
+            "line_start": 8,
+            "line_end": 8,
+            "code": "\"Point is outside the Circle\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "C_BRANCH_ATTACHMENT",
+        "submission_id": "itsp-2825-271203_buggy",
+        "if_vi": [
+          "mã có hai if liên tiếp; else thuộc if thứ hai",
+          "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+        ],
+        "then_vi": "Nghi vấn nhầm quan hệ if–else và tính loại trừ giữa các nhánh",
+        "category": "conceptual_hypothesis",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 13,
+            "line_end": 14,
+            "code": "if ( n < 0 )\n    printf(\"Point is inside the Circle.\");"
+          },
+          {
+            "line_start": 15,
+            "line_end": 18,
+            "code": "if ( n > 0 )\n    printf(\"Point is outside the Circle.\");\n    else\n    printf(\"Point is on the Circle.\");"
+          }
+        ],
+        "explanation": {
+          "title": "Hai nhánh if có thể cùng tạo thông báo",
+          "code_pattern": [
+            "mã có hai if liên tiếp; else thuộc if thứ hai"
+          ],
+          "behavioral_pattern": [
+            "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+          ],
+          "hypothesis": [
+            "Có thể người viết nhầm quan hệ if–else và tính loại trừ giữa các nhánh."
+          ],
+          "caveat": [
+            "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai."
+          ],
+          "suggested_follow_up": [
+            "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Khối lệnh trong bài",
+            "attribute": "Có hai if liên tiếp, if đầu không có else",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Khối lệnh trong bài",
+            "attribute": "Else thuộc if thứ hai",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Yêu cầu một vị trí nhưng output có nhiều vị trí",
+            "operator": "=",
+            "value": "Có"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          }
+        ],
+        "alternative": "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai.",
+        "suggestion": "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else.",
+        "cluster": 5,
+        "split": "train"
+      },
+      {
+        "rule_id": "C_BRANCH_ATTACHMENT",
+        "submission_id": "itsp-2825-271205_buggy",
+        "if_vi": [
+          "mã có hai if liên tiếp; else thuộc if thứ hai",
+          "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+        ],
+        "then_vi": "Nghi vấn nhầm quan hệ if–else và tính loại trừ giữa các nhánh",
+        "category": "conceptual_hypothesis",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 12,
+            "line_end": 13,
+            "code": "if (d<r){\n  printf(\"Point is inside the Circle.\");}"
+          },
+          {
+            "line_start": 14,
+            "line_end": 17,
+            "code": "if (d>r){\n  printf(\"Point is outside the Circle.\");}\n  else {\n  printf(\"Point is on the Circle.\");}"
+          }
+        ],
+        "explanation": {
+          "title": "Hai nhánh if có thể cùng tạo thông báo",
+          "code_pattern": [
+            "mã có hai if liên tiếp; else thuộc if thứ hai"
+          ],
+          "behavioral_pattern": [
+            "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+          ],
+          "hypothesis": [
+            "Có thể người viết nhầm quan hệ if–else và tính loại trừ giữa các nhánh."
+          ],
+          "caveat": [
+            "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai."
+          ],
+          "suggested_follow_up": [
+            "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Khối lệnh trong bài",
+            "attribute": "Có hai if liên tiếp, if đầu không có else",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Khối lệnh trong bài",
+            "attribute": "Else thuộc if thứ hai",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Yêu cầu một vị trí nhưng output có nhiều vị trí",
+            "operator": "=",
+            "value": "Có"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          }
+        ],
+        "alternative": "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai.",
+        "suggestion": "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else.",
+        "cluster": 5,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271209_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"Point is on the circle.\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"Point is outside the circle.\""
+          },
+          {
+            "line_start": 19,
+            "line_end": 19,
+            "code": "\"Point is inside the circle.\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the circle."
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the circle."
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the circle."
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271216_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 17,
+            "line_end": 17,
+            "code": "\"Point is on the Circle\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 4,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271217_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"Point is inside the Circle\""
+          },
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"Point is on the Circle\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"Point is outside the Circle\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "holdout"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271226_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"Point is inside the Circle\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"Point is on the Circle\""
+          },
+          {
+            "line_start": 17,
+            "line_end": 17,
+            "code": "\"Point is outside the Circle\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle"
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271239_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"Point is on the circle.\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"Point is inside the circle.\""
+          },
+          {
+            "line_start": 19,
+            "line_end": 19,
+            "code": "\"Point is outside the circle.\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the circle."
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the circle."
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the circle."
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "itsp-2825-271241_buggy",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"Point is inside the circle.\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"Point is outside the circle.\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"Point is on the circle.\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the circle."
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the circle."
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the circle."
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      }
+    ],
+    "summaries": [
+      {
+        "rule_id": "C_BRANCH_ATTACHMENT",
+        "if_vi": [
+          "mã có hai if liên tiếp; else thuộc if thứ hai",
+          "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+        ],
+        "then_vi": "Nghi vấn nhầm quan hệ if–else và tính loại trừ giữa các nhánh",
+        "category": "conceptual_hypothesis",
+        "explanation": {
+          "title": "Hai nhánh if có thể cùng tạo thông báo",
+          "code_pattern": [
+            "mã có hai if liên tiếp; else thuộc if thứ hai"
+          ],
+          "behavioral_pattern": [
+            "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+          ],
+          "hypothesis": [
+            "Có thể người viết nhầm quan hệ if–else và tính loại trừ giữa các nhánh."
+          ],
+          "caveat": [
+            "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai."
+          ],
+          "suggested_follow_up": [
+            "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else."
+          ]
+        },
+        "n_submissions": 2,
+        "by_split": {
+          "train": 2
+        },
+        "by_cluster": {
+          "5": 2
+        }
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "n_submissions": 10,
+        "by_split": {
+          "train": 9,
+          "holdout": 1
+        },
+        "by_cluster": {
+          "0": 9,
+          "4": 1
+        }
+      }
+    ],
+    "cluster_rules": [
+      {
+        "if": [
+          "NOT (test:7=pass)",
+          "NOT (test:3=pass)"
+        ],
+        "then_cluster": 0,
+        "train_support": 9,
+        "train_precision": 1.0,
+        "holdout_support": 2,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "không thỏa điều kiện: [Ca 7 — yêu cầu thông báo điểm ngoài đường tròn: đạt]",
+          "không thỏa điều kiện: [Ca 3 — yêu cầu thông báo điểm trên biên đường tròn: đạt]"
+        ]
+      },
+      {
+        "if": [
+          "NOT (test:7=pass)",
+          "test:3=pass"
+        ],
+        "then_cluster": 2,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "không thỏa điều kiện: [Ca 7 — yêu cầu thông báo điểm ngoài đường tròn: đạt]",
+          "Ca 3 — yêu cầu thông báo điểm trên biên đường tròn: đạt"
+        ]
+      },
+      {
+        "if": [
+          "test:7=pass",
+          "NOT (test:4=fail)",
+          "NOT (test:2=fail)"
+        ],
+        "then_cluster": 4,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "Ca 7 — yêu cầu thông báo điểm ngoài đường tròn: đạt",
+          "không thỏa điều kiện: [Ca 4 — yêu cầu thông báo điểm trong đường tròn: không đạt]",
+          "không thỏa điều kiện: [Ca 2 — yêu cầu thông báo điểm ngoài đường tròn: không đạt]"
+        ]
+      },
+      {
+        "if": [
+          "test:7=pass",
+          "NOT (test:4=fail)",
+          "test:2=fail"
+        ],
+        "then_cluster": 1,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "Ca 7 — yêu cầu thông báo điểm ngoài đường tròn: đạt",
+          "không thỏa điều kiện: [Ca 4 — yêu cầu thông báo điểm trong đường tròn: không đạt]",
+          "Ca 2 — yêu cầu thông báo điểm ngoài đường tròn: không đạt"
+        ]
+      },
+      {
+        "if": [
+          "test:7=pass",
+          "test:4=fail",
+          "NOT (test:3=fail)"
+        ],
+        "then_cluster": 5,
+        "train_support": 2,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "Ca 7 — yêu cầu thông báo điểm ngoài đường tròn: đạt",
+          "Ca 4 — yêu cầu thông báo điểm trong đường tròn: không đạt",
+          "không thỏa điều kiện: [Ca 3 — yêu cầu thông báo điểm trên biên đường tròn: không đạt]"
+        ]
+      },
+      {
+        "if": [
+          "test:7=pass",
+          "test:4=fail",
+          "test:3=fail"
+        ],
+        "then_cluster": 3,
+        "train_support": 3,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "Ca 7 — yêu cầu thông báo điểm ngoài đường tròn: đạt",
+          "Ca 4 — yêu cầu thông báo điểm trong đường tròn: không đạt",
+          "Ca 3 — yêu cầu thông báo điểm trên biên đường tròn: không đạt"
+        ]
+      }
+    ],
+    "n_analyzed": 22,
+    "n_with_logs": 22,
+    "n_matched": 12,
+    "unmatched_ids": [
+      "itsp-2825-271152_buggy",
+      "itsp-2825-271154_buggy",
+      "itsp-2825-271173_buggy",
+      "itsp-2825-271188_buggy",
+      "itsp-2825-271206_buggy",
+      "itsp-2825-271211_buggy",
+      "itsp-2825-271213_buggy",
+      "itsp-2825-271220_buggy",
+      "itsp-2825-271224_buggy",
+      "itsp-2825-271228_buggy"
+    ],
+    "interpretation": "Số bài khớp điều kiện, không phải precision hay số sinh viên hiểu sai. Không có luật khớp không có nghĩa bài đúng. Không dùng làm nhãn đánh giá clustering."
+  }
+}

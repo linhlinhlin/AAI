@@ -1,0 +1,115 @@
+{
+  "audit_date": "2026-09-26",
+  "scope": "Read saved artifacts and Git metadata; no model training, clustering rerun or C execution.",
+  "aai": {
+    "url": "https://github.com/linhlinhlin/AAI",
+    "commit": "3c67734c25236b7fdcd9d84b8d4c2fa589add36e",
+    "experiments": [
+      {
+        "problem_id": "2812",
+        "n_submissions": 19,
+        "A_C_same_partition_train_plus_holdout": true,
+        "unique_combined_oav": 9,
+        "largest_identical_oav_group": 8,
+        "identical_oav_pairs": 31,
+        "within_problem_pairs": 171
+      },
+      {
+        "problem_id": "2825",
+        "n_submissions": 22,
+        "A_C_same_partition_train_plus_holdout": true,
+        "unique_combined_oav": 8,
+        "largest_identical_oav_group": 9,
+        "identical_oav_pairs": 43,
+        "within_problem_pairs": 231
+      },
+      {
+        "problem_id": "2833",
+        "n_submissions": 18,
+        "A_C_same_partition_train_plus_holdout": true,
+        "unique_combined_oav": 10,
+        "largest_identical_oav_group": 5,
+        "identical_oav_pairs": 16,
+        "within_problem_pairs": 153
+      }
+    ],
+    "total_submissions": 59,
+    "total_unique_oav_within_problem": 27,
+    "identical_oav_pair_fraction": {
+      "numerator": 90,
+      "denominator": 555,
+      "value": 0.16216216216216217
+    },
+    "pair_evidence": {
+      "ids": [
+        "itsp-2825-271173_buggy",
+        "itsp-2825-271188_buggy"
+      ],
+      "same_oav": true,
+      "first_logged_tests": {
+        "itsp-2825-271173_buggy": {
+          "test_id": "1",
+          "verdict": "WRONG_ANSWER",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Cicle.",
+          "formatting_suspected": false
+        },
+        "itsp-2825-271188_buggy": {
+          "test_id": "1",
+          "verdict": "WRONG_ANSWER",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is on the Circle.",
+          "formatting_suspected": false
+        }
+      }
+    },
+    "expert_status": {
+      "status": "waiting_for_human_expert_annotation",
+      "n_candidates": 17,
+      "n_completed_independent_records": 0,
+      "n_adjudicated": 0,
+      "codebook_ready": false,
+      "cluster_purity": null
+    },
+    "source_sha256": {
+      "misconceptions-prototype/results/itsp/abc/2812_A_seed42.json": "0edcc1311d923b7c9febf2415b5bfdd015f13c8c38a649e98cac5b2dae3bbde5",
+      "misconceptions-prototype/results/itsp/abc/2812_C_seed42.json": "5a3ec0fddf7baf303f3f1bd233971926a576956c648919ce970f1cbae7e52ff1",
+      "misconceptions-prototype/results/itsp/abc/2825_A_seed42.json": "fada3775daf3dc531cb908f08543bac7d5ec68d4e01b190062a02f0b6320ec0e",
+      "misconceptions-prototype/results/itsp/abc/2825_C_seed42.json": "8092ecfdcbfd5e6f079c49d23c75ae1c44ece9ad5a5a0b4a8f51b2c6229adb7e",
+      "misconceptions-prototype/results/itsp/abc/2833_A_seed42.json": "61b9cfcd4b9df3925b816519a46a8fe88f368841d1f3829d242ec91756fccb8f",
+      "misconceptions-prototype/results/itsp/abc/2833_C_seed42.json": "77c4cd33fe00d48f716d7bdd3189d80f92667cdf88d4294f191c1a4fe6e2ba1c"
+    }
+  },
+  "cpack": {
+    "url": "https://github.com/pmorvalho/C-Pack-IPAs/tree/C-Pack-IPAs-26",
+    "release_tag": "C-Pack-IPAs-26",
+    "release_published_at": "2026-05-31T23:30:07Z",
+    "commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+    "all_submissions_tree_sha": "f41320e74cc54c2f43552cdc346f0781a313738b",
+    "tests_tree_sha": "e04d088f26a59d71123cd891fb4088fac298f50b",
+    "truncated": false,
+    "c_file_count_in_all_submissions": 8607,
+    "unique_code_blob_hashes": 8343,
+    "distinct_student_id_tokens": 246,
+    "problem_keys": 25,
+    "files_by_year_directory": {
+      "year-1": 919,
+      "year-2": 352,
+      "year-3": 2198,
+      "year-4": 2236,
+      "year-5": 1728,
+      "year-6": 1174
+    },
+    "test_input_files": 106,
+    "test_output_files": 106
+  },
+  "caveats": [
+    "OAV collisions are not mislabeled pairs or an error rate: independent mechanism labels are absent.",
+    "C-Pack counts refer to a single all_submissions tree, not sums of overlapping derived directories.",
+    "Git blob uniqueness is byte-level uniqueness, not semantic uniqueness.",
+    "Student identifiers are counted as repository tokens; the upstream README states they are consistent across exercises and years.",
+    "No eligible-data yield, runtime, expert agreement, model accuracy or learning gain is measured here."
+  ]
+}
