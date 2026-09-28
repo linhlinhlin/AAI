@@ -169,7 +169,7 @@ def make_handler(service):
                 if path == '/api/teacher/suggest':
                     self.teacher(user)
                     return self.respond(200, service.suggest(user, request.get('id'),
-                                                             request.get('cluster')))
+                                                             request.get('cluster'), request.get('use_llm', False)))
                 return self.respond(404, {'error': 'Không tìm thấy chức năng.'})
             except PermissionError as error:
                 self.respond(403, {'error': str(error)})

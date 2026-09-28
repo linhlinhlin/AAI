@@ -239,9 +239,9 @@ def test_ai_suggestion_is_anonymized_cached_and_never_auto_approved(
                 'category': 'other_error', 'evidence_samples': ['sample_1']}, {'tokens': 10}
 
     monkeypatch.setattr(learning_service, 'request_label', call)
-    proposal = service.suggest(teacher, key, '0')
+    proposal = service.suggest(teacher, key, '0', use_llm=True)
     assert proposal['source'] == 'llm' and proposal['status'] == 'draft'
-    assert service.suggest(teacher, key, 0)['cached'] is True
+    assert service.suggest(teacher, key, 0, use_llm=True)['cached'] is True
     assert len(calls) == 1
     assert service.store.report(key) == (original, [])
     assert Store(service.store.path).suggestions(key)[0]['output'] == proposal['output']
@@ -264,8 +264,55 @@ def test_failed_ai_suggestion_preserves_review_and_releases_lock(
                 'category': 'other_error', 'evidence_samples': ['invented_sample']}, {}
 
     monkeypatch.setattr(learning_service, 'request_label', call)
-    with pytest.raises(ValueError):
-        service.suggest(teacher, key, '0')
+    proposal = service.suggest(teacher, key, '0', use_llm=True)
+    assert proposal['source'] == 'local_rules'
+    assert proposal['output'] == proposal['local_output']
+    assert proposal['llm_error']['code'] == 'invalid_response'
+    assert 'Provider unavailable' not in proposal['notice']
     assert not service.suggestion_lock.locked()
     assert not service.store.suggestions(key)
+    assert service.store.report(key) == (original, [])
+
+
+def test_local_first_never_calls_configured_api(service, suggestion_report, monkeypatch):
+    from misconceptions import learning_service
+    teacher, _, key, _ = suggestion_report
+    monkeypatch.setattr(learning_service, 'configuration', lambda *_: {
+        'configured': True, 'provider': 'groq', 'model': 'test-model'})
+    monkeypatch.setattr(learning_service, 'request_label', lambda *_: pytest.fail('Local must not call API'))
+    proposal = service.suggest(teacher, key, '0')
+    assert proposal['source'] == 'local_rules' and proposal['llm_error'] is None
+    service.suggestion_lock.acquire()
+    try:
+        busy = service.suggest(teacher, key, '0', use_llm=True)
+        assert busy['source'] == 'local_rules' and busy['llm_error']['code'] == 'busy'
+    finally:
+        service.suggestion_lock.release()
+
+
+def test_api_failure_cooldown_and_recovery(service, suggestion_report, monkeypatch):
+    from misconceptions import learning_service
+    from misconceptions.llm_client import LLMRequestError
+    teacher, _, key, original = suggestion_report
+    monkeypatch.setattr(learning_service, 'configuration', lambda *_: {
+        'configured': True, 'provider': 'groq', 'model': 'test-model'})
+    calls = []
+    def unavailable(*_):
+        calls.append(1)
+        raise LLMRequestError('API key không hợp lệ.', 'invalid_api_key')
+    monkeypatch.setattr(learning_service, 'request_label', unavailable)
+    first = service.suggest(teacher, key, '0', use_llm=True)
+    assert first['llm_error']['code'] == 'invalid_api_key'
+    assert service.suggest(teacher, key, '0', use_llm=True)['llm_error']['retry_after_seconds'] == 30
+    assert len(calls) == 1 and not service.store.suggestions(key)
+    service.suggestion_failures.clear()  # Simulate expiry without waiting or paid requests.
+    monkeypatch.setattr(learning_service, 'request_label', lambda *_: (
+        {'misconception_name': 'Diễn giải', 'misconception_type': 'Lỗi thuật toán',
+         'reasoning': 'Có biểu hiện sai.', 'teaching_hint': 'Kiểm tra test.',
+         'category': 'misconception', 'evidence_samples': ['sample_1']}, {}))
+    recovered = service.suggest(teacher, key, '0', use_llm=True)
+    assert recovered['source'] == 'llm'
+    assert recovered['output']['category'] == recovered['local_output']['category']
+    assert recovered['output']['misconception_type'] is None
+    assert recovered['validation_status'] == 'unvalidated_hypothesis'
     assert service.store.report(key) == (original, [])

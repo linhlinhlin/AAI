@@ -9,9 +9,11 @@ from pathlib import Path
 
 from playwright.sync_api import expect, sync_playwright
 
+from misconceptions import learning_service
 from misconceptions.learning_problems import get_problem
 from misconceptions.learning_service import LearningService
 from misconceptions.learning_web import make_handler
+from misconceptions.llm_client import LLMRequestError
 
 
 def main():
@@ -19,6 +21,12 @@ def main():
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
+    # Deterministic provider outage: browser acceptance must never use a real key/API.
+    learning_service.configuration = lambda *_: {
+        'configured': True, 'provider': 'groq', 'model': 'fixture-only'}
+    def fake_api(*_):
+        raise LLMRequestError('Model fixture đã ngừng hoạt động.', 'model_retired')
+    learning_service.request_label = fake_api
     service = LearningService(args.output / 'synthetic-app-data')
     if not service.health['ready']:
         raise RuntimeError(service.health['message'])
@@ -97,6 +105,17 @@ def main():
             expect(page.locator('#detail .oav-table tbody tr')).not_to_have_count(0)
             page.locator('#close-detail').click()
             form = page.locator('.review-form').first
+            form.locator('[data-suggest]').click()
+            expect(form.locator('.suggestion-preview')).to_contain_text('Bộ luật cục bộ')
+            form.locator('[data-use-llm]').click()
+            expect(form.locator('.suggestion-preview')).to_contain_text('model_retired')
+            expect(form.locator('.suggestion-preview')).to_contain_text('Gợi ý cục bộ vẫn sẵn sàng')
+            form.locator('[data-apply-suggestion]').click()
+            expect(form.locator('[name=label]')).not_to_have_value('')
+            expect(form.locator('[name=category]')).to_have_value('other_error')
+            expect(form.locator('[name=label]')).to_have_value('In hằng số / Chưa tính toán theo đầu vào')
+            expect(form.locator('.review-status')).to_contain_text('Bản nháp chưa lưu')
+            page.screenshot(path=str(args.output / 'local-fallback.png'), full_page=True)
             form.locator('[name=label]').fill('Nhận xét kiểm thử từ bằng chứng')
             form.locator('[name=rationale]').fill('Đã đối chiếu source và output của bài đại diện.')
             form.locator('[name=follow_up]').fill('Yêu cầu giải thích các giá trị cộng vào tổng.')
@@ -125,7 +144,7 @@ def main():
             browser.close()
         report = {'status': 'passed', 'authored_classroom_accounts': 9,
                   'learner_revision': {'before': '1/6', 'after': '6/6'},
-                  'teacher_clusters': 2, 'review_saved': True, 'review_reopened_after_reload': True,
+                  'teacher_clusters': 2, 'local_first_and_model_error_fallback': True, 'review_saved': True, 'review_reopened_after_reload': True,
                   'session_survived_reload': True, 'mobile_practice_no_overflow': True,
                   'browser_errors': errors, 'runner': service.health,
                   'scope': 'Software acceptance with authored fixtures; not a learning-effect study.'}

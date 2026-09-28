@@ -9,6 +9,7 @@ import tree_sitter_c
 from tree_sitter import Language, Node, Parser
 
 from .domain import Submission
+from .hardcoded_output import hardcoded_output
 from .output_features import OUTPUT_CATEGORIES, output_oav
 
 AST_NAMES = ("for", "while", "range", "inclusive_comparison", "subscript", "return", "augassign")
@@ -97,10 +98,11 @@ def _extract_c(source: str) -> dict[str, str]:
     return {f"ast:c_{name}": str(int(flags[name])) for name in C_AST_NAMES} | {"ast:parse": "ok"}
 
 
-def extract_oav(row: Submission) -> dict[str, str]:
+def extract_oav(row: Submission) -> dict[str, str | bool]:
     values = {f"test:{name}": value for name, value in row.outcomes.items()}
     if row.language.lower() == "c":
-        return values | _extract_c(row.source_code)
+        return values | _extract_c(row.source_code) | {
+            "is_hardcoded_output": bool(hardcoded_output(row.source_code, row.outcomes))}
     values.update({f"ast:{name}": "__unknown__" for name in AST_NAMES})
     if row.language.lower() not in ("python", "python3", "py"):
         values["ast:parse"] = "unsupported"

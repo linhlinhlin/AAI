@@ -1,0 +1,4141 @@
+{
+  "status": "ok",
+  "method": "agglomerative",
+  "feature_mode": "combined",
+  "seed": 42,
+  "config": {
+    "k": 3,
+    "test_fraction": 0.25,
+    "test_weight": 0.8,
+    "effective_feature_mode": "combined",
+    "k_used": true
+  },
+  "silhouette_metric": "weighted_hamming_common_comparison_not_kmeans_native_geometry",
+  "routes": {
+    "cpack-year-1-lab03-ex06-stu_002-sub_019": "eligible",
+    "cpack-year-1-lab03-ex06-stu_002-sub_020": "eligible",
+    "cpack-year-1-lab03-ex06-stu_002-sub_021": "eligible",
+    "cpack-year-1-lab03-ex06-stu_002-sub_022": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_005-sub_023": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_007-sub_030": "eligible",
+    "cpack-year-1-lab03-ex06-stu_007-sub_031": "eligible",
+    "cpack-year-1-lab03-ex06-stu_007-sub_032": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_008-sub_018": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_009-sub_049": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_010-sub_019": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_011-sub_025": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_012-sub_027": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_016-sub_038": "eligible",
+    "cpack-year-1-lab03-ex06-stu_016-sub_039": "eligible",
+    "cpack-year-1-lab03-ex06-stu_016-sub_040": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_018-sub_014": "execution_error",
+    "cpack-year-1-lab03-ex06-stu_018-sub_015": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_018-sub_016": "execution_error",
+    "cpack-year-1-lab03-ex06-stu_018-sub_017": "execution_error",
+    "cpack-year-1-lab03-ex06-stu_018-sub_018": "eligible",
+    "cpack-year-1-lab03-ex06-stu_019-sub_023": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_021-sub_026": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_022-sub_026": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_023-sub_043": "eligible",
+    "cpack-year-1-lab03-ex06-stu_023-sub_044": "eligible",
+    "cpack-year-1-lab03-ex06-stu_023-sub_045": "eligible",
+    "cpack-year-1-lab03-ex06-stu_023-sub_046": "eligible",
+    "cpack-year-1-lab03-ex06-stu_023-sub_047": "eligible",
+    "cpack-year-1-lab03-ex06-stu_023-sub_048": "eligible",
+    "cpack-year-1-lab03-ex06-stu_025-sub_030": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_029-sub_003": "no_failure",
+    "cpack-year-1-lab03-ex06-stu_029-sub_004": "incomplete",
+    "cpack-year-1-lab03-ex06-stu_030-sub_002": "no_failure",
+    "cpack-year-2-lab03-ex06-stu_035-sub_035": "no_failure",
+    "cpack-year-2-lab03-ex06-stu_041-sub_010": "no_failure",
+    "cpack-year-2-lab03-ex06-stu_046-sub_030": "no_failure",
+    "cpack-year-2-lab03-ex06-stu_046-sub_031": "no_failure",
+    "cpack-year-2-lab03-ex06-stu_046-sub_032": "no_failure",
+    "cpack-year-2-lab03-ex06-stu_046-sub_033": "eligible",
+    "cpack-year-2-lab03-ex06-stu_046-sub_034": "eligible",
+    "cpack-year-2-lab03-ex06-stu_049-sub_015": "incomplete",
+    "cpack-year-2-lab03-ex06-stu_049-sub_016": "eligible",
+    "cpack-year-2-lab03-ex06-stu_049-sub_017": "no_failure",
+    "cpack-year-2-lab03-ex06-stu_055-sub_003": "eligible",
+    "cpack-year-2-lab03-ex06-stu_056-sub_007": "execution_error",
+    "cpack-year-2-lab03-ex06-stu_056-sub_008": "eligible",
+    "cpack-year-2-lab03-ex06-stu_059-sub_009": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_064-sub_048": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_064-sub_049": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_065-sub_034": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_065-sub_035": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_065-sub_036": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_065-sub_037": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_066-sub_020": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_068-sub_014": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_069-sub_004": "eligible",
+    "cpack-year-3-lab03-ex06-stu_070-sub_011": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_070-sub_012": "eligible",
+    "cpack-year-3-lab03-ex06-stu_071-sub_010": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_071-sub_011": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_072-sub_024": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_073-sub_032": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_074-sub_021": "eligible",
+    "cpack-year-3-lab03-ex06-stu_074-sub_030": "eligible",
+    "cpack-year-3-lab03-ex06-stu_074-sub_033": "eligible",
+    "cpack-year-3-lab03-ex06-stu_075-sub_031": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_076-sub_068": "incomplete",
+    "cpack-year-3-lab03-ex06-stu_076-sub_069": "incomplete",
+    "cpack-year-3-lab03-ex06-stu_076-sub_070": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_076-sub_071": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_077-sub_039": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_078-sub_027": "eligible",
+    "cpack-year-3-lab03-ex06-stu_078-sub_028": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_079-sub_001": "parse_error",
+    "cpack-year-3-lab03-ex06-stu_080-sub_069": "eligible",
+    "cpack-year-3-lab03-ex06-stu_080-sub_070": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_080-sub_071": "eligible",
+    "cpack-year-3-lab03-ex06-stu_080-sub_072": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_081-sub_049": "eligible",
+    "cpack-year-3-lab03-ex06-stu_081-sub_050": "eligible",
+    "cpack-year-3-lab03-ex06-stu_081-sub_051": "eligible",
+    "cpack-year-3-lab03-ex06-stu_082-sub_017": "parse_error",
+    "cpack-year-3-lab03-ex06-stu_082-sub_019": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_082-sub_020": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_083-sub_045": "eligible",
+    "cpack-year-3-lab03-ex06-stu_083-sub_046": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_083-sub_047": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_083-sub_048": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_083-sub_049": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_083-sub_050": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_084-sub_036": "eligible",
+    "cpack-year-3-lab03-ex06-stu_084-sub_037": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_084-sub_038": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_087-sub_026": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_088-sub_032": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_088-sub_033": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_089-sub_040": "eligible",
+    "cpack-year-3-lab03-ex06-stu_089-sub_041": "eligible",
+    "cpack-year-3-lab03-ex06-stu_091-sub_063": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_092-sub_058": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_092-sub_064": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_092-sub_065": "incomplete",
+    "cpack-year-3-lab03-ex06-stu_092-sub_066": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_093-sub_026": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_093-sub_027": "eligible",
+    "cpack-year-3-lab03-ex06-stu_094-sub_052": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_094-sub_053": "parse_error",
+    "cpack-year-3-lab03-ex06-stu_095-sub_039": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_096-sub_022": "eligible",
+    "cpack-year-3-lab03-ex06-stu_097-sub_031": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_098-sub_018": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_098-sub_026": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_099-sub_040": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_099-sub_041": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_099-sub_042": "incomplete",
+    "cpack-year-3-lab03-ex06-stu_099-sub_043": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_099-sub_044": "execution_error",
+    "cpack-year-3-lab03-ex06-stu_100-sub_054": "incomplete",
+    "cpack-year-3-lab03-ex06-stu_100-sub_055": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_100-sub_056": "eligible",
+    "cpack-year-3-lab03-ex06-stu_100-sub_057": "eligible",
+    "cpack-year-3-lab03-ex06-stu_100-sub_058": "no_failure",
+    "cpack-year-3-lab03-ex06-stu_102-sub_002": "eligible",
+    "cpack-year-4-lab03-ex06-stu_080-sub_120": "execution_error",
+    "cpack-year-4-lab03-ex06-stu_104-sub_024": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_106-sub_025": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_106-sub_027": "eligible",
+    "cpack-year-4-lab03-ex06-stu_106-sub_028": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_113-sub_014": "eligible",
+    "cpack-year-4-lab03-ex06-stu_114-sub_021": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_114-sub_031": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_115-sub_015": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_117-sub_012": "eligible",
+    "cpack-year-4-lab03-ex06-stu_117-sub_014": "eligible",
+    "cpack-year-4-lab03-ex06-stu_117-sub_015": "eligible",
+    "cpack-year-4-lab03-ex06-stu_117-sub_016": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_122-sub_004": "eligible",
+    "cpack-year-4-lab03-ex06-stu_123-sub_009": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_123-sub_010": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_123-sub_011": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_124-sub_027": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_126-sub_014": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_126-sub_015": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_128-sub_025": "eligible",
+    "cpack-year-4-lab03-ex06-stu_128-sub_026": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_130-sub_016": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_132-sub_019": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_132-sub_020": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_132-sub_021": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_133-sub_027": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_133-sub_028": "eligible",
+    "cpack-year-4-lab03-ex06-stu_133-sub_029": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_135-sub_030": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_135-sub_031": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_136-sub_026": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_137-sub_016": "eligible",
+    "cpack-year-4-lab03-ex06-stu_137-sub_025": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_139-sub_002": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_141-sub_002": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_141-sub_004": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_142-sub_019": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_142-sub_020": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_142-sub_021": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_143-sub_012": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_145-sub_020": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_145-sub_021": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_145-sub_022": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_146-sub_013": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_146-sub_018": "eligible",
+    "cpack-year-4-lab03-ex06-stu_148-sub_039": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_148-sub_040": "execution_error",
+    "cpack-year-4-lab03-ex06-stu_148-sub_041": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_150-sub_038": "incomplete",
+    "cpack-year-4-lab03-ex06-stu_152-sub_020": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_153-sub_050": "execution_error",
+    "cpack-year-4-lab03-ex06-stu_156-sub_024": "execution_error",
+    "cpack-year-4-lab03-ex06-stu_156-sub_025": "execution_error",
+    "cpack-year-4-lab03-ex06-stu_156-sub_026": "execution_error",
+    "cpack-year-4-lab03-ex06-stu_158-sub_001": "eligible",
+    "cpack-year-4-lab03-ex06-stu_159-sub_033": "execution_error",
+    "cpack-year-4-lab03-ex06-stu_159-sub_034": "execution_error",
+    "cpack-year-4-lab03-ex06-stu_165-sub_009": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_165-sub_010": "no_failure",
+    "cpack-year-4-lab03-ex06-stu_165-sub_011": "eligible",
+    "cpack-year-5-lab03-ex06-stu_080-sub_130": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_090-sub_077": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_090-sub_078": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_123-sub_032": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_123-sub_033": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_158-sub_008": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_165-sub_020": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_166-sub_008": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_166-sub_009": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_168-sub_019": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_168-sub_020": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_168-sub_021": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_168-sub_022": "eligible",
+    "cpack-year-5-lab03-ex06-stu_168-sub_023": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_169-sub_005": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_169-sub_007": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_169-sub_011": "eligible",
+    "cpack-year-5-lab03-ex06-stu_169-sub_024": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_170-sub_007": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_171-sub_026": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_173-sub_034": "eligible",
+    "cpack-year-5-lab03-ex06-stu_173-sub_035": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_174-sub_003": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_174-sub_009": "eligible",
+    "cpack-year-5-lab03-ex06-stu_174-sub_010": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_174-sub_011": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_175-sub_022": "eligible",
+    "cpack-year-5-lab03-ex06-stu_175-sub_024": "eligible",
+    "cpack-year-5-lab03-ex06-stu_175-sub_025": "eligible",
+    "cpack-year-5-lab03-ex06-stu_175-sub_026": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_177-sub_020": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_177-sub_021": "eligible",
+    "cpack-year-5-lab03-ex06-stu_177-sub_022": "eligible",
+    "cpack-year-5-lab03-ex06-stu_177-sub_023": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_178-sub_026": "eligible",
+    "cpack-year-5-lab03-ex06-stu_178-sub_027": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_178-sub_028": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_179-sub_024": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_180-sub_027": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_181-sub_021": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_182-sub_028": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_182-sub_029": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_182-sub_030": "eligible",
+    "cpack-year-5-lab03-ex06-stu_183-sub_023": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_185-sub_041": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_185-sub_042": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_189-sub_039": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_191-sub_029": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_191-sub_030": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_191-sub_031": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_192-sub_115": "eligible",
+    "cpack-year-5-lab03-ex06-stu_192-sub_116": "eligible",
+    "cpack-year-5-lab03-ex06-stu_192-sub_117": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_192-sub_118": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_192-sub_119": "eligible",
+    "cpack-year-5-lab03-ex06-stu_192-sub_120": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_192-sub_122": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_192-sub_123": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_192-sub_124": "eligible",
+    "cpack-year-5-lab03-ex06-stu_193-sub_020": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_194-sub_007": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_194-sub_008": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_196-sub_015": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_196-sub_021": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_196-sub_022": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_197-sub_031": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_197-sub_032": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_197-sub_034": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_197-sub_035": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_198-sub_003": "eligible",
+    "cpack-year-5-lab03-ex06-stu_198-sub_018": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_199-sub_028": "incomplete",
+    "cpack-year-5-lab03-ex06-stu_199-sub_029": "eligible",
+    "cpack-year-5-lab03-ex06-stu_200-sub_007": "no_failure",
+    "cpack-year-5-lab03-ex06-stu_200-sub_017": "execution_error",
+    "cpack-year-5-lab03-ex06-stu_201-sub_004": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_204-sub_003": "incomplete",
+    "cpack-year-6-lab03-ex06-stu_204-sub_004": "incomplete",
+    "cpack-year-6-lab03-ex06-stu_205-sub_004": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_206-sub_016": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_209-sub_015": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_211-sub_007": "eligible",
+    "cpack-year-6-lab03-ex06-stu_211-sub_008": "eligible",
+    "cpack-year-6-lab03-ex06-stu_212-sub_019": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_213-sub_005": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_213-sub_006": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_214-sub_020": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_215-sub_021": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_218-sub_007": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_219-sub_002": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_220-sub_013": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_222-sub_004": "incomplete",
+    "cpack-year-6-lab03-ex06-stu_222-sub_005": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_222-sub_007": "incomplete",
+    "cpack-year-6-lab03-ex06-stu_224-sub_015": "incomplete",
+    "cpack-year-6-lab03-ex06-stu_228-sub_003": "eligible",
+    "cpack-year-6-lab03-ex06-stu_229-sub_002": "incomplete",
+    "cpack-year-6-lab03-ex06-stu_229-sub_005": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_230-sub_005": "parse_error",
+    "cpack-year-6-lab03-ex06-stu_231-sub_016": "execution_error",
+    "cpack-year-6-lab03-ex06-stu_232-sub_015": "execution_error",
+    "cpack-year-6-lab03-ex06-stu_234-sub_011": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_235-sub_027": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_235-sub_028": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_235-sub_029": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_236-sub_021": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_237-sub_018": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_237-sub_019": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_238-sub_021": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_239-sub_006": "execution_error",
+    "cpack-year-6-lab03-ex06-stu_240-sub_019": "execution_error",
+    "cpack-year-6-lab03-ex06-stu_240-sub_020": "eligible",
+    "cpack-year-6-lab03-ex06-stu_241-sub_022": "no_failure",
+    "cpack-year-6-lab03-ex06-stu_244-sub_004": "no_failure"
+  },
+  "route_counts": {
+    "eligible": 72,
+    "no_failure": 132,
+    "execution_error": 39,
+    "incomplete": 52,
+    "parse_error": 4
+  },
+  "n_eligible": 72,
+  "identity": {
+    "missing_student_ids": 0,
+    "split_guarantee": "known_student_and_exact_source_disjoint"
+  },
+  "warnings": [
+    "Clusters and surrogate rules are behavioral hypotheses requiring instructor validation.",
+    "Exact source grouping does not detect renamed or otherwise near-duplicate code.",
+    "AST presence indicators are syntactic evidence, not semantic fault detectors."
+  ],
+  "split": {
+    "train_ids": [
+      "cpack-year-1-lab03-ex06-stu_016-sub_038",
+      "cpack-year-1-lab03-ex06-stu_016-sub_039",
+      "cpack-year-1-lab03-ex06-stu_018-sub_018",
+      "cpack-year-1-lab03-ex06-stu_023-sub_043",
+      "cpack-year-1-lab03-ex06-stu_023-sub_044",
+      "cpack-year-1-lab03-ex06-stu_023-sub_045",
+      "cpack-year-1-lab03-ex06-stu_023-sub_046",
+      "cpack-year-1-lab03-ex06-stu_023-sub_047",
+      "cpack-year-1-lab03-ex06-stu_023-sub_048",
+      "cpack-year-2-lab03-ex06-stu_049-sub_016",
+      "cpack-year-2-lab03-ex06-stu_055-sub_003",
+      "cpack-year-2-lab03-ex06-stu_056-sub_008",
+      "cpack-year-3-lab03-ex06-stu_070-sub_012",
+      "cpack-year-3-lab03-ex06-stu_074-sub_021",
+      "cpack-year-3-lab03-ex06-stu_074-sub_030",
+      "cpack-year-3-lab03-ex06-stu_074-sub_033",
+      "cpack-year-3-lab03-ex06-stu_078-sub_027",
+      "cpack-year-3-lab03-ex06-stu_080-sub_069",
+      "cpack-year-3-lab03-ex06-stu_080-sub_071",
+      "cpack-year-3-lab03-ex06-stu_083-sub_045",
+      "cpack-year-3-lab03-ex06-stu_084-sub_036",
+      "cpack-year-3-lab03-ex06-stu_089-sub_040",
+      "cpack-year-3-lab03-ex06-stu_089-sub_041",
+      "cpack-year-3-lab03-ex06-stu_093-sub_027",
+      "cpack-year-3-lab03-ex06-stu_096-sub_022",
+      "cpack-year-3-lab03-ex06-stu_100-sub_056",
+      "cpack-year-3-lab03-ex06-stu_100-sub_057",
+      "cpack-year-3-lab03-ex06-stu_102-sub_002",
+      "cpack-year-4-lab03-ex06-stu_106-sub_027",
+      "cpack-year-4-lab03-ex06-stu_117-sub_012",
+      "cpack-year-4-lab03-ex06-stu_117-sub_014",
+      "cpack-year-4-lab03-ex06-stu_117-sub_015",
+      "cpack-year-4-lab03-ex06-stu_122-sub_004",
+      "cpack-year-4-lab03-ex06-stu_128-sub_025",
+      "cpack-year-4-lab03-ex06-stu_146-sub_018",
+      "cpack-year-4-lab03-ex06-stu_165-sub_011",
+      "cpack-year-5-lab03-ex06-stu_168-sub_022",
+      "cpack-year-5-lab03-ex06-stu_169-sub_011",
+      "cpack-year-5-lab03-ex06-stu_174-sub_009",
+      "cpack-year-5-lab03-ex06-stu_175-sub_022",
+      "cpack-year-5-lab03-ex06-stu_175-sub_024",
+      "cpack-year-5-lab03-ex06-stu_175-sub_025",
+      "cpack-year-5-lab03-ex06-stu_177-sub_021",
+      "cpack-year-5-lab03-ex06-stu_177-sub_022",
+      "cpack-year-5-lab03-ex06-stu_178-sub_026",
+      "cpack-year-5-lab03-ex06-stu_192-sub_115",
+      "cpack-year-5-lab03-ex06-stu_192-sub_116",
+      "cpack-year-5-lab03-ex06-stu_192-sub_119",
+      "cpack-year-5-lab03-ex06-stu_192-sub_124",
+      "cpack-year-5-lab03-ex06-stu_198-sub_003",
+      "cpack-year-6-lab03-ex06-stu_211-sub_007",
+      "cpack-year-6-lab03-ex06-stu_211-sub_008",
+      "cpack-year-6-lab03-ex06-stu_240-sub_020"
+    ],
+    "holdout_ids": [
+      "cpack-year-1-lab03-ex06-stu_002-sub_019",
+      "cpack-year-1-lab03-ex06-stu_002-sub_020",
+      "cpack-year-1-lab03-ex06-stu_002-sub_021",
+      "cpack-year-2-lab03-ex06-stu_046-sub_033",
+      "cpack-year-2-lab03-ex06-stu_046-sub_034",
+      "cpack-year-3-lab03-ex06-stu_069-sub_004",
+      "cpack-year-3-lab03-ex06-stu_081-sub_049",
+      "cpack-year-3-lab03-ex06-stu_081-sub_050",
+      "cpack-year-3-lab03-ex06-stu_081-sub_051",
+      "cpack-year-4-lab03-ex06-stu_137-sub_016",
+      "cpack-year-4-lab03-ex06-stu_158-sub_001",
+      "cpack-year-5-lab03-ex06-stu_173-sub_034",
+      "cpack-year-5-lab03-ex06-stu_182-sub_030",
+      "cpack-year-6-lab03-ex06-stu_228-sub_003"
+    ],
+    "train_groups": 33,
+    "holdout_groups": 9,
+    "policy": "corpus_lock",
+    "evaluation_partition": "validation"
+  },
+  "n_clusters": 3,
+  "features": [
+    {
+      "name": "test:ex06_0",
+      "weight": 0.1142857142857143
+    },
+    {
+      "name": "test:ex06_1",
+      "weight": 0.1142857142857143
+    },
+    {
+      "name": "test:ex06_2",
+      "weight": 0.1142857142857143
+    },
+    {
+      "name": "test:ex06_3",
+      "weight": 0.1142857142857143
+    },
+    {
+      "name": "test:ex06_4",
+      "weight": 0.1142857142857143
+    },
+    {
+      "name": "test:ex06_5",
+      "weight": 0.1142857142857143
+    },
+    {
+      "name": "test:ex06_6",
+      "weight": 0.1142857142857143
+    },
+    {
+      "name": "ast:c_for",
+      "weight": 0.024999999999999994
+    },
+    {
+      "name": "ast:c_while",
+      "weight": 0.024999999999999994
+    },
+    {
+      "name": "ast:c_if",
+      "weight": 0.024999999999999994
+    },
+    {
+      "name": "ast:c_inclusive_comparison",
+      "weight": 0.024999999999999994
+    },
+    {
+      "name": "ast:c_strict_comparison",
+      "weight": 0.024999999999999994
+    },
+    {
+      "name": "ast:c_subscript",
+      "weight": 0.024999999999999994
+    },
+    {
+      "name": "ast:c_address_of",
+      "weight": 0.024999999999999994
+    },
+    {
+      "name": "ast:c_update",
+      "weight": 0.024999999999999994
+    }
+  ],
+  "oav": {
+    "cpack-year-1-lab03-ex06-stu_016-sub_038": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-1-lab03-ex06-stu_016-sub_039": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "pass",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-1-lab03-ex06-stu_018-sub_018": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-1-lab03-ex06-stu_023-sub_043": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-1-lab03-ex06-stu_023-sub_044": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-1-lab03-ex06-stu_023-sub_045": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-1-lab03-ex06-stu_023-sub_046": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-1-lab03-ex06-stu_023-sub_047": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-1-lab03-ex06-stu_023-sub_048": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-2-lab03-ex06-stu_049-sub_016": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-2-lab03-ex06-stu_055-sub_003": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-2-lab03-ex06-stu_056-sub_008": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_070-sub_012": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_074-sub_021": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab03-ex06-stu_074-sub_030": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab03-ex06-stu_074-sub_033": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab03-ex06-stu_078-sub_027": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_080-sub_069": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_080-sub_071": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_083-sub_045": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab03-ex06-stu_084-sub_036": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab03-ex06-stu_089-sub_040": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab03-ex06-stu_089-sub_041": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab03-ex06-stu_093-sub_027": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_096-sub_022": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_100-sub_056": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_100-sub_057": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_102-sub_002": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-4-lab03-ex06-stu_106-sub_027": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-4-lab03-ex06-stu_117-sub_012": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-4-lab03-ex06-stu_117-sub_014": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-4-lab03-ex06-stu_117-sub_015": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-4-lab03-ex06-stu_122-sub_004": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "1",
+      "ast:c_address_of": "1",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab03-ex06-stu_128-sub_025": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-4-lab03-ex06-stu_146-sub_018": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-4-lab03-ex06-stu_165-sub_011": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_168-sub_022": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_169-sub_011": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_174-sub_009": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_175-sub_022": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-5-lab03-ex06-stu_175-sub_024": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-5-lab03-ex06-stu_175-sub_025": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-5-lab03-ex06-stu_177-sub_021": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "pass",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_177-sub_022": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_178-sub_026": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_192-sub_115": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_192-sub_116": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_192-sub_119": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_192-sub_124": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_198-sub_003": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-6-lab03-ex06-stu_211-sub_007": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-6-lab03-ex06-stu_211-sub_008": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-6-lab03-ex06-stu_240-sub_020": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-1-lab03-ex06-stu_002-sub_019": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-1-lab03-ex06-stu_002-sub_020": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-1-lab03-ex06-stu_002-sub_021": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-2-lab03-ex06-stu_046-sub_033": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-2-lab03-ex06-stu_046-sub_034": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_069-sub_004": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_081-sub_049": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "pass",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_081-sub_050": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "pass",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-3-lab03-ex06-stu_081-sub_051": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "pass",
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-4-lab03-ex06-stu_137-sub_016": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "fail",
+      "test:ex06_2": "fail",
+      "test:ex06_3": "fail",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-4-lab03-ex06-stu_158-sub_001": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_173-sub_034": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "0"
+    },
+    "cpack-year-5-lab03-ex06-stu_182-sub_030": {
+      "test:ex06_0": "pass",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "pass",
+      "test:ex06_5": "pass",
+      "test:ex06_6": "fail",
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-6-lab03-ex06-stu_228-sub_003": {
+      "test:ex06_0": "fail",
+      "test:ex06_1": "pass",
+      "test:ex06_2": "pass",
+      "test:ex06_3": "pass",
+      "test:ex06_4": "fail",
+      "test:ex06_5": "fail",
+      "test:ex06_6": "pass",
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    }
+  },
+  "train_assignments": {
+    "cpack-year-1-lab03-ex06-stu_016-sub_038": 1,
+    "cpack-year-1-lab03-ex06-stu_016-sub_039": 0,
+    "cpack-year-1-lab03-ex06-stu_018-sub_018": 1,
+    "cpack-year-1-lab03-ex06-stu_023-sub_043": 1,
+    "cpack-year-1-lab03-ex06-stu_023-sub_044": 1,
+    "cpack-year-1-lab03-ex06-stu_023-sub_045": 1,
+    "cpack-year-1-lab03-ex06-stu_023-sub_046": 1,
+    "cpack-year-1-lab03-ex06-stu_023-sub_047": 1,
+    "cpack-year-1-lab03-ex06-stu_023-sub_048": 1,
+    "cpack-year-2-lab03-ex06-stu_049-sub_016": 1,
+    "cpack-year-2-lab03-ex06-stu_055-sub_003": 1,
+    "cpack-year-2-lab03-ex06-stu_056-sub_008": 1,
+    "cpack-year-3-lab03-ex06-stu_070-sub_012": 1,
+    "cpack-year-3-lab03-ex06-stu_074-sub_021": 0,
+    "cpack-year-3-lab03-ex06-stu_074-sub_030": 0,
+    "cpack-year-3-lab03-ex06-stu_074-sub_033": 0,
+    "cpack-year-3-lab03-ex06-stu_078-sub_027": 1,
+    "cpack-year-3-lab03-ex06-stu_080-sub_069": 1,
+    "cpack-year-3-lab03-ex06-stu_080-sub_071": 1,
+    "cpack-year-3-lab03-ex06-stu_083-sub_045": 1,
+    "cpack-year-3-lab03-ex06-stu_084-sub_036": 0,
+    "cpack-year-3-lab03-ex06-stu_089-sub_040": 1,
+    "cpack-year-3-lab03-ex06-stu_089-sub_041": 1,
+    "cpack-year-3-lab03-ex06-stu_093-sub_027": 0,
+    "cpack-year-3-lab03-ex06-stu_096-sub_022": 1,
+    "cpack-year-3-lab03-ex06-stu_100-sub_056": 1,
+    "cpack-year-3-lab03-ex06-stu_100-sub_057": 1,
+    "cpack-year-3-lab03-ex06-stu_102-sub_002": 0,
+    "cpack-year-4-lab03-ex06-stu_106-sub_027": 1,
+    "cpack-year-4-lab03-ex06-stu_117-sub_012": 1,
+    "cpack-year-4-lab03-ex06-stu_117-sub_014": 1,
+    "cpack-year-4-lab03-ex06-stu_117-sub_015": 0,
+    "cpack-year-4-lab03-ex06-stu_122-sub_004": 0,
+    "cpack-year-4-lab03-ex06-stu_128-sub_025": 1,
+    "cpack-year-4-lab03-ex06-stu_146-sub_018": 1,
+    "cpack-year-4-lab03-ex06-stu_165-sub_011": 0,
+    "cpack-year-5-lab03-ex06-stu_168-sub_022": 0,
+    "cpack-year-5-lab03-ex06-stu_169-sub_011": 0,
+    "cpack-year-5-lab03-ex06-stu_174-sub_009": 0,
+    "cpack-year-5-lab03-ex06-stu_175-sub_022": 1,
+    "cpack-year-5-lab03-ex06-stu_175-sub_024": 1,
+    "cpack-year-5-lab03-ex06-stu_175-sub_025": 1,
+    "cpack-year-5-lab03-ex06-stu_177-sub_021": 2,
+    "cpack-year-5-lab03-ex06-stu_177-sub_022": 0,
+    "cpack-year-5-lab03-ex06-stu_178-sub_026": 1,
+    "cpack-year-5-lab03-ex06-stu_192-sub_115": 0,
+    "cpack-year-5-lab03-ex06-stu_192-sub_116": 1,
+    "cpack-year-5-lab03-ex06-stu_192-sub_119": 1,
+    "cpack-year-5-lab03-ex06-stu_192-sub_124": 1,
+    "cpack-year-5-lab03-ex06-stu_198-sub_003": 1,
+    "cpack-year-6-lab03-ex06-stu_211-sub_007": 0,
+    "cpack-year-6-lab03-ex06-stu_211-sub_008": 0,
+    "cpack-year-6-lab03-ex06-stu_240-sub_020": 0
+  },
+  "holdout_assignments": {
+    "cpack-year-1-lab03-ex06-stu_002-sub_019": 0,
+    "cpack-year-1-lab03-ex06-stu_002-sub_020": 0,
+    "cpack-year-1-lab03-ex06-stu_002-sub_021": 0,
+    "cpack-year-2-lab03-ex06-stu_046-sub_033": 1,
+    "cpack-year-2-lab03-ex06-stu_046-sub_034": 1,
+    "cpack-year-3-lab03-ex06-stu_069-sub_004": 0,
+    "cpack-year-3-lab03-ex06-stu_081-sub_049": 0,
+    "cpack-year-3-lab03-ex06-stu_081-sub_050": 2,
+    "cpack-year-3-lab03-ex06-stu_081-sub_051": 0,
+    "cpack-year-4-lab03-ex06-stu_137-sub_016": 1,
+    "cpack-year-4-lab03-ex06-stu_158-sub_001": 0,
+    "cpack-year-5-lab03-ex06-stu_173-sub_034": 0,
+    "cpack-year-5-lab03-ex06-stu_182-sub_030": 0,
+    "cpack-year-6-lab03-ex06-stu_228-sub_003": 2
+  },
+  "medoids": {
+    "0": "cpack-year-3-lab03-ex06-stu_093-sub_027",
+    "1": "cpack-year-1-lab03-ex06-stu_023-sub_043",
+    "2": "cpack-year-5-lab03-ex06-stu_177-sub_021"
+  },
+  "silhouette_train": 0.6867354797477669,
+  "holdout_distance_to_medoid": {
+    "cpack-year-1-lab03-ex06-stu_002-sub_019": 0.27857142857142847,
+    "cpack-year-1-lab03-ex06-stu_002-sub_020": 0.3285714285714284,
+    "cpack-year-1-lab03-ex06-stu_002-sub_021": 0.3285714285714284,
+    "cpack-year-2-lab03-ex06-stu_046-sub_033": 0.024999999999999988,
+    "cpack-year-2-lab03-ex06-stu_046-sub_034": 0.024999999999999988,
+    "cpack-year-3-lab03-ex06-stu_069-sub_004": 0.049999999999999975,
+    "cpack-year-3-lab03-ex06-stu_081-sub_049": 0.36785714285714277,
+    "cpack-year-3-lab03-ex06-stu_081-sub_050": 0.39285714285714274,
+    "cpack-year-3-lab03-ex06-stu_081-sub_051": 0.36785714285714277,
+    "cpack-year-4-lab03-ex06-stu_137-sub_016": 0.07499999999999996,
+    "cpack-year-4-lab03-ex06-stu_158-sub_001": 0.049999999999999975,
+    "cpack-year-5-lab03-ex06-stu_173-sub_034": 0.049999999999999975,
+    "cpack-year-5-lab03-ex06-stu_182-sub_030": 0.09999999999999995,
+    "cpack-year-6-lab03-ex06-stu_228-sub_003": 0.18928571428571425
+  },
+  "holdout_assignment_ties": 0,
+  "assignment_policy": "nearest_training_medoid_weighted_hamming; ties select lowest cluster id",
+  "explanation": {
+    "target": "cluster_id_only_not_validated_misconception",
+    "train_fidelity": 0.9622641509433962,
+    "holdout_fidelity": 0.8571428571428571,
+    "holdout_majority_baseline_fidelity": 0.21428571428571427,
+    "train_leaf_ids": [
+      2,
+      8,
+      5,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      4,
+      8,
+      8,
+      8,
+      2,
+      2,
+      2,
+      5,
+      8,
+      2,
+      7,
+      8,
+      2,
+      4,
+      4,
+      8,
+      2,
+      2,
+      2,
+      8,
+      8,
+      4,
+      2,
+      8,
+      8,
+      8,
+      8,
+      5,
+      5,
+      5,
+      4,
+      7,
+      2,
+      8,
+      2,
+      2,
+      2,
+      2,
+      8,
+      8,
+      8
+    ],
+    "holdout_leaf_ids": [
+      8,
+      8,
+      8,
+      2,
+      2,
+      8,
+      7,
+      7,
+      7,
+      2,
+      8,
+      8,
+      8,
+      7
+    ],
+    "rules": [
+      {
+        "rule_id": 2,
+        "if": [
+          "NOT (test:ex06_1=pass)",
+          "NOT (ast:c_inclusive_comparison=1)"
+        ],
+        "then_cluster": 1,
+        "train_support": 16,
+        "train_precision": 1.0,
+        "holdout_support": 3,
+        "holdout_precision": 1.0
+      },
+      {
+        "rule_id": 4,
+        "if": [
+          "NOT (test:ex06_1=pass)",
+          "ast:c_inclusive_comparison=1",
+          "NOT (ast:c_strict_comparison=1)"
+        ],
+        "then_cluster": 1,
+        "train_support": 13,
+        "train_precision": 0.9230769230769231,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "rule_id": 5,
+        "if": [
+          "NOT (test:ex06_1=pass)",
+          "ast:c_inclusive_comparison=1",
+          "ast:c_strict_comparison=1"
+        ],
+        "then_cluster": 1,
+        "train_support": 5,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "rule_id": 7,
+        "if": [
+          "test:ex06_1=pass",
+          "NOT (test:ex06_5=pass)"
+        ],
+        "then_cluster": 0,
+        "train_support": 2,
+        "train_precision": 0.5,
+        "holdout_support": 4,
+        "holdout_precision": 0.5
+      },
+      {
+        "rule_id": 8,
+        "if": [
+          "test:ex06_1=pass",
+          "test:ex06_5=pass"
+        ],
+        "then_cluster": 0,
+        "train_support": 17,
+        "train_precision": 1.0,
+        "holdout_support": 7,
+        "holdout_precision": 1.0
+      }
+    ]
+  },
+  "ari_vs_exact_signature_train": 0.703838947012599,
+  "elapsed_seconds": 0.1309772999957204,
+  "provenance": {
+    "dataset": {
+      "schema_version": 2,
+      "dataset_name": "C-Pack-IPAs-26",
+      "provenance": "https://github.com/pmorvalho/C-Pack-IPAs",
+      "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+      "problem_id": "lab03-ex06",
+      "language": "c",
+      "suite_version": "cpack-8cc054bbd36ba4d21be47b453926165701ea0a12cb38f69e73b9daf71dc604f9",
+      "test_ids": [
+        "ex06_0",
+        "ex06_1",
+        "ex06_2",
+        "ex06_3",
+        "ex06_4",
+        "ex06_5",
+        "ex06_6"
+      ],
+      "suite_sha256": "8cc054bbd36ba4d21be47b453926165701ea0a12cb38f69e73b9daf71dc604f9",
+      "execution": "historical_logs_only"
+    },
+    "input_sha256": "ceb78f08df108c8b5188ef1a9d105bc2576ed294b179691fb4fdbc424d5d34ad",
+    "manifest_sha256": "d41b890b2d5ee321765eb969638a4e86d6bbbd8c5f96113ec61f899bf1020471",
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "tree-sitter": "0.26.0",
+      "tree-sitter-c": "0.24.2"
+    },
+    "interpretation": "Clusters are observable error patterns, not verified misconceptions.",
+    "evidence_sha256": "079feee12e03b5ed9b88578bc32f0975e5a5dbfe699fef815d97dc28c4d7e33f"
+  },
+  "run_manifest": "run_manifest.json",
+  "teaching": {
+    "version": "teaching-rules-v2",
+    "style_version": "vi-rule-v1",
+    "origin": "hand_authored_evidence_rules_not_learned_labels",
+    "human_validated": false,
+    "findings": [
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-2-lab03-ex06-stu_046-sub_033",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "holdout"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-2-lab03-ex06-stu_046-sub_034",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "holdout"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-2-lab03-ex06-stu_049-sub_016",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 16,
+            "line_end": 16,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-2-lab03-ex06-stu_055-sub_003",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-2-lab03-ex06-stu_056-sub_008",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab03-ex06-stu_070-sub_012",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab03-ex06-stu_078-sub_027",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab03-ex06-stu_083-sub_045",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 53,
+            "line_end": 53,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 56,
+            "line_end": 56,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab03-ex06-stu_089-sub_040",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 19,
+            "line_end": 19,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab03-ex06-stu_100-sub_056",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"no\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab03-ex06-stu_100-sub_057",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"no\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab03-ex06-stu_117-sub_012",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 36,
+            "line_end": 36,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab03-ex06-stu_117-sub_014",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 36,
+            "line_end": 36,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 38,
+            "line_end": 38,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab03-ex06-stu_128-sub_025",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 20,
+            "line_end": 20,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 21,
+            "line_end": 21,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab03-ex06-stu_146-sub_018",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-5-lab03-ex06-stu_175-sub_024",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 18,
+            "line_end": 18,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-5-lab03-ex06-stu_175-sub_025",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 18,
+            "line_end": 18,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-5-lab03-ex06-stu_178-sub_026",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 17,
+            "line_end": 17,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_6",
+            "input": "9999999999999",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-5-lab03-ex06-stu_192-sub_116",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "8",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "16",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "729",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_3",
+            "input": "891",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex06_4",
+            "input": "890",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex06_5",
+            "input": "9999999999999991",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      }
+    ],
+    "summaries": [
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "n_submissions": 19,
+        "by_split": {
+          "holdout": 2,
+          "train": 17
+        },
+        "by_cluster": {
+          "1": 19
+        }
+      }
+    ],
+    "cluster_rules": [
+      {
+        "rule_id": 2,
+        "if": [
+          "NOT (test:ex06_1=pass)",
+          "NOT (ast:c_inclusive_comparison=1)"
+        ],
+        "then_cluster": 1,
+        "train_support": 16,
+        "train_precision": 1.0,
+        "holdout_support": 3,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "không thỏa điều kiện: [Ca kiểm thử ex06_1: đạt]",
+          "không thỏa điều kiện: [mã có phép so sánh ≤ hoặc ≥]"
+        ]
+      },
+      {
+        "rule_id": 4,
+        "if": [
+          "NOT (test:ex06_1=pass)",
+          "ast:c_inclusive_comparison=1",
+          "NOT (ast:c_strict_comparison=1)"
+        ],
+        "then_cluster": 1,
+        "train_support": 13,
+        "train_precision": 0.9230769230769231,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "không thỏa điều kiện: [Ca kiểm thử ex06_1: đạt]",
+          "mã có phép so sánh ≤ hoặc ≥",
+          "không thỏa điều kiện: [mã có phép so sánh < hoặc >]"
+        ]
+      },
+      {
+        "rule_id": 5,
+        "if": [
+          "NOT (test:ex06_1=pass)",
+          "ast:c_inclusive_comparison=1",
+          "ast:c_strict_comparison=1"
+        ],
+        "then_cluster": 1,
+        "train_support": 5,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null,
+        "if_vi": [
+          "không thỏa điều kiện: [Ca kiểm thử ex06_1: đạt]",
+          "mã có phép so sánh ≤ hoặc ≥",
+          "mã có phép so sánh < hoặc >"
+        ]
+      },
+      {
+        "rule_id": 7,
+        "if": [
+          "test:ex06_1=pass",
+          "NOT (test:ex06_5=pass)"
+        ],
+        "then_cluster": 0,
+        "train_support": 2,
+        "train_precision": 0.5,
+        "holdout_support": 4,
+        "holdout_precision": 0.5,
+        "if_vi": [
+          "Ca kiểm thử ex06_1: đạt",
+          "không thỏa điều kiện: [Ca kiểm thử ex06_5: đạt]"
+        ]
+      },
+      {
+        "rule_id": 8,
+        "if": [
+          "test:ex06_1=pass",
+          "test:ex06_5=pass"
+        ],
+        "then_cluster": 0,
+        "train_support": 17,
+        "train_precision": 1.0,
+        "holdout_support": 7,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "Ca kiểm thử ex06_1: đạt",
+          "Ca kiểm thử ex06_5: đạt"
+        ]
+      }
+    ],
+    "n_analyzed": 268,
+    "n_with_logs": 71,
+    "n_matched": 19,
+    "unmatched_ids": [
+      "cpack-year-1-lab03-ex06-stu_002-sub_019",
+      "cpack-year-1-lab03-ex06-stu_002-sub_020",
+      "cpack-year-1-lab03-ex06-stu_002-sub_021",
+      "cpack-year-1-lab03-ex06-stu_002-sub_022",
+      "cpack-year-1-lab03-ex06-stu_005-sub_023",
+      "cpack-year-1-lab03-ex06-stu_008-sub_018",
+      "cpack-year-1-lab03-ex06-stu_009-sub_049",
+      "cpack-year-1-lab03-ex06-stu_010-sub_019",
+      "cpack-year-1-lab03-ex06-stu_011-sub_025",
+      "cpack-year-1-lab03-ex06-stu_012-sub_027",
+      "cpack-year-1-lab03-ex06-stu_016-sub_038",
+      "cpack-year-1-lab03-ex06-stu_016-sub_039",
+      "cpack-year-1-lab03-ex06-stu_016-sub_040",
+      "cpack-year-1-lab03-ex06-stu_018-sub_014",
+      "cpack-year-1-lab03-ex06-stu_018-sub_015",
+      "cpack-year-1-lab03-ex06-stu_018-sub_016",
+      "cpack-year-1-lab03-ex06-stu_018-sub_017",
+      "cpack-year-1-lab03-ex06-stu_018-sub_018",
+      "cpack-year-1-lab03-ex06-stu_019-sub_023",
+      "cpack-year-1-lab03-ex06-stu_021-sub_026",
+      "cpack-year-1-lab03-ex06-stu_022-sub_026",
+      "cpack-year-1-lab03-ex06-stu_023-sub_043",
+      "cpack-year-1-lab03-ex06-stu_023-sub_044",
+      "cpack-year-1-lab03-ex06-stu_023-sub_045",
+      "cpack-year-1-lab03-ex06-stu_023-sub_046",
+      "cpack-year-1-lab03-ex06-stu_023-sub_047",
+      "cpack-year-1-lab03-ex06-stu_023-sub_048",
+      "cpack-year-1-lab03-ex06-stu_025-sub_030",
+      "cpack-year-1-lab03-ex06-stu_029-sub_003",
+      "cpack-year-1-lab03-ex06-stu_029-sub_004",
+      "cpack-year-1-lab03-ex06-stu_030-sub_002",
+      "cpack-year-2-lab03-ex06-stu_035-sub_035",
+      "cpack-year-2-lab03-ex06-stu_041-sub_010",
+      "cpack-year-2-lab03-ex06-stu_046-sub_030",
+      "cpack-year-2-lab03-ex06-stu_046-sub_031",
+      "cpack-year-2-lab03-ex06-stu_046-sub_032",
+      "cpack-year-2-lab03-ex06-stu_049-sub_015",
+      "cpack-year-2-lab03-ex06-stu_049-sub_017",
+      "cpack-year-2-lab03-ex06-stu_056-sub_007",
+      "cpack-year-2-lab03-ex06-stu_059-sub_009",
+      "cpack-year-3-lab03-ex06-stu_064-sub_048",
+      "cpack-year-3-lab03-ex06-stu_064-sub_049",
+      "cpack-year-3-lab03-ex06-stu_065-sub_034",
+      "cpack-year-3-lab03-ex06-stu_065-sub_035",
+      "cpack-year-3-lab03-ex06-stu_065-sub_036",
+      "cpack-year-3-lab03-ex06-stu_065-sub_037",
+      "cpack-year-3-lab03-ex06-stu_066-sub_020",
+      "cpack-year-3-lab03-ex06-stu_068-sub_014",
+      "cpack-year-3-lab03-ex06-stu_069-sub_004",
+      "cpack-year-3-lab03-ex06-stu_070-sub_011",
+      "cpack-year-3-lab03-ex06-stu_071-sub_010",
+      "cpack-year-3-lab03-ex06-stu_071-sub_011",
+      "cpack-year-3-lab03-ex06-stu_073-sub_032",
+      "cpack-year-3-lab03-ex06-stu_074-sub_021",
+      "cpack-year-3-lab03-ex06-stu_074-sub_030",
+      "cpack-year-3-lab03-ex06-stu_074-sub_033",
+      "cpack-year-3-lab03-ex06-stu_075-sub_031",
+      "cpack-year-3-lab03-ex06-stu_076-sub_068",
+      "cpack-year-3-lab03-ex06-stu_076-sub_069",
+      "cpack-year-3-lab03-ex06-stu_076-sub_070",
+      "cpack-year-3-lab03-ex06-stu_076-sub_071",
+      "cpack-year-3-lab03-ex06-stu_077-sub_039",
+      "cpack-year-3-lab03-ex06-stu_078-sub_028",
+      "cpack-year-3-lab03-ex06-stu_079-sub_001",
+      "cpack-year-3-lab03-ex06-stu_080-sub_069",
+      "cpack-year-3-lab03-ex06-stu_080-sub_070",
+      "cpack-year-3-lab03-ex06-stu_080-sub_071",
+      "cpack-year-3-lab03-ex06-stu_080-sub_072",
+      "cpack-year-3-lab03-ex06-stu_081-sub_049",
+      "cpack-year-3-lab03-ex06-stu_081-sub_050",
+      "cpack-year-3-lab03-ex06-stu_081-sub_051",
+      "cpack-year-3-lab03-ex06-stu_082-sub_017",
+      "cpack-year-3-lab03-ex06-stu_082-sub_019",
+      "cpack-year-3-lab03-ex06-stu_082-sub_020",
+      "cpack-year-3-lab03-ex06-stu_083-sub_046",
+      "cpack-year-3-lab03-ex06-stu_083-sub_047",
+      "cpack-year-3-lab03-ex06-stu_083-sub_048",
+      "cpack-year-3-lab03-ex06-stu_083-sub_049",
+      "cpack-year-3-lab03-ex06-stu_083-sub_050",
+      "cpack-year-3-lab03-ex06-stu_084-sub_036",
+      "cpack-year-3-lab03-ex06-stu_084-sub_037",
+      "cpack-year-3-lab03-ex06-stu_084-sub_038",
+      "cpack-year-3-lab03-ex06-stu_088-sub_032",
+      "cpack-year-3-lab03-ex06-stu_088-sub_033",
+      "cpack-year-3-lab03-ex06-stu_089-sub_041",
+      "cpack-year-3-lab03-ex06-stu_091-sub_063",
+      "cpack-year-3-lab03-ex06-stu_092-sub_058",
+      "cpack-year-3-lab03-ex06-stu_092-sub_064",
+      "cpack-year-3-lab03-ex06-stu_092-sub_065",
+      "cpack-year-3-lab03-ex06-stu_092-sub_066",
+      "cpack-year-3-lab03-ex06-stu_093-sub_026",
+      "cpack-year-3-lab03-ex06-stu_093-sub_027",
+      "cpack-year-3-lab03-ex06-stu_094-sub_052",
+      "cpack-year-3-lab03-ex06-stu_094-sub_053",
+      "cpack-year-3-lab03-ex06-stu_095-sub_039",
+      "cpack-year-3-lab03-ex06-stu_096-sub_022",
+      "cpack-year-3-lab03-ex06-stu_097-sub_031",
+      "cpack-year-3-lab03-ex06-stu_098-sub_018",
+      "cpack-year-3-lab03-ex06-stu_098-sub_026",
+      "cpack-year-3-lab03-ex06-stu_099-sub_040",
+      "cpack-year-3-lab03-ex06-stu_099-sub_041",
+      "cpack-year-3-lab03-ex06-stu_099-sub_042",
+      "cpack-year-3-lab03-ex06-stu_099-sub_043",
+      "cpack-year-3-lab03-ex06-stu_099-sub_044",
+      "cpack-year-3-lab03-ex06-stu_100-sub_054",
+      "cpack-year-3-lab03-ex06-stu_100-sub_055",
+      "cpack-year-3-lab03-ex06-stu_100-sub_058",
+      "cpack-year-3-lab03-ex06-stu_102-sub_002",
+      "cpack-year-4-lab03-ex06-stu_080-sub_120",
+      "cpack-year-4-lab03-ex06-stu_106-sub_025",
+      "cpack-year-4-lab03-ex06-stu_106-sub_027",
+      "cpack-year-4-lab03-ex06-stu_106-sub_028",
+      "cpack-year-4-lab03-ex06-stu_114-sub_021",
+      "cpack-year-4-lab03-ex06-stu_114-sub_031",
+      "cpack-year-4-lab03-ex06-stu_115-sub_015",
+      "cpack-year-4-lab03-ex06-stu_117-sub_015",
+      "cpack-year-4-lab03-ex06-stu_117-sub_016",
+      "cpack-year-4-lab03-ex06-stu_122-sub_004",
+      "cpack-year-4-lab03-ex06-stu_123-sub_009",
+      "cpack-year-4-lab03-ex06-stu_123-sub_010",
+      "cpack-year-4-lab03-ex06-stu_123-sub_011",
+      "cpack-year-4-lab03-ex06-stu_126-sub_014",
+      "cpack-year-4-lab03-ex06-stu_126-sub_015",
+      "cpack-year-4-lab03-ex06-stu_128-sub_026",
+      "cpack-year-4-lab03-ex06-stu_130-sub_016",
+      "cpack-year-4-lab03-ex06-stu_132-sub_019",
+      "cpack-year-4-lab03-ex06-stu_132-sub_020",
+      "cpack-year-4-lab03-ex06-stu_132-sub_021",
+      "cpack-year-4-lab03-ex06-stu_135-sub_030",
+      "cpack-year-4-lab03-ex06-stu_135-sub_031",
+      "cpack-year-4-lab03-ex06-stu_136-sub_026",
+      "cpack-year-4-lab03-ex06-stu_137-sub_016",
+      "cpack-year-4-lab03-ex06-stu_137-sub_025",
+      "cpack-year-4-lab03-ex06-stu_139-sub_002",
+      "cpack-year-4-lab03-ex06-stu_142-sub_019",
+      "cpack-year-4-lab03-ex06-stu_142-sub_020",
+      "cpack-year-4-lab03-ex06-stu_142-sub_021",
+      "cpack-year-4-lab03-ex06-stu_143-sub_012",
+      "cpack-year-4-lab03-ex06-stu_145-sub_020",
+      "cpack-year-4-lab03-ex06-stu_145-sub_021",
+      "cpack-year-4-lab03-ex06-stu_145-sub_022",
+      "cpack-year-4-lab03-ex06-stu_146-sub_013",
+      "cpack-year-4-lab03-ex06-stu_148-sub_039",
+      "cpack-year-4-lab03-ex06-stu_148-sub_040",
+      "cpack-year-4-lab03-ex06-stu_148-sub_041",
+      "cpack-year-4-lab03-ex06-stu_150-sub_038",
+      "cpack-year-4-lab03-ex06-stu_152-sub_020",
+      "cpack-year-4-lab03-ex06-stu_156-sub_024",
+      "cpack-year-4-lab03-ex06-stu_156-sub_025",
+      "cpack-year-4-lab03-ex06-stu_156-sub_026",
+      "cpack-year-4-lab03-ex06-stu_158-sub_001",
+      "cpack-year-4-lab03-ex06-stu_159-sub_033",
+      "cpack-year-4-lab03-ex06-stu_159-sub_034",
+      "cpack-year-4-lab03-ex06-stu_165-sub_009",
+      "cpack-year-4-lab03-ex06-stu_165-sub_010",
+      "cpack-year-4-lab03-ex06-stu_165-sub_011",
+      "cpack-year-5-lab03-ex06-stu_080-sub_130",
+      "cpack-year-5-lab03-ex06-stu_090-sub_077",
+      "cpack-year-5-lab03-ex06-stu_090-sub_078",
+      "cpack-year-5-lab03-ex06-stu_123-sub_032",
+      "cpack-year-5-lab03-ex06-stu_123-sub_033",
+      "cpack-year-5-lab03-ex06-stu_158-sub_008",
+      "cpack-year-5-lab03-ex06-stu_165-sub_020",
+      "cpack-year-5-lab03-ex06-stu_166-sub_008",
+      "cpack-year-5-lab03-ex06-stu_166-sub_009",
+      "cpack-year-5-lab03-ex06-stu_168-sub_019",
+      "cpack-year-5-lab03-ex06-stu_168-sub_020",
+      "cpack-year-5-lab03-ex06-stu_168-sub_021",
+      "cpack-year-5-lab03-ex06-stu_168-sub_022",
+      "cpack-year-5-lab03-ex06-stu_168-sub_023",
+      "cpack-year-5-lab03-ex06-stu_169-sub_005",
+      "cpack-year-5-lab03-ex06-stu_169-sub_007",
+      "cpack-year-5-lab03-ex06-stu_169-sub_011",
+      "cpack-year-5-lab03-ex06-stu_169-sub_024",
+      "cpack-year-5-lab03-ex06-stu_170-sub_007",
+      "cpack-year-5-lab03-ex06-stu_171-sub_026",
+      "cpack-year-5-lab03-ex06-stu_173-sub_034",
+      "cpack-year-5-lab03-ex06-stu_173-sub_035",
+      "cpack-year-5-lab03-ex06-stu_174-sub_003",
+      "cpack-year-5-lab03-ex06-stu_174-sub_009",
+      "cpack-year-5-lab03-ex06-stu_174-sub_010",
+      "cpack-year-5-lab03-ex06-stu_174-sub_011",
+      "cpack-year-5-lab03-ex06-stu_175-sub_022",
+      "cpack-year-5-lab03-ex06-stu_175-sub_026",
+      "cpack-year-5-lab03-ex06-stu_177-sub_020",
+      "cpack-year-5-lab03-ex06-stu_177-sub_021",
+      "cpack-year-5-lab03-ex06-stu_177-sub_022",
+      "cpack-year-5-lab03-ex06-stu_177-sub_023",
+      "cpack-year-5-lab03-ex06-stu_178-sub_027",
+      "cpack-year-5-lab03-ex06-stu_178-sub_028",
+      "cpack-year-5-lab03-ex06-stu_179-sub_024",
+      "cpack-year-5-lab03-ex06-stu_180-sub_027",
+      "cpack-year-5-lab03-ex06-stu_181-sub_021",
+      "cpack-year-5-lab03-ex06-stu_182-sub_028",
+      "cpack-year-5-lab03-ex06-stu_182-sub_029",
+      "cpack-year-5-lab03-ex06-stu_182-sub_030",
+      "cpack-year-5-lab03-ex06-stu_183-sub_023",
+      "cpack-year-5-lab03-ex06-stu_185-sub_041",
+      "cpack-year-5-lab03-ex06-stu_185-sub_042",
+      "cpack-year-5-lab03-ex06-stu_192-sub_115",
+      "cpack-year-5-lab03-ex06-stu_192-sub_117",
+      "cpack-year-5-lab03-ex06-stu_192-sub_118",
+      "cpack-year-5-lab03-ex06-stu_192-sub_119",
+      "cpack-year-5-lab03-ex06-stu_192-sub_120",
+      "cpack-year-5-lab03-ex06-stu_192-sub_122",
+      "cpack-year-5-lab03-ex06-stu_192-sub_123",
+      "cpack-year-5-lab03-ex06-stu_192-sub_124",
+      "cpack-year-5-lab03-ex06-stu_193-sub_020",
+      "cpack-year-5-lab03-ex06-stu_194-sub_007",
+      "cpack-year-5-lab03-ex06-stu_194-sub_008",
+      "cpack-year-5-lab03-ex06-stu_197-sub_031",
+      "cpack-year-5-lab03-ex06-stu_197-sub_032",
+      "cpack-year-5-lab03-ex06-stu_197-sub_034",
+      "cpack-year-5-lab03-ex06-stu_197-sub_035",
+      "cpack-year-5-lab03-ex06-stu_198-sub_003",
+      "cpack-year-5-lab03-ex06-stu_198-sub_018",
+      "cpack-year-5-lab03-ex06-stu_200-sub_007",
+      "cpack-year-5-lab03-ex06-stu_200-sub_017",
+      "cpack-year-6-lab03-ex06-stu_204-sub_003",
+      "cpack-year-6-lab03-ex06-stu_204-sub_004",
+      "cpack-year-6-lab03-ex06-stu_205-sub_004",
+      "cpack-year-6-lab03-ex06-stu_209-sub_015",
+      "cpack-year-6-lab03-ex06-stu_211-sub_007",
+      "cpack-year-6-lab03-ex06-stu_211-sub_008",
+      "cpack-year-6-lab03-ex06-stu_213-sub_005",
+      "cpack-year-6-lab03-ex06-stu_213-sub_006",
+      "cpack-year-6-lab03-ex06-stu_214-sub_020",
+      "cpack-year-6-lab03-ex06-stu_215-sub_021",
+      "cpack-year-6-lab03-ex06-stu_218-sub_007",
+      "cpack-year-6-lab03-ex06-stu_219-sub_002",
+      "cpack-year-6-lab03-ex06-stu_220-sub_013",
+      "cpack-year-6-lab03-ex06-stu_224-sub_015",
+      "cpack-year-6-lab03-ex06-stu_228-sub_003",
+      "cpack-year-6-lab03-ex06-stu_229-sub_002",
+      "cpack-year-6-lab03-ex06-stu_229-sub_005",
+      "cpack-year-6-lab03-ex06-stu_230-sub_005",
+      "cpack-year-6-lab03-ex06-stu_231-sub_016",
+      "cpack-year-6-lab03-ex06-stu_234-sub_011",
+      "cpack-year-6-lab03-ex06-stu_235-sub_027",
+      "cpack-year-6-lab03-ex06-stu_235-sub_028",
+      "cpack-year-6-lab03-ex06-stu_235-sub_029",
+      "cpack-year-6-lab03-ex06-stu_236-sub_021",
+      "cpack-year-6-lab03-ex06-stu_237-sub_018",
+      "cpack-year-6-lab03-ex06-stu_237-sub_019",
+      "cpack-year-6-lab03-ex06-stu_238-sub_021",
+      "cpack-year-6-lab03-ex06-stu_239-sub_006",
+      "cpack-year-6-lab03-ex06-stu_240-sub_019",
+      "cpack-year-6-lab03-ex06-stu_240-sub_020",
+      "cpack-year-6-lab03-ex06-stu_241-sub_022"
+    ],
+    "interpretation": "Số bài khớp điều kiện, không phải precision hay số sinh viên hiểu sai. Không có luật khớp không có nghĩa bài đúng. Không dùng làm nhãn đánh giá clustering."
+  }
+}

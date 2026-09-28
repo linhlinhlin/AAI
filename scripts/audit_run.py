@@ -35,9 +35,13 @@ def audit(data, run, split_path):
         raise ValueError("Unexpected evaluation or validation claim")
     if summary.get("mechanism_accuracy") is not None:
         raise ValueError("This unlabeled run cannot claim mechanism accuracy")
+    modes = manifest.get("feature_modes", ["outcomes", "combined", "outcomes_stdout", "combined_stdout"])
+    if set(modes) not in ({"outcomes", "combined", "outcomes_stdout", "combined_stdout"},
+                          {"outcomes", "structural", "combined", "outcomes_stdout", "combined_stdout"}):
+        raise ValueError("Unexpected feature-mode inventory")
     configurations = {("exact", "outcomes")} | {
         (method, mode) for method in ("agglomerative", "kmeans")
-        for mode in ("outcomes", "combined", "outcomes_stdout", "combined_stdout")}
+        for mode in modes}
     problems = manifest["problems"] or list(inputs)
     expected_runs = {(p, method, mode, seed) for p in problems
                      for method, mode in configurations for seed in manifest["seeds"]}
@@ -74,6 +78,20 @@ def audit(data, run, split_path):
                 r["holdout_support"] for r in rules
             ) != len(validation):
                 raise ValueError("IF-THEN rule supports do not cover the reported split")
+            for prefix, assignments in (("train", train), ("holdout", validation)):
+                leaves = result["explanation"].get(prefix + "_leaf_ids")
+                if leaves is None:  # Historical format predates explicit leaf membership.
+                    continue
+                ids = result["split"][prefix + "_ids"]
+                if len(leaves) != len(ids) or set(ids) != set(assignments):
+                    raise ValueError("Leaf membership differs from the declared split")
+                if any(leaf not in {r["rule_id"] for r in rules} for leaf in leaves):
+                    raise ValueError("Leaf ID has no corresponding IF-THEN rule")
+                for rule in rules:
+                    members = [sid for sid, leaf in zip(ids, leaves) if leaf == rule["rule_id"]]
+                    precision = sum(assignments[sid] == rule["then_cluster"] for sid in members) / len(members) if members else None
+                    if len(members) != rule[prefix + "_support"] or precision != rule[prefix + "_precision"]:
+                        raise ValueError("Rule support/precision does not match leaf membership")
         elif not result.get("reason"):
             raise ValueError("Abstention has no reason")
         if result["teaching"]["human_validated"] is not False:

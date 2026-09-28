@@ -37,7 +37,7 @@ def validate_mapping(report, entries, reviewer):
         seen.add(cluster)
         if entry.get("status") not in {"unreviewed", "draft", "confirmed", "ignored"}:
             raise ValueError("Trạng thái nhãn không hợp lệ.")
-        if entry.get("category") not in {"misconception", "other_error", "mixed"}:
+        if entry.get("category") not in {"misconception", "other_error", "mixed", "unclear"}:
             raise ValueError("Loại nhãn không hợp lệ.")
         for field, limit in [("label", 200), ("rationale", 2000), ("follow_up", 2000)]:
             if not isinstance(entry.get(field), str) or len(entry[field]) > limit:
@@ -58,7 +58,7 @@ def build_dashboard(report, mappings=()):
     for cluster, proposal in proposals.items():
         output = proposal["output"]
         mapped[cluster] = {"cluster": cluster, "status": "draft",
-                           "category": "mixed" if output["category"] == "unclear" else output["category"],
+                           "category": output["category"],
                            "label": output["misconception_name"], "rationale": output["reasoning"],
                            "follow_up": output["teaching_hint"]}
     mapped.update({entry["cluster"]: entry for entry in mappings})

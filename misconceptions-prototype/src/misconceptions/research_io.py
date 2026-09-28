@@ -45,7 +45,8 @@ def implementation_fingerprint(root):
         for path in sorted((root / folder).rglob("*.py")):
             files[path.relative_to(root).as_posix()] = digest(path)
     for name in ("misconceptions-prototype/requirements-lock.txt",
-                 "misconceptions-prototype/pyproject.toml", "research/protocol.json"):
+                 "misconceptions-prototype/pyproject.toml", "research/protocol.json",
+                 "research/course-validation-protocol.json"):
         path = root / name
         if path.exists():
             files[name] = digest(path)

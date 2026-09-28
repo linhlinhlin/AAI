@@ -2,11 +2,13 @@
 
 STYLE_VERSION = "vi-rule-v1"
 TITLES = {
+    "C_HARDCODED_OUTPUT": "In hằng số / Chưa tính toán theo đầu vào",
     "C_BRANCH_ATTACHMENT": "Hai nhánh if có thể cùng tạo thông báo",
     "C_SWAP_BY_VALUE": "Hoán vị tham số thường chưa đổi biến ở hàm gọi",
     "OUTPUT_PRESENTATION": "Output khác cách trình bày được yêu cầu",
 }
 HYPOTHESES = {
+    "C_HARDCODED_OUTPUT": "Có thể người viết mới in một đáp án cố định và chưa triển khai tính toán theo input.",
     "C_BRANCH_ATTACHMENT": "Có thể người viết nhầm quan hệ if–else và tính loại trừ giữa các nhánh.",
     "C_SWAP_BY_VALUE": "Có thể người viết chưa phân biệt bản sao tham số với biến ở hàm gọi.",
     "OUTPUT_PRESENTATION": "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm.",

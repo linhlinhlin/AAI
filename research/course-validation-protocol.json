@@ -1,0 +1,70 @@
+{
+  "status": "frozen_before_validation_run",
+  "date": "2026-09-28",
+  "purpose": "Course development validation; no sealed-test or cognitive accuracy claims",
+  "hypotheses": [
+    {
+      "claim": "Additional output and structure information yields stable clusters across seeds",
+      "falsifier": "Low validation ARI between seeds or high medoid tie rates; stability is not correctness"
+    },
+    {
+      "claim": "Depth-3 IF-THEN surrogate contains useful information beyond a constant cluster predictor",
+      "falsifier": "Validation fidelity no better than training-majority-cluster baseline"
+    },
+    {
+      "claim": "Clusters and rules capture a shared error mechanism",
+      "falsifier": "Low pair precision/recall or low validation rule precision against independent adjudicated teacher labels",
+      "status": "Not testable without real teacher labels"
+    }
+  ],
+  "datasets": {
+    "ITSP": "development only; student identity unavailable",
+    "C-Pack-IPAs-26": "locked student/exact-source components"
+  },
+  "splits": [
+    "research/splits/itsp-development-v1.json",
+    "research/splits/cpack-v3.json"
+  ],
+  "partition": "train_fit_validation_score_only",
+  "sealed_test": "never scored or used for model choices",
+  "methods": [
+    "exact_test_signature",
+    "agglomerative_average_weighted_hamming",
+    "kmeans_weighted_onehot"
+  ],
+  "modes": [
+    "outcomes",
+    "structural",
+    "combined",
+    "outcomes_stdout",
+    "combined_stdout"
+  ],
+  "exact_mode": "outcomes only",
+  "k": 3,
+  "seeds": [
+    7,
+    42,
+    91
+  ],
+  "assignment": "nearest training medoid under weighted Hamming, not nearest K-means centroid",
+  "rules": {
+    "max_depth": 3,
+    "min_samples_leaf": 2,
+    "target": "cluster_id_only"
+  },
+  "human_evaluation": {
+    "blind_reviewers": 2,
+    "separate_adjudicator": true,
+    "primary_label": "single_primary_mechanism",
+    "uncertain_multiple_missing": "abstain; report coverage",
+    "cluster_to_mechanism_mapping": "training gold only; ties abstain",
+    "cognitive_support": "learner explanation plus follow-up observation verified by coordinator",
+    "teacher_labels_available": false,
+    "scores_without_gold": null
+  },
+  "statistics": "Descriptive per-problem/seed results; no independent-sample inference or superiority claim",
+  "sources": [
+    "https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation",
+    "https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html"
+  ]
+}

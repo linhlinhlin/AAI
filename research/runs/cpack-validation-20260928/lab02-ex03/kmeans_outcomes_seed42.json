@@ -1,0 +1,4885 @@
+{
+  "status": "ok",
+  "method": "kmeans",
+  "feature_mode": "outcomes",
+  "seed": 42,
+  "config": {
+    "k": 3,
+    "test_fraction": 0.25,
+    "test_weight": 0.8,
+    "effective_feature_mode": "outcomes",
+    "k_used": true
+  },
+  "silhouette_metric": "weighted_hamming_common_comparison_not_kmeans_native_geometry",
+  "routes": {
+    "cpack-year-1-lab02-ex03-stu_002-sub_003": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_003-sub_006": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_004-sub_004": "parse_error",
+    "cpack-year-1-lab02-ex03-stu_005-sub_004": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_006-sub_004": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_007-sub_007": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_008-sub_003": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_009-sub_004": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_010-sub_003": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_011-sub_003": "eligible",
+    "cpack-year-1-lab02-ex03-stu_011-sub_004": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_012-sub_004": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_013-sub_004": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_014-sub_007": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_014-sub_008": "eligible",
+    "cpack-year-1-lab02-ex03-stu_015-sub_012": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_015-sub_013": "eligible",
+    "cpack-year-1-lab02-ex03-stu_016-sub_005": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_017-sub_006": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_017-sub_007": "parse_error",
+    "cpack-year-1-lab02-ex03-stu_019-sub_003": "eligible",
+    "cpack-year-1-lab02-ex03-stu_019-sub_004": "eligible",
+    "cpack-year-1-lab02-ex03-stu_019-sub_005": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_020-sub_010": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_020-sub_011": "eligible",
+    "cpack-year-1-lab02-ex03-stu_021-sub_004": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_022-sub_006": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_023-sub_008": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_024-sub_003": "eligible",
+    "cpack-year-1-lab02-ex03-stu_024-sub_004": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_025-sub_003": "no_failure",
+    "cpack-year-1-lab02-ex03-stu_026-sub_005": "no_failure",
+    "cpack-year-2-lab02-ex03-stu_015-sub_030": "no_failure",
+    "cpack-year-2-lab02-ex03-stu_035-sub_005": "no_failure",
+    "cpack-year-2-lab02-ex03-stu_036-sub_005": "no_failure",
+    "cpack-year-2-lab02-ex03-stu_039-sub_003": "no_failure",
+    "cpack-year-2-lab02-ex03-stu_040-sub_006": "no_failure",
+    "cpack-year-2-lab02-ex03-stu_042-sub_005": "no_failure",
+    "cpack-year-2-lab02-ex03-stu_046-sub_003": "no_failure",
+    "cpack-year-2-lab02-ex03-stu_047-sub_007": "eligible",
+    "cpack-year-2-lab02-ex03-stu_052-sub_003": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_062-sub_003": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_064-sub_006": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_064-sub_007": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_065-sub_009": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_066-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_067-sub_007": "eligible",
+    "cpack-year-3-lab02-ex03-stu_068-sub_006": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_070-sub_002": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_070-sub_003": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_070-sub_004": "eligible",
+    "cpack-year-3-lab02-ex03-stu_071-sub_001": "eligible",
+    "cpack-year-3-lab02-ex03-stu_072-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_072-sub_006": "eligible",
+    "cpack-year-3-lab02-ex03-stu_073-sub_004": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_074-sub_004": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_075-sub_001": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_075-sub_003": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_076-sub_016": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_076-sub_017": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_077-sub_009": "eligible",
+    "cpack-year-3-lab02-ex03-stu_077-sub_010": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_077-sub_011": "eligible",
+    "cpack-year-3-lab02-ex03-stu_078-sub_001": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_078-sub_003": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_078-sub_006": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_079-sub_001": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_080-sub_011": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_080-sub_012": "eligible",
+    "cpack-year-3-lab02-ex03-stu_080-sub_013": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_080-sub_014": "eligible",
+    "cpack-year-3-lab02-ex03-stu_081-sub_002": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_081-sub_004": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_081-sub_006": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_081-sub_008": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_081-sub_009": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_081-sub_010": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_081-sub_011": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_082-sub_003": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_082-sub_004": "eligible",
+    "cpack-year-3-lab02-ex03-stu_083-sub_010": "eligible",
+    "cpack-year-3-lab02-ex03-stu_083-sub_011": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_084-sub_004": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_084-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_085-sub_002": "eligible",
+    "cpack-year-3-lab02-ex03-stu_085-sub_015": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_085-sub_019": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_086-sub_002": "eligible",
+    "cpack-year-3-lab02-ex03-stu_086-sub_011": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_086-sub_012": "eligible",
+    "cpack-year-3-lab02-ex03-stu_086-sub_013": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_086-sub_014": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_086-sub_015": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_086-sub_016": "eligible",
+    "cpack-year-3-lab02-ex03-stu_086-sub_017": "eligible",
+    "cpack-year-3-lab02-ex03-stu_086-sub_018": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_087-sub_004": "eligible",
+    "cpack-year-3-lab02-ex03-stu_087-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_088-sub_007": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_089-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_089-sub_011": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_089-sub_012": "eligible",
+    "cpack-year-3-lab02-ex03-stu_090-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_090-sub_006": "eligible",
+    "cpack-year-3-lab02-ex03-stu_091-sub_011": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_092-sub_008": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_092-sub_009": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_092-sub_010": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_092-sub_011": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_093-sub_003": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_094-sub_009": "eligible",
+    "cpack-year-3-lab02-ex03-stu_094-sub_010": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_095-sub_009": "execution_error",
+    "cpack-year-3-lab02-ex03-stu_095-sub_010": "eligible",
+    "cpack-year-3-lab02-ex03-stu_095-sub_011": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_095-sub_012": "eligible",
+    "cpack-year-3-lab02-ex03-stu_095-sub_013": "eligible",
+    "cpack-year-3-lab02-ex03-stu_095-sub_014": "eligible",
+    "cpack-year-3-lab02-ex03-stu_095-sub_015": "eligible",
+    "cpack-year-3-lab02-ex03-stu_096-sub_004": "eligible",
+    "cpack-year-3-lab02-ex03-stu_097-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_098-sub_003": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_098-sub_004": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_098-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_099-sub_002": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_099-sub_006": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_099-sub_007": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_100-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_100-sub_007": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_101-sub_004": "eligible",
+    "cpack-year-3-lab02-ex03-stu_101-sub_005": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_101-sub_006": "no_failure",
+    "cpack-year-3-lab02-ex03-stu_101-sub_007": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_101-sub_008": "eligible",
+    "cpack-year-3-lab02-ex03-stu_101-sub_009": "eligible",
+    "cpack-year-3-lab02-ex03-stu_101-sub_010": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_101-sub_011": "eligible",
+    "cpack-year-3-lab02-ex03-stu_101-sub_012": "eligible",
+    "cpack-year-3-lab02-ex03-stu_101-sub_013": "incomplete",
+    "cpack-year-3-lab02-ex03-stu_101-sub_014": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_072-sub_032": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_079-sub_002": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_080-sub_116": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_093-sub_044": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_103-sub_004": "execution_error",
+    "cpack-year-4-lab02-ex03-stu_103-sub_010": "eligible",
+    "cpack-year-4-lab02-ex03-stu_104-sub_006": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_105-sub_003": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_105-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_106-sub_008": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_106-sub_011": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_107-sub_007": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_107-sub_008": "eligible",
+    "cpack-year-4-lab02-ex03-stu_107-sub_009": "eligible",
+    "cpack-year-4-lab02-ex03-stu_107-sub_010": "eligible",
+    "cpack-year-4-lab02-ex03-stu_108-sub_001": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_108-sub_002": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_109-sub_010": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_109-sub_011": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_109-sub_012": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_110-sub_004": "eligible",
+    "cpack-year-4-lab02-ex03-stu_112-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_113-sub_003": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_114-sub_006": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_115-sub_003": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_115-sub_006": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_116-sub_008": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_117-sub_001": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_117-sub_002": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_118-sub_003": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_119-sub_003": "eligible",
+    "cpack-year-4-lab02-ex03-stu_119-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_120-sub_006": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_121-sub_001": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_122-sub_002": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_123-sub_003": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_123-sub_004": "eligible",
+    "cpack-year-4-lab02-ex03-stu_124-sub_004": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_125-sub_001": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_125-sub_007": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_126-sub_003": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_126-sub_005": "eligible",
+    "cpack-year-4-lab02-ex03-stu_126-sub_006": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_127-sub_001": "eligible",
+    "cpack-year-4-lab02-ex03-stu_128-sub_003": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_129-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_129-sub_005": "eligible",
+    "cpack-year-4-lab02-ex03-stu_130-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_131-sub_009": "eligible",
+    "cpack-year-4-lab02-ex03-stu_131-sub_011": "parse_error",
+    "cpack-year-4-lab02-ex03-stu_131-sub_012": "parse_error",
+    "cpack-year-4-lab02-ex03-stu_131-sub_013": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_131-sub_014": "eligible",
+    "cpack-year-4-lab02-ex03-stu_131-sub_015": "parse_error",
+    "cpack-year-4-lab02-ex03-stu_132-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_132-sub_005": "eligible",
+    "cpack-year-4-lab02-ex03-stu_132-sub_006": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_133-sub_005": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_135-sub_005": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_137-sub_003": "eligible",
+    "cpack-year-4-lab02-ex03-stu_137-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_138-sub_009": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_139-sub_001": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_140-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_141-sub_001": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_142-sub_001": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_143-sub_003": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_144-sub_005": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_144-sub_006": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_144-sub_007": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_144-sub_008": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_145-sub_003": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_146-sub_004": "eligible",
+    "cpack-year-4-lab02-ex03-stu_147-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_148-sub_009": "eligible",
+    "cpack-year-4-lab02-ex03-stu_148-sub_010": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_149-sub_002": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_150-sub_006": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_151-sub_005": "eligible",
+    "cpack-year-4-lab02-ex03-stu_151-sub_006": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_152-sub_002": "eligible",
+    "cpack-year-4-lab02-ex03-stu_152-sub_003": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_153-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_154-sub_002": "parse_error",
+    "cpack-year-4-lab02-ex03-stu_154-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_154-sub_005": "parse_error",
+    "cpack-year-4-lab02-ex03-stu_155-sub_004": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_157-sub_003": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_157-sub_004": "eligible",
+    "cpack-year-4-lab02-ex03-stu_158-sub_001": "eligible",
+    "cpack-year-4-lab02-ex03-stu_159-sub_007": "eligible",
+    "cpack-year-4-lab02-ex03-stu_159-sub_008": "no_failure",
+    "cpack-year-4-lab02-ex03-stu_161-sub_001": "incomplete",
+    "cpack-year-4-lab02-ex03-stu_161-sub_002": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_080-sub_126": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_090-sub_049": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_107-sub_044": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_107-sub_045": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_109-sub_048": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_123-sub_018": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_158-sub_006": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_165-sub_017": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_166-sub_001": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_166-sub_005": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_166-sub_006": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_168-sub_003": "eligible",
+    "cpack-year-5-lab02-ex03-stu_168-sub_004": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_170-sub_002": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_170-sub_003": "eligible",
+    "cpack-year-5-lab02-ex03-stu_171-sub_006": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_171-sub_007": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_171-sub_008": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_172-sub_001": "eligible",
+    "cpack-year-5-lab02-ex03-stu_172-sub_002": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_173-sub_007": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_173-sub_008": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_174-sub_001": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_175-sub_004": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_176-sub_003": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_176-sub_004": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_177-sub_005": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_178-sub_003": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_179-sub_008": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_180-sub_003": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_181-sub_004": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_181-sub_005": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_182-sub_004": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_183-sub_003": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_184-sub_004": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_184-sub_005": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_185-sub_004": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_185-sub_005": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_186-sub_001": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_187-sub_007": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_187-sub_008": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_188-sub_002": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_188-sub_007": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_189-sub_005": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_190-sub_003": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_192-sub_001": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_192-sub_007": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_192-sub_008": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_192-sub_009": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_193-sub_002": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_194-sub_001": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_195-sub_007": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_196-sub_001": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_197-sub_005": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_199-sub_007": "incomplete",
+    "cpack-year-5-lab02-ex03-stu_199-sub_008": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_200-sub_001": "no_failure",
+    "cpack-year-5-lab02-ex03-stu_201-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_107-sub_059": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_131-sub_044": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_204-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_205-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_206-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_207-sub_001": "parse_error",
+    "cpack-year-6-lab02-ex03-stu_207-sub_005": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_208-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_209-sub_003": "incomplete",
+    "cpack-year-6-lab02-ex03-stu_210-sub_002": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_211-sub_002": "incomplete",
+    "cpack-year-6-lab02-ex03-stu_211-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_211-sub_004": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_212-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_212-sub_004": "eligible",
+    "cpack-year-6-lab02-ex03-stu_213-sub_001": "eligible",
+    "cpack-year-6-lab02-ex03-stu_213-sub_002": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_214-sub_002": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_215-sub_002": "parse_error",
+    "cpack-year-6-lab02-ex03-stu_216-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_218-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_219-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_220-sub_002": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_221-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_222-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_223-sub_004": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_224-sub_004": "incomplete",
+    "cpack-year-6-lab02-ex03-stu_224-sub_005": "execution_error",
+    "cpack-year-6-lab02-ex03-stu_225-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_226-sub_004": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_228-sub_002": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_229-sub_002": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_229-sub_004": "incomplete",
+    "cpack-year-6-lab02-ex03-stu_230-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_231-sub_002": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_232-sub_004": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_233-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_234-sub_002": "eligible",
+    "cpack-year-6-lab02-ex03-stu_234-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_235-sub_007": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_236-sub_003": "eligible",
+    "cpack-year-6-lab02-ex03-stu_236-sub_004": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_237-sub_004": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_238-sub_005": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_238-sub_006": "eligible",
+    "cpack-year-6-lab02-ex03-stu_239-sub_001": "eligible",
+    "cpack-year-6-lab02-ex03-stu_239-sub_002": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_240-sub_002": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_241-sub_001": "parse_error",
+    "cpack-year-6-lab02-ex03-stu_241-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_243-sub_001": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_244-sub_001": "parse_error",
+    "cpack-year-6-lab02-ex03-stu_244-sub_002": "eligible",
+    "cpack-year-6-lab02-ex03-stu_244-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_245-sub_003": "no_failure",
+    "cpack-year-6-lab02-ex03-stu_245-sub_004": "no_failure"
+  },
+  "route_counts": {
+    "no_failure": 224,
+    "parse_error": 11,
+    "eligible": 69,
+    "incomplete": 41,
+    "execution_error": 3
+  },
+  "n_eligible": 69,
+  "identity": {
+    "missing_student_ids": 0,
+    "split_guarantee": "known_student_and_exact_source_disjoint"
+  },
+  "warnings": [
+    "Clusters and surrogate rules are behavioral hypotheses requiring instructor validation.",
+    "Exact source grouping does not detect renamed or otherwise near-duplicate code.",
+    "AST presence indicators are syntactic evidence, not semantic fault detectors."
+  ],
+  "split": {
+    "train_ids": [
+      "cpack-year-1-lab02-ex03-stu_011-sub_003",
+      "cpack-year-1-lab02-ex03-stu_014-sub_008",
+      "cpack-year-1-lab02-ex03-stu_015-sub_013",
+      "cpack-year-1-lab02-ex03-stu_019-sub_003",
+      "cpack-year-1-lab02-ex03-stu_019-sub_004",
+      "cpack-year-3-lab02-ex03-stu_067-sub_007",
+      "cpack-year-3-lab02-ex03-stu_070-sub_004",
+      "cpack-year-3-lab02-ex03-stu_071-sub_001",
+      "cpack-year-3-lab02-ex03-stu_077-sub_009",
+      "cpack-year-3-lab02-ex03-stu_077-sub_011",
+      "cpack-year-3-lab02-ex03-stu_080-sub_012",
+      "cpack-year-3-lab02-ex03-stu_080-sub_014",
+      "cpack-year-3-lab02-ex03-stu_082-sub_004",
+      "cpack-year-3-lab02-ex03-stu_083-sub_010",
+      "cpack-year-3-lab02-ex03-stu_086-sub_002",
+      "cpack-year-3-lab02-ex03-stu_086-sub_012",
+      "cpack-year-3-lab02-ex03-stu_086-sub_016",
+      "cpack-year-3-lab02-ex03-stu_086-sub_017",
+      "cpack-year-3-lab02-ex03-stu_089-sub_012",
+      "cpack-year-3-lab02-ex03-stu_090-sub_006",
+      "cpack-year-3-lab02-ex03-stu_094-sub_009",
+      "cpack-year-3-lab02-ex03-stu_095-sub_010",
+      "cpack-year-3-lab02-ex03-stu_095-sub_012",
+      "cpack-year-3-lab02-ex03-stu_095-sub_013",
+      "cpack-year-3-lab02-ex03-stu_095-sub_014",
+      "cpack-year-3-lab02-ex03-stu_095-sub_015",
+      "cpack-year-3-lab02-ex03-stu_096-sub_004",
+      "cpack-year-3-lab02-ex03-stu_101-sub_004",
+      "cpack-year-3-lab02-ex03-stu_101-sub_008",
+      "cpack-year-3-lab02-ex03-stu_101-sub_009",
+      "cpack-year-3-lab02-ex03-stu_101-sub_011",
+      "cpack-year-3-lab02-ex03-stu_101-sub_012",
+      "cpack-year-4-lab02-ex03-stu_103-sub_010",
+      "cpack-year-4-lab02-ex03-stu_107-sub_008",
+      "cpack-year-4-lab02-ex03-stu_107-sub_009",
+      "cpack-year-4-lab02-ex03-stu_107-sub_010",
+      "cpack-year-4-lab02-ex03-stu_123-sub_004",
+      "cpack-year-4-lab02-ex03-stu_126-sub_005",
+      "cpack-year-4-lab02-ex03-stu_129-sub_005",
+      "cpack-year-4-lab02-ex03-stu_132-sub_005",
+      "cpack-year-4-lab02-ex03-stu_146-sub_004",
+      "cpack-year-4-lab02-ex03-stu_148-sub_009",
+      "cpack-year-4-lab02-ex03-stu_151-sub_005",
+      "cpack-year-4-lab02-ex03-stu_152-sub_002",
+      "cpack-year-4-lab02-ex03-stu_157-sub_004",
+      "cpack-year-5-lab02-ex03-stu_168-sub_003",
+      "cpack-year-5-lab02-ex03-stu_170-sub_003",
+      "cpack-year-5-lab02-ex03-stu_172-sub_001",
+      "cpack-year-6-lab02-ex03-stu_213-sub_001",
+      "cpack-year-6-lab02-ex03-stu_236-sub_003",
+      "cpack-year-6-lab02-ex03-stu_238-sub_006",
+      "cpack-year-6-lab02-ex03-stu_239-sub_001"
+    ],
+    "holdout_ids": [
+      "cpack-year-1-lab02-ex03-stu_020-sub_011",
+      "cpack-year-2-lab02-ex03-stu_047-sub_007",
+      "cpack-year-3-lab02-ex03-stu_085-sub_002",
+      "cpack-year-4-lab02-ex03-stu_110-sub_004",
+      "cpack-year-4-lab02-ex03-stu_119-sub_003",
+      "cpack-year-4-lab02-ex03-stu_127-sub_001",
+      "cpack-year-4-lab02-ex03-stu_131-sub_009",
+      "cpack-year-4-lab02-ex03-stu_131-sub_014",
+      "cpack-year-4-lab02-ex03-stu_137-sub_003",
+      "cpack-year-4-lab02-ex03-stu_158-sub_001",
+      "cpack-year-4-lab02-ex03-stu_159-sub_007",
+      "cpack-year-6-lab02-ex03-stu_234-sub_002"
+    ],
+    "train_groups": 36,
+    "holdout_groups": 11,
+    "policy": "corpus_lock",
+    "evaluation_partition": "validation"
+  },
+  "n_clusters": 3,
+  "features": [
+    {
+      "name": "test:ex03_0",
+      "weight": 0.25
+    },
+    {
+      "name": "test:ex03_1",
+      "weight": 0.25
+    },
+    {
+      "name": "test:ex03_2",
+      "weight": 0.25
+    },
+    {
+      "name": "test:ex03_3",
+      "weight": 0.25
+    }
+  ],
+  "oav": {
+    "cpack-year-1-lab02-ex03-stu_011-sub_003": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-1-lab02-ex03-stu_014-sub_008": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-1-lab02-ex03-stu_015-sub_013": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-1-lab02-ex03-stu_019-sub_003": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-1-lab02-ex03-stu_019-sub_004": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_067-sub_007": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "pass",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "pass"
+    },
+    "cpack-year-3-lab02-ex03-stu_070-sub_004": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_071-sub_001": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_077-sub_009": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_077-sub_011": {
+      "test:ex03_0": "pass",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "pass",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_080-sub_012": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "pass",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "pass"
+    },
+    "cpack-year-3-lab02-ex03-stu_080-sub_014": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "pass",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "pass"
+    },
+    "cpack-year-3-lab02-ex03-stu_082-sub_004": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_083-sub_010": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_086-sub_002": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_086-sub_012": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_086-sub_016": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_086-sub_017": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_089-sub_012": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_090-sub_006": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_094-sub_009": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_095-sub_010": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_095-sub_012": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_095-sub_013": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_095-sub_014": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_095-sub_015": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_096-sub_004": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_101-sub_004": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_101-sub_008": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_101-sub_009": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_101-sub_011": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_101-sub_012": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_103-sub_010": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_107-sub_008": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_107-sub_009": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_107-sub_010": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_123-sub_004": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_126-sub_005": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_129-sub_005": {
+      "test:ex03_0": "pass",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "pass",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_132-sub_005": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_146-sub_004": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_148-sub_009": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_151-sub_005": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_152-sub_002": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_157-sub_004": {
+      "test:ex03_0": "pass",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "pass",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-5-lab02-ex03-stu_168-sub_003": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-5-lab02-ex03-stu_170-sub_003": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-5-lab02-ex03-stu_172-sub_001": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-6-lab02-ex03-stu_213-sub_001": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-6-lab02-ex03-stu_236-sub_003": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "pass",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "pass"
+    },
+    "cpack-year-6-lab02-ex03-stu_238-sub_006": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-6-lab02-ex03-stu_239-sub_001": {
+      "test:ex03_0": "pass",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "pass",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-1-lab02-ex03-stu_020-sub_011": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "pass",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "pass"
+    },
+    "cpack-year-2-lab02-ex03-stu_047-sub_007": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-3-lab02-ex03-stu_085-sub_002": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_110-sub_004": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_119-sub_003": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_127-sub_001": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_131-sub_009": {
+      "test:ex03_0": "pass",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "pass",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_131-sub_014": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "pass",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "pass"
+    },
+    "cpack-year-4-lab02-ex03-stu_137-sub_003": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_158-sub_001": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-4-lab02-ex03-stu_159-sub_007": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    },
+    "cpack-year-6-lab02-ex03-stu_234-sub_002": {
+      "test:ex03_0": "fail",
+      "test:ex03_1": "fail",
+      "test:ex03_2": "fail",
+      "test:ex03_3": "fail"
+    }
+  },
+  "train_assignments": {
+    "cpack-year-1-lab02-ex03-stu_011-sub_003": 0,
+    "cpack-year-1-lab02-ex03-stu_014-sub_008": 0,
+    "cpack-year-1-lab02-ex03-stu_015-sub_013": 0,
+    "cpack-year-1-lab02-ex03-stu_019-sub_003": 0,
+    "cpack-year-1-lab02-ex03-stu_019-sub_004": 0,
+    "cpack-year-3-lab02-ex03-stu_067-sub_007": 2,
+    "cpack-year-3-lab02-ex03-stu_070-sub_004": 0,
+    "cpack-year-3-lab02-ex03-stu_071-sub_001": 0,
+    "cpack-year-3-lab02-ex03-stu_077-sub_009": 0,
+    "cpack-year-3-lab02-ex03-stu_077-sub_011": 1,
+    "cpack-year-3-lab02-ex03-stu_080-sub_012": 2,
+    "cpack-year-3-lab02-ex03-stu_080-sub_014": 2,
+    "cpack-year-3-lab02-ex03-stu_082-sub_004": 0,
+    "cpack-year-3-lab02-ex03-stu_083-sub_010": 0,
+    "cpack-year-3-lab02-ex03-stu_086-sub_002": 0,
+    "cpack-year-3-lab02-ex03-stu_086-sub_012": 0,
+    "cpack-year-3-lab02-ex03-stu_086-sub_016": 0,
+    "cpack-year-3-lab02-ex03-stu_086-sub_017": 0,
+    "cpack-year-3-lab02-ex03-stu_089-sub_012": 0,
+    "cpack-year-3-lab02-ex03-stu_090-sub_006": 0,
+    "cpack-year-3-lab02-ex03-stu_094-sub_009": 0,
+    "cpack-year-3-lab02-ex03-stu_095-sub_010": 0,
+    "cpack-year-3-lab02-ex03-stu_095-sub_012": 0,
+    "cpack-year-3-lab02-ex03-stu_095-sub_013": 0,
+    "cpack-year-3-lab02-ex03-stu_095-sub_014": 0,
+    "cpack-year-3-lab02-ex03-stu_095-sub_015": 0,
+    "cpack-year-3-lab02-ex03-stu_096-sub_004": 0,
+    "cpack-year-3-lab02-ex03-stu_101-sub_004": 0,
+    "cpack-year-3-lab02-ex03-stu_101-sub_008": 0,
+    "cpack-year-3-lab02-ex03-stu_101-sub_009": 0,
+    "cpack-year-3-lab02-ex03-stu_101-sub_011": 0,
+    "cpack-year-3-lab02-ex03-stu_101-sub_012": 0,
+    "cpack-year-4-lab02-ex03-stu_103-sub_010": 0,
+    "cpack-year-4-lab02-ex03-stu_107-sub_008": 0,
+    "cpack-year-4-lab02-ex03-stu_107-sub_009": 0,
+    "cpack-year-4-lab02-ex03-stu_107-sub_010": 0,
+    "cpack-year-4-lab02-ex03-stu_123-sub_004": 0,
+    "cpack-year-4-lab02-ex03-stu_126-sub_005": 0,
+    "cpack-year-4-lab02-ex03-stu_129-sub_005": 1,
+    "cpack-year-4-lab02-ex03-stu_132-sub_005": 0,
+    "cpack-year-4-lab02-ex03-stu_146-sub_004": 0,
+    "cpack-year-4-lab02-ex03-stu_148-sub_009": 0,
+    "cpack-year-4-lab02-ex03-stu_151-sub_005": 0,
+    "cpack-year-4-lab02-ex03-stu_152-sub_002": 0,
+    "cpack-year-4-lab02-ex03-stu_157-sub_004": 1,
+    "cpack-year-5-lab02-ex03-stu_168-sub_003": 0,
+    "cpack-year-5-lab02-ex03-stu_170-sub_003": 0,
+    "cpack-year-5-lab02-ex03-stu_172-sub_001": 0,
+    "cpack-year-6-lab02-ex03-stu_213-sub_001": 0,
+    "cpack-year-6-lab02-ex03-stu_236-sub_003": 2,
+    "cpack-year-6-lab02-ex03-stu_238-sub_006": 0,
+    "cpack-year-6-lab02-ex03-stu_239-sub_001": 1
+  },
+  "holdout_assignments": {
+    "cpack-year-1-lab02-ex03-stu_020-sub_011": 2,
+    "cpack-year-2-lab02-ex03-stu_047-sub_007": 0,
+    "cpack-year-3-lab02-ex03-stu_085-sub_002": 0,
+    "cpack-year-4-lab02-ex03-stu_110-sub_004": 0,
+    "cpack-year-4-lab02-ex03-stu_119-sub_003": 0,
+    "cpack-year-4-lab02-ex03-stu_127-sub_001": 0,
+    "cpack-year-4-lab02-ex03-stu_131-sub_009": 1,
+    "cpack-year-4-lab02-ex03-stu_131-sub_014": 2,
+    "cpack-year-4-lab02-ex03-stu_137-sub_003": 0,
+    "cpack-year-4-lab02-ex03-stu_158-sub_001": 0,
+    "cpack-year-4-lab02-ex03-stu_159-sub_007": 0,
+    "cpack-year-6-lab02-ex03-stu_234-sub_002": 0
+  },
+  "medoids": {
+    "0": "cpack-year-1-lab02-ex03-stu_011-sub_003",
+    "1": "cpack-year-3-lab02-ex03-stu_077-sub_011",
+    "2": "cpack-year-3-lab02-ex03-stu_067-sub_007"
+  },
+  "silhouette_train": 1.0,
+  "holdout_distance_to_medoid": {
+    "cpack-year-1-lab02-ex03-stu_020-sub_011": 0.0,
+    "cpack-year-2-lab02-ex03-stu_047-sub_007": 0.0,
+    "cpack-year-3-lab02-ex03-stu_085-sub_002": 0.0,
+    "cpack-year-4-lab02-ex03-stu_110-sub_004": 0.0,
+    "cpack-year-4-lab02-ex03-stu_119-sub_003": 0.0,
+    "cpack-year-4-lab02-ex03-stu_127-sub_001": 0.0,
+    "cpack-year-4-lab02-ex03-stu_131-sub_009": 0.0,
+    "cpack-year-4-lab02-ex03-stu_131-sub_014": 0.0,
+    "cpack-year-4-lab02-ex03-stu_137-sub_003": 0.0,
+    "cpack-year-4-lab02-ex03-stu_158-sub_001": 0.0,
+    "cpack-year-4-lab02-ex03-stu_159-sub_007": 0.0,
+    "cpack-year-6-lab02-ex03-stu_234-sub_002": 0.0
+  },
+  "holdout_assignment_ties": 0,
+  "assignment_policy": "nearest_training_medoid_weighted_hamming; ties select lowest cluster id",
+  "explanation": {
+    "target": "cluster_id_only_not_validated_misconception",
+    "train_fidelity": 1.0,
+    "holdout_fidelity": 1.0,
+    "holdout_majority_baseline_fidelity": 0.75,
+    "train_leaf_ids": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      1,
+      4,
+      4,
+      4,
+      3,
+      1,
+      1,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      3,
+      4,
+      4,
+      4,
+      4,
+      1,
+      4,
+      3
+    ],
+    "holdout_leaf_ids": [
+      1,
+      4,
+      4,
+      4,
+      4,
+      4,
+      3,
+      1,
+      4,
+      4,
+      4,
+      4
+    ],
+    "rules": [
+      {
+        "rule_id": 1,
+        "if": [
+          "NOT (test:ex03_1=fail)"
+        ],
+        "then_cluster": 2,
+        "train_support": 4,
+        "train_precision": 1.0,
+        "holdout_support": 2,
+        "holdout_precision": 1.0
+      },
+      {
+        "rule_id": 3,
+        "if": [
+          "test:ex03_1=fail",
+          "NOT (test:ex03_0=fail)"
+        ],
+        "then_cluster": 1,
+        "train_support": 4,
+        "train_precision": 1.0,
+        "holdout_support": 1,
+        "holdout_precision": 1.0
+      },
+      {
+        "rule_id": 4,
+        "if": [
+          "test:ex03_1=fail",
+          "test:ex03_0=fail"
+        ],
+        "then_cluster": 0,
+        "train_support": 44,
+        "train_precision": 1.0,
+        "holdout_support": 9,
+        "holdout_precision": 1.0
+      }
+    ]
+  },
+  "ari_vs_exact_signature_train": 1.0,
+  "elapsed_seconds": 0.2734207999892533,
+  "provenance": {
+    "dataset": {
+      "schema_version": 2,
+      "dataset_name": "C-Pack-IPAs-26",
+      "provenance": "https://github.com/pmorvalho/C-Pack-IPAs",
+      "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+      "problem_id": "lab02-ex03",
+      "language": "c",
+      "suite_version": "cpack-b89a2ef8fbf15741c15f1f550399afc1b581af7a898657905d5780ee869ce38d",
+      "test_ids": [
+        "ex03_0",
+        "ex03_1",
+        "ex03_2",
+        "ex03_3"
+      ],
+      "suite_sha256": "b89a2ef8fbf15741c15f1f550399afc1b581af7a898657905d5780ee869ce38d",
+      "execution": "historical_logs_only"
+    },
+    "input_sha256": "e8e70eea8b88834e2cd6472daddf496e36f1bcef0da665e8146fc1d22e99a02c",
+    "manifest_sha256": "a5ff23c589d1fe8a4ecfeb0d3f28dba952338e9a5caca6ee5be6fc67f99bdab4",
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "tree-sitter": "0.26.0",
+      "tree-sitter-c": "0.24.2"
+    },
+    "interpretation": "Clusters are observable error patterns, not verified misconceptions.",
+    "evidence_sha256": "05f2a442b83b86a235ca3fc7a27100e50dda94649913c3ddbb38a473bb4bb008"
+  },
+  "run_manifest": "run_manifest.json",
+  "teaching": {
+    "version": "teaching-rules-v2",
+    "style_version": "vi-rule-v1",
+    "origin": "hand_authored_evidence_rules_not_learned_labels",
+    "human_validated": false,
+    "findings": [
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-1-lab02-ex03-stu_011-sub_003",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"Yes\\n\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"No\\n\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "Yes\n"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "No\n"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "Yes\n"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "No\n"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-1-lab02-ex03-stu_015-sub_013",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_070-sub_004",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_077-sub_009",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_082-sub_004",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_083-sub_010",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 8,
+            "line_end": 8,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_085-sub_002",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "holdout"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_089-sub_012",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 16,
+            "line_end": 16,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_090-sub_006",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_094-sub_009",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_095-sub_010",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_095-sub_012",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_095-sub_013",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_095-sub_014",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_095-sub_015",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_096-sub_004",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_101-sub_004",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_101-sub_008",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_101-sub_009",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_101-sub_011",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab02-ex03-stu_101-sub_012",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_103-sub_010",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 8,
+            "line_end": 8,
+            "code": "\"Yes\\n\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"No\\n\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "Yes\n"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "No\n"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "Yes\n"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "No\n"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_107-sub_008",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 17,
+            "line_end": 17,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_107-sub_009",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 17,
+            "line_end": 17,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_107-sub_010",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 17,
+            "line_end": 17,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_110-sub_004",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "holdout"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_119-sub_003",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "holdout"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_123-sub_004",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 8,
+            "line_end": 8,
+            "code": "\"YES\""
+          },
+          {
+            "line_start": 8,
+            "line_end": 8,
+            "code": "\"NO\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "YES\n"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "NO\n"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "YES\n"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "NO\n"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_126-sub_005",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_129-sub_005",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_132-sub_005",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 8,
+            "line_end": 8,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_146-sub_004",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_148-sub_009",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_151-sub_005",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 9,
+            "line_end": 9,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_152-sub_002",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab02-ex03-stu_159-sub_007",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 8,
+            "line_end": 8,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "holdout"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-5-lab02-ex03-stu_168-sub_003",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 8,
+            "line_end": 8,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-5-lab02-ex03-stu_170-sub_003",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 7,
+            "line_end": 7,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 7,
+            "line_end": 7,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-5-lab02-ex03-stu_172-sub_001",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-6-lab02-ex03-stu_213-sub_001",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 12,
+            "line_end": 12,
+            "code": "\"\\nyes\\n\""
+          },
+          {
+            "line_start": 14,
+            "line_end": 14,
+            "code": "\"\\nno\\n\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "\nyes\n"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "\nno\n"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "\nyes\n"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "\nno\n"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-6-lab02-ex03-stu_234-sub_002",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 10,
+            "line_end": 10,
+            "code": "\"Yes\""
+          },
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"No\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex03_0",
+            "input": "4 2",
+            "expected": "yes\n",
+            "output": "Yes\n"
+          },
+          {
+            "test_id": "ex03_1",
+            "input": "5 3",
+            "expected": "no\n",
+            "output": "No\n"
+          },
+          {
+            "test_id": "ex03_2",
+            "input": "10 5",
+            "expected": "yes\n",
+            "output": "Yes\n"
+          },
+          {
+            "test_id": "ex03_3",
+            "input": "20 7",
+            "expected": "no\n",
+            "output": "No\n"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "holdout"
+      }
+    ],
+    "summaries": [
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "n_submissions": 41,
+        "by_split": {
+          "train": 36,
+          "holdout": 5
+        },
+        "by_cluster": {
+          "0": 40,
+          "1": 1
+        }
+      }
+    ],
+    "cluster_rules": [
+      {
+        "rule_id": 1,
+        "if": [
+          "NOT (test:ex03_1=fail)"
+        ],
+        "then_cluster": 2,
+        "train_support": 4,
+        "train_precision": 1.0,
+        "holdout_support": 2,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "không thỏa điều kiện: [Ca kiểm thử ex03_1: không đạt]"
+        ]
+      },
+      {
+        "rule_id": 3,
+        "if": [
+          "test:ex03_1=fail",
+          "NOT (test:ex03_0=fail)"
+        ],
+        "then_cluster": 1,
+        "train_support": 4,
+        "train_precision": 1.0,
+        "holdout_support": 1,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "Ca kiểm thử ex03_1: không đạt",
+          "không thỏa điều kiện: [Ca kiểm thử ex03_0: không đạt]"
+        ]
+      },
+      {
+        "rule_id": 4,
+        "if": [
+          "test:ex03_1=fail",
+          "test:ex03_0=fail"
+        ],
+        "then_cluster": 0,
+        "train_support": 44,
+        "train_precision": 1.0,
+        "holdout_support": 9,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "Ca kiểm thử ex03_1: không đạt",
+          "Ca kiểm thử ex03_0: không đạt"
+        ]
+      }
+    ],
+    "n_analyzed": 314,
+    "n_with_logs": 65,
+    "n_matched": 41,
+    "unmatched_ids": [
+      "cpack-year-1-lab02-ex03-stu_002-sub_003",
+      "cpack-year-1-lab02-ex03-stu_003-sub_006",
+      "cpack-year-1-lab02-ex03-stu_004-sub_004",
+      "cpack-year-1-lab02-ex03-stu_005-sub_004",
+      "cpack-year-1-lab02-ex03-stu_006-sub_004",
+      "cpack-year-1-lab02-ex03-stu_008-sub_003",
+      "cpack-year-1-lab02-ex03-stu_009-sub_004",
+      "cpack-year-1-lab02-ex03-stu_010-sub_003",
+      "cpack-year-1-lab02-ex03-stu_011-sub_004",
+      "cpack-year-1-lab02-ex03-stu_012-sub_004",
+      "cpack-year-1-lab02-ex03-stu_013-sub_004",
+      "cpack-year-1-lab02-ex03-stu_014-sub_007",
+      "cpack-year-1-lab02-ex03-stu_014-sub_008",
+      "cpack-year-1-lab02-ex03-stu_015-sub_012",
+      "cpack-year-1-lab02-ex03-stu_016-sub_005",
+      "cpack-year-1-lab02-ex03-stu_017-sub_006",
+      "cpack-year-1-lab02-ex03-stu_017-sub_007",
+      "cpack-year-1-lab02-ex03-stu_019-sub_003",
+      "cpack-year-1-lab02-ex03-stu_019-sub_004",
+      "cpack-year-1-lab02-ex03-stu_019-sub_005",
+      "cpack-year-1-lab02-ex03-stu_020-sub_010",
+      "cpack-year-1-lab02-ex03-stu_020-sub_011",
+      "cpack-year-1-lab02-ex03-stu_021-sub_004",
+      "cpack-year-1-lab02-ex03-stu_022-sub_006",
+      "cpack-year-1-lab02-ex03-stu_023-sub_008",
+      "cpack-year-1-lab02-ex03-stu_025-sub_003",
+      "cpack-year-1-lab02-ex03-stu_026-sub_005",
+      "cpack-year-2-lab02-ex03-stu_015-sub_030",
+      "cpack-year-2-lab02-ex03-stu_035-sub_005",
+      "cpack-year-2-lab02-ex03-stu_036-sub_005",
+      "cpack-year-2-lab02-ex03-stu_039-sub_003",
+      "cpack-year-2-lab02-ex03-stu_040-sub_006",
+      "cpack-year-2-lab02-ex03-stu_042-sub_005",
+      "cpack-year-2-lab02-ex03-stu_046-sub_003",
+      "cpack-year-2-lab02-ex03-stu_047-sub_007",
+      "cpack-year-2-lab02-ex03-stu_052-sub_003",
+      "cpack-year-3-lab02-ex03-stu_062-sub_003",
+      "cpack-year-3-lab02-ex03-stu_064-sub_006",
+      "cpack-year-3-lab02-ex03-stu_064-sub_007",
+      "cpack-year-3-lab02-ex03-stu_065-sub_009",
+      "cpack-year-3-lab02-ex03-stu_066-sub_005",
+      "cpack-year-3-lab02-ex03-stu_067-sub_007",
+      "cpack-year-3-lab02-ex03-stu_068-sub_006",
+      "cpack-year-3-lab02-ex03-stu_070-sub_002",
+      "cpack-year-3-lab02-ex03-stu_070-sub_003",
+      "cpack-year-3-lab02-ex03-stu_071-sub_001",
+      "cpack-year-3-lab02-ex03-stu_073-sub_004",
+      "cpack-year-3-lab02-ex03-stu_074-sub_004",
+      "cpack-year-3-lab02-ex03-stu_075-sub_001",
+      "cpack-year-3-lab02-ex03-stu_075-sub_003",
+      "cpack-year-3-lab02-ex03-stu_076-sub_016",
+      "cpack-year-3-lab02-ex03-stu_076-sub_017",
+      "cpack-year-3-lab02-ex03-stu_077-sub_010",
+      "cpack-year-3-lab02-ex03-stu_077-sub_011",
+      "cpack-year-3-lab02-ex03-stu_078-sub_001",
+      "cpack-year-3-lab02-ex03-stu_078-sub_003",
+      "cpack-year-3-lab02-ex03-stu_078-sub_006",
+      "cpack-year-3-lab02-ex03-stu_079-sub_001",
+      "cpack-year-3-lab02-ex03-stu_080-sub_011",
+      "cpack-year-3-lab02-ex03-stu_080-sub_012",
+      "cpack-year-3-lab02-ex03-stu_080-sub_013",
+      "cpack-year-3-lab02-ex03-stu_080-sub_014",
+      "cpack-year-3-lab02-ex03-stu_081-sub_002",
+      "cpack-year-3-lab02-ex03-stu_081-sub_004",
+      "cpack-year-3-lab02-ex03-stu_081-sub_006",
+      "cpack-year-3-lab02-ex03-stu_081-sub_008",
+      "cpack-year-3-lab02-ex03-stu_081-sub_009",
+      "cpack-year-3-lab02-ex03-stu_081-sub_010",
+      "cpack-year-3-lab02-ex03-stu_081-sub_011",
+      "cpack-year-3-lab02-ex03-stu_082-sub_003",
+      "cpack-year-3-lab02-ex03-stu_083-sub_011",
+      "cpack-year-3-lab02-ex03-stu_084-sub_004",
+      "cpack-year-3-lab02-ex03-stu_084-sub_005",
+      "cpack-year-3-lab02-ex03-stu_085-sub_015",
+      "cpack-year-3-lab02-ex03-stu_085-sub_019",
+      "cpack-year-3-lab02-ex03-stu_086-sub_002",
+      "cpack-year-3-lab02-ex03-stu_086-sub_011",
+      "cpack-year-3-lab02-ex03-stu_086-sub_012",
+      "cpack-year-3-lab02-ex03-stu_086-sub_013",
+      "cpack-year-3-lab02-ex03-stu_086-sub_014",
+      "cpack-year-3-lab02-ex03-stu_086-sub_015",
+      "cpack-year-3-lab02-ex03-stu_086-sub_016",
+      "cpack-year-3-lab02-ex03-stu_086-sub_017",
+      "cpack-year-3-lab02-ex03-stu_086-sub_018",
+      "cpack-year-3-lab02-ex03-stu_088-sub_007",
+      "cpack-year-3-lab02-ex03-stu_089-sub_005",
+      "cpack-year-3-lab02-ex03-stu_089-sub_011",
+      "cpack-year-3-lab02-ex03-stu_090-sub_005",
+      "cpack-year-3-lab02-ex03-stu_091-sub_011",
+      "cpack-year-3-lab02-ex03-stu_092-sub_008",
+      "cpack-year-3-lab02-ex03-stu_092-sub_009",
+      "cpack-year-3-lab02-ex03-stu_092-sub_010",
+      "cpack-year-3-lab02-ex03-stu_092-sub_011",
+      "cpack-year-3-lab02-ex03-stu_093-sub_003",
+      "cpack-year-3-lab02-ex03-stu_094-sub_010",
+      "cpack-year-3-lab02-ex03-stu_095-sub_009",
+      "cpack-year-3-lab02-ex03-stu_095-sub_011",
+      "cpack-year-3-lab02-ex03-stu_097-sub_005",
+      "cpack-year-3-lab02-ex03-stu_098-sub_003",
+      "cpack-year-3-lab02-ex03-stu_098-sub_004",
+      "cpack-year-3-lab02-ex03-stu_098-sub_005",
+      "cpack-year-3-lab02-ex03-stu_099-sub_002",
+      "cpack-year-3-lab02-ex03-stu_099-sub_006",
+      "cpack-year-3-lab02-ex03-stu_099-sub_007",
+      "cpack-year-3-lab02-ex03-stu_100-sub_005",
+      "cpack-year-3-lab02-ex03-stu_100-sub_007",
+      "cpack-year-3-lab02-ex03-stu_101-sub_005",
+      "cpack-year-3-lab02-ex03-stu_101-sub_006",
+      "cpack-year-3-lab02-ex03-stu_101-sub_007",
+      "cpack-year-3-lab02-ex03-stu_101-sub_010",
+      "cpack-year-3-lab02-ex03-stu_101-sub_013",
+      "cpack-year-3-lab02-ex03-stu_101-sub_014",
+      "cpack-year-4-lab02-ex03-stu_079-sub_002",
+      "cpack-year-4-lab02-ex03-stu_080-sub_116",
+      "cpack-year-4-lab02-ex03-stu_093-sub_044",
+      "cpack-year-4-lab02-ex03-stu_103-sub_004",
+      "cpack-year-4-lab02-ex03-stu_105-sub_003",
+      "cpack-year-4-lab02-ex03-stu_105-sub_004",
+      "cpack-year-4-lab02-ex03-stu_106-sub_008",
+      "cpack-year-4-lab02-ex03-stu_106-sub_011",
+      "cpack-year-4-lab02-ex03-stu_107-sub_007",
+      "cpack-year-4-lab02-ex03-stu_108-sub_001",
+      "cpack-year-4-lab02-ex03-stu_108-sub_002",
+      "cpack-year-4-lab02-ex03-stu_109-sub_010",
+      "cpack-year-4-lab02-ex03-stu_109-sub_011",
+      "cpack-year-4-lab02-ex03-stu_109-sub_012",
+      "cpack-year-4-lab02-ex03-stu_112-sub_004",
+      "cpack-year-4-lab02-ex03-stu_114-sub_006",
+      "cpack-year-4-lab02-ex03-stu_115-sub_003",
+      "cpack-year-4-lab02-ex03-stu_115-sub_006",
+      "cpack-year-4-lab02-ex03-stu_116-sub_008",
+      "cpack-year-4-lab02-ex03-stu_117-sub_001",
+      "cpack-year-4-lab02-ex03-stu_117-sub_002",
+      "cpack-year-4-lab02-ex03-stu_118-sub_003",
+      "cpack-year-4-lab02-ex03-stu_119-sub_004",
+      "cpack-year-4-lab02-ex03-stu_121-sub_001",
+      "cpack-year-4-lab02-ex03-stu_122-sub_002",
+      "cpack-year-4-lab02-ex03-stu_123-sub_003",
+      "cpack-year-4-lab02-ex03-stu_126-sub_003",
+      "cpack-year-4-lab02-ex03-stu_126-sub_006",
+      "cpack-year-4-lab02-ex03-stu_127-sub_001",
+      "cpack-year-4-lab02-ex03-stu_128-sub_003",
+      "cpack-year-4-lab02-ex03-stu_129-sub_004",
+      "cpack-year-4-lab02-ex03-stu_130-sub_004",
+      "cpack-year-4-lab02-ex03-stu_131-sub_009",
+      "cpack-year-4-lab02-ex03-stu_131-sub_011",
+      "cpack-year-4-lab02-ex03-stu_131-sub_012",
+      "cpack-year-4-lab02-ex03-stu_131-sub_013",
+      "cpack-year-4-lab02-ex03-stu_131-sub_014",
+      "cpack-year-4-lab02-ex03-stu_131-sub_015",
+      "cpack-year-4-lab02-ex03-stu_132-sub_004",
+      "cpack-year-4-lab02-ex03-stu_132-sub_006",
+      "cpack-year-4-lab02-ex03-stu_135-sub_005",
+      "cpack-year-4-lab02-ex03-stu_137-sub_003",
+      "cpack-year-4-lab02-ex03-stu_137-sub_004",
+      "cpack-year-4-lab02-ex03-stu_138-sub_009",
+      "cpack-year-4-lab02-ex03-stu_139-sub_001",
+      "cpack-year-4-lab02-ex03-stu_140-sub_004",
+      "cpack-year-4-lab02-ex03-stu_142-sub_001",
+      "cpack-year-4-lab02-ex03-stu_143-sub_003",
+      "cpack-year-4-lab02-ex03-stu_144-sub_005",
+      "cpack-year-4-lab02-ex03-stu_144-sub_006",
+      "cpack-year-4-lab02-ex03-stu_144-sub_007",
+      "cpack-year-4-lab02-ex03-stu_144-sub_008",
+      "cpack-year-4-lab02-ex03-stu_145-sub_003",
+      "cpack-year-4-lab02-ex03-stu_147-sub_004",
+      "cpack-year-4-lab02-ex03-stu_148-sub_010",
+      "cpack-year-4-lab02-ex03-stu_149-sub_002",
+      "cpack-year-4-lab02-ex03-stu_150-sub_006",
+      "cpack-year-4-lab02-ex03-stu_151-sub_006",
+      "cpack-year-4-lab02-ex03-stu_152-sub_003",
+      "cpack-year-4-lab02-ex03-stu_154-sub_002",
+      "cpack-year-4-lab02-ex03-stu_154-sub_004",
+      "cpack-year-4-lab02-ex03-stu_154-sub_005",
+      "cpack-year-4-lab02-ex03-stu_155-sub_004",
+      "cpack-year-4-lab02-ex03-stu_157-sub_003",
+      "cpack-year-4-lab02-ex03-stu_157-sub_004",
+      "cpack-year-4-lab02-ex03-stu_158-sub_001",
+      "cpack-year-4-lab02-ex03-stu_159-sub_008",
+      "cpack-year-4-lab02-ex03-stu_161-sub_001",
+      "cpack-year-4-lab02-ex03-stu_161-sub_002",
+      "cpack-year-5-lab02-ex03-stu_080-sub_126",
+      "cpack-year-5-lab02-ex03-stu_090-sub_049",
+      "cpack-year-5-lab02-ex03-stu_107-sub_044",
+      "cpack-year-5-lab02-ex03-stu_107-sub_045",
+      "cpack-year-5-lab02-ex03-stu_109-sub_048",
+      "cpack-year-5-lab02-ex03-stu_123-sub_018",
+      "cpack-year-5-lab02-ex03-stu_158-sub_006",
+      "cpack-year-5-lab02-ex03-stu_165-sub_017",
+      "cpack-year-5-lab02-ex03-stu_166-sub_001",
+      "cpack-year-5-lab02-ex03-stu_166-sub_005",
+      "cpack-year-5-lab02-ex03-stu_166-sub_006",
+      "cpack-year-5-lab02-ex03-stu_168-sub_004",
+      "cpack-year-5-lab02-ex03-stu_170-sub_002",
+      "cpack-year-5-lab02-ex03-stu_171-sub_006",
+      "cpack-year-5-lab02-ex03-stu_171-sub_007",
+      "cpack-year-5-lab02-ex03-stu_171-sub_008",
+      "cpack-year-5-lab02-ex03-stu_172-sub_002",
+      "cpack-year-5-lab02-ex03-stu_173-sub_007",
+      "cpack-year-5-lab02-ex03-stu_173-sub_008",
+      "cpack-year-5-lab02-ex03-stu_174-sub_001",
+      "cpack-year-5-lab02-ex03-stu_175-sub_004",
+      "cpack-year-5-lab02-ex03-stu_176-sub_003",
+      "cpack-year-5-lab02-ex03-stu_176-sub_004",
+      "cpack-year-5-lab02-ex03-stu_177-sub_005",
+      "cpack-year-5-lab02-ex03-stu_178-sub_003",
+      "cpack-year-5-lab02-ex03-stu_179-sub_008",
+      "cpack-year-5-lab02-ex03-stu_180-sub_003",
+      "cpack-year-5-lab02-ex03-stu_181-sub_004",
+      "cpack-year-5-lab02-ex03-stu_181-sub_005",
+      "cpack-year-5-lab02-ex03-stu_182-sub_004",
+      "cpack-year-5-lab02-ex03-stu_183-sub_003",
+      "cpack-year-5-lab02-ex03-stu_184-sub_004",
+      "cpack-year-5-lab02-ex03-stu_184-sub_005",
+      "cpack-year-5-lab02-ex03-stu_185-sub_004",
+      "cpack-year-5-lab02-ex03-stu_185-sub_005",
+      "cpack-year-5-lab02-ex03-stu_186-sub_001",
+      "cpack-year-5-lab02-ex03-stu_187-sub_007",
+      "cpack-year-5-lab02-ex03-stu_187-sub_008",
+      "cpack-year-5-lab02-ex03-stu_188-sub_002",
+      "cpack-year-5-lab02-ex03-stu_188-sub_007",
+      "cpack-year-5-lab02-ex03-stu_192-sub_001",
+      "cpack-year-5-lab02-ex03-stu_192-sub_007",
+      "cpack-year-5-lab02-ex03-stu_192-sub_008",
+      "cpack-year-5-lab02-ex03-stu_192-sub_009",
+      "cpack-year-5-lab02-ex03-stu_193-sub_002",
+      "cpack-year-5-lab02-ex03-stu_194-sub_001",
+      "cpack-year-5-lab02-ex03-stu_195-sub_007",
+      "cpack-year-5-lab02-ex03-stu_197-sub_005",
+      "cpack-year-5-lab02-ex03-stu_200-sub_001",
+      "cpack-year-6-lab02-ex03-stu_107-sub_059",
+      "cpack-year-6-lab02-ex03-stu_131-sub_044",
+      "cpack-year-6-lab02-ex03-stu_204-sub_001",
+      "cpack-year-6-lab02-ex03-stu_205-sub_001",
+      "cpack-year-6-lab02-ex03-stu_208-sub_003",
+      "cpack-year-6-lab02-ex03-stu_209-sub_003",
+      "cpack-year-6-lab02-ex03-stu_210-sub_002",
+      "cpack-year-6-lab02-ex03-stu_211-sub_002",
+      "cpack-year-6-lab02-ex03-stu_211-sub_003",
+      "cpack-year-6-lab02-ex03-stu_211-sub_004",
+      "cpack-year-6-lab02-ex03-stu_213-sub_002",
+      "cpack-year-6-lab02-ex03-stu_214-sub_002",
+      "cpack-year-6-lab02-ex03-stu_215-sub_002",
+      "cpack-year-6-lab02-ex03-stu_216-sub_003",
+      "cpack-year-6-lab02-ex03-stu_218-sub_001",
+      "cpack-year-6-lab02-ex03-stu_219-sub_001",
+      "cpack-year-6-lab02-ex03-stu_220-sub_002",
+      "cpack-year-6-lab02-ex03-stu_221-sub_003",
+      "cpack-year-6-lab02-ex03-stu_224-sub_004",
+      "cpack-year-6-lab02-ex03-stu_224-sub_005",
+      "cpack-year-6-lab02-ex03-stu_225-sub_001",
+      "cpack-year-6-lab02-ex03-stu_226-sub_004",
+      "cpack-year-6-lab02-ex03-stu_228-sub_002",
+      "cpack-year-6-lab02-ex03-stu_229-sub_002",
+      "cpack-year-6-lab02-ex03-stu_229-sub_004",
+      "cpack-year-6-lab02-ex03-stu_230-sub_001",
+      "cpack-year-6-lab02-ex03-stu_231-sub_002",
+      "cpack-year-6-lab02-ex03-stu_233-sub_001",
+      "cpack-year-6-lab02-ex03-stu_234-sub_003",
+      "cpack-year-6-lab02-ex03-stu_235-sub_007",
+      "cpack-year-6-lab02-ex03-stu_236-sub_003",
+      "cpack-year-6-lab02-ex03-stu_236-sub_004",
+      "cpack-year-6-lab02-ex03-stu_237-sub_004",
+      "cpack-year-6-lab02-ex03-stu_238-sub_005",
+      "cpack-year-6-lab02-ex03-stu_238-sub_006",
+      "cpack-year-6-lab02-ex03-stu_239-sub_001",
+      "cpack-year-6-lab02-ex03-stu_239-sub_002",
+      "cpack-year-6-lab02-ex03-stu_240-sub_002",
+      "cpack-year-6-lab02-ex03-stu_241-sub_001",
+      "cpack-year-6-lab02-ex03-stu_241-sub_003",
+      "cpack-year-6-lab02-ex03-stu_243-sub_001",
+      "cpack-year-6-lab02-ex03-stu_245-sub_003",
+      "cpack-year-6-lab02-ex03-stu_245-sub_004"
+    ],
+    "interpretation": "Số bài khớp điều kiện, không phải precision hay số sinh viên hiểu sai. Không có luật khớp không có nghĩa bài đúng. Không dùng làm nhãn đánh giá clustering."
+  }
+}

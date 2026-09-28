@@ -24,6 +24,7 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--problems", nargs="+")
     parser.add_argument("--seeds", nargs="+", type=int, default=[7, 42, 91])
+    parser.add_argument("--include-structural", action="store_true", help="Add structure-only ablations")
     parser.add_argument("--k", type=int, default=3)
     args = parser.parse_args()
     cohorts = read_cohorts(args.data)
@@ -38,6 +39,8 @@ def main():
     provenance["split_policy"] = lock["policy"]
     provenance["seeds"] = args.seeds
     provenance["k"] = args.k
+    modes = MODES + (("structural",) if args.include_structural else ())
+    provenance["feature_modes"] = list(modes)
     provenance["problems"] = args.problems
     snapshot = args.output / "code_snapshot.zip"
     with ZipFile(snapshot, "w") as archive:
@@ -65,7 +68,7 @@ def main():
                                             folder / "submissions.jsonl")
         input_provenance["evidence_sha256"] = digest(folder / "review.jsonl")
         configurations = [("exact", "outcomes")] + [
-            (method, mode) for method in ("agglomerative", "kmeans") for mode in MODES]
+            (method, mode) for method in ("agglomerative", "kmeans") for mode in modes]
         markdown += [f"## {problem}", ""]
         for method, mode in configurations:
             for seed in args.seeds:

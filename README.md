@@ -8,6 +8,9 @@ Mã nguồn, dữ liệu demo/ITSP và hồ sơ nghiên cứu nằm tại
 
 [Báo cáo 5 chương, slide và kịch bản thuyết trình](deliverables/De5_NghiemThu_20260928/README.md).
 
+[Kiểm chứng baseline/ablation mới](research/runs/validation-summary-20260928.md) ·
+[Quy trình nhãn giảng viên và xác thực misconception](docs/teacher_validation.md).
+
 ## App học viên và giảng viên
 
 [Chạy demo nghiệm thu môn học trong 10 phút](docs/demo_nghiem_thu.md):

@@ -58,7 +58,8 @@ def test_evidence_is_bounded_and_does_not_send_identity_fields(experiment):
     cluster = next(iter(report["train_assignments"].values()))
     payload, bindings = cluster_evidence(report, rows, {}, "problem", cluster)
     assert 1 <= len(payload["samples"]) <= 4
-    assert all(len(s["source"]) <= 3000 for s in payload["samples"])
+    assert all(s["raw_code"] == next(r.source_code for r in rows if r.submission_id == bindings[s["sample_id"]])
+               and not s["raw_code_truncated"] for s in payload["samples"])
     assert "student_id" not in json.dumps(payload) and "submission_id" not in json.dumps(payload)
     assert set(bindings) == {s["sample_id"] for s in payload["samples"]}
 
@@ -250,3 +251,34 @@ def test_problem_description_excludes_solution_and_arbitrary_files(tmp_path):
     assert problem_description({"problem_reference": str(source)}, tmp_path).strip() == "Describe a problem"
     assert "correct_solution" not in problem_description({"problem_reference": str(source)}, tmp_path)
     assert "Chưa có" in problem_description({"problem_reference": str(tmp_path / "secret")}, tmp_path)
+
+
+@pytest.mark.parametrize('status,provider_code,expected,retryable', [
+    (401, None, 'invalid_api_key', False), (403, None, 'access_denied', False),
+    (404, None, 'model_unavailable', False),
+    (400, 'model_decommissioned', 'model_retired', False),
+    (429, None, 'rate_limited', True), (503, None, 'provider_error', True),
+    (429, 'insufficient_quota', 'quota_exhausted', False)])
+def test_api_error_machine_codes(monkeypatch, status, provider_code, expected, retryable):
+    from misconceptions.llm_client import LLMRequestError
+    monkeypatch.setenv('OPENAI_API_KEY', 'test-secret')
+    def failure(*args, **kwargs):
+        body = json.dumps({'error': {'code': provider_code, 'message': 'test-secret'}})
+        raise urllib.error.HTTPError('secret-url', status, 'test-secret', {}, io.BytesIO(body.encode()))
+    monkeypatch.setattr('urllib.request.urlopen', failure)
+    with pytest.raises(LLMRequestError) as caught:
+        request_label({}, CONFIG)
+    assert caught.value.code == expected and caught.value.retryable is retryable
+    assert 'test-secret' not in str(caught.value)
+
+
+def test_timeout_is_safe_and_retryable(monkeypatch):
+    from misconceptions.llm_client import LLMRequestError
+    monkeypatch.setenv('OPENAI_API_KEY', 'test-secret')
+    def timeout(*args, **kwargs):
+        raise TimeoutError('test-secret')
+    monkeypatch.setattr('urllib.request.urlopen', timeout)
+    with pytest.raises(LLMRequestError) as caught:
+        request_label({}, CONFIG)
+    assert caught.value.code == 'network_timeout' and caught.value.retryable
+    assert 'test-secret' not in str(caught.value)

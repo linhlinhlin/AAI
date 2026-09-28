@@ -142,3 +142,28 @@ tự động khám phá từ thư mục cha. Không thay cấu hình cá nhân h
 
 Xem lại hướng dẫn khi đổi model lớn hoặc khi một quy tắc liên tục gây chậm/sai;
 xóa điều đã được code kiểm tra thay vì bổ sung thêm lời nhắc trùng lặp.
+
+
+## Kiểm chứng và nhãn giảng viên — 28/09/2026
+
+Từ root, dùng `misconceptions-prototype/.venv/Scripts/python.exe` (PowerShell thêm `&`).
+Thêm `--include-structural` vào `run_topic5.py` để chạy đủ 11 biến thể/seed.
+Smoke mặc định vẫn là 27 lượt nhẹ; nghiên cứu mới giữ ở thư mục riêng.
+
+```powershell
+$py = '.\misconceptions-prototype\.venv\Scripts\python.exe'
+& $py misconceptions-prototype/scripts/run_topic5.py `
+  --data misconceptions-prototype/data/itsp `
+  --split-lock research/splits/itsp-development-v1.json `
+  --problems 2812 2825 2833 --include-structural `
+  --output .cache/itsp-validation-new
+& $py scripts/audit_run.py --data misconceptions-prototype/data/itsp `
+  --split-lock research/splits/itsp-development-v1.json --run .cache/itsp-validation-new
+& $py misconceptions-prototype/scripts/validate_topic5.py summarize `
+  --run .cache/itsp-validation-new --output .cache/itsp-validation-new/diagnostics.json
+```
+
+Kết quả gồm fidelity so với train-majority baseline, coverage từng luật,
+độ phức tạp luật, tỷ lệ hòa medoid và ARI giữa seeds. Không phải accuracy misconception.
+Xem [báo cáo thực nghiệm](../research/runs/validation-summary-20260928.md)
+và [quy trình prepare/evaluate nhãn giảng viên](teacher_validation.md).

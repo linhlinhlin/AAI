@@ -1,6 +1,6 @@
 "use strict";
 const mappingStatus = {unreviewed:"Chưa gắn nhãn",draft:"Nhãn nháp",confirmed:"Giảng viên đã duyệt",ignored:"Đã bỏ qua"};
-const mappingCategory = {misconception:"Quan niệm sai lầm",other_error:"Lỗi khác / trình bày",mixed:"Nhóm hỗn hợp"};
+const mappingCategory = {misconception:"Quan niệm sai lầm",other_error:"Lỗi khác / trình bày",mixed:"Nhóm hỗn hợp",unclear:"Chưa đủ bằng chứng"};
 function candidateOverview(r) {
   const total=r.teacher?.total_submissions || 0;
   return `<h4>Máy gợi ý — chưa được xác nhận</h4><p class="caption">Dùng để ưu tiên đọc bài. Đây là số bài khớp mẫu, không phải tỷ lệ hiểu sai đã xác nhận; một bài có thể khớp nhiều mẫu.</p>${(r.teaching?.summaries || []).map(s=>`<article class="teacher-bar candidate-bar"><b>${esc(s.explanation?.title || s.then_vi)}</b><p>${s.n_submissions}/${total} bài khớp (${total ? number(Math.round(s.n_submissions/total*1000)/10) : 0}%) · ${s.category === "presentation_issue" ? "sai khác trình bày" : "giả thuyết cơ chế"}</p><progress max="${total || 1}" value="${s.n_submissions}" aria-label="Số bài khớp mẫu ${esc(s.explanation?.title || s.then_vi)}"></progress></article>`).join("") || '<p class="caption">Chưa có mẫu phù hợp hoặc thiếu log.</p>'}`;

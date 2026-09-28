@@ -7,10 +7,15 @@ from itertools import pairwise
 import tree_sitter_c
 from tree_sitter import Language, Parser
 
+from .hardcoded_output import LABEL, hardcoded_output
 from .rule_style import STYLE_VERSION, explanation_for
 
-VERSION = "teaching-rules-v2"
+VERSION = "teaching-rules-v3-hardcoded-output"
 RULE_OAV = {
+    "C_HARDCODED_OUTPUT": [
+        ("Bài làm", "is_hardcoded_output", "True"),
+        ("Kết quả kiểm thử", "Có ít nhất hai test fail quan sát được", "Có"),
+    ],
     "C_BRANCH_ATTACHMENT": [
         ("Khối lệnh trong bài", "Có hai if liên tiếp, if đầu không có else", "Có"),
         ("Khối lệnh trong bài", "Else thuộc if thứ hai", "Có"),
@@ -183,6 +188,12 @@ def diagnose(row, logs):
                                             for obj, attr, value in RULE_OAV[rule_id]],
                          "tests": tests, "alternative": alternative, "suggestion": suggestion})
 
+    add("C_HARDCODED_OUTPUT", ["AST cho thấy output hằng, không phụ thuộc giá trị nhập",
+                              "ít nhất hai test quan sát được bị trượt"],
+        LABEL, "observed_error", hardcoded_output(row.source_code, row.outcomes),
+        failed if len(failed) >= 2 else [],
+        "Đây là mẫu code quan sát được, chưa chứng minh nhận thức của người học.",
+        "Với hai giá trị n khác nhau, truy vết tổng từ 1 đến n rồi thay hằng số bằng kết quả tính.")
     branch_tests = []
     for test in failed:
         messages = re.findall(r"Point is (?:inside|on|outside) the Circle\.", test["output"])

@@ -1,8 +1,72 @@
-# Trạng thái nghiên cứu — 27/09/2026
+# Trạng thái nghiên cứu — 28/09/2026
 
 **Đã triển khai harness và nền thực nghiệm offline cho đề 5.** Mục tiêu bài báo
 vẫn là khám phá cơ chế lỗi có bằng chứng, với quan niệm sai là giả thuyết cần
 xác nhận. Kết quả hiện tại chưa chứng minh SOTA hay niềm tin thật của người học.
+
+## Chẩn đoán in hằng số và context LLM — 28/09/2026
+
+Đã bổ sung OAV chẩn đoán `is_hardcoded_output` và rule AST/log hẹp cho output
+hằng, ít nhất hai test fail; không đưa cờ dùng verdict vào ablation AST đã khóa.
+Đối chiếu read-only demo: Nhóm 1 khớp 4/4, nhóm khác chỉ 1/4 và được giữ mixed.
+Code mẫu demo dài 83–86 ký tự: builder cũ có gửi source và không cắt các mẫu này.
+Chưa có trace lời gọi cũ để quy hoàn toàn lỗi về một nguyên nhân nội tại của LLM.
+
+Prompt mới bắt buộc đọc `raw_code` nguyên vẹn (tối đa 4 mẫu), kiểm tra scanf/
+printf trước unclear; rule đã khớp không bị AI đổi thành nhãn mơ hồ. Context
+vượt ngân sách chuyển về local, không cắt code âm thầm; cache có phiên bản mới.
+[Phân tích, giới hạn và cách thử](../docs/hardcoded_output_diagnosis.md).
+Kiểm tra offline: **235 tests + 3 subtests pass**, **27/27 smoke**; 13 test Docker
+bỏ qua trong suite offline. Chromium + Docker thật đã pass việc hiện nhãn hardcoded,
+điền bản nháp, fallback khi API lỗi và lưu/mở lại nhận xét.
+[Bằng chứng kiểm tra](runs/hardcoded-verification-20260928/verification.json).
+Chưa gọi API thật hoặc đo accuracy misconception mới.
+
+## Kiểm chứng bổ sung và xác thực giảng viên — 28/09/2026
+
+Đã thực thi [protocol validation môn học](course-validation-protocol.json), gồm
+exact test signature và K-means/average-linkage trên năm biểu diễn (bổ sung
+structural-only), k=3, seeds 7/42/91. Dùng nguyên split lock toàn corpus;
+không mở sealed test, không thực thi lại corpus C, không chỉnh kết quả lịch sử.
+
+- ITSP: **99 lượt, 93 ok, 6 abstained**; structural bài 2825 không đủ mẫu/biểu diễn khác nhau cho k=3.
+- C-Pack-IPAs: **825 lượt, 774 ok, 51 abstained**; 42 không đủ điều kiện k=3, 9 đặc trưng train giống hệt.
+- Cả hai qua audit hash input/snapshot/split, cấu hình, medoid, OAV và membership/support/precision của từng lá luật.
+- K-means combined_stdout trên C-Pack: ARI validation giữa seed trung bình **0,962**, thấp nhất **0,498** theo bài.
+- Có **19/93** lượt ITSP và **25/774** lượt C-Pack có fidelity cây thấp hơn baseline cụm đa số train.
+  Không dùng fidelity để xếp hạng chẩn đoán giữa biểu diễn có đích cụm khác nhau.
+
+[Bảng kết quả và diễn giải](runs/validation-summary-20260928.md),
+[ITSP](runs/itsp-validation-20260928/diagnostics.json),
+[C-Pack](runs/cpack-validation-20260928/diagnostics.json).
+Đây là các chỉ số development có tính mô tả, không phải accuracy misconception.
+Không có khoảng tin cậy theo sinh viên hay kiểm chứng cross-problem mới.
+
+Đã bổ sung `validate_topic5.py prepare/evaluate`: gói evidence mù và phiếu riêng
+cho hai người đánh giá, người phân xử thứ ba, codebook chung, kiểm tra hash/dẫn
+chứng. Phân biệt cơ chế lỗi với cognitive_status: xác nhận nhận thức cần lời
+người học và quan sát kiểm tra tiếp. Gold không đi vào clustering; ánh xạ cụm
+sang cơ chế để chấm luật chỉ học từ gold train, hòa phiếu/thiếu nhãn thì abstain.
+
+Gói local đã chuẩn bị: 48 bài ITSP và pilot 150 bài C-Pack trong `.cache/`.
+**Vẫn có 0 nhãn giảng viên thật được cung cấp cho đợt này.** Evaluator chạy với
+phiếu rỗng trả `waiting_for_teacher_labels`; ARI/pairwise F1 với gold và precision
+cơ chế/cognitive chưa có dữ liệu thì `null`. Fixture trong test không phải gold.
+[Hướng dẫn giảng viên](../docs/teacher_validation.md).
+
+Gợi ý nhận xét chuyển sang local-first, LLM chỉ được gọi khi chọn “Diễn giải bằng
+AI”. Lỗi key/model/hạn mức/mạng/JSON trả mã rõ ràng cùng bản cục bộ; cache thành
+công và cooldown 30 giây cho lỗi, không retry trả phí tự động. LLM không thay đổi
+loại nhận định cục bộ hoặc trạng thái xác thực; nhận xét dashboard vẫn không phải
+gold độc lập. Loại `unclear` được giữ riêng với `mixed`.
+
+Kiểm tra phần mềm sau thay đổi: **216 tests + 3 subtests pass**, Ruff pass,
+**27/27 smoke**. 13 unit/integration test Docker bỏ qua trong suite offline;
+kiểm tra trình duyệt Chromium + Docker thật riêng đã pass cả local-first, model
+lỗi, lưu/mở lại review và mobile. API được giả lập, không gọi dịch vụ trả phí.
+[Lưu vết kiểm tra](runs/validation-verification-20260928/verification.json).
+Lượt browser đầu gặp timeout hạ tầng Docker; lượt retry và lượt cuối pass mà
+không nới giới hạn runner.
 
 ## App học viên và giảng viên — 27/09/2026
 

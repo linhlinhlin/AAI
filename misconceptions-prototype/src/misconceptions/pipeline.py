@@ -66,6 +66,7 @@ def explain_clusters(
         train_mask, held_mask = train_leaves == node, holdout_leaves == node
         rules.append(
             {
+                "rule_id": int(node),
                 "if": conditions or ["TRUE"],
                 "then_cluster": predicted,
                 "train_support": int(train_mask.sum()),
@@ -85,6 +86,8 @@ def explain_clusters(
         "holdout_majority_baseline_fidelity": float(
             np.mean(holdout_labels == Counter(train_labels.tolist()).most_common(1)[0][0])
         ),
+        "train_leaf_ids": train_leaves.tolist(),
+        "holdout_leaf_ids": holdout_leaves.tolist(),
         "rules": rules,
     }
 

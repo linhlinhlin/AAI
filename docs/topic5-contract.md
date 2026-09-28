@@ -58,3 +58,16 @@ Trước tuyên bố phương pháp tốt hơn: đóng băng protocol, baseline 
 nhãn cơ chế độc lập và adjudication, đánh giá nhiều seed, khoảng tin cậy theo
 sinh viên, kiểm tra cross-problem và độ bền biến đổi code. Muốn nói về quan niệm
 sai thực sự cần bằng chứng nhận thức bổ sung; public source code chưa cung cấp nó.
+
+
+## Kiểm chứng mới ngày 28/09/2026
+
+Đã bổ sung ablation structural-only, độ ổn định nhiều seed, fidelity so với
+baseline cụm đa số và membership mỗi luật. [Báo cáo thực nghiệm](../research/runs/validation-summary-20260928.md)
+ghi cả trường hợp abstain và kết quả bất lợi; không đánh đồng chỉ số nội tại
+với chất lượng nhận diện misconception.
+
+[Quy trình nhãn giảng viên](teacher_validation.md) chặn nhãn AI, nhãn chưa được
+phân xử, nhận xét không độc lập và dẫn chứng không thuộc packet khỏi gold.
+Phần xác nhận nhận thức cần thêm lời người học và kiểm tra tiếp được điều phối
+viên xác minh. Khi thiếu nhãn, hệ thống trả trạng thái chờ và chỉ số null.

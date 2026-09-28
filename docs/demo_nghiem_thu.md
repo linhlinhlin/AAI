@@ -1,5 +1,7 @@
 # Demo nghiệm thu đề 5
 
+[Kịch bản nói và thao tác từng phút cho phiên bản mới](../deliverables/De5_NghiemThu_20260928/Kich_ban_demo_tinh_nang.md).
+
 Bản demo chạy local ở **http://127.0.0.1:8767**. Tám chương trình C minh họa
 được chạy thật trong Docker để có dữ liệu xem OAV, phân cụm và luật.
 Các tài khoản có tên DEMO, không phải sinh viên thật. Đây là kiểm chứng chức
@@ -90,20 +92,39 @@ Các fixture `demo_fixture_1` đến `demo_fixture_8` được giữ nguyên đ�
 
 ### Gợi ý nhận xét cho từng nhóm
 
-1. Bấm **Gợi ý nhận xét** ở nhóm cần xem. Hệ thống hiện bản gợi ý gồm tên
-   nhóm, căn cứ, nội dung giảng lại và nguồn gợi ý.
-2. Nếu đã cấu hình API, nút gửi mô tả bài cùng code/test/OAV của tối đa bốn
-   bài mẫu trong nhóm tới nhà cung cấp đã chọn. Không gửi metadata tên tài
-   khoản/ID học viên; code và output vẫn là dữ liệu được gửi đi.
-3. Bấm **Điền vào bản nháp** để thay nội dung các ô nhận xét bằng gợi ý.
-   Xem bài dẫn chứng, sửa nếu cần, rồi **Lưu nhận xét giảng viên**.
-4. Chỉ tạo/điền gợi ý chưa phải duyệt nhận xét. JSON xuất có `suggestions`
-   riêng với `status=draft`, nguồn/model và ánh xạ mẫu dẫn chứng; nhận xét
-   được giảng viên lưu nằm ở `reviews`. Kết quả phân cụm không đổi.
+Đã bổ sung [nhận diện in hằng số và context raw_code](hardcoded_output_diagnosis.md).
+Nhóm in đáp án cố định có nhãn cục bộ ngay cả khi không gọi AI.
 
-Chưa có API key/model: nút vẫn đưa gợi ý từ **bộ luật cục bộ**, ghi rõ không
-phải AI. Nếu API lỗi, hiển thị lỗi và giữ nguyên các ô đang nhập. Gợi ý cùng
-báo cáo/nhóm/cấu hình được dùng lại để tránh gọi API nhiều lần.
+1. Bấm **Gợi ý nhận xét**. Hệ thống trả ngay bản cục bộ từ luật và bằng chứng,
+   không gọi API, kể cả khi máy đã có key. Nhóm thiếu bằng chứng giữ loại
+   **Chưa đủ bằng chứng**, không tự đổi thành nhóm hỗn hợp.
+2. Nếu muốn hỗ trợ diễn đạt, bấm **Diễn giải bằng AI** trong khung gợi ý.
+   Chỉ bước này gửi mô tả bài và code/test/OAV của tối đa bốn mẫu ẩn danh cho
+   nhà cung cấp. Nội dung code/comment vẫn cần được kiểm tra trước khi chia sẻ.
+3. AI chỉ hỗ trợ tên/diễn giải/câu hỏi kiểm tra; không đổi loại nhận định cục bộ,
+   không tạo nhãn gold, không xác nhận misconception. Bản cục bộ gốc vẫn xem được.
+4. Bấm **Điền vào bản nháp**, kiểm tra và chỉnh sửa, rồi **Lưu nhận xét giảng viên**.
+   Gợi ý không tự ghi đè các ô đang nhập và không tự lưu nhận xét.
+
+Nếu API lỗi, khung vẫn có bản cục bộ dùng được, kèm mã lỗi và cách xử lý:
+
+| Mã | Xử lý |
+|---|---|
+| `not_configured` | Kiểm tra provider, model và đúng biến key; khởi động lại app |
+| `invalid_api_key` | Thay key hợp lệ của đúng nhà cung cấp |
+| `model_retired`, `model_unavailable` | Chọn model hiện có và được tài khoản cho phép |
+| `access_denied` | Kiểm tra quyền truy cập tài khoản hoặc mạng |
+| `rate_limited`, `quota_exhausted` | Kiểm tra hạn mức; dùng bản cục bộ trong lúc chờ |
+| `network_timeout`, `provider_error` | Kiểm tra kết nối/trạng thái dịch vụ |
+| `invalid_response` | AI trả JSON hoặc dẫn chứng không hợp lệ; dùng bản cục bộ |
+| `busy` | Một yêu cầu AI khác đang chạy; bản cục bộ vẫn dùng ngay |
+
+Kết quả AI hợp lệ được cache theo báo cáo/nhóm/cấu hình. Lỗi không được cache
+vĩnh viễn: chống gọi lặp trong 30 giây, sau đó người dùng có thể bấm thử lại.
+Không có vòng lặp tự gọi API trả phí. Sau khi thay `.env`, khởi động lại app.
+
+**Lưu nhận xét trên dashboard không phải đánh giá độc lập.** Để xác thực bằng
+nhãn giảng viên, làm theo [quy trình đánh giá mù](teacher_validation.md).
 
 #### Cấu hình API trên máy
 
@@ -128,7 +149,7 @@ và app vẫn kiểm tra schema/dẫn chứng trước khi chấp nhận gợi �
 `MISCONCEPTIONS_LLM_MODEL` phải có giá trị; key nằm phía server, không gửi
 ra trình duyệt hay JSON báo cáo. Sau khi sửa `.env`, dừng và mở lại app.
 Kiểm thử mặc định dùng phản hồi giả lập, không gọi API trả phí. Chỉ khi có
-key/model và bấm nút thì app mới gọi nhà cung cấp.
+key/model và bấm **Diễn giải bằng AI** thì app mới gọi nhà cung cấp.
 
 ### 3. Thử tình huống không đủ bằng chứng
 

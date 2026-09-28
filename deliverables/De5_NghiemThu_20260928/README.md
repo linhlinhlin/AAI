@@ -8,3 +8,13 @@
 Nguồn nội dung có thể chỉnh sửa: [báo cáo](../../docs/defense/bao_cao_5_chuong.md), [slide và lời dẫn](../../docs/defense/slide_content.json).
 
 Các kết quả nghiên cứu và kiểm thử được ghi theo thời điểm trong tài liệu; số đo phân cụm không phải độ chính xác nhận diện quan niệm sai.
+
+
+## Demo tính năng phiên bản mới
+
+[Kịch bản demo 15 phút, lời nói và bản rút gọn 7 phút](Kich_ban_demo_tinh_nang.md)
+đã cập nhật local fallback, raw_code, rule in hằng số và quy trình nhãn giảng viên.
+
+Các file DOCX/PPTX phía trên được tạo trước đợt kiểm chứng mới và vẫn chứa số
+liệu lịch sử (193 test, 81/675 lượt). Xem bảng số liệu cuối kịch bản mới để đồng
+bộ trước khi nộp; không giới thiệu các file Office cũ là báo cáo kết quả mới nhất.

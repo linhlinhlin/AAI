@@ -1,0 +1,2653 @@
+{
+  "status": "ok",
+  "method": "kmeans",
+  "feature_mode": "structural",
+  "seed": 42,
+  "config": {
+    "k": 3,
+    "test_fraction": 0.25,
+    "test_weight": 0.8,
+    "effective_feature_mode": "structural",
+    "k_used": true
+  },
+  "silhouette_metric": "weighted_hamming_common_comparison_not_kmeans_native_geometry",
+  "routes": {
+    "cpack-year-1-lab04-ex04-stu_002-sub_027": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_005-sub_029": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_006-sub_022": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_007-sub_039": "eligible",
+    "cpack-year-1-lab04-ex04-stu_008-sub_023": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_009-sub_057": "eligible",
+    "cpack-year-1-lab04-ex04-stu_010-sub_024": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_016-sub_046": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_017-sub_043": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_018-sub_024": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_019-sub_029": "execution_error",
+    "cpack-year-1-lab04-ex04-stu_020-sub_022": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_021-sub_041": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_022-sub_032": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_023-sub_053": "eligible",
+    "cpack-year-1-lab04-ex04-stu_024-sub_042": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_025-sub_036": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_025-sub_037": "eligible",
+    "cpack-year-1-lab04-ex04-stu_026-sub_020": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_028-sub_015": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_028-sub_016": "eligible",
+    "cpack-year-1-lab04-ex04-stu_030-sub_008": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_031-sub_006": "no_failure",
+    "cpack-year-1-lab04-ex04-stu_033-sub_004": "no_failure",
+    "cpack-year-2-lab04-ex04-stu_035-sub_041": "no_failure",
+    "cpack-year-2-lab04-ex04-stu_046-sub_041": "no_failure",
+    "cpack-year-2-lab04-ex04-stu_047-sub_017": "no_failure",
+    "cpack-year-2-lab04-ex04-stu_049-sub_025": "parse_error",
+    "cpack-year-2-lab04-ex04-stu_049-sub_026": "eligible",
+    "cpack-year-2-lab04-ex04-stu_059-sub_014": "no_failure",
+    "cpack-year-2-lab04-ex04-stu_059-sub_015": "incomplete",
+    "cpack-year-2-lab04-ex04-stu_059-sub_016": "execution_error",
+    "cpack-year-2-lab04-ex04-stu_061-sub_004": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_062-sub_032": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_063-sub_027": "eligible",
+    "cpack-year-3-lab04-ex04-stu_063-sub_028": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_064-sub_059": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_064-sub_060": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_064-sub_061": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_064-sub_062": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_064-sub_063": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_064-sub_064": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_064-sub_065": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_064-sub_066": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_064-sub_067": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_065-sub_042": "eligible",
+    "cpack-year-3-lab04-ex04-stu_065-sub_043": "eligible",
+    "cpack-year-3-lab04-ex04-stu_065-sub_044": "eligible",
+    "cpack-year-3-lab04-ex04-stu_066-sub_024": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_066-sub_025": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_067-sub_019": "eligible",
+    "cpack-year-3-lab04-ex04-stu_067-sub_020": "eligible",
+    "cpack-year-3-lab04-ex04-stu_068-sub_017": "eligible",
+    "cpack-year-3-lab04-ex04-stu_070-sub_018": "eligible",
+    "cpack-year-3-lab04-ex04-stu_070-sub_019": "eligible",
+    "cpack-year-3-lab04-ex04-stu_070-sub_020": "eligible",
+    "cpack-year-3-lab04-ex04-stu_070-sub_021": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_070-sub_022": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_072-sub_026": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_072-sub_027": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_073-sub_038": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_075-sub_040": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_076-sub_080": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_076-sub_081": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_076-sub_082": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_076-sub_083": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_076-sub_084": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_077-sub_045": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_077-sub_046": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_077-sub_047": "eligible",
+    "cpack-year-3-lab04-ex04-stu_078-sub_034": "eligible",
+    "cpack-year-3-lab04-ex04-stu_079-sub_001": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_080-sub_086": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_080-sub_087": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_080-sub_088": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_080-sub_089": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_081-sub_056": "eligible",
+    "cpack-year-3-lab04-ex04-stu_082-sub_023": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_082-sub_024": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_082-sub_025": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_083-sub_061": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_083-sub_062": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_083-sub_063": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_084-sub_048": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_084-sub_049": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_084-sub_050": "eligible",
+    "cpack-year-3-lab04-ex04-stu_084-sub_051": "eligible",
+    "cpack-year-3-lab04-ex04-stu_084-sub_052": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_084-sub_053": "eligible",
+    "cpack-year-3-lab04-ex04-stu_084-sub_054": "eligible",
+    "cpack-year-3-lab04-ex04-stu_084-sub_055": "eligible",
+    "cpack-year-3-lab04-ex04-stu_084-sub_056": "eligible",
+    "cpack-year-3-lab04-ex04-stu_084-sub_057": "eligible",
+    "cpack-year-3-lab04-ex04-stu_084-sub_058": "eligible",
+    "cpack-year-3-lab04-ex04-stu_087-sub_031": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_087-sub_032": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_088-sub_038": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_088-sub_039": "eligible",
+    "cpack-year-3-lab04-ex04-stu_088-sub_040": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_088-sub_041": "eligible",
+    "cpack-year-3-lab04-ex04-stu_090-sub_044": "parse_error",
+    "cpack-year-3-lab04-ex04-stu_091-sub_079": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_092-sub_071": "eligible",
+    "cpack-year-3-lab04-ex04-stu_092-sub_072": "eligible",
+    "cpack-year-3-lab04-ex04-stu_092-sub_073": "eligible",
+    "cpack-year-3-lab04-ex04-stu_092-sub_074": "eligible",
+    "cpack-year-3-lab04-ex04-stu_093-sub_031": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_093-sub_032": "eligible",
+    "cpack-year-3-lab04-ex04-stu_094-sub_056": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_094-sub_068": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_094-sub_069": "eligible",
+    "cpack-year-3-lab04-ex04-stu_095-sub_044": "eligible",
+    "cpack-year-3-lab04-ex04-stu_096-sub_025": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_097-sub_039": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_098-sub_038": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_098-sub_039": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_098-sub_040": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_098-sub_041": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_098-sub_042": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_098-sub_043": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_098-sub_044": "eligible",
+    "cpack-year-3-lab04-ex04-stu_098-sub_045": "eligible",
+    "cpack-year-3-lab04-ex04-stu_099-sub_055": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_099-sub_056": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_099-sub_057": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_099-sub_058": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_099-sub_059": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_100-sub_064": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_100-sub_065": "eligible",
+    "cpack-year-3-lab04-ex04-stu_100-sub_066": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_100-sub_067": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_100-sub_068": "eligible",
+    "cpack-year-3-lab04-ex04-stu_100-sub_069": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_100-sub_070": "no_failure",
+    "cpack-year-3-lab04-ex04-stu_100-sub_071": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_101-sub_061": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_101-sub_062": "execution_error",
+    "cpack-year-3-lab04-ex04-stu_101-sub_063": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_101-sub_064": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_101-sub_065": "incomplete",
+    "cpack-year-3-lab04-ex04-stu_102-sub_008": "eligible",
+    "cpack-year-4-lab04-ex04-stu_080-sub_124": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_103-sub_025": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_104-sub_032": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_104-sub_034": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_104-sub_035": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_106-sub_025": "parse_error",
+    "cpack-year-4-lab04-ex04-stu_106-sub_034": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_107-sub_033": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_112-sub_036": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_112-sub_037": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_112-sub_038": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_113-sub_020": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_113-sub_021": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_114-sub_021": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_114-sub_038": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_114-sub_040": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_114-sub_041": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_115-sub_018": "parse_error",
+    "cpack-year-4-lab04-ex04-stu_116-sub_025": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_117-sub_024": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_117-sub_025": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_118-sub_026": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_118-sub_027": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_120-sub_034": "parse_error",
+    "cpack-year-4-lab04-ex04-stu_120-sub_035": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_121-sub_001": "eligible",
+    "cpack-year-4-lab04-ex04-stu_122-sub_004": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_123-sub_013": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_124-sub_033": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_126-sub_016": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_126-sub_017": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_128-sub_030": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_129-sub_029": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_130-sub_016": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_131-sub_041": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_132-sub_025": "eligible",
+    "cpack-year-4-lab04-ex04-stu_132-sub_026": "eligible",
+    "cpack-year-4-lab04-ex04-stu_132-sub_027": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_132-sub_028": "eligible",
+    "cpack-year-4-lab04-ex04-stu_132-sub_029": "eligible",
+    "cpack-year-4-lab04-ex04-stu_132-sub_030": "eligible",
+    "cpack-year-4-lab04-ex04-stu_132-sub_031": "eligible",
+    "cpack-year-4-lab04-ex04-stu_132-sub_032": "eligible",
+    "cpack-year-4-lab04-ex04-stu_132-sub_033": "eligible",
+    "cpack-year-4-lab04-ex04-stu_133-sub_038": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_134-sub_026": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_134-sub_027": "eligible",
+    "cpack-year-4-lab04-ex04-stu_135-sub_038": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_135-sub_039": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_136-sub_033": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_138-sub_036": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_138-sub_037": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_139-sub_003": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_141-sub_005": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_141-sub_006": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_141-sub_007": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_142-sub_027": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_142-sub_028": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_143-sub_013": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_143-sub_018": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_143-sub_019": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_145-sub_028": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_146-sub_021": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_148-sub_049": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_149-sub_033": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_152-sub_028": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_153-sub_057": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_154-sub_024": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_154-sub_037": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_154-sub_038": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_155-sub_023": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_156-sub_023": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_157-sub_025": "parse_error",
+    "cpack-year-4-lab04-ex04-stu_158-sub_001": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_158-sub_002": "no_failure",
+    "cpack-year-4-lab04-ex04-stu_160-sub_007": "incomplete",
+    "cpack-year-4-lab04-ex04-stu_163-sub_008": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_080-sub_131": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_107-sub_056": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_123-sub_038": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_158-sub_017": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_166-sub_024": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_168-sub_025": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_169-sub_029": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_170-sub_010": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_170-sub_011": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_171-sub_031": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_173-sub_044": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_176-sub_020": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_176-sub_021": "eligible",
+    "cpack-year-5-lab04-ex04-stu_176-sub_022": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_176-sub_023": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_176-sub_024": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_176-sub_025": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_176-sub_026": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_177-sub_028": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_178-sub_036": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_178-sub_037": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_178-sub_038": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_178-sub_039": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_179-sub_028": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_180-sub_021": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_180-sub_035": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_181-sub_026": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_182-sub_035": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_183-sub_029": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_184-sub_007": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_185-sub_049": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_186-sub_003": "eligible",
+    "cpack-year-5-lab04-ex04-stu_187-sub_025": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_188-sub_034": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_188-sub_035": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_188-sub_037": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_189-sub_044": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_191-sub_035": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_191-sub_036": "eligible",
+    "cpack-year-5-lab04-ex04-stu_191-sub_037": "eligible",
+    "cpack-year-5-lab04-ex04-stu_192-sub_168": "eligible",
+    "cpack-year-5-lab04-ex04-stu_192-sub_170": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_192-sub_171": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_192-sub_172": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_192-sub_173": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_192-sub_174": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_192-sub_175": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_192-sub_176": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_192-sub_177": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_193-sub_026": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_193-sub_027": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_194-sub_009": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_195-sub_015": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_196-sub_029": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_197-sub_040": "incomplete",
+    "cpack-year-5-lab04-ex04-stu_198-sub_019": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_199-sub_035": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_199-sub_036": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_200-sub_020": "eligible",
+    "cpack-year-5-lab04-ex04-stu_200-sub_021": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_201-sub_008": "execution_error",
+    "cpack-year-5-lab04-ex04-stu_201-sub_009": "eligible",
+    "cpack-year-5-lab04-ex04-stu_201-sub_010": "no_failure",
+    "cpack-year-5-lab04-ex04-stu_201-sub_011": "eligible",
+    "cpack-year-6-lab04-ex04-stu_204-sub_005": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_204-sub_009": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_205-sub_007": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_206-sub_019": "eligible",
+    "cpack-year-6-lab04-ex04-stu_206-sub_020": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_207-sub_014": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_209-sub_019": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_211-sub_009": "eligible",
+    "cpack-year-6-lab04-ex04-stu_212-sub_024": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_213-sub_007": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_214-sub_026": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_214-sub_027": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_215-sub_028": "parse_error",
+    "cpack-year-6-lab04-ex04-stu_218-sub_008": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_219-sub_006": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_220-sub_015": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_220-sub_016": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_223-sub_018": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_225-sub_004": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_226-sub_019": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_229-sub_002": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_229-sub_008": "eligible",
+    "cpack-year-6-lab04-ex04-stu_229-sub_009": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_229-sub_010": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_230-sub_007": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_231-sub_017": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_232-sub_020": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_233-sub_001": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_234-sub_014": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_234-sub_015": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_235-sub_034": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_236-sub_026": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_237-sub_023": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_238-sub_026": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_239-sub_005": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_240-sub_022": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_241-sub_026": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_242-sub_009": "parse_error",
+    "cpack-year-6-lab04-ex04-stu_244-sub_007": "incomplete",
+    "cpack-year-6-lab04-ex04-stu_244-sub_008": "no_failure",
+    "cpack-year-6-lab04-ex04-stu_246-sub_003": "incomplete"
+  },
+  "route_counts": {
+    "no_failure": 137,
+    "eligible": 62,
+    "execution_error": 14,
+    "parse_error": 24,
+    "incomplete": 86
+  },
+  "n_eligible": 62,
+  "identity": {
+    "missing_student_ids": 0,
+    "split_guarantee": "known_student_and_exact_source_disjoint"
+  },
+  "warnings": [
+    "Clusters and surrogate rules are behavioral hypotheses requiring instructor validation.",
+    "Exact source grouping does not detect renamed or otherwise near-duplicate code.",
+    "AST presence indicators are syntactic evidence, not semantic fault detectors."
+  ],
+  "split": {
+    "train_ids": [
+      "cpack-year-1-lab04-ex04-stu_009-sub_057",
+      "cpack-year-1-lab04-ex04-stu_023-sub_053",
+      "cpack-year-1-lab04-ex04-stu_025-sub_037",
+      "cpack-year-2-lab04-ex04-stu_049-sub_026",
+      "cpack-year-3-lab04-ex04-stu_065-sub_042",
+      "cpack-year-3-lab04-ex04-stu_065-sub_043",
+      "cpack-year-3-lab04-ex04-stu_065-sub_044",
+      "cpack-year-3-lab04-ex04-stu_067-sub_019",
+      "cpack-year-3-lab04-ex04-stu_067-sub_020",
+      "cpack-year-3-lab04-ex04-stu_068-sub_017",
+      "cpack-year-3-lab04-ex04-stu_070-sub_018",
+      "cpack-year-3-lab04-ex04-stu_070-sub_019",
+      "cpack-year-3-lab04-ex04-stu_070-sub_020",
+      "cpack-year-3-lab04-ex04-stu_077-sub_047",
+      "cpack-year-3-lab04-ex04-stu_078-sub_034",
+      "cpack-year-3-lab04-ex04-stu_084-sub_050",
+      "cpack-year-3-lab04-ex04-stu_084-sub_051",
+      "cpack-year-3-lab04-ex04-stu_084-sub_053",
+      "cpack-year-3-lab04-ex04-stu_084-sub_054",
+      "cpack-year-3-lab04-ex04-stu_084-sub_055",
+      "cpack-year-3-lab04-ex04-stu_084-sub_056",
+      "cpack-year-3-lab04-ex04-stu_084-sub_057",
+      "cpack-year-3-lab04-ex04-stu_084-sub_058",
+      "cpack-year-3-lab04-ex04-stu_092-sub_071",
+      "cpack-year-3-lab04-ex04-stu_092-sub_072",
+      "cpack-year-3-lab04-ex04-stu_092-sub_073",
+      "cpack-year-3-lab04-ex04-stu_092-sub_074",
+      "cpack-year-3-lab04-ex04-stu_093-sub_032",
+      "cpack-year-3-lab04-ex04-stu_094-sub_069",
+      "cpack-year-3-lab04-ex04-stu_095-sub_044",
+      "cpack-year-3-lab04-ex04-stu_098-sub_044",
+      "cpack-year-3-lab04-ex04-stu_098-sub_045",
+      "cpack-year-3-lab04-ex04-stu_100-sub_065",
+      "cpack-year-3-lab04-ex04-stu_100-sub_068",
+      "cpack-year-3-lab04-ex04-stu_102-sub_008",
+      "cpack-year-4-lab04-ex04-stu_121-sub_001",
+      "cpack-year-4-lab04-ex04-stu_132-sub_025",
+      "cpack-year-4-lab04-ex04-stu_132-sub_026",
+      "cpack-year-4-lab04-ex04-stu_132-sub_028",
+      "cpack-year-4-lab04-ex04-stu_132-sub_029",
+      "cpack-year-4-lab04-ex04-stu_132-sub_030",
+      "cpack-year-4-lab04-ex04-stu_132-sub_031",
+      "cpack-year-4-lab04-ex04-stu_132-sub_032",
+      "cpack-year-4-lab04-ex04-stu_132-sub_033",
+      "cpack-year-4-lab04-ex04-stu_134-sub_027",
+      "cpack-year-5-lab04-ex04-stu_176-sub_021",
+      "cpack-year-5-lab04-ex04-stu_186-sub_003",
+      "cpack-year-5-lab04-ex04-stu_192-sub_168",
+      "cpack-year-6-lab04-ex04-stu_211-sub_009",
+      "cpack-year-6-lab04-ex04-stu_229-sub_008"
+    ],
+    "holdout_ids": [
+      "cpack-year-1-lab04-ex04-stu_028-sub_016",
+      "cpack-year-3-lab04-ex04-stu_063-sub_027",
+      "cpack-year-3-lab04-ex04-stu_081-sub_056",
+      "cpack-year-3-lab04-ex04-stu_088-sub_039",
+      "cpack-year-3-lab04-ex04-stu_088-sub_041",
+      "cpack-year-5-lab04-ex04-stu_200-sub_020"
+    ],
+    "train_groups": 26,
+    "holdout_groups": 5,
+    "policy": "corpus_lock",
+    "evaluation_partition": "validation"
+  },
+  "n_clusters": 3,
+  "features": [
+    {
+      "name": "ast:c_for",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_while",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_if",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_inclusive_comparison",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_strict_comparison",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_subscript",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_zero_index",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_one_index",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_array_parameter",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_address_of",
+      "weight": 0.09090909090909091
+    },
+    {
+      "name": "ast:c_update",
+      "weight": 0.09090909090909091
+    }
+  ],
+  "oav": {
+    "cpack-year-1-lab04-ex04-stu_009-sub_057": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-1-lab04-ex04-stu_023-sub_053": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-1-lab04-ex04-stu_025-sub_037": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-2-lab04-ex04-stu_049-sub_026": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_065-sub_042": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_065-sub_043": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_065-sub_044": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_067-sub_019": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_067-sub_020": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_068-sub_017": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_070-sub_018": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_070-sub_019": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_070-sub_020": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_077-sub_047": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_078-sub_034": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_084-sub_050": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_084-sub_051": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_084-sub_053": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_084-sub_054": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_084-sub_055": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_084-sub_056": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_084-sub_057": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_084-sub_058": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_092-sub_071": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_092-sub_072": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_092-sub_073": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_092-sub_074": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_093-sub_032": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_094-sub_069": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_095-sub_044": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_098-sub_044": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_098-sub_045": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "1",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_100-sub_065": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_100-sub_068": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_102-sub_008": {
+      "ast:c_for": "1",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_121-sub_001": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_132-sub_025": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_132-sub_026": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_132-sub_028": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_132-sub_029": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_132-sub_030": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_132-sub_031": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_132-sub_032": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_132-sub_033": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-4-lab04-ex04-stu_134-sub_027": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "1",
+      "ast:c_one_index": "1",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "1",
+      "ast:c_update": "1"
+    },
+    "cpack-year-5-lab04-ex04-stu_176-sub_021": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-5-lab04-ex04-stu_186-sub_003": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-5-lab04-ex04-stu_192-sub_168": {
+      "ast:c_for": "0",
+      "ast:c_while": "0",
+      "ast:c_if": "0",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "0",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "0"
+    },
+    "cpack-year-6-lab04-ex04-stu_211-sub_009": {
+      "ast:c_for": "1",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-6-lab04-ex04-stu_229-sub_008": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-1-lab04-ex04-stu_028-sub_016": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_063-sub_027": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_081-sub_056": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_088-sub_039": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-3-lab04-ex04-stu_088-sub_041": {
+      "ast:c_for": "1",
+      "ast:c_while": "0",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "0",
+      "ast:c_strict_comparison": "1",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "0",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "1",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    },
+    "cpack-year-5-lab04-ex04-stu_200-sub_020": {
+      "ast:c_for": "0",
+      "ast:c_while": "1",
+      "ast:c_if": "1",
+      "ast:c_inclusive_comparison": "1",
+      "ast:c_strict_comparison": "0",
+      "ast:c_subscript": "1",
+      "ast:c_zero_index": "1",
+      "ast:c_one_index": "0",
+      "ast:c_array_parameter": "0",
+      "ast:c_address_of": "0",
+      "ast:c_update": "1"
+    }
+  },
+  "train_assignments": {
+    "cpack-year-1-lab04-ex04-stu_009-sub_057": 1,
+    "cpack-year-1-lab04-ex04-stu_023-sub_053": 1,
+    "cpack-year-1-lab04-ex04-stu_025-sub_037": 0,
+    "cpack-year-2-lab04-ex04-stu_049-sub_026": 0,
+    "cpack-year-3-lab04-ex04-stu_065-sub_042": 1,
+    "cpack-year-3-lab04-ex04-stu_065-sub_043": 1,
+    "cpack-year-3-lab04-ex04-stu_065-sub_044": 1,
+    "cpack-year-3-lab04-ex04-stu_067-sub_019": 0,
+    "cpack-year-3-lab04-ex04-stu_067-sub_020": 0,
+    "cpack-year-3-lab04-ex04-stu_068-sub_017": 1,
+    "cpack-year-3-lab04-ex04-stu_070-sub_018": 1,
+    "cpack-year-3-lab04-ex04-stu_070-sub_019": 1,
+    "cpack-year-3-lab04-ex04-stu_070-sub_020": 1,
+    "cpack-year-3-lab04-ex04-stu_077-sub_047": 1,
+    "cpack-year-3-lab04-ex04-stu_078-sub_034": 1,
+    "cpack-year-3-lab04-ex04-stu_084-sub_050": 0,
+    "cpack-year-3-lab04-ex04-stu_084-sub_051": 0,
+    "cpack-year-3-lab04-ex04-stu_084-sub_053": 0,
+    "cpack-year-3-lab04-ex04-stu_084-sub_054": 0,
+    "cpack-year-3-lab04-ex04-stu_084-sub_055": 0,
+    "cpack-year-3-lab04-ex04-stu_084-sub_056": 0,
+    "cpack-year-3-lab04-ex04-stu_084-sub_057": 0,
+    "cpack-year-3-lab04-ex04-stu_084-sub_058": 0,
+    "cpack-year-3-lab04-ex04-stu_092-sub_071": 1,
+    "cpack-year-3-lab04-ex04-stu_092-sub_072": 1,
+    "cpack-year-3-lab04-ex04-stu_092-sub_073": 1,
+    "cpack-year-3-lab04-ex04-stu_092-sub_074": 1,
+    "cpack-year-3-lab04-ex04-stu_093-sub_032": 0,
+    "cpack-year-3-lab04-ex04-stu_094-sub_069": 1,
+    "cpack-year-3-lab04-ex04-stu_095-sub_044": 1,
+    "cpack-year-3-lab04-ex04-stu_098-sub_044": 0,
+    "cpack-year-3-lab04-ex04-stu_098-sub_045": 0,
+    "cpack-year-3-lab04-ex04-stu_100-sub_065": 1,
+    "cpack-year-3-lab04-ex04-stu_100-sub_068": 1,
+    "cpack-year-3-lab04-ex04-stu_102-sub_008": 0,
+    "cpack-year-4-lab04-ex04-stu_121-sub_001": 0,
+    "cpack-year-4-lab04-ex04-stu_132-sub_025": 0,
+    "cpack-year-4-lab04-ex04-stu_132-sub_026": 0,
+    "cpack-year-4-lab04-ex04-stu_132-sub_028": 0,
+    "cpack-year-4-lab04-ex04-stu_132-sub_029": 0,
+    "cpack-year-4-lab04-ex04-stu_132-sub_030": 0,
+    "cpack-year-4-lab04-ex04-stu_132-sub_031": 0,
+    "cpack-year-4-lab04-ex04-stu_132-sub_032": 0,
+    "cpack-year-4-lab04-ex04-stu_132-sub_033": 0,
+    "cpack-year-4-lab04-ex04-stu_134-sub_027": 0,
+    "cpack-year-5-lab04-ex04-stu_176-sub_021": 0,
+    "cpack-year-5-lab04-ex04-stu_186-sub_003": 0,
+    "cpack-year-5-lab04-ex04-stu_192-sub_168": 2,
+    "cpack-year-6-lab04-ex04-stu_211-sub_009": 0,
+    "cpack-year-6-lab04-ex04-stu_229-sub_008": 1
+  },
+  "holdout_assignments": {
+    "cpack-year-1-lab04-ex04-stu_028-sub_016": 0,
+    "cpack-year-3-lab04-ex04-stu_063-sub_027": 0,
+    "cpack-year-3-lab04-ex04-stu_081-sub_056": 1,
+    "cpack-year-3-lab04-ex04-stu_088-sub_039": 1,
+    "cpack-year-3-lab04-ex04-stu_088-sub_041": 1,
+    "cpack-year-5-lab04-ex04-stu_200-sub_020": 0
+  },
+  "medoids": {
+    "0": "cpack-year-1-lab04-ex04-stu_025-sub_037",
+    "1": "cpack-year-1-lab04-ex04-stu_009-sub_057",
+    "2": "cpack-year-5-lab04-ex04-stu_192-sub_168"
+  },
+  "silhouette_train": 0.7662996762701353,
+  "holdout_distance_to_medoid": {
+    "cpack-year-1-lab04-ex04-stu_028-sub_016": 0.0,
+    "cpack-year-3-lab04-ex04-stu_063-sub_027": 0.0,
+    "cpack-year-3-lab04-ex04-stu_081-sub_056": 0.0,
+    "cpack-year-3-lab04-ex04-stu_088-sub_039": 0.0,
+    "cpack-year-3-lab04-ex04-stu_088-sub_041": 0.0,
+    "cpack-year-5-lab04-ex04-stu_200-sub_020": 0.4545454545454546
+  },
+  "holdout_assignment_ties": 0,
+  "assignment_policy": "nearest_training_medoid_weighted_hamming; ties select lowest cluster id",
+  "explanation": {
+    "target": "cluster_id_only_not_validated_misconception",
+    "train_fidelity": 0.98,
+    "holdout_fidelity": 1.0,
+    "holdout_majority_baseline_fidelity": 0.5,
+    "train_leaf_ids": [
+      4,
+      4,
+      2,
+      2,
+      4,
+      4,
+      4,
+      2,
+      2,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      4,
+      4,
+      4,
+      4,
+      3,
+      4,
+      4,
+      2,
+      2,
+      4,
+      4,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      2,
+      4
+    ],
+    "holdout_leaf_ids": [
+      2,
+      2,
+      4,
+      4,
+      4,
+      3
+    ],
+    "rules": [
+      {
+        "rule_id": 2,
+        "if": [
+          "NOT (ast:c_array_parameter=1)",
+          "NOT (ast:c_strict_comparison=0)"
+        ],
+        "then_cluster": 0,
+        "train_support": 28,
+        "train_precision": 1.0,
+        "holdout_support": 2,
+        "holdout_precision": 1.0
+      },
+      {
+        "rule_id": 3,
+        "if": [
+          "NOT (ast:c_array_parameter=1)",
+          "ast:c_strict_comparison=0"
+        ],
+        "then_cluster": 0,
+        "train_support": 2,
+        "train_precision": 0.5,
+        "holdout_support": 1,
+        "holdout_precision": 1.0
+      },
+      {
+        "rule_id": 4,
+        "if": [
+          "ast:c_array_parameter=1"
+        ],
+        "then_cluster": 1,
+        "train_support": 20,
+        "train_precision": 1.0,
+        "holdout_support": 3,
+        "holdout_precision": 1.0
+      }
+    ]
+  },
+  "ari_vs_exact_signature_train": 0.03269317838816782,
+  "elapsed_seconds": 0.2360878000035882,
+  "provenance": {
+    "dataset": {
+      "schema_version": 2,
+      "dataset_name": "C-Pack-IPAs-26",
+      "provenance": "https://github.com/pmorvalho/C-Pack-IPAs",
+      "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+      "problem_id": "lab04-ex04",
+      "language": "c",
+      "suite_version": "cpack-fd8449e3114a29f73a7037ae1004741728f31ecabc3b5f8879a11ce3a04e543e",
+      "test_ids": [
+        "ex04_0",
+        "ex04_1",
+        "ex04_2",
+        "ex04_3",
+        "ex04_4"
+      ],
+      "suite_sha256": "fd8449e3114a29f73a7037ae1004741728f31ecabc3b5f8879a11ce3a04e543e",
+      "execution": "historical_logs_only"
+    },
+    "input_sha256": "df78736d8f5ab3bf9d1fabb321a48042f715991d37be18676a25889b9847aa19",
+    "manifest_sha256": "48a0bc608221f7ec47b6b70d0f51f0ecefb7a6857fa188eb8e94dde054efc703",
+    "python": "3.12.3",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "scikit-learn": "1.9.1",
+      "tree-sitter": "0.26.0",
+      "tree-sitter-c": "0.24.2"
+    },
+    "interpretation": "Clusters are observable error patterns, not verified misconceptions.",
+    "evidence_sha256": "4d3d71b7de84eb6e0ef8ca92460ae4729d1d8fb86c7ea08d18fa9925e921978d"
+  },
+  "run_manifest": "run_manifest.json",
+  "teaching": {
+    "version": "teaching-rules-v2",
+    "style_version": "vi-rule-v1",
+    "origin": "hand_authored_evidence_rules_not_learned_labels",
+    "human_validated": false,
+    "findings": [
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-1-lab04-ex04-stu_028-sub_016",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 22,
+            "line_end": 22,
+            "code": "\"no\""
+          },
+          {
+            "line_start": 24,
+            "line_end": 24,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_0",
+            "input": "adeus",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex04_1",
+            "input": "abccba",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex04_2",
+            "input": "abdddba",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex04_3",
+            "input": "",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex04_4",
+            "input": "was-saw",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "holdout"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab04-ex04-stu_084-sub_050",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 20,
+            "line_end": 20,
+            "code": "\"no\""
+          },
+          {
+            "line_start": 31,
+            "line_end": 31,
+            "code": "\"no\""
+          },
+          {
+            "line_start": 38,
+            "line_end": 38,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_0",
+            "input": "adeus",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex04_2",
+            "input": "abdddba",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex04_4",
+            "input": "was-saw",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab04-ex04-stu_084-sub_053",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 20,
+            "line_end": 20,
+            "code": "\"no\""
+          },
+          {
+            "line_start": 31,
+            "line_end": 31,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_0",
+            "input": "adeus",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab04-ex04-stu_084-sub_054",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 20,
+            "line_end": 20,
+            "code": "\"no\""
+          },
+          {
+            "line_start": 31,
+            "line_end": 31,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_0",
+            "input": "adeus",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab04-ex04-stu_084-sub_055",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 20,
+            "line_end": 20,
+            "code": "\"no\""
+          },
+          {
+            "line_start": 31,
+            "line_end": 31,
+            "code": "\"no\\n\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_0",
+            "input": "adeus",
+            "expected": "no\n",
+            "output": "no"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab04-ex04-stu_098-sub_044",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 27,
+            "line_end": 27,
+            "code": "\"yes\\n\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_3",
+            "input": "",
+            "expected": "yes\n",
+            "output": "\nyes\n"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab04-ex04-stu_098-sub_045",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 28,
+            "line_end": 28,
+            "code": "\"yes\\n\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_3",
+            "input": "",
+            "expected": "yes\n",
+            "output": "\nyes\n"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-3-lab04-ex04-stu_100-sub_065",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 25,
+            "line_end": 25,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 25,
+            "line_end": 25,
+            "code": "\"no\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_0",
+            "input": "adeus",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex04_1",
+            "input": "abccba",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex04_2",
+            "input": "abdddba",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex04_4",
+            "input": "was-saw",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 1,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab04-ex04-stu_121-sub_001",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 13,
+            "line_end": 13,
+            "code": "\"no\""
+          },
+          {
+            "line_start": 15,
+            "line_end": 15,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_0",
+            "input": "adeus",
+            "expected": "no\n",
+            "output": "no"
+          },
+          {
+            "test_id": "ex04_1",
+            "input": "abccba",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex04_2",
+            "input": "abdddba",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex04_3",
+            "input": "",
+            "expected": "yes\n",
+            "output": "yes"
+          },
+          {
+            "test_id": "ex04_4",
+            "input": "was-saw",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab04-ex04-stu_132-sub_028",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 22,
+            "line_end": 22,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_4",
+            "input": "was-saw",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab04-ex04-stu_132-sub_030",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 22,
+            "line_end": 22,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_4",
+            "input": "was-saw",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "cpack-year-4-lab04-ex04-stu_132-sub_033",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 11,
+            "line_end": 11,
+            "code": "\"yes\""
+          },
+          {
+            "line_start": 21,
+            "line_end": 21,
+            "code": "\"yes\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "ex04_3",
+            "input": "",
+            "expected": "yes\n",
+            "output": "yes"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.",
+        "cluster": 0,
+        "split": "train"
+      }
+    ],
+    "summaries": [
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "n_submissions": 12,
+        "by_split": {
+          "holdout": 1,
+          "train": 11
+        },
+        "by_cluster": {
+          "0": 11,
+          "1": 1
+        }
+      }
+    ],
+    "cluster_rules": [
+      {
+        "rule_id": 2,
+        "if": [
+          "NOT (ast:c_array_parameter=1)",
+          "NOT (ast:c_strict_comparison=0)"
+        ],
+        "then_cluster": 0,
+        "train_support": 28,
+        "train_precision": 1.0,
+        "holdout_support": 2,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "không thỏa điều kiện: [mã có tham số mảng]",
+          "không thỏa điều kiện: [không ghi nhận trong mã: phép so sánh < hoặc >]"
+        ]
+      },
+      {
+        "rule_id": 3,
+        "if": [
+          "NOT (ast:c_array_parameter=1)",
+          "ast:c_strict_comparison=0"
+        ],
+        "then_cluster": 0,
+        "train_support": 2,
+        "train_precision": 0.5,
+        "holdout_support": 1,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "không thỏa điều kiện: [mã có tham số mảng]",
+          "không ghi nhận trong mã: phép so sánh < hoặc >"
+        ]
+      },
+      {
+        "rule_id": 4,
+        "if": [
+          "ast:c_array_parameter=1"
+        ],
+        "then_cluster": 1,
+        "train_support": 20,
+        "train_precision": 1.0,
+        "holdout_support": 3,
+        "holdout_precision": 1.0,
+        "if_vi": [
+          "mã có tham số mảng"
+        ]
+      }
+    ],
+    "n_analyzed": 285,
+    "n_with_logs": 63,
+    "n_matched": 12,
+    "unmatched_ids": [
+      "cpack-year-1-lab04-ex04-stu_002-sub_027",
+      "cpack-year-1-lab04-ex04-stu_005-sub_029",
+      "cpack-year-1-lab04-ex04-stu_006-sub_022",
+      "cpack-year-1-lab04-ex04-stu_008-sub_023",
+      "cpack-year-1-lab04-ex04-stu_009-sub_057",
+      "cpack-year-1-lab04-ex04-stu_010-sub_024",
+      "cpack-year-1-lab04-ex04-stu_016-sub_046",
+      "cpack-year-1-lab04-ex04-stu_017-sub_043",
+      "cpack-year-1-lab04-ex04-stu_018-sub_024",
+      "cpack-year-1-lab04-ex04-stu_019-sub_029",
+      "cpack-year-1-lab04-ex04-stu_020-sub_022",
+      "cpack-year-1-lab04-ex04-stu_021-sub_041",
+      "cpack-year-1-lab04-ex04-stu_022-sub_032",
+      "cpack-year-1-lab04-ex04-stu_023-sub_053",
+      "cpack-year-1-lab04-ex04-stu_025-sub_036",
+      "cpack-year-1-lab04-ex04-stu_025-sub_037",
+      "cpack-year-1-lab04-ex04-stu_026-sub_020",
+      "cpack-year-1-lab04-ex04-stu_028-sub_015",
+      "cpack-year-1-lab04-ex04-stu_030-sub_008",
+      "cpack-year-1-lab04-ex04-stu_031-sub_006",
+      "cpack-year-1-lab04-ex04-stu_033-sub_004",
+      "cpack-year-2-lab04-ex04-stu_035-sub_041",
+      "cpack-year-2-lab04-ex04-stu_046-sub_041",
+      "cpack-year-2-lab04-ex04-stu_047-sub_017",
+      "cpack-year-2-lab04-ex04-stu_049-sub_025",
+      "cpack-year-2-lab04-ex04-stu_049-sub_026",
+      "cpack-year-2-lab04-ex04-stu_059-sub_014",
+      "cpack-year-2-lab04-ex04-stu_059-sub_015",
+      "cpack-year-2-lab04-ex04-stu_059-sub_016",
+      "cpack-year-2-lab04-ex04-stu_061-sub_004",
+      "cpack-year-3-lab04-ex04-stu_062-sub_032",
+      "cpack-year-3-lab04-ex04-stu_063-sub_027",
+      "cpack-year-3-lab04-ex04-stu_063-sub_028",
+      "cpack-year-3-lab04-ex04-stu_064-sub_059",
+      "cpack-year-3-lab04-ex04-stu_064-sub_060",
+      "cpack-year-3-lab04-ex04-stu_064-sub_061",
+      "cpack-year-3-lab04-ex04-stu_064-sub_062",
+      "cpack-year-3-lab04-ex04-stu_064-sub_063",
+      "cpack-year-3-lab04-ex04-stu_064-sub_064",
+      "cpack-year-3-lab04-ex04-stu_064-sub_065",
+      "cpack-year-3-lab04-ex04-stu_064-sub_066",
+      "cpack-year-3-lab04-ex04-stu_064-sub_067",
+      "cpack-year-3-lab04-ex04-stu_065-sub_042",
+      "cpack-year-3-lab04-ex04-stu_065-sub_043",
+      "cpack-year-3-lab04-ex04-stu_065-sub_044",
+      "cpack-year-3-lab04-ex04-stu_066-sub_024",
+      "cpack-year-3-lab04-ex04-stu_066-sub_025",
+      "cpack-year-3-lab04-ex04-stu_067-sub_019",
+      "cpack-year-3-lab04-ex04-stu_067-sub_020",
+      "cpack-year-3-lab04-ex04-stu_068-sub_017",
+      "cpack-year-3-lab04-ex04-stu_070-sub_018",
+      "cpack-year-3-lab04-ex04-stu_070-sub_019",
+      "cpack-year-3-lab04-ex04-stu_070-sub_020",
+      "cpack-year-3-lab04-ex04-stu_070-sub_021",
+      "cpack-year-3-lab04-ex04-stu_070-sub_022",
+      "cpack-year-3-lab04-ex04-stu_073-sub_038",
+      "cpack-year-3-lab04-ex04-stu_075-sub_040",
+      "cpack-year-3-lab04-ex04-stu_076-sub_080",
+      "cpack-year-3-lab04-ex04-stu_076-sub_081",
+      "cpack-year-3-lab04-ex04-stu_076-sub_082",
+      "cpack-year-3-lab04-ex04-stu_076-sub_083",
+      "cpack-year-3-lab04-ex04-stu_076-sub_084",
+      "cpack-year-3-lab04-ex04-stu_077-sub_045",
+      "cpack-year-3-lab04-ex04-stu_077-sub_046",
+      "cpack-year-3-lab04-ex04-stu_077-sub_047",
+      "cpack-year-3-lab04-ex04-stu_078-sub_034",
+      "cpack-year-3-lab04-ex04-stu_079-sub_001",
+      "cpack-year-3-lab04-ex04-stu_080-sub_086",
+      "cpack-year-3-lab04-ex04-stu_080-sub_087",
+      "cpack-year-3-lab04-ex04-stu_080-sub_088",
+      "cpack-year-3-lab04-ex04-stu_080-sub_089",
+      "cpack-year-3-lab04-ex04-stu_081-sub_056",
+      "cpack-year-3-lab04-ex04-stu_082-sub_023",
+      "cpack-year-3-lab04-ex04-stu_082-sub_024",
+      "cpack-year-3-lab04-ex04-stu_082-sub_025",
+      "cpack-year-3-lab04-ex04-stu_083-sub_061",
+      "cpack-year-3-lab04-ex04-stu_083-sub_062",
+      "cpack-year-3-lab04-ex04-stu_083-sub_063",
+      "cpack-year-3-lab04-ex04-stu_084-sub_048",
+      "cpack-year-3-lab04-ex04-stu_084-sub_049",
+      "cpack-year-3-lab04-ex04-stu_084-sub_051",
+      "cpack-year-3-lab04-ex04-stu_084-sub_052",
+      "cpack-year-3-lab04-ex04-stu_084-sub_056",
+      "cpack-year-3-lab04-ex04-stu_084-sub_057",
+      "cpack-year-3-lab04-ex04-stu_084-sub_058",
+      "cpack-year-3-lab04-ex04-stu_088-sub_038",
+      "cpack-year-3-lab04-ex04-stu_088-sub_039",
+      "cpack-year-3-lab04-ex04-stu_088-sub_040",
+      "cpack-year-3-lab04-ex04-stu_088-sub_041",
+      "cpack-year-3-lab04-ex04-stu_090-sub_044",
+      "cpack-year-3-lab04-ex04-stu_091-sub_079",
+      "cpack-year-3-lab04-ex04-stu_092-sub_071",
+      "cpack-year-3-lab04-ex04-stu_092-sub_072",
+      "cpack-year-3-lab04-ex04-stu_092-sub_073",
+      "cpack-year-3-lab04-ex04-stu_092-sub_074",
+      "cpack-year-3-lab04-ex04-stu_093-sub_031",
+      "cpack-year-3-lab04-ex04-stu_093-sub_032",
+      "cpack-year-3-lab04-ex04-stu_094-sub_056",
+      "cpack-year-3-lab04-ex04-stu_094-sub_068",
+      "cpack-year-3-lab04-ex04-stu_094-sub_069",
+      "cpack-year-3-lab04-ex04-stu_095-sub_044",
+      "cpack-year-3-lab04-ex04-stu_096-sub_025",
+      "cpack-year-3-lab04-ex04-stu_097-sub_039",
+      "cpack-year-3-lab04-ex04-stu_098-sub_038",
+      "cpack-year-3-lab04-ex04-stu_098-sub_039",
+      "cpack-year-3-lab04-ex04-stu_098-sub_040",
+      "cpack-year-3-lab04-ex04-stu_098-sub_041",
+      "cpack-year-3-lab04-ex04-stu_098-sub_042",
+      "cpack-year-3-lab04-ex04-stu_098-sub_043",
+      "cpack-year-3-lab04-ex04-stu_099-sub_055",
+      "cpack-year-3-lab04-ex04-stu_099-sub_056",
+      "cpack-year-3-lab04-ex04-stu_099-sub_057",
+      "cpack-year-3-lab04-ex04-stu_099-sub_058",
+      "cpack-year-3-lab04-ex04-stu_099-sub_059",
+      "cpack-year-3-lab04-ex04-stu_100-sub_064",
+      "cpack-year-3-lab04-ex04-stu_100-sub_066",
+      "cpack-year-3-lab04-ex04-stu_100-sub_067",
+      "cpack-year-3-lab04-ex04-stu_100-sub_068",
+      "cpack-year-3-lab04-ex04-stu_100-sub_069",
+      "cpack-year-3-lab04-ex04-stu_100-sub_070",
+      "cpack-year-3-lab04-ex04-stu_100-sub_071",
+      "cpack-year-3-lab04-ex04-stu_101-sub_061",
+      "cpack-year-3-lab04-ex04-stu_101-sub_062",
+      "cpack-year-3-lab04-ex04-stu_101-sub_063",
+      "cpack-year-3-lab04-ex04-stu_101-sub_064",
+      "cpack-year-3-lab04-ex04-stu_101-sub_065",
+      "cpack-year-3-lab04-ex04-stu_102-sub_008",
+      "cpack-year-4-lab04-ex04-stu_080-sub_124",
+      "cpack-year-4-lab04-ex04-stu_103-sub_025",
+      "cpack-year-4-lab04-ex04-stu_106-sub_025",
+      "cpack-year-4-lab04-ex04-stu_106-sub_034",
+      "cpack-year-4-lab04-ex04-stu_107-sub_033",
+      "cpack-year-4-lab04-ex04-stu_112-sub_036",
+      "cpack-year-4-lab04-ex04-stu_112-sub_037",
+      "cpack-year-4-lab04-ex04-stu_112-sub_038",
+      "cpack-year-4-lab04-ex04-stu_114-sub_021",
+      "cpack-year-4-lab04-ex04-stu_114-sub_038",
+      "cpack-year-4-lab04-ex04-stu_114-sub_040",
+      "cpack-year-4-lab04-ex04-stu_114-sub_041",
+      "cpack-year-4-lab04-ex04-stu_115-sub_018",
+      "cpack-year-4-lab04-ex04-stu_116-sub_025",
+      "cpack-year-4-lab04-ex04-stu_117-sub_024",
+      "cpack-year-4-lab04-ex04-stu_117-sub_025",
+      "cpack-year-4-lab04-ex04-stu_118-sub_026",
+      "cpack-year-4-lab04-ex04-stu_118-sub_027",
+      "cpack-year-4-lab04-ex04-stu_122-sub_004",
+      "cpack-year-4-lab04-ex04-stu_123-sub_013",
+      "cpack-year-4-lab04-ex04-stu_126-sub_016",
+      "cpack-year-4-lab04-ex04-stu_126-sub_017",
+      "cpack-year-4-lab04-ex04-stu_128-sub_030",
+      "cpack-year-4-lab04-ex04-stu_129-sub_029",
+      "cpack-year-4-lab04-ex04-stu_130-sub_016",
+      "cpack-year-4-lab04-ex04-stu_131-sub_041",
+      "cpack-year-4-lab04-ex04-stu_132-sub_025",
+      "cpack-year-4-lab04-ex04-stu_132-sub_026",
+      "cpack-year-4-lab04-ex04-stu_132-sub_027",
+      "cpack-year-4-lab04-ex04-stu_132-sub_029",
+      "cpack-year-4-lab04-ex04-stu_132-sub_031",
+      "cpack-year-4-lab04-ex04-stu_132-sub_032",
+      "cpack-year-4-lab04-ex04-stu_134-sub_026",
+      "cpack-year-4-lab04-ex04-stu_134-sub_027",
+      "cpack-year-4-lab04-ex04-stu_135-sub_038",
+      "cpack-year-4-lab04-ex04-stu_135-sub_039",
+      "cpack-year-4-lab04-ex04-stu_136-sub_033",
+      "cpack-year-4-lab04-ex04-stu_138-sub_036",
+      "cpack-year-4-lab04-ex04-stu_138-sub_037",
+      "cpack-year-4-lab04-ex04-stu_139-sub_003",
+      "cpack-year-4-lab04-ex04-stu_142-sub_027",
+      "cpack-year-4-lab04-ex04-stu_142-sub_028",
+      "cpack-year-4-lab04-ex04-stu_143-sub_013",
+      "cpack-year-4-lab04-ex04-stu_143-sub_018",
+      "cpack-year-4-lab04-ex04-stu_143-sub_019",
+      "cpack-year-4-lab04-ex04-stu_145-sub_028",
+      "cpack-year-4-lab04-ex04-stu_146-sub_021",
+      "cpack-year-4-lab04-ex04-stu_148-sub_049",
+      "cpack-year-4-lab04-ex04-stu_149-sub_033",
+      "cpack-year-4-lab04-ex04-stu_152-sub_028",
+      "cpack-year-4-lab04-ex04-stu_154-sub_024",
+      "cpack-year-4-lab04-ex04-stu_154-sub_037",
+      "cpack-year-4-lab04-ex04-stu_154-sub_038",
+      "cpack-year-4-lab04-ex04-stu_155-sub_023",
+      "cpack-year-4-lab04-ex04-stu_156-sub_023",
+      "cpack-year-4-lab04-ex04-stu_157-sub_025",
+      "cpack-year-4-lab04-ex04-stu_158-sub_001",
+      "cpack-year-4-lab04-ex04-stu_158-sub_002",
+      "cpack-year-4-lab04-ex04-stu_160-sub_007",
+      "cpack-year-4-lab04-ex04-stu_163-sub_008",
+      "cpack-year-5-lab04-ex04-stu_080-sub_131",
+      "cpack-year-5-lab04-ex04-stu_107-sub_056",
+      "cpack-year-5-lab04-ex04-stu_123-sub_038",
+      "cpack-year-5-lab04-ex04-stu_158-sub_017",
+      "cpack-year-5-lab04-ex04-stu_166-sub_024",
+      "cpack-year-5-lab04-ex04-stu_168-sub_025",
+      "cpack-year-5-lab04-ex04-stu_169-sub_029",
+      "cpack-year-5-lab04-ex04-stu_170-sub_010",
+      "cpack-year-5-lab04-ex04-stu_170-sub_011",
+      "cpack-year-5-lab04-ex04-stu_171-sub_031",
+      "cpack-year-5-lab04-ex04-stu_173-sub_044",
+      "cpack-year-5-lab04-ex04-stu_176-sub_020",
+      "cpack-year-5-lab04-ex04-stu_176-sub_021",
+      "cpack-year-5-lab04-ex04-stu_176-sub_022",
+      "cpack-year-5-lab04-ex04-stu_176-sub_023",
+      "cpack-year-5-lab04-ex04-stu_176-sub_024",
+      "cpack-year-5-lab04-ex04-stu_176-sub_025",
+      "cpack-year-5-lab04-ex04-stu_176-sub_026",
+      "cpack-year-5-lab04-ex04-stu_177-sub_028",
+      "cpack-year-5-lab04-ex04-stu_178-sub_036",
+      "cpack-year-5-lab04-ex04-stu_178-sub_037",
+      "cpack-year-5-lab04-ex04-stu_178-sub_038",
+      "cpack-year-5-lab04-ex04-stu_178-sub_039",
+      "cpack-year-5-lab04-ex04-stu_179-sub_028",
+      "cpack-year-5-lab04-ex04-stu_180-sub_021",
+      "cpack-year-5-lab04-ex04-stu_180-sub_035",
+      "cpack-year-5-lab04-ex04-stu_181-sub_026",
+      "cpack-year-5-lab04-ex04-stu_182-sub_035",
+      "cpack-year-5-lab04-ex04-stu_183-sub_029",
+      "cpack-year-5-lab04-ex04-stu_184-sub_007",
+      "cpack-year-5-lab04-ex04-stu_185-sub_049",
+      "cpack-year-5-lab04-ex04-stu_186-sub_003",
+      "cpack-year-5-lab04-ex04-stu_187-sub_025",
+      "cpack-year-5-lab04-ex04-stu_188-sub_034",
+      "cpack-year-5-lab04-ex04-stu_188-sub_035",
+      "cpack-year-5-lab04-ex04-stu_188-sub_037",
+      "cpack-year-5-lab04-ex04-stu_192-sub_168",
+      "cpack-year-5-lab04-ex04-stu_192-sub_170",
+      "cpack-year-5-lab04-ex04-stu_192-sub_171",
+      "cpack-year-5-lab04-ex04-stu_192-sub_172",
+      "cpack-year-5-lab04-ex04-stu_192-sub_173",
+      "cpack-year-5-lab04-ex04-stu_192-sub_174",
+      "cpack-year-5-lab04-ex04-stu_192-sub_175",
+      "cpack-year-5-lab04-ex04-stu_192-sub_176",
+      "cpack-year-5-lab04-ex04-stu_192-sub_177",
+      "cpack-year-5-lab04-ex04-stu_193-sub_026",
+      "cpack-year-5-lab04-ex04-stu_193-sub_027",
+      "cpack-year-5-lab04-ex04-stu_194-sub_009",
+      "cpack-year-5-lab04-ex04-stu_195-sub_015",
+      "cpack-year-5-lab04-ex04-stu_197-sub_040",
+      "cpack-year-5-lab04-ex04-stu_198-sub_019",
+      "cpack-year-5-lab04-ex04-stu_200-sub_020",
+      "cpack-year-5-lab04-ex04-stu_200-sub_021",
+      "cpack-year-6-lab04-ex04-stu_204-sub_005",
+      "cpack-year-6-lab04-ex04-stu_204-sub_009",
+      "cpack-year-6-lab04-ex04-stu_205-sub_007",
+      "cpack-year-6-lab04-ex04-stu_209-sub_019",
+      "cpack-year-6-lab04-ex04-stu_211-sub_009",
+      "cpack-year-6-lab04-ex04-stu_213-sub_007",
+      "cpack-year-6-lab04-ex04-stu_214-sub_026",
+      "cpack-year-6-lab04-ex04-stu_214-sub_027",
+      "cpack-year-6-lab04-ex04-stu_215-sub_028",
+      "cpack-year-6-lab04-ex04-stu_218-sub_008",
+      "cpack-year-6-lab04-ex04-stu_219-sub_006",
+      "cpack-year-6-lab04-ex04-stu_220-sub_015",
+      "cpack-year-6-lab04-ex04-stu_220-sub_016",
+      "cpack-year-6-lab04-ex04-stu_225-sub_004",
+      "cpack-year-6-lab04-ex04-stu_226-sub_019",
+      "cpack-year-6-lab04-ex04-stu_229-sub_002",
+      "cpack-year-6-lab04-ex04-stu_229-sub_008",
+      "cpack-year-6-lab04-ex04-stu_229-sub_009",
+      "cpack-year-6-lab04-ex04-stu_229-sub_010",
+      "cpack-year-6-lab04-ex04-stu_230-sub_007",
+      "cpack-year-6-lab04-ex04-stu_231-sub_017",
+      "cpack-year-6-lab04-ex04-stu_233-sub_001",
+      "cpack-year-6-lab04-ex04-stu_234-sub_014",
+      "cpack-year-6-lab04-ex04-stu_234-sub_015",
+      "cpack-year-6-lab04-ex04-stu_235-sub_034",
+      "cpack-year-6-lab04-ex04-stu_236-sub_026",
+      "cpack-year-6-lab04-ex04-stu_237-sub_023",
+      "cpack-year-6-lab04-ex04-stu_238-sub_026",
+      "cpack-year-6-lab04-ex04-stu_239-sub_005",
+      "cpack-year-6-lab04-ex04-stu_240-sub_022",
+      "cpack-year-6-lab04-ex04-stu_241-sub_026",
+      "cpack-year-6-lab04-ex04-stu_242-sub_009",
+      "cpack-year-6-lab04-ex04-stu_246-sub_003"
+    ],
+    "interpretation": "Số bài khớp điều kiện, không phải precision hay số sinh viên hiểu sai. Không có luật khớp không có nghĩa bài đúng. Không dùng làm nhãn đánh giá clustering."
+  }
+}
