@@ -49,7 +49,8 @@ def configuration(env_file=None):
         load_dotenv(env_file, override=False, interpolate=False, encoding="utf-8-sig")
     provider = os.environ.get("MISCONCEPTIONS_LLM_PROVIDER", "openai").lower()
     model = os.environ.get("MISCONCEPTIONS_LLM_MODEL", "").strip()
-    keys = {"openai": "OPENAI_API_KEY", "anthropic": "ANTHROPIC_API_KEY", "gemini": "GEMINI_API_KEY"}
+    keys = {"openai": "OPENAI_API_KEY", "anthropic": "ANTHROPIC_API_KEY",
+            "gemini": "GEMINI_API_KEY", "groq": "GROQ_API_KEY"}
     key_name = keys.get(provider, "OPENAI_API_KEY")
     return {"provider": provider, "model": model,
             "configured": provider in keys and bool(model and os.environ.get(key_name)),
@@ -59,14 +60,25 @@ def configuration(env_file=None):
 def request_label(payload, config):
     content = json.dumps(payload, ensure_ascii=False)
     headers = {"Content-Type": "application/json"}
-    if config["provider"] == "openai":
-        endpoint = "https://api.openai.com/v1/chat/completions"
-        headers["Authorization"] = "Bearer " + os.environ["OPENAI_API_KEY"]
+    if config["provider"] in {"openai", "groq"}:
+        groq = config["provider"] == "groq"
+        endpoint = ("https://api.groq.com/openai/v1/chat/completions" if groq
+                    else "https://api.openai.com/v1/chat/completions")
+        headers["Authorization"] = "Bearer " + os.environ["GROQ_API_KEY" if groq else "OPENAI_API_KEY"]
+        headers["User-Agent"] = "AAI-course-demo/1.0"
         body = {"model": config["model"], "store": False, "max_completion_tokens": 1200,
                 "messages": [{"role": "system", "content": SYSTEM_PROMPT},
                              {"role": "user", "content": content}],
                 "response_format": {"type": "json_schema", "json_schema": {
                     "name": "cluster_label", "strict": True, "schema": SCHEMA}}}
+        if groq:
+            body.pop("store")
+            # Reasoning tokens share the completion budget on GPT-OSS.
+            body["max_completion_tokens"] = 4096
+            if config["model"] not in {"openai/gpt-oss-20b", "openai/gpt-oss-120b",
+                                       "qwen/qwen3.8-27b"}:
+                body["response_format"] = {"type": "json_object"}
+                body["messages"][0]["content"] += "\nJSON schema: " + json.dumps(SCHEMA)
     elif config["provider"] == "anthropic":
         endpoint = "https://api.anthropic.com/v1/messages"
         headers.update({"x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01"})
@@ -92,7 +104,7 @@ def request_label(payload, config):
         if len(raw) > 1_000_000:
             raise ValueError("LLM trả nội dung vượt giới hạn.")
         result = json.loads(raw)
-        if config["provider"] == "openai":
+        if config["provider"] in {"openai", "groq"}:
             choice = result["choices"][0]
             if choice.get("finish_reason") != "stop" or choice["message"].get("refusal"):
                 raise ValueError("LLM từ chối hoặc chưa trả xong JSON.")
@@ -125,6 +137,8 @@ def request_label(payload, config):
             message = "LLM HTTP 429: bị giới hạn tốc độ hoặc hạn mức; kiểm tra tài khoản và thử lại sau."
         elif error.code == 401:
             message = "LLM HTTP 401: API key không hợp lệ hoặc đã bị thu hồi."
+        elif code == "model_decommissioned":
+            message = "Model đã ngừng hoạt động; đổi MISCONCEPTIONS_LLM_MODEL trong .env rồi khởi động lại app."
         else:
             message = f"LLM HTTP {error.code}; kiểm tra model, quyền truy cập và hạn mức."
         raise LLMRequestError(message) from None

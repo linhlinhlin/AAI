@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "http_status": 200,
+  "provider": "groq",
+  "model": "openai/gpt-oss-20b",
+  "source": "llm",
+  "cached": true,
+  "status_in_ui": "draft",
+  "offline_passed": 193,
+  "subtests_passed": 3
+}

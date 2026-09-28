@@ -6,7 +6,12 @@ quan niệm sai lầm để giảng viên duyệt.
 Mã nguồn, dữ liệu demo/ITSP và hồ sơ nghiên cứu nằm tại
 [`misconceptions-prototype`](misconceptions-prototype/README.md).
 
+[Báo cáo 5 chương, slide và kịch bản thuyết trình](deliverables/De5_NghiemThu_20260928/README.md).
+
 ## App học viên và giảng viên
+
+[Chạy demo nghiệm thu môn học trong 10 phút](docs/demo_nghiem_thu.md):
+cổng 8767, tài khoản demo và tám bài minh họa tự viết trong database riêng.
 
 [Bàn giao cho đồng nghiệp và tài khoản riêng](docs/ban_giao_dong_nghiep.md) ·
 [Báo cáo dễ hiểu: hướng nghiên cứu, mô hình, kết quả](docs/bao_cao_de5_de_hieu.md).

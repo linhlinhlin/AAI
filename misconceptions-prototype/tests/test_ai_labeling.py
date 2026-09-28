@@ -171,6 +171,44 @@ def test_gemini_configuration_uses_its_own_key(monkeypatch):
     assert configuration()["key_name"] == "GEMINI_API_KEY"
 
 
+def test_groq_does_not_use_gemini_or_openai_key(monkeypatch):
+    monkeypatch.setenv("MISCONCEPTIONS_LLM_PROVIDER", "groq")
+    monkeypatch.setenv("MISCONCEPTIONS_LLM_MODEL", "openai/gpt-oss-20b")
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.setenv("GEMINI_API_KEY", "wrong-key")
+    monkeypatch.setenv("OPENAI_API_KEY", "wrong-key")
+    assert not configuration()["configured"]
+    monkeypatch.setenv("GROQ_API_KEY", "groq-test-secret")
+    config = configuration()
+    assert config["configured"] and config["key_name"] == "GROQ_API_KEY"
+    assert "groq-test-secret" not in json.dumps(config)
+
+
+@pytest.mark.parametrize("model,mode", [("openai/gpt-oss-20b", "json_schema"),
+                                       ("llama-3.1-8b-instant", "json_object")])
+def test_groq_request_endpoint_auth_schema_and_response(monkeypatch, model, mode):
+    monkeypatch.setenv("GROQ_API_KEY", "groq-test-secret")
+
+    def fake(request, timeout):
+        assert request.full_url == "https://api.groq.com/openai/v1/chat/completions"
+        assert request.get_header("Authorization") == "Bearer groq-test-secret"
+        body = json.loads(request.data)
+        assert "groq-test-secret" not in request.data.decode()
+        assert "store" not in body
+        assert body["response_format"]["type"] == mode
+        if mode == "json_object":
+            assert '"evidence_samples"' in body["messages"][0]["content"]
+        assert timeout == 40
+        return io.BytesIO(json.dumps({"choices": [{"finish_reason": "stop", "message": {
+            "content": json.dumps(output())}}], "usage": {"total_tokens": 15}}).encode())
+
+    monkeypatch.setattr("urllib.request.urlopen", fake)
+    value, usage = request_label({"samples": [{"sample_id": "sample_1"}]},
+                                {"provider": "groq", "model": model})
+    validate_label(value, {"samples": [{"sample_id": "sample_1"}]})
+    assert value == output() and usage["total_tokens"] == 15
+
+
 def test_http_errors_do_not_expose_credentials(monkeypatch):
     monkeypatch.setenv("OPENAI_API_KEY", "test-secret")
 

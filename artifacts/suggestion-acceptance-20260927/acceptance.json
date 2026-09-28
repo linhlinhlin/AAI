@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "local_fallback": true,
+  "existing_text_preserved": true,
+  "ai_provider": "mock_only_no_paid_call",
+  "cached_calls": 1,
+  "draft_not_auto_approved": true,
+  "evidence_link": true,
+  "explicit_review_saved_and_reopened": true,
+  "export_separates_suggestions_and_reviews": true,
+  "mobile_no_overflow": true,
+  "browser_errors": []
+}

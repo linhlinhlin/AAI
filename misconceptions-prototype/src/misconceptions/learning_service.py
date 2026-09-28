@@ -4,15 +4,19 @@ import hashlib
 import json
 import logging
 import secrets
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from dataclasses import asdict
+from pathlib import Path
 
+from .ai_labeling import cluster_evidence, fingerprint, local_proposal
 from .domain import Submission
 from .features import extract_oav
 from .learning_problems import PROBLEMS, get_problem
 from .learning_sandbox import DockerSandbox
 from .learning_store import Store
+from .llm_client import SCHEMA, SYSTEM_PROMPT, configuration, request_label, validate_label
 from .output_features import output_oav
 from .pipeline import run_experiment
 from .semantic_rules import build_teaching_report, describe_condition
@@ -46,6 +50,7 @@ class LearningService:
         self.setup_token = token_file.read_text(encoding='utf-8').strip()
         self.health = self.sandbox.health()
         self.health_checked_at = time.monotonic()
+        self.suggestion_lock = threading.Lock()
 
     def runner_health(self):
         if time.monotonic() - self.health_checked_at > 15:
@@ -170,3 +175,49 @@ class LearningService:
         self.store.review(key, teacher, mappings)
         return {'id': key, 'teacher': build_dashboard(report, mappings),
                 'notice': 'Đã lưu nhận xét giảng viên. Đây không phải nhãn đánh giá độc lập.'}
+
+    def suggest(self, teacher, key, cluster):
+        if teacher['role'] != 'teacher':
+            raise PermissionError('Chức năng dành cho giảng viên.')
+        report, _ = self.store.report(key)
+        assignments = report.get('train_assignments', {}) | report.get('holdout_assignments', {})
+        if str(cluster) not in {str(c) for c in assignments.values()}:
+            raise ValueError('Nhóm không thuộc báo cáo này.')
+        cluster = int(cluster)
+        # One bounded request at a time; double clicks cannot create duplicate paid calls.
+        if not self.suggestion_lock.acquire(blocking=False):
+            raise ValueError('Đang tạo một gợi ý khác. Vui lòng thử lại khi hoàn tất.')
+        try:
+            config = configuration(Path(__file__).resolve().parents[2] / '.env')
+            rows = [Submission(**{k: s[k] for k in Submission.__dataclass_fields__})
+                    for s in report['submissions']]
+            logs = {s['submission_id']: s['logged_tests'] for s in report['submissions']}
+            problem = report['problem']
+            description = '\n'.join(problem[k] for k in ('title', 'description', 'constraints'))
+            payload, bindings = cluster_evidence(report, rows, logs, description, cluster)
+            request_hash = fingerprint({'payload': payload, 'prompt': SYSTEM_PROMPT,
+                                        'schema': SCHEMA, 'provider': config['provider'],
+                                        'model': config['model'], 'configured': config['configured']})
+            for cached in self.store.suggestions(key):
+                if cached['cluster'] == str(cluster) and cached['request_sha256'] == request_hash:
+                    return cached | {'cached': True}
+            if config['configured']:
+                value, usage = request_label(payload, config)
+                validate_label(value, payload)
+                source = 'llm'
+                notice = 'AI đề xuất từ tối đa 4 bài mẫu; kiểm tra bằng chứng trước khi lưu nhận xét.'
+            else:
+                value = local_proposal(report, cluster, payload['cluster_size'])
+                usage, source = {}, 'local_rules'
+                notice = ('Chưa cấu hình API key và model trong misconceptions-prototype/.env. '
+                          'Đây là gợi ý từ bộ luật cục bộ, không phải AI.')
+            proposal = {'cluster': str(cluster), 'status': 'draft', 'source': source,
+                        'provider': config['provider'] if source == 'llm' else None,
+                        'model': config['model'] if source == 'llm' else None,
+                        'output': value, 'usage': usage, 'notice': notice,
+                        'request_sha256': request_hash, 'sample_bindings': bindings,
+                        'created': time.time(), 'cached': False}
+            self.store.save_suggestion(key, proposal)
+            return proposal
+        finally:
+            self.suggestion_lock.release()

@@ -39,6 +39,10 @@ class Store:
                 CREATE TABLE IF NOT EXISTS reviews (
                     id TEXT PRIMARY KEY, report_id TEXT NOT NULL, teacher_id TEXT NOT NULL,
                     payload TEXT NOT NULL, created REAL NOT NULL);
+                CREATE TABLE IF NOT EXISTS suggestions (
+                    report_id TEXT NOT NULL, cluster TEXT NOT NULL, request_sha256 TEXT NOT NULL,
+                    payload TEXT NOT NULL, created REAL NOT NULL,
+                    PRIMARY KEY (report_id, cluster, request_sha256));
             ''')
 
     @contextmanager
@@ -229,3 +233,14 @@ class Store:
             db.execute('INSERT INTO reviews VALUES(?,?,?,?,?)',
                        (uuid.uuid4().hex, key, teacher['id'],
                         json.dumps(mappings, ensure_ascii=False), time.time()))
+
+    def suggestions(self, key):
+        with self.connect() as db:
+            return [json.loads(row['payload']) for row in db.execute(
+                'SELECT payload FROM suggestions WHERE report_id=? ORDER BY created', (key,))]
+
+    def save_suggestion(self, key, proposal):
+        with self.connect() as db:
+            db.execute('INSERT OR REPLACE INTO suggestions VALUES(?,?,?,?,?)',
+                       (key, proposal['cluster'], proposal['request_sha256'],
+                        json.dumps(proposal, ensure_ascii=False), time.time()))

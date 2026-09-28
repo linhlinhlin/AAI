@@ -164,7 +164,9 @@ def test_http_auth_csrf_roles_and_logout(service):
         session = {'Cookie': cookie.split(';')[0]}
         assert request('GET', '/api/teacher/overview', headers=session)[0].status == 403
         assert request('POST', '/api/logout', {}, session)[0].status == 403
+        assert request('POST', '/api/teacher/suggest', {}, session)[0].status == 403
         session['X-CSRF-Token'] = data['csrf']
+        assert request('POST', '/api/teacher/suggest', {}, session)[0].status == 403
         assert request('POST', '/api/logout', {}, session)[0].status == 200
         assert request('GET', '/api/history', headers=session)[0].status == 401
         assert request('POST', '/api/setup', {'token': 'wrong'})[0].status == 403
@@ -179,3 +181,91 @@ def test_teacher_setup_is_single_use(service):
     account(service.store, 'teacher', 'teacher')
     with pytest.raises(ValueError):
         account(service.store, 'another_teacher', 'teacher')
+
+
+@pytest.fixture
+def suggestion_report(service, monkeypatch):
+    from misconceptions import learning_service
+
+    monkeypatch.setattr(learning_service, 'configuration', lambda *_: {
+        'configured': False, 'provider': 'gemini', 'model': 'test-model'})
+    teacher = account(service.store, 'teacher', 'teacher')
+    student = account(service.store, 'private_student_name')
+    problem = get_problem('sum-range')
+    key = service.submit(student, {'problem_id': 'sum-range', 'source': problem['starter']})['id']
+    attempt = wait_attempt(service, key, student)
+    row, logs = learning_service.evidence(attempt)
+    report = {'train_assignments': {key: 0}, 'holdout_assignments': {}, 'medoids': {'0': key},
+              'problem': problem, 'teaching': {'summaries': []},
+              'submissions': [learning_service.asdict(row) | {'logged_tests': logs}]}
+    report_id = service.store.save_report(teacher, report)
+    return teacher, student, report_id, report
+
+
+def test_suggestion_without_key_is_explicit_local_draft(service, suggestion_report, monkeypatch):
+    from misconceptions import learning_service
+
+    teacher, student, key, original = suggestion_report
+    monkeypatch.setattr(learning_service, 'request_label',
+                        lambda *_: pytest.fail('No API call allowed without configuration'))
+    with pytest.raises(PermissionError):
+        service.suggest(student, key, '0')
+    with pytest.raises(ValueError, match='Nhóm'):
+        service.suggest(teacher, key, '99')
+    proposal = service.suggest(teacher, key, '0')
+    assert proposal['source'] == 'local_rules'
+    assert proposal['status'] == 'draft'
+    assert proposal['provider'] is None
+    assert service.store.report(key) == (original, [])
+    assert service.suggest(teacher, key, '0')['cached'] is True
+
+
+def test_ai_suggestion_is_anonymized_cached_and_never_auto_approved(
+        service, suggestion_report, monkeypatch):
+    from misconceptions import learning_service
+
+    teacher, student, key, original = suggestion_report
+    monkeypatch.setattr(learning_service, 'configuration', lambda *_: {
+        'configured': True, 'provider': 'gemini', 'model': 'test-model'})
+    calls = []
+
+    def call(payload, config):
+        calls.append(payload)
+        serialized = json.dumps(payload)
+        assert student['username'] not in serialized and student['id'] not in serialized
+        assert original['submissions'][0]['submission_id'] not in serialized
+        return {'misconception_name': 'Chưa tính tổng', 'misconception_type': None,
+                'reasoning': 'Chương trình luôn in 0.', 'teaching_hint': 'Liệt kê các số cần cộng.',
+                'category': 'other_error', 'evidence_samples': ['sample_1']}, {'tokens': 10}
+
+    monkeypatch.setattr(learning_service, 'request_label', call)
+    proposal = service.suggest(teacher, key, '0')
+    assert proposal['source'] == 'llm' and proposal['status'] == 'draft'
+    assert service.suggest(teacher, key, 0)['cached'] is True
+    assert len(calls) == 1
+    assert service.store.report(key) == (original, [])
+    assert Store(service.store.path).suggestions(key)[0]['output'] == proposal['output']
+
+
+@pytest.mark.parametrize('bad_output', [False, True])
+def test_failed_ai_suggestion_preserves_review_and_releases_lock(
+        service, suggestion_report, monkeypatch, bad_output):
+    from misconceptions import learning_service
+
+    teacher, _, key, original = suggestion_report
+    monkeypatch.setattr(learning_service, 'configuration', lambda *_: {
+        'configured': True, 'provider': 'gemini', 'model': 'test-model'})
+
+    def call(*_):
+        if not bad_output:
+            raise ValueError('Provider unavailable')
+        return {'misconception_name': 'Tên', 'misconception_type': None,
+                'reasoning': 'Căn cứ.', 'teaching_hint': 'Kiểm tra.',
+                'category': 'other_error', 'evidence_samples': ['invented_sample']}, {}
+
+    monkeypatch.setattr(learning_service, 'request_label', call)
+    with pytest.raises(ValueError):
+        service.suggest(teacher, key, '0')
+    assert not service.suggestion_lock.locked()
+    assert not service.store.suggestions(key)
+    assert service.store.report(key) == (original, [])

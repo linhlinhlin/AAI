@@ -51,6 +51,11 @@ def implementation_fingerprint(root):
             files[name] = digest(path)
     def git(*args):
         return subprocess.check_output(["git", "-C", str(root), *args], text=True).strip()
-    return {"base_commit": git("rev-parse", "HEAD"), "working_tree_dirty": bool(git("status", "--porcelain")),
+    # Exported handoffs have no .git. Preserve source hashes/snapshots without
+    # inventing a commit or claiming that the exported working tree is clean.
+    has_git = (root / ".git").exists()
+    return {"base_commit": git("rev-parse", "HEAD") if has_git else None,
+            "working_tree_dirty": bool(git("status", "--porcelain")) if has_git else None,
+            "checkout_kind": "git" if has_git else "source_export",
             "files_sha256": files,
             "implementation_sha256": hashlib.sha256(json.dumps(files, sort_keys=True).encode()).hexdigest()}

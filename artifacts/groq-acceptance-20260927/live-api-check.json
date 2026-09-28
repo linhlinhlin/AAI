@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "report_id": "245f1f0895dd4ceca6d16b0d318a445b",
+  "source": "llm",
+  "provider": "groq",
+  "model": "openai/gpt-oss-20b",
+  "draft_status": "draft",
+  "output": {
+    "misconception_name": "Giá trị cố định thay vì tính tổng",
+    "misconception_type": "Lỗi thuật toán",
+    "reasoning": "Mọi mẫu đều in số cố định, không có vòng lặp hay phép tính; do đó chương trình không tính tổng.",
+    "teaching_hint": "Thêm vòng lặp for tính sum: for(i=1;i<=n;i++) sum+=i; sau đó printf(\"%d\", sum);",
+    "category": "misconception",
+    "evidence_samples": [
+      "sample_1",
+      "sample_2",
+      "sample_3",
+      "sample_4"
+    ]
+  }
+}

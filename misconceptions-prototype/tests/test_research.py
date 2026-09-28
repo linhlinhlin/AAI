@@ -12,8 +12,30 @@ from misconceptions.adapters import load_dataset
 from misconceptions.features import FeatureSpace, extract_oav, weighted_hamming
 from misconceptions.output_features import output_oav, validate_output_logs
 from misconceptions.pipeline import run_experiment
+from misconceptions.research_io import digest, implementation_fingerprint
 from misconceptions.splits import create_lock, leakage_groups, validate_assignments, validate_lock
 from misconceptions.teaching_report import load_evidence
+
+
+def test_export_fingerprint_tracks_edits_without_inventing_git_history(tmp_path):
+    source = tmp_path / "misconceptions-prototype/src/example.py"
+    source.parent.mkdir(parents=True)
+    source.write_text("value = 1\n", encoding="utf-8")
+    before = implementation_fingerprint(tmp_path)
+    assert before["base_commit"] is None
+    assert before["working_tree_dirty"] is None
+    assert before["checkout_kind"] == "source_export"
+    assert before["files_sha256"][source.relative_to(tmp_path).as_posix()] == digest(source)
+    source.write_text("value = 2\n", encoding="utf-8")
+    assert implementation_fingerprint(tmp_path)["implementation_sha256"] != before["implementation_sha256"]
+
+
+def test_broken_git_checkout_does_not_silently_become_export(tmp_path):
+    import subprocess
+
+    (tmp_path / ".git").mkdir()
+    with pytest.raises(subprocess.CalledProcessError):
+        implementation_fingerprint(tmp_path)
 
 
 def test_observed_itsp_collision_resolved_by_output_without_labels():

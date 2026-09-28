@@ -157,5 +157,9 @@ Checkout làm việc nằm ở `AAI/`, branch `research/topic5-harness`, dựa t
 `3c67734c25236b7fdcd9d84b8d4c2fa589add36e`. Đã đẩy lên
 [fork meiiie/AAI](https://github.com/meiiie/AAI/tree/research/topic5-harness)
 và mở [PR #1 về repo nhóm, sẵn sàng review](https://github.com/linhlinhlin/AAI/pull/1),
-chưa merge vào `main`. Tài khoản bàn giao chỉ có quyền đọc repo nhóm. Bản bàn
+đã merge vào `main` ngày 27/09/2026 tại commit
+`ab1c5b63d9be579a17a8dd6adf6bdc5df6632a9d`.
+[CI commit merge](https://github.com/linhlinhlin/AAI/actions/runs/36298435077)
+đã qua cả offline checks và learning app (Docker/browser).
+Tài khoản bàn giao chỉ có quyền đọc repo nhóm. Bản bàn
 giao giữ nguyên snapshot mã và các kết quả đã ghi; CI có trạng thái theo commit.

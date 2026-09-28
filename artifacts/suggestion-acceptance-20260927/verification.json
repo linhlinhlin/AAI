@@ -1,0 +1,28 @@
+{
+  "offline_passed": 190,
+  "subtests_passed": 3,
+  "docker_skipped": 13,
+  "ruff": "passed",
+  "real_llm_call_verified": false,
+  "browser": {
+    "status": "passed",
+    "local_fallback": true,
+    "existing_text_preserved": true,
+    "ai_provider": "mock_only_no_paid_call",
+    "cached_calls": 1,
+    "draft_not_auto_approved": true,
+    "evidence_link": true,
+    "explicit_review_saved_and_reopened": true,
+    "export_separates_suggestions_and_reviews": true,
+    "mobile_no_overflow": true,
+    "browser_errors": []
+  },
+  "files_sha256": {
+    "misconceptions-prototype/src/misconceptions/learning_service.py": "4906e949e900fe8d61b95018e673b1a2358784941e884a42e9b6448d12e03975",
+    "misconceptions-prototype/src/misconceptions/learning_store.py": "2ad88899b327ec86c329d7df2f9698b9c0968ebcddcbe4a852c7f9d28b63f625",
+    "misconceptions-prototype/src/misconceptions/learning_web.py": "5603db44ab7a303935ddc2751e45b2bc393dda4b2d2c26e322554bfbd3557d40",
+    "misconceptions-prototype/src/misconceptions/web_assets/learning.js": "70f545d778b4a868d1504d681f18a3579c10c697aa55cbeae346a3f5ccc626b7",
+    "misconceptions-prototype/tests/test_learning.py": "544c07d2bd74170570bd92bd71abaae52c337b92d75caaa906de44d636531b15",
+    "docs/demo_nghiem_thu.md": "2d7579e4f6921fe3fd4fbeb58f4a0b226e7c1a875a68e744d97a4ff6d52bc81e"
+  }
+}

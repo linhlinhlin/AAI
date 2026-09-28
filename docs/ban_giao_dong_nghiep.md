@@ -1,9 +1,10 @@
 # Bàn giao đề 5 cho đồng nghiệp — 27/09/2026
 
 Đọc [báo cáo dễ hiểu về hướng nghiên cứu và mô hình](bao_cao_de5_de_hieu.md).
-Mã hiện nằm ở nhánh `research/topic5-harness` của
-[meiiie/AAI](https://github.com/meiiie/AAI/tree/research/topic5-harness), đang gửi về
-repo nhóm qua [PR #1](https://github.com/linhlinhlin/AAI/pull/1), chưa merge `main`.
+Mã đã được merge vào `main` của [linhlinhlin/AAI](https://github.com/linhlinhlin/AAI)
+qua [PR #1](https://github.com/linhlinhlin/AAI/pull/1) ngày 27/09/2026,
+commit `ab1c5b63d9be579a17a8dd6adf6bdc5df6632a9d`.
+Để test đủ luồng nghiệm thu, xem [demo riêng với dữ liệu minh họa](demo_nghiem_thu.md).
 
 ## Nhận ZIP có tài khoản
 
@@ -57,7 +58,7 @@ Windows trong các lệnh cài/chạy; cần Docker Linux hoạt động.
 ## Nếu lấy mã trực tiếp từ GitHub
 
 ```text
-git clone --branch research/topic5-harness https://github.com/meiiie/AAI.git
+git clone https://github.com/linhlinhlin/AAI.git
 cd AAI
 ```
 

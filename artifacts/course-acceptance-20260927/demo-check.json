@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "student_login": true,
+  "student_solved": 0,
+  "teacher_login": true,
+  "clusters": 2,
+  "rules_present": true,
+  "oav_present": true,
+  "browser_errors": []
+}

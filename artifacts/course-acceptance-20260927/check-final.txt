@@ -1,0 +1,7 @@
++ E:\Applications\AAI-ban-giao-rieng\AAI-handoff\misconceptions-prototype\.venv\Scripts\python.exe -m ruff check src tests scripts ../scripts
+All checks passed!
++ E:\Applications\AAI-ban-giao-rieng\AAI-handoff\misconceptions-prototype\.venv\Scripts\python.exe -m pytest -q
+........................................................................ [ 36%]
+...................................................................ss [ 70%]
+sssssssssss...............................................               [100%]
+186 passed, 13 skipped, 3 subtests passed in 27.80s

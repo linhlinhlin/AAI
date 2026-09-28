@@ -103,7 +103,8 @@ def make_handler(service):
                     self.teacher(user)
                     key = query.get('id', [''])[0]
                     report, reviews = service.store.report(key)
-                    return self.respond(200, {'id': key, 'report': report, 'reviews': reviews})
+                    return self.respond(200, {'id': key, 'report': report, 'reviews': reviews,
+                                              'suggestions': service.store.suggestions(key)})
                 return self.respond(404, {'error': 'Không tìm thấy nội dung.'})
             except PermissionError as error:
                 self.respond(403, {'error': str(error)})
@@ -165,6 +166,10 @@ def make_handler(service):
                     self.teacher(user)
                     return self.respond(200, service.review(user, request.get('id'),
                                                            request.get('mappings')))
+                if path == '/api/teacher/suggest':
+                    self.teacher(user)
+                    return self.respond(200, service.suggest(user, request.get('id'),
+                                                             request.get('cluster')))
                 return self.respond(404, {'error': 'Không tìm thấy chức năng.'})
             except PermissionError as error:
                 self.respond(403, {'error': str(error)})

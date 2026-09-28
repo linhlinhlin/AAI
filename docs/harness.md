@@ -110,6 +110,11 @@ cáo đọc được. Thư mục output phải mới; kết quả cũ không b�
 và exploratory runs nằm trong `.cache/`, `artifacts/` đã được Git ignore; báo
 cáo chọn để bàn giao nằm trong `research/runs/`.
 
+Bản ZIP không có `.git` vẫn chạy được: fingerprint ghi
+`checkout_kind=source_export`, `base_commit=null`, `working_tree_dirty=null`,
+và giữ nguyên kiểm tra hash/snapshot mã. Không coi bản export là checkout sạch
+hay tự gán commit từ manifest bàn giao. Checkout có `.git` lỗi vẫn bị từ chối.
+
 Kiểm tra một run đã hoàn tất, từ repository root:
 
 ```text

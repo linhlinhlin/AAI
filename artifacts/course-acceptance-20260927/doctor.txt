@@ -1,0 +1,8 @@
+Python: E:\Applications\AAI-ban-giao-rieng\AAI-handoff\misconceptions-prototype\.venv\Scripts\python.exe 3.12.3 (tags/v3.12.3:f6650f9, Apr  9 2024, 14:05:25) [MSC v.1938 64 bit (AMD64)]
+pytest 9.1.1
+ruff 0.16.8
+numpy 2.5.3
+scikit-learn 1.9.1
+tree-sitter 0.26.0
+tree-sitter-c 0.24.2
+No API keys, GPU or student-code execution required for check/smoke.
