@@ -1,0 +1,281 @@
+{
+  "policies": {
+    "exact_exit0": {
+      "policy": {
+        "pass_relations": [
+          "exact"
+        ],
+        "exit_code_matters": true
+      },
+      "agreement_by_partition": {
+        "validation": {
+          "agree": 5275,
+          "disagree": 51
+        },
+        "train": {
+          "agree": 19231,
+          "disagree": 346
+        },
+        "test": {
+          "agree": 3131,
+          "disagree": 47
+        }
+      },
+      "confusion_historical_to_replay": {
+        "pass->pass": 17215,
+        "fail->fail": 9172,
+        "runtime_error->runtime_error": 687,
+        "timeout->timeout": 563,
+        "pass->fail": 266,
+        "fail->pass": 66,
+        "fail->runtime_error": 50,
+        "pass->runtime_error": 36,
+        "runtime_error->fail": 15,
+        "runtime_error->pass": 8,
+        "pass->timeout": 3
+      }
+    },
+    "exact_any_exit": {
+      "policy": {
+        "pass_relations": [
+          "exact"
+        ],
+        "exit_code_matters": false
+      },
+      "agreement_by_partition": {
+        "validation": {
+          "agree": 5257,
+          "disagree": 69
+        },
+        "train": {
+          "agree": 19217,
+          "disagree": 360
+        },
+        "test": {
+          "agree": 3126,
+          "disagree": 52
+        }
+      },
+      "confusion_historical_to_replay": {
+        "pass->pass": 17215,
+        "fail->fail": 9172,
+        "runtime_error->runtime_error": 650,
+        "timeout->timeout": 563,
+        "pass->fail": 266,
+        "fail->pass": 66,
+        "fail->runtime_error": 50,
+        "runtime_error->fail": 46,
+        "pass->runtime_error": 36,
+        "runtime_error->pass": 14,
+        "pass->timeout": 3
+      }
+    },
+    "trailing_ws_exit0": {
+      "policy": {
+        "pass_relations": [
+          "exact",
+          "trailing_whitespace"
+        ],
+        "exit_code_matters": true
+      },
+      "agreement_by_partition": {
+        "validation": {
+          "agree": 4780,
+          "disagree": 546
+        },
+        "train": {
+          "agree": 17429,
+          "disagree": 2148
+        },
+        "test": {
+          "disagree": 282,
+          "agree": 2896
+        }
+      },
+      "confusion_historical_to_replay": {
+        "pass->pass": 17218,
+        "fail->fail": 6637,
+        "fail->pass": 2601,
+        "runtime_error->runtime_error": 687,
+        "timeout->timeout": 563,
+        "pass->fail": 263,
+        "fail->runtime_error": 50,
+        "pass->runtime_error": 36,
+        "runtime_error->pass": 14,
+        "runtime_error->fail": 9,
+        "pass->timeout": 3
+      }
+    },
+    "tokens_exit0": {
+      "policy": {
+        "pass_relations": [
+          "exact",
+          "trailing_whitespace",
+          "whitespace"
+        ],
+        "exit_code_matters": true
+      },
+      "agreement_by_partition": {
+        "validation": {
+          "agree": 4592,
+          "disagree": 734
+        },
+        "train": {
+          "agree": 16422,
+          "disagree": 3155
+        },
+        "test": {
+          "disagree": 430,
+          "agree": 2748
+        }
+      },
+      "confusion_historical_to_replay": {
+        "pass->pass": 17221,
+        "fail->fail": 5291,
+        "fail->pass": 3947,
+        "runtime_error->runtime_error": 687,
+        "timeout->timeout": 563,
+        "pass->fail": 260,
+        "fail->runtime_error": 50,
+        "pass->runtime_error": 36,
+        "runtime_error->pass": 14,
+        "runtime_error->fail": 9,
+        "pass->timeout": 3
+      }
+    }
+  },
+  "compile": {
+    "historical=compile_error|replay_compiles=False|warning_free=False": 1142,
+    "historical=compiled_in_historical_run|replay_compiles=True|warning_free=True": 6350,
+    "historical=compile_error|replay_compiles=True|warning_free=False": 1094,
+    "historical=compiled_in_historical_run|replay_compiles=True|warning_free=False": 17,
+    "historical=compile_error|replay_compiles=True|warning_free=True": 4
+  },
+  "stdout_reproduction": {
+    "same": 8739,
+    "different": 356
+  },
+  "stdout_mismatch_examples": [
+    {
+      "submission_id": "cpack-year-2-lab02-ex01-stu_051-sub_006",
+      "test_id": "ex01_0"
+    },
+    {
+      "submission_id": "cpack-year-2-lab02-ex01-stu_051-sub_006",
+      "test_id": "ex01_1"
+    },
+    {
+      "submission_id": "cpack-year-2-lab02-ex01-stu_051-sub_006",
+      "test_id": "ex01_2"
+    },
+    {
+      "submission_id": "cpack-year-2-lab02-ex01-stu_051-sub_008",
+      "test_id": "ex01_0"
+    },
+    {
+      "submission_id": "cpack-year-2-lab02-ex01-stu_051-sub_008",
+      "test_id": "ex01_1"
+    },
+    {
+      "submission_id": "cpack-year-2-lab02-ex01-stu_051-sub_008",
+      "test_id": "ex01_2"
+    },
+    {
+      "submission_id": "cpack-year-3-lab02-ex01-stu_067-sub_002",
+      "test_id": "ex01_1"
+    },
+    {
+      "submission_id": "cpack-year-3-lab02-ex01-stu_067-sub_004",
+      "test_id": "ex01_1"
+    },
+    {
+      "submission_id": "cpack-year-3-lab02-ex01-stu_085-sub_004",
+      "test_id": "ex01_0"
+    },
+    {
+      "submission_id": "cpack-year-3-lab02-ex01-stu_085-sub_004",
+      "test_id": "ex01_1"
+    },
+    {
+      "submission_id": "cpack-year-3-lab02-ex01-stu_085-sub_004",
+      "test_id": "ex01_2"
+    },
+    {
+      "submission_id": "cpack-year-3-lab02-ex01-stu_085-sub_008",
+      "test_id": "ex01_0"
+    },
+    {
+      "submission_id": "cpack-year-3-lab02-ex01-stu_085-sub_008",
+      "test_id": "ex01_1"
+    },
+    {
+      "submission_id": "cpack-year-3-lab02-ex01-stu_085-sub_008",
+      "test_id": "ex01_2"
+    },
+    {
+      "submission_id": "cpack-year-4-lab02-ex01-stu_103-sub_004",
+      "test_id": "ex01_0"
+    },
+    {
+      "submission_id": "cpack-year-5-lab02-ex01-stu_188-sub_003",
+      "test_id": "ex01_0"
+    },
+    {
+      "submission_id": "cpack-year-5-lab02-ex01-stu_188-sub_003",
+      "test_id": "ex01_1"
+    },
+    {
+      "submission_id": "cpack-year-1-lab02-ex02-stu_007-sub_005",
+      "test_id": "ex02_0"
+    },
+    {
+      "submission_id": "cpack-year-1-lab02-ex02-stu_007-sub_005",
+      "test_id": "ex02_1"
+    },
+    {
+      "submission_id": "cpack-year-1-lab02-ex02-stu_007-sub_005",
+      "test_id": "ex02_2"
+    }
+  ],
+  "selected_policy": "exact_exit0",
+  "selection_rule": "highest train-partition cell agreement with historical verdicts",
+  "determinism": {
+    "sample_size": 746,
+    "identical": 719,
+    "different": 27,
+    "unstable_ids": [
+      "cpack-year-1-lab03-ex06-stu_009-sub_049",
+      "cpack-year-1-lab03-ex06-stu_008-sub_018",
+      "cpack-year-2-lab02-ex02-stu_035-sub_003",
+      "cpack-year-3-lab02-ex01-stu_076-sub_001",
+      "cpack-year-3-lab02-ex01-stu_085-sub_003",
+      "cpack-year-3-lab02-ex02-stu_063-sub_004",
+      "cpack-year-3-lab02-ex08-stu_063-sub_012",
+      "cpack-year-3-lab02-ex08-stu_087-sub_011",
+      "cpack-year-3-lab03-ex02-stu_094-sub_033",
+      "cpack-year-3-lab03-ex04-stu_092-sub_057",
+      "cpack-year-3-lab04-ex04-stu_063-sub_028",
+      "cpack-year-3-lab04-ex08-stu_080-sub_111",
+      "cpack-year-4-lab02-ex08-stu_079-sub_002",
+      "cpack-year-4-lab02-ex08-stu_132-sub_013",
+      "cpack-year-4-lab02-ex10-stu_144-sub_028",
+      "cpack-year-4-lab03-ex05-stu_150-sub_036",
+      "cpack-year-4-lab04-ex04-stu_123-sub_013",
+      "cpack-year-4-lab04-ex07-stu_129-sub_033",
+      "cpack-year-5-lab02-ex04-stu_194-sub_001",
+      "cpack-year-5-lab02-ex08-stu_177-sub_010",
+      "cpack-year-5-lab02-ex09-stu_199-sub_016",
+      "cpack-year-5-lab03-ex04-stu_090-sub_070",
+      "cpack-year-5-lab04-ex02-stu_176-sub_019",
+      "cpack-year-5-lab03-ex06-stu_192-sub_117",
+      "cpack-year-5-lab04-ex08-stu_200-sub_050",
+      "cpack-year-6-lab02-ex02-stu_229-sub_002",
+      "cpack-year-6-lab04-ex02-stu_234-sub_015"
+    ]
+  },
+  "status": {
+    "empty_source": 32,
+    "compile_error": 1110,
+    "compiled": 7465
+  }
+}

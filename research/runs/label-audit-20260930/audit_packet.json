@@ -1,0 +1,1451 @@
+{
+  "schema": "repair_label_audit_v1",
+  "bench_manifest_sha256": "5665aa988f11c917e81c9647987d73fa202027303d19bdc7b22ecdd4c64e9196",
+  "sampling": {
+    "per_category": 5,
+    "seed": 7,
+    "partitions": [
+      "train",
+      "validation"
+    ]
+  },
+  "instructions": "Judge only whether the category describes what the minimal repair changes in the program. Do not judge the student's beliefs.",
+  "cases": [
+    {
+      "case_id": "audit-001",
+      "item_id": "cpack-year-4-lab04-ex02-stu_131-sub_039",
+      "problem_id": "lab04-ex02",
+      "partition": "validation",
+      "assigned_primary": "BRANCH_CONDITION",
+      "assigned_categories": [
+        "BRANCH_CONDITION"
+      ],
+      "details": [
+        "branch_condition:<=->>="
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -33,5 +33,5 @@\n         for(j=0;j<n;j++)\n         {\n-            putchar(vec[j]<=i?'*':' ');\n+            putchar(vec[j]>=i?'*':' ');\n         }\n         putchar('\\n');\n",
+      "failing_source": "\n#include <stdio.h>\n#define VECMAX 100\n\nint getmax(int vec[], int n)\n{\n    int i, max=vec[0];\n    for(i=0;i<n;i++)\n    {\n        if(vec[i]>max)\n        {\n            max=vec[i];\n        }\n    }\n    return max;\n}\n\nvoid readvec(int vec[], int n)\n{\n    int i;\n    for(i=0;i<n;i++)\n    {\n        scanf(\"%d\",&vec[i]);\n    }\n}\n\nvoid writevec(int vec[], int n)\n{\n    int i, j;\n    int max=getmax(vec, n);\n    for(i=1;i<=max;i++)\n    {\n        for(j=0;j<n;j++)\n        {\n            putchar(vec[j]<=i?'*':' ');\n        }\n        putchar('\\n');\n    }\n}\n\nint main()\n{\n    int vec[VECMAX];\n    int n;\n    scanf(\"%d\",&n);\n    readvec(vec, n);\n    writevec(vec, n);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-002",
+      "item_id": "cpack-year-3-lab03-ex02-stu_064-sub_031",
+      "problem_id": "lab03-ex02",
+      "partition": "train",
+      "assigned_primary": "BRANCH_CONDITION",
+      "assigned_categories": [
+        "BRANCH_CONDITION"
+      ],
+      "details": [
+        "branch_condition:->> 1"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -8,5 +8,5 @@\n     for (i = 1; i <= n; i++) {\n         for (j = 1; j <= n; j++) {\n-            if (j)\n+            if (j > 1)\n                 putchar(' ');\n             if (i + j - n > 0) \n",
+      "failing_source": "\n\n#include <stdio.h>\n\nvoid piramide(int n) {\n    int i, j;\n\n    for (i = 1; i <= n; i++) {\n        for (j = 1; j <= n; j++) {\n            if (j)\n                putchar(' ');\n            if (i + j - n > 0) \n                printf(\"%d\", i + j - n);\n            else\n                putchar(' ');\n        }\n        for (j--; j > 0; j--) {  \n            if (i + j - n - 1> 0) \n                printf(\" %d\", i + j - n - 1);\n        }\n        putchar('\\n');\n    }\n}\n\nint main() {\n    int n;\n    scanf(\"%d\", &n);\n    piramide(n);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-003",
+      "item_id": "cpack-year-4-lab02-ex03-stu_131-sub_012",
+      "problem_id": "lab02-ex03",
+      "partition": "validation",
+      "assigned_primary": "BRANCH_CONDITION",
+      "assigned_categories": [
+        "BRANCH_CONDITION"
+      ],
+      "details": [
+        "branch_condition:/->%"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -8,5 +8,5 @@\n \n     scanf(\"%d%d\", &N, &M);\n-    if (N/M == 0)\n+    if (N%M == 0)\n     {\n         printf(\"yes\\n\");\n",
+      "failing_source": "\n#include <stdio.h>\n\nmain()\n{\n    int N, M;\n    float res;\n\n    scanf(\"%d%d\", &N, &M);\n    if (N/M == 0)\n    {\n        printf(\"yes\\n\");\n    }\n    else\n    {\n        printf(\"no\\n\");\n    }\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-004",
+      "item_id": "cpack-year-6-lab03-ex03-stu_235-sub_022",
+      "problem_id": "lab03-ex03",
+      "partition": "train",
+      "assigned_primary": "BRANCH_CONDITION",
+      "assigned_categories": [
+        "BRANCH_CONDITION"
+      ],
+      "details": [
+        "branch_condition:(->j == n -",
+        "branch_condition:% 2 == 0 && j % 2 == 0->- 1",
+        "branch_condition:)->"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -11,5 +11,5 @@\n         for (j=0; j<n;j++)\n         {\n-            if (j==i || (i%2==0 && j%2==0))\n+            if (j==i || j==n-i-1)\n                 tab[i][j] = '*';\n             else\n",
+      "failing_source": "\n\n#include <stdio.h>\n\nvoid cruz(int n)\n{\n    int i, j;\n    char tab[n][n];\n\n    for (i=0; i<n; i++)\n        for (j=0; j<n;j++)\n        {\n            if (j==i || (i%2==0 && j%2==0))\n                tab[i][j] = '*';\n            else\n                tab[i][j] = '-';\n            if (j==n-1)\n\n                printf(\"%c\\n\", tab[i][j]);\n            else\n                printf(\"%c \", tab[i][j]);\n        }\n}\n\nint main ()\n{\n    int num;\n    scanf(\"%d\", &num);\n    cruz(num);\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-005",
+      "item_id": "cpack-year-3-lab02-ex01-stu_084-sub_001",
+      "problem_id": "lab02-ex01",
+      "partition": "train",
+      "assigned_primary": "BRANCH_CONDITION",
+      "assigned_categories": [
+        "BRANCH_CONDITION"
+      ],
+      "details": [
+        "branch_condition:->else"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -11,5 +11,5 @@\n         printf(\"%d\\n\", num1);\n     }\n-    if ((num2 > num1) & (num2 > num3)){\n+    else if ((num2 > num1) & (num2 > num3)){\n         printf(\"%d\\n\", num2);\n     }\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main(){\n    \n    int num1, num2, num3;\n\n    scanf(\"%d %d %d\", &num1, &num2, &num3);\n\n    if ((num1 > num2) & (num1 > num3)){\n        printf(\"%d\\n\", num1);\n    }\n    if ((num2 > num1) & (num2 > num3)){\n        printf(\"%d\\n\", num2);\n    }\n    else{\n        printf(\"%d\\n\", num3);\n    }\n    return 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-006",
+      "item_id": "cpack-year-1-lab03-ex02-stu_009-sub_016",
+      "problem_id": "lab03-ex02",
+      "partition": "train",
+      "assigned_primary": "COMPUTATION",
+      "assigned_categories": [
+        "COMPUTATION"
+      ],
+      "details": [
+        "computation:+ 1->"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -25,5 +25,5 @@\n \t\tnum_max = linha;\n \t\tpasso = AUMENTA;\n-\t\tnum_espacos = (n-linha+1)*2;\n+\t\tnum_espacos = (n-linha)*2;\n \t\t\n \t\tfor (espacos = 0; espacos < num_espacos; espacos++)\n",
+      "failing_source": "#include <stdio.h>\n\n#define LINHA_INICIAL 1\n#define NUM_INICIAL 1\n#define DIMINUI -1\n#define AUMENTA 1\n#define NUM_INICIAL_COLOCADOS 0\n\nvoid piramide(int n)\n{\n\tint linha;\n\tint num;\n\tint passo;\n\n\tint num_colocados;\n\tint max_colocados;\n\tint num_max;\n\tint espacos;\n\tint num_espacos;\n\n\tfor (linha = LINHA_INICIAL; linha <= n; linha++) \n\t{\n\t\tnum = NUM_INICIAL;\n\t\tmax_colocados = linha*2-1;\n\t\tnum_max = linha;\n\t\tpasso = AUMENTA;\n\t\tnum_espacos = (n-linha+1)*2;\n\t\t\n\t\tfor (espacos = 0; espacos < num_espacos; espacos++)\n\t\t{\n\t\t\tputchar(' ');\n\t\t}\n\n\t\tfor (num_colocados = NUM_INICIAL_COLOCADOS; num_colocados < max_colocados-1; num_colocados++)\n\t\t{\n\t\t\tprintf(\"%d \", num);\n\t\t\tif (num == num_max) {\n\t\t\t\tpasso = DIMINUI;}\n\t\t\tnum += passo;\n\t\t}\n\t\tprintf(\"%d\\n\", num);\n\t}\n}\nint main()\n{\n\tint n;\n\tscanf(\"%d\", &n);\n\tpiramide(n);\n\treturn 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-007",
+      "item_id": "cpack-year-5-lab02-ex10-stu_192-sub_036",
+      "problem_id": "lab02-ex10",
+      "partition": "train",
+      "assigned_primary": "COMPUTATION",
+      "assigned_categories": [
+        "COMPUTATION"
+      ],
+      "details": [
+        "computation:/->%"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -7,5 +7,5 @@\n     scanf(\"%d\", &n);\n     while(n>0) {\n-        soma = soma + n/AUXILIAR;\n+        soma = soma + n%AUXILIAR;\n         ++i;\n         n = n/AUXILIAR;\n",
+      "failing_source": "\n#include <stdio.h>\n#define AUXILIAR 10\n\nint main() {\n    int n = 0, i = 0, soma = 0;\n    scanf(\"%d\", &n);\n    while(n>0) {\n        soma = soma + n/AUXILIAR;\n        ++i;\n        n = n/AUXILIAR;\n    }\n    printf(\"%d\\n%d\\n\", i, soma);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-008",
+      "item_id": "cpack-year-1-lab04-ex07-stu_016-sub_051",
+      "problem_id": "lab04-ex07",
+      "partition": "train",
+      "assigned_primary": "COMPUTATION",
+      "assigned_categories": [
+        "COMPUTATION"
+      ],
+      "details": [
+        "computation:i->j"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -26,5 +26,5 @@\n         i++;\n     }\n-    vector[i] = '\\0';\n+    vector[j] = '\\0';\n     printf(\"%s\\n\", vector);\n }\n",
+      "failing_source": "#include <stdio.h>\n\n#define MAX 80\n\n\nint leLinha(char s[]) {\n    int i = 0, length = 0, c;\n\n    while(i < MAX && (c = getchar()) != '\\n' && c != EOF){\n        s[i] = c;\n        length++;\n        i++;\n    }\n    s[i] = '\\0';\n    return length;\n}\n\nvoid apagaCaracter(char s[], char c) {\n    int i = 0, j = 0;\n    char vector[MAX];\n    while(i < MAX - 1 && s[i] != '\\0') {\n        if(s[i] != c) {\n            vector[j] = s[i];\n            j++;\n        }\n        i++;\n    }\n    vector[i] = '\\0';\n    printf(\"%s\\n\", vector);\n}\n\nint main(){\n    char vector[MAX], c;\n    leLinha(vector);\n    c = getchar();\n    apagaCaracter(vector, c);\n    return 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-009",
+      "item_id": "cpack-year-4-lab02-ex02-stu_144-sub_002",
+      "problem_id": "lab02-ex02",
+      "partition": "train",
+      "assigned_primary": "COMPUTATION",
+      "assigned_categories": [
+        "COMPUTATION"
+      ],
+      "details": [
+        "output_argument:&->"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -6,5 +6,5 @@\n     int M;\n     scanf(\"%d %d\\n\", &N, &M);\n-    (N<M) ? printf(\"%d\\n%d\\n\", &N, &M) : printf(\"%d\\n%d\\n\" , &M, &N);\n+    (N<M) ? printf(\"%d\\n%d\\n\", N, M) : printf(\"%d\\n%d\\n\" , M, N);\n \n     return 0;\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main(){\n    int N;\n    int M;\n    scanf(\"%d %d\\n\", &N, &M);\n    (N<M) ? printf(\"%d\\n%d\\n\", &N, &M) : printf(\"%d\\n%d\\n\" , &M, &N);\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-010",
+      "item_id": "cpack-year-5-lab03-ex06-stu_174-sub_009",
+      "problem_id": "lab03-ex06",
+      "partition": "train",
+      "assigned_primary": "COMPUTATION",
+      "assigned_categories": [
+        "COMPUTATION"
+      ],
+      "details": [
+        "computation:atoi ( &->",
+        "computation:)->- '0'"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -7,5 +7,5 @@\n     int sum = 0;\n     while((c = getchar()) != '\\n' && c != EOF){\n-        sum += atoi(&c);\n+        sum += c - '0';\n     }\n \n",
+      "failing_source": "\n#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    char c;\n    int sum = 0;\n    while((c = getchar()) != '\\n' && c != EOF){\n        sum += atoi(&c);\n    }\n\n    if(sum % 9 == 0) {\n        printf(\"yes\\n\");\n    } else {\n        printf(\"no\\n\");\n    }\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-011",
+      "item_id": "cpack-year-1-lab03-ex05-stu_025-sub_028",
+      "problem_id": "lab03-ex05",
+      "partition": "train",
+      "assigned_primary": "CONTROL_FLOW",
+      "assigned_categories": [
+        "CONTROL_FLOW"
+      ],
+      "details": [
+        "insert:continue_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -7,5 +7,6 @@\n \t\tif (c == '\"' && write == 1 && bar == 0){\n \t\t\twrite = 0;\n-\t\t\tputchar('\\n');}\n+\t\t\tputchar('\\n');\n+\t\t\tcontinue;}\n \t\tif (c == '\"' && write == 0){\n \t\t\twrite = 1;\n",
+      "failing_source": "#include <stdio.h>\n\nint main()\n{\n\tint c, bar = 0, write = 0;\n\twhile ((c = getchar()) != EOF){\n\t\tif (c == '\"' && write == 1 && bar == 0){\n\t\t\twrite = 0;\n\t\t\tputchar('\\n');}\n\t\tif (c == '\"' && write == 0){\n\t\t\twrite = 1;\n\t\t\tcontinue;}\n\t\tif (c == '\\\\' && bar == 0){\n\t\t\tbar = 1;\n\t\t\tcontinue;}\n\t\tif (write == 1){\n\t\t\tif (bar == 1){\n\t\t\t\tbar = 0;}\n\t\t\tputchar(c);}}\n\treturn 0;\n}\n\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-012",
+      "item_id": "cpack-year-6-lab02-ex05-stu_231-sub_005",
+      "problem_id": "lab02-ex05",
+      "partition": "train",
+      "assigned_primary": "CONTROL_FLOW",
+      "assigned_categories": [
+        "CONTROL_FLOW"
+      ],
+      "details": [
+        "insert:return_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -8,3 +8,4 @@\n     for (i = 1; i <= n; i++)\n         printf(\"%d\\n\", i);\n+    return 0;\n }",
+      "failing_source": "\n#include <stdio.h>\n\nint main()\n{\n    int n, i;\n    scanf(\"%d\", &n);\n    for (i = 1; i <= n; i++)\n        printf(\"%d\\n\", i);\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-013",
+      "item_id": "cpack-year-3-lab02-ex06-stu_096-sub_010",
+      "problem_id": "lab02-ex06",
+      "partition": "train",
+      "assigned_primary": "CONTROL_FLOW",
+      "assigned_categories": [
+        "CONTROL_FLOW"
+      ],
+      "details": [
+        "insert:return_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -19,3 +19,4 @@\n     }\n     printf(\"min: %f, max: %f\\n\", min, max);\n+    return 0;\n }",
+      "failing_source": "\n#include<stdio.h>\nint main () {\n    int N, m = 1;\n    float num, min, max;\n    scanf(\"%d\", &N);\n    while (m <= N) {\n        scanf(\"%f\", &num);\n        m++;\n        if (m == 2){\n            min = num;\n            max = num;\n        }\n        else\n            if (num < min)\n                min = num;\n            if (num > max)\n                max = num;\n    }\n    printf(\"min: %f, max: %f\\n\", min, max);\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-014",
+      "item_id": "cpack-year-1-lab02-ex05-stu_017-sub_013",
+      "problem_id": "lab02-ex05",
+      "partition": "train",
+      "assigned_primary": "CONTROL_FLOW",
+      "assigned_categories": [
+        "CONTROL_FLOW"
+      ],
+      "details": [
+        "insert:return_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -10,3 +10,4 @@\n         printf(\"%d\\n\", contador);\n     }\n+    return 0;\n }",
+      "failing_source": "#include <stdio.h>\n\n\n\nint main () {\n    int N, contador;\n\n    scanf(\"%d\", &N);\n    for (contador = 1; contador <= N; contador++) {\n        printf(\"%d\\n\", contador);\n    }\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-015",
+      "item_id": "cpack-year-6-lab04-ex04-stu_204-sub_005",
+      "problem_id": "lab04-ex04",
+      "partition": "train",
+      "assigned_primary": "CONTROL_FLOW",
+      "assigned_categories": [
+        "CONTROL_FLOW"
+      ],
+      "details": [
+        "insert:return_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -26,3 +26,4 @@\n         printf(\"no\\n\");\n     }\n+    return 0;\n }",
+      "failing_source": "\n\n#include <stdio.h>\n#include <string.h>\n#define DIM 100\n\nint main(){\n\n    char s[DIM];\n    char s1[DIM];\n    scanf(\"%s\", s);\n    int comprimento = strlen(s), num = 0;\n\n    while(s[num] != '\\0'){\n        --comprimento;\n        s1[num] = s[comprimento];\n        num++;\n    }\n\n    s1[num] = '\\0';\n\n    if (strcmp(s, s1) == 0){\n        printf(\"yes\\n\");\n    }\n    else{\n        printf(\"no\\n\");\n    }\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-016",
+      "item_id": "cpack-year-5-lab02-ex07-stu_183-sub_007",
+      "problem_id": "lab02-ex07",
+      "partition": "train",
+      "assigned_primary": "EXTRA_STATEMENT",
+      "assigned_categories": [
+        "EXTRA_STATEMENT"
+      ],
+      "details": [
+        "delete:expression_statement"
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -10,8 +10,5 @@\n     contador2 = 0;\n         while (contador--) {\n-            printf(\"%d asj\\n\", contador);\n             if (contador != 0 && n % contador == 0) {\n-                printf(\"%d a\\n\", contador);\n-                printf(\"%d\\n o\", contador2);\n                 contador2 ++;\n         }\n",
+      "failing_source": "\n\n#include <stdio.h>\n\nint main() \n{\n    int contador, n, contador2;\n    scanf(\"%d\", &n);\n    contador = n + 1;\n    contador2 = 0;\n        while (contador--) {\n            printf(\"%d asj\\n\", contador);\n            if (contador != 0 && n % contador == 0) {\n                printf(\"%d a\\n\", contador);\n                printf(\"%d\\n o\", contador2);\n                contador2 ++;\n        }\n    }\n    printf(\"%d\\n\", contador2);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-017",
+      "item_id": "cpack-year-5-lab04-ex04-stu_200-sub_020",
+      "problem_id": "lab04-ex04",
+      "partition": "validation",
+      "assigned_primary": "EXTRA_STATEMENT",
+      "assigned_categories": [
+        "EXTRA_STATEMENT"
+      ],
+      "details": [
+        "delete:expression_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -24,5 +24,4 @@\n     }\n     while (indicador1-cont >= 0){\n-        printf(\"%d/%d-------%d------\\n\",indicador1,indicador2,cont);\n         if (s[indicador1-cont] != s[indicador2+cont]){\n             p = NAO;\n",
+      "failing_source": "\n#include <stdio.h>\n#define STRMAX 80\n#define SIM 1\n#define NAO 0\nint main(){\n    int cont = 1, tamanho = 0, p = SIM, indicador1, indicador2;\n    char s[STRMAX], i;\n    scanf(\"%s\",s);\n    i = s[0];\n    while (i != '\\0'){\n        i = s[cont];\n        cont++;\n        tamanho++;\n    }\n    cont = 0;\n    if (tamanho %2 != 0){\n        indicador1 = tamanho/2;\n        indicador2= indicador1;\n    }\n    else{\n        indicador1 = tamanho/2-1;\n        indicador2 = tamanho/2;\n    }\n    while (indicador1-cont >= 0){\n        printf(\"%d/%d-------%d------\\n\",indicador1,indicador2,cont);\n        if (s[indicador1-cont] != s[indicador2+cont]){\n            p = NAO;\n            break;\n}        \n        cont++;\n    }\n    if (p == SIM)\n        printf(\"yes\\n\");\n    else\n        printf(\"no\\n\");\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-018",
+      "item_id": "cpack-year-2-lab04-ex05-stu_047-sub_018",
+      "problem_id": "lab04-ex05",
+      "partition": "validation",
+      "assigned_primary": "EXTRA_STATEMENT",
+      "assigned_categories": [
+        "EXTRA_STATEMENT"
+      ],
+      "details": [
+        "delete:expression_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -19,5 +19,4 @@\n     s[i] = '\\0';\n     printf(\"%s\\n\", s);\n-    printf(\"%d\\n\", leLinha(s));\n     return 0;\n }",
+      "failing_source": "#include <stdio.h>\n\n#define MAX 80\n\nint leLinha(char s[MAX]){\n    int i = 0;\n    while(s[i] != '\\0')\n        i++;\n    return i;\n}\n\n\nint main(){\n    int c, i;\n    char s[MAX];\n\n    for(i = 0; i < MAX - 1 && (c = getchar()) != EOF && c != '\\n'; i++)\n        s[i] = c;\n    s[i] = '\\0';\n    printf(\"%s\\n\", s);\n    printf(\"%d\\n\", leLinha(s));\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-019",
+      "item_id": "cpack-year-3-lab02-ex09-stu_093-sub_009",
+      "problem_id": "lab02-ex09",
+      "partition": "train",
+      "assigned_primary": "EXTRA_STATEMENT",
+      "assigned_categories": [
+        "EXTRA_STATEMENT"
+      ],
+      "details": [
+        "delete:expression_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -14,5 +14,4 @@\n     hh = n / 3600;\n     remainder = n % 3600;\n-    remainder = n;\n     mm = remainder / 60;\n     remainder %= 60;\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main(){\n\n    int n, remainder;\n    int hh = 0;\n    int mm = 0;\n    int ss = 0;\n\n    scanf(\"%d\", &n);\n\n\n    hh = n / 3600;\n    remainder = n % 3600;\n    remainder = n;\n    mm = remainder / 60;\n    remainder %= 60;\n    ss = remainder;\n    \n    printf(\"%02d:%02d:%02d\\n\", hh, mm, ss);\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-020",
+      "item_id": "cpack-year-5-lab04-ex03-stu_173-sub_042",
+      "problem_id": "lab04-ex03",
+      "partition": "validation",
+      "assigned_primary": "EXTRA_STATEMENT",
+      "assigned_categories": [
+        "EXTRA_STATEMENT"
+      ],
+      "details": [
+        "delete:expression_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -17,6 +17,4 @@\n             max_val = numeros[i];\n     }\n-    \n-    printf(\"%d\\n\", max_val);\n \n     for (linha = 0; linha < max_val; linha++) {\n",
+      "failing_source": "\n\n#include <stdio.h>\n\n#define VECMAX 100\n\nvoid imprimir_linha(int val, int altura);\n\nint main() {\n    int n, i, j, linha, numeros[VECMAX], max_val = 0;\n    \n    scanf(\"%d\", &n);\n\n    for (i = 0; i < n; i++) {\n        scanf(\"%d\", &numeros[i]);\n        if (numeros[i] > max_val)\n            max_val = numeros[i];\n    }\n    \n    printf(\"%d\\n\", max_val);\n\n    for (linha = 0; linha < max_val; linha++) {\n        for (j = 0; j < n; j++) {\n            if (max_val - linha > numeros[j])\n                putchar(' ');\n            else\n                putchar('*');\n        }\n        putchar('\\n');\n    }\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-021",
+      "item_id": "cpack-year-4-lab02-ex07-stu_159-sub_013",
+      "problem_id": "lab02-ex07",
+      "partition": "validation",
+      "assigned_primary": "INITIALIZATION",
+      "assigned_categories": [
+        "INITIALIZATION"
+      ],
+      "details": [
+        "initializer:0->1"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -5,6 +5,6 @@\n     int n, contador, total;\n     \n-    contador = 0;\n-    total = 0;\n+    contador = 1;\n+    total = 1;\n \n     scanf(\"%d\", &n);\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main() {\n    int n, contador, total;\n    \n    contador = 0;\n    total = 0;\n\n    scanf(\"%d\", &n);\n\n    while (contador <= (n/2)) {\n        if (!(n % contador)) {\n            ++total;\n        }\n    ++contador;\n    }\n    printf(\"%d\\n\", total);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-022",
+      "item_id": "cpack-year-2-lab02-ex02-stu_035-sub_003",
+      "problem_id": "lab02-ex02",
+      "partition": "train",
+      "assigned_primary": "INPUT",
+      "assigned_categories": [
+        "INPUT"
+      ],
+      "details": [
+        "input:\"%d,%d\"->\"%d%d\""
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -6,5 +6,5 @@\n   int n, m;\n \n-  scanf(\"%d,%d\", &n, &m);\n+  scanf(\"%d%d\", &n, &m);\n   if (n < m)\n     printf(\"%d\\n%d\\n\", n, m);\n",
+      "failing_source": "#include <stdio.h>\n\n\n\nint main() {\n  int n, m;\n\n  scanf(\"%d,%d\", &n, &m);\n  if (n < m)\n    printf(\"%d\\n%d\\n\", n, m);\n  else\n    printf(\"%d\\n%d\\n\", m, n);\n\n  return 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-023",
+      "item_id": "cpack-year-5-lab02-ex01-stu_188-sub_001",
+      "problem_id": "lab02-ex01",
+      "partition": "train",
+      "assigned_primary": "INPUT",
+      "assigned_categories": [
+        "INPUT"
+      ],
+      "details": [
+        "declaration_scaffolding",
+        "input:\"%d,%d,%d\"->\"%d %d %d\""
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -3,7 +3,7 @@\n \n int main(){\n-    int n1,n2,n3;\n-    scanf(\"%d,%d,%d\",&n1,&n2,&n3);\n-    int maior=n1;\n+    int n1,n2,n3,maior;\n+    scanf(\"%d %d %d\",&n1,&n2,&n3);\n+    maior=n1;\n     if (n2>maior){\n         maior=n2;\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main(){\n    int n1,n2,n3;\n    scanf(\"%d,%d,%d\",&n1,&n2,&n3);\n    int maior=n1;\n    if (n2>maior){\n        maior=n2;\n    }\n\n    if (n3>maior){\n        maior=n3;\n    }\n    printf(\"%d\\n\",maior);\n    return 0; \n}\n\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-024",
+      "item_id": "cpack-year-5-lab02-ex06-stu_165-sub_017",
+      "problem_id": "lab02-ex06",
+      "partition": "train",
+      "assigned_primary": "INPUT",
+      "assigned_categories": [
+        "INPUT"
+      ],
+      "details": [
+        "input:\"%d\"->\"%f\""
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -7,5 +7,5 @@\n   float N, temp, min = FLT_MAX, max = -FLT_MAX;\n \n-  scanf(\"%d\", &N);\n+  scanf(\"%f\", &N);\n \n   for(i = 0; i < N; i++) {\n",
+      "failing_source": "\n#include <stdio.h>\n#include <float.h>\n\nint main() {\n  int i;\n  float N, temp, min = FLT_MAX, max = -FLT_MAX;\n\n  scanf(\"%d\", &N);\n\n  for(i = 0; i < N; i++) {\n    scanf(\"%f\", &temp);\n    if (temp < min)\n      min = temp;\n    if (temp > max)\n      max = temp;\n  }\n  printf(\"min: %f, max: %f\\n\", min, max);\n  \n  return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-025",
+      "item_id": "cpack-year-4-lab02-ex08-stu_159-sub_013",
+      "problem_id": "lab02-ex08",
+      "partition": "validation",
+      "assigned_primary": "INPUT",
+      "assigned_categories": [
+        "INPUT"
+      ],
+      "details": [
+        "input:->&"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -10,5 +10,5 @@\n     scanf(\"%d\", &n);\n     while (cont < n){\n-        scanf(\"%f\", numero);\n+        scanf(\"%f\", &numero);\n         soma += numero;\n         ++cont;\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main() {\n    int n, cont;\n    cont = 0;\n    float soma, numero, media;\n    soma = 0;\n\n    scanf(\"%d\", &n);\n    while (cont < n){\n        scanf(\"%f\", numero);\n        soma += numero;\n        ++cont;\n    }\n    media = soma / n;\n    printf(\"%.2f\\n\", media);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-026",
+      "item_id": "cpack-year-3-lab02-ex06-stu_085-sub_021",
+      "problem_id": "lab02-ex06",
+      "partition": "validation",
+      "assigned_primary": "INPUT",
+      "assigned_categories": [
+        "INPUT"
+      ],
+      "details": [
+        "input:->&"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -9,5 +9,5 @@\n     for (i=0; i<num; i++)\n     {\n-        scanf(\"%f\", dado);\n+        scanf(\"%f\", &dado);\n         if (i==0)\n         {\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main()\n{\n    int num, i;\n    float min, max, dado;\n    scanf(\"%d\", &num);\n    for (i=0; i<num; i++)\n    {\n        scanf(\"%f\", dado);\n        if (i==0)\n        {\n            min=dado;\n            max=dado;    \n        };\n        if (dado<min)\n        {\n            min=dado;\n        };\n        if (dado>max)\n        {\n            max=dado;\n        };\n                   \n    }\n\n    printf(\"min: %f, max: %f\\n\", min, max);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-027",
+      "item_id": "cpack-year-4-lab02-ex05-stu_149-sub_002",
+      "problem_id": "lab02-ex05",
+      "partition": "train",
+      "assigned_primary": "LOOP_BOUNDARY",
+      "assigned_categories": [
+        "LOOP_BOUNDARY"
+      ],
+      "details": [
+        "loop_header:0->1"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -9,5 +9,5 @@\n     scanf(\"%d\", &N);\n \n-    for(i=0; i<=N; ++i) {\n+    for(i=1; i<=N; ++i) {\n         printf(\"%d\\n\",i);\n     }\n",
+      "failing_source": "\n#include <stdio.h>\n\n\nint main(){\n\n    int N, i;\n\n    scanf(\"%d\", &N);\n\n    for(i=0; i<=N; ++i) {\n        printf(\"%d\\n\",i);\n    }\n    return 0;\n\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-028",
+      "item_id": "cpack-year-2-lab03-ex05-stu_059-sub_007",
+      "problem_id": "lab03-ex05",
+      "partition": "train",
+      "assigned_primary": "LOOP_BOUNDARY",
+      "assigned_categories": [
+        "LOOP_BOUNDARY"
+      ],
+      "details": [
+        "loop_header:'\\n'->EOF"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -12,5 +12,5 @@\n     int simbolo = NOESCAPE;\n \n-    while ((c = getchar()) != '\\n'){\n+    while ((c = getchar()) != EOF){\n         if ((c == '\"' && estado == FORA))\n             estado = DENTRO;\n",
+      "failing_source": "#include<stdio.h>\n#define ESCAPE 1\n#define NOESCAPE 0\n\n#define FORA 0\n#define DENTRO 1\n\n\nint main(){\n    int c;\n    int estado = FORA;\n    int simbolo = NOESCAPE;\n\n    while ((c = getchar()) != '\\n'){\n        if ((c == '\"' && estado == FORA))\n            estado = DENTRO;\n        else if (c == '\"' && estado == DENTRO && simbolo == NOESCAPE){\n            estado = FORA;\n            printf(\"\\n\");\n        }\n\n        if (estado == DENTRO && c != '\\\\' && c != '\"'){\n            printf(\"%c\",c);\n            simbolo = NOESCAPE;\n        }\n        else if ( estado == DENTRO && simbolo == ESCAPE){\n            printf(\"%c\",c);\n            simbolo = NOESCAPE;\n        }\n        else if (estado == DENTRO && c == '\\\\')\n            simbolo = ESCAPE;\n    }\n    \n\n\n\nreturn 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-029",
+      "item_id": "cpack-year-3-lab03-ex06-stu_065-sub_035",
+      "problem_id": "lab03-ex06",
+      "partition": "train",
+      "assigned_primary": "LOOP_BOUNDARY",
+      "assigned_categories": [
+        "LOOP_BOUNDARY"
+      ],
+      "details": [
+        "loop_header:'\\n'->EOF"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -5,5 +5,5 @@\n     int c, soma = 0; \n \n-    while((c= getchar()) != '\\n')\n+    while((c= getchar()) != EOF)\n         soma = soma + (c - '0');\n     if (soma % 9 == 0)\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main(){\n    int c, soma = 0; \n\n    while((c= getchar()) != '\\n')\n        soma = soma + (c - '0');\n    if (soma % 9 == 0)\n        printf(\"yes\\n\");\n    else \n        printf(\"no\\n\");\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-030",
+      "item_id": "cpack-year-1-lab02-ex10-stu_017-sub_032",
+      "problem_id": "lab02-ex10",
+      "partition": "train",
+      "assigned_primary": "LOOP_BOUNDARY",
+      "assigned_categories": [
+        "LOOP_BOUNDARY"
+      ],
+      "details": [
+        "loop_header:<->>"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -7,5 +7,5 @@\n \n     scanf(\"%d\", &num);\n-    while (num < 0) {\n+    while (num > 0) {\n         digito = num % 10;\n         num_digitos = num_digitos + 1;\n",
+      "failing_source": "#include <stdio.h>\n\n\n\nint main() {\n    int num, num_digitos = 0, soma = 0, digito;\n\n    scanf(\"%d\", &num);\n    while (num < 0) {\n        digito = num % 10;\n        num_digitos = num_digitos + 1;\n        soma = soma + digito;\n        num = num / 10;\n    }\n    printf(\"%d\\n%d\\n\", num_digitos, soma);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-031",
+      "item_id": "cpack-year-3-lab04-ex05-stu_099-sub_035",
+      "problem_id": "lab04-ex05",
+      "partition": "train",
+      "assigned_primary": "LOOP_BOUNDARY",
+      "assigned_categories": [
+        "LOOP_BOUNDARY"
+      ],
+      "details": [
+        "loop_header:->&& c",
+        "loop_header:->&& c != EOF"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -7,5 +7,5 @@\n     int i = 0, c;\n \n-    for (i = 0; (c = getchar()) != '\\n' && i < MAX - 1; i++) {\n+    for (i = 0; (c = getchar()) && c != '\\n' && c != EOF && i < MAX - 1; i++) {\n         s[i] = c;\n     }\n",
+      "failing_source": "\n#include <stdio.h>\n\n#define MAX 80\n\nint leLinha(char s[]) {\n    int i = 0, c;\n\n    for (i = 0; (c = getchar()) != '\\n' && i < MAX - 1; i++) {\n        s[i] = c;\n    }\n\n    s[i] = '\\0';\n\n    return i;\n}\n\n\nint main() {\n    char linha[MAX];\n    int caracteres;\n\n    caracteres = leLinha(linha);\n\n    printf(\"%s\\n\", linha);\n    return 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-032",
+      "item_id": "cpack-year-4-lab02-ex01-stu_149-sub_002",
+      "problem_id": "lab02-ex01",
+      "partition": "train",
+      "assigned_primary": "MISSING_STATEMENT",
+      "assigned_categories": [
+        "MISSING_STATEMENT"
+      ],
+      "details": [
+        "insert:if_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -8,4 +8,12 @@\n     scanf(\"%d %d %d\", &n_1, &n_2, &n_3);\n \n+    if (n_1>n_2 && n_1>n_3) {\n+        printf(\"%d\\n\", n_1);\n+    } else if (n_2>n_1 && n_2>n_3) {\n+        printf(\"%d\\n\", n_2);\n+    } else {\n+        printf(\"%d\\n\", n_3);\n+    }\n+\n     return 0;\n }",
+      "failing_source": "\n#include <stdio.h>\n\nint main()\n{\n    int n_1, n_2, n_3;\n\n    scanf(\"%d %d %d\", &n_1, &n_2, &n_3);\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-033",
+      "item_id": "cpack-year-4-lab02-ex06-stu_149-sub_002",
+      "problem_id": "lab02-ex06",
+      "partition": "train",
+      "assigned_primary": "MISSING_STATEMENT",
+      "assigned_categories": [
+        "MISSING_STATEMENT"
+      ],
+      "details": [
+        "insert:expression_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -8,5 +8,7 @@\n \n     scanf(\"%d\", &N);\n-\n+    scanf(\"%f\", &min);\n+    max = min;\n+    N--;\n     while(N--) {\n         scanf(\"%f\", &aux);\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main() {\n\n    int N;\n    float min = 0, max = 0, aux;\n\n    scanf(\"%d\", &N);\n\n    while(N--) {\n        scanf(\"%f\", &aux);\n\n        min = (aux < min) ? aux : min;\n        max = aux > max ? aux : max;\n    }\n\n    printf(\"min: %f, max: %f\\n\", min, max);\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-034",
+      "item_id": "cpack-year-5-lab02-ex03-stu_107-sub_044",
+      "problem_id": "lab02-ex03",
+      "partition": "train",
+      "assigned_primary": "MISSING_STATEMENT",
+      "assigned_categories": [
+        "MISSING_STATEMENT"
+      ],
+      "details": [
+        "insert:expression_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -7,4 +7,6 @@\n     int N, M;\n \n+    scanf(\"%d%d\", &N, &M);\n+\n     N % M == 0 ? printf(\"yes\\n\") : printf(\"no\\n\");\n \n",
+      "failing_source": "\n#include <stdio.h>\n\n\nint main()\n{\n    int N, M;\n\n    N % M == 0 ? printf(\"yes\\n\") : printf(\"no\\n\");\n\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-035",
+      "item_id": "cpack-year-3-lab02-ex03-stu_076-sub_016",
+      "problem_id": "lab02-ex03",
+      "partition": "train",
+      "assigned_primary": "MISSING_STATEMENT",
+      "assigned_categories": [
+        "MISSING_STATEMENT"
+      ],
+      "details": [
+        "insert:expression_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -5,4 +5,6 @@\n {\n     int num1, num2;\n+\n+    scanf(\"%d%d\", &num1, &num2);\n \n     if (num1 % num2 == 0)\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main()\n{\n    int num1, num2;\n\n    if (num1 % num2 == 0)\n    {\n        printf(\"yes\\n\");\n    }\n    else\n    {\n        printf(\"no\\n\");\n    }\n\n    return 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-036",
+      "item_id": "cpack-year-4-lab02-ex06-stu_144-sub_011",
+      "problem_id": "lab02-ex06",
+      "partition": "train",
+      "assigned_primary": "MISSING_STATEMENT",
+      "assigned_categories": [
+        "MISSING_STATEMENT"
+      ],
+      "details": [
+        "insert:expression_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -23,4 +23,5 @@\n         counter++;\n     }\n+    printf(\"min: %f, max: %f\\n\", min, max);\n     return 0;\n }",
+      "failing_source": "\n#include <stdio.h>\n\nint main(){\n\n    int N;\n    int counter = 1;\n    float real;\n\n    scanf(\"%d\", &N);\n    scanf(\"%f\", &real);\n\n    float min = real;\n    float max = real;\n\n    while(counter < N){\n        scanf(\"%f\", &real);\n        if(real < min){\n            min = real;\n        }else if(real > max){\n            max = real;\n        }\n        counter++;\n    }\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-037",
+      "item_id": "cpack-year-3-lab02-ex01-stu_088-sub_001",
+      "problem_id": "lab02-ex01",
+      "partition": "validation",
+      "assigned_primary": "MULTI",
+      "assigned_categories": [
+        "BRANCH_CONDITION",
+        "COMPUTATION",
+        "INITIALIZATION",
+        "OTHER",
+        "OUTPUT_TEXT"
+      ],
+      "details": [
+        "other:maior = 0->max",
+        "initializer:maior = 0->max",
+        "other:if ( um >= dois && um >= tres ) maior->max",
+        "branch_condition:if ( um >= dois && um >= tres ) maior->max",
+        "computation:if ( um >= dois && um >= tres ) maior->max",
+        "branch_condition:; else if (->>",
+        "other:; else if (->>",
+        "branch_condition:>=->?",
+        "computation:>=->?",
+        "branch_condition:&& dois >= tres ) maior =->:",
+        "computation:&& dois >= tres ) maior =->:",
+        "branch_condition:else maior->max",
+        "computation:else maior->max",
+        "branch_condition:->max > tres ? max :",
+        "computation:->max > tres ? max :",
+        "output_text:\"%d\"->\"%d\\n\"",
+        "output_argument:maior->max"
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -4,13 +4,10 @@\n int main()\n {\n-    int um, dois, tres, maior = 0;\n+    int um, dois, tres, max;\n+\n     scanf(\"%d %d %d\", &um, &dois, &tres);\n-    if(um >= dois && um >= tres)\n-        maior = um;\n-    else if(dois >= um && dois >= tres)\n-        maior = dois;\n-    else\n-        maior = tres;\n-    printf(\"%d\", maior);\n+    max = um > dois ? um : dois;\n+    max = max > tres ? max : tres;\n+    printf(\"%d\\n\", max);\n     return 0;\n }",
+      "failing_source": "\n#include <stdio.h>\n\nint main()\n{\n    int um, dois, tres, maior = 0;\n    scanf(\"%d %d %d\", &um, &dois, &tres);\n    if(um >= dois && um >= tres)\n        maior = um;\n    else if(dois >= um && dois >= tres)\n        maior = dois;\n    else\n        maior = tres;\n    printf(\"%d\", maior);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-038",
+      "item_id": "cpack-year-5-lab03-ex06-stu_169-sub_011",
+      "problem_id": "lab03-ex06",
+      "partition": "train",
+      "assigned_primary": "MULTI",
+      "assigned_categories": [
+        "COMPUTATION",
+        "EXTRA_STATEMENT",
+        "INPUT",
+        "LOOP_BOUNDARY",
+        "NUMERIC_TYPE",
+        "OTHER"
+      ],
+      "details": [
+        "declaration_scaffolding",
+        "input:scanf ( \"%d\" , & num )->char c",
+        "numeric_type:scanf ( \"%d\" , & num )->char c",
+        "other:scanf ( \"%d\" , & num )->char c",
+        "loop_header:num->( c = getchar ( ) )",
+        "computation:num->( c = getchar ( ) )",
+        "input:num->( c = getchar ( ) )",
+        "loop_header:0->'\\n' && c != ' ' && c != EOF",
+        "computation:digito = num % 10->soma += c - '0'",
+        "delete:expression_statement"
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -4,11 +4,10 @@\n \n int main() {\n-    int num, digito, soma = 0;\n-    scanf(\"%d\", &num);\n+    int soma = 0;\n+    char c;\n \n-    while (num != 0) {\n-        digito = num % 10;\n-        soma = soma + digito;\n-        num = num / 10;\n+    \n+    while ((c = getchar()) != '\\n' && c != ' ' && c != EOF) {\n+        soma += c - '0';  \n     }\n \n",
+      "failing_source": "\n\n#include <stdio.h>\n\nint main() {\n    int num, digito, soma = 0;\n    scanf(\"%d\", &num);\n\n    while (num != 0) {\n        digito = num % 10;\n        soma = soma + digito;\n        num = num / 10;\n    }\n\n    if (soma % 9 == 0)\n        printf(\"yes\\n\");\n\n    else\n        printf(\"no\\n\");\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-039",
+      "item_id": "cpack-year-3-lab04-ex07-stu_088-sub_047",
+      "problem_id": "lab04-ex07",
+      "partition": "validation",
+      "assigned_primary": "MULTI",
+      "assigned_categories": [
+        "BRANCH_CONDITION",
+        "CONTROL_FLOW",
+        "INITIALIZATION",
+        "MISSING_STATEMENT",
+        "NUMERIC_TYPE",
+        "OTHER",
+        "STATEMENT_PLACEMENT"
+      ],
+      "details": [
+        "moved:void apagaCaracter(char s[], char n){",
+        "numeric_type:->void leLinha ( char s [ ] ) {",
+        "other:->void leLinha ( char s [ ] ) {",
+        "structure",
+        "other:if ( c != n )->",
+        "branch_condition:if ( c != n )->",
+        "insert:brace",
+        "control_flow:return->int i = 0 ,",
+        "numeric_type:return->int i = 0 ,",
+        "other:return->int i = 0 ,",
+        "initializer:return->int i = 0 ,",
+        "declaration_scaffolding",
+        "insert:expression_statement+while_statement",
+        "insert:expression_statement"
+      ],
+      "hunks_minimal": 5,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -4,14 +4,29 @@\n \n \n-void apagaCaracter(char s[], char n){\n+\n+void leLinha(char s[]){\n     int c, contador = 0;\n \n     while((c = getchar()) != EOF && c != '\\n'){\n-        if(c != n)\n             s[contador++] = c;\n     }\n     s[contador] = '\\0';\n+}\n \n-    return contador;\n+\n+void apagaCaracter(char s[], char n){\n+    int i = 0, contador = 0;\n+\n+    while(s[i + contador] != '\\0'){\n+        if(s[i + contador] == n){\n+            contador++;\n+            s[i] = s[i + contador];\n+        }\n+        else{\n+            s[i] = s[i + contador];\n+            i++;\n+        }\n+    }\n+    s[i] = '\\0';\n }\n \n@@ -19,4 +34,5 @@\n     char n, str[MAX];\n \n+    leLinha(str);\n     scanf(\"%c\", &n);\n     apagaCaracter(str, n);\n",
+      "failing_source": "\n#include <stdio.h>\n#define MAX 50\n\n\nvoid apagaCaracter(char s[], char n){\n    int c, contador = 0;\n\n    while((c = getchar()) != EOF && c != '\\n'){\n        if(c != n)\n            s[contador++] = c;\n    }\n    s[contador] = '\\0';\n\n    return contador;\n}\n\nint main(){\n    char n, str[MAX];\n\n    scanf(\"%c\", &n);\n    apagaCaracter(str, n);\n\n    printf(\"%s\\n\", str);\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-040",
+      "item_id": "cpack-year-5-lab03-ex05-stu_170-sub_008",
+      "problem_id": "lab03-ex05",
+      "partition": "train",
+      "assigned_primary": "MULTI",
+      "assigned_categories": [
+        "BRANCH_CONDITION",
+        "COMPUTATION",
+        "OTHER",
+        "STATEMENT_PLACEMENT"
+      ],
+      "details": [
+        "moved:putchar(c);",
+        "branch_condition:->&& ! vem_especial",
+        "branch_condition:&& vem_especial != 0->",
+        "other:->if ( ! vem_especial )",
+        "branch_condition:->if ( ! vem_especial )",
+        "branch_condition:->else { vem_especial = 0 ; }",
+        "structure",
+        "computation:->else { vem_especial = 0 ; }",
+        "insert:brace",
+        "delete:brace",
+        "branch_condition:} else if ( ( 'a' <= c && c <= 'z' ) || ->",
+        "other:} else if ( ( 'a' <= c && c <= 'z' ) || ->"
+      ],
+      "hunks_minimal": 4,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -8,5 +8,5 @@\n \n     while ((c = getchar()) != EOF && c != '\\n'){\n-        if (c == '\\\"'){\n+        if (c == '\\\"' && !vem_especial){\n             if (comecou == 0){\n                 comecou = 1;\n@@ -16,11 +16,16 @@\n             }\n         } else if (comecou) {\n-            if (c == '\\\\' && vem_especial != 0){\n+            if (c == '\\\\'){\n+                if (!vem_especial)\n                 vem_especial = 1;\n-            } else if (vem_especial){\n+                else{\n+                    putchar(c);\n+                    vem_especial = 0;                }\n+            } else {\n+                if (vem_especial)\n                 vem_especial = 0;\n                 putchar(c);\n-            } else if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || ('0' <= c && c <= '9') || ' ' == c){\n-                putchar(c);\n+                \n+                \n             };\n         };\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main(){\n    char c;\n    int comecou = 0;\n    int vem_especial = 0;\n\n    while ((c = getchar()) != EOF && c != '\\n'){\n        if (c == '\\\"'){\n            if (comecou == 0){\n                comecou = 1;\n            } else {\n                comecou = 0;\n                putchar('\\n');\n            }\n        } else if (comecou) {\n            if (c == '\\\\' && vem_especial != 0){\n                vem_especial = 1;\n            } else if (vem_especial){\n                vem_especial = 0;\n                putchar(c);\n            } else if (('a' <= c && c <= 'z') || ('A' <= c && c <= 'Z') || ('0' <= c && c <= '9') || ' ' == c){\n                putchar(c);\n            };\n        };\n    };\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-041",
+      "item_id": "cpack-year-6-lab04-ex05-stu_237-sub_023",
+      "problem_id": "lab04-ex05",
+      "partition": "train",
+      "assigned_primary": "MULTI",
+      "assigned_categories": [
+        "COMPUTATION",
+        "CONTROL_FLOW",
+        "INITIALIZATION",
+        "INPUT",
+        "LOOP_BOUNDARY",
+        "NUMERIC_TYPE",
+        "OTHER",
+        "OUTPUT_TEXT",
+        "STATEMENT_PLACEMENT"
+      ],
+      "details": [
+        "other:->#define MAX 80 int leLinha ( char s [ ] ",
+        "numeric_type:->#define MAX 80 int leLinha ( char s [ ] ",
+        "structure",
+        "computation:->#define MAX 80 int leLinha ( char s [ ] ",
+        "initializer:->#define MAX 80 int leLinha ( char s [ ] ",
+        "loop_header:->#define MAX 80 int leLinha ( char s [ ] ",
+        "input:->#define MAX 80 int leLinha ( char s [ ] ",
+        "control_flow:->#define MAX 80 int leLinha ( char s [ ] ",
+        "numeric_type:->char s [ MAX ] ; int tamanho ; int i ; t",
+        "other:->char s [ MAX ] ; int tamanho ; int i ; t",
+        "computation:->char s [ MAX ] ; int tamanho ; int i ; t",
+        "loop_header:->char s [ MAX ] ; int tamanho ; int i ; t",
+        "output_argument:->char s [ MAX ] ; int tamanho ; int i ; t",
+        "output_literal"
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -2,5 +2,32 @@\n #include <stdio.h>\n \n+#define MAX 80\n+\n+int leLinha(char s[]) {\n+    int i;\n+    char c;\n+\n+    i = 0;  \n+    while (i < MAX - 1 && (c = getchar()) != '\\n' && c != EOF) {\n+        s[i] = c;\n+        i++;\n+    }\n+\n+    s[i] = '\\0';\n+    \n+    return i;\n+}\n+\n int main() {\n+    char s[MAX];\n+    int tamanho;\n+    int i;\n+\n+    tamanho = leLinha(s);\n+\n+    for (i = 0; i < tamanho; i++) {\n+        printf(\"%c\", s[i]);\n+    }\n+    printf(\"\\n\");\n \n     return 0;\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-042",
+      "item_id": "cpack-year-3-lab02-ex07-stu_100-sub_012",
+      "problem_id": "lab02-ex07",
+      "partition": "train",
+      "assigned_primary": "NO_CHANGE",
+      "assigned_categories": [],
+      "details": [
+        "declaration_scaffolding"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -5,5 +5,5 @@\n int main() {\n     \n-    int n, num, div;\n+    int n, num, div = 0;\n \n     scanf(\"%d\", &n);\n",
+      "failing_source": "\n\n#include <stdio.h>\n\nint main() {\n    \n    int n, num, div;\n\n    scanf(\"%d\", &n);\n    \n    for (num = 1; num <= n; num++)\n    {\n        if (n % num == 0)\n            div++;\n    }\n    printf(\"%d\\n\", div);\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-043",
+      "item_id": "cpack-year-1-lab04-ex08-stu_022-sub_038",
+      "problem_id": "lab04-ex08",
+      "partition": "train",
+      "assigned_primary": "NO_CHANGE",
+      "assigned_categories": [],
+      "details": [
+        "declaration_scaffolding"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -8,6 +8,5 @@\n int main(){\n     char s1[MAX], s2[MAX];\n-    long n1 = 0, n2 = 0;\n-    int soma;\n+    long soma, n1 = 0, n2 = 0;\n \n     scanf(\"%s%s\", s1, s2);\n",
+      "failing_source": "#include <stdio.h>\n\n#define MAX 100\n\nlong transnum(char s[]);\nint pot(int e);\n\nint main(){\n    char s1[MAX], s2[MAX];\n    long n1 = 0, n2 = 0;\n    int soma;\n\n    scanf(\"%s%s\", s1, s2);\n\n    n1 = transnum(s1);\n    n2 = transnum(s2);\n\n    soma = n1 - n2;\n\n    if (soma > 0)\n        printf(\"%s\\n\", s1);\n    else\n        printf(\"%s\\n\", s2);\n    \n    return 0;\n}\n\nlong transnum(char s[]){              \n    int i, comp = 0, alg;\n    long num = 0;\n\n    for(i=0; s[i] != '\\0'; i++)\n        comp++;\n\n    for(i=0; s[i] != '\\0'; i++){\n        if(s[i] == '0')\n            num = num*10;\n        else{\n            alg = s[i] - '0';\n            num = num +  (alg * pot(comp));\n            comp--;}\n    }\n    return num;  \n}\n\nint pot(int e){\n    int p = 1, b = 10;\n    if(e == 0)\n        return 1;\n    else{\n    while(e > 0){\n        p = p*b;\n        e--;\n        }\n    }\n    return p;\n}\n\n\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-044",
+      "item_id": "cpack-year-4-lab04-ex08-stu_143-sub_019",
+      "problem_id": "lab04-ex08",
+      "partition": "train",
+      "assigned_primary": "NO_CHANGE",
+      "assigned_categories": [],
+      "details": [
+        "declaration_scaffolding"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -8,5 +8,5 @@\n     long long num1, num2;\n     char s1[MAX], s2[MAX];\n-    int i;\n+    int i = 0;\n     scanf(\"%s%s\", s1 ,s2);\n     \n",
+      "failing_source": "\n\n#include <stdio.h>\n#define MAX 100\n\nint main(){\n\n    long long num1, num2;\n    char s1[MAX], s2[MAX];\n    int i;\n    scanf(\"%s%s\", s1 ,s2);\n    \n    while (i < MAX)\n    {\n        if ((s1[i] > s2[i]) ||(s1[i] == s2[i] && i == MAX -2)){\n            printf(\"%s\\n\", s1);\n            break;\n        }\n        if (s1[i] < s2[i]){\n            printf(\"%s\\n\", s2);\n            break;\n        }\n        else\n            i++;\n        \n    }\n    \n    return 0;\n}\n\n\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-045",
+      "item_id": "cpack-year-6-lab02-ex02-stu_229-sub_002",
+      "problem_id": "lab02-ex02",
+      "partition": "train",
+      "assigned_primary": "NO_CHANGE",
+      "assigned_categories": [],
+      "details": [
+        "declaration_scaffolding"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -4,5 +4,5 @@\n int main()\n {\n-    int n, i, maior, menor;\n+    int n, i, maior = 0, menor = 100000;\n     for(i = 0; i < 2; i++){\n         scanf(\"%d\", &n);\n",
+      "failing_source": "\n#include <stdio.h>\n\nint main()\n{\n    int n, i, maior, menor;\n    for(i = 0; i < 2; i++){\n        scanf(\"%d\", &n);\n        if (n > maior) maior = n;\n        if (n < menor) menor = n;\n    }\n    printf(\"%d\\n%d\\n\", menor, maior);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-046",
+      "item_id": "cpack-year-2-lab02-ex08-stu_046-sub_013",
+      "problem_id": "lab02-ex08",
+      "partition": "validation",
+      "assigned_primary": "NUMERIC_TYPE",
+      "assigned_categories": [
+        "NUMERIC_TYPE"
+      ],
+      "details": [
+        "numeric_type:,->; float",
+        "numeric_type:; float->,"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -3,6 +3,6 @@\n int main()\n {\n-    int i, s = 0;\n-    float N, x, media;\n+    int i;\n+    float s = 0, N, x, media;\n \n     scanf(\"%f\", &N);\n",
+      "failing_source": "#include <stdio.h>\n\nint main()\n{\n    int i, s = 0;\n    float N, x, media;\n\n    scanf(\"%f\", &N);\n\n    for(i = 1; i <= N; i++)\n    {\n        scanf(\"%f\", &x);\n        s += x;\n    }\n\n    media = s/N;\n    printf(\"%.2f\\n\", media);\n\n    return 0;\n}\n\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-047",
+      "item_id": "cpack-year-5-lab03-ex06-stu_173-sub_034",
+      "problem_id": "lab03-ex06",
+      "partition": "validation",
+      "assigned_primary": "NUMERIC_TYPE",
+      "assigned_categories": [
+        "NUMERIC_TYPE"
+      ],
+      "details": [
+        "numeric_type:int->long",
+        "declaration_scaffolding"
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -3,5 +3,6 @@\n #include <stdio.h>\n \n-void is_divisivel_por_9(int n);\n+void is_divisivel_por_9(long n);\n+long soma_digitos(long n);\n \n int main() {\n@@ -14,5 +15,5 @@\n }\n \n-void is_divisivel_por_9(int n) {\n+void is_divisivel_por_9(long n) {\n     if (n % 9)\n         printf(\"no\\n\");\n",
+      "failing_source": "\n\n#include <stdio.h>\n\nvoid is_divisivel_por_9(int n);\n\nint main() {\n    long n;\n\n    scanf(\"%ld\", &n);\n    is_divisivel_por_9(n);\n\n    return 0;\n}\n\nvoid is_divisivel_por_9(int n) {\n    if (n % 9)\n        printf(\"no\\n\");\n    else\n        printf(\"yes\\n\");\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-048",
+      "item_id": "cpack-year-3-lab04-ex07-stu_076-sub_090",
+      "problem_id": "lab04-ex07",
+      "partition": "train",
+      "assigned_primary": "OTHER",
+      "assigned_categories": [
+        "OTHER"
+      ],
+      "details": [
+        "other:if->while"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -32,5 +32,5 @@\n     for (i = 0; i < VECMAX; i++)\n     {\n-        if (s[i + delta] == c)\n+        while (s[i + delta] == c)\n         {\n             delta++;\n",
+      "failing_source": "\n#include <stdio.h>\n#include <string.h>\n\n#define VECMAX 100\n\nint leLinha(char s[])\n{\n    int soma = 0, c, i = 0;\n    char end[3];\n\n    end[0] = '\\n';\n    end[1] = EOF;\n    end[2] = '\\0';\n\n    while (! strchr(end, (c = getchar())))\n    {\n        s[i] = c;\n        soma++;\n        i++;\n    }\n\n    s[i] = '\\0';\n\n    return soma;\n}\n\nvoid apagaCaracter(char s[], char c)\n{\n    int i, delta = 0;\n\n    for (i = 0; i < VECMAX; i++)\n    {\n        if (s[i + delta] == c)\n        {\n            delta++;\n        }\n        s[i] = s[i + delta];\n    }\n}\n\nint main()\n{\n    char s[VECMAX], c;\n\n    leLinha(s);\n\n    c = getchar();\n\n    apagaCaracter(s, c);\n\n    printf(\"%s\\n\", s);\n\n    return 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-049",
+      "item_id": "cpack-year-5-lab02-ex09-stu_080-sub_127",
+      "problem_id": "lab02-ex09",
+      "partition": "train",
+      "assigned_primary": "OTHER",
+      "assigned_categories": [
+        "OTHER"
+      ],
+      "details": [
+        "other:360->3600"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -2,5 +2,5 @@\n #include <stdio.h>\n #define SEG 60\n-#define HOURS 360\n+#define HOURS 3600\n \n int main(){\n",
+      "failing_source": "\n#include <stdio.h>\n#define SEG 60\n#define HOURS 360\n\nint main(){\n    int N, hours = 0;\n    scanf(\"%d\", &N);\n    hours = N / HOURS;\n    printf(\"%.2d:%.2d:%.2d\\n\", hours, (N - (hours * HOURS)) / 60, N % SEG);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-050",
+      "item_id": "cpack-year-4-lab02-ex09-stu_149-sub_013",
+      "problem_id": "lab02-ex09",
+      "partition": "train",
+      "assigned_primary": "OUTPUT_FORMAT",
+      "assigned_categories": [
+        "OUTPUT_FORMAT"
+      ],
+      "details": [
+        "output_format:\"0%d:0%d:0%d\\n\"->\"%02d:%02d:%02d\\n\""
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -11,5 +11,5 @@\n     segundos-=minutos*60;\n     \n-    printf(\"0%d:0%d:0%d\\n\",horas,minutos,segundos);\n+    printf(\"%02d:%02d:%02d\\n\",horas,minutos,segundos);\n     return 0;\n }",
+      "failing_source": "\n#include <stdio.h>\n\nint main() {\n    int segundos,horas,minutos;\n\n    scanf(\"%d\", &segundos);\n    horas=segundos/3600;\n    segundos-=horas*3600;\n    minutos=segundos/60;\n    segundos-=minutos*60;\n    \n    printf(\"0%d:0%d:0%d\\n\",horas,minutos,segundos);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-051",
+      "item_id": "cpack-year-5-lab02-ex09-stu_183-sub_011",
+      "problem_id": "lab02-ex09",
+      "partition": "train",
+      "assigned_primary": "OUTPUT_FORMAT",
+      "assigned_categories": [
+        "OUTPUT_FORMAT"
+      ],
+      "details": [
+        "output_format:\"%d:%d:%d\"->\"%.2d:%.2d:%.2d\\n\""
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -9,5 +9,5 @@\n     minutos = resto / 60;\n     segundos = resto % 60;\n-    printf(\"%d:%d:%d\", horas, minutos, segundos);\n+    printf(\"%.2d:%.2d:%.2d\\n\", horas, minutos, segundos);\n     return 0;\n }",
+      "failing_source": "\n#include <stdio.h>\n\nint main() {\n    int segundos, horas, minutos, resto;\n    scanf(\"%d\", &resto);\n    horas = resto / 3600;\n    resto = resto % 3600;\n    minutos = resto / 60;\n    segundos = resto % 60;\n    printf(\"%d:%d:%d\", horas, minutos, segundos);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-052",
+      "item_id": "cpack-year-5-lab02-ex03-stu_188-sub_002",
+      "problem_id": "lab02-ex03",
+      "partition": "train",
+      "assigned_primary": "OUTPUT_FORMAT",
+      "assigned_categories": [
+        "OUTPUT_FORMAT"
+      ],
+      "details": [
+        "output_format:\"%d\\n\"->\"yes\\n\"",
+        "output_format:\"%d\\n\"->\"no\\n\""
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -12,7 +12,7 @@\n     }\n     if (maior%menor==0){ \n-        printf(\"%d\\n\", \"yes\");\n+        printf(\"yes\\n\");\n     } else {\n-        printf(\"%d\\n\", \"no\");\n+        printf(\"no\\n\");\n     }\n     return 0;\n",
+      "failing_source": "\n#include <stdio.h>\nint main(){\n    int N,M,menor,maior;\n    scanf(\"%d %d\",&N,&M); \n    if (N<M){\n        menor=N;\n        maior=M;\n    } else {\n        menor=M;\n        maior=N;\n    }\n    if (maior%menor==0){ \n        printf(\"%d\\n\", \"yes\");\n    } else {\n        printf(\"%d\\n\", \"no\");\n    }\n    return 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-053",
+      "item_id": "cpack-year-3-lab02-ex09-stu_086-sub_042",
+      "problem_id": "lab02-ex09",
+      "partition": "train",
+      "assigned_primary": "OUTPUT_FORMAT",
+      "assigned_categories": [
+        "OUTPUT_FORMAT"
+      ],
+      "details": [
+        "output_format:\"%2d:%2d:%2d\\n\"->\"%02d:%02d:%02d\\n\""
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -14,5 +14,5 @@\n     m = ((sintro%HORASEMSEG)/MINEMSEG);\n     s = (sintro%MINEMSEG);\n-printf(\"%2d:%2d:%2d\\n\", h, m, s);\n+printf(\"%02d:%02d:%02d\\n\", h, m, s);\n return 0;\n }\n",
+      "failing_source": "\n\n#include <stdio.h>\n\n#define HORASEMSEG 3600\n#define MINEMSEG 60\n\nint main()\n{\nint sintro, h, m, s;\n\nscanf(\"%d\", &sintro);\n    h = (sintro/HORASEMSEG);\n    m = ((sintro%HORASEMSEG)/MINEMSEG);\n    s = (sintro%MINEMSEG);\nprintf(\"%2d:%2d:%2d\\n\", h, m, s);\nreturn 0;\n}\n\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-054",
+      "item_id": "cpack-year-3-lab02-ex09-stu_073-sub_015",
+      "problem_id": "lab02-ex09",
+      "partition": "train",
+      "assigned_primary": "OUTPUT_FORMAT",
+      "assigned_categories": [
+        "OUTPUT_FORMAT"
+      ],
+      "details": [
+        "output_format:\"%02x:%02x:%02x\\n\"->\"%02d:%02d:%02d\\n\""
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -19,5 +19,5 @@\n             HH = MM / 60;\n             MM = MM % 60;\n-            printf(\"%02x:%02x:%02x\\n\",HH,MM,SS);\n+            printf(\"%02d:%02d:%02d\\n\",HH,MM,SS);\n         }\n         \n",
+      "failing_source": "\n#include <stdio.h>\n\nint main () {\n    int N;\n    int HH = 0,MM = 0,SS = 0;\n    scanf(\"%d\",&N);\n    SS = N;\n    if (N < 60){\n    printf(\"%02x:%02x:%02x\\n\",HH,MM,SS);\n    }\n    else{\n        MM = SS / 60;\n        SS = SS % 60;\n        if (MM < 60){\n            printf(\"%02x:%02x:%02x\\n\",HH,MM,SS);\n        }\n        else{\n            HH = MM / 60;\n            MM = MM % 60;\n            printf(\"%02x:%02x:%02x\\n\",HH,MM,SS);\n        }\n        \n    }\n    return 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-055",
+      "item_id": "cpack-year-4-lab03-ex03-stu_156-sub_016",
+      "problem_id": "lab03-ex03",
+      "partition": "validation",
+      "assigned_primary": "OUTPUT_TEXT",
+      "assigned_categories": [
+        "OUTPUT_TEXT"
+      ],
+      "details": [
+        "insert:output_literal_statement",
+        "output_text:\"* \"->\"*\"",
+        "output_text:\"- \"->\"-\""
+      ],
+      "hunks_minimal": 3,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -18,10 +18,12 @@\n     for(i = 1; i <= N;i++){\n         for(j = 1; j <= N;j++){\n-            \n+            if(j != 1){\n+                printf(\" \");\n+            }\n             if(j == i || j == count){ \n-                printf(\"* \");\n+                printf(\"*\");\n             }\n             else{\n-                printf(\"- \");\n+                printf(\"-\");\n             }\n \n",
+      "failing_source": "\n#include <stdio.h>\n\nvoid cruz(int N);\n\nint main(void){\n    int n;\n    scanf(\"%d\",&n);\n    cruz(n);\n\n\n    return 0;\n}\n\nvoid cruz(int N){\n    int count = N;\n    int i,j;\n    for(i = 1; i <= N;i++){\n        for(j = 1; j <= N;j++){\n            \n            if(j == i || j == count){ \n                printf(\"* \");\n            }\n            else{\n                printf(\"- \");\n            }\n\n        }\n        printf(\"\\n\");\n        count--;\n    }\n\n    return;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-056",
+      "item_id": "cpack-year-5-lab04-ex05-stu_178-sub_039",
+      "problem_id": "lab04-ex05",
+      "partition": "train",
+      "assigned_primary": "OUTPUT_TEXT",
+      "assigned_categories": [
+        "OUTPUT_TEXT"
+      ],
+      "details": [
+        "insert:output_literal_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -20,4 +20,5 @@\n     chara_tuah = getchar();\n     }\n+    printf(\"\\n\");\n     return 0;\n }",
+      "failing_source": "\n#include <stdio.h>\n\n\nint leLinha(char s[]){\n    int i, cont;\n    i = 0;\n    while (s[i] != EOF && s[i] != '\\n'){\n        cont++;\n        i++;\n    }\n    return cont;\n}\n\nint main(){\n    char chara_tuah;\n    chara_tuah = getchar();\n    while (chara_tuah != EOF && chara_tuah != '\\n'){\n    printf(\"%c\", chara_tuah);\n    chara_tuah = getchar();\n    }\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-057",
+      "item_id": "cpack-year-4-lab03-ex02-stu_148-sub_024",
+      "problem_id": "lab03-ex02",
+      "partition": "train",
+      "assigned_primary": "OUTPUT_TEXT",
+      "assigned_categories": [
+        "OUTPUT_TEXT"
+      ],
+      "details": [
+        "insert:output_literal_statement"
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -16,4 +16,6 @@\n                 printf(\" \");\n             }\n+            if (col < (N + linha - 1))\n+                printf(\" \");\n         }\n         printf(\"\\n\");\n",
+      "failing_source": "\n#include <stdio.h>\n\nvoid piramide (int N) {\n    int linha, col, i;\n    for (linha = 1; linha <= N; linha++) {\n        i = 0;\n        for (col = 1; col <= (N + linha - 1); col++) {\n            if (col > (N - linha)){\n                if (col <= N)\n                    printf(\"%d\", ++i);\n                else\n                    printf(\"%d\", --i);\n            }\n            else {\n                printf(\" \");\n            }\n        }\n        printf(\"\\n\");\n    }\n}\n\nint main () {\n    int N;\n    scanf(\"%d\", &N);\n    piramide(N);\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-058",
+      "item_id": "cpack-year-4-lab02-ex03-stu_151-sub_005",
+      "problem_id": "lab02-ex03",
+      "partition": "train",
+      "assigned_primary": "OUTPUT_TEXT",
+      "assigned_categories": [
+        "OUTPUT_TEXT"
+      ],
+      "details": [
+        "output_text:\"yes\"->\"yes\\n\"",
+        "output_text:\"no\"->\"no\\n\""
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -7,8 +7,8 @@\n \t\n \tif (N%M == 0) {\n-\t\tprintf(\"yes\");\n+\t\tprintf(\"yes\\n\");\n \t}\n \telse {\n-\t\tprintf(\"no\");\n+\t\tprintf(\"no\\n\");\n \t}\n \treturn 0;\n",
+      "failing_source": "#include <stdio.h>\n\nint main() {\n\tint N, M;\n\t\n\tscanf(\"%d%d\", &N, &M);\n\t\n\tif (N%M == 0) {\n\t\tprintf(\"yes\");\n\t}\n\telse {\n\t\tprintf(\"no\");\n\t}\n\treturn 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-059",
+      "item_id": "cpack-year-3-lab03-ex07-stu_099-sub_046",
+      "problem_id": "lab03-ex07",
+      "partition": "train",
+      "assigned_primary": "OUTPUT_TEXT",
+      "assigned_categories": [
+        "OUTPUT_TEXT"
+      ],
+      "details": [
+        "output_text:\"%d\"->\"%d\\n\""
+      ],
+      "hunks_minimal": 1,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -36,5 +36,5 @@\n         op_total -= numero;\n \n-    printf(\"%d\", op_total);\n+    printf(\"%d\\n\", op_total);\n \n     return 0;\n",
+      "failing_source": "\n#include <stdio.h>\n\n#define ZERO '0'\n\nint main()\n{\n    int c, dig, op = '+';\n    int numero = 0, op_total = 0, eh_numero = 0;\n\n    while ((c = getchar()) != '\\n') {\n        if (c >= '0' && c <= '9') {\n            dig = c - ZERO;\n            if (eh_numero == 0) {\n                numero += dig;\n                eh_numero = 1;\n            } else if (eh_numero == 1)\n                numero = numero * 10 + dig;\n            \n        } else if (c == ' ') {\n            if (op == '+')\n                op_total += numero;\n            else\n                op_total -= numero;\n            \n            op = getchar();\n            getchar(); \n            numero = 0;\n            eh_numero = 0;\n        }\n    }\n\n    if (op == '+')\n        op_total += numero;\n    else\n        op_total -= numero;\n\n    printf(\"%d\", op_total);\n\n    return 0;\n}\n",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-060",
+      "item_id": "cpack-year-3-lab03-ex03-stu_088-sub_024",
+      "problem_id": "lab03-ex03",
+      "partition": "validation",
+      "assigned_primary": "STATEMENT_PLACEMENT",
+      "assigned_categories": [
+        "STATEMENT_PLACEMENT"
+      ],
+      "details": [
+        "moved:putchar('\\n');",
+        "insert:brace"
+      ],
+      "hunks_minimal": 4,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -11,5 +11,4 @@\n     scanf(\"%d\", &N);\n     cruz(N);\n-    putchar('\\n');\n \n     return 0;\n@@ -21,4 +20,5 @@\n \n     for(i=0; i<N; i++)\n+    {\n         for(j=0; j<N; j++)\n         {\n@@ -27,3 +27,4 @@\n             putchar((i == j) || (i+j == N-1) ? '*':'-');\n         }\n-}+        putchar('\\n');\n+}}",
+      "failing_source": "\n\n#include <stdio.h>\n\nvoid cruz(int N);\n\nint main()\n{\n    int N;\n\n    scanf(\"%d\", &N);\n    cruz(N);\n    putchar('\\n');\n\n    return 0;\n}\n\nvoid cruz(int N)\n{\n    int i, j;\n\n    for(i=0; i<N; i++)\n        for(j=0; j<N; j++)\n        {\n            if(j)\n                putchar(' ');\n            putchar((i == j) || (i+j == N-1) ? '*':'-');\n        }\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-061",
+      "item_id": "cpack-year-4-lab03-ex03-stu_165-sub_007",
+      "problem_id": "lab03-ex03",
+      "partition": "train",
+      "assigned_primary": "STATEMENT_PLACEMENT",
+      "assigned_categories": [
+        "STATEMENT_PLACEMENT"
+      ],
+      "details": [
+        "insert:brace"
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -5,8 +5,9 @@\n     int lin, col;\n     for (lin = 1; lin <= N; lin++){\n-        for (col = 1; col <= N; col++)\n+        for (col = 1; col <= N; col++){\n             printf(\"%s\", ((col == lin) || ((col + lin) == (N + 1))) ? \"*\" : \"-\");\n             if (col <  N)\n                 putchar(' ');\n+        }\n         printf(\"\\n\");\n     }\n",
+      "failing_source": "\n#include <stdio.h>\n\nvoid cruz(int N){\n    int lin, col;\n    for (lin = 1; lin <= N; lin++){\n        for (col = 1; col <= N; col++)\n            printf(\"%s\", ((col == lin) || ((col + lin) == (N + 1))) ? \"*\" : \"-\");\n            if (col <  N)\n                putchar(' ');\n        printf(\"\\n\");\n    }\n}\n\nint main() {\n    int N;\n    scanf(\"%d\", &N);\n    cruz(N);\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-062",
+      "item_id": "cpack-year-3-lab04-ex04-stu_088-sub_040",
+      "problem_id": "lab04-ex04",
+      "partition": "validation",
+      "assigned_primary": "STATEMENT_PLACEMENT",
+      "assigned_categories": [
+        "STATEMENT_PLACEMENT"
+      ],
+      "details": [
+        "moved:}"
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -10,7 +10,6 @@\n         if(str[i] != str[j])\n             return 0;\n-\n+    }\n         return 1;\n-    }\n }\n \n",
+      "failing_source": "\n#include <stdio.h>\n#include <string.h>\n#define MAX 80\n\nint isPal(char str[]){\n    int i, j;\n\n    for(i = 0, j = strlen(str) - 1; i < j; i++, j--){\n        if(str[i] != str[j])\n            return 0;\n\n        return 1;\n    }\n}\n\nint main(){\n    char str[MAX];\n    scanf(\"%s\", str);\n\n    printf(\"%s\\n\", isPal(str)? \"yes\":\"no\");\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-063",
+      "item_id": "cpack-year-3-lab02-ex06-stu_086-sub_025",
+      "problem_id": "lab02-ex06",
+      "partition": "train",
+      "assigned_primary": "STATEMENT_PLACEMENT",
+      "assigned_categories": [
+        "STATEMENT_PLACEMENT"
+      ],
+      "details": [
+        "moved:}"
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -15,5 +15,4 @@\n    {\n     scanf(\"%f\", &reaisintrod);\n-   }\n     if (reaisintrod <= min)\n     {\n@@ -24,4 +23,5 @@\n         max = reaisintrod;\n     }\n+   }\n    printf(\"min: %f, max: %f\\n\", min, max);\n    return 0;\n",
+      "failing_source": "\n\n#include <stdio.h>\n\nint main ()\n{\n  int N, i; \n  float reaisintrod, min, max;\n\n  scanf(\"%d\", &N);\n  scanf(\"%f\", &reaisintrod); \n  min = max = reaisintrod;\n\n   for (i = 1; i < N; i++) \n   {\n    scanf(\"%f\", &reaisintrod);\n   }\n    if (reaisintrod <= min)\n    {\n        min = reaisintrod;\n    }\n    if (reaisintrod >= max)\n    {\n        max = reaisintrod;\n    }\n   printf(\"min: %f, max: %f\\n\", min, max);\n   return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    },
+    {
+      "case_id": "audit-064",
+      "item_id": "cpack-year-3-lab04-ex04-stu_080-sub_088",
+      "problem_id": "lab04-ex04",
+      "partition": "train",
+      "assigned_primary": "STATEMENT_PLACEMENT",
+      "assigned_categories": [
+        "STATEMENT_PLACEMENT"
+      ],
+      "details": [
+        "moved:}"
+      ],
+      "hunks_minimal": 2,
+      "diff": "--- failing.c\n+++ minimal_repair.c\n@@ -9,8 +9,7 @@\n         if (s[i] != s[j])\n             return 0;\n+    }\n         return 1;\n     }\n-}\n-\n int main(){\n     char s[MAX];\n",
+      "failing_source": "\n#include <stdio.h>\n#include <string.h> \n#define MAX 80\n\nint palindromo(char s[]){\n    int i,j;\n    for(i = 0,j = strlen(s) - 1; i < j; i++, j--){\n        if (s[i] != s[j])\n            return 0;\n        return 1;\n    }\n}\n\nint main(){\n    char s[MAX];\n    scanf(\"%s\",s);\n    if (palindromo(s) == 1)\n        printf(\"yes\\n\");\n    else\n        printf(\"no\\n\");\n\n    return 0;\n}",
+      "review": {
+        "decision": null,
+        "reviewer_category": null,
+        "note": null
+      }
+    }
+  ]
+}

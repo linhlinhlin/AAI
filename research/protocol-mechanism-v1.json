@@ -203,6 +203,13 @@
       "before_any_evaluation_result": true,
       "change": "Submissions whose replayed outcomes differ between the two independent corpus replays (research/runs/replay-reproducibility-20260930.json, outcome_differing_ids) are excluded as real items and as injection sources.",
       "reason": "their verdicts are not reproducible (likely undefined behaviour), so neither features nor labels are stable; the criterion uses no label."
+    },
+    {
+      "id": "A6",
+      "recorded_at_utc": "2026-09-30T12:50:52Z",
+      "before_any_evaluation_result": true,
+      "change": "Repair-label classifier v1.1: declaration diffs (a variable changes type; an initial value is added or removed without moving into an assignment in the same hunk), macro constants (computation) and wholly inserted or deleted functions (missing/extra statement) are classified. Stored verified minimal repairs are re-labelled offline with scripts/relabel_repairs.py; nothing is re-executed. Evaluation uses .cache/mechanism-bench-v1.1.",
+      "reason": "a 64-case audit of train/validation labels (research/runs/label-audit-20260930, AI-performed, not independent) found 53/53 single-category labels correct but 6 of 11 excluded cases (NO_CHANGE/OTHER/MULTI) that have a clear single category under the taxonomy; the fix restores coverage. A validation run started earlier was stopped before writing any result and its empty output was deleted unread."
     }
   ]
 }

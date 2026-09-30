@@ -131,3 +131,41 @@ def test_adding_an_else_branch_is_branch_structure():
     source = "int f(int x)\n{\n    int y = 0;\n    if (x > 0)\n        y = 1;\n    return y;\n}\n"
     repaired = source.replace("        y = 1;\n", "        y = 1;\n    else\n        y = 2;\n")
     assert "CONTROL_FLOW" not in classify_repair(source, repaired)["categories"]
+
+
+# Regression cases from the train/validation label audit (research/runs/label-audit-20260930).
+AUDIT_BASE = (
+    "#include <stdio.h>\n#define HOURS 360\nint main()\n{\n"
+    "    int n, num, div;\n    long n1 = 0;\n    int soma;\n"
+    "    scanf(\"%d,%d\", &n, &num);\n    printf(\"%d\\n\", n / HOURS + div + soma);\n"
+    "    return 0;\n}\n"
+)
+
+
+@pytest.mark.parametrize("old,new,expected", [
+    ("int n, num, div;", "int n, num, div = 0;", ["INITIALIZATION"]),
+    ("    long n1 = 0;\n    int soma;\n", "    long soma, n1 = 0;\n", ["NUMERIC_TYPE"]),
+    ("#define HOURS 360", "#define HOURS 3600", ["COMPUTATION"]),
+])
+def test_audited_declaration_and_macro_repairs(old, new, expected):
+    assert old in AUDIT_BASE
+    assert classify_repair(AUDIT_BASE, AUDIT_BASE.replace(old, new, 1))["categories"] == expected
+
+
+def test_initializer_moved_into_an_assignment_is_not_an_initialization_repair():
+    old = "int main()\n{\n    int a, b;\n    scanf(\"%d,%d\", &a, &b);\n    int m = a;\n    return m;\n}\n"
+    new = "int main()\n{\n    int a, b, m;\n    scanf(\"%d %d\", &a, &b);\n    m = a;\n    return m;\n}\n"
+    assert classify_repair(old, new)["categories"] == ["INPUT"]
+
+
+def test_inserting_a_whole_function_is_a_missing_statement():
+    old = "#include <stdio.h>\nint main()\n{\n    return 0;\n}\n"
+    new = ("#include <stdio.h>\n#define MAX 80\nint twice(int x)\n{\n    return 2 * x;\n}\n"
+           "int main()\n{\n    return 0;\n}\n")
+    assert classify_repair(old, new)["categories"] == ["MISSING_STATEMENT"]
+
+
+def test_a_new_helper_declaration_alone_is_scaffolding():
+    old = "int main()\n{\n    int a = 1;\n    return a;\n}\n"
+    new = "#define MAX 80\nint main()\n{\n    int a = 1;\n    int unused;\n    return a;\n}\n"
+    assert classify_repair(old, new)["primary"] == "NO_CHANGE"

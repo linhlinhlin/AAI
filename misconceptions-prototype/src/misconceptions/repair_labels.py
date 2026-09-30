@@ -26,6 +26,10 @@ STATEMENTS = {"expression_statement", "if_statement", "for_statement", "while_st
               "do_statement", "return_statement", "break_statement", "continue_statement",
               "compound_statement", "switch_statement", "declaration", "goto_statement",
               "labeled_statement", "case_statement"}
+# Whole units that a repair may insert or delete; declarations and preprocessor lines
+# are scaffolding for another change unless the declaration diff shows otherwise.
+SCAFFOLD = {"declaration", "preproc_def", "preproc_function_def", "preproc_include"}
+UNITS = STATEMENTS | {"function_definition"} | SCAFFOLD
 TYPE_NODES = {"primitive_type", "sized_type_specifier", "type_descriptor"}
 SPEC = re.compile(r"%[-+ #0]*(\d+|\*)?(\.(\d+|\*))?(hh|h|ll|l|L|j|z|t)?[diouxXeEfFgGaAcspn%]")
 _PARSER = Parser(Language(tree_sitter_c.language()))
@@ -161,6 +165,8 @@ def token_context(token):
     if token.type in (";", ","):
         return "separator"
     for ancestor in _ancestors(token):
+        if ancestor.type in ("preproc_def", "preproc_function_def"):
+            return "computation"  # A macro constant or body is an operand of computations.
         if ancestor.type == "call_expression":
             name = _call_name(ancestor)
             if name in OUTPUT_FUNCS:
@@ -222,7 +228,9 @@ def _complete_statements(tokens, root):
         node = stack.pop()
         if node.end_byte <= start or node.start_byte >= end:
             continue
-        if node.type in STATEMENTS and start <= node.start_byte and node.end_byte <= end:
+        # Preprocessor nodes end after their newline; trailing whitespace is not content.
+        effective_end = node.start_byte + len(node.text.rstrip())
+        if node.type in UNITS and start <= node.start_byte and effective_end <= end:
             found.append(node)
             continue
         stack.extend(node.children)
@@ -258,9 +266,12 @@ CONTEXT_CATEGORY = {"loop_header": "LOOP_BOUNDARY", "branch_condition": "BRANCH_
 
 def _statement_change(tokens, root, tag):
     """Category for tokens that were wholly inserted or deleted, or None if not whole statements."""
-    statements = [s for s in _complete_statements(tokens, root) if s.type != "declaration"]
+    units = _complete_statements(tokens, root)
+    statements = [s for s in units if s.type not in SCAFFOLD]
     covered = all(t.type in ("{", "}", ";") or any(
-        s.start_byte <= t.start_byte and t.end_byte <= s.end_byte for s in statements) for t in tokens)
+        u.start_byte <= t.start_byte and t.end_byte <= u.end_byte for u in units) for t in tokens)
+    if units and covered and not statements:
+        return "", "declaration_scaffolding"
     if statements and covered:
         if all(_output_only(s) for s in statements):
             return "OUTPUT_TEXT", f"{tag}:output_literal_statement"
@@ -318,6 +329,60 @@ def _context_changes(changed_old, changed_new):
     return found
 
 
+def _declared_name(node):
+    while node is not None and node.type != "identifier":
+        node = node.child_by_field_name("declarator")
+    return node.text if node is not None else None
+
+
+def _declarators(tokens):
+    """name -> (type text, initial value text or None) for declarations touched by tokens."""
+    result, seen = {}, set()
+    for token in tokens:
+        declaration = next((a for a in _ancestors(token) if a.type == "declaration"), None)
+        if declaration is None or (declaration.start_byte, declaration.end_byte) in seen:
+            continue
+        seen.add((declaration.start_byte, declaration.end_byte))
+        type_node = declaration.child_by_field_name("type")
+        type_text = type_node.text if type_node is not None else b""
+        for declarator in declaration.children_by_field_name("declarator"):
+            value = declarator.child_by_field_name("value")                 if declarator.type == "init_declarator" else None
+            name = _declared_name(declarator)
+            if name is not None:
+                result[name] = (type_text, value.text if value is not None else None)
+    return result
+
+
+def _assigned_names(tokens):
+    names = set()
+    for token in tokens:
+        for ancestor in _ancestors(token):
+            if ancestor.type == "assignment_expression":
+                left = ancestor.child_by_field_name("left")
+                if left is not None and left.type == "identifier":
+                    names.add(left.text)
+                break
+    return names
+
+
+def _declaration_changes(old_part, new_part):
+    """Semantic declaration changes of one hunk: a variable changes type, or gains or loses
+    its initial value without that value moving into an assignment in the same hunk."""
+    old, new = _declarators(old_part), _declarators(new_part)
+    changes = []
+    for name in sorted(set(old) & set(new)):
+        (old_type, old_value), (new_type, new_value) = old[name], new[name]
+        label = name.decode(errors="replace")
+        if old_type != new_type:
+            before, after = old_type.decode(errors="replace"), new_type.decode(errors="replace")
+            changes.append(("NUMERIC_TYPE", f"type_of:{label}:{before}->{after}"))
+        if old_value is None and new_value is not None and name not in _assigned_names(old_part):
+            changes.append(("INITIALIZATION", f"initializer_added:{label}"))
+        elif old_value is not None and new_value is None and name not in _assigned_names(new_part):
+            changes.append(("INITIALIZATION", f"initializer_removed:{label}"))
+    return changes
+
+
 def classify_repair(old_source, new_source):
     """Categories of the change old -> new (a verified minimal repair).
 
@@ -349,6 +414,7 @@ def classify_repair(old_source, new_source):
         new_part = [t for t in new_tokens if t.start_point[0] in new_rows]
         if not old_part and not new_part:
             continue
+        found.extend(_declaration_changes(old_part, new_part))
         if not new_part or not old_part:
             tag = "delete" if not new_part else "insert"
             side, root = (old_part, old_root) if tag == "delete" else (new_part, new_root)
