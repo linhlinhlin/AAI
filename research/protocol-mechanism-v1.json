@@ -1,0 +1,74 @@
+{
+  "protocol_id": "topic5-mechanism-benchmark-v1",
+  "registered_at_utc": "2026-09-30T12:06:00Z",
+  "status": "registered_before_any_mechanism_evaluation",
+  "parent_protocol": "research/protocol.json",
+  "question": "Do clusters built from test-case OAV (the representation prescribed by topic 5) group failed C submissions by the program-level error mechanism, and does label-free execution-deviation evidence recover mechanisms better at the same clustering budget?",
+  "claims_not_made": [
+    "No claim about what any student believed; labels describe program changes, not cognition.",
+    "No learning-gain, grading or classroom-effect claim.",
+    "No SOTA claim outside this benchmark and its baselines."
+  ],
+  "data": {
+    "corpus": "C-Pack-IPAs-26 all_submissions (.cache/cpack-v3), commit 76901e1223b250a093a02d5e29113ad735c3d2b9",
+    "execution": "isolated replay (.cache/cpack-replay-v1): gcc 12.2, -ansi -pedantic -Wall -Wextra, per-test 3 s CPU / 5 s wall, 512 MiB, no network",
+    "outcome_policy": "selected on train-partition agreement with historical verdicts before any mechanism label exists (replay oracle_audit.json)",
+    "split": "research/splits/cpack-v3.json (student + exact-source connected components, seed 42); every derived item inherits the partition of its source submission"
+  },
+  "labels": {
+    "real": {
+      "unit": "a failing replayed submission whose same student, problem and year later has a submission passing every test",
+      "construction": "line-hunk delta debugging (ddmin, budget 64 probes) between the failing submission and that later passing one; every probe executed in the isolated runner; the 1-minimal passing hunk subset is classified by token diff and tree-sitter context into the taxonomy",
+      "primary_gold": "status ok, one_minimal true, exactly one category, category != OTHER",
+      "status": "repair-grounded silver labels; the classifier is deterministic and was specified before evaluation; a stratified audit is reported separately and is AI-performed unless a human review is later recorded"
+    },
+    "injected": {
+      "unit": "one single-edit mutant of an accepted, warning-free program; at most 40 sources per problem, one source per student-year, one random site per category",
+      "kept_if": "compiles with the historical flags and no warning (the course used -Werror) and fails at least one test",
+      "label": "the operator category, known by construction"
+    },
+    "taxonomy": ["LOOP_BOUNDARY", "BRANCH_CONDITION", "INITIALIZATION", "COMPUTATION", "NUMERIC_TYPE", "OUTPUT_FORMAT", "OUTPUT_TEXT", "INPUT", "STATEMENT_PLACEMENT", "MISSING_STATEMENT", "EXTRA_STATEMENT", "CONTROL_FLOW"],
+    "forbidden_as_features": ["later submissions", "repairs or patched sources", "labels", "operator names", "source paths", "reviewer notes", "student identifiers"]
+  },
+  "representations": {
+    "note": "block masses fixed here and not tuned; vocabulary fitted on the training partition of the same problem (label-free); values unseen in training map to __unknown__",
+    "outcomes": {"test": 1.0},
+    "structural": {"ast": 1.0},
+    "outcomes_stdout": {"test": 0.6, "stdout": 0.4},
+    "combined_stdout": {"test": 0.48, "ast": 0.12, "stdout": 0.4},
+    "deviation": {"test": 0.3, "dev": 0.4, "agg": 0.3},
+    "evidence": {"test": 0.2, "dev": 0.3, "agg": 0.2, "code": 0.3},
+    "code_cues": {"code": 1.0},
+    "embedding": "qwen3-embedding:0.6b via local Ollama, raw source text, L2-normalised; cosine for HAC",
+    "exact_signature": "grouping by the identical test-outcome vector (no k)"
+  },
+  "clustering": {
+    "cohort": "one problem x one partition x one benchmark, clustered transductively",
+    "algorithms": {"kmeans": "weighted one-hot (Euclidean), n_init 10, seeds 7/42/91 averaged per cohort", "hac": "average linkage on weighted Hamming (cosine for embeddings)"},
+    "k_primary": "oracle k = number of distinct gold categories in the cohort, capped by the number of distinct representation patterns; a representation with one pattern yields one cluster and is scored as such",
+    "k_secondary": "label-free silhouette choice in [2, 10]",
+    "eligibility": "cohorts with at least 6 labelled items and at least 2 categories"
+  },
+  "metrics": {
+    "primary": "ARI of the cohort partition against gold categories, macro-averaged over eligible cohorts",
+    "secondary": ["AMI", "pairwise precision/recall/F1", "purity"],
+    "identifiability_ceiling": "sum over identical-representation buckets of the majority-label count, divided by n: the best accuracy any function of that representation can reach",
+    "not_used_as_success": ["silhouette", "surrogate-rule fidelity"]
+  },
+  "partitions": {"train": "vocabulary fitting and rule induction only", "validation": "development and the single tunable choice listed below", "test": "sealed; evaluated once with the frozen configuration"},
+  "tunable_on_validation": ["ILA-2 penalty factor in {1, 2, 5}"],
+  "hypotheses": [
+    {"id": "H1", "statement": "Identical test-outcome signatures mix mechanisms more than deviation OAV buckets: mean ceiling(deviation) - ceiling(outcomes) > 0.", "test": "paired bootstrap over test-partition cohorts, both benchmarks", "falsified_if": "95% CI of the mean difference includes or lies below 0 on either benchmark"},
+    {"id": "H2", "statement": "Deviation OAV clusters recover mechanisms better than test-outcome OAV clusters: ARI(deviation) - ARI(outcomes) > 0 with oracle k.", "test": "paired bootstrap and Wilcoxon over test cohorts, K-means and HAC reported separately, both benchmarks", "falsified_if": "CI includes or lies below 0 for K-means on either benchmark"},
+    {"id": "H3", "statement": "Evidence OAV (deviation + code cues) beats the strongest pre-existing repository baseline, combined_stdout: ARI(evidence) - ARI(combined_stdout) > 0 with oracle k.", "test": "as H2", "falsified_if": "CI includes or lies below 0 for K-means on either benchmark"},
+    {"id": "H4", "statement": "ILA-2 rules over problem-agnostic evidence attributes (agg:*, code:*) trained on the train partition reach a higher test macro-F1 than ILA-2 rules over the agnostic outcome summary (agg:status, agg:fail_fraction), on the real benchmark.", "test": "difference with item-level bootstrap grouped by student", "falsified_if": "CI of macro-F1 difference includes or lies below 0"},
+    {"id": "H5", "statement": "On the injected benchmark, frozen code-embedding clusters align more with the source program than with the injected mechanism: ARI(embedding, source) > ARI(embedding, mechanism) with oracle k for mechanism.", "test": "paired bootstrap over test cohorts", "falsified_if": "CI of the difference includes or lies below 0"}
+  ],
+  "rule_induction": {
+    "algorithms": ["ILA (Tolun & Abu-Soud 1998, consistent rules)", "ILA-2 (penalty factor, Tolun et al. 1999)", "CART depth 4 on one-hot (baseline)", "majority class"],
+    "unmatched_examples": "abstain; counted as errors for recall and accuracy",
+    "tracks": {"seen_problems": "train partition -> test partition, all problems", "unseen_problems": "lab02+lab03 train partition -> lab04 test partition (new problems and new students)"}
+  },
+  "statistics": {"bootstrap": "10,000 resamples, seed 0, over cohorts (clustering) or students (rules)", "multiplicity": "Holm correction across H1-H5 Wilcoxon p-values; CIs reported unadjusted", "reporting": "every eligible cohort, abstentions and degenerate cohorts listed; validation and test tables kept separate"},
+  "amendments": []
+}
