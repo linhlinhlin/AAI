@@ -49,13 +49,23 @@ giả thuyết khi một luật viết tay hoặc một trong 14 luật ILA-2 đ
 những luật khác nhau được báo là trộn cơ chế. Cùng phân tích chạy trên 25 cohort C-Pack để đối
 chiếu nhãn kiểm chứng; màn Nghiên cứu đọc số liệu từ `research/runs/`.
 
-**Bài báo:** [bản tiếng Anh](../paper/manuscript.pdf) (23 trang, template Elsevier, abstract
-248 từ) và [bản dịch tiếng Việt](../paper/vi/manuscript.pdf); mọi con số được điền từ artifact
-bằng `paper/build.py`. Kiểm tra phần mềm: harness `check` đạt (xem commit), Docker test của runner
-replay chạy riêng với `AAI_RUN_DOCKER_TESTS=1`.
+**Bài báo:** [bản tiếng Anh](../paper/manuscript.pdf) và [bản dịch tiếng Việt](../paper/vi/manuscript.pdf)
+(34 trang, template Elsevier). Bản sửa 30/09/2026 theo đối chiếu với một bài Q1
+([ghi chú](../paper/Q1_REVIEW.md)):
+- RQ1–RQ4 đánh số, phần Kết quả xếp theo RQ;
+- 8 hình vẽ đúng khổ in và Graphical abstract;
+- Thuật toán 1, định nghĩa hình thức của OAV độ lệch;
+- Highlights, mục công cụ cho giảng viên, Declarations.
 
-**Việc còn thiếu trước khi nộp:** audit nhãn độc lập bởi hai người am hiểu C; dữ liệu thứ hai
-(khóa học/ngôn ngữ khác); thông tin tác giả, khai báo dùng AI, người hướng dẫn duyệt.
+Mọi con số trong chữ và hình được điền từ artifact bằng `paper/build.py` và `paper/make_figures.py`.
+Kiểm tra phần mềm: harness `check` đạt (xem commit); Docker test của runner replay chạy riêng với
+`AAI_RUN_DOCKER_TESTS=1`.
+
+**Việc còn thiếu trước khi nộp:**
+- audit nhãn độc lập bởi hai người am hiểu C;
+- dữ liệu thứ hai (khóa học/ngôn ngữ khác);
+- trang tiêu đề (tác giả, CRediT, tài trợ), nhóm tác giả xác nhận các tuyên bố, người hướng dẫn duyệt;
+- nghiên cứu nhỏ với giảng viên dùng AAI Lab.
 
 
 ## Lịch sử trước 30/09/2026

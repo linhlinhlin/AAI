@@ -5,3 +5,5 @@
 __pycache__/
 vi/references.bib
 vi/figures/
+# Figure previews; the PDFs are what the manuscripts include
+figures/*.png

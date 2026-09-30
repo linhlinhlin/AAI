@@ -1,0 +1,53 @@
+{
+ "source": "AAI Lab class view, demo class, exercise max-array, group 1",
+ "points": [
+  [
+   52.0,
+   512.2
+  ],
+  [
+   786.0,
+   564.0
+  ],
+  [
+   786.0,
+   670.4
+  ],
+  [
+   786.0,
+   960.6
+  ],
+  [
+   2322.0,
+   1115.1
+  ],
+  [
+   1544.8,
+   415.9
+  ],
+  [
+   786.0,
+   1488.5
+  ]
+ ],
+ "legend": {
+  "en": [
+   "Test signature of each group (one cell per test)",
+   "Hypothesis: rule source and members covered",
+   "A question to ask and a re-teaching activity",
+   "Per-test failures: group bar vs. other groups",
+   "ILA-2 rule for the group, precision and coverage",
+   "The instructor confirms or rejects the group",
+   "Members, representative (medoid) first"
+  ],
+  "vi": [
+   "Chữ ký test của nhóm (mỗi ô một test)",
+   "Giả thuyết: nguồn luật, số bài khớp",
+   "Câu hỏi kiểm tra và hoạt động dạy lại",
+   "Tỷ lệ trượt: thanh của nhóm, vạch nhóm khác",
+   "Luật ILA-2 của nhóm, độ chính xác và độ phủ",
+   "Giảng viên xác nhận hoặc bác bỏ nhóm",
+   "Các bài, bài tiêu biểu (medoid) đứng đầu"
+  ]
+ }
+}

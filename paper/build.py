@@ -192,7 +192,8 @@ def result_tokens(summary, categories, lang):
             out[key + "_hi"] = number(s["ci95"][1], 3 if name != "H1a" else 2, lang)
             out[key + "_wins"] = f"{s.get('wins')}/{s.get('n')}"
             if value.get("holm_p") is not None:
-                out[key + "_p"] = number(value["holm_p"], 4, lang)
+                p = value["holm_p"]
+                out[key + "_p"] = ("< " + number(0.0001, 4, lang)) if p < 0.0001 else ("= " + number(p, 4, lang))
         for key, value in entry["rules"].items():
             flat = key.replace("|", "_")
             for metric in ("macro_f1", "coverage", "selective_accuracy", "accuracy_abstain_as_error",
@@ -339,6 +340,11 @@ def tokens(lang):
                    "table_hypotheses": hypothesis_rows(summary, lang),
                    "table_rules_real": rule_rows(summary, "real", lang),
                    "table_rules_injected": rule_rows(summary, "injected", lang)})
+    example = json.loads((HERE / "data" / "motivating_example.json").read_text(encoding="utf-8"))
+    values["example_same"] = example["same_signature_failing"]
+    values["example_total"] = example["cohort_failing"]
+    frozen = ROOT / "misconceptions-prototype/src/misconceptions/data/mechanism_rules.json"
+    values["n_frozen_rules"] = len(json.loads(frozen.read_text(encoding="utf-8"))["rules"])
     extra = HERE / ("tokens_vi.json" if lang == "vi" else "tokens_en.json")
     if extra.exists():
         values.update(json.loads(extra.read_text(encoding="utf-8")))

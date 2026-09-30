@@ -5,6 +5,8 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage[hidelinks,hypertexnames=false]{hyperref}
 \usepackage[capitalise,noabbrev]{cleveref}
 \usepackage{microtype}
@@ -15,8 +17,16 @@
 \crefname{subsection}{Mục}{Mục}\Crefname{subsection}{Mục}{Mục}
 \crefname{figure}{Hình}{Hình}\Crefname{figure}{Hình}{Hình}
 \crefname{table}{Bảng}{Bảng}\Crefname{table}{Bảng}{Bảng}
+\crefname{algorithm}{Thuật toán}{Thuật toán}\Crefname{algorithm}{Thuật toán}{Thuật toán}
 \crefname{appendix}{Phụ lục}{Phụ lục}\Crefname{appendix}{Phụ lục}{Phụ lục}
 \renewcommand{\appendixname}{Phụ lục}
+\floatname{algorithm}{Thuật toán}
+\algrenewcommand\algorithmicrequire{\textbf{Đầu vào:}}
+\algrenewcommand\algorithmicif{\textbf{nếu}}
+\algrenewcommand\algorithmicthen{\textbf{thì}}
+\algrenewcommand\algorithmicelse{\textbf{ngược lại}}
+\algrenewcommand\algorithmicend{\textbf{hết}}
+\algrenewcommand\algorithmicreturn{\textbf{trả về}}
 \abstracttitle{Tóm tắt}
 \keywordtitle{Từ khóa}
 \AtBeginDocument{\renewcommand{\figurename}{Hình}\renewcommand{\tablename}{Bảng}\renewcommand{\refname}{Tài liệu tham khảo}}
@@ -31,8 +41,20 @@
 
 \title{Khi test trượt là chưa đủ: đánh giá phân cụm quan niệm sai lầm trong bài lập trình C bằng nhãn từ bản sửa của chính sinh viên}
 
+\begin{graphicalabstract}
+\includegraphics[width=\linewidth]{figures/graphical_abstract_vi.pdf}
+\end{graphicalabstract}
+
+\begin{highlights}
+\item Bản sửa của sinh viên qua delta debugging cho nhãn cơ chế đã kiểm chứng
+\item Chữ ký test giống hệt trộn cơ chế: tối đa 73,9\% bài thật xếp đúng được
+\item OAV độ lệch output nâng ARI cụm--cơ chế từ 0,09 lên 0,33 trên mutant
+\item Luật ILA-2 trên bằng chứng độ lệch chuyển được sang bài tập chưa thấy
+\item Embedding mã đóng băng gom chương trình theo nguồn gốc, không theo cơ chế
+\end{highlights}
+
 \begin{abstract}
-Gom cụm các bài nộp sai theo những test case mà chúng trượt, rồi giải thích cụm bằng luật NẾU--THÌ, là một đề xuất phổ biến để cho giảng viên biết cả lớp đang hiểu sai ở đâu. Tuy vậy, câu hỏi liệu các cụm đó có gom chương trình theo \emph{cơ chế} lỗi hay không hiếm khi được kiểm chứng, vì thiếu nhãn. Chúng tôi tự xây dựng nhãn mà không cần gán nhãn thủ công. Chạy lại 8.607 bài C90 của một bộ dữ liệu công khai trong môi trường cách ly (khớp 98,42\% với hệ thống chấm lịch sử), chúng tôi thu gọn khác biệt giữa mỗi bài sai và lần nộp đạt kế tiếp của chính sinh viên đó thành một bản sửa tối thiểu đã kiểm chứng bằng delta debugging, rồi phân loại vào mười hai cơ chế mức chương trình; một benchmark thứ hai tiêm đúng một cơ chế vào các bài đã đạt. Theo protocol đăng ký trước, chữ ký test giống hệt nhau trộn lẫn nhiều cơ chế: không hàm nào của biểu diễn kết quả test có thể gán đúng quá 73,9\% trong 339 bài thật và 50,7\% trong 3.320 bài tiêm lỗi, và 81,6\% các cặp bài tiêm lỗi có cùng chữ ký lại khác cơ chế. Các mô tả không cần nhãn về \emph{cách} output lệch khỏi đáp án nâng trần này vượt mức một phân hoạch ngẫu nhiên cùng độ mịn, và trên dữ liệu kiểm soát nâng chỉ số Rand hiệu chỉnh của cụm K-means từ 0,09 lên 0,33; trên bản sửa thật, mức tăng (0,29 lên 0,35) không đáng tin cậy về thống kê và các mô tả này không vượt được quan hệ output đơn giản. Một mô hình embedding mã đóng băng gom mutant theo chương trình gốc chứ không theo cơ chế. Luật ILA-2 trên các thuộc tính độ lệch không phụ thuộc bài chuyển được sang bài tập mới của benchmark kiểm soát (macro-F1 0,35). Bằng chứng từ output, chứ không phải mô hình lớn hơn, là con đường rẻ nhất tới phản hồi ở mức cơ chế.
+Gom các bài lập trình nộp sai theo những test case mà chúng trượt, rồi giải thích mỗi cụm bằng luật NẾU--THÌ, là cách phổ biến để cho giảng viên biết cả lớp đang có chung những quan niệm sai nào. Việc các cụm đó có gom chương trình theo cơ chế lỗi hay không hiếm khi được kiểm chứng, vì thiếu nhãn cơ chế. Chúng tôi xây các nhãn này mà không cần gán nhãn thủ công. Sau khi chạy lại 8.607 bài nộp C90 của một corpus công khai trong runner cách ly (khớp 98,42\% với hệ chấm lịch sử), chúng tôi thu gọn mỗi bài sai và lần nộp đạt kế tiếp của cùng sinh viên thành một bản sửa tối thiểu đã kiểm chứng bằng delta debugging, rồi xếp nó vào một trong mười hai cơ chế mức chương trình (339 nhãn đơn cơ chế); một benchmark thứ hai tiêm đúng một cơ chế vào các chương trình đã đạt (3.320 mutant). Theo protocol đăng ký trước, các chữ ký test giống hệt trộn lẫn cơ chế: tính trung bình trên các cohort bài tập, không hàm nào của biểu diễn kết quả test xếp đúng được quá 73,9\% item thật và 50,7\% item tiêm lỗi. Các mô tả không cần nhãn về cách output lệch khỏi đáp án nâng trần này vượt một mô hình ngẫu nhiên cùng độ mịn và, trên dữ liệu có kiểm soát, nâng chỉ số Rand hiệu chỉnh của cụm K-means từ 0,09 lên 0,33; trên bản sửa thật mức tăng (0,29 lên 0,35) không đáng tin cậy, và các mô tả này không vượt được các quan hệ output đơn giản hơn. Luật ILA-2 trên các mô tả đó chuyển được sang bài tập chưa thấy (macro-F1 0,35), trong khi một embedding mã đóng băng gom mutant theo chương trình gốc chứ không theo cơ chế. Một công cụ cho giảng viên dựng trên các kết quả này chỉ nêu giả thuyết cơ chế khi một luật khớp phần lớn một nhóm. Với phản hồi ở mức cơ chế, cải tiến rẻ nhất là bằng chứng mà hệ chấm tự động vốn đã có.
 
 \end{abstract}
 
@@ -42,41 +64,64 @@ giáo dục lập trình \sep quan niệm sai lầm \sep phân cụm \sep sửa 
 
 \end{frontmatter}
 
-\section{Giới thiệu}\label{sec:intro}
+\section{Mở đầu}\label{sec:intro}
 
-Giảng viên các lớp lập trình nhập môn quy mô lớn không thể đọc hết mọi bài nộp sai, nhưng vẫn muốn biết cả lớp đang sai ở đâu để giảng lại. Một câu trả lời phổ biến là gom cụm các bài sai rồi tóm tắt từng cụm cho giảng viên. Trong cách phát biểu thường gặp nhất, mỗi bài nộp là một đối tượng được mô tả bằng các cặp thuộc tính--giá trị ghi lại test nào bị trượt (biểu diễn đối tượng--thuộc tính--giá trị, OAV); các đối tượng được gom bằng K-means hoặc một độ đo Hamming; sau đó quy nạp các luật sản xuất dạng NẾU~\emph{triệu chứng} THÌ~\emph{quan niệm sai}. Cách làm này hấp dẫn: kết quả test có sẵn ở mọi hệ thống chấm tự động, biểu diễn dễ giải thích, và luật đọc lên giống lời khuyên giảng dạy.
+Giảng viên các lớp lập trình nhập môn đông sinh viên không thể đọc hết mọi bài nộp sai, nhưng muốn biết cả lớp đang sai ở đâu để dạy lại. Một câu trả lời phổ biến là gom các bài sai thành cụm và tóm tắt mỗi cụm cho giảng viên. Trong cách phát biểu thường gặp nhất, mỗi bài nộp là một đối tượng được mô tả bằng các cặp thuộc tính--giá trị ghi lại những test case mà nó trượt (biểu diễn đối tượng--thuộc tính--giá trị, OAV), các đối tượng được phân cụm bằng K-means hoặc một phương pháp dùng khoảng cách Hamming, và các luật sản xuất dạng NẾU~\emph{biểu hiện} THÌ~\emph{quan niệm sai} được quy nạp để giải thích các cụm. Sức hấp dẫn rất rõ: hệ chấm tự động nào cũng có kết quả test, biểu diễn dễ diễn giải, và các luật đọc lên giống lời khuyên dạy học.
 
-Câu hỏi liệu các cụm đó có gom bài theo \emph{cơ chế} lỗi hay không hiếm khi được kiểm chứng, vì một lý do đơn giản: các bộ dữ liệu công khai không có nhãn cơ chế, và thuê chuyên gia gán nhãn hàng nghìn chương trình vừa tốn kém vừa khó tái lập. Khi thiếu nhãn, chất lượng cụm thường được đánh giá bằng chỉ số nội tại như silhouette, hoặc bằng độ khớp của luật thay thế với cụm. Cả hai đều không cho biết hai chương trình trượt cùng test có sai vì cùng một lý do hay không. Hai chương trình có thể in cùng một số sai: một do vòng lặp dừng sớm một phần tử, một do khởi tạo sai biến tích lũy. Ngược lại, cùng một cách hiểu sai có thể làm trượt các test khác nhau tùy phần còn lại của chương trình được viết thế nào.
+Các cụm như vậy có gom bài nộp theo \emph{cơ chế} lỗi hay không hiếm khi được kiểm chứng, vì một lý do đơn giản: dữ liệu công khai về chương trình sai không đi kèm nhãn cơ chế, còn nhờ chuyên gia gán nhãn hàng nghìn chương trình thì tốn kém và khó tái lập. Khi không có nhãn, chất lượng cụm được đánh giá bằng chỉ số nội tại như silhouette, hoặc bằng độ trung thành của luật thay thế với cụm. Cả hai đều không cho biết hai chương trình trượt cùng các test có trượt vì cùng một lý do hay không.
 
-Bài báo này xây dựng dữ liệu đánh giá còn thiếu mà không cần gán nhãn mới, rồi dùng nó để kiểm định quy trình kinh điển. Điểm xuất phát là: lần nộp sau của chính sinh viên thường sửa được lần nộp sai. Chúng tôi chạy lại 8.607 bài C90 của một bộ dữ liệu công khai \citep{orvalho2024cpack} trong môi trường cách ly, ghép mỗi bài sai với lần nộp đạt kế tiếp của cùng sinh viên, và dùng delta debugging để thu gọn khác biệt giữa hai bài thành một bản sửa tối thiểu đã kiểm chứng: tập dòng thay đổi nhỏ nhất mà khi áp vào bài sai thì bài đạt mọi test. Một bộ phân loại tất định gán bản sửa này vào một trong mười hai loại mức chương trình, từ biên vòng lặp đến định dạng in. Như vậy nhãn dựa trên bằng chứng đã được thực thi chứ không dựa trên phán đoán, và mọi nhãn đều có thể suy lại. Vì bản sửa thật mất cân bằng và đôi khi trộn nhiều thay đổi, chúng tôi bổ sung một benchmark thứ hai gồm các mutant một thay đổi của bài đã đạt, với loại cơ chế biết trước do cách tạo.
+\Cref{fig:example} minh họa cụ thể vấn đề. Trong 89 bài nộp sai của một bài tập trong corpus, 78 bài trượt cả bốn test, nên OAV theo test case xếp chúng vào một cụm và mọi luật đọc biểu diễn đó đều nêu cùng một kết luận cho tất cả. Ba chương trình trong hình cần ba bản sửa tối thiểu khác nhau---thiếu ký tự xuống dòng, thiếu đặc tả in số 0 đệm và thiếu một cặp ngoặc---và output của chúng lệch khỏi đáp án theo ba cách khác nhau. Thứ phân biệt chúng không nằm ở vector đạt/trượt mà ở \emph{cách} mỗi output khác đi.
 
-Với hai benchmark này, chúng tôi trả lời bốn câu hỏi. Chữ ký test làm mất bao nhiêu thông tin về cơ chế? Các mô tả không cần nhãn về \emph{cách} output lệch khỏi đáp án có khôi phục cơ chế tốt hơn ở cùng ngân sách phân cụm không? Luật NẾU--THÌ quy nạp bằng Thuật toán Học Quy nạp (ILA) và phiên bản chịu nhiễu ILA-2 \citep{tolun1998ila,tolun1999ila2} có tổng quát sang sinh viên mới và bài tập mới không? Và embedding mã đóng băng gom theo cơ chế hay theo tác giả và chương trình? Mọi giả thuyết, biểu diễn, trọng số và quy tắc thống kê được đăng ký trước khi đánh giá; mọi thay đổi đều được ghi thành sửa đổi có ghi ngày.
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig1_example_vi.pdf}
+\caption{Ba bài nộp sai của cùng một bài tập (C-Pack-IPAs, đã ẩn danh) có chữ ký test giống hệt. Bản sửa tối thiểu đã kiểm chứng của chúng thuộc ba loại cơ chế, và các mô tả độ lệch gộp ở \cref{sec:reps} khác nhau với từng bài. Tham số dài của \texttt{printf} được lược bớt; output in ra là của test đầu tiên, \texttt{\textbackslash n} là ký tự xuống dòng.}\label{fig:example}
+\end{figure}
 
-Đóng góp của bài báo gồm:
+Bài báo này xây dữ liệu đánh giá còn thiếu mà không cần gán nhãn mới, rồi dùng nó để kiểm tra quy trình kinh điển. Điểm xuất phát là lần nộp sau của chính sinh viên thường sửa được bài sai trước đó. Chúng tôi chạy lại một corpus công khai gồm 8.607 bài nộp C90 \citep{orvalho2024cpack} trong runner cách ly, ghép mỗi bài sai với lần nộp đạt kế tiếp của cùng sinh viên, và dùng delta debugging để thu gọn khác biệt giữa chúng thành một bản sửa tối thiểu đã kiểm chứng, tức tập dòng thay đổi nhỏ nhất mà khi áp vào bài sai thì bài đạt mọi test. Một bộ phân loại tất định xếp bản sửa này vào một trong mười hai loại mức chương trình, từ biên vòng lặp đến định dạng in. Nhãn vì vậy dựa trên bằng chứng thực thi thay vì phán đoán, và nhãn nào cũng suy lại được. Vì bản sửa thật mất cân bằng và thường gộp nhiều thay đổi, chúng tôi thêm một benchmark thứ hai gồm các mutant một thay đổi có kiểm soát của những chương trình đã đạt, có loại cơ chế biết trước theo cách xây dựng. Với hai benchmark này, chúng tôi trả lời bốn câu hỏi nghiên cứu:
+\begin{description}
+\item[RQ1] OAV kết quả test làm mất bao nhiêu thông tin về cơ chế?
+\item[RQ2] Các mô tả không cần nhãn về cách output lệch khỏi đáp án có khôi phục cơ chế tốt hơn ở cùng ngân sách phân cụm không?
+\item[RQ3] Luật NẾU--THÌ quy nạp bằng Thuật toán Học Quy nạp (ILA) và biến thể chịu nhiễu ILA-2 \citep{tolun1998ila,tolun1999ila2} có dự đoán được cơ chế của sinh viên mới, và có chuyển được sang bài tập mới không?
+\item[RQ4] Embedding mã nơ-ron đóng băng gom bài sai theo cơ chế hay theo chương trình mà chúng bắt nguồn?
+\end{description}
+Mỗi câu hỏi gắn với các giả thuyết đã đăng ký kèm tiêu chí bác bỏ (\cref{sec:hyp}); giả thuyết, biểu diễn, trọng số và quy tắc thống kê được cố định trước khi đánh giá, và mọi thay đổi được ghi thành sửa đổi có ghi ngày. \Cref{fig:overview} cho cái nhìn tổng quan về nghiên cứu.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig2_overview_vi.pdf}
+\caption{Tổng quan nghiên cứu. (A) Nhãn đánh giá lấy từ bằng chứng thực thi: bản sửa của chính sinh viên được thu gọn bằng delta debugging, và mutant một thay đổi của chương trình đã đạt; nhãn không bao giờ được dùng làm đặc trưng. (B) Các biểu diễn chỉ được tính từ chương trình sai và các lượt chạy của chính nó. Bốn câu hỏi nghiên cứu so các biểu diễn này với nhãn, và công cụ cho giảng viên ở \cref{sec:tool} áp dụng thiết kế rút ra.}\label{fig:overview}
+\end{figure}
+
+Đóng góp của chúng tôi gồm:
 \begin{enumerate}
-\item chạy lại C-Pack-IPAs có thể tái lập trong môi trường cách ly, kèm audit oracle so với hệ thống chấm lịch sử (khớp 98,42\% trên 28.081 verdict test) và lần chạy lại độc lập thứ hai (khớp 99,68\%);
-\item một benchmark dựa trên bản sửa gồm 750 bản sửa tối thiểu đã kiểm chứng của sinh viên (339 nhãn đơn cơ chế) và một benchmark kiểm soát gồm 3.320 mutant một thay đổi, dùng chung một taxonomy và một bộ phân loại;
-\item OAV độ lệch thực thi, một biểu diễn không cần nhãn và không phụ thuộc bài của các sai lệch output, cùng protocol đánh giá có trần khả phân biệt và phép so với phân hoạch ngẫu nhiên cùng độ mịn;
-\item bằng chứng đăng ký trước rằng chữ ký test trộn lẫn cơ chế (từ chúng chỉ phân biệt được tối đa 73,9\% bài thật và 50,7\% bài tiêm lỗi), rằng bằng chứng độ lệch output khôi phục cơ chế tốt hơn trên dữ liệu kiểm soát nhưng chưa đáng tin cậy trên bản sửa thật, rằng luật ILA-2 trên các thuộc tính này chuyển được sang bài tập mới, và rằng embedding mã đóng băng gom chương trình theo nguồn gốc.
+\item một lần chạy lại C-Pack-IPAs có thể tái lập trong môi trường cách ly, kèm kiểm tra oracle so với hệ chấm lịch sử (khớp 98,42\% trên 28.081 verdict test) và một lần chạy lại độc lập thứ hai (khớp 99,68\%);
+\item một benchmark dựa trên bản sửa xây từ 750 sự kiện sửa của sinh viên (746 cặp đã kiểm chứng, 339 nhãn đơn cơ chế) và một benchmark kiểm soát gồm 3.320 mutant một thay đổi, dùng chung một taxonomy và một bộ phân loại;
+\item OAV độ lệch thực thi, một biểu diễn không cần nhãn và không phụ thuộc bài về các độ lệch output, cùng protocol đánh giá có trần khả phân biệt và mô hình ngẫu nhiên cùng độ mịn;
+\item bằng chứng đăng ký trước rằng chữ ký test trộn lẫn cơ chế (tối đa 73,9\% item thật và 50,7\% item tiêm lỗi phân biệt được từ chúng), rằng bằng chứng độ lệch output khôi phục cơ chế tốt hơn trên dữ liệu kiểm soát nhưng chưa đáng tin cậy trên bản sửa thật, rằng luật trên bằng chứng đó chuyển được sang bài tập chưa thấy, và rằng embedding mã đóng băng gom chương trình theo nguồn gốc;
+\item một công cụ cho giảng viên áp dụng các kết quả trên: gom bài sai của một lớp bằng OAV độ lệch, gắn bằng chứng chung và một luật quy nạp cho mỗi nhóm, và chỉ nêu giả thuyết cơ chế khi một luật khớp phần lớn nhóm.
 \end{enumerate}
-Chúng tôi công bố runner replay, các benchmark, protocol và mã phân tích. Trong toàn bài, một nhãn mô tả điều đã thay đổi trong chương trình; nó không khẳng định sinh viên đã tin điều gì.
+Chúng tôi công bố runner chạy lại, các benchmark, protocol, mã phân tích và công cụ. Xuyên suốt bài, một nhãn mô tả điều đã thay đổi trong chương trình; nó không phải khẳng định về điều sinh viên tin. \Cref{sec:related} điểm lại công trình liên quan, \cref{sec:data} xây các benchmark, \cref{sec:methods} định nghĩa biểu diễn, phân tích và giả thuyết, \cref{sec:results} trả lời các câu hỏi nghiên cứu, \cref{sec:discussion} bàn về hàm ý và giới hạn, và \cref{sec:conclusion} kết luận.
 
 \section{Công trình liên quan}\label{sec:related}
 
-\paragraph{Quan niệm sai lầm và lỗi logic của người mới học lập trình.}
+\paragraph{Quan niệm sai lầm và lỗi logic của người mới học lập trình}
 Các tổng quan về lập trình nhập môn mô tả những quan niệm sai về biến, luồng điều khiển, truyền tham số và ``cỗ máy khái niệm'' thực thi chương trình \citep{sorva2013notional,qian2017misconceptions}. Nghiên cứu về lỗi phân biệt sơ suất với lỗi xuất phát từ mô hình sai về ngôn ngữ hoặc đề bài \citep{altadmri2015compilations,hermans2021brain}. \citet{ettles2018logic} phân loại lỗi logic của sinh viên CS1 thành lỗi thuật toán, hiểu sai đề và quan niệm sai, và thấy quan niệm sai là loại phổ biến nhất và khó sửa nhất. Phản hồi dựa trên quan niệm sai có thể giúp sinh viên khi quan niệm sai đã biết trước \citep{gusukuma2018misconception}, còn các công cụ tương tác yêu cầu sinh viên dự đoán hành vi chương trình có thể khơi ra quan niệm sai trực tiếp \citep{lu2024smol}. Các nghiên cứu này thúc đẩy việc gom nhóm lỗi tự động, nhưng cũng cho thấy chỉ riêng chương trình hiếm khi tiết lộ niềm tin nào đã tạo ra nó; vì vậy chúng tôi đánh giá cơ chế mức chương trình và để các khẳng định về nhận thức ra ngoài phạm vi.
 
-\paragraph{Gom cụm chương trình của sinh viên.}
+\paragraph{Gom cụm chương trình của sinh viên}
 OverCode gom lời giải đúng theo mã đã chuẩn hóa \citep{glassman2015overcode}, còn Clara gom lời giải đúng theo tương đương động để sửa bài sai \citep{gulwani2018clara}. Với bài sai, \citet{kaleeswaran2016semisupervised} gom theo chiến lược sửa để giảng viên chỉ sửa một đại diện mỗi cụm; MistakeBrowser gom bài sai theo phép biến đổi mã mà sinh viên đã áp dụng khi tự sửa \citep{head2017mistakebrowser}; TraceDiff đối chiếu vết thực thi của chương trình lỗi với bản sửa gần nhất \citep{suzuki2017tracediff}. Embedding chương trình học từ mã và thực thi đã được dùng để lan truyền phản hồi \citep{piech2015embeddings}, và \citet{shi2021misconception} gom embedding của bài sai dạng khối để giúp chuyên gia phát hiện quan niệm sai. Với C, InvAASTCluster kết hợp bất biến động với cây cú pháp trừu tượng hóa \citep{orvalho2025invaast}, còn MENTOR ghép phân cụm, định vị lỗi bằng công thức và sửa lỗi bằng LLM \citep{orvalho2026mentor}. Các hệ thống này dùng bản sửa hoặc lời giải đúng như một phần của phương pháp. Chúng tôi chỉ dùng bản sửa về sau của chính sinh viên để xây dựng nhãn đánh giá, và hỏi các biểu diễn có sẵn \emph{trước} khi có bản sửa khôi phục nhãn đó tốt đến đâu.
 
-\paragraph{Khai phá quan niệm sai bằng mô hình học.}
+\paragraph{Khai phá quan niệm sai bằng mô hình học}
 Các mô hình attention trên cây con định vị lỗi logic chỉ từ nhãn đúng/sai \citep{hoq2025sann}, thành phần tri thức theo mẫu được trích từ mã sinh viên bằng học biểu diễn và phân cụm \citep{edm2026patternkc}, và LLM phát hiện quan niệm sai từ tập mẫu mã trong McMining, với benchmark tiêm quan niệm sai đã biết vào mã Python \citep{alhossami2026mcmining}. Các công cụ lớp học gần đây gom lỗi do LLM nhận diện cho giảng viên \citep{sigcse2026realtime}, định hướng dạy kèm theo các quan niệm sai đã biết \citep{sigcse2026tutor}, hoặc tinh chỉnh tín hiệu phát hiện tự động bằng đánh giá của chuyên gia \citep{aruleba2026ukicer}. PyMETA cho thấy độ chính xác chẩn đoán phụ thuộc mạnh vào cách định nghĩa nhãn chuẩn: mô hình gán tốt lỗi thực thi đầu tiên lại khớp kém hơn nhiều với lộ trình sửa của chuyên gia \citep{li2026pymeta}. Nghiên cứu của chúng tôi cùng mối quan tâm đó và làm cho định nghĩa nhãn trở nên tường minh, kiểm chứng được và tái lập được.
 
-\paragraph{Benchmark, mutant và bản sửa.}
+\paragraph{Benchmark, mutant và bản sửa}
 C-Pack-IPAs cung cấp bài C90 của 25 bài tập kèm mã sinh viên ẩn danh, test và log chấm lịch sử \citep{orvalho2024cpack}; ITSP là benchmark trước đó gồm chương trình C lỗi và đã sửa \citep{yi2017itsp}. Phân tích đột biến tiêm lỗi có kiểm soát; trong kiểm thử phần mềm, khả năng phát hiện mutant tương quan với khả năng phát hiện lỗi thật \citep{just2014mutants}, còn mutant khái niệm xây từ ví dụ sai của sinh viên làm lộ quan niệm sai về đặc tả \citep{prasad2024conceptual}. Delta debugging cô lập khác biệt tối thiểu gây lỗi giữa một cấu hình lỗi và một cấu hình đạt \citep{zeller2002ddmin}. Chúng tôi kết hợp các ý tưởng này: chạy lại corpus, thu gọn bản sửa của chính sinh viên thành thay đổi tối thiểu đã kiểm chứng, và ghép các nhãn này với mutant một cơ chế có kiểm soát.
 
-\paragraph{Quy nạp luật.}
+\paragraph{Quy nạp luật}
 Thuật toán Học Quy nạp (ILA) trích luật sản xuất theo từng lớp từ các ví dụ thuộc tính--giá trị \citep{tolun1998ila}; ILA-2 thêm hệ số phạt để chịu được dữ liệu nhiễu \citep{tolun1999ila2}. ILA đôi khi được nêu cùng các phương pháp phân cụm, nhưng bản chất là quy nạp luật có giám sát, và chúng tôi dùng đúng như vậy: để phát biểu luật NẾU--THÌ ánh xạ bằng chứng thực thi sang cơ chế, và đo xem các luật đó còn đúng tới đâu trên những sinh viên không tham gia quy nạp.
+
+\paragraph{Vị trí của nghiên cứu}
+Phần lớn các hệ thống trên phân cụm để tiết kiệm công sức giảng viên hoặc để lan truyền phản hồi, và được đánh giá bằng công sức tiết kiệm được, bằng tính đúng của bản sửa sinh ra, hoặc bằng việc chuyên gia xem xét các cụm. Theo hiểu biết của chúng tôi, chưa công trình nào đo một biểu diễn có sẵn trước mọi bản sửa khôi phục được cơ chế lỗi đã kiểm chứng độc lập tốt đến đâu, và chưa công trình nào báo cáo chữ ký test có thể biểu đạt được bao nhiêu phần cơ chế đó. Đây là hai phép đo mà bài báo này đóng góp, cùng một benchmark để lặp lại được chúng.
 
 \section{Dữ liệu và xây dựng benchmark}\label{sec:data}
 
@@ -105,10 +150,34 @@ So theo token cách bởi khoảng trắng & 83,88 & 86,22 & 86,47 \\
 Bài nộp được chia trước khi có bất kỳ nhãn nào thành các partition huấn luyện, kiểm định và kiểm tra (70/15/15\% số thành phần liên thông), sao cho mọi bài của một sinh viên, xuyên năm và xuyên bài tập, cùng mọi mã nguồn trùng byte đều nằm trong một partition. Mọi item suy ra đều thừa kế partition của bài nộp gốc.
 
 \subsection{Nhãn dựa trên bản sửa}\label{sec:real}
-Với mỗi bài nộp sai (ít nhất một test không đạt), chúng tôi tìm lần nộp kế tiếp của cùng sinh viên, cùng bài tập, cùng năm mà đạt mọi test. Với mỗi sự kiện sửa như vậy, chúng tôi giữ lần nộp sai cuối cùng trước nó (sửa đổi~A2), được 750 cặp sai--đã sửa. Khác biệt theo dòng giữa hai chương trình, bỏ qua thụt lề, được chia thành các hunk. Delta debugging theo hunk \citep{zeller2002ddmin} tìm một tập con 1-tối thiểu các hunk mà khi áp vào bài sai thì bài đạt mọi test; mọi ứng viên đều được chạy trong runner cách ly (ngân sách 64 lần thử mỗi cặp). Cả hai đầu mút được kiểm lại trong cùng runner trước khi tìm. Thay đổi tối thiểu đã kiểm chứng được một bộ phân loại tất định xếp vào một trong mười hai loại mức chương trình (\cref{tab:taxonomy}); bộ phân loại làm việc trên từng hunk đã kiểm chứng: câu lệnh được chèn hoặc xóa nguyên vẹn được nhận ra sau khi trượt đoạn token về biên câu lệnh, các dòng giống hệt bị xóa ở chỗ này và chèn ở chỗ khác là thay đổi vị trí, còn mọi token thay đổi khác được quy về ngữ cảnh cú pháp gần nhất có vai trò xác định (đầu vòng lặp, điều kiện rẽ nhánh, giá trị khởi tạo, định dạng in, \dots). Một cặp chỉ nhận nhãn đơn cơ chế khi bản sửa tối thiểu thuộc đúng một loại khác \textsc{Other}; bản sửa trải nhiều loại được giữ là \textsc{Multi} và không vào tập nhãn chuẩn chính. Bài sửa, bản vá và nhãn không bao giờ được dùng làm đặc trưng.
+Với mỗi bài nộp sai (ít nhất một test không đạt), chúng tôi tìm lần nộp kế tiếp của cùng sinh viên, cùng bài tập, cùng năm mà đạt mọi test. Với mỗi sự kiện sửa như vậy, chúng tôi giữ lần nộp sai cuối cùng trước nó (sửa đổi~A2), được 750 cặp sai--đã sửa. \Cref{alg:label} tóm tắt cách một cặp trở thành nhãn. Khác biệt theo dòng giữa hai chương trình, bỏ qua thụt lề, được chia thành các hunk. Delta debugging theo hunk \citep{zeller2002ddmin} tìm một tập con 1-tối thiểu các hunk mà khi áp vào bài sai thì bài đạt mọi test; mọi ứng viên đều được chạy trong runner cách ly (ngân sách 64 lần thử mỗi cặp). Cả hai đầu mút được kiểm lại trong cùng runner trước khi tìm.
+
+Thay đổi tối thiểu đã kiểm chứng được một bộ phân loại tất định xếp vào một trong mười hai loại mức chương trình (\cref{tab:taxonomy}); bộ phân loại làm việc trên từng hunk đã kiểm chứng: câu lệnh được chèn hoặc xóa nguyên vẹn được nhận ra sau khi trượt đoạn token về biên câu lệnh, các dòng giống hệt bị xóa ở chỗ này và chèn ở chỗ khác là thay đổi vị trí, còn mọi token thay đổi khác được quy về ngữ cảnh cú pháp gần nhất có vai trò xác định (đầu vòng lặp, điều kiện rẽ nhánh, giá trị khởi tạo, định dạng in, \dots). Một cặp chỉ nhận nhãn đơn cơ chế khi bản sửa tối thiểu thuộc đúng một loại khác \textsc{Other}; bản sửa trải nhiều loại được giữ là \textsc{Multi} và không vào tập nhãn chuẩn chính. Bài sửa, bản vá và nhãn không bao giờ được dùng làm đặc trưng. \Cref{fig:flow}A ghi lại mọi bước loại trừ.
+
+\begin{algorithm}[t]
+\caption{Gán nhãn từ bản sửa cho một sự kiện sửa}\label{alg:label}
+\begin{algorithmic}[1]
+\Require bài sai $f$; lần nộp kế tiếp $p$ của cùng sinh viên đạt mọi test của bộ test $T$
+\State chạy $f$ và $p$ trên $T$ trong runner cách ly; dừng nếu $f$ không trượt test nào hoặc $p$ không đạt hết \Comment{hai đầu mút}
+\State $H \gets$ các hunk dòng của $\mathrm{diff}(f, p)$, bỏ qua thụt lề
+\State $H^\star \gets \mathrm{ddmin}(H)$, trong đó tập con $S \subseteq H$ thành công khi $f$ vá bằng $S$ biên dịch được và đạt mọi test của $T$
+\State $C \gets \{\text{loại}(h) : h \in H^\star\}$ \Comment{vai trò cú pháp của từng token thay đổi}
+\If{$C = \{c\}$ và $c \neq \textsc{Other}$}
+  \State \Return nhãn $c$
+\Else
+  \State \Return \textsc{Multi} hoặc \textsc{Other} (không vào nhãn chuẩn)
+\EndIf
+\end{algorithmic}
+\end{algorithm}
 
 \subsection{Tiêm cơ chế có kiểm soát}\label{sec:injected}
-Bản sửa thật có giá trị sinh thái nhưng nhiễu, mất cân bằng và phụ thuộc điều sinh viên tình cờ làm. Vì vậy chúng tôi xây thêm một benchmark kiểm soát. Từ các chương trình đã đạt và sạch cảnh báo (tối đa 40 bài mỗi bài tập, mỗi sinh viên và năm một bài), chúng tôi sinh mutant một thay đổi bằng các toán tử khớp với cùng taxonomy: độ chặt của phép so sánh trong vòng lặp hoặc điều kiện, phép nối logic, điểm bắt đầu vòng lặp, giá trị khởi tạo hằng, toán tử số học, bỏ ép kiểu thực hoặc hằng thực, độ chính xác của printf, bỏ ký tự xuống dòng cuối, chữ hoa/thường của văn bản in, xóa câu lệnh, lặp câu lệnh, và chuyển câu lệnh vào trong vòng lặp. Mỗi loại và mỗi bài gốc được đột biến ở một vị trí ngẫu nhiên với seed cố định. Mutant chỉ được giữ nếu biên dịch sạch cảnh báo và trượt ít nhất một test, tức là có thể đã là một bài nộp sai thật của khóa học. Một unit test kiểm tra rằng bộ phân loại ở \cref{sec:real} xếp phép sửa ngược của mọi toán tử vào đúng loại của toán tử, nên hai bộ nhãn dùng chung một định nghĩa.
+Bản sửa thật có giá trị sinh thái nhưng nhiễu, mất cân bằng và phụ thuộc điều sinh viên tình cờ làm. Vì vậy chúng tôi xây thêm một benchmark kiểm soát. Từ các chương trình đã đạt và sạch cảnh báo (tối đa 40 bài mỗi bài tập, mỗi sinh viên và năm một bài), chúng tôi sinh mutant một thay đổi bằng các toán tử khớp với cùng taxonomy: độ chặt của phép so sánh trong vòng lặp hoặc điều kiện, phép nối logic, điểm bắt đầu vòng lặp, giá trị khởi tạo hằng, toán tử số học, bỏ ép kiểu thực hoặc hằng thực, độ chính xác của printf, bỏ ký tự xuống dòng cuối, chữ hoa/thường của văn bản in, xóa câu lệnh, lặp câu lệnh, và chuyển câu lệnh vào trong vòng lặp. Mỗi loại và mỗi bài gốc được đột biến ở một vị trí ngẫu nhiên với seed cố định. Mutant chỉ được giữ nếu biên dịch sạch cảnh báo và trượt ít nhất một test, tức là có thể đã là một bài nộp sai thật của khóa học (\cref{fig:flow}B). Một unit test kiểm tra rằng bộ phân loại ở \cref{sec:real} xếp phép sửa ngược của mọi toán tử vào đúng loại của toán tử, nên hai bộ nhãn dùng chung một định nghĩa.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig3_flow_vi.pdf}
+\caption{Quá trình xây hai benchmark. (A) Bản sửa thật của sinh viên: 743 trong 746 cặp đã kiểm chứng đạt tập con 1-tối thiểu trong ngân sách thử; ba cặp còn lại đều trải nhiều loại. (B) Mutant tiêm lỗi: ứng viên vẫn đạt mọi test (tương đương trên bộ test) hoặc biên dịch không sạch bị loại. Kích thước partition theo thứ tự huấn luyện / kiểm định / kiểm tra.}\label{fig:flow}
+\end{figure}
 
 \begin{table}[t]
 \centering
@@ -137,52 +206,92 @@ Luồng điều khiển & break/continue/return & thoát sớm \\
 \section{Phương pháp}\label{sec:methods}
 
 \subsection{Biểu diễn đối tượng--thuộc tính--giá trị}\label{sec:reps}
-Mỗi chương trình sai (đối tượng) được mô tả bằng các thuộc tính phân loại. Mọi biểu diễn chỉ được tính từ chương trình sai và các lượt chạy lại của chính nó. Từ vựng được khớp, không dùng nhãn, trên các bài sai thuộc partition huấn luyện của cùng bài tập; giá trị chưa gặp khi huấn luyện được ánh xạ thành \emph{chưa biết}.
+Mỗi chương trình sai (đối tượng) được mô tả bằng các thuộc tính phân loại chỉ tính từ chính chương trình và các lượt chạy lại của nó. Gọi $T$ là tập test của một bài tập, $y_t$ là output đúng của test $t$, và $\hat y_t(o)$ là output của chương trình $o$. OAV kết quả test của cách phát biểu kinh điển là
+\begin{equation}
+x^{\mathrm{out}}(o) = \bigl(r_t(o)\bigr)_{t \in T}, \qquad r_t(o) \in \{\text{đạt}, \text{sai}, \text{lỗi chạy}, \text{quá thời gian}\}.
+\end{equation}
+\emph{OAV độ lệch} thêm, với mỗi test, $K = 9$ mô tả không cần nhãn $d_k\bigl(\hat y_t(o), y_t\bigr)$ về cách output lệch khỏi đáp án---trạng thái chạy, số dòng, ký tự xuống dòng cuối, chỉ khác khoảng trắng, quan hệ giữa các số tương ứng (lệch một, bị cắt phần thập phân, độ chính xác, dấu, bằng không, tỷ lệ, chỉ khác cách viết), quan hệ giữa các từ (chỉ khác hoa/thường, lỗi chính tả, thiếu hoặc thừa từ), vị trí dòng khác đầu tiên, quan hệ tiền tố và việc trùng đáp án của test khác---cùng giá trị phổ biến nhất của chúng trên các test sai,
+\begin{equation}
+\bar d_k(o) = \operatorname{mode}\bigl\{ d_k\bigl(\hat y_t(o), y_t\bigr) : r_t(o) \neq \text{đạt} \bigr\},
+\end{equation}
+và tỷ lệ test sai. Khối gộp $\bar d(o)$ không phụ thuộc bài tập, nên so sánh được giữa các bài; \cref{fig:example} cho thấy giá trị của nó với ba chương trình có cùng một chữ ký test. Từ vựng được khớp, không dùng nhãn, trên các bài sai thuộc partition huấn luyện của cùng bài tập; giá trị chưa gặp khi huấn luyện được ánh xạ thành \emph{chưa biết}. Chúng tôi so sánh tám biểu diễn:
 \begin{itemize}
-\item \textbf{Kết quả test} (OAV theo test case của cách phát biểu kinh điển): mỗi test một thuộc tính với giá trị đạt, sai, lỗi chạy hoặc quá thời gian.
+\item \textbf{Kết quả test}: $x^{\mathrm{out}}$.
 \item \textbf{Cấu trúc}: sự hiện diện của 16 cấu trúc C (các loại vòng lặp, so sánh chặt/không chặt, chỉ số mảng, con trỏ, \dots).
+\item \textbf{Manh mối mã}: riêng mười tám manh mối mã tĩnh của biểu diễn bằng chứng bên dưới.
 \item \textbf{Kết quả + stdout} và \textbf{Kết hợp + stdout}: các biểu diễn mạnh nhất của quy trình trước đây của chúng tôi, thêm quan hệ output theo từng test (khớp, khác khoảng trắng, rỗng, trùng đáp án test khác, khác) và dải khoảng cách sửa; bản kết hợp còn có khối cấu trúc.
-\item \textbf{Độ lệch} (đề xuất): khối kết quả test cộng, với mỗi test, chín mô tả không cần nhãn về \emph{cách} output lệch khỏi đáp án---số dòng, ký tự xuống dòng cuối, chỉ khác khoảng trắng, quan hệ giữa các số tương ứng (lệch một, bị cắt phần thập phân, độ chính xác, dấu, bằng không, tỷ lệ, chỉ khác cách viết), quan hệ giữa các từ (chỉ khác hoa/thường, lỗi chính tả, thiếu hoặc thừa từ), vị trí dòng khác đầu tiên, quan hệ tiền tố và việc trùng đáp án của test khác---cùng các mô tả đó gộp trên các test sai, vốn không phụ thuộc bài.
+\item \textbf{Độ lệch} (đề xuất): $x^{\mathrm{out}}$ cùng các mô tả theo từng test $d_k$ và khối gộp $\bar d$.
 \item \textbf{Bằng chứng} (đề xuất): độ lệch cộng mười tám manh mối mã tĩnh (so sánh chặt và không chặt trong vòng lặp, vòng lặp bắt đầu khác 0, giá trị khởi tạo hằng, phép chia không có toán hạng thực, ép kiểu, độ chính xác trong printf, lệnh in trong vòng lặp, chữ in ra không có trong đáp án nào, \dots).
 \item \textbf{Embedding}: embedding mã đóng băng của mã nguồn thô (Qwen3-Embedding-0.6B, \citealt{zhang2025qwen3embedding}), chuẩn hóa L2.
 \end{itemize}
-Trọng số các khối được cố định trong protocol đăng ký trước mọi đánh giá và không được tinh chỉnh (kết quả test $1$; kết quả + stdout $0{,}6/0{,}4$; kết hợp + stdout $0{,}48/0{,}12/0{,}4$; độ lệch $0{,}3$ test, $0{,}4$ độ lệch từng test, $0{,}3$ gộp; bằng chứng $0{,}2/0{,}3/0{,}2$ và $0{,}3$ manh mối mã).
+Trọng số các khối được cố định trong protocol đăng ký trước mọi đánh giá và không được tinh chỉnh (kết quả test $1$; kết quả + stdout $0{,}6/0{,}4$; kết hợp + stdout $0{,}48/0{,}12/0{,}4$; độ lệch $0{,}3$ test, $0{,}4$ độ lệch từng test, $0{,}3$ gộp; bằng chứng $0{,}2/0{,}3/0{,}2$ và $0{,}3$ manh mối mã). Trong một khối có khối lượng $m_b$, khối lượng được chia đều cho $|A_b|$ thuộc tính có biến thiên khi huấn luyện, $w_a = m_b / (|A_b| \sum_{b'} m_{b'})$, và khoảng cách giữa hai chương trình là khoảng cách Hamming có trọng số
+\begin{equation}
+\delta(o, o') = \sum_{a} w_a \,\bigl[x_a(o) \neq x_a(o')\bigr].
+\end{equation}
 
 \subsection{Phân cụm và luật}
-Các chương trình sai của mỗi bài tập tạo thành một cohort và được phân cụm theo kiểu chuyển nạp. K-means chạy trên mã hóa one-hot được nhân với căn bậc hai trọng số thuộc tính (seed 7, 42, 91), còn phân cụm phân cấp dùng liên kết trung bình trên khoảng cách Hamming có trọng số; embedding dùng K-means Euclid và khoảng cách cosine. Phân tích chính cho mọi phương pháp số cụm bằng số loại nhãn có trong cohort (\emph{k theo nhãn}, giới hạn bởi số mẫu biểu diễn khác nhau), nhằm tách biểu diễn khỏi việc chọn mô hình; phân tích phụ chọn $k\in[2,10]$ theo silhouette mà không dùng nhãn. Baseline rẻ nhất gom các chữ ký test giống hệt.
+Các chương trình sai của mỗi bài tập tạo thành một cohort và được phân cụm theo kiểu chuyển nạp. Phân cụm phân cấp (HAC) dùng liên kết trung bình trên $\delta$. K-means chạy trên mã hóa one-hot được nhân với $\sqrt{w_a/2}$, có bình phương khoảng cách Euclid đúng bằng $\delta$, với seed 7, 42 và 91; embedding dùng K-means Euclid và khoảng cách cosine. Phân tích chính cho mọi phương pháp số cụm bằng số loại nhãn có trong cohort (\emph{k theo nhãn}, giới hạn bởi số mẫu biểu diễn khác nhau), nhằm tách biểu diễn khỏi việc chọn mô hình; phân tích phụ chọn $k\in[2,10]$ theo silhouette mà không dùng nhãn. Baseline rẻ nhất gom các chữ ký test giống hệt.
 
-Để có luật NẾU--THÌ, chúng tôi dùng ILA \citep{tolun1998ila} và ILA-2 \citep{tolun1999ila2} trên các thuộc tính không phụ thuộc bài: các mô tả độ lệch gộp và manh mối mã (\emph{bằng chứng}), hoặc chỉ trạng thái kết quả gộp và tỷ lệ test sai (\emph{tóm tắt kết quả}). Luật được quy nạp từ nhãn của partition huấn luyện, áp dụng theo thứ tự độ chính xác, và ví dụ không khớp luật nào được tính là từ chối trả lời và là lỗi. Hệ số phạt của ILA-2 là đại lượng duy nhất được tinh chỉnh, trên partition kiểm định, trong tập $\{1,2,5\}$. Chúng tôi so với cây CART độ sâu 4 trên cùng thuộc tính và với lớp đa số, trên bài đã thấy với sinh viên chưa thấy, và trên bài mới (buổi thực hành~4) với sinh viên chưa thấy.
+Để có luật NẾU--THÌ, chúng tôi dùng ILA \citep{tolun1998ila} và ILA-2 \citep{tolun1999ila2} trên các thuộc tính không phụ thuộc bài: các mô tả độ lệch gộp và manh mối mã (\emph{bằng chứng}), hoặc chỉ trạng thái kết quả gộp và tỷ lệ test sai (\emph{tóm tắt kết quả}). Cả hai thuật toán quy nạp luật theo từng lớp từ tổ hợp tối đa hai điều kiện thuộc tính--giá trị khớp ít nhất ba ví dụ huấn luyện. ILA giữ tổ hợp phủ nhiều ví dụ chưa được phủ nhất của lớp và không phủ ví dụ nào của lớp khác; ILA-2 chấm một tổ hợp bằng số dương tính đúng trừ hệ số phạt nhân số dương tính sai, nên một luật có thể phủ vài ví dụ của lớp khác khi nó phủ nhiều ví dụ của chính lớp mình, nhờ đó chịu được nhiễu nhãn. Luật được quy nạp từ nhãn của partition huấn luyện, áp dụng theo thứ tự độ chính xác, và ví dụ không khớp luật nào được tính là từ chối trả lời và là lỗi. Hệ số phạt của ILA-2 là đại lượng duy nhất được tinh chỉnh, trên partition kiểm định, trong tập $\{1,2,5\}$ (giá trị được chọn là 1,0). Chúng tôi so với cây CART độ sâu 4 trên cùng thuộc tính và với lớp đa số, trên bài đã thấy với sinh viên chưa thấy, và trên bài mới (buổi thực hành~4) với sinh viên chưa thấy.
 
 \subsection{Độ đo và giả thuyết đăng ký trước}\label{sec:hyp}
 Độ đo chính là chỉ số Rand hiệu chỉnh (ARI; \citealt{hubert1985ari}) giữa các cụm của một cohort và loại nhãn chuẩn, lấy trung bình trên các cohort có ít nhất sáu item và hai loại; chúng tôi cũng báo cáo thông tin tương hỗ hiệu chỉnh \citep{vinh2010ami}, F1 theo cặp và độ thuần. \emph{Trần khả phân biệt} của một biểu diễn là $\sum_b \max_y n_{b,y}/N$ trên các nhóm $b$ gồm những vector thuộc tính giống hệt: không phép phân cụm hay bộ phân loại nào chỉ đọc biểu diễn đó có thể vượt qua trần này. Vì OAV độ lệch mịn hơn OAV kết quả test, trần của nó không thể thấp hơn; do đó chúng tôi so nó với trần kỳ vọng của một phân hoạch ngẫu nhiên chia mỗi nhóm kết quả test thành các nhóm con có cùng kích thước (200 hoán vị).
 
-Protocol, đăng ký trước mọi đánh giá cơ chế, nêu năm giả thuyết kèm tiêu chí bác bỏ (bảy sửa đổi có ghi ngày được ghi trước lần chạy kiểm tra niêm phong, sáu trong số đó trước mọi kết quả đánh giá; \cref{app:protocol}):
-H1a, chữ ký test giống hệt trộn lẫn cơ chế (cận trên 95\% của trần trung bình theo kết quả test dưới $0{,}95$);
-H1b, phần phân hoạch mịn thêm của OAV độ lệch mang thông tin cơ chế vượt mức độ mịn;
-H2, OAV độ lệch cho ARI cao hơn OAV kết quả test;
-H3, OAV bằng chứng cho ARI cao hơn baseline mạnh nhất trước đây là kết hợp + stdout;
-H4, luật ILA-2 trên bằng chứng không phụ thuộc bài đạt macro-F1 kiểm tra cao hơn luật trên tóm tắt kết quả, ở benchmark thật;
-H5, ở benchmark tiêm lỗi, cụm của embedding mã đóng băng khớp với chương trình gốc nhiều hơn là với cơ chế được tiêm.
+Protocol, đăng ký trước mọi đánh giá cơ chế, nêu năm giả thuyết kèm tiêu chí bác bỏ (bảy sửa đổi có ghi ngày được ghi trước lần chạy kiểm tra niêm phong, sáu trong số đó trước mọi kết quả đánh giá; \cref{app:protocol}). Chúng ứng với các câu hỏi nghiên cứu như sau:
+\begin{itemize}
+\item RQ1: H1a, chữ ký test giống hệt trộn lẫn cơ chế (cận trên 95\% của trần trung bình theo kết quả test dưới $0{,}95$); H1b, phần phân hoạch mịn thêm của OAV độ lệch mang thông tin cơ chế vượt mức độ mịn.
+\item RQ2: H2, OAV độ lệch cho ARI cao hơn OAV kết quả test; H3, OAV bằng chứng cho ARI cao hơn baseline mạnh nhất trước đây là kết hợp + stdout.
+\item RQ3: H4, luật ILA-2 trên bằng chứng không phụ thuộc bài đạt macro-F1 kiểm tra cao hơn luật trên tóm tắt kết quả, ở benchmark thật.
+\item RQ4: H5, ở benchmark tiêm lỗi, cụm của embedding mã đóng băng khớp với chương trình gốc nhiều hơn là với cơ chế được tiêm.
+\end{itemize}
 Chênh lệch được tóm tắt bằng trung bình trên các cohort kèm khoảng bootstrap 95\% (10.000 lần lấy mẫu) và kiểm định dấu hạng Wilcoxon có hiệu chỉnh Holm; so sánh luật dùng bootstrap theo sinh viên. Một giả thuyết chỉ được ủng hộ khi khoảng của chênh lệch loại trừ 0 theo đúng chiều trên mọi benchmark mà nó nêu. Vì item đơn cơ chế thật rất thưa trong partition kiểm tra niêm phong (0 cohort đủ điều kiện), sửa đổi A3 đã đăng ký đánh giá phân cụm trên benchmark thật bằng các cohort đầy đủ theo bài tập (phân cụm không khớp gì trên nhãn); benchmark tiêm lỗi được đánh giá trên các cohort của partition kiểm tra, kết quả trên cohort đầy đủ được công bố cùng dữ liệu. Quy nạp luật luôn học trên partition huấn luyện và được chấm trên partition kiểm tra.
 
 \section{Kết quả}\label{sec:results}
 
 \subsection{Các benchmark}
-Trong 750 sự kiện sửa, 746 qua được kiểm tra hai đầu mút và 743 đạt bản sửa 1-tối thiểu trong ngân sách thử; 72\% bản sửa tối thiểu chỉ thay đổi một hoặc hai hunk. 54,4\% bản sửa tối thiểu trải trên nhiều loại và bị loại khỏi tập nhãn chuẩn; 339 item đơn cơ chế còn lại chủ yếu thuộc loại văn bản in (khóa học chấm output khớp từng byte), tiếp theo là biểu thức tính, thiếu bước, điều kiện rẽ nhánh, biên vòng lặp, định dạng in và luồng điều khiển (7 trong 8 bản sửa luồng điều khiển được audit là thêm \texttt{return 0} mà C90 cần để có mã thoát 0). Benchmark kiểm soát gồm 3.320 mutant thuộc chín loại; 16,6\% mutant ứng viên vẫn đạt mọi test và bị loại vì tương đương trên bộ test. Số liệu đầy đủ được công bố cùng benchmark (\texttt{stats.json}).
+Trong 750 sự kiện sửa, 746 qua được kiểm tra hai đầu mút và 743 đạt bản sửa 1-tối thiểu trong ngân sách thử; 72\% bản sửa tối thiểu chỉ thay đổi một hoặc hai hunk (\cref{fig:flow}A). 54,4\% bản sửa tối thiểu trải trên nhiều loại và bị loại khỏi tập nhãn chuẩn; 339 item đơn cơ chế còn lại chủ yếu thuộc loại văn bản in (khóa học chấm output khớp từng byte), tiếp theo là biểu thức tính, thiếu bước, điều kiện rẽ nhánh, biên vòng lặp, định dạng in và luồng điều khiển (7 trong 8 bản sửa luồng điều khiển được audit là thêm \texttt{return 0} mà C90 cần để có mã thoát 0). Benchmark kiểm soát gồm 3.320 mutant thuộc chín loại; 16,6\% mutant ứng viên vẫn đạt mọi test và bị loại vì tương đương trên bộ test (\cref{fig:flow}B). \Cref{tab:hyp} tóm tắt các giả thuyết đã đăng ký; các mục tiếp theo lần lượt trả lời từng câu hỏi nghiên cứu.
 
-\subsection{Chữ ký test trộn lẫn cơ chế (H1a, H1b)}
-Các chữ ký test giống hệt thường che giấu những cơ chế khác nhau (\cref{fig:ceiling}). Tốt nhất, một hàm bất kỳ của OAV kết quả test chỉ gán đúng cơ chế cho 73,9\% bài thật (trần trung bình 0,74, KTC 95\% [0,70; 0,78]) và 50,7\% bài tiêm lỗi ([0,43; 0,59]), nên H1a được ủng hộ trên cả hai benchmark. Nói cách khác, 35,5\% trong 2.087 cặp bài thật có cùng chữ ký test trong một bài tập là khác cơ chế, và tỷ lệ này là 81,6\% trong 2.901 cặp tiêm lỗi. Phần mịn thêm của OAV độ lệch nâng trần thêm 0,080 [0,052; 0,112] trên bài thật và 0,172 [0,121; 0,224] trên bài tiêm lỗi so với một phân hoạch ngẫu nhiên cùng độ mịn (H1b được ủng hộ; Holm $p=0,0018$ và 0,0000). Vậy các phân biệt thêm vào mang thông tin cơ chế chứ không chỉ tăng độ phân giải.
-
-\begin{figure}[t]
+\begin{table}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/ceiling_vi.pdf}
-\caption{Trần khả phân biệt: tỷ lệ cao nhất số item mà một hàm bất kỳ của biểu diễn có thể gán đúng cơ chế. OAV độ lệch vượt cả OAV kết quả test lẫn một phân hoạch ngẫu nhiên có cùng kích thước nhóm. Điểm là trung bình trên các cohort; thanh là khoảng bootstrap 95\%.}\label{fig:ceiling}
+\caption{Các giả thuyết đã đăng ký: chênh lệch trung bình trên các cohort, khoảng bootstrap 95\% và kết luận (H1a báo cáo chính trần trung bình theo kết quả test). H2 và H3 được báo cáo cho K-means và HAC.}\label{tab:hyp}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrllrll}
+\toprule
+ & \multicolumn{3}{c}{Bản sửa thật} & \multicolumn{3}{c}{Mutant tiêm lỗi} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Giả thuyết & TB & KTC 95\% & Kết luận & TB & KTC 95\% & Kết luận \\
+\midrule
+H1a & 0,739 & [0,696; 0,783] & ủng hộ & 0,507 & [0,429; 0,588] & ủng hộ \\
+H1b & 0,080 & [0,052; 0,112] & ủng hộ & 0,172 & [0,121; 0,224] & ủng hộ \\
+H2 kmeans & 0,054 & [$-$0,081; 0,182] & không ủng hộ & 0,235 & [0,143; 0,331] & ủng hộ \\
+H2 hac & 0,086 & [$-$0,025; 0,200] & không ủng hộ & 0,214 & [0,117; 0,314] & ủng hộ \\
+H3 kmeans & $-$0,006 & [$-$0,097; 0,117] & không ủng hộ & 0,002 & [$-$0,055; 0,067] & không ủng hộ \\
+H3 hac & $-$0,010 & [$-$0,111; 0,119] & không ủng hộ & $-$0,010 & [$-$0,060; 0,041] & không ủng hộ \\
+H5 & -- & -- & -- & 0,834 & [0,695; 0,958] & ủng hộ \\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\subsection{RQ1: chữ ký test trộn lẫn cơ chế}
+Các chữ ký test giống hệt thường che giấu những cơ chế khác nhau (\cref{fig:ceiling}). Tốt nhất, một hàm bất kỳ của OAV kết quả test chỉ gán đúng cơ chế cho 73,9\% bài thật (trần trung bình 0,74, KTC 95\% [0,70; 0,78]) và 50,7\% bài tiêm lỗi ([0,43; 0,59]), nên H1a được ủng hộ trên cả hai benchmark. Nói cách khác, 35,5\% trong 2.087 cặp bài thật có cùng chữ ký test trong một bài tập là khác cơ chế, và tỷ lệ này là 81,6\% trong 2.901 cặp tiêm lỗi. Phần mịn thêm của OAV độ lệch nâng trần thêm 0,080 [0,052; 0,112] trên bài thật và 0,172 [0,121; 0,224] trên bài tiêm lỗi so với một phân hoạch ngẫu nhiên cùng độ mịn (H1b được ủng hộ; $p$ hiệu chỉnh Holm $p = 0,0018$ và $p < 0,0001$). Vậy các phân biệt thêm vào mang thông tin cơ chế chứ không chỉ tăng độ phân giải.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig4_ceiling_vi.pdf}
+\caption{RQ1. Trần khả phân biệt của OAV kết quả test, của một phân hoạch ngẫu nhiên chia mỗi nhóm kết quả test thành các nhóm con có cùng kích thước như OAV độ lệch (vòng tròn rỗng), và của OAV độ lệch. Điểm là trung bình trên các cohort; thanh là khoảng bootstrap 95\%.}\label{fig:ceiling}
 \end{figure}
 
-\subsection{Phân cụm theo cơ chế (H2, H3)}
+\subsection{RQ2: phân cụm theo cơ chế}
 \Cref{tab:ari,fig:ari} báo cáo mức khôi phục cơ chế ở cùng ngân sách phân cụm. Trên benchmark kiểm soát, cụm của OAV kết quả test hầu như không khớp với cơ chế (ARI 0,09, chữ ký trùng khớp 0,10), trong khi OAV độ lệch đạt 0,33: chênh lệch 0,235 [0,143; 0,331] với K-means và 0,214 [0,117; 0,314] với HAC, cao hơn ở 16/20 cohort. Trên bản sửa thật, OAV kết quả test đã đạt 0,29 vì loại văn bản in chiếm đa số tạo ra chữ ký đặc trưng; OAV độ lệch đạt 0,35 với K-means và 0,38 với HAC, nhưng các chênh lệch (0,054, KTC [$-$0,081; 0,182]; 0,086, KTC [$-$0,025; 0,200]) không đáng tin cậy. Do đó H2 chỉ được ủng hộ trên benchmark kiểm soát và, theo quy tắc đã đăng ký, không được ủng hộ về tổng thể.
 
 H3 không được ủng hộ: OAV bằng chứng và baseline kết hợp + stdout trước đây không phân biệt được trên cả hai benchmark (chênh lệch $-$0,006 và 0,002). Các quan hệ output đơn giản đã nắm gần hết những gì phân cụm theo khoảng cách có thể khai thác; kết quả + stdout đạt 0,36 và 0,34. Chọn $k$ bằng silhouette thay cho số loại nhãn làm mọi điểm số giảm nhẹ và giữ nguyên thứ tự (\cref{tab:ari}).
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig5_ari_vi.pdf}
+\caption{RQ2. Chỉ số Rand hiệu chỉnh giữa cụm K-means ($k$ theo nhãn) và nhãn cơ chế. Chàm: biểu diễn đề xuất; xám: baseline. Điểm là trung bình trên các cohort; thanh là khoảng bootstrap 95\% trên các cohort. Bản sửa thật được đánh giá trên cohort đầy đủ theo bài tập (sửa đổi A3), mutant tiêm lỗi trên cohort kiểm tra niêm phong.}\label{fig:ari}
+\end{figure}
 
 \begin{table}[t]
 \centering
@@ -217,27 +326,25 @@ Chữ ký test trùng khớp & 0,096 & -- & -- & -- \\
 \end{tabular}
 \end{table}
 
-\begin{table}[t]
+\paragraph{Cơ chế nào được lợi (khám phá)}
+ARI cấp cohort coi trọng nhất các loại lớn, nên chúng tôi đo thêm, theo từng loại, tỷ lệ item có cụm K-means mang đúng loại đó làm nhãn đa số (\cref{fig:categories}). Trên bản sửa thật, chữ ký test nhận ra tốt văn bản in (0,98), biên vòng lặp (0,88) và luồng điều khiển (0,83), nhưng không nhận ra định dạng in (0,00), điều kiện rẽ nhánh (0,24) hay thiếu bước (0,37); với OAV độ lệch các giá trị này tăng lên 0,69, 0,59 và 0,56. Tính trung bình theo loại, mức khôi phục tăng từ 0,54 lên 0,71 trên bài thật và từ 0,50 lên 0,72 trên bài tiêm lỗi. Lợi ích của bằng chứng output tập trung ở các cơ chế thiểu số, điều giải thích vì sao chênh lệch ARI trên benchmark thật nhỏ. Phân tích này được thêm sau lần chạy niêm phong (sửa đổi A7) và không phải giả thuyết đã đăng ký.
+
+\begin{figure}[!tbp]
 \centering
-\caption{Các giả thuyết đã đăng ký: chênh lệch trung bình trên các cohort, khoảng bootstrap 95\% và kết luận (H1a báo cáo chính trần trung bình theo kết quả test).}\label{tab:hyp}
-\small
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lrllrll}
-\toprule
- & \multicolumn{3}{c}{Bản sửa thật} & \multicolumn{3}{c}{Mutant tiêm lỗi} \\
-\cmidrule(lr){2-4}\cmidrule(lr){5-7}
-Giả thuyết & TB & KTC 95\% & Kết luận & TB & KTC 95\% & Kết luận \\
-\midrule
-H1a & 0,739 & [0,696; 0,783] & ủng hộ & 0,507 & [0,429; 0,588] & ủng hộ \\
-H1b & 0,080 & [0,052; 0,112] & ủng hộ & 0,172 & [0,121; 0,224] & ủng hộ \\
-H2 kmeans & 0,054 & [$-$0,081; 0,182] & không ủng hộ & 0,235 & [0,143; 0,331] & ủng hộ \\
-H2 hac & 0,086 & [$-$0,025; 0,200] & không ủng hộ & 0,214 & [0,117; 0,314] & ủng hộ \\
-H3 kmeans & $-$0,006 & [$-$0,097; 0,117] & không ủng hộ & 0,002 & [$-$0,055; 0,067] & không ủng hộ \\
-H3 hac & $-$0,010 & [$-$0,111; 0,119] & không ủng hộ & $-$0,010 & [$-$0,060; 0,041] & không ủng hộ \\
-H5 & -- & -- & -- & 0,834 & [0,695; 0,958] & ủng hộ \\
-\bottomrule
-\end{tabular}}
-\end{table}
+\includegraphics[width=\textwidth]{figures/fig6_categories_vi.pdf}
+\caption{RQ2, khám phá. Tỷ lệ item của mỗi cơ chế có cụm K-means ($k$ theo nhãn, seed 42) mang đúng cơ chế đó làm nhãn đa số; số item trong ngoặc. Ô càng đậm, khôi phục càng tốt.}\label{fig:categories}
+\end{figure}
+
+\subsection{RQ3: luật NẾU--THÌ}
+Luật ILA-2 trên các thuộc tính bằng chứng không phụ thuộc bài dự đoán cơ chế của item thật thuộc partition kiểm tra với macro-F1 0,26 (độ phủ 0,69, độ chính xác trên item có trả lời 0,70), so với 0,13 của luật trên tóm tắt kết quả và 0,11 của lớp đa số (\cref{fig:rules,tab:rules}). Chênh lệch 0,094 [$-$0,011; 0,171] chỉ dựa trên 29 item đơn cơ chế của sinh viên kiểm tra và chứa 0, nên H4 không được ủng hộ.
+
+Trên benchmark tiêm lỗi, nơi mọi loại đều có mặt, luật bằng chứng đạt macro-F1 0,65 trên bài đã thấy và 0,35 trên bài mới, trong khi luật tóm tắt kết quả đạt 0,03 và 0,04: luật chỉ dựa trên trạng thái kết quả hầu như không chuyển được, còn luật dựa trên độ lệch output thì chuyển được. Tập thuộc tính quan trọng hơn thuật toán học. Cây CART trên cùng thuộc tính bằng chứng đạt 0,44 và 0,40, thấp hơn ILA-2 trên bài đã thấy và nhỉnh hơn một chút trên bài mới. Hệ số phạt chịu nhiễu của ILA-2 đổi một chút độ chính xác lấy nhiều độ phủ: ILA gốc trả lời 0,34 item kiểm tra tiêm lỗi với độ chính xác 0,94, còn ILA-2 trả lời 0,81 với độ chính xác 0,74. \Cref{tab:toprules} liệt kê các luật có độ chính xác cao nhất học từ bản sửa thật; chúng đọc giống luật sản xuất của cách phát biểu kinh điển, nhưng kết luận là cơ chế mức chương trình và độ chính xác được đo trên những sinh viên không tham gia quy nạp.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig7_rules_vi.pdf}
+\caption{RQ3. Macro-F1 của các bộ học luật trên sinh viên chưa thấy, từ chối trả lời được tính là lỗi; thanh là khoảng bootstrap 95\% theo sinh viên. \emph{Bằng chứng}: mô tả độ lệch gộp và manh mối mã; \emph{tóm tắt kết quả}: trạng thái kết quả gộp và tỷ lệ test sai. Bài chưa thấy là các bài của buổi thực hành~4, không có trong dữ liệu huấn luyện.}\label{fig:rules}
+\end{figure}
 
 \begin{table}[t]
 \centering
@@ -266,18 +373,6 @@ Bài mới & Lớp đa số & 0,136 & 1,000 & 0,375 \\
 \end{tabular}}
 \end{table}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/ari_vi.pdf}
-\caption{Chỉ số Rand hiệu chỉnh giữa cụm và cơ chế (K-means, $k$ theo nhãn). Xanh: biểu diễn đề xuất; xám: baseline. Điểm là trung bình trên các cohort; thanh là khoảng bootstrap 95\% trên các cohort.}\label{fig:ari}
-\end{figure}
-
-\subsection{Embedding mã đóng băng gom chương trình, không gom cơ chế (H5)}
-Cụm Qwen3-Embedding của các mutant khớp với chương trình gốc sinh ra mutant nhiều hơn là với cơ chế được tiêm, chênh 0,834 ARI (KTC 95\% [0,695; 0,958]; H5 được ủng hộ). ARI theo cơ chế của chúng là $-$0,11 trên bài tiêm lỗi và 0,06 trên bài thật. Những thay đổi một token quyết định hành vi chương trình hầu như không dịch chuyển một embedding đa dụng, trong khi dấu ấn tác giả và phong cách lời giải chi phối nó.
-
-\subsection{Luật NẾU--THÌ (H4)}
-Luật ILA-2 trên các thuộc tính bằng chứng không phụ thuộc bài dự đoán cơ chế của item thật thuộc partition kiểm tra với macro-F1 0,26 (độ phủ 0,69, độ chính xác trên item có trả lời 0,70), so với 0,13 của luật trên tóm tắt kết quả và 0,11 của lớp đa số (\cref{tab:rules}). Chênh lệch 0,094 [$-$0,011; 0,171] chỉ dựa trên 29 item đơn cơ chế của sinh viên kiểm tra và chứa 0, nên H4 không được ủng hộ. Trên benchmark tiêm lỗi, nơi mọi loại đều có mặt, luật bằng chứng đạt macro-F1 0,65 trên bài đã thấy và 0,35 trên bài mới, trong khi luật tóm tắt kết quả đạt 0,03 và 0,04. Hệ số phạt chịu nhiễu của ILA-2 đổi một chút độ chính xác lấy nhiều độ phủ: ILA gốc trả lời 0,34 item kiểm tra tiêm lỗi với độ chính xác 0,94, còn ILA-2 trả lời 0,81 với độ chính xác 0,74. \Cref{tab:toprules} liệt kê các luật có độ chính xác cao nhất học từ bản sửa thật; chúng đọc giống luật sản xuất của cách phát biểu kinh điển, nhưng kết luận là cơ chế mức chương trình và độ chính xác được đo trên những sinh viên không tham gia quy nạp.
-
 \begin{table}[t]
 \centering
 \caption{Các luật ILA-2 chính xác nhất quy nạp từ bản sửa thật thuộc partition huấn luyện (hỗ trợ: số item huấn luyện đúng/khớp).}\label{tab:toprules}
@@ -298,44 +393,69 @@ output có chữ mà đáp án không có & văn bản in ra & 20/24 \\
 \end{tabular}
 \end{table}
 
-\subsection{Cơ chế nào được lợi (khám phá)}
-Theo từng loại (\cref{app:categories}), trên bản sửa thật chữ ký test nhận ra tốt văn bản in (0,98), biên vòng lặp (0,88) và luồng điều khiển (0,83), nhưng không nhận ra định dạng in (0,00), điều kiện rẽ nhánh (0,24) hay thiếu bước (0,37); với OAV độ lệch các giá trị này tăng lên 0,69, 0,59 và 0,56. Tính trung bình theo loại, mức khôi phục tăng từ 0,54 lên 0,71 trên bài thật và từ 0,50 lên 0,72 trên bài tiêm lỗi. Vậy lợi ích của bằng chứng output tập trung ở các cơ chế thiểu số mà ARI cấp cohort ít coi trọng, điều giải thích vì sao chênh lệch ARI trên benchmark thật nhỏ.
+\subsection{RQ4: embedding mã đóng băng gom chương trình, không gom cơ chế}
+Cụm Qwen3-Embedding của các mutant khớp với chương trình gốc sinh ra mutant nhiều hơn là với cơ chế được tiêm, chênh 0,834 ARI (KTC 95\% [0,695; 0,958]; H5 được ủng hộ). ARI theo cơ chế của chúng là $-$0,11 trên bài tiêm lỗi và 0,06 trên bài thật (\cref{fig:ari}). Những thay đổi một token quyết định hành vi chương trình hầu như không dịch chuyển một embedding đa dụng, trong khi dấu ấn tác giả và phong cách lời giải chi phối nó.
 
 \section{Thảo luận}\label{sec:discussion}
 
-\paragraph{Chữ ký test nói được gì và không nói được gì với giảng viên.}
-Quy trình kinh điển---OAV theo test case, phân cụm K-means hoặc Hamming, luật NẾU--THÌ quy nạp---nhận ra tốt lỗi phổ biến nhất của khóa học này: lỗi văn bản in tạo chữ ký đặc trưng, và trên bản sửa thật, cụm theo chữ ký đạt ARI trung bình 0,29. Nhưng biểu diễn này không tách được các cơ chế làm trượt cùng những test. Trên các mutant có kiểm soát của cùng các chương trình, nơi mọi cơ chế đều có mặt, cụm của nó hầu như không khớp với cơ chế (ARI 0,09), và ngay cả một bộ phân loại hoàn hảo chỉ đọc chữ ký cũng chỉ gán đúng tối đa 50,7\% item. Một dashboard dựng trên chữ ký test vì vậy báo cáo chính xác các lỗi phổ biến, thường ở mức đặc tả, và gộp lẫn các lỗi khái niệm ít gặp hơn---điều kiện rẽ nhánh sai, thiếu bước, định dạng in---vốn chính là lý do để phân cụm ngay từ đầu.
+\paragraph{Chữ ký test cho giảng viên biết được gì và không biết được gì}
+Quy trình kinh điển---OAV theo test case, phân cụm K-means hoặc Hamming, luật NẾU--THÌ quy nạp---nhận ra tốt lỗi phổ biến nhất của khóa học này: lỗi văn bản in tạo ra chữ ký đặc trưng, và trên bản sửa thật các cụm theo chữ ký đạt ARI trung bình 0,29. Nhưng biểu diễn này không tách được các cơ chế trượt cùng các test. Trên mutant có kiểm soát của cùng các chương trình, nơi mọi cơ chế đều có mặt, cụm của nó hầu như không khớp với cơ chế (ARI 0,09), và ngay cả một bộ phân loại hoàn hảo chỉ đọc chữ ký cũng chỉ gán đúng tối đa 50,7\% item. Một dashboard dựng trên chữ ký vì vậy báo đúng các lỗi phổ biến, thường ở mức đặc tả, nhưng trộn lẫn những lỗi khái niệm ít gặp hơn---sai điều kiện rẽ nhánh, thiếu bước, sai định dạng in---vốn là lý do để phân cụm ngay từ đầu.
 
-\paragraph{Bằng chứng output là cải tiến rẻ nhất, không phải mô hình mới.}
-Mọi thứ giúp khôi phục cơ chế tốt hơn đều đã có sẵn trong output của hệ thống chấm: quan hệ giữa output thực và output mong đợi, và trong OAV độ lệch là kiểu sai lệch số và chữ. Trên dữ liệu kiểm soát, điều này làm ARI tăng hơn ba lần ở cùng ngân sách phân cụm, và trên bản sửa thật nó nâng mức khôi phục theo loại của các cơ chế thiểu số. Các mô tả phong phú hơn của chúng tôi không vượt quan hệ output đơn giản khi phân cụm (H3), nên chúng tôi không khẳng định có phương pháp phân cụm tốt hơn. Giá trị của chúng nằm ở chỗ khác: chúng không phụ thuộc bài, nên luật học trên một số bài tập áp dụng được cho bài khác. Luật trên các mô tả độ lệch gộp giữ macro-F1 0,35 trên bài tập mới của benchmark kiểm soát, trong khi luật trên tóm tắt kết quả gần như bằng 0; còn chữ ký theo từng test thậm chí không thể so sánh giữa các bài tập.
+\paragraph{Bằng chứng output là cải tiến rẻ nhất, không phải mô hình mới}
+Mọi thứ cải thiện việc khôi phục cơ chế đều đã có sẵn trong output của hệ chấm: quan hệ giữa output thực và output mong đợi, và trong OAV độ lệch là kiểu lệch về số và về chữ. Trên dữ liệu kiểm soát, điều này tăng ARI hơn gấp ba ở cùng ngân sách phân cụm, và trên bản sửa thật nó nâng mức khôi phục theo từng loại của các cơ chế thiểu số. Các mô tả phong phú hơn của chúng tôi không vượt được quan hệ output đơn giản khi phân cụm (H3), nên chúng tôi không khẳng định có phương pháp phân cụm tốt hơn. Giá trị của chúng nằm ở chỗ khác: chúng không phụ thuộc bài, nên luật học trên một số bài áp dụng được cho bài khác. Luật trên mô tả độ lệch gộp giữ macro-F1 0,35 trên bài chưa thấy của benchmark kiểm soát, trong khi luật trên tóm tắt kết quả gần bằng không; chữ ký theo từng test thậm chí không so sánh được giữa các bài.
 
-\paragraph{Luật như những giả thuyết đã kiểm chứng.}
-ILA và ILA-2 tạo ra đúng loại luật sản xuất mà cách phát biểu kinh điển yêu cầu, và hệ số phạt của ILA-2 đổi một chút độ chính xác lấy độ phủ lớn hơn nhiều. Chúng tôi trình bày kết luận của luật như một giả thuyết cơ chế kèm độ chính xác đo trên dữ liệu giữ lại, và cho hệ thống từ chối trả lời khi không luật nào khớp. Trong ứng dụng học tập của chúng tôi, mỗi cụm của một lớp giờ hiển thị giả thuyết như vậy, tỷ lệ thành viên khớp luật, một phép kiểm tra một phút để xác nhận hoặc bác bỏ với sinh viên, và một gợi ý giảng lại. Tuy nhiên, trên bản sửa thật, ưu thế của luật bằng chứng so với luật tóm tắt kết quả chưa đáng tin cậy về thống kê với 29 item kiểm tra niêm phong, nên các luật này nên được xem là điểm khởi đầu cho phán đoán của giảng viên.
+\paragraph{Luật như những giả thuyết đã được kiểm}
+ILA và ILA-2 tạo ra đúng các luật sản xuất mà cách phát biểu kinh điển yêu cầu, và hệ số phạt của ILA-2 đổi một chút độ chính xác lấy độ phủ lớn hơn nhiều. Một cây CART nông trên cùng thuộc tính chính xác tương đương, nên lý do chọn ILA-2 không phải độ chính xác mà là hình thức: một danh sách có thứ tự các luật NẾU--THÌ ngắn, luật nào cũng kèm số hỗ trợ, giảng viên đọc được và bác bỏ được, và hệ thống từ chối trả lời thay vì đoán khi không luật nào khớp. Trên bản sửa thật, ưu thế của luật bằng chứng so với luật tóm tắt kết quả chưa đáng tin cậy về thống kê với 29 item kiểm tra niêm phong, nên các luật này nên được đọc như điểm khởi đầu cho phán đoán của giảng viên, không phải chẩn đoán.
 
-\paragraph{Embedding tìm ra tác giả trước khi tìm ra cơ chế.}
-Một embedding mã đa dụng mạnh đã gom các mutant theo chương trình gốc của chúng: những thay đổi một token quyết định hành vi hầu như không dịch chuyển vector, trong khi tên biến, cách trình bày và chiến lược lời giải chi phối nó. Điều này không mâu thuẫn với các thành công trước đây của embedding được huấn luyện cho đúng nhiệm vụ \citep{shi2021misconception,piech2015embeddings}; nó cho thấy một embedding đóng băng cần bằng chứng thực thi hoặc được huấn luyện nhạy với cơ chế trước khi cụm của nó có thể được đọc như các nhóm lỗi.
+\paragraph{Embedding tìm ra tác giả trước khi tìm ra cơ chế}
+Một embedding mã đa dụng mạnh đã gom mutant theo chương trình mà chúng bắt nguồn: những thay đổi một token quyết định hành vi hầu như không dịch chuyển vector, trong khi tên định danh, cách trình bày và chiến lược lời giải chi phối nó. Điều này không mâu thuẫn với các thành công trước đây của embedding được huấn luyện cho chính nhiệm vụ \citep{shi2021misconception,piech2015embeddings}; nó cho thấy một embedding đóng băng cần bằng chứng thực thi hoặc huấn luyện có hiểu biết về cơ chế trước khi các cụm của nó có thể được đọc như nhóm lỗi.
 
-\paragraph{Đánh giá dựa trên bản sửa.}
-Bản sửa tối thiểu đã kiểm chứng biến 750 sự kiện sửa tự nhiên thành các nhãn có thể audit, với chi phí 7.040 lần thực thi chương trình và không tốn giờ gán nhãn thủ công. Hai phát hiện có ý nghĩa ngoài phạm vi nghiên cứu này. Thứ nhất, 54,4\% bản sửa tối thiểu thay đổi nhiều hơn một loại mã, nên việc chia các bài sai thành các cụm đơn cơ chế tự thân đã là một sự giản lược; cách gom chồng lấn hoặc đa nhãn cần được quan tâm hơn. Thứ hai, một benchmark kiểm soát xây theo cùng taxonomy làm lộ các giới hạn mà phân bố thật mất cân bằng che giấu, và hai benchmark bất đồng đúng ở chỗ loại chiếm đa số của dữ liệu thật vốn dễ nhận ra.
+\subsection{Hàm ý cho giảng viên và người xây dựng công cụ}\label{sec:tool}
+Chúng tôi chuyển các kết quả này thành một công cụ chạy cục bộ cho giảng viên, AAI Lab (\cref{fig:tool}), với thiết kế xuất phát từ bằng chứng chứ không từ cách phát biểu kinh điển. Với mỗi bài tập, bài nộp sai mới nhất của mỗi học viên được biểu diễn bằng OAV độ lệch đã đăng ký và phân cụm bằng K-means, với $k$ chọn theo silhouette trừ khi giảng viên tự đặt. Mỗi nhóm hiển thị (i) chữ ký test của nhóm và, với từng test, tỷ lệ trượt của nhóm cạnh tỷ lệ của các nhóm khác, (ii) các độ lệch output mà ít nhất 60\% thành viên cùng có, và (iii) một luật NẾU--THÌ do ILA-2 quy nạp ngay trên lớp đó, kèm độ chính xác và độ phủ. Giả thuyết cơ chế chỉ được nêu khi một luật khớp ít nhất một nửa nhóm: hoặc một luật viết tay cho bài tập đó hay cho chương trình C nói chung, hoặc một trong 14 luật ILA-2 học từ bản sửa thật và đóng băng trước khi triển khai. Nếu không, nhóm được ghi là chưa có giả thuyết, và khi các thành viên khớp những luật khác nhau, công cụ nói rõ điều đó, như với các chương trình ở \cref{fig:example}. Mỗi giả thuyết đi kèm một câu hỏi để hỏi sinh viên và một hoạt động dạy lại, và giảng viên xác nhận hoặc bác bỏ nhóm; chương trình chỉ chạy trong container cách ly, và công cụ chỉ phục vụ chính máy đang chạy.
 
-\subsection{Hạn chế và mối đe dọa tính hợp lệ}\label{sec:limits}
+Ba bài học từ nghiên cứu định hình thiết kế này. Thứ nhất, một nhóm được mô tả bằng những gì các thành viên cùng có, không bao giờ chỉ bằng chữ ký, vì RQ1 cho thấy chữ ký trộn lẫn cơ chế. Thứ hai, công cụ từ chối trả lời và cảnh báo nhóm trộn thay vì đặt tên cho mọi cụm, vì RQ3 cho thấy ngay cả luật tốt nhất cũng để nhiều item không được giải thích trên dữ liệu thật. Thứ ba, giả thuyết cơ chế được phát biểu thành câu hỏi để kiểm với sinh viên, vì nhãn dựa trên bản sửa mô tả một thay đổi trong chương trình, không phải một niềm tin. Chúng tôi chưa đánh giá công cụ với giảng viên; việc các nhóm và giả thuyết của nó có thay đổi quyết định dạy học hay không là câu hỏi mở cho một nghiên cứu trong lớp học.
 
-\paragraph{Nhãn mô tả chương trình, không mô tả tư duy.} Một nhãn dựa trên bản sửa ghi lại điều sinh viên đã thay đổi để chương trình đạt; cùng một thay đổi có thể đến từ một quan niệm sai, một sơ suất hay việc đọc nhầm đặc tả, và sinh viên có thể sửa triệu chứng mà không thay đổi niềm tin. Vì vậy chúng tôi đánh giá cơ chế mức chương trình và diễn đạt đầu ra giảng dạy như các giả thuyết cần kiểm tra. Khẳng định về niềm tin cần nghĩ-to-lên, giải thích hoặc bài tập dự đoán với sinh viên \citep{lu2024smol}.
+\begin{figure}[!tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig8_tool_vi.pdf}
+\caption{Màn hình Lớp học của AAI Lab cho một bài tập của lớp minh họa do nhóm tác giả tự viết. Nhóm được chọn gồm bốn bài trượt test một phần tử và test toàn số âm; luật viết tay của bài tập ``khởi tạo giá trị lớn nhất bằng 0'' khớp cả bốn bài, và luật quy nạp trên lớp là ``NẾU in ra 0 thay vì kết quả''.}\label{fig:tool}
+\end{figure}
 
-\paragraph{Cách xây dựng nhãn.} Delta debugging làm việc trên hunk dòng, nên hai thay đổi trên cùng một dòng không tách được và một bản sửa tối thiểu có thể kèm một sửa đổi trình bày cạnh một sửa lỗi logic. Bộ phân loại dựa trên luật và được sửa một lần sau khi audit các item huấn luyện và kiểm định (sửa đổi A6); cả hai lần audit do một trợ lý AI thực hiện, không phải gán nhãn độc lập của con người. Việc loại các bản sửa đa loại (\textsc{Multi}, 54,4\% sự kiện sửa) giữ cho nhãn chuẩn chính xác nhưng làm nó nghiêng về các cơ chế đơn giản, thường ở mức output. Chúng tôi coi các lần nộp \texttt{sub\_NNN} là theo thứ tự thời gian trong cùng sinh viên, bài tập và năm.
+\subsection{Đánh giá dựa trên bản sửa}
+Bản sửa tối thiểu đã kiểm chứng biến 750 sự kiện sửa tự nhiên thành nhãn có thể audit, với chi phí 7.040 lần chạy chương trình và không cần giờ gán nhãn nào. Có hai phát hiện có ý nghĩa ngoài phạm vi nghiên cứu này. Thứ nhất, 54,4\% bản sửa tối thiểu thay đổi nhiều hơn một loại mã, nên việc chia bài sai thành các cụm đơn cơ chế tự nó đã là một sự đơn giản hóa; phân nhóm chồng lấn hoặc đa nhãn đáng được quan tâm hơn. Thứ hai, một benchmark kiểm soát xây theo cùng taxonomy làm lộ những giới hạn mà phân phối thật mất cân bằng che đi, và hai benchmark bất đồng đúng ở chỗ loại chiếm đa số của dữ liệu thật dễ nhận ra.
 
-\paragraph{Mutant tiêm lỗi.} Mutant sạch hơn lỗi thật, phân bố loại do chúng tôi chọn, và các đặc trưng dựa trên mã xem xét đúng phần cú pháp bị sửa (sửa đổi A4). Đánh giá bằng đột biến cho biết một biểu diễn \emph{có thể} tách được gì \citep{just2014mutants}, không cho biết các cơ chế xuất hiện thường xuyên thế nào trong lớp.
+\subsection{Giới hạn và các mối đe dọa đến tính hợp lệ}\label{sec:limits}
 
-\paragraph{Phạm vi.} Một khóa học, một chuẩn ngôn ngữ (C90), một chính sách chấm (khớp output chính xác) và một cơ sở đào tạo. Các mô tả độ lệch được thiết kế không phụ thuộc bài, nhưng giá trị của chúng phụ thuộc vào việc chấm theo output; các khóa học dùng test theo thuộc tính hoặc unit test có thể thấy mẫu khác. Partition kiểm tra niêm phong của benchmark thật quá nhỏ cho thống kê phân cụm cấp cohort, đó là lý do sửa đổi A3 đánh giá cohort đầy đủ; quy nạp luật luôn dùng sinh viên được giữ lại.
+\paragraph{Nhãn mô tả chương trình, không mô tả suy nghĩ} Nhãn dựa trên bản sửa ghi lại điều sinh viên đã thay đổi để chương trình đạt; cùng một thay đổi có thể xuất phát từ quan niệm sai, từ sơ suất hoặc từ đọc nhầm đặc tả, và sinh viên có thể sửa triệu chứng mà không thay đổi niềm tin. Vì vậy chúng tôi đánh giá cơ chế mức chương trình và phát biểu output dạy học thành giả thuyết cần kiểm. Khẳng định về niềm tin cần các nhiệm vụ nói to suy nghĩ, giải thích hoặc dự đoán với sinh viên \citep{lu2024smol}.
 
-\paragraph{Thống kê.} Các cohort khác nhau về kích thước và cân bằng nhãn; ARI nhạy với loại chiếm đa số. Chúng tôi báo cáo khoảng bootstrap cấp cohort, kiểm định Wilcoxon có hiệu chỉnh Holm và $k$ chọn bằng silhouette như phân tích phụ, nhưng số cohort (vài chục) hạn chế độ mạnh thống kê, và các item trong một cohort không độc lập giữa các biểu diễn của cùng một chương trình.
+\paragraph{Cách xây nhãn} Delta debugging làm việc trên hunk dòng, nên hai thay đổi trên cùng một dòng không tách được và một bản sửa tối thiểu có thể gồm cả một chỉnh sửa định dạng nằm cạnh một sửa lỗi logic. Bộ phân loại dựa trên luật và đã được sửa một lần sau khi audit các item huấn luyện và kiểm định (sửa đổi A6); cả hai lần audit do một trợ lý AI thực hiện và không phải gán nhãn độc lập của con người. Việc loại các bản sửa nhiều loại (\textsc{Multi}, 54,4\% sự kiện sửa) giữ nhãn chuẩn chính xác nhưng làm lệch nó về phía các cơ chế đơn giản, thường ở mức output. Chúng tôi coi các lần nộp \texttt{sub\_NNN} là theo thứ tự thời gian trong cùng sinh viên, bài tập và năm.
+
+\paragraph{Mutant tiêm lỗi} Mutant sạch hơn lỗi thật, phân phối loại do chúng tôi chọn, và các đặc trưng dựa trên mã đọc đúng cú pháp bị sửa (sửa đổi A4). Đánh giá bằng đột biến cho biết một biểu diễn \emph{có thể} tách được gì \citep{just2014mutants}, không cho biết các cơ chế xuất hiện thường xuyên đến đâu trong lớp.
+
+\paragraph{Phạm vi} Một khóa học, một chuẩn ngôn ngữ (C90), một chính sách chấm (khớp output chính xác) và một cơ sở đào tạo. Các mô tả độ lệch không phụ thuộc bài theo thiết kế, nhưng giá trị của chúng phụ thuộc vào chấm theo output; các khóa học dùng test theo thuộc tính hoặc unit test có thể thấy mẫu khác. Partition kiểm tra niêm phong của benchmark thật quá nhỏ cho thống kê phân cụm cấp cohort, nên sửa đổi A3 đánh giá trên cohort đầy đủ; quy nạp luật luôn dùng sinh viên chưa thấy.
+
+\paragraph{Thống kê} Các cohort khác nhau về kích thước và độ cân bằng nhãn; ARI nhạy với các loại chiếm đa số. Chúng tôi báo cáo khoảng bootstrap cấp cohort, kiểm định Wilcoxon có hiệu chỉnh Holm và $k$ theo silhouette như phân tích phụ, nhưng số cohort (vài chục) hạn chế lực thống kê, và các item trong một cohort không độc lập giữa các biểu diễn của cùng chương trình.
+
+\paragraph{Công cụ} AAI Lab mới được chạy trên một lớp minh họa gồm chương trình do nhóm tác giả viết và trên các cohort C-Pack, chưa được dùng với giảng viên hay sinh viên. Các luật viết tay theo bài tập của nó chỉ phủ sáu bài, và các ngưỡng (60\% cho bằng chứng chung, 50\% cho giả thuyết) là lựa chọn thiết kế chưa được tinh chỉnh hay kiểm chứng.
 
 
 \section{Kết luận}\label{sec:conclusion}
 
-Gom cụm các chương trình sai theo những test mà chúng trượt là một cách hấp dẫn để cung cấp phản hồi vĩ mô cho giảng viên, và luật NẾU--THÌ của nó đọc lên như lời khuyên giảng dạy. Khi được đánh giá bằng các bản sửa tối thiểu đã kiểm chứng của chính sinh viên và bằng các mutant một cơ chế có kiểm soát, OAV theo test case hóa ra trộn lẫn cơ chế một cách có hệ thống: nó nhận ra các lỗi ở mức output chiếm đa số và gộp lẫn phần lớn phần còn lại. Bằng chứng không cần nhãn về cách output lệch khỏi đáp án khôi phục được nhiều hơn, rõ nhất khi các cơ chế cân bằng, và hỗ trợ các luật chuyển được giữa các bài tập; ngược lại, embedding mã đa dụng gom chương trình theo nguồn gốc. Vì mọi nhãn trong các benchmark của chúng tôi đều suy ra từ bằng chứng đã thực thi và có thể suy lại, các benchmark có thể được dùng lại để đánh giá biểu diễn mới, bộ chẩn đoán dựa trên LLM hoặc các test chủ động.
+Gom các chương trình sai theo những test mà chúng trượt là một cách hấp dẫn để đưa phản hồi vĩ mô cho giảng viên, và các luật NẾU--THÌ của nó đọc lên giống lời khuyên dạy học. Khi đánh giá bằng bản sửa tối thiểu đã kiểm chứng từ chính chương trình của sinh viên và bằng mutant một cơ chế có kiểm soát, OAV theo test case hóa ra trộn lẫn cơ chế một cách hệ thống: nó nhận ra các lỗi mức output chiếm đa số và gộp phần lớn phần còn lại (RQ1). Bằng chứng không cần nhãn về cách output lệch khỏi đáp án khôi phục được nhiều hơn, rõ nhất khi các cơ chế cân bằng (RQ2), và nó hỗ trợ những luật chuyển được giữa các bài tập (RQ3); ngược lại, embedding mã đa dụng gom chương trình theo nguồn gốc (RQ4). Vì mọi nhãn trong các benchmark đều suy ra từ bằng chứng thực thi và có thể suy lại, các benchmark này dùng lại được để đánh giá biểu diễn mới, bộ chẩn đoán dựa trên LLM hoặc test chủ động, và công cụ cho giảng viên cho thấy các kết quả chuyển thành phản hồi biết từ chối trả lời khi bằng chứng yếu như thế nào.
 
-Ba bước sẽ củng cố các kết luận này: một audit độc lập bởi hai người chấm, tái lập trên các khóa học, ngôn ngữ và chính sách chấm khác, và các test thích ứng phá vỡ những va chạm chữ ký còn lại trước khi một giả thuyết đến tay giảng viên. Khẳng định về niềm tin của sinh viên cần nghiên cứu với sinh viên; các công cụ công bố ở đây nhằm làm cho những nghiên cứu đó rẻ hơn khi thiết kế.
+Ba bước sẽ củng cố các kết luận này: một lần audit nhãn độc lập bởi hai người chấm, lặp lại trên khóa học, ngôn ngữ và chính sách chấm khác, và một nghiên cứu trong lớp học xem giả thuyết cơ chế có thay đổi điều giảng viên dạy lại hay không. Test thích ứng để phá các va chạm chữ ký còn lại trước khi giả thuyết đến tay giảng viên là hướng phương pháp tự nhiên tiếp theo. Khẳng định về niềm tin của sinh viên cần nghiên cứu với sinh viên; các công cụ được công bố ở đây nhằm làm cho việc thiết kế những nghiên cứu đó rẻ hơn.
+
+\section*{Dữ liệu và mã nguồn}
+Runner chạy lại, các script xây benchmark, protocol đăng ký trước cùng các sửa đổi, mã phân tích, script vẽ hình và công cụ AAI Lab có trong kho mã của dự án (\url{https://github.com/linhlinhlin/AAI}). Các benchmark được suy ra từ corpus công khai C-Pack-IPAs \citep{orvalho2024cpack}; chúng được công bố dưới dạng mã item, bản vá đã kiểm chứng và nhãn, còn bản thân các chương trình được lấy từ bản phát hành gốc.
+
+\section*{Đạo đức nghiên cứu}
+Nghiên cứu chỉ dùng corpus công khai và đã ẩn danh C-Pack-IPAs; không thu thập dữ liệu mới từ sinh viên hay giảng viên, và không có người tham gia nghiên cứu. Lớp minh họa ở \cref{fig:tool} gồm các chương trình do nhóm tác giả tự viết.
+
+\section*{Tuyên bố về việc dùng AI tạo sinh và công nghệ hỗ trợ bởi AI trong quá trình viết}
+Trong quá trình thực hiện công trình này, nhóm tác giả đã dùng Claude (Anthropic) để viết và rà soát mã phân tích, để audit các mẫu nhãn của benchmark (như nêu ở \cref{sec:limits}), và để soạn thảo, biên tập văn bản. Sau khi dùng công cụ này, nhóm tác giả đã rà soát, chỉnh sửa nội dung khi cần và chịu hoàn toàn trách nhiệm về nội dung của bài báo.
+
+\section*{Tuyên bố về xung đột lợi ích}
+Nhóm tác giả tuyên bố không có lợi ích tài chính hay quan hệ cá nhân nào đã biết có thể ảnh hưởng đến công trình được báo cáo trong bài báo này.
 
 
 \appendix
@@ -369,7 +489,7 @@ python scripts/run_mechanism_eval.py --partition validation ...
 python scripts/run_mechanism_eval.py --partition test \
     --scopes partition full --penalty 1,0 ...
 \end{verbatim}
-Mỗi lượt chạy ghi dấu vân tay mã nguồn lúc bắt đầu, image container, hash đầu vào và hash chia dữ liệu. Lần chạy lại mất 14 phút trên máy ảo Docker bốn nhân; dựng benchmark đã thực thi 7.040 lần thử delta debugging và 4.350 mutant ứng viên.
+Mỗi lượt chạy ghi dấu vân tay mã nguồn lúc bắt đầu, image container, hash đầu vào và hash chia dữ liệu. Các hình được vẽ lại từ artifact đã commit bằng \texttt{python paper/make\_figures.py --lang vi}; \cref{fig:example} đọc ba chương trình do \texttt{paper/export\_example.py} xuất ra, và \cref{fig:tool} đọc ảnh chụp do \texttt{paper/capture\_tool.py} chụp từ một phiên bản mới của công cụ. Lần chạy lại mất 14 phút trên máy ảo Docker bốn nhân; dựng benchmark đã thực thi 7.040 lần thử delta debugging và 4.350 mutant ứng viên.
 
 \section{Khôi phục theo từng loại}\label{app:categories}
 Phân tích khám phá (sửa đổi A7): tỷ lệ item mà cụm K-means ($k$ theo nhãn, seed 42) chứa nó có loại của item là nhãn đa số.

@@ -1,21 +1,43 @@
 \section{Results}\label{sec:results}
 
 \subsection{Benchmarks}
-Of the {{n_pairs}} repair events, {{real_ok}} passed the endpoint checks and {{real_one_minimal}} reached a 1-minimal repair within the probe budget; {{real_small_repair_pct}}\% of minimal repairs changed one or two line hunks. {{multi_share}}\% of the minimal repairs spanned more than one category and were excluded from the gold; the remaining {{n_real_gold}} single-mechanism items are dominated by output text (the course graded output byte for byte), followed by computation, missing statements, branch conditions, loop boundaries, output format and control flow ({{audit_control_flow_return}} of the {{audit_control_flow}} audited control-flow repairs added the \texttt{return 0} that C90 needs for a zero exit status). The controlled benchmark contains {{n_injected}} mutants over nine categories; {{injected_equivalent_pct}}\% of candidate mutants passed every test and were discarded as equivalent on the suite. Full counts are released with the benchmark (\texttt{stats.json}).
+Of the {{n_pairs}} repair events, {{real_ok}} passed the endpoint checks and {{real_one_minimal}} reached a 1-minimal repair within the probe budget; {{real_small_repair_pct}}\% of minimal repairs changed one or two line hunks (\cref{fig:flow}A). {{multi_share}}\% of the minimal repairs spanned more than one category and were excluded from the gold; the remaining {{n_real_gold}} single-mechanism items are dominated by output text (the course graded output byte for byte), followed by computation, missing statements, branch conditions, loop boundaries, output format and control flow ({{audit_control_flow_return}} of the {{audit_control_flow}} audited control-flow repairs added the \texttt{return 0} that C90 needs for a zero exit status). The controlled benchmark contains {{n_injected}} mutants over nine categories; {{injected_equivalent_pct}}\% of candidate mutants passed every test and were discarded as equivalent on the suite (\cref{fig:flow}B). \Cref{tab:hyp} summarises the registered hypotheses; the following subsections answer the research questions in turn.
 
-\subsection{Test signatures mix mechanisms (H1a, H1b)}
-Identical test signatures often hide different mechanisms (\cref{fig:ceiling}). The best any function of the test-outcome OAV can do is to assign {{real_H1a_pct}}\% of real items (mean ceiling {{real_H1a_mean}}, 95\% CI [{{real_H1a_lo}}, {{real_H1a_hi}}]) and {{injected_H1a_pct}}\% of injected items ([{{injected_H1a_lo}}, {{injected_H1a_hi}}]) to their mechanism, so H1a is supported on both benchmarks. Put differently, {{real_collision_pct}}\% of the {{real_same_signature_pairs}} real pairs that share a test signature within an assignment have different mechanisms, and {{injected_collision_pct}}\% of the {{injected_same_signature_pairs}} injected pairs do. The refinement added by deviation OAV raises the ceiling by {{real_H1b_mean}} [{{real_H1b_lo}}, {{real_H1b_hi}}] on real and {{injected_H1b_mean}} [{{injected_H1b_lo}}, {{injected_H1b_hi}}] on injected cohorts beyond a random refinement of the same granularity (H1b supported; Holm $p={{real_H1b_p}}$ and {{injected_H1b_p}}). The extra distinctions therefore carry mechanism information rather than mere resolution.
-
-\begin{figure}[t]
+\begin{table}[t]
 \centering
-\includegraphics[width=\textwidth]{figures/ceiling_en.pdf}
-\caption{Identifiability ceiling: the highest share of items that any function of a representation can assign to their mechanism. Deviation OAV exceeds both the test-outcome OAV and a random refinement with the same bucket sizes. Points are means over cohorts; bars are 95\% bootstrap intervals.}\label{fig:ceiling}
+\caption{Registered hypotheses: mean difference over cohorts, 95\% bootstrap interval and verdict (H1a reports the mean outcome ceiling itself). H2 and H3 are reported for K-means and HAC.}\label{tab:hyp}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrllrll}
+\toprule
+ & \multicolumn{3}{c}{Real repairs} & \multicolumn{3}{c}{Injected mutants} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+Hypothesis & Mean & 95\% CI & Verdict & Mean & 95\% CI & Verdict \\
+\midrule
+{{table_hypotheses}}
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\subsection{RQ1: test signatures mix mechanisms}
+Identical test signatures often hide different mechanisms (\cref{fig:ceiling}). The best any function of the test-outcome OAV can do is to assign {{real_H1a_pct}}\% of real items (mean ceiling {{real_H1a_mean}}, 95\% CI [{{real_H1a_lo}}, {{real_H1a_hi}}]) and {{injected_H1a_pct}}\% of injected items ([{{injected_H1a_lo}}, {{injected_H1a_hi}}]) to their mechanism, so H1a is supported on both benchmarks. Put differently, {{real_collision_pct}}\% of the {{real_same_signature_pairs}} real pairs that share a test signature within an assignment have different mechanisms, and {{injected_collision_pct}}\% of the {{injected_same_signature_pairs}} injected pairs do. The refinement added by deviation OAV raises the ceiling by {{real_H1b_mean}} [{{real_H1b_lo}}, {{real_H1b_hi}}] on real and {{injected_H1b_mean}} [{{injected_H1b_lo}}, {{injected_H1b_hi}}] on injected cohorts beyond a random refinement of the same granularity (H1b supported; Holm-adjusted $p {{real_H1b_p}}$ and $p {{injected_H1b_p}}$). The extra distinctions therefore carry mechanism information rather than mere resolution.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig4_ceiling_en.pdf}
+\caption{RQ1. Identifiability ceiling of the test-outcome OAV, of a random refinement that splits every outcome bucket into sub-buckets of the same sizes as deviation OAV (open circles), and of deviation OAV. Points are means over cohorts; bars are 95\% bootstrap intervals.}\label{fig:ceiling}
 \end{figure}
 
-\subsection{Clustering by mechanism (H2, H3)}
+\subsection{RQ2: clustering by mechanism}
 \Cref{tab:ari,fig:ari} report mechanism recovery at the same clustering budget. On the controlled benchmark, clusters of the test-outcome OAV barely agree with mechanisms (ARI {{injected_ari_outcomes}}, exact signatures {{injected_ari_exact}}), while deviation OAV reaches {{injected_ari_deviation}}: a difference of {{injected_H2_kmeans_mean}} [{{injected_H2_kmeans_lo}}, {{injected_H2_kmeans_hi}}] with K-means and {{injected_H2_hac_mean}} [{{injected_H2_hac_lo}}, {{injected_H2_hac_hi}}] with HAC, larger in {{injected_H2_kmeans_wins}} cohorts. On real repairs the test-outcome OAV already reaches {{real_ari_outcomes}} because the dominant output-text category produces distinctive signatures; deviation OAV reaches {{real_ari_deviation}} with K-means and {{real_arihac_deviation}} with HAC, but the differences ({{real_H2_kmeans_mean}}, CI [{{real_H2_kmeans_lo}}, {{real_H2_kmeans_hi}}]; {{real_H2_hac_mean}}, CI [{{real_H2_hac_lo}}, {{real_H2_hac_hi}}]) are not reliable. H2 is therefore supported on the controlled benchmark only and, by the registered rule, not supported overall.
 
 H3 is not supported: evidence OAV and the earlier combined+stdout baseline are indistinguishable on both benchmarks (differences {{real_H3_kmeans_mean}} and {{injected_H3_kmeans_mean}}). Simple output relations already capture most of what distance-based clustering can exploit; outcomes+stdout reaches {{real_ari_outcomes_stdout}} and {{injected_ari_outcomes_stdout}}. Selecting $k$ by silhouette instead of the oracle lowers all scores slightly and preserves the ordering (\cref{tab:ari}).
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig5_ari_en.pdf}
+\caption{RQ2. Adjusted Rand index between K-means clusters (oracle $k$) and mechanism labels. Indigo: proposed representations; grey: baselines. Points are means over cohorts; bars are 95\% bootstrap intervals over cohorts. Real repairs are evaluated on full assignment cohorts (amendment A3), injected mutants on sealed test cohorts.}\label{fig:ari}
+\end{figure}
 
 \begin{table}[t]
 \centering
@@ -34,21 +56,25 @@ Representation & K-means & HAC & K-means, silh.\ $k$ & Ceiling \\
 \end{tabular}
 \end{table}
 
-\begin{table}[t]
+\paragraph{Which mechanisms benefit (exploratory)}
+A cohort-level ARI weighs large categories most, so we also measure, per category, the share of items whose K-means cluster has that category as its majority label (\cref{fig:categories}). On real repairs, test signatures recover output text ({{real_rec_outcomes_output_text}}), loop boundaries ({{real_rec_outcomes_loop_boundary}}) and control flow ({{real_rec_outcomes_control_flow}}), but not output format ({{real_rec_outcomes_output_format}}), branch conditions ({{real_rec_outcomes_branch_condition}}) or missing statements ({{real_rec_outcomes_missing_statement}}); with deviation OAV these rise to {{real_rec_deviation_output_format}}, {{real_rec_deviation_branch_condition}} and {{real_rec_deviation_missing_statement}}. Averaged over categories, recovery rises from {{real_catrec_outcomes}} to {{real_catrec_deviation}} on real and from {{injected_catrec_outcomes}} to {{injected_catrec_deviation}} on injected cohorts. The gains of output evidence concentrate in the minority mechanisms, which is why the real-benchmark ARI difference is small. This analysis was added after the sealed run (amendment A7) and is not a registered hypothesis.
+
+\begin{figure}[!tbp]
 \centering
-\caption{Registered hypotheses: mean difference over cohorts, 95\% bootstrap interval and verdict (H1a reports the mean outcome ceiling itself).}\label{tab:hyp}
-\small
-\resizebox{\textwidth}{!}{%
-\begin{tabular}{lrllrll}
-\toprule
- & \multicolumn{3}{c}{Real repairs} & \multicolumn{3}{c}{Injected mutants} \\
-\cmidrule(lr){2-4}\cmidrule(lr){5-7}
-Hypothesis & Mean & 95\% CI & Verdict & Mean & 95\% CI & Verdict \\
-\midrule
-{{table_hypotheses}}
-\bottomrule
-\end{tabular}}
-\end{table}
+\includegraphics[width=\textwidth]{figures/fig6_categories_en.pdf}
+\caption{RQ2, exploratory. Share of items of each mechanism whose K-means cluster (oracle $k$, seed 42) has that mechanism as its majority label; numbers of items in parentheses. Darker cells recover more.}\label{fig:categories}
+\end{figure}
+
+\subsection{RQ3: IF--THEN rules}
+ILA-2 rules over problem-agnostic evidence attributes predicted the mechanism of real test-partition items with macro-F1 {{real_seen_problems_evidence_ila2_macro_f1}} (coverage {{real_seen_problems_evidence_ila2_coverage}}, accuracy on answered items {{real_seen_problems_evidence_ila2_selective_accuracy}}), against {{real_seen_problems_outcome_summary_ila2_macro_f1}} for rules over the outcome summary and {{real_seen_problems_majority_macro_f1}} for the majority class (\cref{fig:rules,tab:rules}). The difference, {{h4_mean}} [{{h4_lo}}, {{h4_hi}}], rests on the {{real_seen_problems_evidence_ila2_n}} single-mechanism items of the sealed test students and includes zero, so H4 is not supported.
+
+On the injected benchmark, where every category is represented, evidence rules reached macro-F1 {{injected_seen_problems_evidence_ila2_macro_f1}} on seen and {{injected_unseen_problems_evidence_ila2_macro_f1}} on unseen assignments, whereas outcome-summary rules reached {{injected_seen_problems_outcome_summary_ila2_macro_f1}} and {{injected_unseen_problems_outcome_summary_ila2_macro_f1}}: rules over the outcome state alone hardly transfer, while rules over output deviations do. The attribute set matters more than the learner. A CART tree on the same evidence attributes reached {{injected_seen_problems_evidence_cart_macro_f1}} and {{injected_unseen_problems_evidence_cart_macro_f1}}, below ILA-2 on seen assignments and slightly above it on unseen ones. The noise-tolerant penalty of ILA-2 traded a little precision for much coverage: the original ILA answered {{injected_seen_problems_evidence_ila_coverage}} of injected test items with accuracy {{injected_seen_problems_evidence_ila_selective_accuracy}}, ILA-2 answered {{injected_seen_problems_evidence_ila2_coverage}} with accuracy {{injected_seen_problems_evidence_ila2_selective_accuracy}}. \Cref{tab:toprules} lists the highest-precision rules learned from real repairs; they read like the production rules of the classic formulation, but their conclusions are program-level mechanisms and their precision was measured on students not used to induce them.
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=\textwidth]{figures/fig7_rules_en.pdf}
+\caption{RQ3. Macro-F1 of rule learners on held-out students, with abstentions counted as errors; bars are 95\% bootstrap intervals over students. \emph{Evidence}: aggregated deviation descriptors and code cues; \emph{outcome summary}: aggregated outcome state and fraction of failing tests. Unseen tasks are the assignments of laboratory~4, absent from training.}\label{fig:rules}
+\end{figure}
 
 \begin{table}[t]
 \centering
@@ -64,18 +90,6 @@ Track & Model (attributes) & Macro-F1 & Coverage & Selective acc. \\
 \end{tabular}}
 \end{table}
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\textwidth]{figures/ari_en.pdf}
-\caption{Adjusted Rand index between clusters and mechanisms (K-means, oracle $k$). Blue: proposed representations; grey: baselines. Points are means over cohorts; bars are 95\% bootstrap intervals over cohorts.}\label{fig:ari}
-\end{figure}
-
-\subsection{Frozen code embeddings cluster programs, not mechanisms (H5)}
-Qwen3-Embedding clusters of injected mutants agree more with the accepted program the mutant came from than with the injected mechanism, by {{injected_H5_mean}} ARI (95\% CI [{{injected_H5_lo}}, {{injected_H5_hi}}]; H5 supported). Their mechanism ARI is {{injected_ari_embedding}} on injected and {{real_ari_embedding}} on real cohorts. Single-token changes that decide a program's behaviour barely move a general-purpose embedding, whereas authorship and solution style dominate it.
-
-\subsection{IF--THEN rules (H4)}
-ILA-2 rules over problem-agnostic evidence attributes predicted the mechanism of real test-partition items with macro-F1 {{real_seen_problems_evidence_ila2_macro_f1}} (coverage {{real_seen_problems_evidence_ila2_coverage}}, accuracy on answered items {{real_seen_problems_evidence_ila2_selective_accuracy}}), against {{real_seen_problems_outcome_summary_ila2_macro_f1}} for rules over the outcome summary and {{real_seen_problems_majority_macro_f1}} for the majority class (\cref{tab:rules}). The difference, {{h4_mean}} [{{h4_lo}}, {{h4_hi}}], rests on the {{real_seen_problems_evidence_ila2_n}} single-mechanism items of the sealed test students and includes zero, so H4 is not supported. On the injected benchmark, where every category is represented, evidence rules reached macro-F1 {{injected_seen_problems_evidence_ila2_macro_f1}} on seen and {{injected_unseen_problems_evidence_ila2_macro_f1}} on unseen assignments, whereas outcome-summary rules reached {{injected_seen_problems_outcome_summary_ila2_macro_f1}} and {{injected_unseen_problems_outcome_summary_ila2_macro_f1}}. The noise-tolerant penalty of ILA-2 traded a little precision for much coverage: the original ILA answered {{injected_seen_problems_evidence_ila_coverage}} of injected test items with accuracy {{injected_seen_problems_evidence_ila_selective_accuracy}}, ILA-2 answered {{injected_seen_problems_evidence_ila2_coverage}} with accuracy {{injected_seen_problems_evidence_ila2_selective_accuracy}}. \Cref{tab:toprules} lists the highest-precision rules learned from real repairs; they read like the production rules of the classic formulation, but their conclusions are program-level mechanisms and their precision was measured on students not used to induce them.
-
 \begin{table}[t]
 \centering
 \caption{The most precise ILA-2 rules induced from real training repairs (support: correct/matched training items).}\label{tab:toprules}
@@ -89,5 +103,5 @@ IF & THEN mechanism & Support \\
 \end{tabular}
 \end{table}
 
-\subsection{Which mechanisms benefit (exploratory)}
-Per category (\cref{app:categories}), test signatures recover output text ({{real_rec_outcomes_output_text}}), loop boundaries ({{real_rec_outcomes_loop_boundary}}) and control flow ({{real_rec_outcomes_control_flow}}) on real repairs, but not output format ({{real_rec_outcomes_output_format}}), branch conditions ({{real_rec_outcomes_branch_condition}}) or missing statements ({{real_rec_outcomes_missing_statement}}); with deviation OAV these rise to {{real_rec_deviation_output_format}}, {{real_rec_deviation_branch_condition}} and {{real_rec_deviation_missing_statement}}. Averaged over categories, recovery rises from {{real_catrec_outcomes}} to {{real_catrec_deviation}} on real and from {{injected_catrec_outcomes}} to {{injected_catrec_deviation}} on injected cohorts. The gains of output evidence thus concentrate in the minority mechanisms that a cohort-level ARI weighs little, which explains why the real-benchmark ARI difference is small.
+\subsection{RQ4: frozen code embeddings cluster programs, not mechanisms}
+Qwen3-Embedding clusters of injected mutants agree more with the accepted program the mutant came from than with the injected mechanism, by {{injected_H5_mean}} ARI (95\% CI [{{injected_H5_lo}}, {{injected_H5_hi}}]; H5 supported). Their mechanism ARI is {{injected_ari_embedding}} on injected and {{real_ari_embedding}} on real cohorts (\cref{fig:ari}). Single-token changes that decide a program's behaviour barely move a general-purpose embedding, whereas authorship and solution style dominate it.

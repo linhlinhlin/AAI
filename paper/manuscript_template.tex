@@ -5,6 +5,8 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage[hidelinks,hypertexnames=false]{hyperref}
 \usepackage[capitalise,noabbrev]{cleveref}
 \usepackage{microtype}
@@ -12,6 +14,7 @@
 \setlength{\emergencystretch}{3em}
 \pdfpagewidth=\paperwidth \pdfpageheight=\paperheight
 \renewcommand{\appendixname}{Appendix}
+\crefname{algorithm}{Algorithm}{Algorithms}
 \makeatletter
 \g@addto@macro\appendix{\@addtoreset{table}{section}\@addtoreset{figure}{section}}
 \makeatother
@@ -21,6 +24,18 @@
 \begin{frontmatter}
 
 \title{When failing tests are not enough: repair-grounded evaluation of misconception clustering for introductory C programs}
+
+\begin{graphicalabstract}
+\includegraphics[width=\linewidth]{figures/graphical_abstract_en.pdf}
+\end{graphicalabstract}
+
+\begin{highlights}
+\item Delta-debugged student repairs yield verified mechanism labels without annotation
+\item Identical test signatures mix mechanisms: at most {{real_H1a_pct}}\% of real items are placeable
+\item Output-deviation OAV lifts cluster--mechanism ARI from {{injected_ari_outcomes}} to {{injected_ari_deviation}} on mutants
+\item ILA-2 rules over deviation evidence transfer to unseen assignments
+\item Frozen code embeddings cluster programs by their origin, not by mechanism
+\end{highlights}
 
 \begin{abstract}
 %%INCLUDE sections/abstract.tex
@@ -38,6 +53,7 @@ programming education \sep misconceptions \sep clustering \sep program repair \s
 %%INCLUDE sections/results.tex
 %%INCLUDE sections/discussion.tex
 %%INCLUDE sections/conclusion.tex
+%%INCLUDE sections/declarations.tex
 
 \appendix
 %%INCLUDE sections/appendix.tex

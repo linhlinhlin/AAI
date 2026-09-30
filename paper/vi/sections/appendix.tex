@@ -28,7 +28,7 @@ python scripts/run_mechanism_eval.py --partition validation ...
 python scripts/run_mechanism_eval.py --partition test \
     --scopes partition full --penalty {{ila_penalty}} ...
 \end{verbatim}
-Mỗi lượt chạy ghi dấu vân tay mã nguồn lúc bắt đầu, image container, hash đầu vào và hash chia dữ liệu. Lần chạy lại mất {{replay_minutes}} phút trên máy ảo Docker bốn nhân; dựng benchmark đã thực thi {{probes_total}} lần thử delta debugging và {{injected_candidates}} mutant ứng viên.
+Mỗi lượt chạy ghi dấu vân tay mã nguồn lúc bắt đầu, image container, hash đầu vào và hash chia dữ liệu. Các hình được vẽ lại từ artifact đã commit bằng \texttt{python paper/make\_figures.py --lang vi}; \cref{fig:example} đọc ba chương trình do \texttt{paper/export\_example.py} xuất ra, và \cref{fig:tool} đọc ảnh chụp do \texttt{paper/capture\_tool.py} chụp từ một phiên bản mới của công cụ. Lần chạy lại mất {{replay_minutes}} phút trên máy ảo Docker bốn nhân; dựng benchmark đã thực thi {{probes_total}} lần thử delta debugging và {{injected_candidates}} mutant ứng viên.
 
 \section{Khôi phục theo từng loại}\label{app:categories}
 Phân tích khám phá (sửa đổi A7): tỷ lệ item mà cụm K-means ($k$ theo nhãn, seed 42) chứa nó có loại của item là nhãn đa số.

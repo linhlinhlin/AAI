@@ -5,6 +5,8 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage[hidelinks,hypertexnames=false]{hyperref}
 \usepackage[capitalise,noabbrev]{cleveref}
 \usepackage{microtype}
@@ -15,8 +17,16 @@
 \crefname{subsection}{Mục}{Mục}\Crefname{subsection}{Mục}{Mục}
 \crefname{figure}{Hình}{Hình}\Crefname{figure}{Hình}{Hình}
 \crefname{table}{Bảng}{Bảng}\Crefname{table}{Bảng}{Bảng}
+\crefname{algorithm}{Thuật toán}{Thuật toán}\Crefname{algorithm}{Thuật toán}{Thuật toán}
 \crefname{appendix}{Phụ lục}{Phụ lục}\Crefname{appendix}{Phụ lục}{Phụ lục}
 \renewcommand{\appendixname}{Phụ lục}
+\floatname{algorithm}{Thuật toán}
+\algrenewcommand\algorithmicrequire{\textbf{Đầu vào:}}
+\algrenewcommand\algorithmicif{\textbf{nếu}}
+\algrenewcommand\algorithmicthen{\textbf{thì}}
+\algrenewcommand\algorithmicelse{\textbf{ngược lại}}
+\algrenewcommand\algorithmicend{\textbf{hết}}
+\algrenewcommand\algorithmicreturn{\textbf{trả về}}
 \abstracttitle{Tóm tắt}
 \keywordtitle{Từ khóa}
 \AtBeginDocument{\renewcommand{\figurename}{Hình}\renewcommand{\tablename}{Bảng}\renewcommand{\refname}{Tài liệu tham khảo}}
@@ -30,6 +40,18 @@
 \begin{frontmatter}
 
 \title{Khi test trượt là chưa đủ: đánh giá phân cụm quan niệm sai lầm trong bài lập trình C bằng nhãn từ bản sửa của chính sinh viên}
+
+\begin{graphicalabstract}
+\includegraphics[width=\linewidth]{figures/graphical_abstract_vi.pdf}
+\end{graphicalabstract}
+
+\begin{highlights}
+\item Bản sửa của sinh viên qua delta debugging cho nhãn cơ chế đã kiểm chứng
+\item Chữ ký test giống hệt trộn cơ chế: tối đa {{real_H1a_pct}}\% bài thật xếp đúng được
+\item OAV độ lệch output nâng ARI cụm--cơ chế từ {{injected_ari_outcomes}} lên {{injected_ari_deviation}} trên mutant
+\item Luật ILA-2 trên bằng chứng độ lệch chuyển được sang bài tập chưa thấy
+\item Embedding mã đóng băng gom chương trình theo nguồn gốc, không theo cơ chế
+\end{highlights}
 
 \begin{abstract}
 %%INCLUDE sections/abstract.tex
@@ -47,6 +69,7 @@ giáo dục lập trình \sep quan niệm sai lầm \sep phân cụm \sep sửa 
 %%INCLUDE sections/results.tex
 %%INCLUDE sections/discussion.tex
 %%INCLUDE sections/conclusion.tex
+%%INCLUDE sections/declarations.tex
 
 \appendix
 %%INCLUDE sections/appendix.tex

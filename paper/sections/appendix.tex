@@ -28,7 +28,7 @@ python scripts/run_mechanism_eval.py --partition validation ...
 python scripts/run_mechanism_eval.py --partition test \
     --scopes partition full --penalty {{ila_penalty}} ...
 \end{verbatim}
-Every run records the code fingerprint at start, the container image, input and split hashes. The replay took {{replay_minutes}} minutes on a four-core Docker VM; building the benchmarks executed {{probes_total}} delta-debugging probes and {{injected_candidates}} candidate mutants.
+Every run records the code fingerprint at start, the container image, input and split hashes. The figures are redrawn from the committed run artifacts with \texttt{python paper/make\_figures.py --lang en}; \cref{fig:example} reads the three programs exported by \texttt{paper/export\_example.py}, and \cref{fig:tool} a screenshot taken by \texttt{paper/capture\_tool.py} from a fresh instance of the tool. The replay took {{replay_minutes}} minutes on a four-core Docker VM; building the benchmarks executed {{probes_total}} delta-debugging probes and {{injected_candidates}} candidate mutants.
 
 \section{Per-category recovery}\label{app:categories}
 Exploratory analysis (amendment A7): share of items whose K-means cluster (oracle $k$, seed 42) has the item's category as its majority label.

@@ -1,0 +1,104 @@
+{
+ "problem": "lab02-ex09",
+ "corpus": "C-Pack-IPAs (anonymised)",
+ "n_tests": 4,
+ "cohort_failing": 89,
+ "same_signature_failing": 78,
+ "items": [
+  {
+   "label": "OUTPUT_TEXT",
+   "item_id": "cpack-year-5-lab02-ex09-stu_200-sub_001",
+   "signature": [
+    "fail",
+    "fail",
+    "fail",
+    "fail"
+   ],
+   "removed": [
+    "printf(\"%02d:%02d:%02d\",s/3600,(s % 3600)/60,(s%3600)%60);"
+   ],
+   "added": [
+    "printf(\"%02d:%02d:%02d\\n\",s/3600,(s % 3600)/60,(s%3600)%60);"
+   ],
+   "input": "60",
+   "expected": "00:01:00\n",
+   "printed": "00:01:00",
+   "deviation": {
+    "agg:status": "fail",
+    "agg:lines": "same",
+    "agg:newline_end": "missing",
+    "agg:whitespace_only": "yes",
+    "agg:numbers": "equal",
+    "agg:text": "same",
+    "agg:first_diff": "after_common_prefix",
+    "agg:prefix": "truncated",
+    "agg:other_oracle": "no",
+    "agg:fail_fraction": "all"
+   }
+  },
+  {
+   "label": "OUTPUT_FORMAT",
+   "item_id": "cpack-year-1-lab02-ex09-stu_022-sub_013",
+   "signature": [
+    "fail",
+    "fail",
+    "fail",
+    "fail"
+   ],
+   "removed": [
+    "printf(\"%d:%d:%d\\n\", h,m,s);"
+   ],
+   "added": [
+    "printf(\"%02d:%02d:%02d\\n\", h,m,s);"
+   ],
+   "input": "60",
+   "expected": "00:01:00\n",
+   "printed": "0:1:0\n",
+   "deviation": {
+    "agg:status": "fail",
+    "agg:lines": "same",
+    "agg:newline_end": "same",
+    "agg:whitespace_only": "no",
+    "agg:numbers": "format_only",
+    "agg:text": "same",
+    "agg:first_diff": "first_line",
+    "agg:prefix": "neither",
+    "agg:other_oracle": "no",
+    "agg:fail_fraction": "all"
+   }
+  },
+  {
+   "label": "COMPUTATION",
+   "item_id": "cpack-year-6-lab02-ex09-stu_207-sub_001",
+   "signature": [
+    "fail",
+    "fail",
+    "fail",
+    "fail"
+   ],
+   "removed": [
+    "horas = n / 60 * 60;",
+    "n = n % 60 * 60;"
+   ],
+   "added": [
+    "horas = n / (60 * 60);",
+    "n = n % (60 * 60);"
+   ],
+   "input": "60",
+   "expected": "00:01:00\n",
+   "printed": "60:00:00\n",
+   "deviation": {
+    "agg:status": "fail",
+    "agg:lines": "same",
+    "agg:newline_end": "same",
+    "agg:whitespace_only": "no",
+    "agg:numbers": "mixed",
+    "agg:text": "same",
+    "agg:first_diff": "first_line",
+    "agg:prefix": "neither",
+    "agg:other_oracle": "no",
+    "agg:fail_fraction": "all"
+   }
+  }
+ ]
+}
