@@ -1,0 +1,2479 @@
+{
+  "schema_version": 1,
+  "annotation_status": "pending_annotation",
+  "scope": "development_train_validation_only",
+  "annotation_source_requested": "ai",
+  "human_validated": false,
+  "mechanism_accuracy": null,
+  "selection_policy": {
+    "method": "kmeans",
+    "feature_mode": "combined_stdout",
+    "seed": 42,
+    "min_cluster_size": 4,
+    "min_distinct_sources": 3,
+    "required_failed_log_coverage": 1.0,
+    "min_common_failure_rate_cluster": 0.5,
+    "representatives": "medoid then diverse OAV/outcomes, max 4",
+    "ranking": "problem and cluster ID, no quality-score selection"
+  },
+  "limitations": [
+    "Historical logs, no fresh execution or cognitive evidence.",
+    "AI sees clusters/candidates: not independent blind human validation.",
+    "No sealed test members, correct repairs or reviewer labels exported.",
+    "Clustering OAV is archived; diagnostic OAV/rules are computed at export.",
+    "Missing/not_run outcomes are not passes; rates include denominators.",
+    "Counts/rates describe submissions, not independent students or beliefs.",
+    "C-Pack oracle/suite correspondence has not been replay-verified.",
+    "IDs and paths omitted; raw public source comments are preserved."
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "problem_id": "2812",
+        "artifact": "2812/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "b5e24d2a9b80eea7d49b77113891b11c438f9f92ac35a86227dbc56ce50f13e7",
+        "dataset": "ITSP public prototype",
+        "url": "https://github.com/jyi/ITSP",
+        "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+        "suite_version": "itsp-76fea3dca9be741f",
+        "input_sha256": "25f2efad35022d7f100a47161f181ddd6b7926b8b1cd92b8661bbb18802f5a94",
+        "evidence_sha256": "60b674a0947c7b696efae295b3fbdac39767dcf1e799c68ddbec1da9139e32f5"
+      },
+      {
+        "problem_id": "2825",
+        "artifact": "2825/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "0a0bdc7642b4ce9903f2a61d8b9e2a68dc99c768fb482d67f0e34f3a00f9a0fd",
+        "dataset": "ITSP public prototype",
+        "url": "https://github.com/jyi/ITSP",
+        "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+        "suite_version": "itsp-c96bee8ccdc960e4",
+        "input_sha256": "131e151709770f24b03a0fde6820952cc9ffb0aad9dd68b9b482ea1975e227c1",
+        "evidence_sha256": "3a2e48c9516fa9c5b95be9eaf1ff20a7853999ac2f88badcb4cbdc7e71e1e385"
+      },
+      {
+        "problem_id": "2833",
+        "artifact": "2833/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "f72285aad4129085a6e3cc11826bca00b839bdba9fbb7d41ace5184bed8fce93",
+        "dataset": "ITSP public prototype",
+        "url": "https://github.com/jyi/ITSP",
+        "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+        "suite_version": "itsp-e1116cbdb78d65ae",
+        "input_sha256": "1bfb0f162bb996c79776307ac5cafec93943cd0d94ca731b8b472eb74d704a3e",
+        "evidence_sha256": "3a5ae5d42e47d345f3c20ecb479c9dfb7f8bf62783a2dde48aa77d230c814c29"
+      }
+    ],
+    "split_sha256": "28714f310d5768bebdf724b10e368153180d5ab93ecd9aaa1ba949457dacb3de",
+    "run_manifest_sha256": "312c827539650ffba92dc2d47d7e8e5499589b32b5f2b130ab7ee00992bdcc45",
+    "exporter": {
+      "base_commit": null,
+      "working_tree_dirty": null,
+      "checkout_kind": "source_export",
+      "files_sha256": {
+        "misconceptions-prototype/src/misconceptions/__init__.py": "cb8e0be3c687e1e4aa4356575c9607ecc1bd98535e7eb64af46610b3bb549392",
+        "misconceptions-prototype/src/misconceptions/adapters.py": "42bbdfa71f9980a63380380a1f7671f59b0ef01b5cf46c7773ea7c2c7f567b00",
+        "misconceptions-prototype/src/misconceptions/ai_labeling.py": "43b70d00d768cacd5bb13fc4c337713ce55afa9fbc18f264c283a930cf4437ac",
+        "misconceptions-prototype/src/misconceptions/annotation_intake.py": "839f7fa18667bc15c12dcaba863ec93f0cedc4e9477cede8c9d71e674b83b7df",
+        "misconceptions-prototype/src/misconceptions/benchmark_validation.py": "483a584abbb85f12554f05d666a6392463ba4a862438cb576ff095c333b86bd1",
+        "misconceptions-prototype/src/misconceptions/cli.py": "71ab645ebc8cf170832ba0a36ed461b16de24030e139def889d9243c7737b3d4",
+        "misconceptions-prototype/src/misconceptions/cluster_annotation.py": "cf07afe7c857eb59764eb9a58186fa8a6472f8fceca5fbd385247c1f248d6033",
+        "misconceptions-prototype/src/misconceptions/cpack.py": "8ab17de4b637a407d699a3b43a7cd4b43be98767a3b477283e600fcba3d78a66",
+        "misconceptions-prototype/src/misconceptions/domain.py": "cac296ef1d9ee5849d57d675c319ed7b9b211fff8e1e0efb87ee562a4445dbbc",
+        "misconceptions-prototype/src/misconceptions/expert_validation.py": "52eff73e9d7141b79b3ee7518826c9b6d8eb9168be8dcd208f70077c4ffb2ef7",
+        "misconceptions-prototype/src/misconceptions/features.py": "a37cc78ea3a2eca813f859f33c98867c68f6571a5d408923573098ee7a979d12",
+        "misconceptions-prototype/src/misconceptions/hardcoded_output.py": "a26d84796080b64b8e58f3d117d6a07e8747c3e81de0816f1795a428851ad4ba",
+        "misconceptions-prototype/src/misconceptions/itsp.py": "fbcc952b0a0c19ef081b09b528f296ce70cef51807c5ce5ff8bd8f94b31064e4",
+        "misconceptions-prototype/src/misconceptions/learning_problems.py": "a376db67a1efd06e0c9122998f646312b33e5cfed823984604c024ed2876e5ba",
+        "misconceptions-prototype/src/misconceptions/learning_sandbox.py": "cebd881d03cf67f5f6122201cb4aa2558d6d44e1eb9c91f3d6b8818a737cc306",
+        "misconceptions-prototype/src/misconceptions/learning_service.py": "0096e4b6949d9e7ab983e0d1fd34d900e3387a4bbc2301cbf69d5027629a74af",
+        "misconceptions-prototype/src/misconceptions/learning_store.py": "2ad88899b327ec86c329d7df2f9698b9c0968ebcddcbe4a852c7f9d28b63f625",
+        "misconceptions-prototype/src/misconceptions/learning_web.py": "54ccdbd77c3de42b7786112b35fead9fd27146ae7186d2de36a14bd5d0c92de3",
+        "misconceptions-prototype/src/misconceptions/llm_client.py": "320804edc873212ed53b5ce2e991ad3545f14d2c2c183dcdaac32a4719035b4b",
+        "misconceptions-prototype/src/misconceptions/output_features.py": "9a33a957c77ca8f709fce86e127dbfa25a5aa2121174da5d5e7ae72f705564ed",
+        "misconceptions-prototype/src/misconceptions/pipeline.py": "890f2bd89fa7ab3c564064d11e8d1ea7421ce0a910934875aca5006d1637f20a",
+        "misconceptions-prototype/src/misconceptions/research_io.py": "1f25fbec4f1cc330c400488216a19d53621f5992533c9a7c752f230df7947aed",
+        "misconceptions-prototype/src/misconceptions/rule_style.py": "0a1d7ad4ba6b1fcc022d616867b9124b3bd74628166521dc124a3fa294ddf98a",
+        "misconceptions-prototype/src/misconceptions/semantic_rules.py": "4dc581789a944bf055e0b6f9a1384dee59b126df3bdca465b90fbf696b32b402",
+        "misconceptions-prototype/src/misconceptions/splits.py": "627020bc3e183e9917c43f35547d8a62bf303a8a30eb4787a9a4e02194ea4979",
+        "misconceptions-prototype/src/misconceptions/teacher_dashboard.py": "48663be4147b3afa68999ffce9fa0da39a21d4d5ef40df346816e192d7b9b3f0",
+        "misconceptions-prototype/src/misconceptions/teacher_validation.py": "193166ad9af10c71b507a2623432fa10a9bcaf2d960edc55c63247737b1e896c",
+        "misconceptions-prototype/src/misconceptions/teaching_report.py": "fbac4ab62cae42484ee49a77315f7af7fccf23f7cd32365f8d3905d91459d868",
+        "misconceptions-prototype/src/misconceptions/web.py": "8f7d60157f4b8b0efcd91295ba6e89b3e0aad25f780f1efe322281814748c38b",
+        "misconceptions-prototype/scripts/audit_human_review_packet.py": "202fad903465b16428d52419ede7d3c0ba264e6b96543d345e4a8faf1abc6691",
+        "misconceptions-prototype/scripts/check_itsp_review.py": "af1e462f0f6705f7479e4c012f6d0233e453366636354abaaab68f8c77c4b9f9",
+        "misconceptions-prototype/scripts/download_cpack.py": "4954f2d2d9cf4ea6c462a9de5ce612a395ade7040defa11d5a1c5970560c66d9",
+        "misconceptions-prototype/scripts/download_itsp.py": "4609226ceb98c2856a424d3ea7142a26a651518168a3c9eb0b12b4d87196af62",
+        "misconceptions-prototype/scripts/export_cluster_annotations.py": "7530cb9914b06e43072733fddf1ea7bd2cebc1061d949fb4d486da71b8ea8e74",
+        "misconceptions-prototype/scripts/export_learning_handoff.py": "18044317c5508672d074b878236dbb63d2b6b34217cabd4200304324d97d1d30",
+        "misconceptions-prototype/scripts/learning_browser_smoke.py": "22c5fb5c494ed00ed1291e470fc3446dfe414d3b55512aa15569aa9df30dbf83",
+        "misconceptions-prototype/scripts/lock_splits.py": "06f168d1cf961f1dbbab296ea5c86cf4c1ef7fba0f10114d926ef3daef1c0c10",
+        "misconceptions-prototype/scripts/make_demo.py": "a175506de8d7d229044169c4784510c77f3c5f1cf679fc2f13a7f550777ed756",
+        "misconceptions-prototype/scripts/merge_itsp_annotations.py": "d582847e38790145c8ee38ca81c5a540bed1c4696182c47e1b88d1b2271055a6",
+        "misconceptions-prototype/scripts/prepare_cpack.py": "465d22321665cbfcc7760b2f9219a1cef55107725f322d083f1e76375c449b3f",
+        "misconceptions-prototype/scripts/prepare_itsp.py": "9bfe5990faab197f84ac452347631932246e6795f34c61d059986bb3c683cc9b",
+        "misconceptions-prototype/scripts/prepare_learning_demo.py": "c00929262651079fd9361ba39dbae3584b141146f3e46eba2294bae5dd0cf594",
+        "misconceptions-prototype/scripts/report_itsp_experts.py": "84ddfb4d830148c5f89e4cf0c4878749d0d15e1e417b86897e0254c9f9d6ded1",
+        "misconceptions-prototype/scripts/run_ablation.py": "46e16ac2cc77b5c8434cfdbd3c5c227b1297491fa1b1080c9ceca1752c1642c6",
+        "misconceptions-prototype/scripts/run_itsp_experiments.py": "50b8faa803728c82a96342ea7aa47ec1cc6f623fdaa31fd0b687e24e4d22d214",
+        "misconceptions-prototype/scripts/run_topic5.py": "b6e1a7e31a75a36bb2bbb4493beda7b97a919de85cb9186306eeeba6e8181e35",
+        "misconceptions-prototype/scripts/score_itsp_experts.py": "c90dad13d9c2bec3a356a9d500f402cc7b841a584edf255441e1e9d0ce037485",
+        "misconceptions-prototype/scripts/setup_learning.py": "675a09542dd5bcc4bd203b0b56c4a9948cc3722e2190fd7ee34ea346ceab283c",
+        "misconceptions-prototype/scripts/validate_itsp_abc.py": "6be2ea50b4d8f48441fe0da975b49dde4bad7099b479e3988ebb3efb1913e55e",
+        "misconceptions-prototype/scripts/validate_topic5.py": "5d3310271e36fb9494b06f724f9ea681c7689c6956db4816371c14dec9dcf5af",
+        "scripts/audit_run.py": "36cab5481e92fe9015c13f430df5670b834d27477a4917e3d7d701a602ed5f39",
+        "scripts/harness.py": "7c2d22fac3a6c7b594db1a77945d6a5bab251bfa9858e409274e1856a461d66a",
+        "misconceptions-prototype/requirements-lock.txt": "b586a3639ce51b4544f0a06c6ecfd944d23e661f09674e248b1cc1c13093333c",
+        "misconceptions-prototype/pyproject.toml": "6869dc5f3ce975f77453f0b534fb8697db870009661fb609d4377c0966bdcebe",
+        "research/protocol.json": "d730a2419058aa2ea4f691c302cb03b9c22c42e2200ce955a25b94872690a9c3",
+        "research/course-validation-protocol.json": "fd861b97250aae788752a599319bda5768fa18c1d72d5d8d2250bd3c3cfa1977"
+      },
+      "implementation_sha256": "cf11db682d0f6f6320abec626de9cb5abf5531e3482d478037288aff13398b9f"
+    }
+  },
+  "packet_id": "81c8ee12aa6fd6a6a2c114e9856139004fdbcb95b58c8fd30e6e5c8442dbe0a5",
+  "cluster": {
+    "cluster_id": "2825--kmeans--combined_stdout--s42--c1",
+    "original_cluster_id": 1,
+    "annotation_status": "pending_annotation",
+    "human_validated": false,
+    "problem_id": "2825",
+    "problem_statement": {
+      "text": "ANNOUNCEMENT: Up to 20% marks will be allotted for good programming practice. These include \n- Comments for non trivial code \n- Indentation: align your code properly\n- Use of character constants instead of ASCII values ('a', 'b, ..., 'A', 'B', ..., '0', '1' etc instead of ASCII values like 65, 66, 48 etc.)\n-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\nCoordinates (x, y) of the center of a circle and its radius (say r) are given as input. Another point, say (x1, y1),  is provided as input. Write a program to find out whether the point is inside the circle, on the circle, or outside the circle. Assume x, y, r, x1, y1 are of float data type. \n\nInput Format: x y r x1 y1 are separated by a single space.\n\nExample:\nInput:\n3.2 4.3 2.3 4.3 5.6 \t\nOutput:\nPoint is inside the Circle.\n\nInput:\n1.2 2.3 2.0 5.3 7.6\nOutput:\nPoint is outside the Circle.",
+      "source": "ITSP Main.c leading comment only",
+      "source_sha256": "370a7bcdbf839536c74b15dc1b13d4b888c6bd28e1a4b3ea5ac13242ce192d0d"
+    },
+    "n_submissions": 7,
+    "n_distinct_sources": 7,
+    "n_known_students": 0,
+    "student_identity_complete": false,
+    "partition_counts": {
+      "train": 7
+    },
+    "test_statistics": [
+      {
+        "test_id": "3",
+        "n_cluster": 7,
+        "n_observed": 7,
+        "n_failed": 5,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.7142857142857143,
+        "failure_rate_cluster": 0.7142857142857143,
+        "outcome_counts": {
+          "fail": 5,
+          "pass": 2
+        }
+      },
+      {
+        "test_id": "4",
+        "n_cluster": 7,
+        "n_observed": 7,
+        "n_failed": 5,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.7142857142857143,
+        "failure_rate_cluster": 0.7142857142857143,
+        "outcome_counts": {
+          "pass": 2,
+          "fail": 5
+        }
+      },
+      {
+        "test_id": "5",
+        "n_cluster": 7,
+        "n_observed": 7,
+        "n_failed": 5,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.7142857142857143,
+        "failure_rate_cluster": 0.7142857142857143,
+        "outcome_counts": {
+          "pass": 2,
+          "fail": 5
+        }
+      },
+      {
+        "test_id": "6",
+        "n_cluster": 7,
+        "n_observed": 7,
+        "n_failed": 5,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.7142857142857143,
+        "failure_rate_cluster": 0.7142857142857143,
+        "outcome_counts": {
+          "fail": 5,
+          "pass": 2
+        }
+      },
+      {
+        "test_id": "1",
+        "n_cluster": 7,
+        "n_observed": 7,
+        "n_failed": 0,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.0,
+        "failure_rate_cluster": 0.0,
+        "outcome_counts": {
+          "pass": 7
+        }
+      },
+      {
+        "test_id": "2",
+        "n_cluster": 7,
+        "n_observed": 7,
+        "n_failed": 0,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.0,
+        "failure_rate_cluster": 0.0,
+        "outcome_counts": {
+          "pass": 7
+        }
+      },
+      {
+        "test_id": "7",
+        "n_cluster": 7,
+        "n_observed": 7,
+        "n_failed": 0,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.0,
+        "failure_rate_cluster": 0.0,
+        "outcome_counts": {
+          "pass": 7
+        }
+      }
+    ],
+    "prominent_features": [
+      {
+        "feature": "stdout:1:edit_band",
+        "value": "zero",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "exact",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "zero",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "stdout:2:relation",
+        "value": "exact",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "test:1",
+        "value": "pass",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "test:2",
+        "value": "pass",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "stdout:7:edit_band",
+        "value": "zero",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.4090909090909091,
+        "difference_from_cohort": 0.5909090909090908
+      },
+      {
+        "feature": "stdout:7:relation",
+        "value": "exact",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.4090909090909091,
+        "difference_from_cohort": 0.5909090909090908
+      },
+      {
+        "feature": "test:7",
+        "value": "pass",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.4090909090909091,
+        "difference_from_cohort": 0.5909090909090908
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "other_oracle",
+        "n": 4,
+        "n_cluster": 7,
+        "rate": 0.5714285714285714,
+        "cohort_rate": 0.2727272727272727,
+        "difference_from_cohort": 0.2987012987012987
+      },
+      {
+        "feature": "stdout:6:relation",
+        "value": "other_oracle",
+        "n": 4,
+        "n_cluster": 7,
+        "rate": 0.5714285714285714,
+        "cohort_rate": 0.2727272727272727,
+        "difference_from_cohort": 0.2987012987012987
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "other_oracle",
+        "n": 3,
+        "n_cluster": 7,
+        "rate": 0.42857142857142855,
+        "cohort_rate": 0.13636363636363635,
+        "difference_from_cohort": 0.2922077922077922
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "medium",
+        "n": 4,
+        "n_cluster": 7,
+        "rate": 0.5714285714285714,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.2532467532467532
+      },
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "medium",
+        "n": 4,
+        "n_cluster": 7,
+        "rate": 0.5714285714285714,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.2532467532467532
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "other_oracle",
+        "n": 3,
+        "n_cluster": 7,
+        "rate": 0.42857142857142855,
+        "cohort_rate": 0.22727272727272727,
+        "difference_from_cohort": 0.20129870129870128
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "medium",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.13636363636363635,
+        "difference_from_cohort": 0.14935064935064934
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "medium",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.13636363636363635,
+        "difference_from_cohort": 0.14935064935064934
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "zero",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "exact",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "zero",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      }
+    ],
+    "test_statistics_by_partition": {
+      "train": [
+        {
+          "test_id": "3",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 5,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.7142857142857143,
+          "failure_rate_cluster": 0.7142857142857143,
+          "outcome_counts": {
+            "fail": 5,
+            "pass": 2
+          }
+        },
+        {
+          "test_id": "4",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 5,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.7142857142857143,
+          "failure_rate_cluster": 0.7142857142857143,
+          "outcome_counts": {
+            "pass": 2,
+            "fail": 5
+          }
+        },
+        {
+          "test_id": "5",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 5,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.7142857142857143,
+          "failure_rate_cluster": 0.7142857142857143,
+          "outcome_counts": {
+            "pass": 2,
+            "fail": 5
+          }
+        },
+        {
+          "test_id": "6",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 5,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.7142857142857143,
+          "failure_rate_cluster": 0.7142857142857143,
+          "outcome_counts": {
+            "fail": 5,
+            "pass": 2
+          }
+        },
+        {
+          "test_id": "1",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 0,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.0,
+          "failure_rate_cluster": 0.0,
+          "outcome_counts": {
+            "pass": 7
+          }
+        },
+        {
+          "test_id": "2",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 0,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.0,
+          "failure_rate_cluster": 0.0,
+          "outcome_counts": {
+            "pass": 7
+          }
+        },
+        {
+          "test_id": "7",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 0,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.0,
+          "failure_rate_cluster": 0.0,
+          "outcome_counts": {
+            "pass": 7
+          }
+        }
+      ]
+    },
+    "feature_statistics": [
+      {
+        "feature": "stdout:1:edit_band",
+        "value": "zero",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "exact",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "zero",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "stdout:2:relation",
+        "value": "exact",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "test:1",
+        "value": "pass",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "test:2",
+        "value": "pass",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "stdout:7:edit_band",
+        "value": "zero",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.4090909090909091,
+        "difference_from_cohort": 0.5909090909090908
+      },
+      {
+        "feature": "stdout:7:relation",
+        "value": "exact",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.4090909090909091,
+        "difference_from_cohort": 0.5909090909090908
+      },
+      {
+        "feature": "test:7",
+        "value": "pass",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.4090909090909091,
+        "difference_from_cohort": 0.5909090909090908
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "other_oracle",
+        "n": 4,
+        "n_cluster": 7,
+        "rate": 0.5714285714285714,
+        "cohort_rate": 0.2727272727272727,
+        "difference_from_cohort": 0.2987012987012987
+      },
+      {
+        "feature": "stdout:6:relation",
+        "value": "other_oracle",
+        "n": 4,
+        "n_cluster": 7,
+        "rate": 0.5714285714285714,
+        "cohort_rate": 0.2727272727272727,
+        "difference_from_cohort": 0.2987012987012987
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "other_oracle",
+        "n": 3,
+        "n_cluster": 7,
+        "rate": 0.42857142857142855,
+        "cohort_rate": 0.13636363636363635,
+        "difference_from_cohort": 0.2922077922077922
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "medium",
+        "n": 4,
+        "n_cluster": 7,
+        "rate": 0.5714285714285714,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.2532467532467532
+      },
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "medium",
+        "n": 4,
+        "n_cluster": 7,
+        "rate": 0.5714285714285714,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.2532467532467532
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "other_oracle",
+        "n": 3,
+        "n_cluster": 7,
+        "rate": 0.42857142857142855,
+        "cohort_rate": 0.22727272727272727,
+        "difference_from_cohort": 0.20129870129870128
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "medium",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.13636363636363635,
+        "difference_from_cohort": 0.14935064935064934
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "medium",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.13636363636363635,
+        "difference_from_cohort": 0.14935064935064934
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "zero",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "exact",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "zero",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "exact",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "zero",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "stdout:6:relation",
+        "value": "exact",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "test:3",
+        "value": "pass",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "test:5",
+        "value": "pass",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "test:6",
+        "value": "pass",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.9545454545454546,
+        "difference_from_cohort": 0.045454545454545414
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.9545454545454546,
+        "difference_from_cohort": 0.045454545454545414
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "zero",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.2727272727272727,
+        "difference_from_cohort": 0.012987012987012991
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "exact",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.2727272727272727,
+        "difference_from_cohort": 0.012987012987012991
+      },
+      {
+        "feature": "test:4",
+        "value": "pass",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.2727272727272727,
+        "difference_from_cohort": 0.012987012987012991
+      },
+      {
+        "feature": "test:4",
+        "value": "fail",
+        "n": 5,
+        "n_cluster": 7,
+        "rate": 0.7142857142857143,
+        "cohort_rate": 0.7272727272727273,
+        "difference_from_cohort": -0.012987012987012991
+      },
+      {
+        "feature": "test:3",
+        "value": "fail",
+        "n": 5,
+        "n_cluster": 7,
+        "rate": 0.7142857142857143,
+        "cohort_rate": 0.8181818181818182,
+        "difference_from_cohort": -0.10389610389610393
+      },
+      {
+        "feature": "test:5",
+        "value": "fail",
+        "n": 5,
+        "n_cluster": 7,
+        "rate": 0.7142857142857143,
+        "cohort_rate": 0.8181818181818182,
+        "difference_from_cohort": -0.10389610389610393
+      },
+      {
+        "feature": "test:6",
+        "value": "fail",
+        "n": 5,
+        "n_cluster": 7,
+        "rate": 0.7142857142857143,
+        "cohort_rate": 0.8181818181818182,
+        "difference_from_cohort": -0.10389610389610393
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 7,
+        "rate": 0.42857142857142855,
+        "cohort_rate": 0.5454545454545454,
+        "difference_from_cohort": -0.11688311688311687
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 7,
+        "rate": 0.42857142857142855,
+        "cohort_rate": 0.6363636363636364,
+        "difference_from_cohort": -0.2077922077922078
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "different",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.5454545454545454,
+        "difference_from_cohort": -0.2597402597402597
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "different",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.5454545454545454,
+        "difference_from_cohort": -0.2597402597402597
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "small",
+        "n": 1,
+        "n_cluster": 7,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.45454545454545453,
+        "difference_from_cohort": -0.3116883116883117
+      },
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "small",
+        "n": 1,
+        "n_cluster": 7,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.45454545454545453,
+        "difference_from_cohort": -0.3116883116883117
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "different",
+        "n": 1,
+        "n_cluster": 7,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.5,
+        "difference_from_cohort": -0.35714285714285715
+      },
+      {
+        "feature": "stdout:6:relation",
+        "value": "different",
+        "n": 1,
+        "n_cluster": 7,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.5,
+        "difference_from_cohort": -0.35714285714285715
+      }
+    ],
+    "feature_definitions": [
+      {
+        "name": "test:1",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:2",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:3",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:4",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:5",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:6",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:7",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "ast:c_inclusive_comparison",
+        "weight": 0.059999999999999984
+      },
+      {
+        "name": "ast:c_strict_comparison",
+        "weight": 0.059999999999999984
+      },
+      {
+        "name": "stdout:1:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:1:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:2:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:2:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:3:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:3:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:4:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:4:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:5:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:5:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:6:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:6:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:7:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:7:edit_band",
+        "weight": 0.028571428571428574
+      }
+    ],
+    "common_ast_patterns": [
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.9545454545454546,
+        "difference_from_cohort": 0.045454545454545414
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.9545454545454546,
+        "difference_from_cohort": 0.045454545454545414
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      }
+    ],
+    "diagnostic_feature_statistics": [
+      {
+        "feature": "test:1",
+        "value": "pass",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "test:2",
+        "value": "pass",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.3181818181818182,
+        "difference_from_cohort": 0.6818181818181819
+      },
+      {
+        "feature": "test:7",
+        "value": "pass",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.4090909090909091,
+        "difference_from_cohort": 0.5909090909090908
+      },
+      {
+        "feature": "test:3",
+        "value": "pass",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "test:5",
+        "value": "pass",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "test:6",
+        "value": "pass",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.18181818181818182,
+        "difference_from_cohort": 0.10389610389610388
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.9545454545454546,
+        "difference_from_cohort": 0.045454545454545414
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.9545454545454546,
+        "difference_from_cohort": 0.045454545454545414
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 0.9545454545454546,
+        "difference_from_cohort": 0.045454545454545414
+      },
+      {
+        "feature": "test:4",
+        "value": "pass",
+        "n": 2,
+        "n_cluster": 7,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.2727272727272727,
+        "difference_from_cohort": 0.012987012987012991
+      },
+      {
+        "feature": "ast:c_array_parameter",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_dereference",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_do",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_one_index",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_pointer_declarator",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_pointer_parameter",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_subscript",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_zero_index",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:parse",
+        "value": "ok",
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "is_hardcoded_output",
+        "value": false,
+        "n": 7,
+        "n_cluster": 7,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "test:4",
+        "value": "fail",
+        "n": 5,
+        "n_cluster": 7,
+        "rate": 0.7142857142857143,
+        "cohort_rate": 0.7272727272727273,
+        "difference_from_cohort": -0.012987012987012991
+      },
+      {
+        "feature": "test:3",
+        "value": "fail",
+        "n": 5,
+        "n_cluster": 7,
+        "rate": 0.7142857142857143,
+        "cohort_rate": 0.8181818181818182,
+        "difference_from_cohort": -0.10389610389610393
+      },
+      {
+        "feature": "test:5",
+        "value": "fail",
+        "n": 5,
+        "n_cluster": 7,
+        "rate": 0.7142857142857143,
+        "cohort_rate": 0.8181818181818182,
+        "difference_from_cohort": -0.10389610389610393
+      },
+      {
+        "feature": "test:6",
+        "value": "fail",
+        "n": 5,
+        "n_cluster": 7,
+        "rate": 0.7142857142857143,
+        "cohort_rate": 0.8181818181818182,
+        "difference_from_cohort": -0.10389610389610393
+      }
+    ],
+    "learned_if_then_rules": [
+      {
+        "rule_id": 4,
+        "if": [
+          "test:1=pass"
+        ],
+        "then_cluster": 1,
+        "train_support": 7,
+        "train_precision": 1.0,
+        "holdout_support": 0,
+        "holdout_precision": null
+      }
+    ],
+    "semantic_patterns": [
+      {
+        "rule_id": "C_BRANCH_ATTACHMENT",
+        "n_submissions": 2,
+        "rate": 0.2857142857142857,
+        "by_cluster": {
+          "1": 2
+        },
+        "if_vi": [
+          "mã có hai if liên tiếp; else thuộc if thứ hai",
+          "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+        ],
+        "then_vi": "Nghi vấn nhầm quan hệ if–else và tính loại trừ giữa các nhánh",
+        "category": "conceptual_hypothesis",
+        "explanation": {
+          "title": "Hai nhánh if có thể cùng tạo thông báo",
+          "code_pattern": [
+            "mã có hai if liên tiếp; else thuộc if thứ hai"
+          ],
+          "behavioral_pattern": [
+            "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+          ],
+          "hypothesis": [
+            "Có thể người viết nhầm quan hệ if–else và tính loại trừ giữa các nhánh."
+          ],
+          "caveat": [
+            "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai."
+          ],
+          "suggested_follow_up": [
+            "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else."
+          ]
+        }
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "n_submissions": 1,
+        "rate": 0.14285714285714285,
+        "by_cluster": {
+          "1": 1
+        },
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        }
+      }
+    ],
+    "semantic_findings": [
+      {
+        "rule_id": "C_BRANCH_ATTACHMENT",
+        "submission_id": "sample_003",
+        "if_vi": [
+          "mã có hai if liên tiếp; else thuộc if thứ hai",
+          "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+        ],
+        "then_vi": "Nghi vấn nhầm quan hệ if–else và tính loại trừ giữa các nhánh",
+        "category": "conceptual_hypothesis",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 13,
+            "line_end": 14,
+            "code": "if ( n < 0 )\n    printf(\"Point is inside the Circle.\");"
+          },
+          {
+            "line_start": 15,
+            "line_end": 18,
+            "code": "if ( n > 0 )\n    printf(\"Point is outside the Circle.\");\n    else\n    printf(\"Point is on the Circle.\");"
+          }
+        ],
+        "explanation": {
+          "title": "Hai nhánh if có thể cùng tạo thông báo",
+          "code_pattern": [
+            "mã có hai if liên tiếp; else thuộc if thứ hai"
+          ],
+          "behavioral_pattern": [
+            "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+          ],
+          "hypothesis": [
+            "Có thể người viết nhầm quan hệ if–else và tính loại trừ giữa các nhánh."
+          ],
+          "caveat": [
+            "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai."
+          ],
+          "suggested_follow_up": [
+            "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Khối lệnh trong bài",
+            "attribute": "Có hai if liên tiếp, if đầu không có else",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Khối lệnh trong bài",
+            "attribute": "Else thuộc if thứ hai",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Yêu cầu một vị trí nhưng output có nhiều vị trí",
+            "operator": "=",
+            "value": "Có"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          }
+        ],
+        "alternative": "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai.",
+        "suggestion": "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else."
+      },
+      {
+        "rule_id": "C_BRANCH_ATTACHMENT",
+        "submission_id": "sample_004",
+        "if_vi": [
+          "mã có hai if liên tiếp; else thuộc if thứ hai",
+          "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+        ],
+        "then_vi": "Nghi vấn nhầm quan hệ if–else và tính loại trừ giữa các nhánh",
+        "category": "conceptual_hypothesis",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 12,
+            "line_end": 13,
+            "code": "if (d<r){\n  printf(\"Point is inside the Circle.\");}"
+          },
+          {
+            "line_start": 14,
+            "line_end": 17,
+            "code": "if (d>r){\n  printf(\"Point is outside the Circle.\");}\n  else {\n  printf(\"Point is on the Circle.\");}"
+          }
+        ],
+        "explanation": {
+          "title": "Hai nhánh if có thể cùng tạo thông báo",
+          "code_pattern": [
+            "mã có hai if liên tiếp; else thuộc if thứ hai"
+          ],
+          "behavioral_pattern": [
+            "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"
+          ],
+          "hypothesis": [
+            "Có thể người viết nhầm quan hệ if–else và tính loại trừ giữa các nhánh."
+          ],
+          "caveat": [
+            "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai."
+          ],
+          "suggested_follow_up": [
+            "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Khối lệnh trong bài",
+            "attribute": "Có hai if liên tiếp, if đầu không có else",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Khối lệnh trong bài",
+            "attribute": "Else thuộc if thứ hai",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Yêu cầu một vị trí nhưng output có nhiều vị trí",
+            "operator": "=",
+            "value": "Có"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          }
+        ],
+        "alternative": "Có thể là thiếu từ khóa else do sơ suất; chưa chứng minh sinh viên hiểu sai.",
+        "suggestion": "Yêu cầu sinh viên truy vết từng if với chính input đã trượt; đối chiếu if / else if / else."
+      },
+      {
+        "rule_id": "OUTPUT_PRESENTATION",
+        "submission_id": "sample_006",
+        "if_vi": [
+          "mã chứa chuỗi được in trong test trượt",
+          "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+        ],
+        "then_vi": "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
+        "category": "presentation_issue",
+        "status": "candidate_requires_human_review",
+        "source": [
+          {
+            "line_start": 17,
+            "line_end": 17,
+            "code": "\"Point is on the Circle\""
+          }
+        ],
+        "explanation": {
+          "title": "Output khác cách trình bày được yêu cầu",
+          "code_pattern": [
+            "mã chứa chuỗi được in trong test trượt"
+          ],
+          "behavioral_pattern": [
+            "expected và actual chỉ khác chữ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo vị trí đường tròn"
+          ],
+          "hypothesis": [
+            "Có thể lỗi nằm ở cách trình bày output; sai khác này chưa cho thấy hiểu sai khái niệm."
+          ],
+          "caveat": [
+            "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài."
+          ],
+          "suggested_follow_up": [
+            "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+          ]
+        },
+        "conditions_oav": [
+          {
+            "object": "Mã bài làm",
+            "attribute": "Chứa chuỗi output quan sát được",
+            "operator": "=",
+            "value": "Có"
+          },
+          {
+            "object": "Ca kiểm thử trượt",
+            "attribute": "Sai khác expected và actual",
+            "operator": "=",
+            "value": "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"
+          }
+        ],
+        "tests": [
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          }
+        ],
+        "alternative": "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
+        "suggestion": "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception."
+      }
+    ],
+    "candidate_misconception": {
+      "source": "local_heuristic_not_gold",
+      "misconception_name": "Có dấu hiệu: Hai nhánh if có thể cùng tạo thông báo",
+      "misconception_type": null,
+      "reasoning": "Bộ luật xác định khớp 2/7 bài; cần xem các bài còn lại trước khi kết luận chung.",
+      "teaching_hint": "Đối chiếu code và test của từng bài trước khi chọn nội dung giảng lại.",
+      "category": "mixed",
+      "evidence_samples": []
+    },
+    "representative_sample_ids": [
+      "sample_002",
+      "sample_001",
+      "sample_003",
+      "sample_004"
+    ],
+    "members": [
+      {
+        "sample_id": "sample_001",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\n    float x,y,r,x1,y1;\n    scanf(\"%f%f%f%f%f\",&x,&y,&r,&x1,&y1);\n    if((x1-x)*(x1-x)+(y1-y)*(y1-y)-r*r<0)\n    printf(\"Point is inside the Circle.\");\n    \n    else\n    printf(\"Point is outside the Circle.\");\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "0d3ac9a887c6d9f92c99b378a7bda450f2530eccf878ae04b9063bc16225210a",
+        "outcomes": {
+          "1": "pass",
+          "2": "pass",
+          "3": "fail",
+          "4": "pass",
+          "5": "pass",
+          "6": "fail",
+          "7": "pass"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "pass",
+          "test:5": "pass",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "stdout:1:relation": "exact",
+          "stdout:1:edit_band": "zero",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "other_oracle",
+          "stdout:3:edit_band": "medium",
+          "stdout:4:relation": "exact",
+          "stdout:4:edit_band": "zero",
+          "stdout:5:relation": "exact",
+          "stdout:5:edit_band": "zero",
+          "stdout:6:relation": "other_oracle",
+          "stdout:6:edit_band": "medium",
+          "stdout:7:relation": "exact",
+          "stdout:7:edit_band": "zero"
+        },
+        "diagnostic_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "pass",
+          "test:5": "pass",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_002",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": true,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{float x,y,x1,y1,r,s;//s is for power of point\n scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n s=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r;//computes the power of point\n if(s>0)       //point is outside if s is +ive\n  printf(\"Point is outside the Circle.\");\n if(s==0) //point is on it if s=0\n  printf(\"Point is on the Circle.\");\n if(s<0)          //point is inside if s is -ive\n  printf(\"Point is inside the Circle.\");\n return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "b01a129b8a6cbe0d60dace6b4d2ac035f59b7765a7a59a0ee5cd3834be028609",
+        "outcomes": {
+          "1": "pass",
+          "2": "pass",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "pass"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "stdout:1:relation": "exact",
+          "stdout:1:edit_band": "zero",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "other_oracle",
+          "stdout:3:edit_band": "medium",
+          "stdout:4:relation": "other_oracle",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "other_oracle",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "other_oracle",
+          "stdout:6:edit_band": "medium",
+          "stdout:7:relation": "exact",
+          "stdout:7:edit_band": "zero"
+        },
+        "diagnostic_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_003",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\n    float x;\n    float y;\n    float r;\n    float x1;\n    float y1;\n    float n;\n    scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n    n=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r*r;\n    if ( n < 0 )\n    printf(\"Point is inside the Circle.\");\n    if ( n > 0 )\n    printf(\"Point is outside the Circle.\");\n    else\n    printf(\"Point is on the Circle.\");\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "df47b21844a1266114812aab782518da5d6cbb11a33b8d0a15801928871d8336",
+        "outcomes": {
+          "1": "pass",
+          "2": "pass",
+          "3": "pass",
+          "4": "fail",
+          "5": "fail",
+          "6": "pass",
+          "7": "pass"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle."
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle."
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "pass",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "pass",
+          "test:7": "pass",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "stdout:1:relation": "exact",
+          "stdout:1:edit_band": "zero",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "exact",
+          "stdout:3:edit_band": "zero",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "medium",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "medium",
+          "stdout:6:relation": "exact",
+          "stdout:6:edit_band": "zero",
+          "stdout:7:relation": "exact",
+          "stdout:7:edit_band": "zero"
+        },
+        "diagnostic_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "pass",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "pass",
+          "test:7": "pass",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_004",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n#include<math.h>\nint main()\n{\n  float x, y, r, x1, y1, d;\n  scanf(\"%f\",&x);\n  scanf(\"%f\",&y);\n  scanf(\"%f\",&r);\n  scanf(\"%f\",&x1);\n  scanf(\"%f\",&y1);\n  d =sqrt(pow(x-x1, 2)+pow(y-y1, 2));\n  if (d<r){\n  printf(\"Point is inside the Circle.\");}\n  if (d>r){\n  printf(\"Point is outside the Circle.\");}\n  else {\n  printf(\"Point is on the Circle.\");}\n \n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "d5c1ab931ed2c61806ac4d0f3cef51ffb71e63eb2bc98cb5ec0429745e911a11",
+        "outcomes": {
+          "1": "pass",
+          "2": "pass",
+          "3": "pass",
+          "4": "fail",
+          "5": "fail",
+          "6": "pass",
+          "7": "pass"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle."
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle.Point is on the Circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle."
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "pass",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "pass",
+          "test:7": "pass",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "stdout:1:relation": "exact",
+          "stdout:1:edit_band": "zero",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "exact",
+          "stdout:3:edit_band": "zero",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "medium",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "medium",
+          "stdout:6:relation": "exact",
+          "stdout:6:edit_band": "zero",
+          "stdout:7:relation": "exact",
+          "stdout:7:edit_band": "zero"
+        },
+        "diagnostic_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "pass",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "pass",
+          "test:7": "pass",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_005",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\n float x,y;//cordinate of the center of the circle\n float r;// radius of the circle\n float x1,y1;// the another cordinate provided by user\n scanf(\"%f%f%f%f%f\",&x,&y,&r,&x1,&y1);\n float a=(x1-x)*(x1-x);\n float b=(y1-y)*(y1-y);\n float c=a+b;//distance between origen and cordinates providade by user\n float d=sqrtf(c);\n if(c<r)\n printf(\"Point is inside the Circle.\");\n else if(c==r)\n     printf(\"Point is on the Circle.\");\nelse\n    printf(\"Point is outside the Circle.\");\n    return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "74dce81071fd5eff1003fa57d65b57a5ce95295ee39ec38f691cfb2a13d4d86e",
+        "outcomes": {
+          "1": "pass",
+          "2": "pass",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "pass"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "stdout:1:relation": "exact",
+          "stdout:1:edit_band": "zero",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "other_oracle",
+          "stdout:3:edit_band": "medium",
+          "stdout:4:relation": "other_oracle",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "other_oracle",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "other_oracle",
+          "stdout:6:edit_band": "medium",
+          "stdout:7:relation": "exact",
+          "stdout:7:edit_band": "zero"
+        },
+        "diagnostic_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_006",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n#include<math.h>\n\nint main()\n{\n    float x , y , x1 , y1 , r ,s ;\n    // (x,y) are co-ordinates for center of circle .\n    // (x1,y1) is point whose relative loacation w.r.t circle we have to see .\n    // r is radius of circle .\n    // s is distance of point from center of circle .\n    scanf (\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n    s = sqrtf(((x - x1)*(x - x1)) + ((y - y1)*(y - y1))) ;\n    if (s>r){\n        printf(\"Point is outside the Circle.\");// if radius is less than distance from center , point is outside the circle .\n    }\n    else if (s==r){\n        printf(\"Point is on the Circle\");// if radius is equal to distance from center , point is on the circumference .\n    }\n    else{\n        printf(\"Point is inside the Circle.\");\n        \n    }\n    // if radius is greater than distance from center then point is inside the circle .\n    \n    \n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "98a1ece891c060b2789fa991883e509b6c81adc75c424fa5c47dd1a95128d8a2",
+        "outcomes": {
+          "1": "pass",
+          "2": "pass",
+          "3": "fail",
+          "4": "pass",
+          "5": "pass",
+          "6": "fail",
+          "7": "pass"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is inside the Circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is on the Circle"
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "pass",
+          "test:5": "pass",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "stdout:1:relation": "exact",
+          "stdout:1:edit_band": "zero",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "exact",
+          "stdout:4:edit_band": "zero",
+          "stdout:5:relation": "exact",
+          "stdout:5:edit_band": "zero",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small",
+          "stdout:7:relation": "exact",
+          "stdout:7:edit_band": "zero"
+        },
+        "diagnostic_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "pass",
+          "test:5": "pass",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_007",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\nfloat x,y,r,x1,y1,k;\nscanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\nk=(x-x1)*(x-x1)+(y-y1)*(y-y1)-(r*r);\nif(r>0){\n    printf(\"Point is outside the Circle.\");\n    }\nelse\nif(r==0){\n    printf(\"Point is on the Circle.\");\n}\nelse\nif(r<0){\n    printf(\"Point is inside the Circle.\");\n}\n    // Fill this area with your code.\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "dae69b99e5641be55f3f13078c110b8d181a6c2091147104b8bd17cd2a801ccc",
+        "outcomes": {
+          "1": "pass",
+          "2": "pass",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "pass"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "1.2 2.3 2.7 5.3 7.6",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "2",
+            "input": "0.0 0.0 5.0 3.0 7.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "3",
+            "input": "3.0 4.0 5.0 7.0 7.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "4",
+            "input": "3.0 4.0 5.0 5.6 6.2",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "5",
+            "input": "-1.0 -2.0 5.0 1.5 2.0",
+            "expected": "Point is inside the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "6",
+            "input": "0.0 0.0 5.0 3.0 4.0",
+            "expected": "Point is on the Circle.",
+            "output": "Point is outside the Circle."
+          },
+          {
+            "test_id": "7",
+            "input": "0.0 0.0 5.0 3.0 5.0",
+            "expected": "Point is outside the Circle.",
+            "output": "Point is outside the Circle."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "stdout:1:relation": "exact",
+          "stdout:1:edit_band": "zero",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "other_oracle",
+          "stdout:3:edit_band": "medium",
+          "stdout:4:relation": "other_oracle",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "other_oracle",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "other_oracle",
+          "stdout:6:edit_band": "medium",
+          "stdout:7:relation": "exact",
+          "stdout:7:edit_band": "zero"
+        },
+        "diagnostic_oav": {
+          "test:1": "pass",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      }
+    ],
+    "evidence_index": [
+      "test_statistics",
+      "feature_statistics",
+      "learned_if_then_rules",
+      "semantic_findings",
+      "problem_statement",
+      "members/sample_001/raw_code",
+      "members/sample_001/tests/1",
+      "members/sample_001/tests/2",
+      "members/sample_001/tests/3",
+      "members/sample_001/tests/4",
+      "members/sample_001/tests/5",
+      "members/sample_001/tests/6",
+      "members/sample_001/tests/7",
+      "members/sample_002/raw_code",
+      "members/sample_002/tests/1",
+      "members/sample_002/tests/2",
+      "members/sample_002/tests/3",
+      "members/sample_002/tests/4",
+      "members/sample_002/tests/5",
+      "members/sample_002/tests/6",
+      "members/sample_002/tests/7",
+      "members/sample_003/raw_code",
+      "members/sample_003/tests/1",
+      "members/sample_003/tests/2",
+      "members/sample_003/tests/3",
+      "members/sample_003/tests/4",
+      "members/sample_003/tests/5",
+      "members/sample_003/tests/6",
+      "members/sample_003/tests/7",
+      "members/sample_004/raw_code",
+      "members/sample_004/tests/1",
+      "members/sample_004/tests/2",
+      "members/sample_004/tests/3",
+      "members/sample_004/tests/4",
+      "members/sample_004/tests/5",
+      "members/sample_004/tests/6",
+      "members/sample_004/tests/7",
+      "members/sample_005/raw_code",
+      "members/sample_005/tests/1",
+      "members/sample_005/tests/2",
+      "members/sample_005/tests/3",
+      "members/sample_005/tests/4",
+      "members/sample_005/tests/5",
+      "members/sample_005/tests/6",
+      "members/sample_005/tests/7",
+      "members/sample_006/raw_code",
+      "members/sample_006/tests/1",
+      "members/sample_006/tests/2",
+      "members/sample_006/tests/3",
+      "members/sample_006/tests/4",
+      "members/sample_006/tests/5",
+      "members/sample_006/tests/6",
+      "members/sample_006/tests/7",
+      "members/sample_007/raw_code",
+      "members/sample_007/tests/1",
+      "members/sample_007/tests/2",
+      "members/sample_007/tests/3",
+      "members/sample_007/tests/4",
+      "members/sample_007/tests/5",
+      "members/sample_007/tests/6",
+      "members/sample_007/tests/7"
+    ]
+  }
+}

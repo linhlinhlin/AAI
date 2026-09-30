@@ -1,0 +1,1491 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab02-ex09--kmeans--combined_stdout--s42--c2</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab02-ex09 · 28 bài</h1><p>lab02-ex09--kmeans--combined_stdout--s42--c2 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex09_0: 28/28 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex09_1: 28/28 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex09_2: 28/28 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex09_3: 27/28 bài trượt (96.4%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_0:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 28,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.297029702970297,
+      &quot;difference_from_cohort&quot;: 0.7029702970297029
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_1:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 28,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.3069306930693069,
+      &quot;difference_from_cohort&quot;: 0.693069306930693
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_2:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 27,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.9642857142857143,
+      &quot;cohort_rate&quot;: 0.2871287128712871,
+      &quot;difference_from_cohort&quot;: 0.6771570014144273
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_0:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 26,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.9285714285714286,
+      &quot;cohort_rate&quot;: 0.25742574257425743,
+      &quot;difference_from_cohort&quot;: 0.6711456859971712
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_1:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 26,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.9285714285714286,
+      &quot;cohort_rate&quot;: 0.26732673267326734,
+      &quot;difference_from_cohort&quot;: 0.6612446958981613
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_2:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 25,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.8928571428571429,
+      &quot;cohort_rate&quot;: 0.24752475247524752,
+      &quot;difference_from_cohort&quot;: 0.6453323903818954
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_3:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 24,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.8571428571428571,
+      &quot;cohort_rate&quot;: 0.2376237623762376,
+      &quot;difference_from_cohort&quot;: 0.6195190947666195
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_3:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 25,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.8928571428571429,
+      &quot;cohort_rate&quot;: 0.27722772277227725,
+      &quot;difference_from_cohort&quot;: 0.6156294200848657
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex09_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 28,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8217821782178217,
+      &quot;difference_from_cohort&quot;: 0.17821782178217827
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex09_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 28,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8415841584158416,
+      &quot;difference_from_cohort&quot;: 0.15841584158415845
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.39285714285714285,
+      &quot;cohort_rate&quot;: 0.26732673267326734,
+      &quot;difference_from_cohort&quot;: 0.1255304101838755
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex09_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 28,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8910891089108911,
+      &quot;difference_from_cohort&quot;: 0.1089108910891089
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.21428571428571427,
+      &quot;cohort_rate&quot;: 0.1188118811881188,
+      &quot;difference_from_cohort&quot;: 0.09547383309759547
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.19801980198019803,
+      &quot;difference_from_cohort&quot;: 0.05198019801980197
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 28,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9702970297029703,
+      &quot;difference_from_cohort&quot;: 0.02970297029702973
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.03571428571428571,
+      &quot;cohort_rate&quot;: 0.019801980198019802,
+      &quot;difference_from_cohort&quot;: 0.01591230551626591
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_3:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.03571428571428571,
+      &quot;cohort_rate&quot;: 0.019801980198019802,
+      &quot;difference_from_cohort&quot;: 0.01591230551626591
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex09_3:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.03571428571428571,
+      &quot;cohort_rate&quot;: 0.019801980198019802,
+      &quot;difference_from_cohort&quot;: 0.01591230551626591
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex09_3&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.03571428571428571,
+      &quot;cohort_rate&quot;: 0.019801980198019802,
+      &quot;difference_from_cohort&quot;: 0.01591230551626591
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 27,
+      &quot;n_cluster&quot;: 28,
+      &quot;rate&quot;: 0.9642857142857143,
+      &quot;cohort_rate&quot;: 0.9801980198019802,
+      &quot;difference_from_cohort&quot;: -0.01591230551626588
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 5,
+      &quot;if&quot;: [
+        &quot;stdout:ex09_0:edit_band=small&quot;,
+        &quot;NOT (stdout:ex09_1:relation=different)&quot;
+      ],
+      &quot;then_cluster&quot;: 2,
+      &quot;train_support&quot;: 23,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 3,
+      &quot;holdout_precision&quot;: 1.0
+    },
+    {
+      &quot;rule_id&quot;: 6,
+      &quot;if&quot;: [
+        &quot;stdout:ex09_0:edit_band=small&quot;,
+        &quot;stdout:ex09_1:relation=different&quot;
+      ],
+      &quot;then_cluster&quot;: 2,
+      &quot;train_support&quot;: 3,
+      &quot;train_precision&quot;: 0.6666666666666666,
+      &quot;holdout_support&quot;: 1,
+      &quot;holdout_precision&quot;: 0.0
+    }
+  ]
+}</pre></details><details><summary>sample_001 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+#define HORAEMSEG 3600
+#define MINUTOEMSEG 60
+#define LIMITE 10
+
+int main()
+{
+	int n, s, h, m;
+	scanf(&quot;%d&quot;, &amp;n);
+	h = n/HORAEMSEG;
+	n %= HORAEMSEG;
+	m = n/MINUTOEMSEG;
+	s = n%MINUTOEMSEG;
+	if (h &lt; LIMITE) {
+		printf(&quot;0%d:&quot;, h);}
+	else {
+		printf(&quot;%d:&quot;, h);
+	}
+	if (m &lt; LIMITE) {
+		printf(&quot;0%d:&quot;, m);}
+	else {
+		printf(&quot;%d:&quot;, m);
+	}
+	if (s &lt; LIMITE) {
+		printf(&quot;0%d&quot;, s);}
+	else {
+		printf(&quot;%d&quot;, s);
+	}
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_002 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main() {
+	int x;
+	int horas;
+	int min;
+	int seg;
+	
+	scanf(&quot;%d&quot;, &amp;x);
+	while (x &lt;= 0) {
+		
+		scanf(&quot;%d&quot;, &amp;x);
+	}
+	horas = x / (60*60);
+	if (horas &lt; 10) {
+	}
+	x = x % (60*60);
+	min = x / (60);
+	x = x % (60);
+	seg = x;
+	printf(&quot;%02d::%02d::%02d\n&quot;, horas, min, seg);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00::01::00\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00::02::00\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01::00::00\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01::06::40\n&quot;
+  }
+]</pre></details><details><summary>sample_003 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    int n, h, m, s;
+    scanf(&quot;%d&quot;, &amp;n);
+
+
+    h = n / (60 * 60);
+    n = n - h*(60 * 60);
+
+    m = n / 60;
+    n = n - m*60;
+
+    s = n;
+
+    printf(&quot;%02d:%02d:%02d&quot;, h, m ,s);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_026 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int N, hora, minuto, segundo;
+    scanf(&quot;%d&quot;, &amp;N);
+    minuto= N/60;
+    hora = minuto/60;
+    minuto -= hora*60;
+    segundo = N - (minuto*60) - (hora*3600);
+    if (hora &lt; 10){
+        printf(&quot;0%d:&quot;, hora);
+    }
+    else{
+        printf(&quot;%d&quot;, hora);
+    }
+    if (minuto &lt; 10){
+        printf(&quot;0%d:&quot;, minuto);
+    }
+    else{
+        printf(&quot;%d&quot;, minuto);
+    }
+    if (segundo &lt; 10){
+        printf(&quot;0%d\n:&quot;, segundo);
+    }
+    else{
+        printf(&quot;%d\n&quot;, segundo);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00\n:&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00\n:&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00\n:&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num, horas, mins, segs;
+
+    scanf(&quot;%d&quot;, &amp;num);
+
+    horas = num / 3600;
+    segs = num % 3600;
+    mins = segs / 60;
+    segs = segs % 60;
+
+    printf(&quot;%02d:%02d:%02d&quot;, horas, mins, segs);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int N, horas, minutos;
+
+    scanf(&quot;%d&quot;, &amp;N);
+    horas = N / 3600;
+    N %= 3600;
+    minutos = N / 60;
+    N %= 60;
+    printf(&quot;%02d:%02d:%02d&quot;, horas, minutos, N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int N, horas, minutos;
+    scanf(&quot;%d&quot;, &amp;N);
+    horas = N / 3600;
+    N %= 3600;
+    minutos = N / 60;
+    N %= 60;
+    printf(&quot;%02d:%02d:%02d&quot;, horas, minutos, N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>
+#include &lt;stdio.h&gt;
+#define HS 3600
+#define MS 60
+
+int main(){
+    int num;
+    int horas, min;
+    scanf(&quot;%d&quot;, &amp;num);
+    horas = num / HS;
+    num = num % HS;
+    min = num / MS;
+    num = num % MS;
+    printf(&quot;%02d:%02d:%02d&quot;, horas, min, num);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n, horas, min, seg;
+    scanf(&quot;%d&quot;, &amp;n);
+    horas = n / 3600;
+    min = (n % 3600) / 60;
+    seg = (n % 3600) % 60;
+    printf(&quot;%02d:%02d:%02d&quot;, horas, min, seg);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int N, horas, min, s;
+
+    scanf(&quot;%d&quot;, &amp;N);
+    horas = N / 3600;
+    min = (N - (horas * 3600)) / 60;
+    s = N - (horas * 3600) - (min * 60);
+    printf(&quot;%02d:%02d:%02d&quot;, horas, min, s);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+int main()
+{
+    int h = 0, m = 0, s = 0, n;
+    scanf (&quot;%d&quot;, &amp;n);
+    if (n &gt;= 60)
+    {
+        s = ((n % 60) * 60) / 100;
+        m = n / 60;
+        if (m &gt;= 60)
+        {
+            h = (m / 60);
+            m = ((m % 60) * 60) / 100;               
+        }
+    }
+    else
+        s = n;
+    printf(&quot;%02d:%02d:%02d&quot;, h, m, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:03:24&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+
+    int n, remainder;
+    int hh = 0;
+    int mm = 0;
+    int ss = 0;
+
+    scanf(&quot;%d&quot;, &amp;n);
+
+    if((n / 3600) &gt;= 1){
+        hh = n / 3600;
+        remainder = n % 3600;
+    }
+    else
+        remainder = n;
+    if((remainder / 60) &gt;= 1){
+        mm = remainder / 60;
+        remainder %= 60;
+    }
+    else
+        ss = remainder / 60;
+    
+    printf(&quot;%02d:%02d:%02d&quot;, hh, mm, ss);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:00&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+
+#include &lt;stdio.h&gt;
+int main()
+{
+    int N, h, m, s;
+    scanf(&quot;%d&quot;, &amp;N);
+    h=N/3600;
+    N=N-h*3600;
+    m=N/60;
+    s=N-m*60;
+    printf(&quot;%.2d:%.2d:%.2d&quot;, h, m, s);
+    return 0;
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+#define MIN 60;
+#define HORA 3600;
+int main(){
+    int N, s, h=0, m=0, resto_m;
+    scanf(&quot;%d&quot;, &amp;N);
+    if (N &gt;= 3600){
+        h = N/HORA;
+        resto_m = N%HORA;
+        m = resto_m/MIN;
+        s = resto_m%MIN;
+    }
+    if (N&lt;3600 &amp;&amp; N&gt;=60){ 
+        h = 0;
+        m = N/MIN;
+        s = N%MIN;   
+    }
+    if (N &lt; 60){
+        h = m = 0;
+        s = N;
+    }
+    if (h &lt;= 9){
+        if (m &lt;= 9){
+            if (s &lt;= 9){
+                printf(&quot;0%d:0%d:0%d&quot;, h, m, s);}
+            else
+                printf(&quot;0%d:0%d:%d&quot;, h, m, s);
+        }
+        else {
+            if (s &lt;= 9){
+                printf(&quot;0%d:%d:0%d&quot;, h, m, s);}
+            else
+                printf(&quot;0%d:%d:%d&quot;, h, m, s);
+        }    
+    }
+    else {
+        if (m &lt;= 9){
+            if (s &lt;= 9){
+                printf(&quot;%d:0%d:0%d&quot;, h, m, s);}
+            else
+                printf(&quot;%d:0%d:%d&quot;, h, m, s);
+        }
+        else {
+            if (s &lt;= 9){
+                printf(&quot;%d:%d:0%d&quot;, h, m, s);}
+            else
+                printf(&quot;%d:%d:%d&quot;, h, m, s);
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n,h,m,s;
+    scanf(&quot;%d&quot;, &amp;n);
+    h = (n-n%3600)/3600;
+    m = (n%3600-((n%3600)%60))/60;
+    s = ((n%3600)%60);
+    if(h&lt;10 &amp;&amp; m&lt;10 &amp;&amp; s&lt;10){
+        printf(&quot;0%d:0%d:0%d&quot;,h,m,s);
+        return 0;
+    }
+    if(h&lt;10 &amp;&amp; m&lt;10){
+        printf(&quot;0%d:0%d:%d&quot;,h,m,s);
+        return 0;
+    }
+    if(h&lt;10 &amp;&amp; s&lt;10){
+        printf(&quot;0%d:%d:0%d&quot;,h,m,s);
+        return 0;
+    }
+    if(m&lt;10 &amp;&amp; s&lt;10){
+        printf(&quot;%d:0%d:0%d&quot;,h,m,s);
+        return 0; 
+    }
+    if(h&lt;10){
+        printf(&quot;0%d:%d:%d&quot;,h,m,s);
+        return 0;
+    }
+    if(m&lt;10){
+        printf(&quot;%d:0%d:%d&quot;,h,m,s);
+        return 0;
+    }
+    if(s&lt;10){
+        printf(&quot;%d:%d:0%d&quot;,h,m,s);
+        return 0;
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int horas, minutos, segundos;
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    horas = n / 3600;
+    minutos = (n / 60) - horas * 60;
+    segundos = n % 60;
+
+
+    printf(&quot;%02d:%02d:%02d&quot;, horas, minutos, segundos);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int time, h, m, s;
+
+    scanf(&quot;%d&quot;, &amp;time);
+    h = time/3600;
+    m = (time - h*3600 )/ 60;
+    s = time - h*3600 - m*60;
+
+    printf(&quot;%02d:%02d:%02d&quot;, h, m, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int valor, horas, minutos, segundos;
+    scanf(&quot;%d&quot;, &amp;valor);
+    horas = valor / 3600; 
+    minutos = (valor % 3600) / 60; 
+    segundos = valor % 60;
+    printf(&quot;%02d:%02d:%02d&quot;, horas, minutos, segundos);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+
+    int n, h = 0, min = 0, s = 0, res;
+
+    scanf(&quot;%d&quot;, &amp;n);
+
+    if(n &gt;= 3600){ 
+        h = n / 3600; 
+        res = n % 3600; 
+        min = res / 60; 
+        s = res % 60; 
+        }
+    else{ 
+        min = n / 60;
+        s = n % 60;
+    }
+
+    printf(&quot;%02d:%02d:%02d&quot;, h, min, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+#include &lt;stdio.h&gt;
+
+int N, seg, min, horas;
+
+int main () {
+    scanf(&quot;%d&quot;, &amp;N);
+
+    horas = N / (60*60);
+    N = N - (horas * 60*60);
+    min = N / 60;
+    seg = N - (min * 60);
+    
+    if (horas &lt; 10) {
+        if (min &lt; 10) {
+            if (seg &lt; 10)
+                printf(&quot;0%d:0%d:0%d&quot;, horas, min, seg);
+            else
+                printf(&quot;0%d:0%d:%d&quot;, horas, min, seg);
+        }
+        else {
+            if (seg &lt; 10)
+                printf(&quot;0%d:%d:0%d&quot;, horas, min, seg);
+            else
+                printf(&quot;0%d:%d:%d&quot;, horas, min, seg);
+        }
+    }
+    else {
+        if (min &lt; 10) {
+            if (seg &lt; 10)
+                printf(&quot;%d:0%d:0%d&quot;, horas, min, seg);
+            else
+                printf(&quot;%d:0%d:%d&quot;, horas, min, seg);
+        }
+        else {
+            if (seg &lt; 10)
+                printf(&quot;%d:%d:0%d&quot;, horas, min, seg);
+            else
+                printf(&quot;%d:%d:%d&quot;, horas, min, seg);
+        }                    
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int seg = 0, min = 0, hr = 0;
+    scanf(&quot;%d&quot;,&amp;seg);
+    min = seg / 60;
+    seg = seg % 60;
+    hr = min / 60;
+    min = min % 60;
+    printf(&quot;%02d:%02d:%02d&quot;,hr,min,seg);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_021</summary><pre>#include &lt;stdio.h&gt;
+
+int main () {
+	int N, HH, MM, SS;
+	
+	scanf(&quot;%d&quot;, &amp;N);
+	
+	SS = N%60;
+	N = (N-SS)/60;
+	MM = N%60;
+	HH = (N-MM)/60;
+
+	printf(&quot;%02d:%02d:%02d&quot;, HH, MM, SS);
+	
+	return 0;	
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int sec, min, min_em_sec, hour;
+    int total_sec;
+
+    scanf(&quot;%d&quot;,&amp;total_sec);
+
+    hour = total_sec / 3600;
+    min_em_sec = total_sec % 3600; 
+    
+    min = min_em_sec / 60;
+    sec = min_em_sec % 60;
+
+    printf(&quot;%02d:%02d:%02d&quot;,hour,min,sec);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>
+#include &lt;stdio.h&gt;
+#define DIVHORAS 3600
+#define DIVMIN 60
+
+int main(void){
+
+    int horas,minutos,segundos;
+    int n;
+    int resto;
+
+    scanf(&quot;%d&quot;,&amp;n);
+
+    horas = n / DIVHORAS;
+    resto = n % DIVHORAS;
+    minutos = resto / DIVMIN;
+    segundos= resto % DIVMIN;
+
+
+    
+    printf(&quot;%2.2d:%2.2d:%2.2d&quot;,horas,minutos,segundos);
+
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>
+#include &lt;stdio.h&gt;
+#define LIMITE 60
+
+int main(){
+    int m=0,h=0,s;
+    scanf(&quot;%d&quot;,&amp;s);
+    if (s&gt;=LIMITE){
+        m=s/LIMITE;
+        s=s%LIMITE;
+    }
+    if (m&gt;=LIMITE){
+        h=m/60;
+        m=m%60;
+    }
+    printf(&quot;%02d:%02d:%02d&quot;,h,m,s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_025</summary><pre>
+# include &lt;stdio.h&gt;
+
+int main(){
+    int seconds,minutes=0,hours=0;
+
+    scanf(&quot;%d&quot;,&amp;seconds);
+    minutes = seconds/60;
+    if (minutes&gt;60)
+        hours = minutes/60;
+    minutes -= hours * 60;
+    seconds -= (hours*3600 + minutes*60);
+
+    if (hours&lt;10)
+        printf(&quot;0%d:&quot;,hours);
+    else
+        printf(&quot;%d:&quot;,hours);
+    if (minutes&lt;10)
+        printf(&quot;0%d:&quot;,minutes);
+    else
+        printf(&quot;%d:&quot;,minutes);
+    if (seconds&lt;10)
+        printf(&quot;0%d&quot;,seconds);
+    else
+        printf(&quot;%d&quot;,seconds);     
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;00:60:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_027</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int segundos, horas, minutos, resto;
+    scanf(&quot;%d&quot;, &amp;resto);
+    horas = resto / 3600;
+    resto = resto % 3600;
+    minutos = resto / 60;
+    segundos = resto % 60;
+    printf(&quot;%.2d:%.2d:%.2d&quot;, horas, minutos, segundos);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details><details><summary>sample_028</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    int s;
+    scanf(&quot;%d&quot;,&amp;s);
+    printf(&quot;%02d:%02d:%02d&quot;,s/3600,(s % 3600)/60,(s%3600)%60);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex09_0&quot;,
+    &quot;input&quot;: &quot;60&quot;,
+    &quot;expected&quot;: &quot;00:01:00\n&quot;,
+    &quot;output&quot;: &quot;00:01:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_1&quot;,
+    &quot;input&quot;: &quot;120&quot;,
+    &quot;expected&quot;: &quot;00:02:00\n&quot;,
+    &quot;output&quot;: &quot;00:02:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_2&quot;,
+    &quot;input&quot;: &quot;3600&quot;,
+    &quot;expected&quot;: &quot;01:00:00\n&quot;,
+    &quot;output&quot;: &quot;01:00:00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex09_3&quot;,
+    &quot;input&quot;: &quot;4000&quot;,
+    &quot;expected&quot;: &quot;01:06:40\n&quot;,
+    &quot;output&quot;: &quot;01:06:40&quot;
+  }
+]</pre></details></html>

@@ -1,0 +1,3329 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab03-ex02--kmeans--combined_stdout--s42--c0</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab03-ex02 · 59 bài</h1><p>lab03-ex02--kmeans--combined_stdout--s42--c0 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex02_0: 59/59 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex02_1: 59/59 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex02_2: 59/59 bài trượt (100.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 57,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.9661016949152542,
+      &quot;cohort_rate&quot;: 0.2964824120603015,
+      &quot;difference_from_cohort&quot;: 0.6696192828549528
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 57,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.9661016949152542,
+      &quot;cohort_rate&quot;: 0.2964824120603015,
+      &quot;difference_from_cohort&quot;: 0.6696192828549528
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 50,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.847457627118644,
+      &quot;cohort_rate&quot;: 0.25125628140703515,
+      &quot;difference_from_cohort&quot;: 0.5962013457116089
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 28,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.4745762711864407,
+      &quot;cohort_rate&quot;: 0.1407035175879397,
+      &quot;difference_from_cohort&quot;: 0.333872753598501
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_0:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 37,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.6271186440677966,
+      &quot;cohort_rate&quot;: 0.4120603015075377,
+      &quot;difference_from_cohort&quot;: 0.2150583425602589
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 17,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.288135593220339,
+      &quot;cohort_rate&quot;: 0.08542713567839195,
+      &quot;difference_from_cohort&quot;: 0.20270845754194705
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_1:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 33,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.559322033898305,
+      &quot;cohort_rate&quot;: 0.36180904522613067,
+      &quot;difference_from_cohort&quot;: 0.19751298867217437
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.23728813559322035,
+      &quot;cohort_rate&quot;: 0.07035175879396985,
+      &quot;difference_from_cohort&quot;: 0.1669363767992505
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 17,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.288135593220339,
+      &quot;cohort_rate&quot;: 0.15577889447236182,
+      &quot;difference_from_cohort&quot;: 0.13235669874797718
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 27,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.4576271186440678,
+      &quot;cohort_rate&quot;: 0.33668341708542715,
+      &quot;difference_from_cohort&quot;: 0.12094370155864065
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_2:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 23,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.3898305084745763,
+      &quot;cohort_rate&quot;: 0.3065326633165829,
+      &quot;difference_from_cohort&quot;: 0.08329784515799338
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.13559322033898305,
+      &quot;cohort_rate&quot;: 0.07537688442211055,
+      &quot;difference_from_cohort&quot;: 0.060216335916872504
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.03389830508474576,
+      &quot;cohort_rate&quot;: 0.010050251256281407,
+      &quot;difference_from_cohort&quot;: 0.023848053828464354
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_0:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.03389830508474576,
+      &quot;cohort_rate&quot;: 0.010050251256281407,
+      &quot;difference_from_cohort&quot;: 0.023848053828464354
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_1:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.03389830508474576,
+      &quot;cohort_rate&quot;: 0.010050251256281407,
+      &quot;difference_from_cohort&quot;: 0.023848053828464354
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_2:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.03389830508474576,
+      &quot;cohort_rate&quot;: 0.010050251256281407,
+      &quot;difference_from_cohort&quot;: 0.023848053828464354
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 18,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.3050847457627119,
+      &quot;cohort_rate&quot;: 0.3015075376884422,
+      &quot;difference_from_cohort&quot;: 0.0035772080742697
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.01694915254237288,
+      &quot;cohort_rate&quot;: 0.01507537688442211,
+      &quot;difference_from_cohort&quot;: 0.0018737756579507714
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 0.1016949152542373,
+      &quot;cohort_rate&quot;: 0.10050251256281408,
+      &quot;difference_from_cohort&quot;: 0.0011924026914232194
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex02_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 59,
+      &quot;n_cluster&quot;: 59,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 2,
+      &quot;if&quot;: [
+        &quot;NOT (stdout:ex02_1:relation=whitespace)&quot;,
+        &quot;NOT (stdout:ex02_2:edit_band=small)&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 45,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 6,
+      &quot;holdout_precision&quot;: 1.0
+    },
+    {
+      &quot;rule_id&quot;: 4,
+      &quot;if&quot;: [
+        &quot;NOT (stdout:ex02_1:relation=whitespace)&quot;,
+        &quot;stdout:ex02_2:edit_band=small&quot;,
+        &quot;NOT (stdout:ex02_0:relation=whitespace)&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 6,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 2,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_002 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+void piramide (int N)  {
+ 
+ #define ESPACOS 4
+ #define NUMEROS 1
+ int i, espacos = ESPACOS, j, numeros = NUMEROS, k;
+
+ for (i = 1; i &lt;= N; i++) {
+
+   for (j = 0; j &lt; espacos; j++)  {
+
+    printf(&quot; &quot;); }
+
+  espacos --;
+
+  for (k=1 ; k&lt;= numeros; k++)  {
+ 
+   if ( k &lt;= i) {
+    printf (&quot;%d&quot;, k); }
+
+   else  {
+    
+    printf(&quot;%d&quot;, i - (k-i));} }
+
+  numeros += 2; 
+  printf (&quot;\n&quot;); }
+}
+
+
+int main()  {
+
+ int N;
+
+ scanf (&quot;%d&quot;, &amp;N);
+ piramide(N);
+ return 0;
+}
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n   121\n  12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n   121\n  12321\n 1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n   121\n  12321\n 1234321\n123454321\n12345654321\n1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_007 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+void piramide(int N) {
+  int i = 0, j = 0, num = 0;
+
+  while (i++ &lt; N) {
+    while (j++ &lt; N - i)
+      printf(&quot; &quot;);
+    while (num++ &lt; i)
+      printf(&quot;%d&quot;, num);
+    num--;
+    while (--num &gt; 0)
+      printf(&quot;%d&quot;, num);
+    printf(&quot;\n&quot;);
+    j = 0;
+    num = 0;
+  }
+}
+
+int main() {
+  int N;
+  scanf(&quot;%d&quot;, &amp;N);
+  piramide(N);
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_028 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+    
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_041 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+
+int main()
+{
+
+
+    return 0;
+}
+
+void piramide(int N)
+{
+    int l, c;
+
+    for(l = 0; l &lt; N ; l++)
+    {
+        for(c = 0; c &lt; N+N; c++)
+        {
+            
+        }
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+
+void piramide(int N)
+{
+	int i, j;
+
+	for(i = 0; i &lt; N; i++)
+	{
+		for(j = 1; j &lt; N-i; j++)
+			printf(&quot; &quot;);
+		for(j = 1; j &lt; 1+i; j++)
+			printf(&quot;%d&quot;, j);
+		for(j = 1+i; j &gt; 0; j--)
+			printf(&quot;%d&quot;, j);
+		printf(&quot;\n&quot;);
+	}
+}
+
+int main()
+{
+	int in;
+	scanf(&quot;%d&quot;, &amp;in);
+
+	piramide(in);
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+
+void piramide(int N)
+{
+    int i, j, k;
+    for (i = 1; i&lt;= N; i++)
+    {
+        for(j = 0; j &lt; N - i; j++)
+        {
+            printf(&quot; &quot;);
+            printf(&quot; &quot;);
+        }
+        
+        for(j = 1; j &lt;= i; j++)
+        {
+            printf(&quot;%d&quot;, j);
+            printf(&quot; &quot;);
+        }
+
+        for(k = i - 1; k &gt;= 1; --k)
+        {
+            printf(&quot;%d&quot;, k);
+        }
+    printf(&quot;\n&quot;);
+    }
+}
+
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    piramide(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1 \n  1 2 1\n1 2 3 21\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1 \n    1 2 1\n  1 2 3 21\n1 2 3 4 321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1 \n            1 2 1\n          1 2 3 21\n        1 2 3 4 321\n      1 2 3 4 5 4321\n    1 2 3 4 5 6 54321\n  1 2 3 4 5 6 7 654321\n1 2 3 4 5 6 7 8 7654321\n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>#include &lt;stdio.h&gt;
+
+void piramide(int n)
+{
+ int linhas,coluna,col=0,espacos;
+ for (linhas=1; linhas&lt;=n; linhas++)
+ {
+  espacos = n-linhas;
+  for (; espacos !=0; espacos--)
+     printf(&quot;  &quot;);
+  col = linhas;
+  for(coluna=1;coluna&lt;=(linhas*2 -1); coluna++)
+  {
+   if (coluna&lt;=n)
+      printf (&quot;%d &quot;,coluna);
+   else
+      {
+      col--;
+      printf (&quot;%d &quot;, col);
+      }
+  }
+  printf(&quot;\n&quot;);
+ }
+ return;
+}
+
+
+int main()
+{
+ int n;
+ scanf(&quot;%d&quot;,&amp;n);
+ if (n&gt;=2)
+ {
+  piramide(n);
+ } 
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1 \n  1 2 3 \n1 2 3 2 1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1 \n    1 2 3 \n  1 2 3 4 2 \n1 2 3 4 3 2 1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1 \n            1 2 3 \n          1 2 3 4 5 \n        1 2 3 4 5 6 7 \n      1 2 3 4 5 6 7 8 4 \n    1 2 3 4 5 6 7 8 5 4 3 \n  1 2 3 4 5 6 7 8 6 5 4 3 2 \n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 \n&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>#include &lt;stdio.h&gt;
+
+void piramide(int n)
+{
+ int linhas,coluna,col=0,espacos;
+ for (linhas=1; linhas&lt;=n; linhas++)
+ {
+  espacos = n-linhas;
+  for (; espacos !=0; espacos--)
+     printf(&quot;  &quot;);
+  col = linhas;
+  for(coluna=1;coluna&lt;=(linhas*2 -1); coluna++)
+  {
+   if (coluna&lt;=n)
+      printf (&quot;%d &quot;,coluna);
+   else
+      {
+      col--;
+      if (coluna==(linhas*2 -1))
+          printf (&quot;%d&quot;, col);
+      else
+          printf (&quot;%d &quot;,col);
+      }
+  }
+  printf(&quot;\n&quot;);
+ }
+ return;
+}
+
+
+int main()
+{
+ int n;
+ scanf(&quot;%d&quot;,&amp;n);
+ if (n&gt;=2)
+ {
+  piramide(n);
+ } 
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1 \n  1 2 3 \n1 2 3 2 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1 \n    1 2 3 \n  1 2 3 4 2\n1 2 3 4 3 2 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1 \n            1 2 3 \n          1 2 3 4 5 \n        1 2 3 4 5 6 7 \n      1 2 3 4 5 6 7 8 4\n    1 2 3 4 5 6 7 8 5 4 3\n  1 2 3 4 5 6 7 8 6 5 4 3 2\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int n)
+{
+	int i, j;
+	for(i = 1; i &lt;= n; i++){
+		for(j = 1; j &lt;= 2 * (n - i); j++){
+			printf(&quot; &quot;);}
+		for(j = 2; j &lt;= i; j++){
+			printf(&quot;%d &quot;, j);}
+		for(j = i - 1; j &gt; 1; j--){
+			printf(&quot;%d &quot;, j);}
+		printf(&quot;1\n&quot;);
+		}
+}
+
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;, &amp;n);
+	piramide(n);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n  2 1\n2 3 2 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1\n    2 1\n  2 3 2 1\n2 3 4 3 2 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1\n            2 1\n          2 3 2 1\n        2 3 4 3 2 1\n      2 3 4 5 4 3 2 1\n    2 3 4 5 6 5 4 3 2 1\n  2 3 4 5 6 7 6 5 4 3 2 1\n2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main()
+{
+    int N;
+   
+    scanf(&quot;%d&quot;, &amp;N);
+   
+    piramide(N);
+   
+    return 0;
+}
+
+void piramide(int N)
+{
+    int i, j;
+   
+    for(i = 1; i &lt;= N; i++)
+    {
+        for(j = 1; j &lt;= 2 * (N - i); j++)
+            putchar(&#x27; &#x27;);
+       
+        for(j = 1; j &lt;= i; j++)
+        {
+            if((i == j) == 1)
+                printf(&quot;%d&quot;, j);
+            else
+                printf(&quot;%d &quot;, j);
+        }
+       
+        for(j = i - 1; j &gt;= 1; j--)
+            printf(&quot;%d &quot;, j);
+        
+        printf(&quot;\n&quot;);
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n  1 21 \n1 2 32 1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1\n    1 21 \n  1 2 32 1 \n1 2 3 43 2 1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1\n            1 21 \n          1 2 32 1 \n        1 2 3 43 2 1 \n      1 2 3 4 54 3 2 1 \n    1 2 3 4 5 65 4 3 2 1 \n  1 2 3 4 5 6 76 5 4 3 2 1 \n1 2 3 4 5 6 7 87 6 5 4 3 2 1 \n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz (int N)
+{
+  int row, col, passo = 0;
+
+  for (row = 0; row &lt; N; row++)
+  {
+    for (col = 1; col &lt;= N; col++)
+    {
+      if ((col - passo == 1) || (col + passo == N))
+      {
+        if (col == N)
+          printf(&quot;*\n&quot;);
+        else 
+          printf(&quot;*&quot;);
+      }
+      else if (col == N)
+        printf(&quot;-\n&quot;);
+      else
+        printf(&quot;-&quot;);
+    }
+    passo++;
+  }
+
+}
+
+
+int main()
+{
+  int N;
+
+  scanf(&quot;%d&quot;, &amp;N);
+
+  cruz(N);
+
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;*-*\n-*-\n*-*\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;*--*\n-**-\n-**-\n*--*\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;*------*\n-*----*-\n--*--*--\n---**---\n---**---\n--*--*--\n-*----*-\n*------*\n&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>#include &lt;stdio.h&gt;
+
+void piramide(int N){
+    int i,j,k;
+    for (j = 1;j&lt;=N;j++) {
+        int X = j; 
+        for (i = N-j;i&gt;0;i--)
+            printf(&quot;  &quot;);
+        for (k = 1;k&lt;= j*2-1;k++){
+            if (k&gt;j){
+                X--;
+                printf(&quot;%d &quot;,X);
+            }
+            else
+                printf(&quot;%d &quot;,k);
+        }
+        printf(&quot;\n&quot;);
+    }   
+}
+
+int main(){
+    int N = 0;
+    while (N&lt;2) {
+        printf(&quot;qual é o tamanho da piramide? (&gt;= 2): &quot;);
+        scanf(&quot;%d&quot;,&amp;N);
+    }
+    piramide(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;qual é o tamanho da piramide? (&gt;= 2):     1 \n  1 2 1 \n1 2 3 2 1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;qual é o tamanho da piramide? (&gt;= 2):       1 \n    1 2 1 \n  1 2 3 2 1 \n1 2 3 4 3 2 1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;qual é o tamanho da piramide? (&gt;= 2):               1 \n            1 2 1 \n          1 2 3 2 1 \n        1 2 3 4 3 2 1 \n      1 2 3 4 5 4 3 2 1 \n    1 2 3 4 5 6 5 4 3 2 1 \n  1 2 3 4 5 6 7 6 5 4 3 2 1 \n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 \n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void piramide(int);
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int n){
+    int c,l;
+    for (l = 1; l &lt;= n; l++){
+        for (c = 1; c &lt;= n+l-1; c++){
+            if (n &gt;= c &amp;&amp; c &gt; n-l)
+                printf(&quot;%d&quot;, c+l-5);
+            else if (c &gt; n)
+                printf(&quot;%d&quot;, l-c+5);
+            else
+                putchar(&#x27; &#x27;);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  -1\n -103\n-10143\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   0\n  012\n 01232\n0123432\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       4\n      45-2\n     456-1-2\n    45670-1-2\n   4567810-1-2\n  456789210-1-2\n 456789103210-1-2\n456789101143210-1-2\n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+#include&lt;stdio.h&gt;
+void piramide(int n){
+    int i,j, k;
+
+    for(i=1;i&lt;=n;i++){
+        for(j=1;j&lt;=2*n-1;j++){
+            for(k=1;k&lt;=(n-j)*2;k++)
+                printf(&quot;*&quot;);
+            for(n=1;n&lt;=j;n++)
+                printf(&quot;%d&quot;,n);
+            for(n=j-1; n&gt;0;n--)
+                printf(&quot;%d&quot;,n);
+        }
+        printf(&quot;\n&quot;); 
+    }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    printf(&quot; &quot;);
+    if(n&gt;=2)
+        piramide(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot; ****1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot; ******1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot; **************1\n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int n)
+{
+    int key = n;
+    int i, j, k;
+    while (key &gt; 0)
+    {
+        for (i = 1; i &lt;= (2*key)-2; i++)
+        {
+            printf(&quot; &quot;);
+        }
+        for (j = 1; j &lt;= n - key + 1; j++)
+        {
+            if ((j == 1) &amp;&amp; (j == n - key + 1))
+                printf(&quot;%d &quot;, j);
+        }
+        for (k = n - key; k &gt;= 1; k--)
+        {
+            if (k != 1)
+                printf(&quot;%d &quot;, k);
+            else
+                printf(&quot;%d&quot;, k);
+        }
+        printf(&quot;\n&quot;);
+        key--;
+    }
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    if (n &lt; 2)
+        return -1;
+    piramide(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1 \n  1\n2 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1 \n    1\n  2 1\n3 2 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1 \n            1\n          2 1\n        3 2 1\n      4 3 2 1\n    5 4 3 2 1\n  6 5 4 3 2 1\n7 6 5 4 3 2 1\n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int n)
+{
+    int keep = n;
+    int i, j, k;
+    while (keep &gt; 0)
+    {
+        for (i = 1; i &lt;= (2*keep)-2; i++)
+        {
+            printf(&quot; &quot;);
+        }
+        for (j = 1; j &lt;= n - keep + 1; j++)
+        {
+            if ((j == 1) &amp;&amp; (j == n - keep + 1))
+                printf(&quot;%d &quot;, j);
+        }
+        for (k = n - keep; k &gt;= 1; k--)
+        {
+            if (k != 1)
+                printf(&quot;%d &quot;, k);
+            else
+                printf(&quot;%d&quot;, k);
+        }
+        printf(&quot;\n&quot;);
+        keep--;
+    }
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    if (n &lt; 2)
+        return -1;
+    piramide(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1 \n  1\n2 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1 \n    1\n  2 1\n3 2 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1 \n            1\n          2 1\n        3 2 1\n      4 3 2 1\n    5 4 3 2 1\n  6 5 4 3 2 1\n7 6 5 4 3 2 1\n&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>
+#include &lt;stdio.h&gt;
+void piramide(int n){
+    int l, c;
+    for (l = 0; l &lt; n; l++){
+        for (c = 0;((c &lt; n)||(c &gt; n)); c++){
+            if (c &gt; 0)
+                putchar(&#x27; &#x27;);
+            if ((l + 2 - n + c) &gt; 0)
+                printf(&quot;%d&quot;,l + 2 - n + c);
+            else
+                putchar(&#x27; &#x27;);
+        }
+        for (c--; c &gt; 0; c--){
+            if ((l + 1 - n + c) &gt; 0)
+                printf(&quot;%d&quot;, l + 1 - n + c);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    piramide(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n  1 21\n1 2 321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1\n    1 21\n  1 2 321\n1 2 3 4321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1\n            1 21\n          1 2 321\n        1 2 3 4321\n      1 2 3 4 54321\n    1 2 3 4 5 654321\n  1 2 3 4 5 6 7654321\n1 2 3 4 5 6 7 87654321\n&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+void piramide(int n){
+    int l, c;
+    for (l = 0; l &lt; n; l++){
+        for (c = 0; c &lt; n; c++){
+            if (c &gt; 0)
+                putchar(&#x27; &#x27;);
+            if ((l + 2 - n + c) &gt; 0)
+                printf(&quot;%d&quot;,l + 2 - n + c);
+            else
+                putchar(&#x27; &#x27;);
+        }
+        for (c--; c &gt; 0; c--){
+            if ((l + 1 - n + c) &gt; 0)
+                printf(&quot;%d&quot;, l + 1 - n + c);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    piramide(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n  1 21\n1 2 321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1\n    1 21\n  1 2 321\n1 2 3 4321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1\n            1 21\n          1 2 321\n        1 2 3 4321\n      1 2 3 4 54321\n    1 2 3 4 5 654321\n  1 2 3 4 5 6 7654321\n1 2 3 4 5 6 7 87654321\n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+#include &lt;stdio.h&gt;
+void piramide(int n){
+    int l, c;
+    for (l = 0; l &lt; n; l++){
+        for (c = 0;((c &lt; n)||(c &gt; n)); c++){
+            if (c &gt; 0)
+                putchar(&#x27; &#x27;);
+            if ((l + 2 - n + c) &gt; 0) {
+                printf(&quot;%d&quot;,l + 2 - n + c);
+            } else {
+                putchar(&#x27; &#x27;);
+            }
+        }
+        for (c--; c &gt; 0; c--){
+            if ((l + 1 - n + c) &gt; 0){
+                printf(&quot;%d&quot;, l + 1 - n + c);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    piramide(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n  1 21\n1 2 321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1\n    1 21\n  1 2 321\n1 2 3 4321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1\n            1 21\n          1 2 321\n        1 2 3 4321\n      1 2 3 4 54321\n    1 2 3 4 5 654321\n  1 2 3 4 5 6 7654321\n1 2 3 4 5 6 7 87654321\n&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n,i,j,k,m;
+    scanf(&quot;%d&quot;, &amp;n);
+    for ( j = 1; j&lt;=n; j++)
+    {
+        k=1;
+        m=j;
+        for ( i = 0; i &lt;= n-j; i++)
+        {
+            printf(&quot; &quot;);
+        }
+        while (k&lt;=j)
+        {
+            printf(&quot;%d&quot;,k);
+            k++;
+        }
+        while (m--&gt;1)
+        {
+            printf(&quot;%d&quot;,m);
+        }
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n   121\n  12321\n 1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;        1\n       121\n      12321\n     1234321\n    123454321\n   12345654321\n  1234567654321\n 123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void piramide(int N) {
+
+    int i, j, n;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = 1; j &lt;= N - i; j++)
+            printf(&quot; &quot;);
+
+        for (n = 1; n &lt;= i; n++)
+            printf(&quot;%d&quot;, n);
+
+        for (n = i - 1; n &gt;= 1; n--)
+            printf(&quot;%d&quot;, n);
+
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main () {
+
+    int N;
+
+    while (N &lt; 2)
+        scanf(&quot;%d&quot;, &amp;N);
+
+    piramide(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void piramide(int N) {
+
+    int i, j, n;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = 1; j &lt;= N - i; j++)
+            printf(&quot; &quot;);
+
+        for (n = 1; n &lt;= i; n++)
+            printf(&quot;%d&quot;, n);
+
+        for (n = i - 1; n &gt;= 1; n--)
+            printf(&quot;%d&quot;, n);
+
+        for (j = N + i; j &lt;= (2 * N - 1); j++)
+            printf(&quot; &quot;);
+
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main () {
+
+    int N;
+
+    while (N &lt; 2)
+        scanf(&quot;%d\n&quot;, &amp;N);
+
+    piramide(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1  \n 121 \n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1   \n  121  \n 12321 \n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1       \n      121      \n     12321     \n    1234321    \n   123454321   \n  12345654321  \n 1234567654321 \n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_021</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void piramide(int N) {
+
+    int i, j, n;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = 1; j &lt;= N - i; j++)
+            printf(&quot; &quot;);
+
+        for (n = 1; n &lt;= i; n++)
+            printf(&quot;%d&quot;, n);
+
+        for (n = i - 1; n &gt;= 1; n--)
+            printf(&quot;%d&quot;, n);
+
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main () {
+
+    int N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+    piramide(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void piramide(int N) {
+
+    int i, j, n;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = 1; j &lt;= N - i; j++)
+            printf(&quot; &quot;);
+
+        for (n = 1; n &lt;= i; n++)
+            printf(&quot;%d&quot;, n);
+
+        for (n = i - 1; n &gt;= 1; n--)
+            printf(&quot;%d&quot;, n);
+
+        for (j = N + i; j &lt;= (2 * N - 1); j++)
+            printf(&quot; &quot;);
+
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main () {
+
+    int N;
+
+    while (N &lt; 2)
+        scanf(&quot;%d&quot;, &amp;N);
+
+    piramide(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1  \n 121 \n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1   \n  121  \n 12321 \n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1       \n      121      \n     12321     \n    1234321    \n   123454321   \n  12345654321  \n 1234567654321 \n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N)
+{
+    int i, j;
+    for(i=1; i&lt;=N; i++)
+    {
+        for(j=1; j&lt;=(N-i); j++)
+        {
+            putchar(&#x27; &#x27;);
+        }
+        for(j=1; j&lt;=i; j++)
+        {
+            printf(&quot;%d&quot;, j);
+        }
+        for(j=i-1; j&gt;0; j--)
+        {
+            printf(&quot;%d&quot;, j);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    if(N&gt;=2)
+    {
+        piramide(N);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N) {
+    int i, j;
+    for (i = 1; i &lt;= N; ++i) {
+        for (j = N - 1; j &gt; 0; --j) 
+            printf(&quot;  &quot;);
+
+        for (j = 0; j &lt; i; ++j)
+            printf(&quot; %d&quot;, j);
+
+
+
+
+        for (j = 0; j &lt; i; ++j) 
+            printf(&quot;%d&quot;, i);
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    piramide(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;     01\n     0 122\n     0 1 2333\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       01\n       0 122\n       0 1 2333\n       0 1 2 34444\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;               01\n               0 122\n               0 1 2333\n               0 1 2 34444\n               0 1 2 3 455555\n               0 1 2 3 4 5666666\n               0 1 2 3 4 5 67777777\n               0 1 2 3 4 5 6 788888888\n&quot;
+  }
+]</pre></details><details><summary>sample_025</summary><pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int Num;
+    int NumeroEscrito=1;
+    int NumeroColuna=1;
+    int NumEspacos;
+    int NumEspacosEscritos;
+    scanf (&quot;%d&quot;,&amp;Num);
+    NumEspacos=Num;
+    NumEspacosEscritos=1;
+    while (NumeroColuna&lt;=Num)
+    {
+        while (NumEspacosEscritos&lt;NumEspacos)
+        {
+            printf(&quot;\t&quot;);
+            NumEspacosEscritos++;
+        }
+
+        while (NumeroEscrito&lt;NumeroColuna)
+        {
+            printf(&quot;%d\t&quot;,NumeroEscrito);
+            NumeroEscrito++;
+        }
+        while (NumeroEscrito&gt;0)
+        {
+            printf(&quot;%d\t&quot;,NumeroEscrito);
+            NumeroEscrito--;
+        }
+        printf(&quot;\n&quot;);
+        NumEspacos--;
+        NumeroColuna++;
+        
+        
+    }
+    return 0;
+
+    
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;\t\t1\t\n0\t1\t2\t1\t\n0\t1\t2\t3\t2\t1\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;\t\t\t1\t\n0\t1\t2\t1\t\n0\t1\t2\t3\t2\t1\t\n0\t1\t2\t3\t4\t3\t2\t1\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;\t\t\t\t\t\t\t1\t\n0\t1\t2\t1\t\n0\t1\t2\t3\t2\t1\t\n0\t1\t2\t3\t4\t3\t2\t1\t\n0\t1\t2\t3\t4\t5\t4\t3\t2\t1\t\n0\t1\t2\t3\t4\t5\t6\t5\t4\t3\t2\t1\t\n0\t1\t2\t3\t4\t5\t6\t7\t6\t5\t4\t3\t2\t1\t\n0\t1\t2\t3\t4\t5\t6\t7\t8\t7\t6\t5\t4\t3\t2\t1\t\n&quot;
+  }
+]</pre></details><details><summary>sample_026</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide (int n)
+{
+    int i=1,j;
+
+    while (i&lt;=n)
+    {
+        for (j=1; j&lt;=2*(n-i); printf(&quot;_&quot;), j++);
+        for (j=1; j&lt;=i; j++)
+        {
+            printf(&quot;%d&quot;,j);
+            if (j != i)
+                printf(&quot;_&quot;);
+        }
+        for (j=i-1; j&gt;=1;printf(&quot;_%d&quot;,j--));
+        printf(&quot;\n&quot;);
+        i++;
+    
+    }
+}
+
+int main()
+{
+
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;____1\n__1_2_1\n1_2_3_2_1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;______1\n____1_2_1\n__1_2_3_2_1\n1_2_3_4_3_2_1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;______________1\n____________1_2_1\n__________1_2_3_2_1\n________1_2_3_4_3_2_1\n______1_2_3_4_5_4_3_2_1\n____1_2_3_4_5_6_5_4_3_2_1\n__1_2_3_4_5_6_7_6_5_4_3_2_1\n1_2_3_4_5_6_7_8_7_6_5_4_3_2_1\n&quot;
+  }
+]</pre></details><details><summary>sample_027</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void piramide(int n) {
+
+    int i, j;
+    int num;
+
+    for (i=1; i&lt;=n; i++) {
+        num = 1;
+        for (j=1; j&lt;n+i-1; j++) {
+
+            if (j &gt; n-i &amp;&amp; j &lt; n+i-1) {
+                printf(&quot;%d &quot;,num);
+                num++;
+            }
+            else {
+                printf(&quot;  &quot;);
+            }
+        }
+        
+        printf(&quot;%d\n&quot;,num);
+    }
+}
+
+int main() {
+
+    int n;
+
+    scanf(&quot;%d&quot;,&amp;n);
+    piramide(n);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n  1 2 3\n1 2 3 4 5\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1\n    1 2 3\n  1 2 3 4 5\n1 2 3 4 5 6 7\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1\n            1 2 3\n          1 2 3 4 5\n        1 2 3 4 5 6 7\n      1 2 3 4 5 6 7 8 9\n    1 2 3 4 5 6 7 8 9 10 11\n  1 2 3 4 5 6 7 8 9 10 11 12 13\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15\n&quot;
+  }
+]</pre></details><details><summary>sample_029</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+void piramide(int N){
+    int i, j, d = 0;
+    for(i = 1; i &lt;= N; i++){
+        d = 1;
+        for(j = 1; j &lt;= N + i - 1; j++){
+            if(j &lt; N &amp;&amp; j &gt;= N - i + 1){ 
+                printf(&quot;%d&quot;, d++);
+            }
+            else if(j &gt;= N){
+                printf(&quot;%d&quot;, d--);
+            }
+            else{putchar(&#x27; &#x27;);}
+            putchar(j &lt; N + i - 1 ? &#x27; &#x27; : &#x27;\n&#x27;);
+        }
+        printf(&quot;%d\n&quot;, j);
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    if(N &gt;= 2){
+        piramide(N);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1\n4\n  1 2 1\n5\n1 2 3 2 1\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1\n5\n    1 2 1\n6\n  1 2 3 2 1\n7\n1 2 3 4 3 2 1\n8\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1\n9\n            1 2 1\n10\n          1 2 3 2 1\n11\n        1 2 3 4 3 2 1\n12\n      1 2 3 4 5 4 3 2 1\n13\n    1 2 3 4 5 6 5 4 3 2 1\n14\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n15\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n16\n&quot;
+  }
+]</pre></details><details><summary>sample_030</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+
+    int N;
+    void piramide();
+
+    scanf(&quot;%d&quot;, &amp;N);
+    piramide(N);
+
+    return 0;
+
+}
+
+void piramide(int N){
+
+    int i, incial = 1;
+    
+    while (incial &lt;= N)
+    {
+    
+        for(i = 0; i &lt; (N-incial)*2; i++)
+            printf(&quot; &quot;);
+
+        for(i = 1; i &lt;= incial; i++){
+            printf(&quot;%d&quot;, i);
+            if (i != incial)
+                printf(&quot; &quot;);
+        }
+            
+        
+        for(i -= 2; i &gt; 0; i--){
+            printf(&quot;%d&quot;, i);
+            if (i != 1)
+                printf(&quot; &quot;);
+        }
+        
+        for(i = 0; i &lt; (N-incial)*2; i++)
+            printf(&quot; &quot;);
+        printf(&quot;\n&quot;);
+        incial++;
+    }
+    
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1    \n  1 21  \n1 2 32 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1      \n    1 21    \n  1 2 32 1  \n1 2 3 43 2 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1              \n            1 21            \n          1 2 32 1          \n        1 2 3 43 2 1        \n      1 2 3 4 54 3 2 1      \n    1 2 3 4 5 65 4 3 2 1    \n  1 2 3 4 5 6 76 5 4 3 2 1  \n1 2 3 4 5 6 7 87 6 5 4 3 2 1\n&quot;
+  }
+]</pre></details><details><summary>sample_031</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide (int N) {
+    int linha, col, i;
+    for (linha = 1; linha &lt;= N; linha++) {
+        i = 0;
+        for (col = 1; col &lt;= (N + linha - 1); col++) {
+            if (col &gt; (N - linha)){
+                if (col &lt;= N)
+                    printf(&quot;%d&quot;, ++i);
+                else
+                    printf(&quot;%d&quot;, --i);
+            }
+            else {
+                printf(&quot; &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main () {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    piramide(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_032</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide (int N) {
+    int linha, col, i;
+    for (linha = 1; linha &lt;= N; linha++) {
+        i = 0;
+        for (col = 1; col &lt;= (N + linha - 1); col++) {
+            if (col &gt; (N - linha)){
+                if (col &lt;= N)
+                    printf(&quot;%d&quot;, ++i);
+                else if (col &lt; (2*N - 1))
+                    printf(&quot;%d&quot;, --i);
+                else 
+                    printf(&quot;%d\n&quot;, --i);
+            }
+            else {
+                printf(&quot; &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main () {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    piramide(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n\n&quot;
+  }
+]</pre></details><details><summary>sample_033</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide (int num) {
+    int linha, col, i;
+    for (linha = 1; linha &lt;= num; linha++) {
+        i = 0;
+        for (col = 1; col &lt;= (num + linha - 1); col++) {
+            if (col &gt; (num - linha)){
+                if (col &lt;= num)
+                    printf(&quot;%d&quot;, ++i);
+                else if (col &lt; (2*num - 1))
+                    printf(&quot;%d&quot;, --i);
+                else 
+                    printf(&quot;%d\n&quot;, --i);
+            }
+            else {
+                printf(&quot; &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main () {
+    int num;
+    scanf(&quot;%d&quot;, &amp;num);
+    piramide(num);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n\n&quot;
+  }
+]</pre></details><details><summary>sample_034</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void piramide(int N){
+    int l,c;
+    for (l=0;l&lt;N;l++) {
+        for(c=0; c&lt;N-l-1;c++) {
+            printf(&quot;  &quot;);
+        }
+        for(c=0; c&lt;l;c++) {
+            printf(&quot;%d&quot;, c+1);
+        }
+        printf(&quot;%d&quot;,l+1);
+
+        for(c=0; c&lt;l;c++) {
+            printf(&quot;%d&quot;, l+1-1-c);
+
+        putchar(&#x27;\n&#x27;);
+
+
+        }
+        
+    }
+}
+
+int main() {
+    int H;
+    scanf(&quot;%d&quot;, &amp;H);
+    piramide(H);
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1  121\n1232\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1    121\n  1232\n1\n12343\n2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1            121\n          1232\n1\n        12343\n2\n1\n      123454\n3\n2\n1\n    1234565\n4\n3\n2\n1\n  12345676\n5\n4\n3\n2\n1\n123456787\n6\n5\n4\n3\n2\n1\n&quot;
+  }
+]</pre></details><details><summary>sample_035</summary><pre>
+#include &lt;stdio.h&gt;
+void piramide(int N) {
+   int i, j, spaces;
+   for (i = 1; i&lt;=N; i++){
+      spaces = 0;
+     while(spaces &lt; (N-i)*2) {
+        printf(&quot; &quot;);
+        spaces++;
+     }
+        for (j = 1; j&lt;=i; j++) {
+        printf(&quot;%d &quot;, j);
+     }
+        for (j = 1; j &lt; 1; j++) {
+        printf(&quot;%d &quot;, i - j);
+    }
+     printf(&quot;\n&quot;);
+    }
+}
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    piramide(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1 \n  1 2 \n1 2 3 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1 \n    1 2 \n  1 2 3 \n1 2 3 4 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1 \n            1 2 \n          1 2 3 \n        1 2 3 4 \n      1 2 3 4 5 \n    1 2 3 4 5 6 \n  1 2 3 4 5 6 7 \n1 2 3 4 5 6 7 8 \n&quot;
+  }
+]</pre></details><details><summary>sample_036</summary><pre>
+#include &lt;stdio.h&gt;
+void piramide(int N) {
+   int i, j, spaces;
+   for (i = 1; i&lt;=N; i++){
+    spaces = 0;
+    while(spaces &lt; (N-i)* 2) {
+        printf(&quot; &quot;);
+        spaces++;
+    }
+    for (j = 1; j&lt;=i; j++) {
+        printf(&quot;%d &quot;, j);
+    }
+    for (j = 1; j &lt; 1; j++) {
+    printf(&quot;%d &quot;, i - j);
+    }
+     printf(&quot;\n&quot;);
+   }
+   }
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    piramide(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1 \n  1 2 \n1 2 3 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1 \n    1 2 \n  1 2 3 \n1 2 3 4 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1 \n            1 2 \n          1 2 3 \n        1 2 3 4 \n      1 2 3 4 5 \n    1 2 3 4 5 6 \n  1 2 3 4 5 6 7 \n1 2 3 4 5 6 7 8 \n&quot;
+  }
+]</pre></details><details><summary>sample_037</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N) {
+    int i, j, k, l;
+
+    for (i = 0; i &lt;= N; i++) {
+        for (j = 0; j &gt; i; j--) {
+            printf(&quot;  &quot;);
+        }
+        for (k = 0; k &lt;= i; k++) {
+            printf(&quot;%d&quot;, k);
+            if (k &lt; i) printf(&quot; &quot;);
+        }
+        for (l = i - 1; l &gt;= 1; l--) {
+            printf(&quot;%d&quot;, l);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+int main() {
+    int N;
+    
+    scanf(&quot;%d&quot;, &amp;N);
+
+    piramide(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;0\n0 1\n0 1 21\n0 1 2 321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;0\n0 1\n0 1 21\n0 1 2 321\n0 1 2 3 4321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;0\n0 1\n0 1 21\n0 1 2 321\n0 1 2 3 4321\n0 1 2 3 4 54321\n0 1 2 3 4 5 654321\n0 1 2 3 4 5 6 7654321\n0 1 2 3 4 5 6 7 87654321\n&quot;
+  }
+]</pre></details><details><summary>sample_038</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N) {
+    int i, j, k, l;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = N; j &gt; i; j--) {
+            printf(&quot;  &quot;);
+        }
+        for (k = 0; k &lt;= i; k++) {
+            printf(&quot;%d&quot;, k);
+            if (k &lt; i) printf(&quot; &quot;);
+        }
+        for (l = i - 1; l &gt;= 1; l--) {
+            printf(&quot;%d&quot;, l);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+int main() {
+    int N;
+    
+    scanf(&quot;%d&quot;, &amp;N);
+
+    piramide(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    0 1\n  0 1 21\n0 1 2 321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      0 1\n    0 1 21\n  0 1 2 321\n0 1 2 3 4321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              0 1\n            0 1 21\n          0 1 2 321\n        0 1 2 3 4321\n      0 1 2 3 4 54321\n    0 1 2 3 4 5 654321\n  0 1 2 3 4 5 6 7654321\n0 1 2 3 4 5 6 7 87654321\n&quot;
+  }
+]</pre></details><details><summary>sample_039</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N){
+    int lin, col, colneg, espaco;
+    if (N &lt; 2){
+        printf(&quot;Digite um número maior que 2\n&quot;);
+        return;
+    }
+    for (lin = 1; lin &lt;= N; lin++){
+        for (espaco = 1; espaco &lt;= (2*(N - lin)); espaco++)
+                printf(&quot; &quot;);
+        for (col = 1; col &lt;= lin; col++)
+            printf(&quot;%d &quot;, col);
+        for (colneg = lin - 1; colneg &gt;= 1; colneg--)
+            printf(&quot;%d &quot;, colneg);
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int N;
+
+    printf(&quot;Digite um numero maior que 2\n&quot;);
+    scanf(&quot;%d&quot;, &amp;N);
+
+    piramide(N);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;Digite um numero maior que 2\n    1 \n  1 2 1 \n1 2 3 2 1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;Digite um numero maior que 2\n      1 \n    1 2 1 \n  1 2 3 2 1 \n1 2 3 4 3 2 1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;Digite um numero maior que 2\n              1 \n            1 2 1 \n          1 2 3 2 1 \n        1 2 3 4 3 2 1 \n      1 2 3 4 5 4 3 2 1 \n    1 2 3 4 5 6 5 4 3 2 1 \n  1 2 3 4 5 6 7 6 5 4 3 2 1 \n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 \n&quot;
+  }
+]</pre></details><details><summary>sample_040</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+
+int main()
+{
+    int N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    piramide(N);
+
+    return 0;
+}
+
+void piramide(int N)
+{
+    int l, c, number;
+
+    for(l = 0; l &lt; N ; l++)
+    {
+        number = 1;
+        for(c = 1; c &lt;= N + l; c++)
+        {
+            if(c &gt;= N)
+                printf(&quot;%d&quot;, number--);
+            else if (c &gt;= N - l)
+                printf(&quot;%d&quot;, number++);
+            else 
+                printf(&quot; &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_042</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void piramide(int n) {
+    int i, a, b, espacos;
+    
+    if (n &lt;= 1) return;
+
+    for (i = 1; i &lt;= n; i++) {
+        for (espacos = n - i; espacos &gt; 0; espacos--){
+            printf(&quot; &quot;);
+        }
+        for (a = 1; a &lt;= i; a++) {
+            printf(&quot;%d&quot;, a);
+        }
+        for (b = i -1; b &gt;= 1; b--) {
+            printf(&quot;%d&quot;, b);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details><details><summary>sample_043</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N){
+    int linha,coluna,numero=1;
+    for (linha=0; linha&lt;N; linha++){
+        for (coluna=0; coluna&lt;=N-linha; coluna++){
+            printf(&quot; &quot;);
+        }
+        for (coluna= 1;coluna&lt;=linha;coluna++){
+            printf(&quot;%d&quot;,numero);
+            numero++;
+        }
+
+        for (coluna=linha-1;coluna&gt;=1;coluna--){ 
+        
+            printf(&quot;%d&quot;,numero);
+            numero--;
+        }
+        }
+        printf(&quot;\n&quot;);
+    }
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    piramide(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1  234\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;         1   234  34565\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;                 1       234      34565     4567876    5678910987   6789101112111098  7891011121314131211109\n&quot;
+  }
+]</pre></details><details><summary>sample_044</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N){
+    int linha,coluna,numero=1;
+    for (linha=1; linha&lt;=N; linha++){
+        for (coluna=0; coluna&lt;N-linha; coluna++){
+            putchar(&#x27; &#x27;);
+        }
+        for (coluna=0; coluna&lt;linha; coluna++){
+            printf(&quot;%d&quot;,numero);
+            numero++;
+            if (coluna&lt;linha-1){
+                putchar(&#x27; &#x27;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+int main(){
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    piramide(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 2 3\n4 5 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  2 3\n 4 5 6\n7 8 9 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      2 3\n     4 5 6\n    7 8 9 10\n   11 12 13 14 15\n  16 17 18 19 20 21\n 22 23 24 25 26 27 28\n29 30 31 32 33 34 35 36\n&quot;
+  }
+]</pre></details><details><summary>sample_045</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        if(e==1 &amp;&amp; i != 2*N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(e &lt; N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot;  \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;     1    \n   1 2 1  \n   1 2 1 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1      \n     1 2 1    \n   1 2 3 21\n  \n   1 2 3 2 1 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;               1              \n             1 2 1            \n           1 2 3 2 1          \n         1 2 3 4 3 2 1        \n       1 2 3 4 5 4 3 21\n      \n     1 2 3 4 5 6 5 4 3 2 1    \n   1 2 3 4 5 6 7 6 5 4 3 2 1  \n   1 2 3 4 5 6 7 6 5 4 3 2 1 0&quot;
+  }
+]</pre></details><details><summary>sample_046</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot; \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;     1   \n   1 2 1 \n 1 2 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1     \n     1 2 1   \n   1 2 3 21\n \n 1 2 3 4 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;               1             \n             1 2 1           \n           1 2 3 2 1         \n         1 2 3 4 3 2 1       \n       1 2 3 4 5 4 3 21\n     \n     1 2 3 4 5 6 5 4 3 2 1   \n   1 2 3 4 5 6 7 6 5 4 3 2 1 \n 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1&quot;
+  }
+]</pre></details><details><summary>sample_047</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot;  \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;     1    \n   1 2 1  \n 1 2 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1      \n     1 2 1    \n   1 2 3 21\n  \n 1 2 3 4 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;               1              \n             1 2 1            \n           1 2 3 2 1          \n         1 2 3 4 3 2 1        \n       1 2 3 4 5 4 3 21\n      \n     1 2 3 4 5 6 5 4 3 2 1    \n   1 2 3 4 5 6 7 6 5 4 3 2 1  \n 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1&quot;
+  }
+]</pre></details><details><summary>sample_048</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            printf(&quot; &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt;= N+i) {
+            (i == N-1) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%d&quot;, num);
+            --num;
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot; &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot; \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1  \n 121 \n1232\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1   \n  121  \n 12321 \n12343\n2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1       \n      121      \n     12321     \n    1234321    \n   123454321   \n  12345654321  \n 1234567654321 \n123456787\n6\n5\n4\n3\n2\n1\n&quot;
+  }
+]</pre></details><details><summary>sample_049</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot; \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;     1   \n   1 2 1 \n 1 2 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1     \n     1 2 1   \n   1 2 3 21\n \n 1 2 3 4 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;               1             \n             1 2 1           \n           1 2 3 2 1         \n         1 2 3 4 3 2 1       \n       1 2 3 4 5 4 3 21\n     \n     1 2 3 4 5 6 5 4 3 2 1   \n   1 2 3 4 5 6 7 6 5 4 3 2 1 \n 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1&quot;
+  }
+]</pre></details><details><summary>sample_050</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        if(e == 1 &amp;&amp; i != 2*N-1) {
+            printf(&quot; &quot;);
+            ++e;
+        }
+        while(e &lt; N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            (e == 1) ? printf(&quot;%d&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot;  \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1    \n  1 2 1  \n  1 2 1 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1      \n    1 2 1    \n  1 2 3 21\n  \n  1 2 3 2 1 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1              \n            1 2 1            \n          1 2 3 2 1          \n        1 2 3 4 3 2 1        \n      1 2 3 4 5 4 3 21\n      \n    1 2 3 4 5 6 5 4 3 2 1    \n  1 2 3 4 5 6 7 6 5 4 3 2 1  \n  1 2 3 4 5 6 7 6 5 4 3 2 1 0&quot;
+  }
+]</pre></details><details><summary>sample_051</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot;  \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;     1    \n   1 2 1  \n 1 2 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1      \n     1 2 1    \n   1 2 3 21\n  \n 1 2 3 4 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;               1              \n             1 2 1            \n           1 2 3 2 1          \n         1 2 3 4 3 2 1        \n       1 2 3 4 5 4 3 21\n      \n     1 2 3 4 5 6 5 4 3 2 1    \n   1 2 3 4 5 6 7 6 5 4 3 2 1  \n 1 2 3 4 5 6 7 8 7 6 5 4 3 2 1&quot;
+  }
+]</pre></details><details><summary>sample_052</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            (e == 1) ? printf(&quot; &quot;) : printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            (e == 1) ? printf(&quot;%d&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot;  \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1    \n  1 2 1  \n1 2 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1      \n    1 2 1    \n  1 2 3 21\n  \n1 2 3 4 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1              \n            1 2 1            \n          1 2 3 2 1          \n        1 2 3 4 3 2 1        \n      1 2 3 4 5 4 3 21\n      \n    1 2 3 4 5 6 5 4 3 2 1    \n  1 2 3 4 5 6 7 6 5 4 3 2 1  \n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1&quot;
+  }
+]</pre></details><details><summary>sample_053</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        if(e==1) {
+            printf(&quot; &quot;);
+            ++e;
+        }
+        while(e&gt; 1 &amp;&amp; e &lt; N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot;  \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1    \n  1 2 1  \n  1 2 1 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1      \n    1 2 1    \n  1 2 3 21\n  \n  1 2 3 2 1 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1              \n            1 2 1            \n          1 2 3 2 1          \n        1 2 3 4 3 2 1        \n      1 2 3 4 5 4 3 21\n      \n    1 2 3 4 5 6 5 4 3 2 1    \n  1 2 3 4 5 6 7 6 5 4 3 2 1  \n  1 2 3 4 5 6 7 6 5 4 3 2 1 0&quot;
+  }
+]</pre></details><details><summary>sample_054</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        if(e==1 &amp;&amp; i != 2*N-i) {
+            printf(&quot; &quot;);
+            ++e;
+        }
+        while(e &gt; 1 &amp;&amp; e &lt; N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot;  \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1    \n  1 2 1  \n  1 2 1 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1      \n    1 2 1    \n  1 2 3 21\n  \n  1 2 3 2 1 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1              \n            1 2 1            \n          1 2 3 2 1          \n        1 2 3 4 3 2 1        \n      1 2 3 4 5 4 3 21\n      \n    1 2 3 4 5 6 5 4 3 2 1    \n  1 2 3 4 5 6 7 6 5 4 3 2 1  \n  1 2 3 4 5 6 7 6 5 4 3 2 1 0&quot;
+  }
+]</pre></details><details><summary>sample_055</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            (e == 1) ? printf(&quot;%d&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;  &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot;  \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;     1    \n   1 2 1  \n1 2 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1      \n     1 2 1    \n   1 2 3 21\n  \n1 2 3 4 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;               1              \n             1 2 1            \n           1 2 3 2 1          \n         1 2 3 4 3 2 1        \n       1 2 3 4 5 4 3 21\n      \n     1 2 3 4 5 6 5 4 3 2 1    \n   1 2 3 4 5 6 7 6 5 4 3 2 1  \n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1&quot;
+  }
+]</pre></details><details><summary>sample_056</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            printf(&quot; &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%d&quot;, num);
+            ++num;
+            ++e;
+        }
+        --num;
+        while(N &lt; e &amp;&amp; e &lt;= N+i) {
+            (i == N-1) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%d&quot;, num);
+            --num;
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot; &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot; \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1  \n 122 \n1233\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1   \n  122  \n 12332 \n12344\n3\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1       \n      122      \n     12332     \n    1234432    \n   123455432   \n  12345665432  \n 1234567765432 \n123456788\n7\n6\n5\n4\n3\n2\n&quot;
+  }
+]</pre></details><details><summary>sample_057</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            printf(&quot; &quot;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            printf(&quot;%d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot; &quot;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot; \n&quot;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1  \n 121 \n12321&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1   \n  121  \n 12321\n \n1234321&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1       \n      121      \n     12321     \n    1234321    \n   123454321\n   \n  12345654321  \n 1234567654321 \n123456787654321&quot;
+  }
+]</pre></details><details><summary>sample_058</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int N);
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}
+
+void piramide(int N) {
+    int i = 0, e = 1, num = 1;
+    while(i &lt; N) {
+        while(e &lt; N-i) {
+            (e == 1) ? printf(&quot;%c&quot;, &#x27; &#x27;) : printf(&quot;%2c&quot;, &#x27; &#x27;);
+            ++e;
+        }
+        while(N-i &lt;= e &amp;&amp; e &lt;= N) {
+            (e == 1) ? printf(&quot;%d&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++num;
+            ++e;
+        }
+        num = num - 2;
+        while(N &lt; e &amp;&amp; e &lt; N+i) {
+            printf(&quot;%2d&quot;, num);
+            --num;
+            ++e;
+        }
+        if(e == N+i) {
+            (i == N-i) ? printf(&quot;%d\n&quot;, num) : printf(&quot;%2d&quot;, num);
+            ++e;
+        }
+        while(N+i &lt; e &amp;&amp; e &lt; 2*N-1) {
+            printf(&quot;%2c&quot;, &#x27; &#x27;);
+            ++e;
+        }
+        if(e == 2*N-1)
+            printf(&quot;%2c\n&quot;, &#x27; &#x27;);
+        e = 1;
+        num = 1;
+        ++i;
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;    1    \n  1 2 1  \n1 2 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;      1      \n    1 2 1    \n  1 2 3 21\n  \n1 2 3 4 3 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;              1              \n            1 2 1            \n          1 2 3 2 1          \n        1 2 3 4 3 2 1        \n      1 2 3 4 5 4 3 21\n      \n    1 2 3 4 5 6 5 4 3 2 1    \n  1 2 3 4 5 6 7 6 5 4 3 2 1  \n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1&quot;
+  }
+]</pre></details><details><summary>sample_059</summary><pre>
+#include &lt;stdio.h&gt;
+
+void piramide(int n){
+    int i, j, s;
+    for(i = 1; i &lt;= n; i++){
+        for(s = 0; s &lt; n - i; s++){
+            printf(&quot; &quot;);
+        }
+        for(j = 1; j &lt;= i ; j++){
+            printf(&quot;%d&quot;, j);
+        }
+        for(j = i - 1; j &gt;=1 ; j--){
+            printf(&quot;%d&quot;, j);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    piramide(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;    1\n  1 2 1\n1 2 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;  1\n 121\n12321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;      1\n    1 2 1\n  1 2 3 2 1\n1 2 3 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;   1\n  121\n 12321\n1234321\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;              1\n            1 2 1\n          1 2 3 2 1\n        1 2 3 4 3 2 1\n      1 2 3 4 5 4 3 2 1\n    1 2 3 4 5 6 5 4 3 2 1\n  1 2 3 4 5 6 7 6 5 4 3 2 1\n1 2 3 4 5 6 7 8 7 6 5 4 3 2 1\n&quot;,
+    &quot;output&quot;: &quot;       1\n      121\n     12321\n    1234321\n   123454321\n  12345654321\n 1234567654321\n123456787654321\n&quot;
+  }
+]</pre></details></html>

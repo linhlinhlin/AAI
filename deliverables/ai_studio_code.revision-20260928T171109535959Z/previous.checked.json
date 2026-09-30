@@ -1,0 +1,111 @@
+{
+  "packet_id": "81c8ee12aa6fd6a6a2c114e9856139004fdbcb95b58c8fd30e6e5c8442dbe0a5",
+  "annotation_source": "ai",
+  "status": "ai_reviewed_pending_human_validation",
+  "human_validated": false,
+  "mechanism_accuracy": null,
+  "missing_cluster_ids": [],
+  "reviews": [
+    {
+      "cluster_id": "2812--kmeans--combined_stdout--s42--c0",
+      "misconception_label": "Học viên chưa phân biệt được các trường hợp dấu của số thực (lỗi logic if-else) và in sai định dạng output",
+      "evidence_supported": true,
+      "confidence": 0.9,
+      "reasoning": "Tất cả các bài trong cụm đều trượt các test cases liên quan đến phân loại dấu của số thực. Các bài (như sample_001, sample_003, sample_004, sample_005) cố gắng sử dụng cấu trúc `if-else` hoặc `if-else if-else` để kiểm tra `a == 0`, `a > 0`, `a < 0`. Tuy nhiên, do sử dụng so sánh chính xác `==` với kiểu `float` (lỗi kinh điển), hoặc cấu trúc nhánh không bao phủ hết các trường hợp biên, chương trình thường in sai thông báo hoặc sai định dạng. Đặc biệt, nhiều bài không in chính xác chuỗi theo yêu cầu (thiếu dấu chấm, in thêm ký tự lạ, hoặc sai định dạng `printf`).",
+      "alternative_explanations": [
+        "Lỗi in ấn định dạng output đơn thuần không liên quan đến logic kiểm tra dấu.",
+        "Sử dụng so sánh float == 0 thay vì epsilon comparison."
+      ],
+      "decision": "supported",
+      "notes": "Lỗi phổ biến là so sánh float trực tiếp với 0 và sai định dạng output (ví dụ: missing '.' ở cuối câu hoặc in thừa ký tự).",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_003/raw_code",
+        "members/sample_004/raw_code",
+        "members/sample_005/raw_code",
+        "members/sample_001/tests/3",
+        "members/sample_001/tests/4",
+        "members/sample_005/tests/2"
+      ]
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c0",
+      "misconception_label": "Sai khác định dạng output (Presentation issue)",
+      "evidence_supported": true,
+      "confidence": 0.85,
+      "reasoning": "Các bài làm trong cụm này đều chứa logic đúng để tính toán khoảng cách và xác định vị trí của điểm so với hình tròn. Tuy nhiên, tất cả các bài đều trượt do output thiếu dấu chấm cuối câu hoặc khác biệt nhỏ về ký tự (ví dụ: 'Point is outside the Circle' thay vì 'Point is outside the Circle.'). Đây là vấn đề về tuân thủ yêu cầu format đầu ra, không phải lỗi logic tính toán.",
+      "alternative_explanations": [
+        "Có thể có lỗi tiềm ẩn trong logic tính toán khoảng cách mà các test case hiện tại không phát hiện ra do sai lệch format ưu tiên hơn."
+      ],
+      "decision": "supported",
+      "notes": "Đây là cụm bài làm khá tốt về logic nhưng gặp vấn đề về định dạng output.",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_010/raw_code",
+        "members/sample_001/tests/1",
+        "members/sample_001/tests/3",
+        "members/sample_010/tests/1"
+      ]
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c1",
+      "misconception_label": "Cấu trúc nhánh (if/else) không bao phủ logic loại trừ hoặc sai logic if liên tiếp",
+      "evidence_supported": true,
+      "confidence": 0.9,
+      "reasoning": "Các bài trong cụm này (như sample_003, sample_004) gặp lỗi khi sử dụng các câu lệnh `if` liên tiếp mà không có `else if` hoặc cấu trúc lồng nhau phù hợp, dẫn đến việc nhiều thông báo được in ra cho cùng một đầu vào (ví dụ: 'Point is inside...Point is on...'). Điều này phản ánh sự nhầm lẫn về tính loại trừ của các nhánh logic.",
+      "alternative_explanations": [
+        "Thiếu từ khóa else do sơ suất lập trình.",
+        "Hiểu sai về điều kiện điểm nằm trên (đường biên) và trong/ngoài."
+      ],
+      "decision": "supported",
+      "notes": "Cần hướng dẫn sinh viên về cấu trúc if-else if-else để đảm bảo chỉ một thông báo được in ra.",
+      "evidence_refs": [
+        "members/sample_003/raw_code",
+        "members/sample_004/raw_code",
+        "members/sample_003/tests/4",
+        "members/sample_004/tests/4"
+      ]
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c2",
+      "misconception_label": "Sử dụng sai biểu thức logic cho tam giác hoặc vị trí điểm, hoặc lỗi logic if-else",
+      "evidence_supported": true,
+      "confidence": 0.8,
+      "reasoning": "Các bài trong cụm này (sample_001, 002, 003, 004) có lỗi logic trong việc kiểm tra các trường hợp (inside, on, outside). Đặc biệt là việc sử dụng cấu trúc `if-else` chưa bao phủ đầy đủ hoặc sai điều kiện logic (ví dụ sample_002 in ra 'Point is on the Circle' cho cả trường hợp sai), dẫn đến việc trượt các test case.",
+      "alternative_explanations": [
+        "Lỗi đánh máy trong điều kiện kiểm tra (ví dụ < so với >).",
+        "Sai cấu trúc in ấn cho một số trường hợp nhất định."
+      ],
+      "decision": "supported",
+      "notes": "Các sinh viên này nắm được công thức tính nhưng gặp khó khăn khi hiện thực hóa nhánh logic (control flow).",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_002/raw_code",
+        "members/sample_002/tests/1",
+        "members/sample_002/tests/3"
+      ]
+    },
+    {
+      "cluster_id": "2833--kmeans--combined_stdout--s42--c1",
+      "misconception_label": "Sai lầm trong thuật toán đếm số tam giác (logic vòng lặp hoặc bất đẳng thức tam giác)",
+      "evidence_supported": true,
+      "confidence": 0.95,
+      "reasoning": "Tất cả các bài trong cụm đều trượt (ngoại trừ test 2). Các bài sử dụng các vòng lặp lồng nhau 3 tầng, nhưng logic bên trong (`a+b>c && a+c>b && b+c>a`) hoặc giới hạn vòng lặp đang bị sai lệch nghiêm trọng, dẫn đến kết quả đầu ra rất lớn (ví dụ output 34 thay vì 13) hoặc sai lệch so với yêu cầu bài toán về đếm tam giác có cạnh <= N.",
+      "alternative_explanations": [
+        "Hiểu sai yêu cầu bài toán (ví dụ đếm số bộ 3 cạnh thay vì số tam giác duy nhất).",
+        "Lỗi khởi tạo hoặc cập nhật biến đếm."
+      ],
+      "decision": "supported",
+      "notes": "Hầu hết các sinh viên trong cụm này áp dụng cách tiếp cận brute-force sai dẫn đến dư thừa hoặc thiếu trường hợp.",
+      "evidence_refs": [
+        "members/sample_003/raw_code",
+        "members/sample_004/raw_code",
+        "members/sample_005/raw_code",
+        "members/sample_003/tests/1",
+        "members/sample_004/tests/1",
+        "members/sample_005/tests/1"
+      ]
+    }
+  ],
+  "response_sha256": "1b6fd4f7958a9e398137f7402c1b622c739a207009c912599acc5c69b8b4fe07"
+}

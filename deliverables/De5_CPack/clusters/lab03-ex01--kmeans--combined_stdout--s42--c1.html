@@ -1,0 +1,4204 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab03-ex01--kmeans--combined_stdout--s42--c1</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab03-ex01 · 91 bài</h1><p>lab03-ex01--kmeans--combined_stdout--s42--c1 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex01_0: 91/91 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex01_1: 91/91 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex01_2: 91/91 bài trượt (100.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_1:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 90,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.989010989010989,
+      &quot;cohort_rate&quot;: 0.6691176470588235,
+      &quot;difference_from_cohort&quot;: 0.31989334195216557
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_0:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 84,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.9230769230769231,
+      &quot;cohort_rate&quot;: 0.625,
+      &quot;difference_from_cohort&quot;: 0.29807692307692313
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_0:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 91,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7279411764705882,
+      &quot;difference_from_cohort&quot;: 0.2720588235294118
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_1:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 91,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7279411764705882,
+      &quot;difference_from_cohort&quot;: 0.2720588235294118
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_2:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 91,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7279411764705882,
+      &quot;difference_from_cohort&quot;: 0.2720588235294118
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_2:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 90,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.989010989010989,
+      &quot;cohort_rate&quot;: 0.7279411764705882,
+      &quot;difference_from_cohort&quot;: 0.26106981254040085
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 67,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.7362637362637363,
+      &quot;cohort_rate&quot;: 0.6617647058823529,
+      &quot;difference_from_cohort&quot;: 0.07449903038138339
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 54,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.5934065934065934,
+      &quot;cohort_rate&quot;: 0.5220588235294118,
+      &quot;difference_from_cohort&quot;: 0.07134776987718161
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 75,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.8241758241758241,
+      &quot;cohort_rate&quot;: 0.7867647058823529,
+      &quot;difference_from_cohort&quot;: 0.03741111829347121
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 91,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9705882352941176,
+      &quot;difference_from_cohort&quot;: 0.02941176470588236
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 77,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.8461538461538461,
+      &quot;cohort_rate&quot;: 0.8235294117647058,
+      &quot;difference_from_cohort&quot;: 0.022624434389140302
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 83,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.9120879120879121,
+      &quot;cohort_rate&quot;: 0.8897058823529411,
+      &quot;difference_from_cohort&quot;: 0.022382029734970943
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 90,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.989010989010989,
+      &quot;cohort_rate&quot;: 0.9705882352941176,
+      &quot;difference_from_cohort&quot;: 0.01842275371687141
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_do&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 89,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.978021978021978,
+      &quot;cohort_rate&quot;: 0.9705882352941176,
+      &quot;difference_from_cohort&quot;: 0.0074337427278603485
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex01_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 91,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9926470588235294,
+      &quot;difference_from_cohort&quot;: 0.007352941176470562
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex01_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 91,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex01_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 91,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_do&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.02197802197802198,
+      &quot;cohort_rate&quot;: 0.029411764705882353,
+      &quot;difference_from_cohort&quot;: -0.007433742727860373
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.01098901098901099,
+      &quot;cohort_rate&quot;: 0.029411764705882353,
+      &quot;difference_from_cohort&quot;: -0.01842275371687136
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 91,
+      &quot;rate&quot;: 0.08791208791208792,
+      &quot;cohort_rate&quot;: 0.11029411764705882,
+      &quot;difference_from_cohort&quot;: -0.0223820297349709
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 5,
+      &quot;if&quot;: [
+        &quot;stdout:ex01_1:edit_band=small&quot;,
+        &quot;NOT (ast:c_if=0)&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 27,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 9,
+      &quot;holdout_precision&quot;: 1.0
+    },
+    {
+      &quot;rule_id&quot;: 7,
+      &quot;if&quot;: [
+        &quot;stdout:ex01_1:edit_band=small&quot;,
+        &quot;ast:c_if=0&quot;,
+        &quot;NOT (ast:c_while=1)&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 34,
+      &quot;train_precision&quot;: 0.9705882352941176,
+      &quot;holdout_support&quot;: 4,
+      &quot;holdout_precision&quot;: 1.0
+    },
+    {
+      &quot;rule_id&quot;: 8,
+      &quot;if&quot;: [
+        &quot;stdout:ex01_1:edit_band=small&quot;,
+        &quot;ast:c_if=0&quot;,
+        &quot;ast:c_while=1&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 13,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 4,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_003 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+void quadrado(int N)
+{
+    int i, j, *arr;
+    arr = malloc(N * sizeof(int));
+    for (i = 0; i &lt; N; i++)
+    {
+        arr[i] = i + 1;
+    }
+    for (i = 0; i &lt; N; i++)
+    {
+        for (j = 0; j &lt; N; j++)
+        {
+            printf(&quot;%d\t&quot;, arr[j]);
+            arr[j]++;
+        }
+        if (i != N - 1)
+        {
+            printf(&quot;\n&quot;);
+        }
+    }
+    free(arr);
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    while (N &lt; 2)
+    {
+        scanf(&quot;%d&quot;, &amp;N);
+    }
+
+    quadrado(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t&quot;
+  }
+]</pre></details><details><summary>sample_006 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+
+void quadrado(int N)
+{
+	int i, j;
+
+	for(i = 0; i &lt; N; i++)
+	{
+		for(j = 1; j &lt;= N; j++)
+		{
+			printf(&quot;%d\t&quot;, i + j);
+		}
+		printf(&quot;\n&quot;);
+	}
+}
+
+int main()
+{
+	int in;
+	scanf(&quot;%d&quot;, &amp;in);
+
+	quadrado(in);
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_008 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+void quadrado(int N);
+
+int main()
+{
+	int N = 0;
+
+	scanf(&quot;%d&quot;, &amp;N);
+	while (N &lt;= 2);
+	quadrado(N);
+	return 0;
+}
+
+void quadrado(int N)
+{	int valor, digito, contador;
+	for (digito = 1; digito &lt;= N; digito++)
+	{	valor = digito;
+		contador = 1;
+		do{
+			printf(&quot;%d\t&quot;, valor);
+			valor++;
+			contador++;
+		} while (contador &lt;= N);
+		putchar(&#x27;\n&#x27;);
+	}
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_020 · đại diện</summary><pre># include &lt;stdio.h&gt;
+
+
+void quadrado(int N){
+    int largura=1,comprimento=1,num=1;
+    while(largura&lt;=N){
+        while(comprimento&lt;=N){
+            printf(&quot;%d\t&quot;,num);
+            num+=1;
+            comprimento+=1;
+        }
+        printf(&quot;\n&quot;);
+        comprimento=1;
+        largura+=1;
+        num=largura;
+    }
+
+}
+int main(){
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+void quadrado(int N)
+{
+    int i, j, *arr;
+    arr = malloc(N * sizeof(int));
+    for (i = 0; i &lt; N; i++)
+    {
+        arr[i] = i + 1;
+    }
+    for (i = 0; i &lt; N; i++)
+    {
+        for (j = 0; j &lt; N; j++)
+        {
+            if (j != N - 1)
+            {
+                printf(&quot;%d\t&quot;, arr[j]);
+            }
+            else
+            {
+                printf(&quot;%d&quot;, arr[j]);
+            }
+            arr[j]++;
+        }
+        if (i != N - 1)
+        {
+            printf(&quot;\n&quot;);
+        }
+    }
+    free(arr);
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    if (N &gt;= 2)
+    {
+        quadrado(N);
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+void quadrado(int N)
+{
+    int i, j, *arr;
+    arr = malloc(N * sizeof(int));
+    for (i = 0; i &lt; N; i++)
+    {
+        arr[i] = i + 1;
+    }
+    for (i = 0; i &lt; N; i++)
+    {
+        for (j = 0; j &lt; N; j++)
+        {
+            printf(&quot;%d\t&quot;, arr[j]);
+            arr[j]++;
+        }
+        if (i != N - 1)
+        {
+            printf(&quot;\n&quot;);
+        }
+    }
+    free(arr);
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    if (N &gt;= 2)
+    {
+        quadrado(N);
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>#include &lt;stdio.h&gt;
+
+void quadrado(int N)
+{
+    int i = 1, j, k;
+
+    for (j = 1; j &lt;= N; j++)
+    {
+        for (k = 0; k &lt; N; k++)
+        {
+            printf(&quot;%d\t&quot;, i);
+            i++;
+        }
+        i = j + 1;
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    while (N &lt; 2)
+    {
+        scanf(&quot;%d&quot;, &amp;N);
+    }
+
+    quadrado(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+void quadrado(int N)
+{
+    int i, j, *arr;
+    arr = malloc(N * sizeof(int));
+    for (i = 0; i &lt; N; i++)
+    {
+        arr[i] = i + 1;
+    }
+    for (i = 0; i &lt; N; i++)
+    {
+        for (j = 0; j &lt; N; j++)
+        {
+            printf(&quot;%d\t&quot;, arr[j]);
+            arr[j]++;
+        }
+        printf(&quot;\n&quot;);
+    }
+    free(arr);
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    if (N &gt;= 2)
+    {
+        quadrado(N);
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>#include &lt;stdio.h&gt;
+
+
+void quadrado(int N)
+{
+	int i, j;
+
+	for(i = 0; i &lt; N; i++)
+	{
+		for(j = 1; j &lt;= N; j++)
+		{
+			printf(&quot;%d\t&quot;, i + j);
+		}
+		printf(&quot;\n&quot;);
+	}
+}
+
+int main()
+{
+	int in;
+	scanf(&quot;%d&quot;, &amp;in);
+
+	if(in &gt;= 2) quadrado(in);
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>#include &lt;stdio.h&gt;
+
+
+void quadrado(int N)  {
+
+ int i,j, k = 0;
+
+ for (i=1; i &lt;= N; i++) {
+
+  k ++;
+
+  for(j = k ; j &lt;= N + k -1; j ++) {
+  
+   printf(&quot;%d\t&quot;, j); }
+  
+  printf(&quot;\n&quot;);} 
+}
+
+
+int main() {
+ 
+ int N;
+
+ scanf(&quot;%d&quot;,&amp;N);
+ 
+ quadrado(N);
+
+return 0;
+
+} 
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+void quadrado(int N)
+{
+    int a, i;
+    for(i = 1; i &lt;= N; i++)
+    {
+        for (a = i; a &lt; N + i; a++)
+        {
+            printf(&quot;%d\t&quot;, a);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+void quadrado(int n){
+    int ad, linha;
+        for(linha =1;linha &lt;= n; ++linha){
+            for(ad=0; ad &lt; n; ++ad)
+                printf(&quot;%d\t&quot;, linha+ad);
+            printf(&quot;\n&quot;);
+            }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    if (n &gt;=2)
+        quadrado(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    int n, ad, linha;
+    scanf(&quot;%d&quot;, &amp;n);
+    if (n &gt;=2){
+        for(linha =1;linha &lt;= n; ++linha){
+            for(ad=0; ad &lt; n; ++ad)
+                printf(&quot;%d\t&quot;, linha+ad);
+            printf(&quot;\n&quot;);
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>#include &lt;stdio.h&gt;
+
+void quadrado(int n);
+
+int main(){
+    int n;
+    scanf(&quot;%d\n&quot;, &amp;n);
+    if (n &gt;=2)
+        quadrado(n);
+    return 0;
+}
+
+
+void quadrado(int n){
+    int ad, linha;
+        for(linha =1;linha &lt;= n; ++linha){
+            for(ad=0; ad &lt; n; ++ad)
+                printf(&quot;%d\t&quot;, linha+ad);
+            printf(&quot;\n&quot;);
+            }
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+
+    int i, j;
+    for (i = 1; i &lt;= N; ++i){
+        for (j = i; j &lt; N + i; ++j){
+            printf(&quot;%d\t&quot;, j);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    
+    quadrado(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, count_cols, count_linhas, v_inicial;
+    scanf(&quot;%d&quot;, &amp;n);
+    if (n &lt; 2)
+    {
+        return -1;
+    }
+    count_cols = count_linhas = 1;
+    v_inicial = 1;
+    while (count_cols &lt;= n)
+    {
+
+        printf(&quot;%d&quot;, v_inicial);
+        count_linhas = 1;
+        while (count_linhas &lt; n)
+        {
+            printf(&quot;       %d&quot;, count_linhas + v_inicial);
+            count_linhas++;
+        }
+        printf(&quot;\n&quot;);
+        count_cols++;
+        v_inicial++;
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1       2       3\n2       3       4\n3       4       5\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1       2       3       4\n2       3       4       5\n3       4       5       6\n4       5       6       7\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1       2       3       4       5       6       7       8\n2       3       4       5       6       7       8       9\n3       4       5       6       7       8       9       10\n4       5       6       7       8       9       10       11\n5       6       7       8       9       10       11       12\n6       7       8       9       10       11       12       13\n7       8       9       10       11       12       13       14\n8       9       10       11       12       13       14       15\n&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int N, N1 = 1, cont;
+    scanf(&quot;%d&quot;, &amp;N);
+    for (cont = 1; cont &lt;= N; cont++)
+    {
+        for (N1 = cont; N1 &lt;= (N - 1 + cont); N1++)
+        {
+            printf(&quot;%d\t&quot;, N1);
+        }
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>#include &lt;stdio.h&gt;
+void quadrado(int N)
+{
+    int N1 = 1, cont;
+    scanf(&quot;%d&quot;, &amp;N);
+    for (cont = 1; cont &lt;= N; cont++)
+    {
+        for (N1 = cont; N1 &lt;= (N - 1 + cont); N1++)
+        {
+            printf(&quot;%d\t&quot;, N1);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>#include &lt;stdio.h&gt;
+
+
+void quadrado(int n)
+{
+    int row, col;
+    for (row = 0; row &lt; n; row++)
+    {
+        for (col = 0; col &lt; n; col++)
+        {
+            printf(&quot;%d\t&quot;, row + col + 1);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+    return;
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    if (n &gt;= 2)
+        quadrado(n);
+    return 0;
+}
+
+
+
+
+
+#define FORA 0
+#define DENTRO 1
+#define ESC 2
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>#include &lt;stdio.h&gt;
+
+
+void quadrado(int n)
+{
+	int i, j;
+
+	for(i = 1; i &lt;= n; i++) {
+		for(j = i; j &lt; n+i; j++)
+			printf(&quot;%d\t&quot;, j);
+		printf(&quot;\n&quot;);
+	}
+}
+
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;, &amp;n);
+	if (n &lt; 2) return 1;
+
+	quadrado(n);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_021</summary><pre>#include &lt;stdio.h&gt;
+
+void quadrado (int N) {
+    int  i, z;
+  
+    if (N &gt;= 2) {
+  
+        for (i = 1; i&lt;=N; i++) {
+            for (z = i; z &lt; i+N; z++)
+                printf(&quot;%d\t&quot;, z);
+            printf(&quot;\n&quot;);
+        }
+    }
+    return;
+}
+
+
+int main () {
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    quadrado(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int n);
+
+int main() {
+
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    quadrado(N);
+
+    return 0;
+}
+
+void quadrado(int n) {
+    int i, j;
+    int k = 0;
+
+    for (j = 1; j &lt;= n; j++) {
+        for (i = 1 + k; i &lt;= n+k; i++) {
+            printf(&quot;%d\t&quot;, i);
+            if (i == n + k) {
+              printf(&quot;\n&quot;);  
+            }
+        }
+        k++;  
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int n);
+
+int main() {
+
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    quadrado(N);
+
+    return 0;
+}
+
+void quadrado(int n) {
+    int i, j;
+    int k = 0;
+
+    for (j = 1; j &lt;= n; j++) {
+        for (i = 1 + k; i &lt;= n+k; i++) {
+            printf(&quot;%d\t&quot;, i);
+        }
+        k++;
+        printf(&quot;\n&quot;);
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int n){
+    int i, j, estado = 0;
+    for (j = 1; n &gt;= j; j++){
+        for (i = 1; n &gt;= i; i++){
+            printf(&quot;%d\t&quot;, i + estado);
+        }
+        estado ++;
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    quadrado(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_025</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int inicial, num;
+    for (inicial = 1; inicial &lt;= N; inicial++){
+        for (num = inicial; num &lt; inicial + N; num++){
+            printf(&quot;%d\t&quot;, num);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+
+int main(){
+    int N;
+    scanf(&quot;%d\n&quot;, &amp;N);
+    while(N&lt;2)
+        scanf(&quot;%d\n&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_026</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+    int i=1,num=N,voltas=0;
+    while (N&lt;2) {
+        scanf(&quot;%d&quot;,&amp;N);
+    }
+    for(;N&gt;0;N--){
+        for(;i&lt;=(num+voltas);i++) {
+            printf(&quot;%d\t&quot;,i);
+        }
+        voltas+=1;
+        i=voltas+1;
+        printf(&quot;\n&quot;);
+    } 
+}
+int main (){
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_027</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+    int i=1,num=N,voltas=0;
+    while (N&lt;2) {
+        scanf(&quot;%d&quot;,&amp;N);
+    }
+    for(;N&gt;0;N--){
+        for(;i&lt;=(num+voltas);i++) {
+            printf(&quot;%d\t&quot;,i);
+        }
+        voltas+=1;
+        i=voltas+1;
+        printf(&quot;\n&quot;);
+    } 
+}
+int main (){
+    int M;
+    scanf(&quot;%d&quot;,&amp;M);
+    quadrado(M);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_028</summary><pre>
+#include&lt;stdio.h&gt;
+
+void quadrado(int N){
+    int i,j, aux=0;
+
+    for(i=0;i&lt;N;i++){ 
+        for(j=0;j&lt;N;j++){ 
+            aux=i+j+1;
+            printf(&quot;%d\t&quot;,aux);
+            if(j==N-1)
+                printf(&quot;\n&quot;);
+        }
+    }
+}  
+
+
+int main(){
+
+int N;
+    scanf(&quot;%d&quot;,&amp;N);
+
+    if(N&gt;=2)
+        quadrado(N);
+    return 0;
+}
+   </pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_029</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(){
+
+    int contador, n, i, num=1;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (contador = 1; contador &lt;= n; contador++){
+        num = contador;
+        for (i = 1; i &lt;= n; i++){
+            printf(&quot;%d\t&quot;, num);
+            num++;
+        }
+    printf(&quot;\n&quot;);
+    }   
+
+}
+
+int main(){
+    
+    quadrado();
+    return 0;
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_030</summary><pre>
+#include&lt;stdio.h&gt;
+#define minimo 2
+void quadrado ( int N){
+
+int i, j ; 
+for (i = 0 ; i&lt;N ; i++){
+    for ( j= 0; j &lt; N ; j++){        
+
+        printf(&quot;%d\t&quot; , (1+i+j) );
+    }
+
+    printf(&quot;\n&quot;);
+}
+}
+
+int main (){
+
+int N;
+scanf(&quot;%d&quot;, &amp;N);
+while ( N &lt; minimo){
+scanf(&quot;%d&quot;, &amp;N);
+}
+quadrado (N);
+
+return 0 ;
+
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_031</summary><pre>
+#include&lt;stdio.h&gt;
+#define minimo 2
+void quadrado ( int N){
+
+int i, j ; 
+for (i = 1 ; i&lt;=N ; i++){
+    for ( j= i; j &lt;= i + N-1 ; j++){       
+
+        printf(&quot;%d\t&quot; , j );
+    }
+
+    printf(&quot;\n&quot;);
+}
+}
+
+int main (){
+
+int N;
+scanf(&quot;%d&quot;, &amp;N);
+while ( N &lt; minimo){
+scanf(&quot;%d&quot;, &amp;N);
+
+
+}
+quadrado (N);
+
+return 0 ;
+
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_032</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado (int N) {
+    int i, j;
+    for (i = 0; i &lt; N; i++) {
+        for (j = (i + 1); j &lt;= (N + i); j++)
+            printf(&quot;%d\t&quot;, j); 
+        printf(&quot;\n&quot;);
+    }
+}    
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado (N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_033</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int i, j;
+
+    for (i=1; i&lt;=N; i++){
+        for (j=1; j&lt;=N; j++){
+            printf(&quot;%d\t&quot;, j+(i-1));
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_034</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N);
+
+int main(){
+
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    
+    while (N &lt; 2){
+        scanf(&quot;%d&quot;, &amp;N);
+    }
+    quadrado(N);
+    return 0;
+}
+
+void quadrado(int N){
+
+    int i, j, n = 0;
+
+    for (i = 0; i &lt; N; i++){
+        for (j = n; j &lt; (N + i); j++){
+            printf(&quot;%d\t&quot;, j + 1);
+        }
+        n++;
+        printf(&quot;\n&quot;);
+    }
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_035</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int numero;
+    int colunas=0; 
+    int linhas=0;
+    int variavel=1;
+    scanf(&quot;%d&quot;, &amp;numero);
+
+    while (linhas&lt;numero)
+    {
+        while (colunas&lt;numero)
+        {
+            printf(&quot;%d\t&quot;,variavel++);
+            ++colunas;
+        };
+    variavel=variavel-numero+1;
+    ++linhas;
+    colunas=0;
+    printf(&quot;\n&quot;);
+    }
+    printf(&quot;\n&quot;);
+    return 0;
+}
+
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n\n&quot;
+  }
+]</pre></details><details><summary>sample_036</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int numero;
+    int colunas=0; 
+    int linhas=0;
+    int variavel=1;
+    scanf(&quot;%d&quot;, &amp;numero);
+
+    while (linhas&lt;numero)
+    {
+        while (colunas&lt;numero)
+        {
+            if (colunas+1==numero)
+            {
+                printf(&quot;%d&quot;,variavel++);
+                ++colunas;
+            }
+            else
+            {
+                printf(&quot;%d\t&quot;,variavel++);
+                ++colunas;
+            }
+        };
+    variavel=variavel-numero+1;
+    ++linhas;
+    colunas=0;
+    printf(&quot;\n&quot;);
+    }
+    printf(&quot;\n&quot;);
+    return 0;
+}
+
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n\n&quot;
+  }
+]</pre></details><details><summary>sample_037</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int numero;
+    int colunas=0; 
+    int linhas=0;
+    int variavel=1;
+    scanf(&quot;%d&quot;, &amp;numero);
+
+    while (linhas&lt;numero)
+    {
+        while (colunas&lt;numero)
+        {
+            if (colunas+1==numero)
+            {
+                printf(&quot;%d&quot;,variavel++);
+                ++colunas;
+            }
+            else
+            {
+                printf(&quot;%d\t&quot;,variavel++);
+                ++colunas;
+            }
+        };
+    variavel=variavel-numero+1;
+    ++linhas;
+    colunas=0;
+    printf(&quot;\n&quot;);
+    }
+    printf(&quot;\n&quot;);
+    return 0;
+}
+
+
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n\n&quot;
+  }
+]</pre></details><details><summary>sample_038</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int numero;
+    int colunas=0; 
+    int linhas=0;
+    int variavel=1;
+    scanf(&quot;%d&quot;, &amp;numero);
+
+    while (linhas&lt;numero)
+    {
+        while (colunas&lt;numero)
+        {
+            printf(&quot;%d\t&quot;,variavel++);
+            ++colunas;
+        };
+    variavel=variavel-numero+1;
+    ++linhas;
+    colunas=0;
+    printf(&quot;\n&quot;);
+    }
+    return 0;
+}
+
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_039</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int l, c;
+    for (l = 0; l &lt; N; l++){
+        for (c = 0; c &lt; N; c++)
+        {
+            printf(&quot;%d\t&quot;, l+c+1);
+        }
+        printf(&quot;\n&quot;);
+    }    
+    
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    if (N &gt;= 2)
+    {
+        quadrado(N);
+    }
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_040</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(void) {
+
+    int i, num, j;
+    scanf(&quot;%d&quot;, &amp;num);
+
+    for(j = 0; j &lt; num; j++) {
+        for(i = 0; i &lt; num; i++)
+            printf(&quot;%d\t&quot;, j + i + 1);
+        i = 0;
+        printf(&quot;\n&quot;);
+    } 
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_041</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+
+    int i, j;
+
+    for(j = 0; j &lt; N; j++) {
+        for(i = 0; i &lt; N; i++)
+            printf(&quot;%d\t&quot;, j + i + 1);
+        i = 0;
+        printf(&quot;\n&quot;);
+    } 
+}
+
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_042</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(void) {
+
+    int i, num, j;
+    scanf(&quot;%d&quot;, &amp;num);
+
+    for(j = 0; j &lt; num; j++) {
+        for(i = 0; i &lt; num; i++)
+            printf(&quot;%d\t&quot;, j + i + 1);
+        i = 0;
+        printf(&quot;\n&quot;);
+    } 
+    printf(&quot;\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n\n&quot;
+  }
+]</pre></details><details><summary>sample_043</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int s , linha, colona, conta1 = 1, conta2 = 1;
+    scanf(&quot;%d&quot;,&amp;s);
+
+    linha = s;
+    colona = s;
+
+    while (conta1 &lt;= colona)
+    {
+        while (conta2 &lt;= linha)
+        {
+            printf(&quot;%d\t&quot;,conta2);
+            conta2 ++;
+        }
+        printf(&quot;\n&quot;);
+        conta1 ++;
+        linha ++;
+        conta2 = conta1;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_044</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+void quadrado(int n)
+{
+    int i, j;
+    for (i = 0; i &lt; n; i++)
+    {
+        for (j = 0; j &lt; n; j++)
+        {
+            printf(&quot;%d\t&quot;, i+j+1);
+        }
+        printf(&quot;\n&quot;);
+    }
+    return;
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    while (n &lt; 2)
+        scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_045</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+void quadrado(int n){
+    int i, j;
+
+    for(i = 1; i &lt;= n; i++){
+        printf(&quot;\n&quot;);
+        for(j = i; j &lt; n + i; j++)
+            printf(&quot;%d\t&quot;, j);
+    }
+}
+
+int main(){
+    
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t&quot;
+  }
+]</pre></details><details><summary>sample_046</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+void quadrado(int n){
+    int i, j;
+
+    for(i = 1; i &lt;= n; i++){
+        printf(&quot;\n&quot;);
+        for(j = i; j &lt; n + i; j++)
+            printf(&quot;%d\t&quot;, j);
+    }
+}
+
+int main(){
+    
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    printf(&quot;\n&quot;);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_047</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int n){
+    int i, j;
+
+    for(i = 1; i &lt;= n; i++){
+        printf(&quot;\n&quot;);
+        for(j = i; j &lt; n + i; j++)
+            printf(&quot;%d\t&quot;, j);
+    }
+}
+
+int main(){
+    
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t&quot;
+  }
+]</pre></details><details><summary>sample_048</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+
+    int i, j, v = 1; 
+
+    for (i = 0; i &lt; N; i++) {
+        for (j = 0; j &lt; N; j++) {
+            printf(&quot;%d\t&quot;, v);
+            v++;
+        }
+        v -= (N - 1);
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main () {
+    
+    int N;
+
+    do {
+        scanf(&quot;%d&quot;, &amp;N);
+    } while (N &lt; 2);
+
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_049</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int i, j;
+
+    for(i=0 ; i &lt; N ; i++){        
+        for( j=1 ; j &lt;= N ; j++){     
+            printf(&quot;%d\t&quot;, j+i);   
+        }
+        printf(&quot;\n&quot;);                
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+
+    if (N &gt;= 2)
+        quadrado (N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_050</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+
+void quadrado(int n);
+
+
+int main() {
+    int n;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    
+    return 0;
+}
+
+void quadrado( int n) {
+    int i, j;
+    
+    for ( i = 1; i &lt;= n; i++)
+    {
+        for (j = i; j &lt; n+i; j++)
+        {
+            printf(&quot;%d\t&quot;, j);
+        }
+        printf(&quot;\n&quot;);
+    }
+    
+    
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_051</summary><pre>
+
+#include &lt;stdio.h&gt;
+int main() {
+    int n,i,j;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+
+    ;
+    
+    for ( i = 1; i &lt;= n; i++)
+    {
+        for (j = i; j &lt; n + i; j++)
+        {
+            printf(&quot;%d\t&quot;, j);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_052</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+
+void quadrado(int n);
+
+
+int main() {
+    int n;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+    
+    quadrado(n);
+    
+    return 0;
+}
+
+void quadrado( int n) {
+    int i,j;
+    
+    for ( i = 1; i &lt;= n; i++)
+    {
+        for (j = i; j &lt; n + i; j++)
+        {
+            printf(&quot;%d&quot;, j);
+            if (j &lt; n + i)
+            {
+                printf(&quot;\t&quot;);
+            }
+            
+        }
+        if (i &lt; n)
+        {
+                printf(&quot;\n&quot;);
+        }
+    }   
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t&quot;
+  }
+]</pre></details><details><summary>sample_053</summary><pre>
+
+#include &lt;stdio.h&gt;
+int main() {
+    int n, i, j;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+
+    ;
+    
+    for ( i = 1; i &lt;= n; i++)
+    {
+        for (j = i; j &lt; n + i; j++)
+        {
+            printf(&quot;%d\t&quot;, j);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_054</summary><pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+
+void quadrado(int n);
+
+
+int main() {
+    int n;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    
+    return 0;
+}
+
+void quadrado( int n) {
+    int i, j;
+    char line[60]= &quot;&quot;;
+    char aux[10];
+    
+    for ( i = 1; i &lt;= n; i++)
+    {
+        for (j = i; j &lt; n + i; j++)
+        {
+            sprintf(aux, &quot;%d\t&quot;,j);
+            strcat(line,aux);
+            
+        }
+        printf(&quot;%s\n&quot;, line);
+        memset(line, 0, sizeof(line));
+    }
+     
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_055</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+
+void quadrado(int n);
+
+
+int main() {
+    int n;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    
+    return 0;
+}
+
+void quadrado( int n) {
+    int i,j;
+    
+    for ( i = 1; i &lt;= n; i++)
+    {
+        for (j = i; j &lt; n + i; j++)
+        {
+            printf(&quot;%d\t&quot;, j);
+        }
+        printf(&quot;\n&quot;);
+    }   
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_056</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+    int i, j=0;
+
+    while (j &lt; N){
+        for (i = 1; i &lt;= N; ++i) {
+        printf(&quot;%d\t&quot;, i+j);
+        }
+        printf(&quot;\n&quot;);
+        j++;
+    }
+}
+
+int main() {
+    int N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    if (N &gt;= 2) {
+        quadrado(N);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_057</summary><pre>#include &lt;stdio.h&gt;
+
+void quadrado(int n) {
+    int i, j;
+    for (i = 1; i &lt;= n; i++) {
+        for (j = i; j &lt; i + n; j++) {
+            printf(&quot;%d\t&quot;, j);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_058</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int n) {
+
+    int i, j;
+
+    for (i=1; i&lt;=n; i++) {
+        for (j=i; j&lt;(n+i); j++) {
+            printf(&quot;%d\t&quot;,j);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    
+    int n;
+
+    scanf(&quot;%d&quot;,&amp;n);
+    quadrado(n);
+    
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_059</summary><pre>
+#include &lt;stdio.h&gt;
+void quadrado(int numero)
+{
+    int limite = numero, contador = 1, i;
+    while (contador &lt;= limite){
+        for (i = contador; i &lt; contador + numero; i++){
+            printf(&quot;%d\t&quot;, i);
+        }
+        printf(&quot;\n&quot;);
+        contador++;
+    }
+    
+}
+int main()
+{
+    int numero;
+    scanf(&quot;%d&quot;, &amp;numero);
+    quadrado(numero);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_060</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+
+int main(){
+
+    int N;
+    void quadrado();
+
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+
+    return 0;
+}
+
+void quadrado(int N){
+
+    int i,j, Novo_N;
+
+    Novo_N = N;
+    for(i = 1; i &lt;= N; i++){
+        for( j = i; j&lt;= Novo_N; j++){
+            printf(&quot;%d\t&quot;, j);
+        }
+        printf(&quot;\n&quot;);
+        Novo_N++;
+    }
+    
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_061</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int num) {
+    int linha, col;
+    for (linha = 1; linha &lt;= num; linha++) {
+        for (col = linha; col &lt;= (num + linha - 1); col++) {
+            printf(&quot;%d\t&quot;, col);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int num;
+    scanf(&quot;%d&quot;, &amp;num);
+    quadrado(num);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_062</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N);
+
+int main () {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}
+
+void quadrado(int N) {
+    int i0, j0, j1;
+    for (i0 = 1; i0 &lt;= N; i0++) {
+        j1 = i0;
+        for (j0 = 0; j0 &lt; N; j0++) {
+            
+            printf(&quot;%d\t&quot;, j1);
+            j1++;
+        }
+        printf(&quot;\n&quot;);
+    }
+    return;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_063</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int i,n;
+    int N_copy = N;
+    int n_copy=1;
+    for (i = 0; i&lt; N; i++){
+        for(n = n_copy;n&lt;=N_copy;n++){
+            printf(&quot;%d\t&quot;, n);
+        }
+        N_copy++;
+        n_copy++;
+        printf(&quot;\n&quot;);    
+    }
+   
+    
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    printf(&quot;\n&quot;);
+    while (N&lt; 2) {
+        printf(&quot;Invalid number try again :\n&quot;);
+        scanf(&quot;%d&quot;,&amp;N);}
+    quadrado(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;\n1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_064</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int linha, coluna;
+    for (linha = 0; linha &lt; N; linha++){
+        for (coluna = linha + 1; coluna &lt;= (N + linha); coluna++){
+            printf(&quot;%d\t&quot;, coluna);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    quadrado(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_065</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int linha, coluna;
+    if (N &lt; 2){
+        printf(&quot;Digite um número maior que 2\n&quot;);
+        return;
+    }
+    for (linha = 0; linha &lt; N; linha++){
+        for (coluna = linha + 1; coluna &lt;= (N + linha); coluna++){
+            printf(&quot;%d\t&quot;, coluna);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    quadrado(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_066</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+  int i, j;
+
+  for(i = 1; i &lt;= N; i++) {
+    for(j = i; j &lt; (N+i); j++) {
+      printf(&quot;%d\t&quot;, j);
+    }
+    printf(&quot;\n&quot;);
+  }
+}
+
+int main() {
+  int N;
+
+  scanf(&quot;%d&quot;, &amp;N);
+  quadrado(N);
+  
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_067</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int i,j;
+    for(i=0;i&lt;N;i++){
+        for(j=0;j&lt;N;j++){
+            printf(&quot;%d\t&quot;,i+j+1);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    if (N&lt;2)
+        return 1;
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_068</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+    int i, j, N_inc = N;
+    for (i = 1; i &lt;= N; i++) {
+        if (i &gt;= 2) {
+            N_inc++;
+            printf(&quot;\n&quot;);
+        }
+        for (j = i; j &lt;= N_inc; j++) {
+            printf(&quot;%d\t&quot;, j);
+        }
+    }
+    printf(&quot;\n&quot;);
+}
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    if (N &gt;= 2) {
+        quadrado(N);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_069</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+    int i, j, N_inc = N;
+    for (i = 1; i &lt;= N; i++) {
+        if (i &gt;= 2) {
+            N_inc++;
+            printf(&quot;\n&quot;);
+        }
+        for (j = i; j &lt;= N_inc; j++) {
+            printf(&quot;%d\t&quot;, j);
+        }
+    }
+}
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    if (N &gt;= 2) {
+        quadrado(N);
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_070</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+    int i, j, N_inc = N;
+    for (i = 1; i &lt;= N; i++) {
+        if (i &gt;= 2) {
+            N_inc++;
+            printf(&quot;\n&quot;);
+        }
+        for (j = i; j &lt;= N_inc; j++) {
+            printf(&quot;%d\t&quot;, j);
+        }
+    }
+}
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    if (N &gt;= 2) {
+        quadrado(N);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t&quot;
+  }
+]</pre></details><details><summary>sample_071</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int length){
+    int first_value_line,to_sum;
+
+    for (first_value_line = 1; first_value_line &lt;= length; first_value_line++)
+    {
+        for(to_sum = 0; to_sum &lt; length; to_sum++)
+            printf(&quot;%d\t&quot;,first_value_line + to_sum);
+
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int length;
+    scanf(&quot;%d&quot;,&amp;length);
+    quadrado(length);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_072</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N)
+{
+    int linha, i;
+
+    for (linha = 0; linha &lt; N; linha++)
+    {
+        for (i = 1; i &lt;= N; i++)
+        {
+            printf(&quot;%d\t&quot;, (i + linha));
+        } 
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main()
+{
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_073</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int i, j, k = 1;
+    for(i=1; i&lt;=N; i++){
+        for(j=k; j&lt;(N+k); j++){
+            printf(&quot;%d\t&quot;, j);
+        }
+        printf(&quot;\n&quot;);
+        k++;
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    while(N &lt; 2){
+        scanf(&quot;%d&quot;, &amp;N);
+    }
+    quadrado(N);
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_074</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+
+    int cont, looper;
+    cont = 1;
+    while (cont &lt;= N){
+        for (looper=cont; looper &lt; N+cont; looper++){
+            printf(&quot;%d\t&quot;, looper);
+        }
+        printf(&quot;\n&quot;);
+        cont++;
+    }
+
+}
+
+int main(){
+    int N;
+    N = 0;
+    while (N&lt;2){
+        scanf(&quot;%d&quot;, &amp;N);
+    }
+    quadrado(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_075</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+
+    int cont, looper;
+    cont = 1;
+    while (cont &lt;= N){
+        for (looper=cont; looper &lt; N+cont; looper++){
+            if (looper != N+cont){
+                printf(&quot;%d\t&quot;, looper);
+            }
+            else{
+                printf(&quot;%d&quot;, looper);
+            }
+        }
+        printf(&quot;\n&quot;);
+        cont++;
+    }
+
+}
+
+int main(){
+    int N;
+    N = 0;
+    while (N&lt;2){
+        scanf(&quot;%d&quot;, &amp;N);
+    }
+    quadrado(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_076</summary><pre>#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+
+    int i, j;
+
+    for (i=0; i &lt; N; i++){
+        for (j=0; j &lt; N; j++){
+            printf(&quot;%d\t&quot;, i + j + 1);
+            if (j == N - 1){
+                printf(&quot;\n&quot;);
+            }
+        }
+    }
+}
+
+int main(){
+
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    quadrado(N);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_077</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+
+    int i, j, N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    for(i = 0; i &lt; N; i++){
+        for (j = 1; j &lt;= N; j++){
+            printf(&quot;%d\t&quot;, i + j);
+        }
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_078</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+    int n2, starter = 1, starter2 = 1, n3;
+    n2 = N;
+    n3 = N;
+    if (N &gt;= 2) {
+        while (N &gt; 0) {
+            starter = starter2;
+            while (n2 &gt; 0) {
+                printf(&quot;%d\t&quot;, starter);
+                starter ++;
+                n2--;
+            }
+            printf(&quot;\n&quot;);
+            starter2 ++;
+            N--;
+            n2 = n3;
+        }
+    }
+}
+
+int main () {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_079</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int i, j;
+    if (N &gt;= 2){
+        for (i = 1; i &lt;= N; i++){
+            for (j = i; j &lt; N + i; j++){
+                printf(&quot;%d\t&quot;, j);
+            }
+            printf(&quot;\n&quot;);
+        }
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_080</summary><pre>
+#include &lt;stdio.h&gt;
+void quadrado(int N){
+    int i, j;
+    if (N &gt;= 2){
+        for (i = 1; i &lt;= N; i++){
+            for (j = i; j &lt; N + i; j++){
+                printf(&quot;%d\t&quot;, j);
+            }
+            printf(&quot;\n&quot;);
+        }
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_081</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+    int i, j;
+    if (N &gt;= 2){
+        for (i = 1; i &lt;= N; i++){
+            for (j = i; j &lt; N + i; j++){
+                printf(&quot;%d\t&quot;, j);
+            }
+            printf(&quot;\n&quot;);
+        }
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_082</summary><pre>
+#include &lt;stdio.h&gt;
+void quadrado(int N){
+    int i, j;
+    if (N &gt;= 2){
+        for (i = 1; i &lt;= N; i++){
+            for (j = i; j &lt; N + i; j++){
+                printf(&quot;%d\t&quot;, j);
+            }
+            printf(&quot;\n&quot;);
+        }
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_083</summary><pre>
+#include &lt;stdio.h&gt;
+void quadrado(int N){
+    int i, j;
+    if (N &gt;= 2){
+        for (i = 1; i &lt;= N; i++){
+            for (j = i; j &lt; N + i; j++){
+                printf(&quot;%d\t&quot;, j);
+            }
+            printf(&quot;\n&quot;);
+        }
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_084</summary><pre>
+#include &lt;stdio.h&gt;
+void quadrado(int N) {
+    int i, l;    
+
+    for(l = 1; l &lt;= N; l++) {
+        for(i = l; i &lt; N + l; i++) {
+            printf(&quot;%d\t&quot;, i);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int N;
+    
+    scanf(&quot;%d&quot;, &amp;N);
+    
+    if (N &gt;= 2) {
+        quadrado(N);
+    }
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_085</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int n) {
+    int i, a;
+
+    if (n &lt;= 1) return;
+    for (i= 1; i &lt;= n; i++) {
+        for (a = i; a &lt; n + i; a++) {
+            printf(&quot;%d\t&quot;, a);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int n;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_086</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado(int n) {
+    int i, a;
+
+    if (n &lt;= 1) return;
+    for (i= 1; i &lt;= n; i++) {
+        for (a = i; a &lt; n + i; a++) {
+            printf(&quot;%d\t&quot;, a);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int n;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_087</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N){
+  int i, j;
+  for(i = 0; i &lt; N; i++){
+    for(j = 1; j &lt;= N; j++){
+        printf(&quot;%d\t&quot;, j+i);
+      }
+    printf(&quot;\n&quot;);
+    }
+}
+
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    quadrado(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_088</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    int N,linha,col;
+    scanf(&quot;%d&quot;,&amp;N);
+
+    for (linha = 0; linha &lt; N; ++linha) {
+        for (col = 1; col &lt;= N; ++col) {
+            printf(&quot;%d\t&quot;,linha + col);
+        }
+        printf(&quot;\n&quot;);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_089</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int n){
+    int i, j;
+    for(i=0;i&lt;n;i++){
+        for(j=1;j&lt;=n;j++){
+            printf(&quot;%d\t&quot;,j+i);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    quadrado(n);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_090</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int N) {
+    int i,j,v;
+    for (i=1;i&lt;=N;i++) {
+        v=i;
+        for (j=0;j&lt;N;j++) {
+            printf(&quot;%d\t&quot;,v);
+            v++;
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    quadrado(N);
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_091</summary><pre>
+
+#include&lt;stdio.h&gt;
+void quadrado (int N){
+
+    int i, j;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = 0; j &lt;= N - 1; j++) { 
+            printf(&quot;%d\t&quot;, i + j);
+        }
+
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    if (n &lt; 2) {
+        printf(&quot;Erro: O valor de N deve ser maior ou igual a 2.\n&quot;);
+    } else {
+        quadrado(n);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\n2\t3\t4\t\n3\t4\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\n2\t3\t4\t5\t\n3\t4\t5\t6\t\n4\t5\t6\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\n2\t3\t4\t5\t6\t7\t8\t9\t\n3\t4\t5\t6\t7\t8\t9\t10\t\n4\t5\t6\t7\t8\t9\t10\t11\t\n5\t6\t7\t8\t9\t10\t11\t12\t\n6\t7\t8\t9\t10\t11\t12\t13\t\n7\t8\t9\t10\t11\t12\t13\t14\t\n8\t9\t10\t11\t12\t13\t14\t15\t\n&quot;
+  }
+]</pre></details></html>

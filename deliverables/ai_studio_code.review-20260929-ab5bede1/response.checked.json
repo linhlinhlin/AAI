@@ -1,0 +1,100 @@
+{
+  "packet_id": "81c8ee12aa6fd6a6a2c114e9856139004fdbcb95b58c8fd30e6e5c8442dbe0a5",
+  "annotation_source": "ai",
+  "status": "ai_reviewed_pending_human_validation",
+  "human_validated": false,
+  "mechanism_accuracy": null,
+  "missing_cluster_ids": [],
+  "reviews": [
+    {
+      "cluster_id": "2812--kmeans--combined_stdout--s42--c0",
+      "misconception_label": "Lỗi định dạng output và phương pháp kiểm tra giá trị đầu vào",
+      "evidence_supported": true,
+      "confidence": 0.85,
+      "reasoning": "Dữ liệu không hỗ trợ một lỗi logic 'không hiểu số thực' chung. Thay vào đó, các học viên mắc lỗi thực thi cụ thể: 1) Sai định dạng chuỗi in (thiếu dấu chấm, in dư ký tự, sai chính tả 'Cicle'); 2) Lỗi nhập liệu (ví dụ: `scanf(\"%f,&a\")` in sample_008); 3) Logic kiểm tra hẹp (ví dụ: `sample_001` chỉ kiểm tra giá trị cụ thể -12 thay vì dấu). Sự không nhất quán giữa statement (có dấu chấm) và oracle (thiếu dấu chấm) gây ra lỗi presentation không đáng có.",
+      "alternative_explanations": [
+        "Sử dụng so sánh float == 0 thay vì epsilon comparison là một lỗi kỹ thuật nhưng không phải nguyên nhân chính của các lỗi output quan sát được trong tất cả trường hợp."
+      ],
+      "decision": "supported",
+      "notes": "Các sample không đồng nhất cơ chế lỗi; nhiều bài in sai chuỗi do lỗi cú pháp hoặc nhầm lẫn trình bày hơn là lỗi logic toán học.",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_008/raw_code",
+        "members/sample_001/tests/3",
+        "members/sample_008/tests/1"
+      ]
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c0",
+      "misconception_label": "Lỗi định dạng đầu ra (Presentation Issue)",
+      "evidence_supported": false,
+      "confidence": 0.7,
+      "reasoning": "Giả thuyết 'tất cả chỉ sai format' bị bác bỏ bởi `sample_005` (scanf thiếu tham số `&` dẫn đến output rỗng). Các bài khác (10/11) thực sự gặp lỗi định dạng (sai dấu chấm hoặc sai chữ hoa/thường), nhưng không thể kết luận đây là một cụm đồng nhất về mặt cơ chế vì tồn tại phản ví dụ về lỗi logic (thiếu toán tử truyền địa chỉ).",
+      "alternative_explanations": [
+        "Lỗi cú pháp trong các hàm IO (scanf) làm hỏng logic chương trình hoàn toàn, khác với lỗi format output đơn thuần."
+      ],
+      "decision": "rejected",
+      "notes": "Nhãn cũ quá rộng, cần phân biệt rõ giữa lỗi presentation và lỗi code khiến chương trình không chạy đúng.",
+      "evidence_refs": [
+        "members/sample_005/raw_code",
+        "members/sample_005/tests/1"
+      ]
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c1",
+      "misconception_label": "Sử dụng cấu trúc điều kiện if không loại trừ (Non-mutually exclusive)",
+      "evidence_supported": true,
+      "confidence": 0.75,
+      "reasoning": "Được hỗ trợ bởi `sample_003` và `sample_004` (2/7 bài): sử dụng các `if` độc lập làm in ra nhiều thông báo. Tuy nhiên, 5 bài còn lại có các lỗi khác biệt: `sample_001` thiếu điều kiện biên, `sample_002` dùng `r` thay vì `r*r`, `sample_005` dùng biến sai, `sample_006` lỗi format, `sample_007` dùng sai biến trong điều kiện. Do đó, đây là một tập hợp các lỗi khác nhau.",
+      "alternative_explanations": [
+        "Lỗi logic thuật toán (hoán đổi biến, thiếu tính toán bình phương).",
+        "Sai sót cú pháp đơn thuần."
+      ],
+      "decision": "supported",
+      "notes": "Nhãn này chỉ áp dụng đúng cho 2 bài; các bài còn lại thuộc các dạng lỗi khác.",
+      "evidence_refs": [
+        "members/sample_003/raw_code",
+        "members/sample_004/raw_code",
+        "members/sample_001/raw_code",
+        "members/sample_002/raw_code"
+      ]
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c2",
+      "misconception_label": "Lỗi thuật toán và lỗi nhập liệu (scanf)",
+      "evidence_supported": true,
+      "confidence": 0.8,
+      "reasoning": "Không có cơ chế chung duy nhất. `sample_003` và `004` hoán đổi thứ tự tham số `scanf` (x1, y1, r thay vì r, x1, y1), dẫn đến sai logic. `sample_001` và `002` có lỗi logic trong nhánh `if-else` và in sai chuỗi. Không nên gán chung một nhãn misconception cho các dạng lỗi khác biệt như vậy.",
+      "alternative_explanations": [
+        "Lỗi đọc hiểu đề bài về thứ tự input (scanf).",
+        "Lỗi hiện thực hóa công thức tính khoảng cách."
+      ],
+      "decision": "supported",
+      "notes": "Cần phân tách lỗi scanf (đọc đề) và lỗi logic if/else.",
+      "evidence_refs": [
+        "members/sample_003/raw_code",
+        "members/sample_004/raw_code",
+        "members/sample_001/raw_code"
+      ]
+    },
+    {
+      "cluster_id": "2833--kmeans--combined_stdout--s42--c1",
+      "misconception_label": "Đa dạng lỗi: từ lỗi định dạng (string literal) đến thuật toán đếm (hoán vị vs tổ hợp)",
+      "evidence_supported": true,
+      "confidence": 0.9,
+      "reasoning": "Cụm này trộn lẫn ít nhất 4 cơ chế lỗi: 1) Lỗi chính tả 'triangles' vs 'triangle' (sample 001/002/008); 2) Lỗi đếm hoán vị (lặp 3 lần từ 1 đến N) dẫn đến output quá lớn (sample 003/004/005); 3) Lỗi logic dùng toán tử OR (sample 006); 4) Lỗi thân vòng lặp rỗng do dấu `;` (sample 007). Nhãn cũ bỏ qua sự khác biệt căn bản về bản chất logic.",
+      "alternative_explanations": [
+        "Hiểu sai định nghĩa về tam giác (đếm thứ tự các cạnh vs bộ ba cạnh không thứ tự)."
+      ],
+      "decision": "supported",
+      "notes": "Phân loại cần tách biệt giữa lỗi trình bày (format) và lỗi thuật toán (loop/logic).",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_003/raw_code",
+        "members/sample_006/raw_code",
+        "members/sample_007/raw_code"
+      ]
+    }
+  ],
+  "response_sha256": "b7a2faab4db78b07cfd40c124743b6b06aa0ef4fe1945fcdc0ff7f06b0677e56"
+}

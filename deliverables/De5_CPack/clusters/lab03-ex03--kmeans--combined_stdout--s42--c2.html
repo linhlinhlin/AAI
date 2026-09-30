@@ -1,0 +1,3914 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab03-ex03--kmeans--combined_stdout--s42--c2</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab03-ex03 · 66 bài</h1><p>lab03-ex03--kmeans--combined_stdout--s42--c2 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex03_0: 66/66 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex03_1: 66/66 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex03_2: 66/66 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex03_3: 65/66 bài trượt (98.5%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_0:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 66,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5275590551181102,
+      &quot;difference_from_cohort&quot;: 0.4724409448818898
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_1:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 66,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5275590551181102,
+      &quot;difference_from_cohort&quot;: 0.4724409448818898
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_2:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 66,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5275590551181102,
+      &quot;difference_from_cohort&quot;: 0.4724409448818898
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_3:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 65,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.9848484848484849,
+      &quot;cohort_rate&quot;: 0.5196850393700787,
+      &quot;difference_from_cohort&quot;: 0.46516344547840616
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_1:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 64,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.9696969696969697,
+      &quot;cohort_rate&quot;: 0.5275590551181102,
+      &quot;difference_from_cohort&quot;: 0.44213791457885954
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_0:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 63,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.9545454545454546,
+      &quot;cohort_rate&quot;: 0.5196850393700787,
+      &quot;difference_from_cohort&quot;: 0.4348604151753759
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_2:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 66,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5669291338582677,
+      &quot;difference_from_cohort&quot;: 0.4330708661417323
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_3:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 65,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.9848484848484849,
+      &quot;cohort_rate&quot;: 0.5669291338582677,
+      &quot;difference_from_cohort&quot;: 0.41791935099021715
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 42,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.6363636363636364,
+      &quot;cohort_rate&quot;: 0.5433070866141733,
+      &quot;difference_from_cohort&quot;: 0.09305654974946309
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 45,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.6818181818181818,
+      &quot;cohort_rate&quot;: 0.6299212598425197,
+      &quot;difference_from_cohort&quot;: 0.05189692197566209
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 56,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.8484848484848485,
+      &quot;cohort_rate&quot;: 0.8031496062992126,
+      &quot;difference_from_cohort&quot;: 0.04533524218563589
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 64,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.9696969696969697,
+      &quot;cohort_rate&quot;: 0.937007874015748,
+      &quot;difference_from_cohort&quot;: 0.03268909568122169
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 64,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.9696969696969697,
+      &quot;cohort_rate&quot;: 0.9448818897637795,
+      &quot;difference_from_cohort&quot;: 0.02481507993319021
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 66,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9763779527559056,
+      &quot;difference_from_cohort&quot;: 0.023622047244094446
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 59,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.8939393939393939,
+      &quot;cohort_rate&quot;: 0.8818897637795275,
+      &quot;difference_from_cohort&quot;: 0.012049630159866376
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 66,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9921259842519685,
+      &quot;difference_from_cohort&quot;: 0.007874015748031482
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_3&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 65,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.9848484848484849,
+      &quot;cohort_rate&quot;: 0.984251968503937,
+      &quot;difference_from_cohort&quot;: 0.0005965163445478261
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 66,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 66,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_3:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 66,
+      &quot;rate&quot;: 0.015151515151515152,
+      &quot;cohort_rate&quot;: 0.015748031496062992,
+      &quot;difference_from_cohort&quot;: -0.00059651634454784
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 6,
+      &quot;if&quot;: [
+        &quot;stdout:ex03_0:relation=whitespace&quot;,
+        &quot;stdout:ex03_0:edit_band=small&quot;
+      ],
+      &quot;then_cluster&quot;: 2,
+      &quot;train_support&quot;: 48,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 15,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_001 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void cruz(int N)
+{
+    int i, j, *arr;
+    arr = malloc(N * sizeof(int));
+    for (j = 0; j &lt; N; j++)
+    {
+        for (i = 0; i &lt; N; i++)
+        {
+            arr[i] = 0;
+        }
+        arr[j] = 1;
+        arr[N - j - 1] = 1;
+        for (i = 0; i &lt; N; i++)
+        {
+            if (arr[i] == 0)
+            {
+                printf(&quot;- &quot;);
+            }
+            else
+            {
+                printf(&quot;* &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+    free(arr);
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    cruz(N);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_005 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+#define SIMBOLO &#x27;-&#x27;
+#define SEPARADOR &#x27;*&#x27;
+#define LINHA_INICIAL 1
+#define COLUNA_INICIAL 1
+
+
+void cruz(int n)
+{
+	int linha;
+	int coluna;
+
+	for (linha = LINHA_INICIAL; linha &lt;= n; linha++) 
+	{
+		for (coluna = COLUNA_INICIAL; coluna &lt;= n ; coluna++)
+		{
+			if (linha == coluna || (n-linha+1) == coluna ||  coluna-n+1 == linha || coluna-n+1 == linha-n+1) {			
+				putchar(SEPARADOR);}
+			else {
+				putchar(SIMBOLO);}
+			if (linha != n || coluna != n) {
+				putchar(&#x27; &#x27;);}
+		}
+		putchar(&#x27;\n&#x27;);
+	}
+}
+
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;, &amp;n);
+	cruz(n);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - *\n&quot;
+  }
+]</pre></details><details><summary>sample_015 · đại diện</summary><pre># include &lt;stdio.h&gt;
+
+void cruz(int N){
+    int largura=1,comprimento=1;
+    while(comprimento&lt;=N){
+        while (largura&lt;=N){
+            if (largura==comprimento || largura==(N-comprimento)+1){
+                printf(&quot;* &quot;);
+            }
+            else{
+                printf(&quot;- &quot;);
+            }
+            largura+=1;
+        }
+        comprimento+=1;
+        largura=1;
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_058 · đại diện</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz (int n) {
+    int count = 0, linha = 1, p_estrela = 1, u_estrela = n, guardar_n = n ;
+    while (count &lt; guardar_n) {
+        linha = 1;
+        while (linha &lt; n + 1){
+            if ((linha == u_estrela &amp;&amp; linha == n)) {
+                printf(&quot;*\n&quot;);
+            }            
+            else if (linha == p_estrela || linha == u_estrela) {
+                printf(&quot;* &quot;);
+            }
+            else if (linha == n)
+                printf(&quot;-\n&quot;);
+            else
+                printf(&quot;- &quot;);
+            linha++;
+        }
+        p_estrela++;
+        u_estrela--;
+        count++;
+    }
+    printf(&quot;\n&quot;);
+}
+
+int main () {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+void cruz(int N)
+{
+    int i, j, *arr;
+    arr = malloc(N * sizeof(int));
+    for (j = 0; j &lt; N; j++)
+    {
+        for (i = 0; i &lt; N; i++)
+        {
+            arr[i] = 0;
+        }
+        arr[j] = 1;
+        arr[N - j - 1] = 1;
+        for (i = 0; i &lt; N; i++)
+        {
+            if (arr[i] == 0)
+            {
+                printf(&quot;- &quot;);
+            }
+            else
+            {
+                printf(&quot;* &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+    free(arr);
+}
+
+int main()
+{
+    int N;
+    scanf(&quot;%d\n&quot;, &amp;N);
+
+    cruz(N);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz(int N)
+{
+  int l = 1, i;
+  while (l &lt;= N / 2)   
+  {
+    for (i = l - 1; i &gt; 0; i--)   
+      printf(&quot;- &quot;);
+    printf(&quot;* &quot;);
+    for (i = N - 2*l; i &gt; 0; i--)   
+      printf(&quot;- &quot;);
+    printf(&quot;* &quot;);
+    for (i = l - 1; i &gt; 0; i--)   
+      printf(&quot;- &quot;);
+    printf(&quot;\n&quot;);
+    ++l;
+  }
+  while (l &lt;= N)   
+  {
+    for (i = N - l; i &gt; 0; i--)   
+      printf(&quot;- &quot;);
+    printf(&quot;* &quot;);
+    for (i = 2*(l - 1) - N; i &gt; 0; i--)   
+      printf(&quot;- &quot;);
+    if ((N % 2 == 0) || (l != N / 2 + 1))   
+    printf(&quot;* &quot;);
+    for (i = N - l; i &gt; 0; i--)   
+      printf(&quot;- &quot;);
+    printf(&quot;\n&quot;);
+    ++l;
+  }
+}
+
+int main()
+{
+  int N;
+  scanf(&quot;%d&quot;, &amp;N);
+  cruz(N);
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz(int N)
+{
+	int i, j;
+
+	for(i = 0; i &lt; N; i++)
+	{
+		for(j = 0; j &lt; N; j++)
+		{
+			if(i == j || N-i == j+1) printf(&quot;* &quot;);
+			else printf(&quot;- &quot;);
+		}
+		printf(&quot;\n&quot;);
+	}
+}
+
+int main()
+{
+	int in;
+	scanf(&quot;%d&quot;, &amp;in);
+
+	cruz(in);
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>#include &lt;stdio.h&gt;
+
+#define SIMBOLO &#x27;-&#x27;
+#define SEPARADOR &#x27;*&#x27;
+#define LINHA_INICIAL 1
+#define COLUNA_INICIAL 1
+
+
+void cruz(int n)
+{
+	int linha;
+	int coluna;
+
+	for (linha = LINHA_INICIAL; linha &lt;= n; linha++) 
+	{
+		for (coluna = COLUNA_INICIAL; coluna &lt;= n ; coluna++)
+		{
+			if (linha == coluna || (n-linha+1) == coluna ||  coluna-n+1 == linha || coluna-n+1 == linha-n+1) {			
+				putchar(SEPARADOR);}
+			else {
+				putchar(SIMBOLO);}
+			putchar(&#x27; &#x27;);
+		}
+		putchar(&#x27;\n&#x27;);
+	}
+}
+
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;, &amp;n);
+	cruz(n);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+	int l, c;
+
+	for (l = 1; l &lt;= N; l++) {
+		for (c = 1; c &lt;= N; c++) {
+			if ((c == l) || ((c + l) == N+1)) {
+				printf(&quot;* &quot;);
+			}
+			else {
+				printf(&quot;- &quot;);
+			}
+		}
+		printf(&quot;\n&quot;);
+	}
+
+	return;
+}
+
+int main() {
+	int N;
+
+	scanf(&quot;%d&quot;, &amp;N);
+
+	cruz(N);
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre># include &lt;stdio.h&gt;
+
+void cruz (int n)
+{
+  int k = 1, j, contador1 = 1, contador2 = n;
+
+  while(k &lt;= n)
+  {
+    for(j = 1; j &lt;= n; j++)
+    {
+      if ((j == 1) &amp;&amp; ((k == 1) || (k == n)))
+      {
+	printf(&quot;*&quot;);
+	printf(&quot; &quot;);
+      }
+      else if((j == n) &amp;&amp; ((k == 1) || (k == n)))
+	printf(&quot;*&quot;);
+      else if((contador1 == j) || (contador2 == j))
+      {
+	printf(&quot;*&quot;);
+	printf(&quot; &quot;);
+      }
+      else
+      {
+	printf(&quot;-&quot;);
+	printf(&quot; &quot;);
+      }
+    }
+    printf(&quot;\n&quot;);
+    if(((j % 2 == 0) &amp;&amp; ((j != (n / 2) - 1))) || (j % 2 != 0))
+    {
+      contador1++;
+      contador2--;
+    }
+    k++;
+  }
+}
+
+int main ()
+{
+  int n;
+
+  scanf(&quot;%d&quot;, &amp;n);
+  cruz(n);
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * - \n* - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * - \n- * * - \n* - - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * - \n- - * - - \n- * - * - \n* - - - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - *\n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz(int n) {
+
+    int i, pos;
+
+    for (i = 1; i &lt;= n; i++) {
+        for (pos = 1; pos &lt;= n; pos++){
+            if (i == pos || i == n-pos+1)
+                printf(&quot;* &quot;);
+            else
+                printf(&quot;- &quot;);    
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+
+int main()
+{
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz(int n)
+{
+ int linha=1, coluna;
+ for (;linha &lt;= n; linha++)
+ {
+  for (coluna=1;coluna &lt;= n; coluna++)
+  {
+   if ((coluna == linha) || (coluna == (n-linha+1)))
+   {
+    printf(&quot;* &quot;);
+   }
+   else
+   {
+    printf(&quot;- &quot;);
+   }
+  }
+  printf(&quot;\n&quot;);
+ }
+ return ;
+}
+
+int main()
+{
+ int n;
+ scanf(&quot;%d&quot;, &amp;n);
+ cruz(n);
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz(int n)
+{
+	int i,j;
+	for(i = 1; i &lt;= n; i++){
+		for(j = 1; j &lt;=n; j++){
+			if (j == i ||j == n -i +1){
+				printf(&quot;* &quot;);}
+			else{
+				printf(&quot;- &quot;);}}
+		printf(&quot;\n&quot;);}
+}
+
+int main()
+{
+	int n;
+	scanf(&quot;%d&quot;, &amp;n);
+	cruz(n);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+void cruz(int n){
+    int l, c;
+    for (l = 0; l &lt; n; l++){
+        for (c = 0; c &lt; n; c++){
+            if (c == l){
+                printf(&quot;* &quot;);
+            }
+            else if (c == n-l-1){
+                printf(&quot;* &quot;);
+            }
+            else {
+                printf(&quot;- &quot;);
+            } 
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+int main(){
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz(int n);
+
+int main() {
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+
+    return 0;
+}
+
+
+void cruz(int n) {
+    int l, c;
+    for(l = 0; l &lt; n; l++) {
+        for (c = 0; c &lt; n; c++){
+            if (c == l){
+                printf(&quot;* &quot;);
+            }
+            else if (c == n-l-1){
+                printf(&quot;* &quot;);
+            }
+            else {
+                printf(&quot;- &quot;);
+            } 
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz(int n) {
+
+    int c, l;
+
+    for (l=0; l &lt; n; l++) {
+        for (c=0; c &lt; n; c++) {
+            if (c == l || c == n - l - 1)
+                putchar(&#x27;*&#x27;);
+            else
+                putchar(&#x27;-&#x27;);
+            
+            if (c != 0 || c != n)
+                putchar(&#x27; &#x27;);
+        }
+
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+int main() {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N){
+    int a, b;
+    for (a = 0; a &lt; N; a++){
+        for(b=0; b&lt;N; b++){
+            if (a==b || a+b == N-1)
+                printf(&quot;* &quot;);
+            else
+                printf(&quot;- &quot;);
+        }
+        printf(&quot;\n&quot;); 
+    }
+
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N){
+
+
+    int contador, i;
+
+    for (contador = 1; contador &lt;= N/2; contador++){            
+        
+            for (i = 1; i &lt;= N; i++){           
+                if (i == contador || i == ((N+1)-contador))
+                    printf(&quot;* &quot;);
+                else
+                    printf(&quot;- &quot;);
+            }
+        printf(&quot;\n&quot;);
+
+        }
+
+    for (contador = ((N/2)+1); contador &lt;= N; contador++){      
+
+            for (i = 1; i &lt;= N; i++){
+                if (i == ((N+1)-contador) || i == contador)
+                    printf(&quot;* &quot;);
+                else
+                    printf(&quot;- &quot;);
+
+            }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N);
+
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}
+
+void cruz(int N){
+    int i,j, minus, plus;
+    minus = N;
+    plus = 1;
+    for (i = 0; i &lt; N; i++){
+        for (j = 1; j &lt;= N; j++){
+            if (j == plus || j == minus)
+            putchar(&#x27;*&#x27;);
+            else
+            putchar(&#x27;-&#x27;);
+            putchar(&#x27; &#x27;);
+        }
+        plus++;
+        minus -= 1;
+        printf(&quot;\n&quot;);
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N);
+
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}
+
+void cruz(int N){
+    int i,j, minus, plus;
+    minus = N;
+    plus = 1;
+    for (i = 0; i &lt; N; i++){
+        for (j = 1; j &lt;= N; j++){
+            if (j == plus || j == minus)
+            putchar(&#x27;*&#x27;);
+            else
+            putchar(&#x27;-&#x27;);
+            putchar(&#x27; &#x27;);
+        }
+        plus++;
+        minus -= 1;
+        if (i &lt; N-1)
+            printf(&quot;\n&quot;);
+    }
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * &quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+    int i, j;
+    for (i = 0; i &lt; N; i++) {
+        for (j = 0; j &lt; N; j++) {
+            if (j == i ||j == N - i - 1)
+                printf(&quot;*&quot;);
+            else
+                printf(&quot;-&quot;);
+            if (j != N)
+                printf(&quot; &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_021</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz(int N){
+    int i,j;
+
+    for (i=0; i&lt;N; i++){
+        for (j=0; j&lt;N; j++){
+            if (j!=N){
+                if ((j==i) || (j==((N-1)-i)))
+                    printf(&quot;* &quot;);
+                else
+                    printf(&quot;- &quot;);
+            }
+            if (j==N){
+                if ((j==i) || (j==((N-1)-i)))
+                    printf(&quot;*&quot;);
+                else
+                    printf(&quot;-&quot;);
+            }
+            
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz(int N){
+    int i,j;
+
+    for (i=0; i&lt;N; i++){
+        for (j=0; j&lt;N; j++){
+            if ((j==i) || (j==((N-1)-i)))
+                printf(&quot;* &quot;);
+            else
+                printf(&quot;- &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>
+#include &lt;stdio.h&gt;
+ int main(){
+    int i,j;
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (j = 1; j &lt;= n; j++)
+    {
+        for (i = 1; i &lt;=n; i++)
+        {
+            if (i==j || i==(n+1)-j)
+            {
+                printf(&quot;* &quot;);
+            }
+            else{
+                printf(&quot;- &quot;);
+            }
+            
+        }
+        printf(&quot;\n&quot;);
+    }
+    
+    return 0;
+ }
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>
+#include &lt;stdio.h&gt;
+ int main(){
+    int i,j;
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (j = 1; j &lt;= n; j++)
+    {
+        for (i = 1; i &lt;=n; i++)
+        {
+            if (i==j || i==(n+1)-j)
+            {
+                printf(&quot;* &quot;);
+            }
+            else{
+                printf(&quot;- &quot;);
+            }
+            
+        }
+        printf(&quot;\n&quot;);
+    }
+    
+    return 0;
+ }
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_025</summary><pre>
+#include &lt;stdio.h&gt;
+ int main(){
+    int i,j;
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (j = 1; j &lt;= n; j++)
+    {
+        for (i = 1; i &lt;=n; i++)
+        {
+            if (i==j || i==(n+1)-j)
+            {
+                if (i==8)
+                {
+                    printf(&quot;*&quot;);
+                }
+                else{
+                    printf(&quot;* &quot;);                    
+                }
+            }
+            else{
+                if (i==8)
+                {
+                    printf(&quot;-&quot;);
+                }
+                else{
+                    printf(&quot;- &quot;);                    
+                }
+            }
+            
+        }
+        printf(&quot;\n&quot;);
+    }
+    
+    return 0;
+ }
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_026</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz (int N){
+
+    int i = 1, contador = 1;
+    while (i&lt;=N)
+    {
+        for(contador=1; contador&lt;=N; contador++){
+            if(contador == i || contador==N-i+1)
+                printf(&quot;* &quot;);
+            else
+                printf(&quot;- &quot;);
+        }
+        printf(&quot;\n&quot;);
+        i++;
+    }
+    
+}
+
+int main(){
+
+    int N=0;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    cruz(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_027</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+
+    int i, j;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = 1; j &lt;= N; j++)
+            if (j == i &amp;&amp; j != N)
+                printf(&quot;* &quot;);
+            else if (j == i &amp;&amp; j == N)
+                printf(&quot;*&quot;);
+            else if (j == N - i + 1 &amp;&amp; j != N)
+                printf(&quot;* &quot;);
+            else if (j == N - i + 1 &amp;&amp; j == N)
+                printf(&quot;*&quot;);
+            else if (j != i &amp;&amp; j != N)
+                printf(&quot;- &quot;);
+            else
+                printf(&quot;-&quot;);
+        if (j != N + 1 || i != N)
+            printf(&quot;\n&quot;);    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(void) {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - *&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *&quot;
+  }
+]</pre></details><details><summary>sample_028</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+
+    int i, j;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = 1; j &lt;= N; j++)
+            if (j == i)
+                printf(&quot;* &quot;);
+            else if (j == N - i + 1 &amp;&amp; j != N)
+                printf(&quot;* &quot;);
+            else if (j == N - i + 1 &amp;&amp; j == N)
+                printf(&quot;*&quot;);
+            else if (j != i &amp;&amp; j != N)
+                printf(&quot;- &quot;);
+            else
+                printf(&quot;-&quot;);
+        if (j != N || i != N)
+            printf(&quot;\n&quot;);    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+int main(void) {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_029</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+
+    int i, j;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = 1; j &lt;= N; j++)
+            if (j == i)
+                printf(&quot;* &quot;);
+            else if (j == N - i + 1 &amp;&amp; j != N)
+                printf(&quot;* &quot;);
+            else if (j == N - i + 1 &amp;&amp; j == N)
+                printf(&quot;*&quot;);
+            else if (j != i &amp;&amp; j != N)
+                printf(&quot;- &quot;);
+            else
+                printf(&quot;-&quot;);
+        if (j != N + 1 || i != N)
+            printf(&quot;\n&quot;);    
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+int main(void) {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - * &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - * &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - * &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - * &quot;
+  }
+]</pre></details><details><summary>sample_030</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+
+    int i, j;
+
+    for (i = 1; i &lt;= N; i++) {
+        for (j = 1; j &lt;= N; j++)
+            if (j == i)
+                printf(&quot;* &quot;);
+            else if (j == N - i + 1 &amp;&amp; j != N)
+                printf(&quot;* &quot;);
+            else if (j == N - i + 1 &amp;&amp; j == N)
+                printf(&quot;*&quot;);
+            else if (j != i &amp;&amp; j != N)
+                printf(&quot;- &quot;);
+            else
+                printf(&quot;-&quot;);
+        printf(&quot;\n&quot;);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+int main(void) {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_031</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int s,coluna = 1 ,linha = 1, conta1 = 1,conta2;
+    scanf(&quot;%d&quot;,&amp;s);
+
+    conta2 = s;
+
+    while (coluna &lt;= s)
+    {
+        while (linha &lt;= s)
+        {
+            if (linha == conta1 || linha == conta2)
+            {
+                printf(&quot;*&quot;);
+            }
+            else
+            {
+                printf(&quot;-&quot;);
+            }
+            printf(&quot; &quot;);
+            if (linha == s)
+            {
+                printf(&quot;\n&quot;);
+            }
+            linha ++;
+        }
+        coluna++;
+        linha = 1;
+        conta1++;
+        conta2--;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_032</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+void cruz(int n)
+{
+    int i, j;
+    for (i = 1; i &lt;= n; i++)
+    {
+        for (j = 1; j &lt;= n; j++)
+        {
+            if (j == i)
+                printf(&quot;* &quot;);
+            else if (j == (n - i + 1) &amp;&amp; j != n)
+                printf(&quot;* &quot;);
+            else if (j == (n - i + 1) &amp;&amp; j == n)
+                printf(&quot;*&quot;);
+            else if (j != i &amp;&amp; j != (n - i + 1))
+                printf(&quot;- &quot;);
+            else if (j != i &amp;&amp; j != (n - i + 1) &amp;&amp; j == n)
+                printf(&quot;-&quot;);              
+        }
+        printf(&quot;\n&quot;);
+    }
+
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_033</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+void cruz(int n)
+{
+    int i, j;
+    for (i = 1; i &lt;= n; i++)
+    {
+        for (j = 1; j &lt;= n; j++)
+        {
+            if (j == i || (j == (n - i + 1) &amp;&amp; j != n))
+                printf(&quot;* &quot;);
+            else if (j != i &amp;&amp; j != (n - i + 1))
+                printf(&quot;- &quot;);                
+            else if (j == (n - i + 1))
+                printf(&quot;* &quot;);         
+        }
+        printf(&quot;\n&quot;);
+    }
+
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_034</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+void cruz(int n)
+{
+    int i, j;
+    for (i = 1; i &lt;= n; i++)
+    {
+        for (j = 1; j &lt;= n; j++)
+        {
+            if (j == i)
+                printf(&quot;* &quot;);
+            else if (j == (n - i + 1) &amp;&amp; j != n)
+                printf(&quot;* &quot;);
+            else if (j == (n - i + 1) &amp;&amp; j == n)
+                printf(&quot;* &quot;);
+            else if (j != i &amp;&amp; j != (n - i + 1))
+                printf(&quot;- &quot;);
+            else if (j != i &amp;&amp; j != (n - i + 1) &amp;&amp; j == n)
+                printf(&quot;-&quot;);              
+        }
+        printf(&quot;\n&quot;);
+    }
+
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_035</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+void cruz(int n)
+{
+    int i, j;
+    for (i = 1; i &lt;= n; i++)
+    {
+        for (j = 1; j &lt;= n; j++)
+        {
+            if (j == i || (j == (n - i + 1) &amp;&amp; j != n))
+                printf(&quot;* &quot;);
+            else if (j != i &amp;&amp; j != (n - i + 1))
+                printf(&quot;- &quot;);
+            else if (j != i &amp;&amp; j != (n - i + 1) &amp;&amp; j == n)
+                printf(&quot;-&quot;);            
+            else if (j == (n - i + 1))
+                printf(&quot;* &quot;);         
+        }
+        printf(&quot;\n&quot;);
+    }
+
+}
+
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_036</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int DIM) {
+
+    int i, linha, pos_max = DIM - 1;
+    char separador = &#x27;-&#x27;;
+
+    for (linha = 0; linha &lt;= pos_max; linha++)
+    {
+        for (i = 0; i &lt;= pos_max; i++){
+            if (i == linha) {
+                printf(&quot;*&quot;);
+            } else if (i == pos_max - linha) {
+                printf(&quot;*&quot;);
+            } else {
+                printf(&quot;%c&quot;, separador);
+            }
+            printf(&quot; &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+    
+}
+
+int main()
+{
+    int dim;
+    scanf(&quot;%d&quot;, &amp;dim);
+
+    cruz(dim);
+    
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_037</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int DIM) {
+
+    int i, linha, pos_max = DIM - 1;
+    char separador = &#x27;-&#x27;;
+
+    for (linha = 0; linha &lt;= pos_max; linha++)
+    {
+        for (i = 0; i &lt;= pos_max; i++){
+            if (i == linha) {
+                printf(&quot;*&quot;);
+            } else if (i == pos_max - linha) {
+                printf(&quot;*&quot;);
+            } else {
+                printf(&quot;%c&quot;, separador);
+            }
+            printf(&quot; &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+    
+}
+
+
+int main() {
+    int dim;
+    scanf(&quot;%d&quot;, &amp;dim);
+
+    cruz(dim);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_038</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int DIM) {
+
+    int i, linha, pos_max = DIM - 1;
+    char separador = &#x27;-&#x27;;
+
+    for (linha = 0; linha &lt;= pos_max; linha++)
+    {
+        for (i = 0; i &lt;= pos_max; i++){
+            if (i == linha) {
+                printf(&quot;*&quot;);
+            } else if (i == pos_max - linha) {
+                printf(&quot;*&quot;);
+            } else {
+                printf(&quot;%c&quot;, separador);
+            }
+            printf(&quot; &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+    
+}
+
+int main()
+{
+    int dim;
+    scanf(&quot;%d&quot;, &amp;dim);
+
+    cruz(dim);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_039</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+void cruz(int dim) {
+    
+    int lin, col;
+    for(lin = 1; lin &lt; dim+1; lin++) {
+        for(col = 1; col &lt; dim+1; col++) {
+            if (lin == col) {
+                putchar(&#x27;*&#x27;);
+                putchar(&#x27; &#x27;);
+            }
+            else if(lin == (dim - col + 1)) {
+                putchar(&#x27;*&#x27;);
+                putchar(&#x27; &#x27;);
+            }
+            else {
+                putchar(&#x27;-&#x27;);
+                putchar(&#x27; &#x27;);
+            }
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+
+int main() {
+
+    int dim;
+
+    scanf(&quot;%d&quot;, &amp;dim);
+
+    cruz(dim);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_040</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+    int i, j;
+
+    for (i = 1; i &lt;= N; ++i) {
+        for (j = 1; j &lt;= N; ++j) {
+            if (i == j || i + j == N + 1)
+                printf(&quot;*&quot;);
+            else printf(&quot;-&quot;);
+            putchar(&#x27; &#x27;);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+
+int main() {
+    int N;
+
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_041</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N)
+{
+    int Linhas=1;
+    int Colunas=1;
+    while (Linhas&lt;=N)
+    {
+        while (Colunas&lt;=N)
+        {
+            if (Colunas==Linhas)
+            {
+                printf(&quot;* &quot;);
+            }
+            else if (Colunas==N-Linhas+1)
+            {
+                printf(&quot;* &quot;);
+            }
+            else
+            {
+                printf (&quot;- &quot;);
+                
+            }
+            Colunas++;
+        }
+        printf(&quot;\n&quot;);
+
+        Linhas++;
+        Colunas=1;
+    }
+}
+
+
+
+
+int main()
+{
+    int N;
+    scanf (&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_042</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N)
+{
+    int Linhas=1;
+    int Colunas=1;
+    while (Linhas&lt;=N)
+    {
+        while (Colunas&lt;=N)
+        {
+            if (Colunas==Linhas)
+            {
+                printf(&quot; *&quot;);
+            }
+            else if (Colunas==N-Linhas+1)
+            {
+                printf(&quot; *&quot;);
+            }
+            else
+            {
+                printf (&quot; -&quot;);
+                
+            }
+            Colunas++;
+        }
+        printf(&quot; \n&quot;);
+
+        Linhas++;
+        Colunas=1;
+    }
+}
+
+
+
+
+int main()
+{
+    int N;
+    scanf (&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot; * - * \n - * - \n * - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot; * - - * \n - * * - \n - * * - \n * - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot; * - - - * \n - * - * - \n - - * - - \n - * - * - \n * - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot; * - - - - - - * \n - * - - - - * - \n - - * - - * - - \n - - - * * - - - \n - - - * * - - - \n - - * - - * - - \n - * - - - - * - \n * - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_043</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N)
+{
+    int Linhas=1;
+    int Colunas=1;
+    while (Linhas&lt;=N)
+    {
+        while (Colunas&lt;=N)
+        {
+            if (Colunas==Linhas)
+            {
+                printf(&quot;* &quot;);
+            }
+            else if (Colunas==N-Linhas+1)
+            {
+                printf(&quot;* &quot;);
+            }
+            else
+            {
+                printf (&quot;- &quot;);
+                
+            }
+            Colunas++;
+        }
+        printf(&quot; \n&quot;);
+
+        Linhas++;
+        Colunas=1;
+    }
+}
+
+
+
+
+int main()
+{
+    int N;
+    scanf (&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *  \n- * -  \n* - *  \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *  \n- * * -  \n- * * -  \n* - - *  \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *  \n- * - * -  \n- - * - -  \n- * - * -  \n* - - - *  \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *  \n- * - - - - * -  \n- - * - - * - -  \n- - - * * - - -  \n- - - * * - - -  \n- - * - - * - -  \n- * - - - - * -  \n* - - - - - - *  \n&quot;
+  }
+]</pre></details><details><summary>sample_044</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+    int N, Cruz_L, Cruz_R, Linhas = 1, Posicao;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    Cruz_L = 1;
+    Cruz_R = N;
+
+    while (Linhas &lt;= N) {
+        Posicao = 1; 
+        
+        while (Posicao &lt;= N) {
+
+            if ((Posicao == N) == Cruz_R) {
+                printf(&quot;*&quot;);
+            }
+
+            else if (Posicao == Cruz_L || Posicao == Cruz_R) {
+                printf(&quot;* &quot;);
+            
+            } else {
+
+                if (Posicao == N) {
+                    printf(&quot;-&quot;);
+
+                }
+                else {
+
+                    printf(&quot;- &quot;);
+
+                }
+            }
+
+            Posicao += 1;
+        }
+
+        Cruz_L += 1;
+        Cruz_R -= 1;
+        Linhas += 1;
+        printf(&quot;\n&quot;);
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * -\n* - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * -\n- * * -\n* - - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;
+  }
+]</pre></details><details><summary>sample_045</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int n){
+    int i,j;
+    for(i=0;i&lt;n;i++){
+        for(j=0;j&lt;n;j++){
+            printf(&quot;%s &quot;, j-i==0 || j+i==n-1? &quot;*&quot;:&quot;-&quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_046</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz( int n){
+	int i, j;
+	
+	
+	for (i = 0; i &lt; n; i++){
+		for (j = 0; j &lt; n; j++){
+			printf(&quot;%c&quot;, (i == j || j + i  == n -	 + 1) ? &#x27;*&#x27; : &#x27;-&#x27;);
+			if (j != n) putchar(&#x27; &#x27;);
+		}
+		putchar(&#x27;\n&#x27;);
+	}
+}
+
+int main (){
+	int n;
+	
+	scanf(&quot;%d&quot;, &amp;n);
+	cruz(n);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_047</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int num) {
+    int linha, col;
+    for (linha = 1; linha &lt;= num; linha++) {
+        for (col = 1; col &lt;= num; col++) {
+            if (col == linha || col == (num - linha + 1))
+                printf(&quot;*&quot;);
+            else
+                printf(&quot;-&quot;);
+            printf(&quot; &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main () {
+    int num;
+    scanf(&quot;%d&quot;, &amp;num);
+    cruz(num);
+
+   return 0; 
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_048</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+    int i,j;
+    for (i=0;i&lt;N;i++) {
+        for (j=0;j&lt;N;j++) {
+            if (i==j) {
+                printf(&quot;* &quot;);
+            } 
+            else if ((i==0 || i==N-1) &amp;&amp; j==N-1) {
+                printf(&quot;*&quot;);}
+                
+                else if (i+j==N-1) {
+                printf(&quot;* &quot;);
+            }else if (j==N-1){
+                printf(&quot;-&quot;);
+            }else {
+                printf(&quot;- &quot;);
+            
+            } }
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_049</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+    int i,j;
+    for (i=0;i&lt;N;i++) {
+        for (j=0;j&lt;N;j++) {
+            if (i==j) {
+                printf(&quot;* &quot;);
+            } 
+            else if ((i==0 || i==N-1) &amp;&amp; j==N-1) {
+                printf(&quot;*&quot;);
+            } else if (i+j==N-1) {
+                printf(&quot;* &quot;);
+            }else if (j==N-1) {
+                printf(&quot;-&quot;);
+            }else {
+                printf(&quot;- &quot;);
+            
+            } }
+        putchar(&#x27;\n&#x27;);
+    }
+}
+
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_050</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+    int i,j;
+    for (i=0;i&lt;N;i++) {
+        for (j=0;j&lt;N;j++) {
+            if (i==j) {
+                printf(&quot;* &quot;);
+            } 
+            
+                
+                else if (i+j==N-1) {
+                printf(&quot;* &quot;);
+            }else {
+                printf(&quot;- &quot;);
+            } }
+        putchar(&#x27;\n&#x27;);
+    }
+} 
+
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_051</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N);
+
+int main(void){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    cruz(n);
+
+
+    return 0;
+}
+
+void cruz(int N){
+    int count = N;
+    int i,j;
+    for(i = 1; i &lt;= N;i++){
+        for(j = 1; j &lt;= N;j++){
+            
+            if(j == i || j == count){ 
+                printf(&quot;* &quot;);
+            }
+            else{
+                printf(&quot;- &quot;);
+            }
+
+        }
+        printf(&quot;\n&quot;);
+        count--;
+    }
+
+    return;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_052</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N);
+
+int main(void){
+    int n;
+    scanf(&quot;%d&quot;,&amp;n);
+    cruz(n);
+
+
+    return 0;
+}
+
+void cruz(int N){
+    int count = N;
+    int i,j;
+    for(i = 1; i &lt;= N;i++){
+        for(j = 1; j &lt;= N;j++){
+            if(j){
+                printf(&quot; &quot;);
+            }
+            if(j == i || j == count){ 
+                printf(&quot;*&quot;);
+            }
+            else{
+                printf(&quot;-&quot;);
+            }
+
+        }
+        printf(&quot;\n&quot;);
+        count--;
+    }
+
+    return;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot; * - *\n - * -\n * - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot; * - - *\n - * * -\n - * * -\n * - - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot; * - - - *\n - * - * -\n - - * - -\n - * - * -\n * - - - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot; * - - - - - - *\n - * - - - - * -\n - - * - - * - -\n - - - * * - - -\n - - - * * - - -\n - - * - - * - -\n - * - - - - * -\n * - - - - - - *\n&quot;
+  }
+]</pre></details><details><summary>sample_053</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int n) {
+    int i;
+    for (i = 0; i &lt; n; i++) {
+        int n1 = i, n2 = n - i - 1;
+        int j;
+        for (j = 0; j &lt; n; j++) {
+            if (j == n1 || j == n2) {
+                printf(&quot;* &quot;);
+            }
+            else {
+                printf(&quot;- &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(void) {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_054</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int n) {
+    int i;
+    for (i = 0; i &lt; n; i++) {
+        int n1 = i, n2 = n - i - 1;
+        int j;
+        for (j = 0; j &lt; n; j++) {
+            if (j == n) {
+                if (j == n1 || j == n2) {
+                    printf(&quot;*&quot;);
+                }
+                else {
+                    printf(&quot;-&quot;);
+                }
+            }
+            else {
+                if (j == n1 || j == n2) {
+                    printf(&quot;* &quot;);
+                }
+                else {
+                    printf(&quot;- &quot;);
+                }
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(void) {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_055</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int n) {
+    int i, j;
+    for (i = 1; i &lt;= n; i++) {
+        for (j = 1; j &lt;= n; j++) {
+            if (i == j || i + j == n + 1) {
+                printf(&quot;* &quot;);
+            } else {
+                printf(&quot;- &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_056</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N){
+    int lin, col;
+    for (lin = 1; lin &lt;= N; lin++){
+        for (col = 1; col &lt;= N; col++)
+            printf(&quot;%s&quot;, ((col == lin) || ((col + lin) == (N + 1))) ? &quot;* &quot; : &quot;- &quot;);
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_057</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N) {
+  int i, j;
+  
+  for(i = 0; i &lt; N; i++) {
+    for(j = 0; j &lt; N; j++) {
+      if(i == j || i == (N - j - 1)) 
+        printf(&quot;* &quot;);
+      else 
+        printf(&quot;- &quot;);
+    }
+    printf(&quot;\n&quot;);
+  }
+}
+
+int main() {
+  int N;
+
+  scanf(&quot;%d&quot;, &amp;N);
+  cruz(N);
+  
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_059</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz(int N){
+    int i,j;
+    for(i=1;i&lt;=N;i++){
+        for(j=1;j&lt;=N;j++){
+            if(i==j || i+j == N+1)
+                printf(&quot;* &quot;);
+            else
+                printf(&quot;- &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_060</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz(int n){    
+    int i, j;
+
+    for (i = 0; i &lt; n; i++){
+        for (j = 0; j &lt; n; j++){
+            if (j==i|| j == n - i - 1){
+                printf(&quot;* &quot;);
+            }
+            else printf(&quot;- &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main(){
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_061</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz(int n) {
+    int i, a;
+
+    for(i=1; i &lt;= n; i++) {
+        for(a = 1; a &lt;= n ;a++){
+            if (a == i) {
+                if (a == 1)
+                    printf(&quot;* &quot;);
+                else
+                    printf(&quot;* &quot;);
+            }
+            else if (a == n - i +1) {
+                if (a == n)
+                    printf(&quot;*&quot;);
+                else
+                    printf(&quot;* &quot;);
+            }
+            else {
+                if (a == 1)
+                    printf(&quot;- &quot;);
+                else if (a == n)
+                    printf(&quot;-&quot;);
+                else 
+                    printf(&quot;- &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main() {
+    int n;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_062</summary><pre>
+#include &lt;stdio.h&gt;
+void cruz(int N) {
+    int i,j,c=1,v=N;
+    for (i=1;i&lt;=N;i++) {
+        for (j=1;j&lt;=N;j++){
+            if (j==c || j==v) {
+                printf(&quot;*&quot;);
+                printf(&quot;%*s&quot;,1,&quot; &quot;);
+            }
+            else {
+                printf(&quot;-&quot;);
+                printf(&quot;%*s&quot;,1,&quot; &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+        c++;
+        v--;
+    }
+}
+
+int main () {
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_063</summary><pre>
+#include &lt;stdio.h&gt;
+void cruz(int N) {
+    int i,j,c=1,v=N;
+    for (i=1;i&lt;=N;i++) {
+        for (j=1;j&lt;=N;j++){
+            if (j==c || j==v) {
+                printf(&quot;*&quot;);
+                printf(&quot;%*s&quot;,1,&quot; &quot;);
+            }
+            else {
+                printf(&quot;-&quot;);
+                printf(&quot;%*s&quot;,1,&quot; &quot;);
+            }
+        }
+        printf(&quot;\n&quot;);
+        c++;
+        v--;
+    }
+}
+
+int main () {
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    cruz(N);
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_064</summary><pre>
+#include &lt;stdio.h&gt;
+
+void cruz (int n){
+    int linha, coluna;
+    for(linha = 1; linha &lt;= n; linha++)     
+        for (coluna = 1; coluna &lt;= n; coluna++) 
+            if (coluna != n){
+                if (linha == coluna || linha + coluna == n + 1)
+                    printf(&quot;* &quot;);
+                else
+                    printf(&quot;- &quot;);
+            }
+            else{
+                if (linha == coluna || linha + coluna == n + 1)
+                    printf(&quot;* \n&quot;);
+                else
+                    printf(&quot;- \n&quot;);
+            }
+}
+
+int main(){
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    cruz(n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_065</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void cruz (int n)
+{
+    int i, j;
+
+    for (i = 1; i &lt;= n; i++) 
+    {
+        for (j = 1; j &lt;= n; j++)
+        {
+            if (j == i || j == n - i + 1)
+                printf(&quot;* &quot;);
+            
+            else
+                printf(&quot;- &quot;);
+        }
+
+        printf(&quot;\n&quot;);
+    }
+
+    return;
+}
+
+int main() 
+{
+    int num;
+
+    scanf(&quot;%d&quot;, &amp;num);
+    cruz(num);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details><details><summary>sample_066</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n,i,j;
+    scanf(&quot;%d&quot;,&amp;n);
+    for (i=1; i&lt;=n; i++){
+        for (j=1; j&lt;=n; j++){
+            if (j == i || j == n-i+1){
+                putchar(&#x27;*&#x27;);
+                putchar(&#x27; &#x27;);
+            }
+            else if (j==n-i+1)
+                putchar(&#x27;*&#x27;);
+            else{
+                putchar(&#x27;-&#x27;);
+                putchar(&#x27; &#x27;);
+            }
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;* - *\n- * -\n* - *\n&quot;,
+    &quot;output&quot;: &quot;* - * \n- * - \n* - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;* - - *\n- * * -\n- * * -\n* - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - * \n- * * - \n- * * - \n* - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;* - - - *\n- * - * -\n- - * - -\n- * - * -\n* - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - * \n- * - * - \n- - * - - \n- * - * - \n* - - - * \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;* - - - - - - *\n- * - - - - * -\n- - * - - * - -\n- - - * * - - -\n- - - * * - - -\n- - * - - * - -\n- * - - - - * -\n* - - - - - - *\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - * \n- * - - - - * - \n- - * - - * - - \n- - - * * - - - \n- - - * * - - - \n- - * - - * - - \n- * - - - - * - \n* - - - - - - * \n&quot;
+  }
+]</pre></details></html>

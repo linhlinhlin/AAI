@@ -14,6 +14,8 @@ from urllib.parse import parse_qs, urlparse
 
 from .learning_problems import PROBLEMS
 from .learning_service import LearningService
+from .project_reference import attach_reference, reference_library
+from .semantic_rules import refresh_rule_descriptions
 
 STATIC = Path(__file__).with_name('web_assets')
 logger = logging.getLogger(__name__)
@@ -99,10 +101,16 @@ def make_handler(service):
                 if path.path == '/api/teacher/overview':
                     self.teacher(user)
                     return self.respond(200, service.overview())
+                if path.path == '/api/teacher/reference':
+                    self.teacher(user)
+                    return self.respond(200, reference_library(
+                        query.get('source', ['cpack'])[0], query.get('cluster', [None])[0]))
                 if path.path == '/api/teacher/report':
                     self.teacher(user)
                     key = query.get('id', [''])[0]
                     report, reviews = service.store.report(key)
+                    refresh_rule_descriptions(report)
+                    attach_reference(report)
                     return self.respond(200, {'id': key, 'report': report, 'reviews': reviews,
                                               'suggestions': service.store.suggestions(key)})
                 return self.respond(404, {'error': 'Không tìm thấy nội dung.'})

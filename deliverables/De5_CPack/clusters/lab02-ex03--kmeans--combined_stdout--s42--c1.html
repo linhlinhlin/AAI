@@ -1,0 +1,1125 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab02-ex03--kmeans--combined_stdout--s42--c1</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab02-ex03 · 24 bài</h1><p>lab02-ex03--kmeans--combined_stdout--s42--c1 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex03_0: 24/24 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex03_2: 24/24 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex03_1: 18/24 bài trượt (75.0%); 0 chưa chạy.</p><p>Test ex03_3: 18/24 bài trượt (75.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này · 5/24 bài khớp.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 23,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.9583333333333334,
+      &quot;cohort_rate&quot;: 0.375,
+      &quot;difference_from_cohort&quot;: 0.5833333333333334
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 23,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.9583333333333334,
+      &quot;cohort_rate&quot;: 0.375,
+      &quot;difference_from_cohort&quot;: 0.5833333333333334
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 20,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.8333333333333334,
+      &quot;cohort_rate&quot;: 0.3125,
+      &quot;difference_from_cohort&quot;: 0.5208333333333334
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 20,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.8333333333333334,
+      &quot;cohort_rate&quot;: 0.3125,
+      &quot;difference_from_cohort&quot;: 0.5208333333333334
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.625,
+      &quot;cohort_rate&quot;: 0.265625,
+      &quot;difference_from_cohort&quot;: 0.359375
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_3:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.625,
+      &quot;cohort_rate&quot;: 0.265625,
+      &quot;difference_from_cohort&quot;: 0.359375
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 12,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.265625,
+      &quot;difference_from_cohort&quot;: 0.234375
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_3:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 12,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.265625,
+      &quot;difference_from_cohort&quot;: 0.234375
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_1:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.09375,
+      &quot;difference_from_cohort&quot;: 0.15625
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_1:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.09375,
+      &quot;difference_from_cohort&quot;: 0.15625
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_3:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.09375,
+      &quot;difference_from_cohort&quot;: 0.15625
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_3:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.09375,
+      &quot;difference_from_cohort&quot;: 0.15625
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_1&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.09375,
+      &quot;difference_from_cohort&quot;: 0.15625
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_3&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.09375,
+      &quot;difference_from_cohort&quot;: 0.15625
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.16666666666666666,
+      &quot;cohort_rate&quot;: 0.078125,
+      &quot;difference_from_cohort&quot;: 0.08854166666666666
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 24,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.921875,
+      &quot;difference_from_cohort&quot;: 0.078125
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 24,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.921875,
+      &quot;difference_from_cohort&quot;: 0.078125
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_0:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.041666666666666664,
+      &quot;cohort_rate&quot;: 0.015625,
+      &quot;difference_from_cohort&quot;: 0.026041666666666664
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_2:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 0.041666666666666664,
+      &quot;cohort_rate&quot;: 0.015625,
+      &quot;difference_from_cohort&quot;: 0.026041666666666664
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 24,
+      &quot;n_cluster&quot;: 24,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.984375,
+      &quot;difference_from_cohort&quot;: 0.015625
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 3,
+      &quot;if&quot;: [
+        &quot;NOT (stdout:ex03_2:relation=whitespace)&quot;,
+        &quot;test:ex03_0=fail&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 18,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 7,
+      &quot;holdout_precision&quot;: 0.8571428571428571
+    }
+  ]
+}</pre></details><details><summary>sample_002 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+	int N, M;
+	printf(&quot;Insira dois numeros:&quot;);
+	scanf(&quot;%d %d&quot;, &amp;N, &amp;M);
+
+	if (N % M == 0){
+		printf(&quot;yes\n&quot;);
+	}
+
+	else {
+		printf(&quot;no\n&quot;);
+	}
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros:yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros:no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros:yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros:no\n&quot;
+  }
+]</pre></details><details><summary>sample_005 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int N,M;
+    scanf(&quot;%d%d&quot;,&amp;N,&amp;M);
+    {
+    if (M % N == 0){
+        printf(&quot;yes\n&quot;);
+    }
+    else 
+        printf(&quot;no\n&quot;);
+    }
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_007 · đại diện</summary><pre>
+#include&lt;stdio.h&gt;
+int main(){
+    int N,M;
+    scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+    printf(&quot;%s\n&quot;, ((M%N)==0)?&quot;yes&quot;:&quot;no&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_021 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+	int M, N;
+
+	scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+
+	if (N % M == 0) {
+		printf(&quot;Yes\n&quot;);
+	}
+	else {
+		printf(&quot;No\n&quot;);
+	}
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;No\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;No\n&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+  int N, M;
+
+  scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+
+  if (N % M == 0)
+    printf(&quot;%s\n&quot;, &quot;\&quot;yes\&quot;&quot;);
+  else
+    printf(&quot;%s\n&quot;, &quot;\&quot;no\&quot;&quot;);
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;\&quot;yes\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;\&quot;no\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;\&quot;yes\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;\&quot;no\&quot;\n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+  int N, M;
+
+  scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+
+  if ((N % M) == 0)
+    printf(&quot;%s\n&quot;, &quot;\&quot;yes\&quot;&quot;);
+  else
+    printf(&quot;%s\n&quot;, &quot;\&quot;no\&quot;&quot;);
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;\&quot;yes\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;\&quot;no\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;\&quot;yes\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;\&quot;no\&quot;\n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, m;
+    printf(&quot;Introduza dois inteiros positivos.\n&quot;);
+    scanf(&quot;%d\n%d&quot;, &amp;n, &amp;m);
+    if(n % m == 0)
+        printf(&quot;yes.\n&quot;);
+    else
+        printf(&quot;no.\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois inteiros positivos.\nyes.\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois inteiros positivos.\nno.\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois inteiros positivos.\nyes.\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois inteiros positivos.\nno.\n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+
+int a,b ;
+
+printf(&quot;Insira dois numeros por favor\n&quot;) ;
+
+scanf(&quot;%d%d&quot; , &amp;a , &amp;b ) ;
+
+if (a % b ==0  )
+{
+
+    printf(&quot;%d é divisivel por %d\n&quot; ,a,b ) ;
+}
+
+else 
+{
+
+    printf(&quot;%d não é divisivel por %d\n&quot; , a,b ) ;
+
+}
+
+
+return 0;
+
+
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros por favor\n4 é divisivel por 2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros por favor\n5 não é divisivel por 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros por favor\n10 é divisivel por 5\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros por favor\n20 não é divisivel por 7\n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    int n, m;
+    float resto;
+    scanf(&quot;%d,%d&quot;, &amp;n, &amp;m);
+    resto = n % m;
+    if (resto == 0.0)
+        printf(&quot;yes\n&quot;);
+    else
+        printf(&quot;no\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    int resto, n, m;
+    scanf(&quot;%d,%d&quot;, &amp;n, &amp;m);
+    resto = n % m;
+    if (resto == 0)
+        printf(&quot;yes\n&quot;);
+    else
+        printf(&quot;no\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, m;
+
+    printf(&quot;Introduza dois números inteiros positivos: \n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+
+    if ((n%m) == 0)
+    {
+        printf(&quot;%s\n&quot;, &quot;yes&quot;);
+    }
+    else 
+    {
+        printf(&quot;%s\n&quot;, &quot;no&quot;);
+    }
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nno\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nno\n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, m;
+
+    printf(&quot;Introduza dois números inteiros positivos: \n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+
+    if ((n%m) == 0)
+    {
+        printf(&quot;%s\n&quot;, &quot;yes&quot;);
+    }
+    else 
+    {
+        printf(&quot;%s\n&quot;, &quot;no&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nno\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nno\n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, m;
+
+    printf(&quot;Introduza dois números inteiros positivos: \n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+
+    if ((n%m) == 0)
+    {
+        printf(&quot;%s\n&quot;, &quot;yes&quot;);
+    }
+    else 
+    {
+        printf(&quot;%s\n&quot;, &quot;no&quot;);
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nno\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nno\n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, m;
+
+    printf(&quot;Introduza dois números inteiros positivos: \n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+
+    if ((n%m) == 0)
+    {
+        printf(&quot;%s\n&quot;, &quot;yes&quot;);
+    }
+    else 
+    {
+        printf(&quot;%s\n&quot;, &quot;no&quot;);
+    }
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nno\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros positivos: \nno\n&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>
+#include &lt;stdio.h&gt;
+int main () {
+    int M, N;
+    scanf(&quot;%d%d&quot;, &amp;M, &amp;N);
+    if (N%M == 0) {
+        printf(&quot;yes&quot;);
+    }
+    else{
+        printf(&quot;no&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+
+
+#include &lt;stdio.h&gt;
+
+int divisor(int a, int b) {
+    if (a % b == 0) {
+        printf(&quot;Yes\n&quot;);
+        return 0; 
+    }
+    else {
+        printf(&quot;No\n&quot;);
+        return 1; 
+    }
+}
+
+int main() {
+    int a, b;
+  
+    
+    scanf(&quot;%d %d&quot;, &amp;a,&amp;b);
+    
+    divisor(a, b);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;No\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;No\n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int N, M;
+
+
+    scanf(&quot;%d %d&quot;, &amp;N, &amp;M);
+
+    if( N / M == 0)
+    {
+        printf(&quot;yes&quot;);
+    }
+    else
+    {
+        printf(&quot;no&quot;);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+  int valor1, valor2;
+
+  scanf(&quot;%d %d&quot;, &amp;valor1, &amp;valor2);
+
+  printf(&quot;%s\n&quot;, valor1 % valor2 == 0 ? &quot;YES&quot; : &quot;NO&quot;);
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;YES\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;NO\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;YES\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;NO\n&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+
+
+int N;
+int M;
+int rest;
+
+printf(&quot; introduza os valores de N e M \n&quot;);
+scanf(&quot;%d %d&quot;, &amp;N, &amp;M);
+
+
+rest = N%M;
+
+
+if (rest == 0 ) {
+
+    printf(&quot;\n &gt;&gt;yes \n\n&quot;);
+}
+else {
+
+    printf(&quot;\n &gt;&gt;no \n&quot;);
+}
+
+
+
+
+
+return 0;  
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot; introduza os valores de N e M \n\n &gt;&gt;yes \n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot; introduza os valores de N e M \n\n &gt;&gt;no \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot; introduza os valores de N e M \n\n &gt;&gt;yes \n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot; introduza os valores de N e M \n\n &gt;&gt;no \n&quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int N, M;
+
+    scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+    if (N/M == 0)
+    {
+        printf(&quot;yes\n&quot;);
+    }
+    else
+    {
+        printf(&quot;no\n&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n, m;
+
+    printf(&quot;Introduza dois números: &quot;);
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+    n % m == 0 ? printf(&quot;yes\n&quot;) : printf(&quot;no\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números: yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números: no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números: yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números: no\n&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>
+# include &lt;stdio.h&gt;
+
+int main(){
+    int a, b;
+    scanf(&quot;%d %d&quot;, &amp;a, &amp;b);
+    if (b % a == 0 &amp;&amp; b != 0) printf(&quot;yes\n&quot;);
+    else printf(&quot;no\n&quot;);    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>
+#include&lt;stdio.h&gt;
+
+int N, M;
+
+
+
+int main () {
+    printf(&quot;Introduza o primeiro número: &quot;);
+    scanf(&quot;%d&quot;, &amp;N);        
+
+    printf(&quot;Introduza o segundo número: &quot;);
+    scanf(&quot;%d&quot;, &amp;M);
+
+   if (N  %  M  == 0) {
+        printf(&quot;yes\n&quot;);
+    } 
+    else {
+         printf(&quot;no\n&quot;);
+    }
+
+    return 0;                                        
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;4 2&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;5 3&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;10 5&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: no\n&quot;
+  }
+]</pre></details></html>

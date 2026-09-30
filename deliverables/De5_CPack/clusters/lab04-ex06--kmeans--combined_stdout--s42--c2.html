@@ -1,0 +1,927 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab04-ex06--kmeans--combined_stdout--s42--c2</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab04-ex06 · 16 bài</h1><p>lab04-ex06--kmeans--combined_stdout--s42--c2 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex06_0: 16/16 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex06_1: 16/16 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex06_3: 16/16 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex06_2: 3/16 bài trượt (18.8%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.425,
+      &quot;difference_from_cohort&quot;: 0.575
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.375,
+      &quot;difference_from_cohort&quot;: 0.5625
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_3:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.4,
+      &quot;difference_from_cohort&quot;: 0.5375
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_3:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.4,
+      &quot;difference_from_cohort&quot;: 0.5375
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.45,
+      &quot;difference_from_cohort&quot;: 0.4875
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.45,
+      &quot;difference_from_cohort&quot;: 0.4875
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.8125,
+      &quot;cohort_rate&quot;: 0.35,
+      &quot;difference_from_cohort&quot;: 0.4625
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.8125,
+      &quot;cohort_rate&quot;: 0.35,
+      &quot;difference_from_cohort&quot;: 0.4625
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_2&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.8125,
+      &quot;cohort_rate&quot;: 0.35,
+      &quot;difference_from_cohort&quot;: 0.4625
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.825,
+      &quot;difference_from_cohort&quot;: 0.17500000000000004
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.825,
+      &quot;difference_from_cohort&quot;: 0.17500000000000004
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.625,
+      &quot;cohort_rate&quot;: 0.45,
+      &quot;difference_from_cohort&quot;: 0.175
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.8125,
+      &quot;cohort_rate&quot;: 0.65,
+      &quot;difference_from_cohort&quot;: 0.16249999999999998
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.8,
+      &quot;difference_from_cohort&quot;: 0.13749999999999996
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.875,
+      &quot;difference_from_cohort&quot;: 0.125
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_3&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9,
+      &quot;difference_from_cohort&quot;: 0.09999999999999998
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.625,
+      &quot;cohort_rate&quot;: 0.575,
+      &quot;difference_from_cohort&quot;: 0.050000000000000044
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.0625,
+      &quot;cohort_rate&quot;: 0.025,
+      &quot;difference_from_cohort&quot;: 0.0375
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.975,
+      &quot;difference_from_cohort&quot;: 0.025000000000000022
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_subscript&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.975,
+      &quot;difference_from_cohort&quot;: 0.025000000000000022
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 4,
+      &quot;if&quot;: [
+        &quot;stdout:ex06_0:relation=whitespace&quot;
+      ],
+      &quot;then_cluster&quot;: 2,
+      &quot;train_support&quot;: 13,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 2,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_001 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+#define MAX 80
+
+int lelinha(char s[])
+{
+    int i,tam;
+    char c;
+    for(i=0;i&lt;(MAX-1) &amp;&amp; (c=getchar())!= EOF &amp;&amp; c !=&#x27;\n&#x27;;i++)
+    {
+        tam++;
+        s[i]=c;
+    }
+    if (c==EOF)
+    {
+        printf(&quot;\n&quot;);
+    }
+    s[i]= &#x27;\0&#x27;;
+    return tam;
+}
+void maiusculas(char s[])
+{
+    int i;
+    for(i=0;s[i]!= &#x27;\0&#x27;; i++)
+    {
+        if(s[i]&gt;=&#x27;a&#x27; &amp;&amp; s[i]&lt;= &#x27;z&#x27;)
+        {    
+            s[i]= (s[i]-&#x27;a&#x27;)+&#x27;A&#x27;;
+        }
+    }
+    printf(&quot;%s\n&quot;,s);
+}
+
+int main()
+{
+    char s[MAX];
+    lelinha(s);
+    maiusculas(s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;\nOLA ADEUS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;\nABCCBA\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;\nABDDDBA\n&quot;
+  }
+]</pre></details><details><summary>sample_005 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 80
+
+int leLinha(char str[]){
+    int c, contador = 0;
+
+    while((c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;){
+        str[contador++] = c;
+    }
+    str[contador] = &#x27;\0&#x27;;
+
+    return contador;
+}
+
+
+void maiusculas(char s[]){
+    int i, comprimento;
+
+    comprimento = strlen(s);
+
+    for(i = 0; i &lt; comprimento; i++){
+        if(&#x27;a&#x27; &lt; s[i] &amp;&amp; s[i]&lt; &#x27;z&#x27;)
+            s[i] += (&#x27;A&#x27; - &#x27;a&#x27;);
+    }
+}
+
+int main(){
+    char str[MAX];
+    leLinha(str);
+    maiusculas(str);
+
+    printf(&quot;%s\n&quot;, str);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA aDEUS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;aBCCBa\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;aBDDDBa\n&quot;
+  }
+]</pre></details><details><summary>sample_006 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+#define MAXSTRING 80
+
+int leLinha(char s[]) {
+	int i = 0;
+	char c;
+	while ((c = getchar()) != &#x27;\n&#x27; &amp;&amp; c != EOF) {
+		s[i++] = c;
+	}
+	s[i] = &#x27;\0&#x27;;
+	return i;
+}
+
+void maiusculas(char s[]) {
+	int i, len;
+	len = leLinha(s);
+	for (i = 0; i &lt; len; i++) {
+		if (s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i] &lt;= &#x27;z&#x27;) {
+			s[i] -= &#x27;a&#x27; - &#x27;A&#x27;;
+		}
+	}
+}
+
+int main() {
+	char s[MAXSTRING];
+	maiusculas(s);
+	printf(&quot;%s&quot;, s);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;HELLO WORLD!&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_007 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define VECMAX 100
+
+int main(void){
+    int i = 0;
+    char vec[VECMAX];
+
+    if(fgets(vec,VECMAX,stdin) == 0){
+        return 2;
+    }
+
+    while(vec[i++]) 
+    {
+        if(vec[i-1] &gt;= &#x27;a&#x27; &amp;&amp; vec[i-1] &lt;= &#x27;z&#x27; )
+        vec[i-1] = vec[i-1] + (&#x27;A&#x27;-&#x27;a&#x27;);
+    }    
+    printf(&quot;%s&quot;,vec);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>#include &lt;stdio.h&gt;
+#define MAX 80
+
+int lelinha(char s[])
+{
+    int i,tam;
+    char c;
+    for(i=0;i&lt;(MAX-1) &amp;&amp; (c=getchar())!= EOF &amp;&amp; c !=&#x27;\n&#x27;;i++)
+    {
+        tam++;
+        s[i]=c;
+    }
+    if (c==EOF)
+    {
+        printf(&quot;\n&quot;);
+    }
+    s[i]= &#x27;\0&#x27;;
+    return tam;
+}
+void maiusculas(char s[])
+{
+    int i;
+    for(i=0;s[i]!= &#x27;\0&#x27;; i++)
+    {
+        if(s[i]&gt;=&#x27;a&#x27; &amp;&amp; s[i]&lt;= &#x27;z&#x27;)
+        {    
+            s[i]= (s[i]-&#x27;a&#x27;)+&#x27;A&#x27;;
+        }
+    }
+    printf(&quot;%s\n&quot;,s);
+}
+
+int main()
+{
+    char s[MAX];
+    lelinha(s);
+    maiusculas(s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;\nOLA ADEUS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;\nABCCBA\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;\nABDDDBA\n&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>#include &lt;stdio.h&gt;
+
+int convertor = &#x27;A&#x27; - &#x27;a&#x27;;
+
+void maiusculas(char s[]){
+    int i = -1;
+    while(s[i++] != &#x27;\n&#x27;) {
+        if (s[i] &gt;= &#x27;a&#x27;)
+            s[i] += convertor;
+    }
+}
+
+int main() {
+    char s[50];
+    fgets(s, 50, stdin);
+    maiusculas(s);
+    printf(&quot;%s&quot;,s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX_C 100
+
+int leLinha(char s[]){
+    int c, ind;
+    for (ind = 0;ind &lt; MAX_C -1 &amp;&amp; ((c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;); ind++)
+        s[ind] = c;
+    s[ind] = &#x27;\0&#x27;;
+    return ind;
+}
+
+void maiusculas(char s[]){
+    int index;
+    for (index = 0; s[index] != &#x27;\0&#x27;; index++){
+        if (s[index] &gt;= &#x27;a&#x27;)
+            s[index] -= (&#x27;a&#x27; - &#x27;A&#x27;);
+    }
+}
+
+int main(){
+    char s[MAX_C];
+    leLinha(s);
+    maiusculas(s);
+    printf(&quot;%s&quot;,s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;HELLO WORLD!&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 100
+
+void maiusculas(char s[]) {
+    char c;
+    int i = 0;
+    while ((c = s[i]) != &#x27;\0&#x27;) {
+        if (c &lt;= &#x27;z&#x27; &amp;&amp; c &gt;= &#x27;a&#x27;) {
+            s[i] = c - (&#x27;a&#x27; - &#x27;A&#x27;);
+        }
+        i++;
+    }
+}
+
+int main () {
+    char s[MAX];
+    fgets(s, MAX, stdin);
+    maiusculas(s);
+    printf(&quot;%s&quot;, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+void maiusculas(char s[]) {
+    int i;
+    char c;
+
+    for (i = 0, c = s[i]; i &lt; MAX &amp;&amp; c != &#x27;\n&#x27;; i++, c = s[i]) {
+        if (c &gt;= &#x27;a&#x27; &amp;&amp; c &lt;= &#x27;z&#x27;)
+            s[i] += &#x27;A&#x27; - &#x27;a&#x27;;
+    }
+}
+
+int main() {
+    char s[MAX];
+
+    fgets(s, MAX, stdin);
+    maiusculas(s);
+
+    printf(&quot;%s&quot;, s);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 80
+
+int main(){
+    int i;
+    char s[MAX];
+    fgets(s, MAX, stdin);
+    for(i = 0; s[i] != &#x27;\0&#x27;; i++){
+        if(s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i] &lt;= &#x27;z&#x27;)
+            s[i] = s[i] - 32;
+    }
+    printf(&quot;%s&quot;, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]){
+    int len=0;
+    fgets(s, MAX, stdin);
+    while (s[len]!=EOF &amp;&amp; s[len]!=&#x27;\0&#x27;){
+        len++;
+    }
+    return len;
+}
+
+void maiusculas(char s[]){
+    int i,tamanho;
+    tamanho=leLinha(s);
+    for (i=0;i&lt;tamanho;i++){
+        if (&#x27;a&#x27;&lt;=s[i] &amp;&amp; s[i]&lt;=&#x27;z&#x27;) {
+            s[i]=s[i]-&#x27;a&#x27;+&#x27;A&#x27;;
+        }
+    }
+}
+
+
+int main(){
+    
+    char s[MAX];
+    
+    maiusculas(s);
+    printf(&quot;%s&quot;,s);
+    
+    return 0;
+    }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 80
+void maiusculas(char s[]) {
+    int i;
+    char letra;
+    for (i=0;s[i]!=&#x27;\n&#x27; &amp;&amp; s[i]!=&#x27;\0&#x27;;i++) {
+        if (s[i]&gt;=&#x27;a&#x27; &amp;&amp; s[i]&lt;=&#x27;z&#x27;) {
+            letra=s[i]-&#x27; &#x27;;
+            printf(&quot;%c&quot;,letra);
+        }
+        else {
+            printf(&quot;%c&quot;,s[i]);
+        }
+    }
+}
+
+int main() {
+    char s[MAX];
+    fgets(s,MAX,stdin);
+    maiusculas(s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;HELLO WORLD!&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 80
+
+void maiusculas(char s[]){
+    int i, len = strlen(s);
+    for(i = 0; i &lt; len; i++){
+        if(s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i] &lt;= &#x27;z&#x27;)
+            s[i] += &#x27;A&#x27; - &#x27;a&#x27;;
+    }
+}
+
+int main(){
+    char linha[MAX];
+    fgets(linha, MAX, stdin);
+    maiusculas(linha);
+    printf(&quot;%s&quot;, linha);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 80
+
+void maisculas(char s[]) {
+   int i,len=strlen(s);
+   for(i=0; i &lt;len; i++) {
+      if(s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i] &lt;= &#x27;z&#x27;)
+         s[i]+=&#x27;A&#x27;-&#x27;a&#x27;;
+   }
+}
+
+int main () {
+   char linha [MAX];
+   fgets (linha, MAX, stdin);
+   maisculas(linha);
+   printf(&quot;%s&quot;, linha);
+   return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 80
+
+void maiusculas(char s[]){
+    int i, len = strlen(s);
+
+    for (i = 0; i &lt; len; i++){
+        if (s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i] &lt;= &#x27;z&#x27;){
+            s[i] += &#x27;A&#x27; - &#x27;a&#x27;;
+        }
+    }
+}
+
+int main(){
+    char linha[MAX];
+    fgets(linha, MAX, stdin);
+
+    maiusculas(linha);
+    printf(&quot;%s&quot;, linha);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 80
+
+void maiusculas(char s[]){
+    int i;
+    for (i = 0; s[i] != &#x27;\0&#x27;; i++){
+        if (s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i] &lt;= &#x27;z&#x27;){
+            s[i] += &#x27;A&#x27;-&#x27;a&#x27;; 
+        }
+    }
+}
+
+int main(){
+    char linha[MAX];
+    fgets(linha, MAX, stdin);
+    
+    maiusculas(linha);
+    printf(&quot;%s&quot;, linha);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details></html>

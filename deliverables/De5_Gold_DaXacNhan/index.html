@@ -1,0 +1,2878 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nhãn tham chiếu đã xác nhận</title><style>body{font:18px/1.6 'Segoe UI',sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article{background:white;border:1px solid #cad6cd;padding:24px;border-radius:10px;margin:20px 0}h1{font:600 34px Georgia,serif}h2{font-size:23px}blockquote{margin:16px 0;padding:14px;background:#edf4e6;border-left:4px solid #356349}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}summary{cursor:pointer}a{color:#205b49}small{color:#52675a}</style><h1>Nhãn tham chiếu đã xác nhận</h1><p>48 nhãn cơ chế lỗi do AI đề xuất, đã được người dùng kiểm tra và chấp thuận trong hội thoại. Dùng làm bộ tham chiếu của dự án. Đây là một lượt xác nhận có xem gợi ý AI, chưa phải gold từ hai người chấm mù và phân xử. Chưa xác nhận nhận thức người học; chưa tính accuracy.</p><p>Bài 14 có nhiều cơ chế: giữ nguyên, không tự chọn một lỗi chính. Các câu NẾU–VÀ–THÌ vẫn là diễn giải từ bằng chứng, không phải luật quy nạp mới.</p><p><a href="gold_reference.json" download>Tải JSON</a> · <a href="gold_reference.md">Bản Markdown</a> · <a href="../De5_Nhan_AI_48_bai/index.html">Đối chiếu bản AI gốc</a></p><article><small>Bài 1 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Cập nhật biến lặp ngược chiều dừng</h2><blockquote>NẾU vòng lặp bắt đầu từ n, kiểm tra i &gt;= 1 nhưng lại tăng i VÀ các test ghi nhận không có output THÌ: Cập nhật biến lặp ngược chiều dừng.</blockquote><p>Ở vòng ngoài, i++ làm i đi xa điều kiện dừng thay vì tiến về 0. Lệnh in nằm sau vòng lặp nên không có đường kết thúc bình thường trước khi có thể tràn số nguyên.</p><p><b>Giới hạn bằng chứng:</b> Log chỉ ghi output rỗng, không đủ kết luận đã timeout hay crash. Không gọi đây là vòng lặp vô hạn xác định vì tràn int có hành vi không xác định.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    int n,c=0,i,j,k,d=0;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(i=n;i&gt;=1;i++)
+    {
+        for(j=i;j&gt;=1;j--)
+        {
+            for(k=j;k&gt;=1;k--)
+            {
+                if(j+k&gt;i)
+                c++;
+                else
+                d++;
+            }
+        }
+    }
+    printf(&quot;Number of possible triangles is %d&quot;,c);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details></article><article><small>Bài 2 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Đếm trùng tam giác khi đổi thứ tự ba cạnh</h2><blockquote>NẾU cả ba cạnh đều được duyệt độc lập từ 1 đến N, không loại hoán vị trùng VÀ N = 4 cho số đếm 34 thay vì 13 trong log THÌ: Đếm trùng tam giác khi đổi thứ tự ba cạnh.</blockquote><p>Các bộ cạnh đổi chỗ vẫn đi qua ba vòng lặp và đều được cộng vào tổng. Bộ ba cạnh của cùng một tam giác vì thế bị đếm nhiều lần.</p><p><b>Giới hạn bằng chứng:</b> Nhãn dựa trên cấu trúc duyệt và oracle lịch sử. Gói chấm từng bài thiếu đề gốc; cần đối chiếu quy ước tam giác không phân biệt thứ tự trước khi duyệt nhãn.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+int N;
+scanf(&quot;%d&quot;,&amp;N);
+int a;
+int b;
+int c;
+int x;
+for(x=0,a=1;a&lt;=N;a=a+1){
+    for(b=1;b&lt;=N;b=b+1){
+        for(c=1;c&lt;=N;c=c+1){
+             if((a+b&gt;c)&amp;&amp;(a+c&gt;b)&amp;&amp;(b+c&gt;a)){
+         x=x+1;
+             }
+        }
+        
+    }
+    
+}
+
+printf(&quot;Number of possible triangles is %d&quot;,x);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 34&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 65&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 175&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 5&quot;
+  }
+]</pre></details></article><article><small>Bài 3 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Thiếu ngoặc nhọn {} gom nhóm lệnh và else tương ứng</h2><blockquote>NẾU if(a&lt;0) chỉ điều khiển một lệnh in, còn các lệnh in thông báo nằm ngoài nhánh VÀ output có cả thông báo âm và dương cho cùng một số THÌ: Thiếu ngoặc nhọn {} gom nhóm lệnh và else tương ứng.</blockquote><p>Thụt lề không tạo thành khối lệnh trong C. Khi a khác 0, các dòng in negative và positive vẫn chạy; log số âm cho thấy hai thông báo nối nhau.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+float a;
+scanf(&quot;%f&quot;,&amp;a);
+if(a==0)
+    printf(&quot;input is zero&quot;);
+    else
+    {
+        if(a&lt;0)
+    printf(&quot;%.4f&quot;,a);
+    printf(&quot; is negative&quot;);
+    
+    printf(&quot;%.4f&quot;,a);
+    printf(&quot; is positive&quot;);
+    }
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 is negative-12.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot; is negative1.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot; is negative0.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 is negative-0.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot; is negative101.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero&quot;
+  }
+]</pre></details></article><article><small>Bài 4 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Đếm trùng tam giác khi đổi thứ tự ba cạnh</h2><blockquote>NẾU cả ba cạnh đều được duyệt độc lập từ 1 đến N, không loại hoán vị trùng VÀ N = 4 cho số đếm 34 thay vì 13 trong log THÌ: Đếm trùng tam giác khi đổi thứ tự ba cạnh.</blockquote><p>Các bộ cạnh đổi chỗ vẫn đi qua ba vòng lặp và đều được cộng vào tổng. Bộ ba cạnh của cùng một tam giác vì thế bị đếm nhiều lần.</p><p><b>Giới hạn bằng chứng:</b> Nhãn dựa trên cấu trúc duyệt và oracle lịch sử. Gói chấm từng bài thiếu đề gốc; cần đối chiếu quy ước tam giác không phân biệt thứ tự trước khi duyệt nhãn.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    int N,a,b,c,count;
+    count=0;
+    scanf(&quot;%d&quot;,&amp;N);
+    for(a=1;a&lt;=N;a=a+1){
+        for(b=1;b&lt;=N;b=b+1){
+            for(c=1;c&lt;=N;c=c+1){
+                if ((a+b&gt;c)&amp;&amp;(b+c&gt;a)&amp;&amp;(c+a&gt;b)){
+                    count=count+1;
+                }
+            }
+        }
+    }
+    printf(&quot;Number of possible triangles is %d&quot;,count);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 34&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 65&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 175&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 5&quot;
+  }
+]</pre></details></article><article><small>Bài 5 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Chuỗi printf có định dạng nhưng thiếu đối số</h2><blockquote>NẾU printf có cả %.4f và %d nhưng chỉ truyền một giá trị VÀ test số dương xuất hiện thêm một số nguyên ngoài đáp án THÌ: Chuỗi printf có định dạng nhưng thiếu đối số.</blockquote><p>Nhánh số dương thiếu đối số tương ứng với %d. Con số thừa trong log không phải kết quả tính toán hợp lệ của bài.</p><p><b>Giới hạn bằng chứng:</b> printf thiếu đối số gây hành vi không xác định; không khẳng định số thừa sẽ luôn giống log.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+    float a;
+    scanf(&quot;%f&quot;,&amp;a);
+    if(a&gt;0)   {
+    printf(&quot;%.4f is positive %d&quot;,a);    
+    }
+    else if(a&lt;0)
+    {
+    printf( &quot;%0.4f is negative&quot;,a);    
+    }
+    else 
+    {
+    printf(&quot;input is zero&quot;);    
+    }
+	
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.0000 is positive 7087920&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive 7087920&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000 is positive 7087920&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero&quot;
+  }
+]</pre></details></article><article><small>Bài 6 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Bỏ sót trường hợp điểm nằm trên đường tròn</h2><blockquote>NẾU code chỉ chia thành bên trong và nhánh else bên ngoài VÀ test trên biên bị in thành bên ngoài THÌ: Bỏ sót trường hợp điểm nằm trên đường tròn.</blockquote><p>Giá trị bằng 0 của bình phương khoảng cách trừ bình phương bán kính rơi vào else. Hai test trên đường tròn vì vậy nhận thông báo outside.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    float x,y,r,x1,y1;
+    scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    if((x1-x)*(x1-x)+(y1-y)*(y1-y)-r*r&lt;0)
+    printf(&quot;Point is inside the Circle.&quot;);
+    
+    else
+    printf(&quot;Point is outside the Circle.&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 7 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Chỉ in giá trị nhập, chưa in kết quả phân loại</h2><blockquote>NẾU chương trình đọc số rồi chỉ printf số đó VÀ output thiếu thông báo âm, dương hoặc zero mà oracle yêu cầu THÌ: Chỉ in giá trị nhập, chưa in kết quả phân loại.</blockquote><p>Bài đã đọc được dữ liệu nhưng chưa có phần phân loại và in thông báo. Đây không phải lỗi in hằng số: giá trị in vẫn phụ thuộc đầu vào.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){float a;
+scanf(&quot;%f&quot;,&amp;a);
+printf(&quot;%.4f&quot;,a);	
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;0.0000&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.0000&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;0.0000&quot;
+  }
+]</pre></details></article><article><small>Bài 8 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận</h2><blockquote>NẾU hai if độc lập kiểm tra trong/ngoài, còn else gắn với if kiểm tra bên ngoài VÀ test điểm bên trong in cả inside và on THÌ: Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận.</blockquote><p>Khi điểm ở bên trong, if đầu in inside. if thứ hai sai nên else của nó tiếp tục in on. Cần một chuỗi nhánh loại trừ nhau.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    float x;
+    float y;
+    float r;
+    float x1;
+    float y1;
+    float n;
+    scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    n=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r*r;
+    if ( n &lt; 0 )
+    printf(&quot;Point is inside the Circle.&quot;);
+    if ( n &gt; 0 )
+    printf(&quot;Point is outside the Circle.&quot;);
+    else
+    printf(&quot;Point is on the Circle.&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 9 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Thiếu địa chỉ biến khi gọi scanf</h2><blockquote>NẾU scanf dùng %f nhưng truyền giá trị x, y, r, x1, y1 thay cho địa chỉ các biến VÀ các log không ghi nhận output THÌ: Thiếu địa chỉ biến khi gọi scanf.</blockquote><p>scanf cần địa chỉ nơi ghi dữ liệu. Lời gọi hiện tại truyền các biến float chưa được nhập thay vì &amp;x, &amp;y, &amp;r, &amp;x1, &amp;y1.</p><p><b>Giới hạn bằng chứng:</b> Lỗi đối số được thấy trực tiếp trong code. Output rỗng không đủ chứng minh crash; lời gọi này có hành vi không xác định.</p><details><summary>Code và test gốc</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+
+int main(){
+    float x, y, r, x1, y1;
+    scanf(&quot;%f%f%f%f%f&quot;,x, y, r, x1, y1);
+    float s = sqrt(((x1-x)*(x1-x)) + ((y1-y)*(y1-y)));
+    if (s == r){
+        printf(&quot;Point is on the Circle.&quot;);
+    }
+    else{
+        if (s &gt; r){
+            printf(&quot;Point is outside the Circle.&quot;);
+        }
+        else{
+            printf(&quot;Point is inside the Circle.&quot;);
+        }
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details></article><article><small>Bài 10 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+
+int main()
+{
+    float x,y,r,x1,y1,d,e;
+    scanf (&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    d = (x-x1)*(x-x1)+(y-y1)*(y-y1);
+    e = sqrt(d);
+    if
+    (e&lt;r) {printf(&quot;Point is inside the Circle&quot;);}
+    else if
+    (e==r) {printf(&quot;Point is on the Circle&quot;);}
+    else if
+    (e&gt;r) {printf(&quot;Point is outside the Circle&quot;);}
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  }
+]</pre></details></article><article><small>Bài 11 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Đếm trùng tam giác khi đổi thứ tự ba cạnh</h2><blockquote>NẾU cả ba cạnh đều được duyệt độc lập từ 1 đến N, không loại hoán vị trùng VÀ N = 4 cho số đếm 34 thay vì 13 trong log THÌ: Đếm trùng tam giác khi đổi thứ tự ba cạnh.</blockquote><p>Các bộ cạnh đổi chỗ vẫn đi qua ba vòng lặp và đều được cộng vào tổng. Bộ ba cạnh của cùng một tam giác vì thế bị đếm nhiều lần.</p><p><b>Giới hạn bằng chứng:</b> Nhãn dựa trên cấu trúc duyệt và oracle lịch sử. Gói chấm từng bài thiếu đề gốc; cần đối chiếu quy ước tam giác không phân biệt thứ tự trước khi duyệt nhãn.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{int n,i,j,k,s=0;
+scanf(&quot;%d&quot;,&amp;n);
+for (i=1;i&lt;=n;i=i+1)
+{
+    for (j=1;j&lt;=n;j=j+1)
+    {
+        for (k=1;k&lt;=n;k=k+1)
+        {if (i+j&gt;k&amp;&amp;i+k&gt;j&amp;&amp;j+k&gt;i)
+        {s=s+1;
+            
+        }
+            
+            
+        }
+        
+    }
+    
+    
+    
+}
+    printf(&quot;Number of possible triangles is %d&quot;,s); 
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 34&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 65&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 175&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 5&quot;
+  }
+]</pre></details></article><article><small>Bài 12 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Dùng điều kiện lọc làm điều kiện dừng vòng lặp (vòng lặp bị ngắt sớm)</h2><blockquote>NẾU vòng while của cạnh c vừa kiểm tra giới hạn vừa yêu cầu a &lt; c+b ngay từ c=1 VÀ N = 4 chỉ đếm 10 thay vì 13 THÌ: Dùng điều kiện lọc làm điều kiện dừng vòng lặp (vòng lặp bị ngắt sớm).</blockquote><p>Một c nhỏ chưa tạo tam giác không có nghĩa các c lớn hơn đều không tạo được. Khi điều kiện sai ngay đầu vòng, code bỏ qua các giá trị c tiếp theo có thể hợp lệ.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+    int N,a,b,c,i;
+    scanf(&quot;%d&quot;,&amp;N);
+    i=0;
+    a=1;b=1;c=1;
+   while(a&lt;=N){
+       b=1;
+       while(b&lt;=a){
+           c=1;
+            while(c&lt;=b&amp;&amp;a&lt;c+b){
+                i=i+1;
+                
+                c=c+1;
+           }
+            b=b+1;
+       }
+        a=a+1;
+        
+   }
+
+/*Here, N-1 cases must be removed from i because in these cases, a&gt;b+c. And, the number of possible triangles becomes i-(N-1)*/
+    printf(&quot;Number of possible triangles is %d&quot;,i);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 10&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 28&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 3&quot;
+  }
+]</pre></details></article><article><small>Bài 13 · Đề 2812 · Đã được người dùng xác nhận</small><h2>In thừa giá trị số ở nhánh zero</h2><blockquote>NẾU nhánh a == 0 in thêm %f trước thông báo VÀ test zero nhận 0.000000 input is zero thay vì input is zero THÌ: In thừa giá trị số ở nhánh zero.</blockquote><p>Bài đã đi đúng nhánh zero, nhưng mẫu output của nhánh này không yêu cầu in giá trị a.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+	float a;
+	scanf(&quot;%f&quot;,&amp;a);
+	if(a&gt;0)
+	    { printf(&quot;%.4f is positive&quot;,a);
+	    }
+	 if(a==0)
+	    {printf(&quot;%f input is zero&quot;,a);
+	    }
+	 if(a&lt;0)
+	    {printf(&quot;%.4f is negative&quot;,a);
+	    }
+	   
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;0.000000 input is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;0.000000 input is zero&quot;
+  }
+]</pre></details></article><article><small>Bài 14 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Dùng HOẶC thay cho VÀ và đếm cả các hoán vị cạnh</h2><blockquote>NẾU ba bất đẳng thức tam giác nối bằng ||, đồng thời ba cạnh duyệt độc lập VÀ N = 4 cho 64, tức mọi bộ ba đều được đếm THÌ: Dùng HOẶC thay cho VÀ và đếm cả các hoán vị cạnh.</blockquote><p>Chỉ cần một bất đẳng thức đúng là code cộng tổng, trong khi điều kiện tam giác cần cả ba. Ngoài ra, miền duyệt hiện tại vẫn đếm các hoán vị như những bộ khác nhau.</p><p><b>Giới hạn bằng chứng:</b> Có ít nhất hai cơ chế lỗi cùng hiện diện. Không ép bài này thành nhãn một lỗi duy nhất.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    int N;
+    int a,b,c;
+    a=1;
+    b=1;
+    c=1;
+    int count=0;
+    scanf(&quot;%d&quot;, &amp;N);
+    while(a&lt;=N)
+    { 
+        b=1;
+        while(b&lt;=N)
+        {
+           c=1;
+           while(c&lt;=N)
+            {
+                if(a&lt;b+c||b&lt;a+c||c&lt;a+b)
+                {
+                    count+=1;
+                }
+                c+=1;
+            }
+            b+=1;
+        }
+        a+=1;
+    }
+    printf(&quot;Number of possible triangles is %d&quot;, count);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 64&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 27&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 125&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 343&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 8&quot;
+  }
+]</pre></details></article><article><small>Bài 15 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Kiểm tra một giá trị mẫu thay vì phân loại theo dấu</h2><blockquote>NẾU code chỉ xét a == -12 và gọi mọi giá trị còn lại là zero VÀ đầu vào 1 lại được in là zero THÌ: Kiểm tra một giá trị mẫu thay vì phân loại theo dấu.</blockquote><p>Điều kiện hiện tại nhận riêng -12 chứ không nhận mọi số âm. Nhánh else cũng gộp cả số dương, số âm khác và số 0.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+	float a;
+	scanf(&quot;%f&quot;,&amp;a);
+	if (a==-12){
+	    printf(&quot;%.4f is negative&quot;,a);
+	} else {
+	    printf(&quot;%.4f is zero&quot;,a);
+	}
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;0.0000 is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.0000 is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000 is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;0.0000 is zero&quot;
+  }
+]</pre></details></article><article><small>Bài 16 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Bài mới đọc đầu vào, chưa tính và chưa in kết quả</h2><blockquote>NẾU main chỉ scanf rồi return VÀ mọi test ghi nhận output rỗng THÌ: Bài mới đọc đầu vào, chưa tính và chưa in kết quả.</blockquote><p>Không có vòng duyệt, phép đếm hoặc lệnh in nào sau khi đọc N. Có thể đây là bài đang làm dở; chưa thể suy ra học viên hiểu sai khái niệm cụ thể.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    int N;
+    scanf(&quot;%d&quot;,&amp;N);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details></article><article><small>Bài 17 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Đọc nhầm thứ tự bán kính và tọa độ điểm</h2><blockquote>NẾU scanf gán ba giá trị cuối lần lượt vào x1, y1, r VÀ test 0 0 5 3 7 bị phân loại bên trong thay vì bên ngoài THÌ: Đọc nhầm thứ tự bán kính và tọa độ điểm.</blockquote><p>Cách đọc khiến 5 trở thành x1 và 7 trở thành bán kính. Theo thứ tự x, y, r, x1, y1 thể hiện trong bộ test, khoảng cách phải được tính cho điểm (3,7) với bán kính 5.</p><p><b>Giới hạn bằng chứng:</b> Cần đối chiếu thứ tự input với đề gốc vì packet này thiếu statement. Bài 17 còn gọi sqrt mà không include math.h; không bỏ qua vấn đề khai báo khi sửa code.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    float x,y,r,x1,y1,s;
+    scanf (&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;x1,&amp;y1,&amp;r);
+    s=sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
+    if  (r &gt;s )
+    {
+        printf (&quot;Point is inside the Circle.&quot;);
+        
+    }
+    else if(r == s)
+    {
+        printf (&quot;Point is on the Circle.&quot;); 
+    }
+    else
+    {
+            printf (&quot;Point is outside the Circle.&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 18 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Khác chữ hoa/chữ thường trong thông báo</h2><blockquote>NẾU printf dùng circle với chữ c thường VÀ oracle yêu cầu Circle với chữ C hoa THÌ: Khác chữ hoa/chữ thường trong thông báo.</blockquote><p>Sai khác quan sát được là cách viết Circle, không phải vị trí trong/ngoài/trên đường tròn ở các test đã ghi nhận.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    float x, y, r, x1, y1;
+    scanf(&quot;%f %f %f %f %f&quot;, &amp;x, &amp;y, &amp;r, &amp;x1, &amp;y1);
+    float dsquared = ((x-x1)*(x-x1)) + ((y-y1)*(y-y1));
+    if(dsquared &lt; (r*r)){
+        printf(&quot;Point is inside the circle.&quot;);
+    }
+    else if(dsquared &gt; (r*r)){
+        printf(&quot;Point is outside the circle.&quot;);
+    }
+    else{
+        printf(&quot;Point is on the circle.&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 19 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Quên bỏ dòng in debug</h2><blockquote>NẾU code in khoảng cách kèm chữ demo trước khi in kết luận VÀ output có thêm một dòng không nằm trong đáp án THÌ: Quên bỏ dòng in debug.</blockquote><p>Lệnh printf phục vụ kiểm tra tạm vẫn còn trong bài nộp. Ví dụ test đầu in thêm 6.700747 demo trước thông báo outside.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+int main()
+{
+    float x,y,r;
+    float x1;
+    float y1;
+    float h;
+    float g;
+    scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);/*input*/
+    h=(x1-x)*(x1-x)+(y1-y)*(y1-y);
+    g=sqrt(h);/*distance formula*/
+    printf(&quot;%f demo\n&quot;,g);
+    if(g&lt;r)/*condition for point to be inside the circle*/
+    {
+        printf(&quot;Point is inside the Circle.&quot;);
+    }
+    else if(g==r)/*condition for point to be on the circle*/
+    {
+        printf(&quot;Point is on the Circle.&quot;);
+    }
+    else 
+    {
+        printf(&quot;Point is outside the Circle.&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;6.700747 demo\nPoint is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;7.615773 demo\nPoint is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;5.000000 demo\nPoint is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;3.405877 demo\nPoint is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;4.716990 demo\nPoint is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;5.000000 demo\nPoint is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;5.830952 demo\nPoint is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 20 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Sai từ trong mẫu output: triangle thay vì triangles</h2><blockquote>NẾU chuỗi in dùng triangle ở số ít VÀ số đếm trong log khớp oracle nhưng phần chữ thiếu s THÌ: Sai từ trong mẫu output: triangle thay vì triangles.</blockquote><p>Không nên gán lỗi đếm tổ hợp cho bài này chỉ vì toàn bộ test fail. Phần số đếm đã khớp ở các test ghi nhận; sai khác nằm ở từ triangles.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    int n,a,b,c,x=0;// x is the no. of triangles formed.a,b,c are sides of                      triangle.n is the input value.
+    scanf(&quot;%d&quot;,&amp;n);
+    for(a=1;a&lt;=n;a++)
+    {
+        for(b=a;b&lt;=n;b++)
+        {
+            for(c=b;c&lt;=n;c++)
+            {
+                if((a+b)&gt;c&amp;&amp;(a+c)&gt;b&amp;&amp;(b+c)&gt;a)
+                {
+                    x++;
+                }
+            }
+        }
+    }
+    printf(&quot;Number of possible triangle is %d&quot;,x);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 13&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 7&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 22&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 50&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 3&quot;
+  }
+]</pre></details></article><article><small>Bài 21 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Sai từ trong mẫu output: triangle thay vì triangles</h2><blockquote>NẾU chuỗi in dùng triangle ở số ít VÀ số đếm trong log khớp oracle nhưng phần chữ thiếu s THÌ: Sai từ trong mẫu output: triangle thay vì triangles.</blockquote><p>Không nên gán lỗi đếm tổ hợp cho bài này chỉ vì toàn bộ test fail. Phần số đếm đã khớp ở các test ghi nhận; sai khác nằm ở từ triangles.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+int i,j,k, N,count=0;
+scanf ( &quot;%d&quot;,&amp;N);/*input variable*/
+for( i=1;i&lt;=N;i=i+1)
+{for (j=1 ; j&lt;=i ; j=j+1)
+{for (k=1;k&lt;=j; k=k+1)
+{if ((j+k&gt;i) &amp;&amp; (k+i&gt;j)&amp;&amp; (i+j&gt;k))/*tiangle inequality*/
+count++;}
+}
+}
+printf (&quot;Number of possible triangle is %d&quot;, count);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 13&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 7&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 22&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 50&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 3&quot;
+  }
+]</pre></details></article><article><small>Bài 22 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+
+int main()
+{
+    float x, y, r, x1, y1;
+    scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    float A=x-x1;
+     float B=y-y1;
+    float D,E;
+    D=pow(A,2);
+    E=pow(B,2);
+    float F;
+    F=sqrt(D+E);
+    if(F&gt;r){
+        printf(&quot;Point is outside the Circle&quot;);
+    }
+    else if(F&lt;r){
+        printf(&quot;Point is inside the Circle&quot;);
+    }
+    else{
+        printf (&quot;Point is on the Circle&quot;);
+    };
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  }
+]</pre></details></article><article><small>Bài 23 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Thừa dấu chấm so với oracle chấm bài</h2><blockquote>NẾU một hoặc nhiều chuỗi printf có dấu chấm cuối câu VÀ log mong đợi cùng nội dung nhưng không có dấu chấm THÌ: Thừa dấu chấm so với oracle chấm bài.</blockquote><p>Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.</p><p><b>Giới hạn bằng chứng:</b> Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+    float a; // input variable
+	scanf(&quot;%f&quot;,&amp;a);
+	  if (a==0)
+	    printf (&quot;input is zero.&quot;);
+	  else if (a&gt;0)
+	  printf (&quot;%.4f is positive.&quot;,a);
+	else
+	   printf (&quot;%.4f is negative.&quot;,a);
+	  
+	 
+	  
+	  
+	  
+	  
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 is negative.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 is negative.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero.&quot;
+  }
+]</pre></details></article><article><small>Bài 24 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+int main(){
+float a,x,y,r,x1,y1;
+scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+a=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r*r ;
+if(a==0) {printf(&quot;Point is on the Circle&quot;);}
+else if(a&lt;0){printf(&quot;Point is inside the Circle&quot;);} 
+else {printf(&quot;Point is outside the Circle&quot;);}                        return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  }
+]</pre></details></article><article><small>Bài 25 · Đề 2825 · Đã được người dùng xác nhận</small><h2>So sánh bình phương khoảng cách với bán kính chưa bình phương</h2><blockquote>NẾU code dùng d² nhưng đối chiếu trực tiếp với r VÀ điểm trên đường tròn bán kính 5 bị báo là ở ngoài THÌ: So sánh bình phương khoảng cách với bán kính chưa bình phương.</blockquote><p>Hai vế đang khác đại lượng: d² phải so với r², hoặc d so với r. Ở test 3, d² = 25 và r = 5, nên phép so sánh hiện tại làm lệch kết luận.</p><p><b>Giới hạn bằng chứng:</b> Bài 46 có tính sqrtf(c) vào d nhưng không dùng d để so sánh, đồng thời thiếu math.h. Nhãn này mô tả sai khác công thức thấy trong code/log, không chứng minh niềm tin của người học.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{float x,y,x1,y1,r,s;//s is for power of point
+ scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+ s=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r;//computes the power of point
+ if(s&gt;0)       //point is outside if s is +ive
+  printf(&quot;Point is outside the Circle.&quot;);
+ if(s==0) //point is on it if s=0
+  printf(&quot;Point is on the Circle.&quot;);
+ if(s&lt;0)          //point is inside if s is -ive
+  printf(&quot;Point is inside the Circle.&quot;);
+ return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 26 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Thoát vòng duyệt ngay khi gặp một bộ cạnh chưa hợp lệ</h2><blockquote>NẾU k đang tăng dần nhưng else lại break khi j+k &lt;= i VÀ số đếm nhỏ hơn oracle, như N = 4 cho 10 thay vì 13 THÌ: Thoát vòng duyệt ngay khi gặp một bộ cạnh chưa hợp lệ.</blockquote><p>Một k nhỏ không thỏa chưa loại được những k lớn hơn. break bỏ luôn các bộ phía sau nên bài bị thiếu trường hợp.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    int n;
+    int count=0;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(int i=1;i&lt;=n;i++)
+    {
+        for(int j=1;j&lt;=i;j++)
+        {
+            for(int k=1;k&lt;=j;k++)
+            {
+                if((j+k)&gt;i)
+                {
+                    count=count+1;
+                }
+                else
+                {
+                    break;
+                }
+            }
+        }
+    }
+    printf(&quot;Number of possible triangles is %d&quot;,count);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 10&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 28&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 3&quot;
+  }
+]</pre></details></article><article><small>Bài 27 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Đặt biến vào chuỗi định dạng thay vì truyền đối số printf</h2><blockquote>NẾU chuỗi printf có %.4f và %n nhưng không truyền đối số tương ứng VÀ giá trị in trong log không khớp số đầu vào THÌ: Đặt biến vào chuỗi định dạng thay vì truyền đối số printf.</blockquote><p>%n không có nghĩa là in biến tên n; đó là một conversion khác, cần con trỏ để ghi số ký tự đã in. Cả %.4f lẫn %n ở đây đều không có đối số.</p><p><b>Giới hạn bằng chứng:</b> Lời gọi thiếu đối số có hành vi không xác định. Không suy ra mọi lần chạy đều in 0 từ log lịch sử.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+    //to determine sign of a number
+    float n;
+    scanf(&quot;%f&quot;,&amp;n);
+    if(n&gt;0){
+    printf(&quot;%.4f is positive,%n&quot;);//number is positive
+    }
+    else{
+        if (n==0){
+        printf(&quot;input is zero&quot;);//number is 0
+        }else{
+        printf(&quot;%.4f is negative,%n&quot;);}}//number is negative
+    
+    
+	
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;0.0000 is negative,&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive,&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive,&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;0.0000 is negative,&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive,&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero&quot;
+  }
+]</pre></details></article><article><small>Bài 28 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Nhầm số 0 với ký tự 0 khi so sánh</h2><blockquote>NẾU biến số thực được so sánh với &#x27;0&#x27; thay vì 0 VÀ các test nhập zero không có thông báo THÌ: Nhầm số 0 với ký tự 0 khi so sánh.</blockquote><p>&#x27;0&#x27; là hằng ký tự, không phải giá trị số 0. Khi a bằng 0, hai nhánh &gt;0 và &lt;0 đều sai; điều kiện cuối cũng không nhận đúng zero.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    float a;
+    scanf(&quot;%f&quot;,&amp;a);
+    if(a&gt;0)
+    {
+        printf(&quot;%.4f is positive&quot;,a);
+    }
+    else
+    if(a&lt;0)
+    {
+        printf(&quot;%.4f is negative&quot;,a);
+    }
+    else
+    if(a==&#x27;0&#x27;)
+    {
+      printf(&quot;input is zero&quot;);
+    }
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details></article><article><small>Bài 29 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Đưa &amp;a vào chuỗi scanf thay vì truyền địa chỉ đối số</h2><blockquote>NẾU lời gọi là scanf(&quot;%f,&amp;a&quot;) và không có đối số nhận dữ liệu VÀ log không ghi nhận output THÌ: Đưa &amp;a vào chuỗi scanf thay vì truyền địa chỉ đối số.</blockquote><p>Phần &amp;a nằm trong dấu nháy nên không cung cấp địa chỉ biến cho %f. Cần viết scanf(&quot;%f&quot;, &amp;a).</p><p><b>Giới hạn bằng chứng:</b> Đây là lỗi đối số trực tiếp; không suy đoán nguyên nhân kết thúc tiến trình chỉ từ output rỗng.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    float a;
+    scanf(&quot;%f,&amp;a&quot;);
+    if(a&lt;0.0)
+{	printf(&quot;%.4f is negative\n&quot;,a);}
+	if(a==0.0)
+{	printf(&quot;input is zero&quot;);}
+	if(a&gt;0.0)
+{	printf(&quot;%.4f is positive\n&quot;,a);}
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details></article><article><small>Bài 30 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Tính độ lệch vị trí nhưng lại rẽ nhánh theo bán kính</h2><blockquote>NẾU code tính k = d² − r² rồi dùng dấu của r trong if VÀ cả điểm bên trong và trên biên đều bị in là bên ngoài khi r dương THÌ: Tính độ lệch vị trí nhưng lại rẽ nhánh theo bán kính.</blockquote><p>Bán kính dương không cho biết điểm đang ở trong hay ngoài. Biến k đã tính đúng đại lượng cần xét nhưng bị bỏ qua khi rẽ nhánh.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+float x,y,r,x1,y1,k;
+scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+k=(x-x1)*(x-x1)+(y-y1)*(y-y1)-(r*r);
+if(r&gt;0){
+    printf(&quot;Point is outside the Circle.&quot;);
+    }
+else
+if(r==0){
+    printf(&quot;Point is on the Circle.&quot;);
+}
+else
+if(r&lt;0){
+    printf(&quot;Point is inside the Circle.&quot;);
+}
+    // Fill this area with your code.
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 31 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+int main() {
+   float x,y,r,x1,y1;
+   scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+   float A=((x-x1)*(x-x1)+(y-y1)*(y-y1));   
+ if(A&lt;r*r){
+     printf(&quot;Point is inside the Circle&quot;);
+ }
+ if(A==r*r){
+     printf(&quot;Point is on the Circle&quot;);
+ }    
+ if(A&gt;r*r){
+     printf(&quot;Point is outside the Circle&quot;);
+ }
+   return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  }
+]</pre></details></article><article><small>Bài 32 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+int main()
+{
+    float x,y,r,x1,y1;
+    float d,D;/*d=distance squared*/
+    scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    d=((x-x1)*(x-x1))+((y-y1)*(y-y1));/*distance squared*/
+    D=sqrtf(d);
+    if (D&lt;r){
+        printf(&quot;Point is inside the Circle&quot;);
+    }
+    if (D==r){
+        printf(&quot;Point is on the Circle&quot;);
+    }
+    if (D&gt;r){
+        printf(&quot;Point is outside the Circle&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  }
+]</pre></details></article><article><small>Bài 33 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Thừa dấu chấm so với oracle chấm bài</h2><blockquote>NẾU một hoặc nhiều chuỗi printf có dấu chấm cuối câu VÀ log mong đợi cùng nội dung nhưng không có dấu chấm THÌ: Thừa dấu chấm so với oracle chấm bài.</blockquote><p>Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.</p><p><b>Giới hạn bằng chứng:</b> Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+	float input; 
+	scanf(&quot;%f&quot;,&amp;input);
+	if(input==0)  /** if for 3 possible cases(either &gt; , 0 , = 0) **/
+	  {printf(&quot;input is zero&quot;);}
+	else if(input &gt; 0)
+	  {printf(&quot;%.4f is positive.&quot;,input);} /** .4f for 4 digit decimal place **/
+	else if(input &lt; 0)
+	  {printf(&quot;%.4f is negative&quot; ,input);}
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero&quot;
+  }
+]</pre></details></article><article><small>Bài 34 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Gõ sai Circle thành Cicle ở nhánh bên ngoài</h2><blockquote>NẾU printf của nhánh outside viết Cicle VÀ test bên ngoài khác oracle đúng một chữ r THÌ: Gõ sai Circle thành Cicle ở nhánh bên ngoài.</blockquote><p>Log vẫn cho kết luận outside nhưng thông báo bị sai chính tả. Chưa có căn cứ coi đây là lỗi công thức hình học.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+
+int main()
+{
+    float x,y,r,x1,y1;
+    scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);//input x,y,r,x1,y1
+    
+    float d=sqrtf((x1-x)*(x1-x)+(y1-y)*(y1-y));
+    //compute distance between point and centre of circle
+    
+    if ((d==r)||(d&lt;r)) {
+        if (d==r) printf(&quot;Point is on the Circle.&quot;);
+        else printf(&quot;Point is inside the Circle.&quot;);
+    } else {
+        printf(&quot;Point is outside the Cicle.&quot;);
+    }    
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Cicle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Cicle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Cicle.&quot;
+  }
+]</pre></details></article><article><small>Bài 35 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Dấu chấm phẩy sau for làm thân vòng lặp rỗng</h2><blockquote>NẾU mỗi câu for kết thúc ngay bằng dấu ; trước khối ngoặc nhọn VÀ nhiều input khác nhau đều chỉ cho số đếm 1 THÌ: Dấu chấm phẩy sau for làm thân vòng lặp rỗng.</blockquote><p>Khối đếm phía dưới không còn là thân của các vòng for. Nó chỉ chạy sau khi các vòng rỗng đã kết thúc, nên không duyệt từng bộ cạnh như dự định.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{ int N;
+int i,j,k;
+ int count=0; 
+ scanf(&quot;%d&quot;,&amp;N);
+  for (i=1; i&lt;=N; i++);  
+  {
+      for (j=i; j&lt;=N; j=j+1);
+     {
+         for (k=j; k&lt;=N; k=k+1);
+     {     if (i+j&gt;k &amp;&amp; j+k&gt;i &amp;&amp; i+k&gt;j)
+     count=count+1;
+     }
+     }
+  } 
+  printf (&quot;Number of possible triangles is %d&quot;,count);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  }
+]</pre></details></article><article><small>Bài 36 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Thừa dấu chấm so với oracle chấm bài</h2><blockquote>NẾU một hoặc nhiều chuỗi printf có dấu chấm cuối câu VÀ log mong đợi cùng nội dung nhưng không có dấu chấm THÌ: Thừa dấu chấm so với oracle chấm bài.</blockquote><p>Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.</p><p><b>Giới hạn bằng chứng:</b> Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+    float a;
+    scanf(&quot;%f&quot;,&amp;a);
+    if(a&gt;0)
+    {
+        printf(&quot;%.4f is positive.&quot;,a);
+    }
+	else if(a==0)
+	{
+	    printf(&quot;input is zero.&quot;);
+	}
+	else
+	{
+	    printf(&quot;%.4f is negative.&quot;,a);
+	}
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 is negative.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 is negative.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero.&quot;
+  }
+]</pre></details></article><article><small>Bài 37 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Sai từ trong mẫu output: triangle thay vì triangles</h2><blockquote>NẾU chuỗi in dùng triangle ở số ít VÀ số đếm trong log khớp oracle nhưng phần chữ thiếu s THÌ: Sai từ trong mẫu output: triangle thay vì triangles.</blockquote><p>Không nên gán lỗi đếm tổ hợp cho bài này chỉ vì toàn bộ test fail. Phần số đếm đã khớp ở các test ghi nhận; sai khác nằm ở từ triangles.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    int n,c=0,x,y,z;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(x=1;x&lt;=n;x=x+1){
+     for(y=1;y&lt;=x;y=y+1){
+     for(z=1;z&lt;=y;z=z+1){
+          if(x+y&gt;z &amp;&amp; y+z&gt;x &amp;&amp; z+x&gt;y)
+     c++;
+    }   
+     }
+    }
+    printf(&quot;Number of possible triangle is %d&quot;,c);
+    return 0;
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 13&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 7&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 22&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 50&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangle is 3&quot;
+  }
+]</pre></details></article><article><small>Bài 38 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận</h2><blockquote>NẾU hai if độc lập kiểm tra trong/ngoài, còn else gắn với if kiểm tra bên ngoài VÀ test điểm bên trong in cả inside và on THÌ: Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận.</blockquote><p>Khi điểm ở bên trong, if đầu in inside. if thứ hai sai nên else của nó tiếp tục in on. Cần một chuỗi nhánh loại trừ nhau.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+int main()
+{
+  float x, y, r, x1, y1, d;
+  scanf(&quot;%f&quot;,&amp;x);
+  scanf(&quot;%f&quot;,&amp;y);
+  scanf(&quot;%f&quot;,&amp;r);
+  scanf(&quot;%f&quot;,&amp;x1);
+  scanf(&quot;%f&quot;,&amp;y1);
+  d =sqrt(pow(x-x1, 2)+pow(y-y1, 2));
+  if (d&lt;r){
+  printf(&quot;Point is inside the Circle.&quot;);}
+  if (d&gt;r){
+  printf(&quot;Point is outside the Circle.&quot;);}
+  else {
+  printf(&quot;Point is on the Circle.&quot;);}
+ 
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 39 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Đọc nhầm thứ tự bán kính và tọa độ điểm</h2><blockquote>NẾU scanf gán ba giá trị cuối lần lượt vào x1, y1, r VÀ test 0 0 5 3 7 bị phân loại bên trong thay vì bên ngoài THÌ: Đọc nhầm thứ tự bán kính và tọa độ điểm.</blockquote><p>Cách đọc khiến 5 trở thành x1 và 7 trở thành bán kính. Theo thứ tự x, y, r, x1, y1 thể hiện trong bộ test, khoảng cách phải được tính cho điểm (3,7) với bán kính 5.</p><p><b>Giới hạn bằng chứng:</b> Cần đối chiếu thứ tự input với đề gốc vì packet này thiếu statement. Bài 17 còn gọi sqrt mà không include math.h; không bỏ qua vấn đề khai báo khi sửa code.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+int main()
+{
+    float x,y,x1,y1,r;
+    scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;x1,&amp;y1,&amp;r);
+    if(r==sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1))) 
+{    
+    printf(&quot;Point is on the Circle.&quot;);
+}
+else
+{
+    if(r&lt;sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1)))
+    printf(&quot;Point is outside the Circle.&quot;); 
+    else 
+    printf(&quot;Point is inside the Circle.&quot;);
+        
+    }
+    // Fill this area with your code.
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 40 · Đề 2833 · Đã được người dùng xác nhận</small><h2>Khử trùng số đếm bằng một công thức không phù hợp</h2><blockquote>NẾU code đếm các hoán vị rồi thay tổng bằng ((count-n)/n)+n VÀ N = 4 cho 11 thay vì 13 dù một vài input nhỏ vẫn đúng THÌ: Khử trùng số đếm bằng một công thức không phù hợp.</blockquote><p>Số hoán vị không cố định theo n: ba cạnh khác nhau, hai cạnh bằng nhau và ba cạnh bằng nhau có số lần lặp khác nhau. Chia tổng theo n không loại trùng đúng cho mọi trường hợp.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    int n,count=0,a,b,c;
+    scanf(&quot;%d&quot;,&amp;n);
+    for(a=1;a&lt;=n;a++)
+    {
+        for(b=1;b&lt;=n;b++)
+        {
+            for(c=1;c&lt;=n;c++)
+            {
+               if((a+b)&gt;c &amp;&amp; (a+c)&gt;b &amp;&amp; (b+c)&gt;a)
+               {
+                   count++;
+               }
+            }
+        }
+    }
+    count=(((count-n)/n)+n);
+    printf(&quot;Number of possible triangles is %d&quot;,count);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 13&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 11&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 1&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 7&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 7&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;5&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 22&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 17&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;7&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 50&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 31&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;Number of possible triangles is 3&quot;,
+    &quot;output&quot;: &quot;Number of possible triangles is 3&quot;
+  }
+]</pre></details></article><article><small>Bài 41 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Thiếu dấu chấm riêng ở nhánh trên đường tròn</h2><blockquote>NẾU nhánh on in chuỗi không có dấu chấm cuối VÀ chỉ các test trên biên khác oracle ở dấu câu THÌ: Thiếu dấu chấm riêng ở nhánh trên đường tròn.</blockquote><p>Bài đã nhận đúng trường hợp trên đường tròn trong log. Lỗi quan sát được nằm ở chuỗi thông báo của nhánh đó.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+
+int main()
+{
+    float x , y , x1 , y1 , r ,s ;
+    // (x,y) are co-ordinates for center of circle .
+    // (x1,y1) is point whose relative loacation w.r.t circle we have to see .
+    // r is radius of circle .
+    // s is distance of point from center of circle .
+    scanf (&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    s = sqrtf(((x - x1)*(x - x1)) + ((y - y1)*(y - y1))) ;
+    if (s&gt;r){
+        printf(&quot;Point is outside the Circle.&quot;);// if radius is less than distance from center , point is outside the circle .
+    }
+    else if (s==r){
+        printf(&quot;Point is on the Circle&quot;);// if radius is equal to distance from center , point is on the circumference .
+    }
+    else{
+        printf(&quot;Point is inside the Circle.&quot;);
+        
+    }
+    // if radius is greater than distance from center then point is inside the circle .
+    
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 42 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Nhánh bên ngoài in nhầm thông báo trên đường tròn</h2><blockquote>NẾU else sau l&lt;0 và l==0 vẫn in on VÀ test điểm bên ngoài bị báo là nằm trên đường tròn THÌ: Nhánh bên ngoài in nhầm thông báo trên đường tròn.</blockquote><p>Cấu trúc đã dành nhánh cuối cho l&gt;0, nhưng chuỗi in bị lặp từ nhánh l==0. Có thể là lỗi sao chép; chưa đủ căn cứ kết luận học viên không hiểu hình học.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    float x,y,r,x1,y1,l;
+    scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    l=(x-x1)*(x-x1)+(y-y1)*(y-y1)-(r*r);
+    if(l&lt;0)
+    {
+      printf(&quot;Point is inside the Circle.&quot;);}
+      else if(l==0)
+      {
+      printf(&quot;Point is on the Circle.&quot;);
+      }
+    else
+    printf(&quot;Point is on the Circle.&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 43 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Khác chữ hoa/chữ thường trong thông báo</h2><blockquote>NẾU printf dùng circle với chữ c thường VÀ oracle yêu cầu Circle với chữ C hoa THÌ: Khác chữ hoa/chữ thường trong thông báo.</blockquote><p>Sai khác quan sát được là cách viết Circle, không phải vị trí trong/ngoài/trên đường tròn ở các test đã ghi nhận.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;math.h&gt;
+int main()
+{
+    float x,y,r,x1,y1;
+    scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    float m=(x-x1)*(x-x1)+(y-y1)*(y-y1);
+    float d=sqrtf(m);
+    if(d==r)
+    {
+        printf(&quot;Point is on the circle.&quot;);
+    }
+    else if(d&gt;r)
+        {
+            printf(&quot;Point is outside the circle.&quot;);
+        }
+    else if(d&lt;r)
+        {
+            printf(&quot;Point is inside the circle.&quot;);
+        }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 44 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Khác chữ hoa/chữ thường trong thông báo</h2><blockquote>NẾU printf dùng circle với chữ c thường VÀ oracle yêu cầu Circle với chữ C hoa THÌ: Khác chữ hoa/chữ thường trong thông báo.</blockquote><p>Sai khác quan sát được là cách viết Circle, không phải vị trí trong/ngoài/trên đường tròn ở các test đã ghi nhận.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    float x,y,r,x1,y1,a,b,c;
+    scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    a=(((x1-x)*(x1-x))+((y1-y)*(y1-y)));
+    b=r*r;
+    c=a-b;
+if (c&lt;=0){
+    if (c==0){
+        printf(&quot;Point is on the circle.&quot;);
+    }
+    else {
+         printf(&quot;Point is inside the circle.&quot;);
+    }
+}
+else {
+    printf(&quot;Point is outside the circle.&quot;);
+}
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 45 · Đề 2812 · Đã được người dùng xác nhận</small><h2>Thừa dấu chấm so với oracle chấm bài</h2><blockquote>NẾU một hoặc nhiều chuỗi printf có dấu chấm cuối câu VÀ log mong đợi cùng nội dung nhưng không có dấu chấm THÌ: Thừa dấu chấm so với oracle chấm bài.</blockquote><p>Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.</p><p><b>Giới hạn bằng chứng:</b> Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+   float a;
+   scanf(&quot;%f&quot;,&amp;a);//input float value a.
+   if (a==0)        //Check if a=0.
+   { printf(&quot;input is zero.&quot;);}//display of output.
+   
+   else { if (a&gt;0) //using another subcondition to check if a&gt;0 or a&lt;0.
+          { printf(&quot;%.4f is positive.&quot;,a);}
+          else 
+          { printf(&quot;%.4f is negative.&quot;,a);}
+   }
+	
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 is negative.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 is negative.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000 is positive.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;input is zero.&quot;
+  }
+]</pre></details></article><article><small>Bài 46 · Đề 2825 · Đã được người dùng xác nhận</small><h2>So sánh bình phương khoảng cách với bán kính chưa bình phương</h2><blockquote>NẾU code dùng d² nhưng đối chiếu trực tiếp với r VÀ điểm trên đường tròn bán kính 5 bị báo là ở ngoài THÌ: So sánh bình phương khoảng cách với bán kính chưa bình phương.</blockquote><p>Hai vế đang khác đại lượng: d² phải so với r², hoặc d so với r. Ở test 3, d² = 25 và r = 5, nên phép so sánh hiện tại làm lệch kết luận.</p><p><b>Giới hạn bằng chứng:</b> Bài 46 có tính sqrtf(c) vào d nhưng không dùng d để so sánh, đồng thời thiếu math.h. Nhãn này mô tả sai khác công thức thấy trong code/log, không chứng minh niềm tin của người học.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+ float x,y;//cordinate of the center of the circle
+ float r;// radius of the circle
+ float x1,y1;// the another cordinate provided by user
+ scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+ float a=(x1-x)*(x1-x);
+ float b=(y1-y)*(y1-y);
+ float c=a+b;//distance between origen and cordinates providade by user
+ float d=sqrtf(c);
+ if(c&lt;r)
+ printf(&quot;Point is inside the Circle.&quot;);
+ else if(c==r)
+     printf(&quot;Point is on the Circle.&quot;);
+else
+    printf(&quot;Point is outside the Circle.&quot;);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle.&quot;
+  }
+]</pre></details></article><article><small>Bài 47 · Đề 2812 · Đã được người dùng xác nhận</small><h2>In số hai lần và dùng mẫu định dạng không thống nhất</h2><blockquote>NẾU code in số trước if rồi lại in số trong nhánh âm/dương VÀ log có hai giá trị số nối nhau, hoặc thêm số trước thông báo zero THÌ: In số hai lần và dùng mẫu định dạng không thống nhất.</blockquote><p>Lệnh in trước chuỗi if luôn chạy. Các nhánh sau lại in giá trị lần nữa bằng %f, nên output vừa lặp số vừa khác số chữ số thập phân.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main(){
+    float n ;         /* variable declaration*/
+    
+        
+
+            scanf(&quot;%f&quot;,&amp;n);
+        printf(&quot;%.4f&quot;,n);
+     
+    if(n&lt;0)
+        {printf(&quot; %f is negative&quot;,n);}
+    
+    else if(n&gt;0)
+    {printf(&quot;%f is positive&quot;,n);}
+    
+    else
+    {printf(&quot;input is zero&quot;);}
+    
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;-12&quot;,
+    &quot;expected&quot;: &quot;-12.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-12.0000 -12.000000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;0.0000input is zero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1.0000 is positive&quot;,
+    &quot;output&quot;: &quot;1.00001.000000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;0.0000001&quot;,
+    &quot;expected&quot;: &quot;0.0000 is positive&quot;,
+    &quot;output&quot;: &quot;0.00000.000000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-0.0000001&quot;,
+    &quot;expected&quot;: &quot;-0.0000 is negative&quot;,
+    &quot;output&quot;: &quot;-0.0000 -0.000000 is negative&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;101&quot;,
+    &quot;expected&quot;: &quot;101.0000 is positive&quot;,
+    &quot;output&quot;: &quot;101.0000101.000000 is positive&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0000000&quot;,
+    &quot;expected&quot;: &quot;input is zero&quot;,
+    &quot;output&quot;: &quot;0.0000input is zero&quot;
+  }
+]</pre></details></article><article><small>Bài 48 · Đề 2825 · Đã được người dùng xác nhận</small><h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p><p><b>Giới hạn bằng chứng:</b> Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p><details><summary>Code và test gốc</summary><pre>#include&lt;stdio.h&gt;
+
+int main()
+{
+    float x, y, r, x1, y1;
+    scanf (&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+    {
+        if ((x1-x)*(x1-x)+(y1-y)*(y1-y)==r*r)
+        {
+            printf (&quot;Point is on the Circle&quot;);
+        }
+        else
+        if ((x1-x)*(x1-x)+(y1-y)*(y1-y)&gt;r*r)
+        {
+            printf (&quot;Point is outside the Circle&quot;);
+        }
+        else
+        {
+            printf (&quot;Point is inside the Circle&quot;);
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;1&quot;,
+    &quot;input&quot;: &quot;1.2 2.3 2.7 5.3 7.6&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;2&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;3&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 7.0 7.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;4&quot;,
+    &quot;input&quot;: &quot;3.0 4.0 5.0 5.6 6.2&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;5&quot;,
+    &quot;input&quot;: &quot;-1.0 -2.0 5.0 1.5 2.0&quot;,
+    &quot;expected&quot;: &quot;Point is inside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is inside the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;6&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 4.0&quot;,
+    &quot;expected&quot;: &quot;Point is on the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is on the Circle&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;7&quot;,
+    &quot;input&quot;: &quot;0.0 0.0 5.0 3.0 5.0&quot;,
+    &quot;expected&quot;: &quot;Point is outside the Circle.&quot;,
+    &quot;output&quot;: &quot;Point is outside the Circle&quot;
+  }
+]</pre></details></article></html>

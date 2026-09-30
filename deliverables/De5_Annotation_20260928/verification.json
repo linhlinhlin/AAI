@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "human_validated": false,
+  "real_ai_reviews": 0,
+  "checks": [
+    "packet_fingerprint",
+    "exporter_source_fingerprint",
+    "all_code_and_logs_match_corpus",
+    "sealed_test_excluded",
+    "per_cluster_json_consistency",
+    "markdown_links",
+    "CLI_intake_with_disposable_authored_response_only"
+  ],
+  "offline_tests": {
+    "passed": 259,
+    "subtests_passed": 3,
+    "docker_skipped": 13,
+    "smoke_runs_passed": 27
+  },
+  "packets": {
+    "itsp": {
+      "packet_id": "81c8ee12aa6fd6a6a2c114e9856139004fdbcb95b58c8fd30e6e5c8442dbe0a5",
+      "clusters": 5,
+      "submissions": 38,
+      "excluded": 4,
+      "evidence_sha256": "17136eb93167a86a38f8a85a4c0450b85e053103906f4804b9d85dda106d6202",
+      "max_cluster_json_bytes": 137038
+    },
+    "cpack": {
+      "packet_id": "793b1b1e8bceeded702464b78ac2317269044d0d5080359747466c1029d5e0fb",
+      "clusters": 69,
+      "submissions": 2151,
+      "excluded": 6,
+      "evidence_sha256": "357fface9afcbd18d5196921e1174dcbc530afcd99ad06c1df4324f1a0850cee",
+      "max_cluster_json_bytes": 2846899
+    }
+  }
+}

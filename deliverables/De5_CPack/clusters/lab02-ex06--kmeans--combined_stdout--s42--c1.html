@@ -1,0 +1,699 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab02-ex06--kmeans--combined_stdout--s42--c1</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab02-ex06 · 16 bài</h1><p>lab02-ex06--kmeans--combined_stdout--s42--c1 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex06_1: 12/16 bài trượt (75.0%); 0 chưa chạy.</p><p>Test ex06_2: 5/16 bài trượt (31.2%); 0 chưa chạy.</p><p>Test ex06_0: 0/16 bài trượt (0.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.2857142857142857,
+      &quot;difference_from_cohort&quot;: 0.7142857142857143
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.2857142857142857,
+      &quot;difference_from_cohort&quot;: 0.7142857142857143
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_0&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.2857142857142857,
+      &quot;difference_from_cohort&quot;: 0.7142857142857143
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.6875,
+      &quot;cohort_rate&quot;: 0.39285714285714285,
+      &quot;difference_from_cohort&quot;: 0.29464285714285715
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.6875,
+      &quot;cohort_rate&quot;: 0.39285714285714285,
+      &quot;difference_from_cohort&quot;: 0.29464285714285715
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_2&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.6875,
+      &quot;cohort_rate&quot;: 0.39285714285714285,
+      &quot;difference_from_cohort&quot;: 0.29464285714285715
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 12,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.75,
+      &quot;cohort_rate&quot;: 0.5178571428571429,
+      &quot;difference_from_cohort&quot;: 0.2321428571428571
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.6875,
+      &quot;cohort_rate&quot;: 0.5178571428571429,
+      &quot;difference_from_cohort&quot;: 0.1696428571428571
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 12,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.75,
+      &quot;cohort_rate&quot;: 0.625,
+      &quot;difference_from_cohort&quot;: 0.125
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8928571428571429,
+      &quot;difference_from_cohort&quot;: 0.1071428571428571
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.3125,
+      &quot;cohort_rate&quot;: 0.23214285714285715,
+      &quot;difference_from_cohort&quot;: 0.08035714285714285
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.3125,
+      &quot;cohort_rate&quot;: 0.25,
+      &quot;difference_from_cohort&quot;: 0.0625
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9464285714285714,
+      &quot;difference_from_cohort&quot;: 0.0535714285714286
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.19642857142857142,
+      &quot;difference_from_cohort&quot;: 0.053571428571428575
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.19642857142857142,
+      &quot;difference_from_cohort&quot;: 0.053571428571428575
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_1&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.19642857142857142,
+      &quot;difference_from_cohort&quot;: 0.053571428571428575
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.375,
+      &quot;cohort_rate&quot;: 0.32142857142857145,
+      &quot;difference_from_cohort&quot;: 0.05357142857142855
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.9107142857142857,
+      &quot;difference_from_cohort&quot;: 0.0267857142857143
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.375,
+      &quot;cohort_rate&quot;: 0.35714285714285715,
+      &quot;difference_from_cohort&quot;: 0.01785714285714285
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.625,
+      &quot;cohort_rate&quot;: 0.6428571428571429,
+      &quot;difference_from_cohort&quot;: -0.017857142857142905
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 6,
+      &quot;if&quot;: [
+        &quot;stdout:ex06_0:relation=__unknown__&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 14,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 2,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_001 · đại diện</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main ()
+{
+  int N, i; 
+  float reaisintrod, min, max;
+
+  scanf(&quot;%d&quot;, &amp;N);
+  scanf(&quot;%f&quot;, &amp;reaisintrod); 
+  min = max = reaisintrod;
+
+   for (i = 0; i &lt; N; i++) 
+   {
+    scanf(&quot;%f&quot;, &amp;reaisintrod);
+   }
+    if (reaisintrod &lt;= min)
+    {
+        min = reaisintrod;
+    }
+    if (reaisintrod &gt;= max)
+    {
+        max = reaisintrod;
+    }
+   printf(&quot;min: %f, max: %f\n&quot;, min, max);
+   return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;3 -1.8 3.14 1&quot;,
+    &quot;expected&quot;: &quot;min: -1.800000, max: 3.140000\n&quot;,
+    &quot;output&quot;: &quot;min: -1.800000, max: 1.000000\n&quot;
+  }
+]</pre></details><details><summary>sample_006 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+#define INICIO 1
+#define ZERO 0
+
+int main()
+{
+    int n, i;
+    float min, max = ZERO, num;
+    scanf(&quot;%d&quot;, &amp;n);
+    for(i = INICIO; i &lt;= n; i++)
+    {
+        scanf(&quot;%f&quot;, &amp;num);
+        if (i == INICIO)
+            min = num;
+        else if (num &lt; min)
+            min = num;
+        else if (num &gt; max)
+            max = num;
+        }
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 0.000000, max: 0.000000\n&quot;
+  }
+]</pre></details><details><summary>sample_010 · đại diện</summary><pre>
+
+
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    float n;
+    float max, min;
+    scanf(&quot;%f&quot;, &amp;n);
+    
+    max = n;
+    min = n;
+
+    scanf(&quot;%f&quot;, &amp;n);
+
+    if (n &gt; max) {
+        max = n;
+    } else if (n &lt; min) {
+        min = n;
+    }
+    else
+    {
+        scanf(&quot;%f&quot;, &amp;n);
+    }
+     
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 4.000000, max: 6.800000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;3 -1.8 3.14 1&quot;,
+    &quot;expected&quot;: &quot;min: -1.800000, max: 3.140000\n&quot;,
+    &quot;output&quot;: &quot;min: -1.800000, max: 3.000000\n&quot;
+  }
+]</pre></details><details><summary>sample_015 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+    float m, min = -1, max = 0;
+    scanf(&quot;%d&quot;, &amp;n);
+    while(n&gt;0) {
+        scanf(&quot;%f&quot;, &amp;m);
+        if (m &gt; max)
+            max = m;
+        if ((m &lt; min) || (min&lt;0))
+            min = m;
+        --n;
+    }
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;3 -1.8 3.14 1&quot;,
+    &quot;expected&quot;: &quot;min: -1.800000, max: 3.140000\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 3.140000\n&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main ()
+{
+  int N, i; 
+  float reaisintrod, min, max;
+
+  scanf(&quot;%d&quot;, &amp;N);
+  scanf(&quot;%f&quot;, &amp;reaisintrod); 
+  min = max = reaisintrod;
+
+   for (i = 1; i &lt; N; i++) 
+   {
+    scanf(&quot;%f&quot;, &amp;reaisintrod);
+   }
+    if (reaisintrod &lt;= min)
+    {
+        min = reaisintrod;
+    }
+    if (reaisintrod &gt;= max)
+    {
+        max = reaisintrod;
+    }
+   printf(&quot;min: %f, max: %f\n&quot;, min, max);
+   return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;3 -1.8 3.14 1&quot;,
+    &quot;expected&quot;: &quot;min: -1.800000, max: 3.140000\n&quot;,
+    &quot;output&quot;: &quot;min: -1.800000, max: 1.000000\n&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(void) {
+
+    float min, max, num1, num2, num3, num4;
+
+    scanf(&quot;%f %f %f %f&quot;, &amp;num1, &amp;num2, &amp;num3, &amp;num4);
+    max = num1;
+    min = num1;
+    if (max &lt; num2)
+        max = num2;
+    if (max &lt; num3)
+        max = num3;
+    if (max &lt; num4)
+        max = num4;
+    if (min &gt; num2)
+        min = num2;
+    if (min &gt; num3)
+        min = num3;
+    if (min &gt; num4)
+        min = num4;
+    if (min == max){
+        min = 0.000000; max = max;
+    }
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 6.800000\n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(void) {
+
+    float min, max, num1, num2, num3, num4;
+
+    scanf(&quot;%f %f %f %f&quot;, &amp;num1, &amp;num2, &amp;num3, &amp;num4);
+    max = num1;
+    min = num1;
+    if (max &lt; num2)
+        max = num2;
+    if (max &lt; num3)
+        max = num3;
+    if (max &lt; num4)
+        max = num4;
+    if (min &gt; num2)
+        min = num2;
+    if (min &gt; num3)
+        min = num3;
+    if (min &gt; num4)
+        min = num4;
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 6.800000\n&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int C ;
+    float X,contador = 1;
+    float min, max;
+    scanf(&quot;%d&quot;,&amp;C);
+    scanf(&quot;%f&quot;,&amp;X);
+    min = C;
+    max = C;
+
+    while (contador &lt; C)
+    {
+        if (X &gt; max)
+        {
+            max = X;
+        }
+        if (X &lt; min)
+        {
+            min = X;
+        }
+        scanf(&quot;%f&quot;,&amp;X);
+        contador ++;    
+    }
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 6.800000\n&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+#define INICIO 1
+#define ZERO 0
+
+int main()
+{
+    int n, i;
+    float min, max = ZERO, num;
+    scanf(&quot;%d&quot;, &amp;n);
+    for(i = INICIO; i &lt;= n; i++)
+    {
+        scanf(&quot;%f&quot;, &amp;num);
+        if (i == INICIO)
+            min = num;
+        else if (num &lt;= min)
+            min = num;
+        else if (num &gt;= max)
+            max = num;
+        }
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 0.000000, max: 0.000000\n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+#define INICIO 1
+#define ZERO 0
+
+int main()
+{
+    int n, i;
+    float min, max = ZERO, num;
+    scanf(&quot;%d&quot;, &amp;n);
+    for(i = INICIO; i &lt;= n; i++)
+    {
+        scanf(&quot;%f&quot;, &amp;num);
+        if (i == INICIO)
+            min = num;
+        else if (num &lt; min &amp;&amp; num &lt; max)
+            min = num;
+        else if (num &gt; max)
+            max = num;
+        }
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 0.000000, max: 2.000000\n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+#define INICIO 1
+#define ZERO 0
+
+int main()
+{
+    int n, i;
+    float min, max = ZERO, num;
+    scanf(&quot;%d&quot;, &amp;n);
+    for(i = INICIO; i &lt;= n; ++i)
+    {
+        scanf(&quot;%f&quot;, &amp;num);
+        if (i == INICIO)
+            min = num;
+        else if (num &lt; min)
+            min = num;
+        else if (num &gt; max)
+            max = num;
+        }
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 0.000000, max: 0.000000\n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int n;
+    float temp,med,min,max;
+    scanf(&quot;%d%f%f%f&quot;,&amp;n,&amp;min,&amp;med,&amp;max);
+    if(min&gt;med)
+    {
+        temp=med;
+        med=min;
+        min=temp;
+    }
+    if(med&gt;max)
+    {
+        temp=max;
+        max=med;
+        med=temp;
+    }
+    if(min&gt;med)
+    {
+        temp=med;
+        med=min;
+        min=temp;
+    }
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 6.800000\n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    float x, y, z, w, min, max;
+    scanf(&quot;%f %f %f %f&quot;, &amp;x, &amp;y, &amp;z, &amp;w);
+    min = max = x;
+    if (y &lt; min)
+        min = y;
+    if (y &gt; max)
+        max = y;
+    if (z &lt; min)
+        min = z;
+    if (z &gt; max)
+        max = z;
+    if (w &lt; min)
+        min = w;
+    if (w &gt; max)
+        max = w;
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 6.800000\n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>    
+    #include &lt;stdio.h&gt;
+    int main() {
+        int n;
+        float min, max, numero;
+        scanf(&quot;%f&quot;,&amp;numero);
+        n = numero;
+        min = max = numero;
+        while (n != 0) {
+            if (numero &gt; max)
+                max = numero;
+            if (numero &lt; min)
+                min = numero;
+            scanf(&quot;%f&quot;,&amp;numero);
+            n--;
+        }
+        printf(&quot;min: %.6f, max: %.6f\n&quot;, min, max);
+        return 0;
+    }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 6.800000\n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>    
+    #include &lt;stdio.h&gt;
+    int main() {
+        int n;
+        float min, max, numero;
+        scanf(&quot;%f&quot;,&amp;numero);
+        n = numero;
+        min = max = numero;
+        while (n != 0) {
+            if (numero &gt; max)
+                max = numero;
+            if (numero &lt; min)
+                min = numero;
+            scanf(&quot;%f&quot;,&amp;numero);
+            n--;
+        }
+        printf(&quot;min: %.6f, max: %.6f\n&quot;, min, max);
+        return 0;
+    }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;4 6.8 2 1 0&quot;,
+    &quot;expected&quot;: &quot;min: 0.000000, max: 6.800000\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 6.800000\n&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n;
+    float m, min = -1, max = 0;
+    scanf(&quot;%d&quot;, &amp;n);
+    while(n&gt;0) {
+        scanf(&quot;%f&quot;, &amp;m);
+        if (m &gt; max)
+            max = m;
+        if ((m &lt; min) || (min&lt;0))
+            min = m;
+        --n;
+    }
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;3 -1.8 3.14 1&quot;,
+    &quot;expected&quot;: &quot;min: -1.800000, max: 3.140000\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 3.140000\n&quot;
+  }
+]</pre></details></html>

@@ -7,7 +7,12 @@ import pytest
 from misconceptions.adapters import load_dataset
 from misconceptions.domain import Submission
 from misconceptions.rule_style import explanation_for, validate_explanation
-from misconceptions.semantic_rules import build_teaching_report, describe_condition, diagnose
+from misconceptions.semantic_rules import (
+    build_teaching_report,
+    describe_condition,
+    diagnose,
+    refresh_rule_descriptions,
+)
 from misconceptions.teaching_report import load_evidence
 
 SWAP = 'void swap(int a,int b){int t=a; a=b; b=t;} int main(){int x=2,y=7;swap(x,y);}'
@@ -63,9 +68,46 @@ def test_presentation_does_not_erase_signs_or_decimal_points():
 
 def test_translation_preserves_negation_and_unknown_state():
     text = describe_condition("NOT (test:1=pass)", {})
-    assert "không thỏa điều kiện" in text and "đạt" in text and "không đạt" not in text
+    assert "không thỏa điều kiện" not in text
+    assert "sai kết quả" in text and "chưa chạy" in text and "lỗi thực thi" in text
     assert "chưa xác định" in describe_condition("ast:c_while=__unknown__", {})
     assert "con trỏ" in describe_condition("ast:c_pointer_parameter=1", {})
+
+
+def test_binary_test_negation_only_when_routing_guarantees_complete_execution():
+    labels = {"t4": "Ca «Tọa độ âm»"}
+    assert describe_condition("NOT (test:t4=fail)", labels, eligible_tests=True) == 'Ca «Tọa độ âm»: đạt'
+    assert describe_condition("NOT (test:t4=pass)", labels, eligible_tests=True) == 'Ca «Tọa độ âm»: sai kết quả'
+    assert "chưa chạy" in describe_condition("NOT (test:t4=fail)", labels)
+    assert describe_condition("NOT (NOT (test:t4=fail))", labels) == 'Ca «Tọa độ âm»: sai kết quả'
+
+
+@pytest.mark.parametrize('condition', [
+    'NOT (ast:c_pointer_parameter=0)', 'NOT (ast:c_pointer_parameter=1)',
+    'NOT (stdout:t1:relation=exact)', 'NOT (stdout:t1:relation=empty)',
+    'NOT (stdout:t1:edit_band=zero)', 'NOT (stdout:t1:edit_band=large)',
+])
+def test_categorical_negation_keeps_unknown_as_an_alternative(condition):
+    text = describe_condition(condition, {}, eligible_tests=True)
+    assert 'HOẶC' in text
+    assert 'chưa' in text
+    assert 'không thỏa điều kiện' not in text
+
+
+def test_saved_report_translation_preserves_original_rule_and_scope():
+    report = {'train_assignments': {'a': 0}, 'holdout_assignments': {},
+              'routes': {'a': 'eligible'},
+              'problem': {'tests': [{'test_id': 't4', 'name': 'Tọa độ âm'}]},
+              'teaching': {'cluster_rules': [{'if': ['NOT (test:t4=fail)'],
+                                            'if_vi': ['old wording'], 'then_cluster': 0,
+                                            'train_support': 2}]}}
+    refresh_rule_descriptions(report)
+    rule = report['teaching']['cluster_rules'][0]
+    assert rule['if_vi'] == ['Ca «Tọa độ âm»: đạt']
+    assert rule['if'] == ['NOT (test:t4=fail)'] and rule['train_support'] == 2
+    report['routes']['a'] = 'incomplete'
+    refresh_rule_descriptions(report)
+    assert 'chưa chạy' in rule['if_vi'][0]
 
 
 def test_unmatched_and_support_are_not_ground_truth():
@@ -122,3 +164,62 @@ def test_rule_contract_rejects_missing_context_or_certain_diagnosis(invalid):
     del value["behavioral_pattern"]
     with pytest.raises(ValueError):
         validate_explanation(value)
+
+
+def test_dynamic_printf_presentation_requires_failed_observed_log():
+    source = 'int main(){int a=2;printf("%d",a);}'
+    found = diagnose(row(source), [log("2\n", "2")])
+    assert [f["rule_id"] for f in found] == ["OUTPUT_PRESENTATION"]
+    assert found[0]["source"][0]["code"] == 'printf("%d",a)'
+    assert not diagnose(row(source), [log("12", "1 2")])
+    assert not diagnose(row(source), [log("-2", "2")])
+    assert not diagnose(row('int main(){/* printf("2"); */}'), [log("2\n", "2")])
+
+
+def test_short_circle_messages_require_independent_branches_and_multiple_positions():
+    source = 'int main(){int d=1,r=5;if(d<r) puts("INSIDE");if(d>r) puts("OUTSIDE");else puts("ON");}'
+    found = diagnose(row(source), [log("INSIDE\n", "INSIDE\nON\n")])
+    assert [f["rule_id"] for f in found] == ["C_BRANCH_ATTACHMENT"]
+    assert not diagnose(row(source.replace('if(d>r)', 'else if(d>r)')),
+                        [log("INSIDE\n", "INSIDE\nON\n")])
+    assert not diagnose(row(source), [log("INSIDE\n", "OUTSIDE\n")])
+
+
+def test_refresh_old_diagnostics_preserves_assignments_and_input_snapshot():
+    from copy import deepcopy
+    from dataclasses import asdict
+
+    submission = row('int main(){int a=2;printf("%d",a);}')
+    original = {"teaching": {"version": "old", "findings": []},
+                "train_assignments": {"s1": 0}, "holdout_assignments": {},
+                "submissions": [asdict(submission) | {"logged_tests": [log("2\n", "2")]}]}
+    display = deepcopy(original)
+    refresh_rule_descriptions(display)
+    assert display["teaching"]["findings"][0]["rule_id"] == "OUTPUT_PRESENTATION"
+    assert display["train_assignments"] == original["train_assignments"]
+    assert original["teaching"]["findings"] == []
+
+
+@pytest.mark.parametrize("problem,source,inputs,expected,actual,key", [
+    ("sum-range", 'int main(){int n;scanf("%d",&n);printf("%d",n);}', "3", "6", "3", "SUM_INPUT"),
+    ("sum-range", 'int main(){int n;scanf("%d",&n);printf("%d",n*n);}', "3", "6", "9", "SUM_SQUARE"),
+    ("sum-range", 'int main(){int n;scanf("%d",&n);printf("%d",n*(n-1)/2);}', "3", "6", "3", "SUM_PREVIOUS"),
+    ("count-positive", 'int main(){int a[2],n;int answer=0;for(int i=0;i<n;i++){if(a[i]>=0)answer++;}}',
+     "2 0 1", "1", "2", "COUNT_ZERO"),
+    ("max-array", 'int main(){int a[2];int answer=0;for(int i=0;i<2;i++){if(a[i]>answer)answer=a[i];}}',
+     "2 -3 -1", "-1", "0", "MAX_ZERO"),
+    ("max-array", 'int main(){int a[2],n;int answer=a[0];for(int i=0;i<n-1;i++){if(a[i]>answer)answer=a[i];}}',
+     "2 1 3", "3", "1", "ARRAY_LAST"),
+    ("circle-position", 'int main(){int x,y,r;int distance=x*x+y*y;int limit=r;if(distance<limit)puts("INSIDE");else if(distance>limit)puts("OUTSIDE");else puts("ON");}',
+     "2 0 3", "INSIDE", "OUTSIDE", "CIRCLE_RADIUS"),
+])
+def test_exercise_hypotheses_require_problem_code_and_concordant_failed_log(problem, source, inputs, expected, actual, key):
+    submission = replace(row(source), problem_id=problem)
+    logs = [log(expected, actual, inputs)]
+    found = [f for f in diagnose(submission, logs) if f["rule_id"] == key]
+    assert len(found) == 1
+    validate_explanation(found[0]["explanation"])
+    assert not any(f["rule_id"] == key for f in diagnose(replace(submission, problem_id="lab02-ex03"), logs))
+    assert not diagnose(replace(submission, outcomes={"t1": "pass"}), logs)
+    assert not any(f["rule_id"] == key for f in diagnose(submission, [log(expected, "99999", inputs)]))
+    assert not diagnose(replace(submission, source_code="int main(){return 0;}"), logs)

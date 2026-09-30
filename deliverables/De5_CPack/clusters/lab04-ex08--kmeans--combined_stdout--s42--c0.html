@@ -1,0 +1,2583 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab04-ex08--kmeans--combined_stdout--s42--c0</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab04-ex08 · 37 bài</h1><p>lab04-ex08--kmeans--combined_stdout--s42--c0 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex08_3: 37/37 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex08_0: 36/37 bài trượt (97.3%); 0 chưa chạy.</p><p>Test ex08_2: 36/37 bài trượt (97.3%); 0 chưa chạy.</p><p>Test ex08_4: 36/37 bài trượt (97.3%); 0 chưa chạy.</p><p>Test ex08_5: 36/37 bài trượt (97.3%); 0 chưa chạy.</p><p>Test ex08_1: 35/37 bài trượt (94.6%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;test:ex08_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 36,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.972972972972973,
+      &quot;cohort_rate&quot;: 0.6461538461538462,
+      &quot;difference_from_cohort&quot;: 0.32681912681912684
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex08_3&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 37,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.676923076923077,
+      &quot;difference_from_cohort&quot;: 0.32307692307692304
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_0:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 27,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.7297297297297297,
+      &quot;cohort_rate&quot;: 0.4153846153846154,
+      &quot;difference_from_cohort&quot;: 0.3143451143451143
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex08_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 35,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.9459459459459459,
+      &quot;cohort_rate&quot;: 0.6461538461538462,
+      &quot;difference_from_cohort&quot;: 0.29979209979209975
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_3:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 27,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.7297297297297297,
+      &quot;cohort_rate&quot;: 0.46153846153846156,
+      &quot;difference_from_cohort&quot;: 0.26819126819126815
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_1:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 25,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.6756756756756757,
+      &quot;cohort_rate&quot;: 0.4307692307692308,
+      &quot;difference_from_cohort&quot;: 0.24490644490644486
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 23,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.6216216216216216,
+      &quot;cohort_rate&quot;: 0.38461538461538464,
+      &quot;difference_from_cohort&quot;: 0.23700623700623696
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex08_5&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 36,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.972972972972973,
+      &quot;cohort_rate&quot;: 0.7538461538461538,
+      &quot;difference_from_cohort&quot;: 0.2191268191268192
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 23,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.6216216216216216,
+      &quot;cohort_rate&quot;: 0.4153846153846154,
+      &quot;difference_from_cohort&quot;: 0.2062370062370062
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex08_4&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 36,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.972972972972973,
+      &quot;cohort_rate&quot;: 0.7692307692307693,
+      &quot;difference_from_cohort&quot;: 0.20374220374220375
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 28,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.7567567567567568,
+      &quot;cohort_rate&quot;: 0.5692307692307692,
+      &quot;difference_from_cohort&quot;: 0.1875259875259876
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_5:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 27,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.7297297297297297,
+      &quot;cohort_rate&quot;: 0.5692307692307692,
+      &quot;difference_from_cohort&quot;: 0.1604989604989605
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex08_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 36,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.972972972972973,
+      &quot;cohort_rate&quot;: 0.8153846153846154,
+      &quot;difference_from_cohort&quot;: 0.15758835758835765
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 28,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.7567567567567568,
+      &quot;cohort_rate&quot;: 0.6,
+      &quot;difference_from_cohort&quot;: 0.15675675675675682
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_2:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.35135135135135137,
+      &quot;cohort_rate&quot;: 0.2,
+      &quot;difference_from_cohort&quot;: 0.15135135135135136
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_3:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.35135135135135137,
+      &quot;cohort_rate&quot;: 0.2,
+      &quot;difference_from_cohort&quot;: 0.15135135135135136
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.43243243243243246,
+      &quot;cohort_rate&quot;: 0.2923076923076923,
+      &quot;difference_from_cohort&quot;: 0.14012474012474013
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_3:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.43243243243243246,
+      &quot;cohort_rate&quot;: 0.2923076923076923,
+      &quot;difference_from_cohort&quot;: 0.14012474012474013
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_4:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.35135135135135137,
+      &quot;cohort_rate&quot;: 0.2153846153846154,
+      &quot;difference_from_cohort&quot;: 0.13596673596673597
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex08_5:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 37,
+      &quot;rate&quot;: 0.35135135135135137,
+      &quot;cohort_rate&quot;: 0.2153846153846154,
+      &quot;difference_from_cohort&quot;: 0.13596673596673597
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 3,
+      &quot;if&quot;: [
+        &quot;NOT (test:ex08_5=pass)&quot;,
+        &quot;test:ex08_0=fail&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 28,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 7,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_004 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+#define MAX 100
+
+
+
+int main() {
+
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_009 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;math.h&gt;
+
+#define MAX 202
+
+void leLinha(char s[MAX]);
+
+int main() {
+
+    char input[MAX];
+    char num1[100];
+    char num2[100];
+    int sep, i;
+    int j = 0;
+
+    leLinha(input);
+
+    
+    for (i = 0; i &lt; 100; i++) {
+        if (input[i] != &#x27; &#x27;) {
+            num1[i] = input[i];
+        } else {
+            sep = i;
+            break;
+        }
+    }
+
+    
+    for (i = sep; input[i] != &#x27;\0&#x27;; i++) {
+        num2[j] = input[i];
+        j++;
+    }
+
+    
+    for (i = 99; i &gt;= 0; i--) {
+        if (num1[i] &gt; num2[i]) {
+            printf(&quot;%s&quot;, num1);
+            break;
+        } else if (num1[i] &lt; num2[i]) {
+            printf(&quot;%s&quot;, num2);
+            break;
+        }
+    }
+
+    putchar(&#x27;\n&#x27;);
+    return 0;
+}
+
+void leLinha(char s[MAX]) {
+
+    char c;
+    int j = 0;
+
+    while ((c = getchar()) != EOF) {
+
+        if (c == &#x27;\n&#x27;) {
+            break;
+        }
+        if (c &lt; &#x27;0&#x27; || c &gt; &#x27;9&#x27;)
+            break;
+
+        s[j] = c;
+        j++; 
+    }
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000\n&quot;
+  }
+]</pre></details><details><summary>sample_021 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 100
+int leLinha(char s[]){
+    int c, ind;
+    for (ind = 0;ind &lt; MAX - 1 &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; ind++)
+        s[ind] = c;
+    s[ind] = &#x27;\0&#x27;;
+    return ind;
+}
+
+int main(){
+    char num1[MAX], num2[MAX];
+    int i;
+    leLinha(num1);
+    leLinha(num2);
+    for (i = 0; num1[i] != &#x27;\0&#x27;;i++);
+    if (num1[i] &gt; num2[i])
+        printf(&quot;%s\n&quot;, num1);
+    else
+        printf(&quot;%s\n&quot;, num2);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  }
+]</pre></details><details><summary>sample_025 · đại diện</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    long n1, n2;
+
+    scanf(&quot;%ld %ld&quot;, &amp;n1, &amp;n2);
+
+    if (n1&gt;=n2)
+        printf(&quot;%ld\n&quot;, n1);
+    else if(n1&lt;n2)
+        printf(&quot;%ld\n&quot;, n2);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9223372036854775807\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9223372036854775807\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9223372036854775807\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9223372036854775807\n&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+
+#define DIM 101
+
+#define N1 1
+#define N2 2
+#define IGUAL 0
+
+int main()
+{
+  int estado;
+  char n1[DIM];
+  char n2[DIM];
+  int i;
+  
+  fgets(n1, DIM, stdin);
+  fgets(n2, DIM, stdin);
+  estado = IGUAL;
+  
+  for (i = 0; n1[i] != &#x27;\0&#x27; &amp;&amp; estado == IGUAL; i++) {
+    if (n1[i] &gt; n2[i] &amp;&amp; estado == IGUAL) {
+      estado = N1;
+    }
+    else if (n2[i] &gt; n1[i]) {
+      estado = N2;
+    }
+  }
+  if (estado == N1) {
+    printf(&quot;%s&quot;, n1);
+  }
+  else if (estado == N2) {
+    printf(&quot;%s&quot;, n2);
+  }
+  else {
+    printf(&quot;IGUAIS&quot;);
+  }
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+
+int main(){
+    char v1[MAX], v2[MAX];
+    int i = 0, c, len1 = 0, len2 = 0, exit = 0;
+
+    while(i &lt; MAX &amp;&amp; (c = getchar()) != &#x27;\n&#x27; &amp;&amp; c != EOF){
+        v1[i] = c;
+        i++;
+        len1++;
+    }
+    v1[i] = &#x27;\0&#x27;;
+
+    i = 0;
+    while(i &lt; MAX &amp;&amp; (c = getchar()) != &#x27;\n&#x27; &amp;&amp; c != EOF){
+        v2[i] = c;
+        i++;
+        len2++;
+    }
+    v2[i] = &#x27;\0&#x27;;
+
+    if(len1 &gt; len2) {
+        printf(&quot;%s\n&quot;, v1);
+    } else if(len1 &lt; len2) {
+        printf(&quot;%s\n&quot;, v2);
+    } else {
+        i = 0;
+        while(i &lt; MAX &amp;&amp; v1[i] != &#x27;\0&#x27; &amp;&amp; v2[i] != &#x27;\0&#x27; &amp;&amp; !exit){
+            if(v1[i] &gt; v2[i]) {
+                printf(&quot;%s\n&quot;, v1);
+                exit = 1;
+            }
+            else if(v1[i] &lt; v2[i]) {
+                printf(&quot;%s\n&quot;, v2);
+                exit = 1;
+            }
+            else i++;
+        }
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>#include &lt;stdio.h&gt;
+
+#define MAX 100
+
+int leLinha(char s[]){
+	int i, c, cont = 0;
+
+	for (i = 0; i &lt; MAX-1 &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; i++){
+		s[i] = c;
+		cont++;
+	}
+
+	return cont;
+}
+
+char* maior(char s[], char s2[]){
+	int i, len_s, len_s2;
+	len_s = leLinha(s);
+	len_s2 =leLinha(s2);
+
+	if (len_s &gt; len_s2)
+		return s;
+	else if (len_s &lt; len_s2)
+		return s2;
+	else{
+		for(i = 0; i &lt; len_s; i++){
+		        if (s[i] &gt; s2[i])
+				return s;
+			else if (s[i] &lt; s2[i])
+				return s2;
+		}
+		return s;
+	}
+}
+
+int main(){
+	char s[MAX], s2[MAX];
+	printf(&quot;%s\n&quot;, maior(s, s2));
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>#include &lt;stdio.h&gt;
+
+#define DIM 100
+
+
+int main(){
+    int c, i, j = 0, num1[DIM], num2[DIM];
+    for(i = 0; (c = getchar()) &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;; i++)
+        num1[i] = c;
+    for(i = 0; (c = getchar()) &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;; i++)
+        num2[i] = c;
+    while(num1[j] == num2[j])
+        j++;
+    if(num1[j] &gt; num2[j])
+        for(j = 0; j &lt; i; j++)
+            printf(&quot;%d&quot;, (num1[j] - &#x27;0&#x27;));
+    else
+        for(j = 0; j &lt; i; j++)
+            printf(&quot;%d&quot;, (num2[j] - &#x27;0&#x27;));
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>#include &lt;stdio.h&gt;
+
+#define DIM 100
+
+
+int main(){
+    int c, i, j = 0, num1[DIM], num2[DIM];
+    for(i = 0; (c = getchar()) &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;; i++)
+        num1[i] = c;
+    for(i = 0; (c = getchar()) &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;; i++)
+        num2[i] = c;
+    while(num1[j] == num2[j])
+        j++;
+    if(num1[j] &gt; num2[j])
+        for(j = 0; j &lt; i; j++)
+            printf(&quot;%c&quot;, (num1[j]));
+    else
+        for(j = 0; j &lt; i; j++)
+            printf(&quot;%c&quot;, (num2[j]));
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>#include &lt;stdio.h&gt;
+
+#define DIM 100
+
+
+int main(){
+    int c, i, j = 0, num1[DIM], num2[DIM];
+    printf(&quot;Insira um inteiro\n&quot;);
+    for(i = 0; (c = getchar()) &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;; i++)
+        num1[i] = c;
+    printf(&quot;Insira outro inteiro\n&quot;);
+    for(i = 0; (c = getchar()) &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;; i++)
+        num2[i] = c;
+    while(num1[j] == num2[j])
+        j++;
+    if(num1[j] &gt; num2[j])
+        for(j = 0; j &lt; i; j++)
+            printf(&quot;%d&quot;, (num1[j] - &#x27;0&#x27;));
+    else
+        for(j = 0; j &lt; i; j++)
+            printf(&quot;%d&quot;, (num2[j] - &#x27;0&#x27;));
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro\nInsira outro inteiro\n1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro\nInsira outro inteiro\n1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro\nInsira outro inteiro\n9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro\nInsira outro inteiro\n9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro\nInsira outro inteiro\n9988888888888888888887&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro\nInsira outro inteiro\n9988888888888888888887&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>#include&lt;stdio.h&gt;
+#include&lt;string.h&gt;
+#include &lt;stdlib.h&gt;
+
+#define MAX 100
+
+
+
+int main(){
+
+    char s1[MAX], s2[MAX];
+    int i=0, n1,n2;
+    char c;
+
+    while ((c=getchar())!= &#x27;\n&#x27; &amp;&amp; c != EOF){
+        s1[i] = c;
+        i++;
+    }
+
+    s1[i] = &#x27;\0&#x27;;
+    i=0;
+
+    while ((c=getchar())!= &#x27;\n&#x27; &amp;&amp; c != EOF){
+        s2[i] = c;
+        i++;
+    }
+
+    s2[i] = &#x27;\0&#x27;;
+
+    n1 = atoi(s1);
+    n2 = atoi(s2);
+
+    if (n1 &gt; n2)
+        printf(&quot;%d\n&quot;,n2);
+    else
+        printf(&quot;%d\n&quot;,n2);
+
+    
+        
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0\n&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+
+#include &lt;stdio.h&gt;
+#define MAX 100
+
+int leLinha(char str[]) {
+    int i = 0, c;
+    while ((c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;)
+        str[i++] = c;
+    str[i] = &#x27;\0&#x27;;
+    return i;
+}
+
+char *maior(char num1[], char num2[]) {
+    int i;
+    for (i = 0; num1[i] != &#x27;\0&#x27;; i++) 
+        if (num1[i] &gt; num2[i]) 
+            return num1;
+    return num2;
+}
+
+
+int main() {
+    char num1[MAX], num2[MAX];
+    leLinha(num1);
+    leLinha(num2);
+    printf(&quot;%s\n&quot;, maior(num1, num2));
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 80
+int lelinha(char s[]){
+    int i, c;
+    for (i=0; i&lt;MAX &amp;&amp; (c=getchar())!=&#x27;\n&#x27; &amp;&amp; c != EOF; i++){
+        s[i] = c;
+    }
+    s[i]=&#x27;\0&#x27;;
+    return i;
+} 
+
+char *compara(char n1[], char n2[]){
+    int i;
+    for (i = 0; n1[i] == n2[i] &amp;&amp; n1[i] != &#x27;\0&#x27;; i++);
+    if (n1[i] &gt; n2[i])
+        return n1;
+    else 
+        return n2; 
+}
+
+int main(){
+    char n1[MAX], n2[MAX];
+    lelinha(n1);
+    lelinha(n2);
+    printf(&quot;%s\n&quot;, compara(n1, n2));
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+#include&lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAX 100
+
+int main(){
+    char num1[MAX]={0};
+    char num2[MAX]={0};
+    
+
+    int i, c;
+    
+    for(i=0; i&lt;MAX-1 &amp;&amp; (c=getchar())!= EOF &amp;&amp; c != &#x27;\n&#x27;; i++){
+        if(c&gt;=&#x27;0&#x27; &amp;&amp; c&lt;=&#x27;9&#x27;)
+            num1[i] = c;
+    num1[i] = &#x27;\0&#x27;;
+    }
+    puts(num1);
+
+    for(i=0; i&lt;MAX-1 &amp;&amp; (c=getchar())!= EOF &amp;&amp; c != &#x27;\n&#x27;; i++){
+        if(c&gt;=&#x27;0&#x27; &amp;&amp; c&lt;=&#x27;9&#x27;)
+            num2[i] = c;
+    num2[i] = &#x27;\0&#x27;;
+    }
+    puts(num2);
+
+    
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;\n\n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define DIM 100
+
+int leLinha(char s[]){
+    int i;
+    char c;
+    
+    c = getchar();
+    for(i = 0; i &lt; DIM-1  &amp;&amp; c != EOF &amp;&amp; c != &#x27;\n&#x27; &amp;&amp; c != &#x27; &#x27;; i++){
+        s[i] = c;
+        c = getchar();
+    }
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+
+int main()
+{   
+    char s1[DIM], s2[DIM];
+    int i, size;
+    
+    size = leLinha(s1);
+    leLinha(s2);
+    for(i = 0; i &lt;= size; i++){
+        if (s1[i] &gt; s2[i]){
+            printf(&quot;%s&quot;, s1);
+            break;
+        }
+        else if (s2[i] &gt; s1[i]){
+            printf(&quot;%s&quot;, s2);
+            break;
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 100
+
+
+int leLinha(char s[]){
+    int i, c;
+    for (i = 0; i &lt; MAX &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; i++){
+        s[i] = c;
+    }
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+
+char *maior(char s[], char c[]){
+    int i;
+    for (i = 0; s[i] == c[i] &amp;&amp; s[i] != &#x27;\0&#x27;; i++);
+    if (s[i] &gt; c[i]){
+        return s;
+    }
+    else{
+        return c;
+    }
+}
+
+
+
+
+int main(){
+    char n1[MAX], n2[MAX];
+    leLinha(n1);
+    leLinha(n2);
+    printf(&quot;%s\n&quot;, maior(n1,n2));
+    return 0;
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define MAX 100
+
+void printNumber(char number[], int length);
+
+int main() {
+    char c, num1[MAX], num2[MAX];
+    int i, j;
+    for (i = 0; i &lt; MAX &amp;&amp; (c = getchar()) != &#x27; &#x27;; i++)
+        num1[i] = c;
+    for (i = 0; i &lt; MAX &amp;&amp; (c = getchar()) != EOF; i++)
+        num2[i] = c;
+    for (j = 0; j &lt; i; j++) {
+        if (num1[j] &gt; num2[j]) {
+            printNumber(num1, i);
+            return 0;
+        } else if (num1[j] &lt; num2[j]) {
+            printNumber(num2, i);
+            return 0;
+        }
+    }
+    printNumber(num1, i);
+    return 0;
+}
+
+void printNumber(char number[], int length) {
+    int i;
+    for (i = 0; i &lt; length; i++)
+        printf(&quot;%c&quot;, number[i]);
+    printf(&quot;%c\n&quot;, number[i]);
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1\u0000\u0000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1\n\u0000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888\u0000\u0000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888\n\u0000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887\u0000\u0000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887\n\u0000\n&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define VECMAX 100
+#define TRUE 1
+#define FALSE 0
+
+int leLinha(char s[])
+{
+    int soma = 0, c, i = 0;
+    char end[4];
+
+    end[0] = &#x27;\n&#x27;;
+    end[1] = &#x27; &#x27;;
+    end[1] = EOF;
+    end[2] = &#x27;\0&#x27;;
+
+    while (! strchr(end, (c = getchar())))
+    {
+        s[i] = c;
+        soma++;
+        i++;
+    }
+
+    s[i] = &#x27;\0&#x27;;
+
+    return soma;
+}
+
+void compara(char s[], char s2[])
+{
+    int i, primeiroMaior;
+
+    for (i = 0; i &lt; VECMAX; i++)
+    {
+        if (s[i] &gt; s2[i])
+        {
+            primeiroMaior = TRUE;
+            break;
+        }
+        else if (s[i] &lt; s2[i])
+        {
+            primeiroMaior = FALSE;
+            break;
+        }
+    }
+
+    if (primeiroMaior == FALSE)
+    {
+        strcpy(s, s2);
+    }
+}
+
+int main()
+{
+    char s[VECMAX], s2[VECMAX];
+
+    leLinha(s);
+    leLinha(s2);
+
+    printf(&quot;%s\n&quot;, s);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    char c;
+    int i,alg,max = 0;
+    for (i = 0;(c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;;i++){
+        alg = c - &#x27;0&#x27;;
+        max = alg &gt; max ? alg : max;
+    }
+    printf(&quot;%d&quot;,max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    char c;
+    int i,alg,max = 0;
+    for (i = 0;(c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;;i++){
+        alg = c - &#x27;0&#x27;;
+        max = alg &gt; max ? alg : max;
+    }
+    printf(&quot;%d&quot;,max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 100
+int leLinha(char s[]){
+    int c, ind;
+    for (ind = 0;ind &lt; MAX - 1 &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; ind++)
+        s[ind] = c;
+    s[ind] = &#x27;\0&#x27;;
+    return ind;
+}
+
+int main(){
+    char num1[MAX], num2[MAX],maior[MAX];
+    int i;
+    leLinha(num1);
+    leLinha(num2);
+    for (i = 0; num1[i] != &#x27;\0&#x27;;i++){
+        if (num1[i] &gt; num2[i]){
+            strcpy(maior,num1);
+            break;
+        } 
+        else{
+            strcpy(maior,num2);
+            break;
+        }
+    }
+    printf(&quot;%s\n&quot;,maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 100
+int leLinha(char s[]){
+    int c, ind;
+    for (ind = 0;ind &lt; MAX - 1 &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; ind++)
+        s[ind] = c;
+    s[ind] = &#x27;\0&#x27;;
+    return ind;
+}
+
+int main(){
+    char num1[MAX], num2[MAX];
+    int i;
+    leLinha(num1);
+    leLinha(num2);
+    for (i = 0; num1[i] != &#x27;\0&#x27;;i++)
+    if (num1[i] &gt; num2[i])
+        printf(&quot;%s\n&quot;, num1);
+    else
+        printf(&quot;%s\n&quot;, num2);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n1 0\n1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n0 1\n0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 100
+int leLinha(char s[]){
+    int c, ind;
+    for (ind = 0;ind &lt; MAX - 1 &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; ind++)
+        s[ind] = c;
+    s[ind] = &#x27;\0&#x27;;
+    return ind;
+}
+
+int main(){
+    char num1[MAX], num2[MAX],maior[MAX];
+    int i;
+    leLinha(num1);
+    leLinha(num2);
+    for (i = 0; num1[i] != &#x27;\0&#x27; &amp;&amp; num2[i] != &#x27;\0&#x27;;i++){
+        if (num1[i] &gt; num2[i]){
+            strcpy(maior,num1);
+            break;
+        } 
+        else if (num1[i] &lt; num2[i]){
+            strcpy(maior,num2);
+            break;
+        }
+    }
+    printf(&quot;%s\n&quot;,maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 100
+int leLinha(char s[]){
+    int c, ind;
+    for (ind = 0;ind &lt; MAX - 1 &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; ind++)
+        s[ind] = c;
+    s[ind] = &#x27;\0&#x27;;
+    return ind;
+}
+
+int main(){
+    char num1[MAX], num2[MAX];
+    int i,max = 0;
+    leLinha(num1);
+    leLinha(num2);
+    for (i = 0; num1[i] != &#x27;\0&#x27;;i++){
+        max = num1[i] &gt; num2[i] ? num1[i] : num2[i];
+    }
+    printf(&quot;%d\n&quot;,max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;48\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;49\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;55\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;56\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;48\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;55\n&quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 100
+int leLinha(char s[]){
+    int c, ind;
+    for (ind = 0;ind &lt; MAX - 1 &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; ind++)
+        s[ind] = c;
+    s[ind] = &#x27;\0&#x27;;
+    return ind;
+}
+
+int main(){
+    char num1[MAX], num2[MAX];
+    int i;
+    leLinha(num1);
+    leLinha(num2);
+    for (i = 0; num1[i] != &#x27;\0&#x27;;i++);
+    if (num1 &gt; num2)
+        printf(&quot;%s\n&quot;, num1);
+    else
+        printf(&quot;%s\n&quot;, num2);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_026</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 100
+
+int leLinha(char s[]){
+    int i, c;
+    for(i = 0; i &lt; MAX &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; i++){
+        s[i] = c;
+    }
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+
+int main(){
+    char s1[MAX], s2[MAX];
+    int i;
+
+    leLinha(s1);
+    leLinha(s2);
+    for(i = 0; s1[i] == s2[i] &amp;&amp; s1[i] != &#x27;\0&#x27;; i++);
+    if (s1[i] &gt; s2[i]){
+        printf(&quot;%s\n&quot;, s1);
+    }
+    else{
+        printf(&quot;%s\n&quot;, s2);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_027</summary><pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAX 100
+
+int leLinha(char s[MAX])
+{
+    int i;
+    
+    for (i = 0; i &lt; MAX; i++)
+    {
+        s[i] = getchar();
+        if (s[i] == &#x27;\n&#x27; || s[i] == EOF)
+            break;
+    }
+    s[i] = &#x27;\0&#x27;;
+    return 0;
+}
+
+int main()
+{
+    char s[MAX], c[MAX];
+    int i;
+    leLinha(s);
+    leLinha(c);
+
+    for(i=0;s[i] != &#x27;\0&#x27;;i++)
+    {
+        if (s[i] &lt; c[i])
+        {
+            printf(&quot;%s\n&quot;,c);
+            break;
+        }
+        else if (s[i] &gt; c[i])
+        {
+            printf(&quot;%s\n&quot;,s);
+            break;
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_028</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]){
+    int i, c;
+    for(i = 0; i &lt; MAX &amp;&amp; ((c = getchar())!= &#x27;\n&#x27; &amp;&amp; c != EOF); i++)
+        s[i] = c;
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+
+char *maior(char n1[], char n2[]){
+    int i;
+    for (i = 0; n1[i] == n2[i] &amp;&amp; n1[i] != &#x27;\0&#x27;; i++);
+    if (n1[i] &gt; n2[i])
+        return n1;
+    else 
+        return n2;
+}
+
+int main() {
+    char n1[MAX], n2[MAX];
+    leLinha(n1);
+    leLinha(n2);
+    printf(&quot;%s\n&quot;, maior(n1,n2));
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_029</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 100
+
+int leLinha(char s[]) {
+    int i, c;
+    for (i = 0; i &lt; MAX &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; i++) {
+        s[i] = c;
+    }
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+
+int main(){
+    char num1[MAX], num2[MAX];
+    int i;
+    leLinha(num1);
+    leLinha(num2);
+
+    for (i = 0; num1[i] == num2[i] &amp;&amp; num1[i] != &#x27;\0&#x27;; i++);
+    if (num1[i] &gt; num2[i]) {
+        printf(&quot;%s\n&quot;, num1);
+    } else {
+        printf(&quot;%s\n&quot;, num2);
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;
+  }
+]</pre></details><details><summary>sample_030</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAX 100
+
+int main()
+{
+    int i, c, maior;
+    char num1[MAX], num2[MAX];
+    for(i = 0; (c = getchar()) != &#x27; &#x27;; i++)
+        num1[i] = c;
+    num1[i] = &#x27;\n&#x27;;
+    for(i = 0; (c = getchar()) != &#x27;\n&#x27;; i++)
+        num2[i] = c;
+    num2[i] = &#x27;\n&#x27;;
+    maior = 1;
+    for(i = 0; i &lt; (int) strlen(num1); i++){
+        if(num1[i] &gt; num2[i]){
+            break;
+        }
+        else if(num2[i] &gt; num1[i]){
+            maior = 0;
+            break;
+        }
+    }
+    if(maior) 
+        printf(&quot;%s\n&quot;, num1);
+    else
+        printf(&quot;%s\n&quot;, num2);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887\n\n&quot;
+  }
+]</pre></details><details><summary>sample_031</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define DIMMAX 100
+
+int main() {
+    int i = 0, j = 0, current, checked = 0;
+    char s[DIMMAX];
+    while ((current = getchar()) != &#x27; &#x27;) {
+        s[i] = current;
+        ++i;
+    }
+    for (j = 0; j &lt;= i; ++j) {
+        current = getchar();
+        if (checked == 0) {
+            if (s[j] &gt; current) {
+                printf(&quot;%c&quot;, s[j]);
+                checked = 1;
+            } else if(s[j] &lt; current) {
+                printf(&quot;%c&quot;, current);
+                checked = 2;
+            } else {
+                printf(&quot;%c&quot;, s[j]);
+            }
+        } else if (checked == 1) {
+            printf(&quot;%c&quot;, s[j]);
+        } else {
+            printf(&quot;%c&quot;, current);
+        }
+    }
+    printf(&quot;\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1\u0000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888\u0000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887\u0000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887\n\n&quot;
+  }
+]</pre></details><details><summary>sample_032</summary><pre>
+
+#include &lt;stdio.h&gt;
+#define DIM 100
+
+int main() {
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_033</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX_CHAR 100
+#define CONTINUA 0
+#define STOP 1
+
+int main () {
+    char num_1[MAX_CHAR], num_2[MAX_CHAR];
+    int i, estado = CONTINUA;
+
+    scanf(&quot;%s&quot;, num_1);
+    scanf(&quot;%s&quot;, num_2);
+
+    for(i = 0; estado == CONTINUA; i++) {
+        if(num_1[i] &gt; num_2[i]) {  
+            printf(&quot;%s&quot;, num_1);
+            estado = STOP;
+        }
+        else if (num_2[i] &gt; num_1[i]) {
+            printf(&quot;%s&quot;, num_2);
+            estado = STOP;
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887&quot;
+  }
+]</pre></details><details><summary>sample_034</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define VECMAX 100
+
+int main(void){
+    char num1[VECMAX],num2[VECMAX];
+    int i,j,k,n1,n2;
+    char c;
+    for(i = 0;i &lt; VECMAX -1 &amp;&amp; (num1[i] = getchar()) != &#x27; &#x27;;i++){
+    
+    }
+    n1 = i;
+    for(j = 0;j &lt; VECMAX -1 &amp;&amp; (c = getchar()) != &#x27; &#x27; &amp;&amp; c != &#x27;\n&#x27;;j++){
+        num2[j]=c;
+    }
+    n2 = j;
+    
+    for(i = 0; num1[i]==&#x27;0&#x27;;i++){
+        n1--;
+    }
+    for(j = 0; num2[j]==&#x27;0&#x27;;j++){
+        n2--;
+    }
+
+    if(n1 != n2){
+        if(n1 &gt; n2){
+            printf(&quot;%s\n&quot;,num1);
+        }
+        else{
+            printf(&quot;%s\n&quot;,num2);
+        }
+        return 0;
+    }
+
+    for(k= 0; num1[i+k];k++){
+        if(num1[i+k] != num2[j+i]){
+            if(num1[i+k] &gt; num2[j+k]){
+                printf(&quot;%s\n&quot;, num1);
+            }
+            else{
+                printf(&quot;%s\n&quot;,num2);
+            }
+            
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888887\n9988888888888888888888 \n9988888888888888888888 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888888\n9988888888888888888887 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887 \n&quot;
+  }
+]</pre></details><details><summary>sample_035</summary><pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAX 100
+
+int main() {
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_036</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 80
+int main() {
+    int i,max=0;
+    int c[MAX];
+    for (i=0;c[i]!=&#x27;\n&#x27; &amp;&amp; c[i]!=&#x27;\0&#x27;;i++) {
+        scanf(&quot;%d&quot;,&amp;c[i]);
+        if (c[i]&gt;max) {
+            max=c[i];
+        }
+    }
+    printf(&quot;%d&quot;,max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  }
+]</pre></details><details><summary>sample_037</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 100
+int main() {
+    char num1[MAX], num2[MAX];
+    int i;
+    scanf(&quot;%s&quot;, num1);
+    scanf(&quot;%s&quot;, num2);
+    for (i = 0; num1[i] != &#x27;\0&#x27;; i++)    
+        if (num1[i] &gt;= num2[i])
+            printf(&quot;%s&quot;, num1);
+        else
+            printf(&quot;%s&quot;, num2);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex08_0&quot;,
+    &quot;input&quot;: &quot;1 0\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_1&quot;,
+    &quot;input&quot;: &quot;0 1\n&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_2&quot;,
+    &quot;input&quot;: &quot;9988888888888888888888 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888888998888888888888888888899888888888888888888889988888888888888888888998888888888888888888899888888888888888888889988888888888888888888998888888888888888888899888888888888888888889988888888888888888888998888888888888888888899888888888888888888889988888888888888888888998888888888888888888899888888888888888888889988888888888888888888998888888888888888888899888888888888888888889988888888888888888888998888888888888888888899888888888888888888889988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_3&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 9988888888888888888888\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888888\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888888&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_4&quot;,
+    &quot;input&quot;: &quot;9988888888888888888887 0000000000000000000000\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex08_5&quot;,
+    &quot;input&quot;: &quot;0000000000000000000000 9988888888888888888887\n&quot;,
+    &quot;expected&quot;: &quot;9988888888888888888887\n&quot;,
+    &quot;output&quot;: &quot;9988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887998888888888888888888799888888888888888888879988888888888888888887&quot;
+  }
+]</pre></details></html>

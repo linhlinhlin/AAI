@@ -1,0 +1,1077 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab04-ex03--kmeans--combined_stdout--s42--c0</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab04-ex03 · 19 bài</h1><p>lab04-ex03--kmeans--combined_stdout--s42--c0 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex03_1: 19/19 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex03_2: 19/19 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex03_0: 17/19 bài trượt (89.5%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 18,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.9473684210526315,
+      &quot;cohort_rate&quot;: 0.8181818181818182,
+      &quot;difference_from_cohort&quot;: 0.1291866028708133
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.8421052631578947,
+      &quot;cohort_rate&quot;: 0.7272727272727273,
+      &quot;difference_from_cohort&quot;: 0.1148325358851674
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.7894736842105263,
+      &quot;cohort_rate&quot;: 0.6818181818181818,
+      &quot;difference_from_cohort&quot;: 0.10765550239234456
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 19,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9090909090909091,
+      &quot;difference_from_cohort&quot;: 0.09090909090909094
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_0:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.5789473684210527,
+      &quot;cohort_rate&quot;: 0.5,
+      &quot;difference_from_cohort&quot;: 0.07894736842105265
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.5789473684210527,
+      &quot;cohort_rate&quot;: 0.5,
+      &quot;difference_from_cohort&quot;: 0.07894736842105265
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex03_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 17,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.8947368421052632,
+      &quot;cohort_rate&quot;: 0.8181818181818182,
+      &quot;difference_from_cohort&quot;: 0.07655502392344493
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.8421052631578947,
+      &quot;cohort_rate&quot;: 0.7727272727272727,
+      &quot;difference_from_cohort&quot;: 0.06937799043062198
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_1:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.3684210526315789,
+      &quot;cohort_rate&quot;: 0.3181818181818182,
+      &quot;difference_from_cohort&quot;: 0.05023923444976075
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 12,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.631578947368421,
+      &quot;cohort_rate&quot;: 0.5909090909090909,
+      &quot;difference_from_cohort&quot;: 0.04066985645933008
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 18,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.9473684210526315,
+      &quot;cohort_rate&quot;: 0.9090909090909091,
+      &quot;difference_from_cohort&quot;: 0.038277511961722466
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.2631578947368421,
+      &quot;cohort_rate&quot;: 0.22727272727272727,
+      &quot;difference_from_cohort&quot;: 0.035885167464114825
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_array_parameter&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 17,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.8947368421052632,
+      &quot;cohort_rate&quot;: 0.8636363636363636,
+      &quot;difference_from_cohort&quot;: 0.031100478468899517
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_zero_index&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.15789473684210525,
+      &quot;cohort_rate&quot;: 0.13636363636363635,
+      &quot;difference_from_cohort&quot;: 0.0215311004784689
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_2:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.15789473684210525,
+      &quot;cohort_rate&quot;: 0.13636363636363635,
+      &quot;difference_from_cohort&quot;: 0.0215311004784689
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.10526315789473684,
+      &quot;cohort_rate&quot;: 0.09090909090909091,
+      &quot;difference_from_cohort&quot;: 0.014354066985645925
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.05263157894736842,
+      &quot;cohort_rate&quot;: 0.045454545454545456,
+      &quot;difference_from_cohort&quot;: 0.007177033492822962
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.05263157894736842,
+      &quot;cohort_rate&quot;: 0.045454545454545456,
+      &quot;difference_from_cohort&quot;: 0.007177033492822962
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_subscript&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.05263157894736842,
+      &quot;cohort_rate&quot;: 0.045454545454545456,
+      &quot;difference_from_cohort&quot;: 0.007177033492822962
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex03_0:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 19,
+      &quot;rate&quot;: 0.05263157894736842,
+      &quot;cohort_rate&quot;: 0.045454545454545456,
+      &quot;difference_from_cohort&quot;: 0.007177033492822962
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 2,
+      &quot;if&quot;: [
+        &quot;stdout:ex03_2:relation=different&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 11,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 7,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_002 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+#define VECMAX 100
+int main()
+{
+    int n, i, j, max = 0;
+    int vect[VECMAX];
+    scanf(&quot;%d&quot;, &amp;n);
+
+    for (i = 0; i &lt; n; i++)
+    {
+        scanf(&quot;%d&quot;, &amp;vect[i]);
+        if (vect[i] &gt; max)
+            max = vect[i];
+    }
+
+    for (i = 0; i &lt; max; i++)
+    { 
+
+        for (j = 0; j &lt; n; j++)
+        {
+
+            if ((n - i - 1) &lt; vect[j])
+            {
+                printf(&quot;*&quot;);
+            }
+            else
+                printf(&quot; &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot; **\n***\n***\n***\n***\n***\n***\n***\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;         \n         \n         \n         \n*       *\n&quot;
+  }
+]</pre></details><details><summary>sample_004 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+void cruz (int N)
+{
+  int row, col, passo = 0;
+
+  for (row = 0; row &lt; N; row++)
+  {
+    for (col = 1; col &lt;= N; col++)
+    {
+      if ((col - passo == 1) || (col + passo == N))
+      {
+        if (col == N)
+          printf(&quot;*\n&quot;);
+        else 
+          printf(&quot;* &quot;);
+      }
+      else if (col == N)
+        printf(&quot;-\n&quot;);
+      else
+        printf(&quot;- &quot;);
+    }
+    passo++;
+  }
+
+}
+
+
+int main()
+{
+  int N;
+
+  scanf(&quot;%d&quot;, &amp;N);
+
+  cruz(N);
+
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;* - *\n- * -\n* - *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;* - - - - - - - *\n- * - - - - - * -\n- - * - - - * - -\n- - - * - * - - -\n- - - - * - - - -\n- - - * - * - - -\n- - * - - - * - -\n- * - - - - - * -\n* - - - - - - - *\n&quot;
+  }
+]</pre></details><details><summary>sample_005 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#define VECMAX 100
+
+int main(){
+    int l,c,num,mx = 0;
+    int val[VECMAX];
+    scanf(&quot;%d&quot;, &amp;num);
+    for(l = 0; l &lt; num; l++){
+        scanf(&quot;%d&quot;, &amp;val[l]);
+        mx = val[l] &gt; mx ? val[l] : mx;
+    }
+
+    for(l = 0; l &lt; mx; l++){
+        for(c = 0; c &lt; num; c++){
+            if (val[c] &lt; l)
+                putchar(&#x27; &#x27;);
+            else
+                putchar(&#x27;*&#x27;);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n***\n **\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n***\n***\n **\n **\n **\n **\n  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;*********\n*********\n**** ****\n***   ***\n**     **\n&quot;
+  }
+]</pre></details><details><summary>sample_015 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define VECMAX 100
+
+int max(int vec[], int n);
+
+int main(){
+    int n, j, i, mx;
+    int vec[VECMAX];
+    scanf(&quot;%d&quot;, &amp;n);
+    for (i=0; i&lt;n; i++) scanf(&quot;%d&quot;, &amp;vec[i]);
+    mx = max(vec, n);
+    for (i=mx; i&gt;=1; i--){
+        for (j=0; j&lt;n; j++) putchar(vec[j]&gt;i?&#x27;*&#x27;:&#x27; &#x27;);
+    putchar(&#x27;\n&#x27;);}
+    return 0;
+}
+
+int max(int vec[], int n){
+    int i=1;
+    int mx=vec[0];
+    while (i&lt;n){
+        if (vec[i]&gt;mx) mx=vec[i];
+    i++;
+    }
+return mx;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;   \n  *\n **\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;   \n  *\n  *\n **\n **\n **\n **\n***\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;         \n*       *\n**     **\n***   ***\n**** ****\n&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAX 100
+
+int main()
+{
+  int i, size, result = 1; 
+  char s[MAX];
+  
+  scanf(&quot;%s&quot;, s);
+  size = strlen(s);
+  
+  for (i = 0; i &lt; size; i++)
+    if (s[i] != s[size - i - 1])
+      result = 0;
+      
+  if (result)
+    printf(&quot;yes\n&quot;);
+  else
+    printf(&quot;no\n&quot;);
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>#include &lt;stdio.h&gt;
+
+#define VECMAX 100
+int main()
+{
+    int n, i, j, max = 0;
+    int vect[VECMAX];
+    scanf(&quot;%d&quot;, &amp;n);
+
+    for (i = 0; i &lt; n; i++)
+    {
+        scanf(&quot;%d&quot;, &amp;vect[i]);
+        if (vect[i] &gt; max)
+            max = vect[i];
+    }
+
+
+    for (i = 0; i &lt; n; i++)
+    { 
+
+        for (j = 0; j &lt; max; j++)
+        {
+
+            if ((n - i-1) &lt; vect[j])
+            {
+                printf(&quot;*&quot;);
+            }
+            else
+                printf(&quot; &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot; **     \n***     \n***     \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;     \n     \n     \n     \n*    \n**   \n***  \n**** \n*****\n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>
+#include &lt;stdio.h&gt;
+#define VECMAX 100
+
+int main(){
+    int l,c,num,mx = 0;
+    int val[VECMAX];
+    scanf(&quot;%d&quot;, &amp;num);
+    for(l = 0; l &lt; num; l++){
+        scanf(&quot;%d&quot;, &amp;val[l]);
+        mx = val[l] &gt; mx ? val[l] : mx;
+    }
+
+    for(l = mx - 1; l &lt; mx; l++){
+        
+        for(c = 0; c &lt; num; c++){
+            if (val[c] &gt; l)
+                putchar(&#x27;*&#x27;);
+            else
+                putchar(&#x27; &#x27;);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;*       *\n&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>
+#include &lt;stdio.h&gt;
+#define VECMAX 100
+
+int main(){
+    int l,c,num,mx = 0;
+    int val[VECMAX];
+    scanf(&quot;%d&quot;, &amp;num);
+    for(l = 0; l &lt; num; l++){
+        scanf(&quot;%d&quot;, &amp;val[l]);
+        mx = val[l] &gt; mx ? val[l] : mx;
+    }
+
+    for(l = 0; l &lt; mx; l++){
+        for(c = 0; c &lt; num; c++){
+            if (val[c] &gt; l)
+                putchar(&#x27; &#x27;);
+            else
+                putchar(&#x27;*&#x27;);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;   \n*  \n** \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;   \n   \n*  \n*  \n*  \n*  \n** \n** \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;         \n    *    \n   ***   \n  *****  \n ******* \n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define VECMAX 100
+
+int main(){
+    int n, i, j, v[VECMAX], max;
+
+    scanf(&quot;%d&quot;, &amp;n);
+    for(i=0; i&lt;n; i++){
+        scanf(&quot;%d&quot;, &amp;v[i]);
+        if(i==0||v[i] &gt; max)
+            max = v[i];
+    }
+    
+    for(i=1; i&lt;=max; i++){
+        for(j = 0; j&lt;n; j++){
+            if(v[j] &gt;= i)
+                putchar (&#x27;*&#x27;);
+            else
+                putchar(&#x27; &#x27;);
+        }
+        putchar(&#x27;\n&#x27;); 
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n **\n  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n***\n **\n **\n **\n **\n  *\n  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;*********\n**** ****\n***   ***\n**     **\n*       *\n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+#include &lt;stdio.h&gt;
+#define VECMAX 100
+
+int main(){
+    char ok = 1;
+    int vec[VECMAX], n, i;
+    scanf(&quot;%d&quot;, &amp;n);
+    for(i = 0; i &lt; n; i++){
+        scanf(&quot;%d&quot;, &amp;vec[i]);
+    }
+    do{
+        ok = 0;
+        for(i = 1; i &lt;= n; i++){
+            if(vec[n - i] &gt; 0){
+                putchar(&#x27;*&#x27;);
+                vec[n - i]--;
+                ok = ok || vec[n - i] &gt; 0;
+            }
+            else
+                putchar(&#x27; &#x27;);
+        }
+        putchar(&#x27;\n&#x27;);
+    } while (ok);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n** \n*  \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n***\n** \n** \n** \n** \n*  \n*  \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;*********\n**** ****\n***   ***\n**     **\n*       *\n&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+#include &lt;stdio.h&gt;
+#define VECMAX 100
+
+int main(){
+    int n,i,j,max=0,vec[VECMAX];
+    scanf(&quot;%d&quot;,&amp;n);
+    for(i=0;i&lt;n;i++){
+        scanf(&quot;%d&quot;,&amp;vec[i]);
+        if (vec[i] &gt; max)
+            max = vec[i];
+    }
+    for (i=0;i&lt;max;i++){
+        for(j=0;j&lt;n;j++){
+            if ((i-vec[j])&lt;0)
+                printf(&quot;*&quot;);
+            else
+                printf(&quot; &quot;);
+        }
+        printf(&quot;\n&quot;);
+    }
+return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n **\n  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n***\n **\n **\n **\n **\n  *\n  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;*********\n**** ****\n***   ***\n**     **\n*       *\n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define VECMAX 100
+
+int main()
+{
+    int n, vec[VECMAX], i, j, max;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+
+    for (i = 0; i &lt; n; i++) {
+        scanf(&quot;%d&quot;, &amp;vec[i]);
+    }
+    
+    max = vec[0];
+    for (i = 0; i &lt; n;i++) {
+        if (vec[i] &gt; max)
+            max = vec[i];
+    }
+    for (i = 0; i &lt; max; i++) {
+        for (j = 0; j &lt; n; j++)
+            printf(&quot;%c&quot;, (vec[j] &gt; n - i) ? &#x27;*&#x27; : &#x27; &#x27;);
+        printf(&quot;\n&quot;);
+    }
+
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;   \n  *\n **\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot; **\n **\n***\n***\n***\n***\n***\n***\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;         \n         \n         \n         \n         \n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define VECMAX 100
+
+int main()
+{
+    int n, i, j, v, max = 0;
+    int vec[VECMAX];
+
+    
+    scanf(&quot;%d&quot;, &amp;n);
+
+    
+    for(i = 0; i &lt; n ; i++)
+    {
+        scanf(&quot;%d&quot;, &amp;v);
+        if(v &gt; max)
+            max = v;
+        vec[i] = v;
+    }
+
+    for(j = 1; j &lt;= max; j++)
+    {
+        for(i = 0; i &lt; n; i++)
+        {
+            if(j &lt;= vec[i])
+            {
+                putchar(&#x27;*&#x27;);
+            }
+            else
+                putchar(&#x27; &#x27;);
+        }
+        putchar(&#x27;\n&#x27;);        
+    }
+
+
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n **\n  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n***\n **\n **\n **\n **\n  *\n  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;*********\n**** ****\n***   ***\n**     **\n*       *\n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define VECMAX 100
+
+int main () {
+    int n, v[VECMAX], i = 0, max = 0, j = 0;
+    scanf(&quot;%d&quot;, &amp;n);
+    while (i &lt; n) {
+        scanf(&quot;%d&quot;, &amp;v[i]);
+        if (v[i] &gt; max)
+            max = v[i];
+        i++;
+    }
+    i = 0;
+    while (i &lt; n) {
+        v[i] -= 4;
+        i++;
+    }
+    while (j &lt; max) {
+        i = 0;
+        while (i &lt; n) {
+            if (v[i] == 0)
+                printf(&quot;*&quot;);
+            else {
+                printf(&quot; &quot;);
+                v[i]++;
+            }
+            i++;
+        }
+        printf(&quot;\n&quot;);
+        j++;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;   \n  *\n **\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;   \n   \n*  \n*  \n*  \n*  \n*  \n*  \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot; *     * \n **   ** \n *** *** \n ******* \n ******* \n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define VECMAX 100
+
+void imprimir_linha(int val, int altura);
+
+int main() {
+    int n, i, j, linha, numeros[VECMAX], max_val = 0;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+
+    for (i = 0; i &lt; n; i++) {
+        scanf(&quot;%d&quot;, &amp;numeros[i]);
+        if (numeros[i] &gt; max_val)
+            max_val = numeros[i];
+    }
+    
+    printf(&quot;%d\n&quot;, max_val);
+
+    for (linha = 0; linha &lt; max_val; linha++) {
+        for (j = 0; j &lt; n; j++) {
+            if (max_val - linha &gt; numeros[j])
+                putchar(&#x27; &#x27;);
+            else
+                putchar(&#x27;*&#x27;);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;3\n  *\n **\n***\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;8\n  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;5\n*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+
+#include &lt;stdio.h&gt;
+#define VECMAX 100
+
+int main ()
+{
+    int i, j, n, v[VECMAX], maior = 0;
+
+    scanf(&quot;%d&quot;, &amp;n);
+
+    for (i = 0; i &lt; n; i++)
+    {
+        scanf(&quot;%d&quot;, &amp;v[i]);
+        if (v[i] &gt; maior)
+            maior = v[i];
+    }
+
+    for (i = maior; i &gt; 0; i--)
+    {
+        for (j = 0; j &lt; n; j++)
+        {
+            v[j] &gt;= i ? putchar(&#x27;*&#x27;) : putchar(&#x27; &#x27;);
+            j != n - 1 ? putchar(&#x27; &#x27;) : putchar(&#x27;\n&#x27;);
+        }
+    }
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;    *\n  * *\n* * *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;    *\n    *\n  * *\n  * *\n  * *\n  * *\n* * *\n* * *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;*               *\n* *           * *\n* * *       * * *\n* * * *   * * * *\n* * * * * * * * *\n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+
+#include &lt;stdio.h&gt;
+#define VECMAX 100
+
+int max(int vec[],int n){
+    int i=1;
+    int mx=vec[0];
+    while (i&lt;n){
+        if(vec[i]&gt;mx)
+            mx=vec[i];
+        i++;
+    }
+    return mx;
+}
+
+int main(){
+    int n,i,j,mx;
+    int vec[VECMAX];
+    scanf(&quot;%d&quot;,&amp;n);
+    for (i=0;i&lt;n;i++)
+       scanf(&quot;%d&quot;, &amp;vec[i]);
+    mx=max(vec,n);
+    for (i=mx;i&lt;=1;i--){
+        for(j=0;j&lt;n;j++) putchar(vec[j]&gt;=i?&#x27;*&#x27;:&#x27; &#x27;);
+        putchar(&#x27;\n&#x27;);
+        }
+    return 0;
+    }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>    
+    #include &lt;stdio.h&gt;
+
+    #define VECMAX 100
+
+    int main () {
+        int n, i, j, m = -1, v[VECMAX];
+
+        scanf(&quot;%d&quot;, &amp;n);
+        for(i = 0; i &lt; n; i++) {
+            scanf(&quot;%d&quot;, &amp;v[i]);
+            m = m &lt; v[i] ? v[i] : m;
+        }
+
+    for(i = 0; i &lt; m; i++) {
+        for(j = 0; j &lt; n; j++) {
+            putchar(v[j]-- &gt; 0 ? &#x27;*&#x27;: &#x27; &#x27;);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+    return 0;
+    }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n **\n  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;***\n***\n **\n **\n **\n **\n  *\n  *\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;*********\n**** ****\n***   ***\n**     **\n*       *\n&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 80
+#define YES 1
+#define NO 0
+
+int main(){
+    char palavra[MAX];
+    int tamanho,i,estado=YES;
+    scanf(&quot;%s&quot;,palavra);
+    tamanho = strlen(palavra);
+    for (i=0; i&lt;tamanho/2; i++)
+        if (palavra[i]!=palavra[tamanho-i-1]){
+            estado=NO;
+            break;
+        }
+    if(estado==YES)
+        printf(&quot;yes\n&quot;);
+    else
+        printf(&quot;no\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex03_0&quot;,
+    &quot;input&quot;: &quot;3 1 2 3&quot;,
+    &quot;expected&quot;: &quot;  *\n **\n***\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_1&quot;,
+    &quot;input&quot;: &quot;3 2 6 8&quot;,
+    &quot;expected&quot;: &quot;  *\n  *\n **\n **\n **\n **\n***\n***\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex03_2&quot;,
+    &quot;input&quot;: &quot;9 5 4 3 2 1 2 3 4 5&quot;,
+    &quot;expected&quot;: &quot;*       *\n**     **\n***   ***\n**** ****\n*********\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  }
+]</pre></details></html>

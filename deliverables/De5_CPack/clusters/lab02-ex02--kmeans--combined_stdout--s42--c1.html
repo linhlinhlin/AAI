@@ -1,0 +1,2251 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab02-ex02--kmeans--combined_stdout--s42--c1</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab02-ex02 · 52 bài</h1><p>lab02-ex02--kmeans--combined_stdout--s42--c1 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex02_0: 52/52 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex02_1: 51/52 bài trượt (98.1%); 0 chưa chạy.</p><p>Test ex02_3: 51/52 bài trượt (98.1%); 0 chưa chạy.</p><p>Test ex02_2: 49/52 bài trượt (94.2%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 50,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.9615384615384616,
+      &quot;cohort_rate&quot;: 0.4857142857142857,
+      &quot;difference_from_cohort&quot;: 0.47582417582417585
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 48,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.9230769230769231,
+      &quot;cohort_rate&quot;: 0.4666666666666667,
+      &quot;difference_from_cohort&quot;: 0.45641025641025645
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 51,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.9807692307692307,
+      &quot;cohort_rate&quot;: 0.5333333333333333,
+      &quot;difference_from_cohort&quot;: 0.4474358974358974
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_3:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 51,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.9807692307692307,
+      &quot;cohort_rate&quot;: 0.5333333333333333,
+      &quot;difference_from_cohort&quot;: 0.4474358974358974
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 48,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.9230769230769231,
+      &quot;cohort_rate&quot;: 0.4857142857142857,
+      &quot;difference_from_cohort&quot;: 0.4373626373626374
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 49,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.9423076923076923,
+      &quot;cohort_rate&quot;: 0.5142857142857142,
+      &quot;difference_from_cohort&quot;: 0.42802197802197806
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 44,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.8461538461538461,
+      &quot;cohort_rate&quot;: 0.44761904761904764,
+      &quot;difference_from_cohort&quot;: 0.3985347985347985
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_3:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 26,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.24761904761904763,
+      &quot;difference_from_cohort&quot;: 0.2523809523809524
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex02_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 52,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9047619047619048,
+      &quot;difference_from_cohort&quot;: 0.09523809523809523
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.19230769230769232,
+      &quot;cohort_rate&quot;: 0.12380952380952381,
+      &quot;difference_from_cohort&quot;: 0.0684981684981685
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.038461538461538464,
+      &quot;cohort_rate&quot;: 0.01904761904761905,
+      &quot;difference_from_cohort&quot;: 0.019413919413919414
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.038461538461538464,
+      &quot;cohort_rate&quot;: 0.01904761904761905,
+      &quot;difference_from_cohort&quot;: 0.019413919413919414
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 44,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.8461538461538461,
+      &quot;cohort_rate&quot;: 0.8285714285714286,
+      &quot;difference_from_cohort&quot;: 0.01758241758241752
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 43,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.8269230769230769,
+      &quot;cohort_rate&quot;: 0.8095238095238095,
+      &quot;difference_from_cohort&quot;: 0.017399267399267337
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_2:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.057692307692307696,
+      &quot;cohort_rate&quot;: 0.047619047619047616,
+      &quot;difference_from_cohort&quot;: 0.010073260073260079
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_2:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.057692307692307696,
+      &quot;cohort_rate&quot;: 0.047619047619047616,
+      &quot;difference_from_cohort&quot;: 0.010073260073260079
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex02_2&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.057692307692307696,
+      &quot;cohort_rate&quot;: 0.047619047619047616,
+      &quot;difference_from_cohort&quot;: 0.010073260073260079
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex02_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 51,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.9807692307692307,
+      &quot;cohort_rate&quot;: 0.9714285714285714,
+      &quot;difference_from_cohort&quot;: 0.009340659340659307
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex02_3&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 51,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.9807692307692307,
+      &quot;cohort_rate&quot;: 0.9714285714285714,
+      &quot;difference_from_cohort&quot;: 0.009340659340659307
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex02_1:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 52,
+      &quot;rate&quot;: 0.019230769230769232,
+      &quot;cohort_rate&quot;: 0.02857142857142857,
+      &quot;difference_from_cohort&quot;: -0.009340659340659339
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 4,
+      &quot;if&quot;: [
+        &quot;stdout:ex02_0:relation=different&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 36,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 15,
+      &quot;holdout_precision&quot;: 0.9333333333333333
+    }
+  ]
+}</pre></details><details><summary>sample_005 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+	int n1, n2;
+	printf(&quot;Insira dois numeros: \n&quot;);
+	scanf(&quot;%d %d&quot;, &amp;n1, &amp;n2);
+
+	if (n1 &gt; n2) {
+		printf(&quot;%d\n%d\n&quot;, n2, n1);
+	}
+
+	else {
+		
+		printf(&quot;%d\n%d\n&quot;, n1, n2);
+	}
+	
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros: \n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros: \n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros: \n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros: \n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_035 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int N, M;
+
+int main() {
+    scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+    if (N &gt;= M)
+        printf(&quot;%d\n%d\n&quot;, M, N);
+    else
+        printf(&quot;%d\n%d\n&quot;, M, N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  }
+]</pre></details><details><summary>sample_038 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n,m;
+
+    printf(&quot;Introduza dois números: &quot;);
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+    n &gt;= m ? printf(&quot;%d\n%d\n&quot;, n, m) : printf(&quot;%d\n%d\n&quot;, m, n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números: 2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números: 6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números: 10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números: 20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_049 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, i, maior, menor;
+    for(i = 0; i &lt; 2; i++){
+        scanf(&quot;%d&quot;, &amp;n);
+        if (n &gt; maior) maior = n;
+        if (n &lt; menor) menor = n;
+    }
+    printf(&quot;%d\n%d\n&quot;, menor, maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;0\n2022392000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;0\n1343287760\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;0\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, m;
+
+    printf(&quot;Escreva dois numeros inteiros\n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    if (m &lt; n)
+    {
+        printf(&quot;%d\n&quot;, m);
+        printf(&quot;%d\n&quot;, n);
+    }
+    else
+    {
+        printf(&quot;%d\n&quot;, n);
+        printf(&quot;%d\n&quot;, m);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Escreva dois numeros inteiros\n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Escreva dois numeros inteiros\n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Escreva dois numeros inteiros\n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Escreva dois numeros inteiros\n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a,b;
+    printf(&quot;Introduza dois números inteiros\n&quot;);
+    scanf(&quot;%d%d&quot;,&amp;a,&amp;b);
+    if ( a &gt;= b){
+        printf(&quot;%d\n&quot;,b);
+        printf(&quot;%d\n&quot;,a);
+    }
+    if ( b &gt; a){
+        printf(&quot;%d\n&quot;,a);
+        printf(&quot;%d\n&quot;,b);
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros\n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros\n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros\n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros\n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre># include &lt;stdio.h&gt;
+int main ()
+{
+    int n, m;
+    scanf (&quot;%d%d&quot;, &amp;n, &amp;m);
+
+    if (n &gt; m)    
+        printf (&quot;%d\n%d\n&quot;, n, m);
+    else if (m &gt; n)
+        printf (&quot;%d\n%d\n&quot;, m, n);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, m;
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    
+    if (n &gt; m)
+        printf(&quot;%d\n%d\n&quot;, n, m);
+    else
+        printf(&quot;%d\n%d\n&quot;, m, n);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int N;
+    int M;
+    printf(&quot;Insira um inteiro N e outro inteiro M\n&quot;);
+    scanf(&quot;%d%d&quot;,&amp;N,&amp;M);
+    {
+        if (N &gt; M) {
+            printf(&quot;%d\n%d\n&quot;,N,M);
+        }
+        else {
+            printf(&quot;%d\n%d\n&quot;,M,N);
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro N e outro inteiro M\n2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro N e outro inteiro M\n6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro N e outro inteiro M\n10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Insira um inteiro N e outro inteiro M\n20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+int N,M;
+scanf (&quot;%d%d&quot;,&amp;N,&amp;M);
+if (N%M == 0)
+  {
+   printf (&quot;yes\n&quot;);
+  }
+else
+  {
+   printf (&quot;no\n&quot;);
+  }
+return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main() {
+  int n, m;
+
+  scanf(&quot;%d,%d&quot;, &amp;n, &amp;m);
+  if (n &lt; m)
+    printf(&quot;%d\n%d\n&quot;, n, m);
+  else
+    printf(&quot;%d\n%d\n&quot;, m, n);
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;0\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;0\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;0\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n1,n2;
+    scanf(&quot;%d,%d&quot;, &amp;n1, &amp;n2);
+    if (n1 &gt; n2)
+        printf(&quot;%d\n%d&quot;, n2, n1);
+    else
+        printf(&quot;%d\n%d&quot;, n1,n2);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;0\n1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;0\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;0\n10&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;0\n20&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num1, num2;
+
+    scanf(&quot;%d %d&quot;, &amp;num1, &amp;num2);
+    if (num1 &gt; num2)
+    {
+        printf(&quot;%d/n&quot;, num1);
+        return 0;
+    }
+     
+    else 
+    {
+        printf(&quot;%d/n&quot;, num2);
+        return 0;
+    }
+    
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2/n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6/n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10/n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20/n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main (){
+
+int M, N ;
+
+printf(&quot;Insira dois numeros por favor\n&quot;) ;
+
+scanf(&quot;%d%d&quot; , &amp;M, &amp;N) ;
+
+if (M &gt; N)
+{
+    printf(&quot;O numero maior é o %d \n O numero menor é o %d&quot; , M , N);
+
+}
+
+else 
+{
+ printf(&quot;O numero maior é o %d \nO numero menor é o %d\n&quot; , N , M);
+
+}
+
+return 0 ;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros por favor\nO numero maior é o 2 \nO numero menor é o 1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros por favor\nO numero maior é o 6 \n O numero menor é o 2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros por favor\nO numero maior é o 10 \n O numero menor é o -1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Insira dois numeros por favor\nO numero maior é o 20 \n O numero menor é o 7&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int N, M;
+    scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+    if (N &gt; M) printf(&quot;%d\n%d\n&quot;, N, M);
+    else printf(&quot;%d\n%d\n&quot;, M, N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int N, M;
+    
+    scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+    if (N &gt; M) printf(&quot;%d\n%d\n&quot;, N, M);
+    else printf(&quot;%d\n%d\n&quot;, M, N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int N, M;
+    scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+    if (N &gt; M) printf(&quot;%d\n%d\n&quot;, N, M);
+    else printf(&quot;%d\n%d\n&quot;, M, N);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    int c, d, n, m;
+    scanf(&quot;/&#x27;%d,%d/&#x27;\n&quot;,&amp;n, &amp;m);
+    c = n &gt; m ? n : m;
+    d = n &lt; m ? n : m;
+    printf(&quot;%d\n%d&quot;, d, c);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;-333403808\n32766&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;-1891514448\n32766&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;-1322539392\n32765&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;-2098736496\n32764&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    int c, d, n, m;
+    scanf(&quot;/&#x27;%d,%d/&#x27;\n&quot;,&amp;n, &amp;m);
+    c = n &gt; m ? n : m;
+    d = n &lt; m ? n : m;
+    printf(&quot;%d\n%d\n&quot;, d, c);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;32765\n1509114400\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;-2109188560\n32764\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;32766\n2105810848\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;32764\n1363982528\n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int N, M;
+
+    printf(&quot;N?\n&quot;);
+    scanf(&quot;%d&quot;, &amp;N);
+    printf(&quot;M?\n&quot;);
+    scanf(&quot;%d&quot;, &amp;M);
+
+    if (N &lt;= M){
+        printf(&quot;%d\n %d\n&quot;, N, M);
+    }
+    
+    else{
+        printf(&quot;%d\n%d\n&quot;, M, N);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;N?\nM?\n1\n 2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;N?\nM?\n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;N?\nM?\n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;N?\nM?\n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int maior;
+    int menor;
+    scanf(&quot;%d %d&quot;, &amp;maior, &amp;menor);
+    if (maior&lt;menor)
+    {
+        printf(&quot;%d/n %d&quot;, menor, maior);
+    }
+    else 
+    {
+        printf(&quot;%d/n %d&quot;, maior, menor);
+    }
+return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2/n 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6/n 2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10/n -1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20/n 7&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int maior;
+    int menor;
+    scanf(&quot;%d %d&quot;, &amp;maior, &amp;menor);
+    if (maior&lt;menor)
+    {
+        printf(&quot;%d\n %d&quot;, menor, maior);
+    }
+    else 
+    {
+        printf(&quot;%d\n %d&quot;, maior, menor);
+    }
+return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n 2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n -1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n 7&quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int maior;
+    int menor;
+    scanf(&quot;%d %d&quot;, &amp;maior, &amp;menor);
+    if (maior&lt;menor)
+    {
+        printf(&quot;%d/n %d&quot;, menor, maior);
+    }
+    else 
+    {
+        printf(&quot;%d/n %d&quot;, maior, menor);
+    }
+return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2/n 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6/n 2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10/n -1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20/n 7&quot;
+  }
+]</pre></details><details><summary>sample_021</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int v1, v2, vmax, vmin;
+
+    printf(&quot;Introduz dois números inteiros: \n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;v1, &amp;v2);
+    if (v1 &lt; v2)
+    {
+        vmax = v2;
+        vmin = v1;
+    }
+    else 
+    {
+        vmax = v1;
+        vmin = v2;
+    }
+    printf(&quot;%d\n%d\n&quot;, vmin, vmax);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int v1, v2, vmax, vmin;
+
+    printf(&quot;Introduz dois números inteiros: \n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;v1, &amp;v2);
+    if (v1 &lt; v2)
+    {
+        vmax = v2;
+        vmin = v1;
+    }
+    else 
+    {
+        vmax = v1;
+        vmin = v2;
+    }
+    printf(&quot;%d\n%d\n&quot;, vmin, vmax);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int v1, v2, vmax, vmin;
+
+    printf(&quot;Introduz dois números inteiros: \n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;v1, &amp;v2);
+    if (v1 &lt; v2)
+    {
+        vmax = v2;
+        vmin = v1;
+    }
+    else 
+    {
+        vmax = v1;
+        vmin = v2;
+    }
+    printf(&quot;%d\n%d\n&quot;, vmin, vmax);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int v1, v2, vmax, vmin;
+
+    printf(&quot;Introduz dois números inteiros: \n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;v1, &amp;v2);
+    if (v1 &lt; v2)
+    {
+        vmax = v2;
+        vmin = v1;
+    }
+    else 
+    {
+        vmax = v1;
+        vmin = v2;
+    }
+    printf(&quot;%d\n%d\n&quot;, vmin, vmax);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_025</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int v1, v2, vmax, vmin;
+
+    printf(&quot;Introduz dois números inteiros: \n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;v1, &amp;v2);
+    if (v1 &lt; v2)
+    {
+        vmax = v2;
+        vmin = v1;
+    }
+    else 
+    {
+        vmax = v1;
+        vmin = v2;
+    }
+    printf(&quot;%d\n%d\n&quot;, vmin, vmax);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduz dois números inteiros: \n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_026</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+int main()
+{
+    int n, m;
+    printf(&quot;Introduza três números inteiros:\n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    if (n &gt; m)
+        printf(&quot;%d\n%d\n&quot;, m, n);
+    else
+        printf(&quot;%d\n%d\n&quot;, n, m);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_027</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+#define PASSO 1
+#define INICIO 0
+#define FIM 2
+
+int main()
+{
+    int n, m;
+    printf(&quot;Introduza três números inteiros:\n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    if (n &gt; m)
+        printf(&quot;%d\n%d\n&quot;, m, n);
+    else
+        printf(&quot;%d\n%d\n&quot;, n, m);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n7\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_028</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    int N,M;
+    scanf(&quot;%d %d&quot;, &amp;N, &amp;M);
+    if (N&gt;M)
+        printf(&quot;%d\n%d\n&quot;, N,M);
+    else
+        printf(&quot;%d\n%d\n&quot;, M, N);
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_029</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int N, M;
+
+
+    scanf(&quot;%d %d&quot;, &amp;N, &amp;M);
+
+    if( N &gt; M )
+    {
+        printf(&quot;%d\n&quot;, N);
+        printf(&quot;%d&quot;, M);
+    }
+    else
+    {
+        printf(&quot;%d\n&quot;,M);
+        printf(&quot;%d\n&quot;, N);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7&quot;
+  }
+]</pre></details><details><summary>sample_030</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n, m;
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    printf(&quot;%d\n&quot;, (n &gt; m ? n : m));
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n&quot;
+  }
+]</pre></details><details><summary>sample_031</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n, m;
+    
+    printf(&quot;Introduza dois valores inteiros:\n&quot;);
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+
+    if(n &gt;= m){
+        printf(&quot;%d\n&quot;, n);
+    }
+    else{
+        printf(&quot;%d\n&quot;, m);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois valores inteiros:\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois valores inteiros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois valores inteiros:\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois valores inteiros:\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_032</summary><pre>
+#include &lt;stdio.h&gt;
+int num1;
+int num2;
+int main() {
+    scanf(&quot;%d %d&quot;, &amp;num1, &amp;num2);
+    printf(&quot;%d\n%d&quot;, num1, num2);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;1\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7&quot;
+  }
+]</pre></details><details><summary>sample_033</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int M, N;
+
+    scanf(&quot;%d%d&quot;, &amp;M, &amp;N);
+    if (M&lt;N)
+    {
+        printf(&quot;%d\n%d\n&quot;, N, M);
+    }
+    else
+    {
+        printf(&quot;%d\n%d\n&quot;, M, N);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_034</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    int m, n;
+
+    printf(&quot;Introduza dois números inteiros: &quot;);
+    scanf(&quot;%d%d&quot;,&amp;m,&amp;n);
+
+
+    printf(&quot;%d\n&quot;, m &gt; n ? n : m); 
+    printf(&quot;%d\n&quot;, m &lt; n ? n : n);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros: 1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros: 2\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros: -1\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduza dois números inteiros: 7\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_036</summary><pre>#include &lt;stdio.h&gt;
+
+int main () {
+	int M, N, maior, menor;
+	
+	scanf(&quot;%d %d&quot;, &amp;M, &amp;N);
+	
+	M &gt; N ? (maior = M, menor = N) : (maior = N, menor = M);
+	
+	printf(&quot;%d\n%d&quot;, maior, menor);
+	
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7&quot;
+  }
+]</pre></details><details><summary>sample_037</summary><pre>#include &lt;stdio.h&gt;
+
+int main () {
+	int M, N, maior, menor;
+	
+	scanf(&quot;%d %d&quot;, &amp;M, &amp;N);
+	
+	M &gt; N ? (maior = M, menor = N) : (maior = N, menor = M);
+	
+	printf(&quot;%d\n%d\n&quot;, maior, menor);
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_039</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int N, M;
+    scanf(&quot;%d %d&quot;, &amp;N, &amp;M);
+    printf(&quot;%d\n%d&quot;, (N&gt;M ? N : M) , (N&gt;M ? M : N));
+
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7&quot;
+  }
+]</pre></details><details><summary>sample_040</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n1, n2;
+    scanf(&quot;%d %d&quot;,&amp;n1,&amp;n2);
+    if (n1 &lt; n2)
+        printf(&quot;%d&quot;,n2);
+    else if (n2 &lt; n1)
+        printf(&quot;%d&quot;,n1);
+    else
+        printf(&quot;sao iguais&quot;);
+return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20&quot;
+  }
+]</pre></details><details><summary>sample_041</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n, m;
+    scanf(&quot;%d /n %d&quot;, &amp;n, &amp;m);
+    if (n &gt;= m){
+        printf(&quot;%d \n %d&quot;, m, n);
+    }
+    else printf(&quot;%d \n%d\n&quot;, n, m);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;0 \n 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;0 \n 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;0 \n 10&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;0 \n 20&quot;
+  }
+]</pre></details><details><summary>sample_042</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int a, b;
+    scanf(&quot;%d%d&quot;, &amp;a,&amp;b);
+    if (b&gt;a){
+        int temp=a;
+        a=b;
+        b=temp;
+    }
+    printf(&quot;%d\n%d\n&quot;,a, b);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_043</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n, m;
+    scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+    if (n &gt; m)
+        printf(&quot;%d\n%d&quot;, n, m);
+    if (n &lt; m)
+        printf(&quot;%d\n%d&quot;, n, m);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;1\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7&quot;
+  }
+]</pre></details><details><summary>sample_044</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b;
+    scanf(&quot;%d%d/n&quot;, &amp;a, &amp;b);
+    (a&gt;=b) ? printf(&quot;%d/n%d/n&quot;, b, a) : printf(&quot;%d/n%d/n&quot;, a, b);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;1/n2/n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;2/n6/n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;-1/n10/n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;7/n20/n&quot;
+  }
+]</pre></details><details><summary>sample_045</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b;
+    scanf(&quot;%d %d&quot;, &amp;a, &amp;b);
+    if (a &gt; b){
+        printf(&quot;%d\n%d&quot;, a, b);
+    }
+    else{
+        printf(&quot;%d\n%d\n&quot;, b, a);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7&quot;
+  }
+]</pre></details><details><summary>sample_046</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+
+    int a,b;
+
+    if(scanf(&quot;%d %d&quot;,&amp;a,&amp;b)) a=b; else return a;
+    if (a&gt;b) printf(&quot;%d\n%d&quot;,a,b); else printf(&quot;%d\n%d&quot;,b,a);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;2\n2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;-1\n-1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;7\n7&quot;
+  }
+]</pre></details><details><summary>sample_047</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+   int a,b;
+   
+   if (scanf(&quot;%d %d&quot;, &amp;a, &amp;b)!=2) return 1;
+
+   printf(&quot;%d\n%d\n&quot;, (a &gt; b ? a : b), (a &gt; b ? b : a));
+
+   return 0;                              
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_048</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    int x, y;
+    scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+    if (x&gt;=y) printf(&quot;%d\n%d\n&quot;,x,y);
+    else printf(&quot;%d\n%d\n&quot;,y,x);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_050</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n, i, maior = 0, menor;
+    for(i = 0; i &lt; 2; i++){
+        scanf(&quot;%d&quot;, &amp;n);
+        if (n &gt; maior) maior = n;
+        if (n &lt; menor) menor = n;
+    }
+    printf(&quot;%d\n%d\n&quot;, menor, maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;0\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;0\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;0\n20\n&quot;
+  }
+]</pre></details><details><summary>sample_051</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main () {
+    int maior, menor, inter;
+    scanf(&quot;%d %d&quot;, &amp;maior, &amp;menor);
+    if (menor &gt; maior) {
+        inter = maior;
+        maior = menor;
+        menor = inter;
+    };
+    printf(&quot;%d\n%d\n&quot;,maior, menor);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_052</summary><pre>
+#include&lt;stdio.h&gt;
+
+int N, M;
+
+
+
+int main () {
+    printf(&quot;Introduza o primeiro número: &quot;);
+    scanf(&quot;%d&quot;, &amp;N);        
+
+    printf(&quot;Introduza o segundo número: &quot;);
+    scanf(&quot;%d&quot;, &amp;M);
+
+   if (N &lt; M) {
+        printf(&quot;%d\n%d\n&quot;, N, M);
+    } 
+    else {
+        printf(&quot;%d\n%d\n&quot;, M, N);
+    }
+
+    return 0;                                        
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex02_0&quot;,
+    &quot;input&quot;: &quot;1 2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: 1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_1&quot;,
+    &quot;input&quot;: &quot;6 2&quot;,
+    &quot;expected&quot;: &quot;2\n6\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: 2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_2&quot;,
+    &quot;input&quot;: &quot;10 -1&quot;,
+    &quot;expected&quot;: &quot;-1\n10\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: -1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex02_3&quot;,
+    &quot;input&quot;: &quot;20 7&quot;,
+    &quot;expected&quot;: &quot;7\n20\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: 7\n20\n&quot;
+  }
+]</pre></details></html>

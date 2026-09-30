@@ -32,7 +32,8 @@ from .llm_client import (
 )
 from .output_features import output_oav
 from .pipeline import run_experiment
-from .semantic_rules import build_teaching_report, describe_condition
+from .project_reference import attach_reference
+from .semantic_rules import build_teaching_report, refresh_rule_descriptions
 from .teacher_dashboard import build_dashboard, validate_mapping
 
 logger = logging.getLogger(__name__)
@@ -64,6 +65,11 @@ class LearningService:
         self.health = self.sandbox.health()
         self.health_checked_at = time.monotonic()
         self.suggestion_lock = threading.Lock()
+        self.analysis_lock = threading.Lock()
+        # Bind cache entries to the implementation loaded when this service starts.
+        # Reading changing source files per request could tag old in-memory code as new.
+        self.analysis_implementation = {p.name: hashlib.sha256(p.read_bytes()).hexdigest()
+                                        for p in sorted(Path(__file__).parent.glob('*.py'))}
         self.suggestion_failures = {}
 
     def runner_health(self):
@@ -147,6 +153,11 @@ class LearningService:
                 'scope': 'Bài đã chấm; mỗi học viên lấy lần nộp đã hoàn tất gần nhất theo bài tập.'}
 
     def analyze(self, teacher, problem_id, k=2):
+        # Repeated clicks on an unchanged cohort must not create duplicate snapshots.
+        with self.analysis_lock:
+            return self._analyze(teacher, problem_id, k)
+
+    def _analyze(self, teacher, problem_id, k):
         if teacher['role'] != 'teacher':
             raise PermissionError('Chức năng dành cho giảng viên.')
         problem = get_problem(problem_id)
@@ -157,6 +168,16 @@ class LearningService:
                 selected.setdefault(attempt['user_id'], attempt)
         if len(selected) > 2000:
             raise ValueError('Cohort vượt giới hạn 2.000 người. Cần chia lớp trước khi phân tích.')
+        analysis_key = fingerprint({'problem': problem, 'k': k, 'teacher': teacher['id'],
+                                    'students': students, 'implementation': self.analysis_implementation,
+                                    'attempts': sorted(selected.values(), key=lambda a: a['id'])})
+        cached = self.store.cached_report(analysis_key)
+        if cached:
+            report, reviews = self.store.report(cached)
+            refresh_rule_descriptions(report)
+            attach_reference(report)
+            return {'id': cached, 'report': report, 'reviews': reviews,
+                    'suggestions': self.store.suggestions(cached), 'reused': True}
         pairs = [evidence(a) for a in selected.values()]
         rows, logs = [p[0] for p in pairs], {p[0].submission_id: p[1] for p in pairs}
         report = run_experiment(rows, test_ids=[t['test_id'] for t in problem['tests']],
@@ -164,22 +185,22 @@ class LearningService:
         report['population'] = {r.submission_id: r.student_id for r in rows}
         report['observed_oav'] = {r.submission_id: extract_oav(r) | output_oav(r, logs) for r in rows}
         report['teaching'] = build_teaching_report(rows, logs, report)
-        labels = {t['test_id']: 'Ca «' + t['name'] + '»' for t in problem['tests']}
-        for rule in report['teaching']['cluster_rules']:
-            rule['if_vi'] = [describe_condition(condition, labels) for condition in rule['if']]
         report['teacher'] = build_dashboard(report)
         report['problem'] = problem
+        refresh_rule_descriptions(report)
         report['students'] = students
         report['submissions'] = [asdict(row) | {'logged_tests': logs[row.submission_id]} for row in rows]
         report['provenance'] = {
             'source': 'live_learning_app', 'cohort_policy': 'latest_completed_per_student',
             'purpose': 'exploratory_classroom_analysis', 'human_validated': False,
             'suite_sha256': problem['suite_sha256'],
+            'analysis_key': analysis_key,
             'input_sha256': hashlib.sha256(json.dumps(
                 report['submissions'], sort_keys=True, ensure_ascii=False).encode()).hexdigest(),
         }
         key = self.store.save_report(teacher, report)
-        return {'id': key, 'report': report, 'reviews': []}
+        attach_reference(report)
+        return {'id': key, 'report': report, 'reviews': [], 'reused': False}
 
     def review(self, teacher, key, mappings):
         if teacher['role'] != 'teacher':

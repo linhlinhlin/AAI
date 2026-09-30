@@ -1,0 +1,5086 @@
+{
+  "schema_version": "project_gold_reference_v1",
+  "packet_id": "0d0dcc33fd236f52d70cc1008f01bdb667084a7190111319f405e0aa80678010",
+  "status": "user_confirmed_project_reference",
+  "gold_standard": true,
+  "gold_scope": "project_reference_single_human_review_of_ai_labels",
+  "annotation_source": "ai_proposed_human_confirmed",
+  "human_validated": true,
+  "validation_method": "user_attested_review_in_conversation",
+  "independent_blind_review": false,
+  "eligible_for_independent_gold_evaluation": false,
+  "mechanism_accuracy": null,
+  "cognitive_accuracy": null,
+  "source_file": "../De5_Nhan_AI_48_bai/nhan_ai.json",
+  "source_sha256": "9acc86086c74a03af1943d7e0ad627d8a514cf4238847601d424fe0da04a3445",
+  "confirmation": {
+    "reviewer_id": "project_user_in_this_conversation",
+    "reviewer_identity_verification": "not_independently_verified",
+    "confirmation_method": "explicit_user_message",
+    "confirmation_text": "Do tôi đã check qua nhãn AI gán nên bạn có thể chuyển thành gold standard vì tôi đã kiểm chứng ok rồi nhé",
+    "recorded_at_utc": "2026-09-29T14:22:30.203215+00:00",
+    "scope": "all_48_current_labels_including_corrections_to_cases_3_and_12",
+    "independent_blind_review": false,
+    "n_human_reviewers": 1,
+    "adjudicated": false
+  },
+  "limitations": [
+    "One user confirmed the AI proposals after viewing them; not an independent blind annotation round.",
+    "No separate adjudicator or second human review has been recorded.",
+    "Gold scope is observed code/test mechanisms, not learner beliefs.",
+    "Case 14 retains multiple mechanisms; it is excluded from single-primary scoring.",
+    "Original statement/oracle limitations remain attached to each record."
+  ],
+  "records": [
+    {
+      "number": 1,
+      "case_id": "case_09c0e4b691e12f98",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Cập nhật biến lặp ngược chiều dừng",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "vòng lặp bắt đầu từ n, kiểm tra i >= 1 nhưng lại tăng i",
+        "and": "các test ghi nhận không có output",
+        "then": "Cập nhật biến lặp ngược chiều dừng"
+      },
+      "reasoning": "Ở vòng ngoài, i++ làm i đi xa điều kiện dừng thay vì tiến về 0. Lệnh in nằm sau vòng lặp nên không có đường kết thúc bình thường trước khi có thể tràn số nguyên.",
+      "teaching_hint": "Cho học viên ghi ra ba giá trị liên tiếp của i và sửa hướng cập nhật.",
+      "source_lines": [
+        7
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": ""
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": ""
+        }
+      ],
+      "notes": "Log chỉ ghi output rỗng, không đủ kết luận đã timeout hay crash. Không gọi đây là vòng lặp vô hạn xác định vì tràn int có hành vi không xác định.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    int n,c=0,i,j,k,d=0;\n    scanf(\"%d\",&n);\n    for(i=n;i>=1;i++)\n    {\n        for(j=i;j>=1;j--)\n        {\n            for(k=j;k>=1;k--)\n            {\n                if(j+k>i)\n                c++;\n                else\n                d++;\n            }\n        }\n    }\n    printf(\"Number of possible triangles is %d\",c);\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": ""
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": ""
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": ""
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": ""
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": ""
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": ""
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Cập nhật biến lặp ngược chiều dừng",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Cập nhật biến lặp ngược chiều dừng"
+    },
+    {
+      "number": 2,
+      "case_id": "case_0a9886e56cec5919",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Đếm trùng tam giác khi đổi thứ tự ba cạnh",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "cả ba cạnh đều được duyệt độc lập từ 1 đến N, không loại hoán vị trùng",
+        "and": "N = 4 cho số đếm 34 thay vì 13 trong log",
+        "then": "Đếm trùng tam giác khi đổi thứ tự ba cạnh"
+      },
+      "reasoning": "Các bộ cạnh đổi chỗ vẫn đi qua ba vòng lặp và đều được cộng vào tổng. Bộ ba cạnh của cùng một tam giác vì thế bị đếm nhiều lần.",
+      "teaching_hint": "Duyệt theo a ≤ b ≤ c rồi kiểm tra điều kiện tam giác; thử liệt kê các bộ khi N = 2.",
+      "source_lines": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "test_ids": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 34"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 15"
+        }
+      ],
+      "notes": "Nhãn dựa trên cấu trúc duyệt và oracle lịch sử. Gói chấm từng bài thiếu đề gốc; cần đối chiếu quy ước tam giác không phân biệt thứ tự trước khi duyệt nhãn.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\nint N;\nscanf(\"%d\",&N);\nint a;\nint b;\nint c;\nint x;\nfor(x=0,a=1;a<=N;a=a+1){\n    for(b=1;b<=N;b=b+1){\n        for(c=1;c<=N;c=c+1){\n             if((a+b>c)&&(a+c>b)&&(b+c>a)){\n         x=x+1;\n             }\n        }\n        \n    }\n    \n}\n\nprintf(\"Number of possible triangles is %d\",x);\n    \n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 34"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 15"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangles is 65"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangles is 175"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangles is 5"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Đếm trùng tam giác khi đổi thứ tự ba cạnh",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Đếm trùng tam giác khi đổi thứ tự ba cạnh"
+    },
+    {
+      "number": 3,
+      "case_id": "case_0acc01a295dbe087",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thiếu ngoặc nhọn {} gom nhóm lệnh và else tương ứng",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "if(a<0) chỉ điều khiển một lệnh in, còn các lệnh in thông báo nằm ngoài nhánh",
+        "and": "output có cả thông báo âm và dương cho cùng một số",
+        "then": "Thiếu ngoặc nhọn {} gom nhóm lệnh và else tương ứng"
+      },
+      "reasoning": "Thụt lề không tạo thành khối lệnh trong C. Khi a khác 0, các dòng in negative và positive vẫn chạy; log số âm cho thấy hai thông báo nối nhau.",
+      "teaching_hint": "Gom các lệnh của mỗi nhánh vào dấu ngoặc nhọn và dùng if/else if/else.",
+      "source_lines": [
+        7,
+        10,
+        11,
+        12,
+        14,
+        15
+      ],
+      "test_ids": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative-12.0000 is positive"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": " is negative1.0000 is positive"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main(){\nfloat a;\nscanf(\"%f\",&a);\nif(a==0)\n    printf(\"input is zero\");\n    else\n    {\n        if(a<0)\n    printf(\"%.4f\",a);\n    printf(\" is negative\");\n    \n    printf(\"%.4f\",a);\n    printf(\" is positive\");\n    }\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative-12.0000 is positive"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": " is negative1.0000 is positive"
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": " is negative0.0000 is positive"
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 is negative-0.0000 is positive"
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": " is negative101.0000 is positive"
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "input is zero"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thiếu ngoặc nhọn {} gom nhóm lệnh và else tương ứng",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thiếu ngoặc nhọn {} gom nhóm lệnh và else tương ứng"
+    },
+    {
+      "number": 4,
+      "case_id": "case_0c6a60962328c1e8",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Đếm trùng tam giác khi đổi thứ tự ba cạnh",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "cả ba cạnh đều được duyệt độc lập từ 1 đến N, không loại hoán vị trùng",
+        "and": "N = 4 cho số đếm 34 thay vì 13 trong log",
+        "then": "Đếm trùng tam giác khi đổi thứ tự ba cạnh"
+      },
+      "reasoning": "Các bộ cạnh đổi chỗ vẫn đi qua ba vòng lặp và đều được cộng vào tổng. Bộ ba cạnh của cùng một tam giác vì thế bị đếm nhiều lần.",
+      "teaching_hint": "Duyệt theo a ≤ b ≤ c rồi kiểm tra điều kiện tam giác; thử liệt kê các bộ khi N = 2.",
+      "source_lines": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "test_ids": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 34"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 15"
+        }
+      ],
+      "notes": "Nhãn dựa trên cấu trúc duyệt và oracle lịch sử. Gói chấm từng bài thiếu đề gốc; cần đối chiếu quy ước tam giác không phân biệt thứ tự trước khi duyệt nhãn.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    int N,a,b,c,count;\n    count=0;\n    scanf(\"%d\",&N);\n    for(a=1;a<=N;a=a+1){\n        for(b=1;b<=N;b=b+1){\n            for(c=1;c<=N;c=c+1){\n                if ((a+b>c)&&(b+c>a)&&(c+a>b)){\n                    count=count+1;\n                }\n            }\n        }\n    }\n    printf(\"Number of possible triangles is %d\",count);\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 34"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 15"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangles is 65"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangles is 175"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangles is 5"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Đếm trùng tam giác khi đổi thứ tự ba cạnh",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Đếm trùng tam giác khi đổi thứ tự ba cạnh"
+    },
+    {
+      "number": 5,
+      "case_id": "case_129510b9c7f5485c",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Chuỗi printf có định dạng nhưng thiếu đối số",
+      "category": "io_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "printf có cả %.4f và %d nhưng chỉ truyền một giá trị",
+        "and": "test số dương xuất hiện thêm một số nguyên ngoài đáp án",
+        "then": "Chuỗi printf có định dạng nhưng thiếu đối số"
+      },
+      "reasoning": "Nhánh số dương thiếu đối số tương ứng với %d. Con số thừa trong log không phải kết quả tính toán hợp lệ của bài.",
+      "teaching_hint": "Đối chiếu từng ký hiệu định dạng với từng đối số; bỏ %d nếu đề không yêu cầu.",
+      "source_lines": [
+        7,
+        11,
+        15
+      ],
+      "test_ids": [
+        "3",
+        "4",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is positive 7087920"
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive 7087920"
+        }
+      ],
+      "notes": "printf thiếu đối số gây hành vi không xác định; không khẳng định số thừa sẽ luôn giống log.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n    float a;\n    scanf(\"%f\",&a);\n    if(a>0)   {\n    printf(\"%.4f is positive %d\",a);    \n    }\n    else if(a<0)\n    {\n    printf( \"%0.4f is negative\",a);    \n    }\n    else \n    {\n    printf(\"input is zero\");    \n    }\n\t\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is positive 7087920"
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive 7087920"
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 is negative"
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000 is positive 7087920"
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "input is zero"
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "pass",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Chuỗi printf có định dạng nhưng thiếu đối số",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Chuỗi printf có định dạng nhưng thiếu đối số"
+    },
+    {
+      "number": 6,
+      "case_id": "case_16555bff711ec177",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Bỏ sót trường hợp điểm nằm trên đường tròn",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "code chỉ chia thành bên trong và nhánh else bên ngoài",
+        "and": "test trên biên bị in thành bên ngoài",
+        "then": "Bỏ sót trường hợp điểm nằm trên đường tròn"
+      },
+      "reasoning": "Giá trị bằng 0 của bình phương khoảng cách trừ bình phương bán kính rơi vào else. Hai test trên đường tròn vì vậy nhận thông báo outside.",
+      "teaching_hint": "Tách ba trường hợp nhỏ hơn, bằng và lớn hơn.",
+      "source_lines": [
+        7,
+        8,
+        10,
+        11
+      ],
+      "test_ids": [
+        "3",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    float x,y,r,x1,y1;\n    scanf(\"%f%f%f%f%f\",&x,&y,&r,&x1,&y1);\n    if((x1-x)*(x1-x)+(y1-y)*(y1-y)-r*r<0)\n    printf(\"Point is inside the Circle.\");\n    \n    else\n    printf(\"Point is outside the Circle.\");\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "pass",
+        "3": "fail",
+        "4": "pass",
+        "5": "pass",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Bỏ sót trường hợp điểm nằm trên đường tròn",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Bỏ sót trường hợp điểm nằm trên đường tròn"
+    },
+    {
+      "number": 7,
+      "case_id": "case_216c12a9dde9fca2",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Chỉ in giá trị nhập, chưa in kết quả phân loại",
+      "category": "incomplete_solution",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chương trình đọc số rồi chỉ printf số đó",
+        "and": "output thiếu thông báo âm, dương hoặc zero mà oracle yêu cầu",
+        "then": "Chỉ in giá trị nhập, chưa in kết quả phân loại"
+      },
+      "reasoning": "Bài đã đọc được dữ liệu nhưng chưa có phần phân loại và in thông báo. Đây không phải lỗi in hằng số: giá trị in vẫn phụ thuộc đầu vào.",
+      "teaching_hint": "Bổ sung ba nhánh theo dấu và dùng đúng chuỗi thông báo.",
+      "source_lines": [
+        4,
+        5
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "0.0000"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main(){float a;\nscanf(\"%f\",&a);\nprintf(\"%.4f\",a);\t\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "0.0000"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000"
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000"
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000"
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000"
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "0.0000"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Chỉ in giá trị nhập, chưa in kết quả phân loại",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Chỉ in giá trị nhập, chưa in kết quả phân loại"
+    },
+    {
+      "number": 8,
+      "case_id": "case_24cb26b6f2842d5a",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "hai if độc lập kiểm tra trong/ngoài, còn else gắn với if kiểm tra bên ngoài",
+        "and": "test điểm bên trong in cả inside và on",
+        "then": "Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận"
+      },
+      "reasoning": "Khi điểm ở bên trong, if đầu in inside. if thứ hai sai nên else của nó tiếp tục in on. Cần một chuỗi nhánh loại trừ nhau.",
+      "teaching_hint": "Đổi if thứ hai thành else if, rồi truy vết lại một test bên trong.",
+      "source_lines": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "test_ids": [
+        "4",
+        "5"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle.Point is on the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle.Point is on the Circle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    float x;\n    float y;\n    float r;\n    float x1;\n    float y1;\n    float n;\n    scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n    n=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r*r;\n    if ( n < 0 )\n    printf(\"Point is inside the Circle.\");\n    if ( n > 0 )\n    printf(\"Point is outside the Circle.\");\n    else\n    printf(\"Point is on the Circle.\");\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle.Point is on the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle.Point is on the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "pass",
+        "3": "pass",
+        "4": "fail",
+        "5": "fail",
+        "6": "pass",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận"
+    },
+    {
+      "number": 9,
+      "case_id": "case_2abc3cc7bdaf6132",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thiếu địa chỉ biến khi gọi scanf",
+      "category": "io_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "scanf dùng %f nhưng truyền giá trị x, y, r, x1, y1 thay cho địa chỉ các biến",
+        "and": "các log không ghi nhận output",
+        "then": "Thiếu địa chỉ biến khi gọi scanf"
+      },
+      "reasoning": "scanf cần địa chỉ nơi ghi dữ liệu. Lời gọi hiện tại truyền các biến float chưa được nhập thay vì &x, &y, &r, &x1, &y1.",
+      "teaching_hint": "Thêm & vào từng biến nhận dữ liệu và giải thích scanf ghi vào đâu.",
+      "source_lines": [
+        6
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": ""
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": ""
+        }
+      ],
+      "notes": "Lỗi đối số được thấy trực tiếp trong code. Output rỗng không đủ chứng minh crash; lời gọi này có hành vi không xác định.",
+      "source_code": "#include <stdio.h>\n#include <math.h>\n\nint main(){\n    float x, y, r, x1, y1;\n    scanf(\"%f%f%f%f%f\",x, y, r, x1, y1);\n    float s = sqrt(((x1-x)*(x1-x)) + ((y1-y)*(y1-y)));\n    if (s == r){\n        printf(\"Point is on the Circle.\");\n    }\n    else{\n        if (s > r){\n            printf(\"Point is outside the Circle.\");\n        }\n        else{\n            printf(\"Point is inside the Circle.\");\n        }\n    }\n\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": ""
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": ""
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": ""
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": ""
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": ""
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": ""
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": ""
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thiếu địa chỉ biến khi gọi scanf",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thiếu địa chỉ biến khi gọi scanf"
+    },
+    {
+      "number": 10,
+      "case_id": "case_2d9e7435a0e0b846",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thiếu dấu chấm cuối thông báo",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi printf không có dấu chấm cuối câu",
+        "and": "output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle",
+        "then": "Thiếu dấu chấm cuối thông báo"
+      },
+      "reasoning": "Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.",
+      "teaching_hint": "Đối chiếu chuỗi output với mẫu, kể cả dấu câu.",
+      "source_lines": [
+        11,
+        13,
+        15
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n#include<math.h>\n\nint main()\n{\n    float x,y,r,x1,y1,d,e;\n    scanf (\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n    d = (x-x1)*(x-x1)+(y-y1)*(y-y1);\n    e = sqrt(d);\n    if\n    (e<r) {printf(\"Point is inside the Circle\");}\n    else if\n    (e==r) {printf(\"Point is on the Circle\");}\n    else if\n    (e>r) {printf(\"Point is outside the Circle\");}\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thiếu dấu chấm cuối thông báo",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thiếu dấu chấm cuối thông báo"
+    },
+    {
+      "number": 11,
+      "case_id": "case_37a5240b3b9aee8e",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Đếm trùng tam giác khi đổi thứ tự ba cạnh",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "cả ba cạnh đều được duyệt độc lập từ 1 đến N, không loại hoán vị trùng",
+        "and": "N = 4 cho số đếm 34 thay vì 13 trong log",
+        "then": "Đếm trùng tam giác khi đổi thứ tự ba cạnh"
+      },
+      "reasoning": "Các bộ cạnh đổi chỗ vẫn đi qua ba vòng lặp và đều được cộng vào tổng. Bộ ba cạnh của cùng một tam giác vì thế bị đếm nhiều lần.",
+      "teaching_hint": "Duyệt theo a ≤ b ≤ c rồi kiểm tra điều kiện tam giác; thử liệt kê các bộ khi N = 2.",
+      "source_lines": [
+        6,
+        8,
+        10,
+        11
+      ],
+      "test_ids": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 34"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 15"
+        }
+      ],
+      "notes": "Nhãn dựa trên cấu trúc duyệt và oracle lịch sử. Gói chấm từng bài thiếu đề gốc; cần đối chiếu quy ước tam giác không phân biệt thứ tự trước khi duyệt nhãn.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{int n,i,j,k,s=0;\nscanf(\"%d\",&n);\nfor (i=1;i<=n;i=i+1)\n{\n    for (j=1;j<=n;j=j+1)\n    {\n        for (k=1;k<=n;k=k+1)\n        {if (i+j>k&&i+k>j&&j+k>i)\n        {s=s+1;\n            \n        }\n            \n            \n        }\n        \n    }\n    \n    \n    \n}\n    printf(\"Number of possible triangles is %d\",s); \n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 34"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 15"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangles is 65"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangles is 175"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangles is 5"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Đếm trùng tam giác khi đổi thứ tự ba cạnh",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Đếm trùng tam giác khi đổi thứ tự ba cạnh"
+    },
+    {
+      "number": 12,
+      "case_id": "case_476e8d8cdbb2d69f",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Dùng điều kiện lọc làm điều kiện dừng vòng lặp (vòng lặp bị ngắt sớm)",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "vòng while của cạnh c vừa kiểm tra giới hạn vừa yêu cầu a < c+b ngay từ c=1",
+        "and": "N = 4 chỉ đếm 10 thay vì 13",
+        "then": "Dùng điều kiện lọc làm điều kiện dừng vòng lặp (vòng lặp bị ngắt sớm)"
+      },
+      "reasoning": "Một c nhỏ chưa tạo tam giác không có nghĩa các c lớn hơn đều không tạo được. Khi điều kiện sai ngay đầu vòng, code bỏ qua các giá trị c tiếp theo có thể hợp lệ.",
+      "teaching_hint": "Duyệt hết c trong giới hạn; đặt điều kiện tam giác bên trong vòng lặp.",
+      "source_lines": [
+        12,
+        15
+      ],
+      "test_ids": [
+        "1",
+        "3",
+        "4",
+        "5"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 10"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 6"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n    int N,a,b,c,i;\n    scanf(\"%d\",&N);\n    i=0;\n    a=1;b=1;c=1;\n   while(a<=N){\n       b=1;\n       while(b<=a){\n           c=1;\n            while(c<=b&&a<c+b){\n                i=i+1;\n                \n                c=c+1;\n           }\n            b=b+1;\n       }\n        a=a+1;\n        \n   }\n\n/*Here, N-1 cases must be removed from i because in these cases, a>b+c. And, the number of possible triangles becomes i-(N-1)*/\n    printf(\"Number of possible triangles is %d\",i);\n\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 10"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 6"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangles is 15"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangles is 28"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangles is 3"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Dùng điều kiện lọc làm điều kiện dừng vòng lặp (vòng lặp bị ngắt sớm)",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Dùng điều kiện lọc làm điều kiện dừng vòng lặp (vòng lặp bị ngắt sớm)"
+    },
+    {
+      "number": 13,
+      "case_id": "case_4772fe3beb0b26f4",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "In thừa giá trị số ở nhánh zero",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "nhánh a == 0 in thêm %f trước thông báo",
+        "and": "test zero nhận 0.000000 input is zero thay vì input is zero",
+        "then": "In thừa giá trị số ở nhánh zero"
+      },
+      "reasoning": "Bài đã đi đúng nhánh zero, nhưng mẫu output của nhánh này không yêu cầu in giá trị a.",
+      "teaching_hint": "Giữ nhánh phân loại, sửa chuỗi in riêng cho trường hợp zero.",
+      "source_lines": [
+        7,
+        9,
+        10,
+        13
+      ],
+      "test_ids": [
+        "2",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "0.000000 input is zero"
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "0.000000 input is zero"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n\tfloat a;\n\tscanf(\"%f\",&a);\n\tif(a>0)\n\t    { printf(\"%.4f is positive\",a);\n\t    }\n\t if(a==0)\n\t    {printf(\"%f input is zero\",a);\n\t    }\n\t if(a<0)\n\t    {printf(\"%.4f is negative\",a);\n\t    }\n\t   \n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "0.000000 input is zero"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is positive"
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive"
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 is negative"
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000 is positive"
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "0.000000 input is zero"
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "fail",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "In thừa giá trị số ở nhánh zero",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "In thừa giá trị số ở nhánh zero"
+    },
+    {
+      "number": 14,
+      "case_id": "case_515052c01c42773f",
+      "problem_id": "2833",
+      "decision": "multiple",
+      "evidence_supported": true,
+      "misconception_label": "Dùng HOẶC thay cho VÀ và đếm cả các hoán vị cạnh",
+      "category": "multiple_errors",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "ba bất đẳng thức tam giác nối bằng ||, đồng thời ba cạnh duyệt độc lập",
+        "and": "N = 4 cho 64, tức mọi bộ ba đều được đếm",
+        "then": "Dùng HOẶC thay cho VÀ và đếm cả các hoán vị cạnh"
+      },
+      "reasoning": "Chỉ cần một bất đẳng thức đúng là code cộng tổng, trong khi điều kiện tam giác cần cả ba. Ngoài ra, miền duyệt hiện tại vẫn đếm các hoán vị như những bộ khác nhau.",
+      "teaching_hint": "Sửa || thành && rồi giới hạn thứ tự ba cạnh; kiểm tra từng thay đổi riêng.",
+      "source_lines": [
+        12,
+        15,
+        18,
+        20
+      ],
+      "test_ids": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 64"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 27"
+        }
+      ],
+      "notes": "Có ít nhất hai cơ chế lỗi cùng hiện diện. Không ép bài này thành nhãn một lỗi duy nhất.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    int N;\n    int a,b,c;\n    a=1;\n    b=1;\n    c=1;\n    int count=0;\n    scanf(\"%d\", &N);\n    while(a<=N)\n    { \n        b=1;\n        while(b<=N)\n        {\n           c=1;\n           while(c<=N)\n            {\n                if(a<b+c||b<a+c||c<a+b)\n                {\n                    count+=1;\n                }\n                c+=1;\n            }\n            b+=1;\n        }\n        a+=1;\n    }\n    printf(\"Number of possible triangles is %d\", count);\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 64"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 27"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangles is 125"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangles is 343"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangles is 8"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Dùng HOẶC thay cho VÀ và đếm cả các hoán vị cạnh",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "multiple",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": false,
+      "primary_mechanism": null
+    },
+    {
+      "number": 15,
+      "case_id": "case_5507a905e6d6eca8",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Kiểm tra một giá trị mẫu thay vì phân loại theo dấu",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "code chỉ xét a == -12 và gọi mọi giá trị còn lại là zero",
+        "and": "đầu vào 1 lại được in là zero",
+        "then": "Kiểm tra một giá trị mẫu thay vì phân loại theo dấu"
+      },
+      "reasoning": "Điều kiện hiện tại nhận riêng -12 chứ không nhận mọi số âm. Nhánh else cũng gộp cả số dương, số âm khác và số 0.",
+      "teaching_hint": "Thay giá trị mẫu bằng điều kiện a < 0, a > 0 và trường hợp còn lại.",
+      "source_lines": [
+        6,
+        7,
+        9
+      ],
+      "test_ids": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "0.0000 is zero"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is zero"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n\tfloat a;\n\tscanf(\"%f\",&a);\n\tif (a==-12){\n\t    printf(\"%.4f is negative\",a);\n\t} else {\n\t    printf(\"%.4f is zero\",a);\n\t}\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "0.0000 is zero"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is zero"
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is zero"
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 is zero"
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000 is zero"
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "0.0000 is zero"
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Kiểm tra một giá trị mẫu thay vì phân loại theo dấu",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Kiểm tra một giá trị mẫu thay vì phân loại theo dấu"
+    },
+    {
+      "number": 16,
+      "case_id": "case_5f142f7662ff032b",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Bài mới đọc đầu vào, chưa tính và chưa in kết quả",
+      "category": "incomplete_solution",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "main chỉ scanf rồi return",
+        "and": "mọi test ghi nhận output rỗng",
+        "then": "Bài mới đọc đầu vào, chưa tính và chưa in kết quả"
+      },
+      "reasoning": "Không có vòng duyệt, phép đếm hoặc lệnh in nào sau khi đọc N. Có thể đây là bài đang làm dở; chưa thể suy ra học viên hiểu sai khái niệm cụ thể.",
+      "teaching_hint": "Yêu cầu viết các bước giải trước, rồi hoàn thiện phần đếm và in.",
+      "source_lines": [
+        6,
+        8
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": ""
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": ""
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    int N;\n    scanf(\"%d\",&N);\n    \n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": ""
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": ""
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": ""
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": ""
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": ""
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": ""
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Bài mới đọc đầu vào, chưa tính và chưa in kết quả",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Bài mới đọc đầu vào, chưa tính và chưa in kết quả"
+    },
+    {
+      "number": 17,
+      "case_id": "case_5fc7964e49628250",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Đọc nhầm thứ tự bán kính và tọa độ điểm",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "scanf gán ba giá trị cuối lần lượt vào x1, y1, r",
+        "and": "test 0 0 5 3 7 bị phân loại bên trong thay vì bên ngoài",
+        "then": "Đọc nhầm thứ tự bán kính và tọa độ điểm"
+      },
+      "reasoning": "Cách đọc khiến 5 trở thành x1 và 7 trở thành bán kính. Theo thứ tự x, y, r, x1, y1 thể hiện trong bộ test, khoảng cách phải được tính cho điểm (3,7) với bán kính 5.",
+      "teaching_hint": "Ghi tên biến ngay dưới từng giá trị của một input mẫu rồi sửa thứ tự scanf.",
+      "source_lines": [
+        6,
+        7
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is inside the Circle."
+        }
+      ],
+      "notes": "Cần đối chiếu thứ tự input với đề gốc vì packet này thiếu statement. Bài 17 còn gọi sqrt mà không include math.h; không bỏ qua vấn đề khai báo khi sửa code.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    float x,y,r,x1,y1,s;\n    scanf (\"%f %f %f %f %f\",&x,&y,&x1,&y1,&r);\n    s=sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));\n    if  (r >s )\n    {\n        printf (\"Point is inside the Circle.\");\n        \n    }\n    else if(r == s)\n    {\n        printf (\"Point is on the Circle.\"); \n    }\n    else\n    {\n            printf (\"Point is outside the Circle.\");\n    }\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "pass",
+        "5": "fail",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Đọc nhầm thứ tự bán kính và tọa độ điểm",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Đọc nhầm thứ tự bán kính và tọa độ điểm"
+    },
+    {
+      "number": 18,
+      "case_id": "case_781af59e6dab0a70",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Khác chữ hoa/chữ thường trong thông báo",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "printf dùng circle với chữ c thường",
+        "and": "oracle yêu cầu Circle với chữ C hoa",
+        "then": "Khác chữ hoa/chữ thường trong thông báo"
+      },
+      "reasoning": "Sai khác quan sát được là cách viết Circle, không phải vị trí trong/ngoài/trên đường tròn ở các test đã ghi nhận.",
+      "teaching_hint": "Đối chiếu từng ký tự của chuỗi thông báo theo mẫu.",
+      "source_lines": [
+        9,
+        12,
+        15
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    float x, y, r, x1, y1;\n    scanf(\"%f %f %f %f %f\", &x, &y, &r, &x1, &y1);\n    float dsquared = ((x-x1)*(x-x1)) + ((y-y1)*(y-y1));\n    if(dsquared < (r*r)){\n        printf(\"Point is inside the circle.\");\n    }\n    else if(dsquared > (r*r)){\n        printf(\"Point is outside the circle.\");\n    }\n    else{\n        printf(\"Point is on the circle.\");\n    }\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Khác chữ hoa/chữ thường trong thông báo",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Khác chữ hoa/chữ thường trong thông báo"
+    },
+    {
+      "number": 19,
+      "case_id": "case_78847a573ca84ffd",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Quên bỏ dòng in debug",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "code in khoảng cách kèm chữ demo trước khi in kết luận",
+        "and": "output có thêm một dòng không nằm trong đáp án",
+        "then": "Quên bỏ dòng in debug"
+      },
+      "reasoning": "Lệnh printf phục vụ kiểm tra tạm vẫn còn trong bài nộp. Ví dụ test đầu in thêm 6.700747 demo trước thông báo outside.",
+      "teaching_hint": "Bỏ dòng debug khỏi output nộp bài, giữ lại phần in đáp án.",
+      "source_lines": [
+        13
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "6.700747 demo\nPoint is outside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "7.615773 demo\nPoint is outside the Circle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n#include<math.h>\nint main()\n{\n    float x,y,r;\n    float x1;\n    float y1;\n    float h;\n    float g;\n    scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);/*input*/\n    h=(x1-x)*(x1-x)+(y1-y)*(y1-y);\n    g=sqrt(h);/*distance formula*/\n    printf(\"%f demo\\n\",g);\n    if(g<r)/*condition for point to be inside the circle*/\n    {\n        printf(\"Point is inside the Circle.\");\n    }\n    else if(g==r)/*condition for point to be on the circle*/\n    {\n        printf(\"Point is on the Circle.\");\n    }\n    else \n    {\n        printf(\"Point is outside the Circle.\");\n    }\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "6.700747 demo\nPoint is outside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "7.615773 demo\nPoint is outside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "5.000000 demo\nPoint is on the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "3.405877 demo\nPoint is inside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "4.716990 demo\nPoint is inside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "5.000000 demo\nPoint is on the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "5.830952 demo\nPoint is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Quên bỏ dòng in debug",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Quên bỏ dòng in debug"
+    },
+    {
+      "number": 20,
+      "case_id": "case_7e464114951ec19e",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Sai từ trong mẫu output: triangle thay vì triangles",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi in dùng triangle ở số ít",
+        "and": "số đếm trong log khớp oracle nhưng phần chữ thiếu s",
+        "then": "Sai từ trong mẫu output: triangle thay vì triangles"
+      },
+      "reasoning": "Không nên gán lỗi đếm tổ hợp cho bài này chỉ vì toàn bộ test fail. Phần số đếm đã khớp ở các test ghi nhận; sai khác nằm ở từ triangles.",
+      "teaching_hint": "Giữ phần tính toán và sửa mẫu output theo oracle đã được kiểm chứng.",
+      "source_lines": [
+        20
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangle is 13"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangle is 1"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    int n,a,b,c,x=0;// x is the no. of triangles formed.a,b,c are sides of                      triangle.n is the input value.\n    scanf(\"%d\",&n);\n    for(a=1;a<=n;a++)\n    {\n        for(b=a;b<=n;b++)\n        {\n            for(c=b;c<=n;c++)\n            {\n                if((a+b)>c&&(a+c)>b&&(b+c)>a)\n                {\n                    x++;\n                }\n            }\n        }\n    }\n    printf(\"Number of possible triangle is %d\",x);\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangle is 13"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangle is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangle is 7"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangle is 22"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangle is 50"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangle is 3"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Sai từ trong mẫu output: triangle thay vì triangles",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Sai từ trong mẫu output: triangle thay vì triangles"
+    },
+    {
+      "number": 21,
+      "case_id": "case_7e5705531d22bbf6",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Sai từ trong mẫu output: triangle thay vì triangles",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi in dùng triangle ở số ít",
+        "and": "số đếm trong log khớp oracle nhưng phần chữ thiếu s",
+        "then": "Sai từ trong mẫu output: triangle thay vì triangles"
+      },
+      "reasoning": "Không nên gán lỗi đếm tổ hợp cho bài này chỉ vì toàn bộ test fail. Phần số đếm đã khớp ở các test ghi nhận; sai khác nằm ở từ triangles.",
+      "teaching_hint": "Giữ phần tính toán và sửa mẫu output theo oracle đã được kiểm chứng.",
+      "source_lines": [
+        14
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangle is 13"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangle is 1"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\nint i,j,k, N,count=0;\nscanf ( \"%d\",&N);/*input variable*/\nfor( i=1;i<=N;i=i+1)\n{for (j=1 ; j<=i ; j=j+1)\n{for (k=1;k<=j; k=k+1)\n{if ((j+k>i) && (k+i>j)&& (i+j>k))/*tiangle inequality*/\ncount++;}\n}\n}\nprintf (\"Number of possible triangle is %d\", count);\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangle is 13"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangle is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangle is 7"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangle is 22"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangle is 50"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangle is 3"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Sai từ trong mẫu output: triangle thay vì triangles",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Sai từ trong mẫu output: triangle thay vì triangles"
+    },
+    {
+      "number": 22,
+      "case_id": "case_7e6cf30748dd79a5",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thiếu dấu chấm cuối thông báo",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi printf không có dấu chấm cuối câu",
+        "and": "output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle",
+        "then": "Thiếu dấu chấm cuối thông báo"
+      },
+      "reasoning": "Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.",
+      "teaching_hint": "Đối chiếu chuỗi output với mẫu, kể cả dấu câu.",
+      "source_lines": [
+        16,
+        19,
+        22
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n#include<math.h>\n\nint main()\n{\n    float x, y, r, x1, y1;\n    scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n    float A=x-x1;\n     float B=y-y1;\n    float D,E;\n    D=pow(A,2);\n    E=pow(B,2);\n    float F;\n    F=sqrt(D+E);\n    if(F>r){\n        printf(\"Point is outside the Circle\");\n    }\n    else if(F<r){\n        printf(\"Point is inside the Circle\");\n    }\n    else{\n        printf (\"Point is on the Circle\");\n    };\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thiếu dấu chấm cuối thông báo",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thiếu dấu chấm cuối thông báo"
+    },
+    {
+      "number": 23,
+      "case_id": "case_7fb0598798544be0",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thừa dấu chấm so với oracle chấm bài",
+      "category": "oracle_presentation_mismatch",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "một hoặc nhiều chuỗi printf có dấu chấm cuối câu",
+        "and": "log mong đợi cùng nội dung nhưng không có dấu chấm",
+        "then": "Thừa dấu chấm so với oracle chấm bài"
+      },
+      "reasoning": "Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.",
+      "teaching_hint": "Kiểm tra lại mẫu output với người ra đề trước khi yêu cầu sửa dấu câu.",
+      "source_lines": [
+        7,
+        9,
+        11
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative."
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero."
+        }
+      ],
+      "notes": "Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n    float a; // input variable\n\tscanf(\"%f\",&a);\n\t  if (a==0)\n\t    printf (\"input is zero.\");\n\t  else if (a>0)\n\t  printf (\"%.4f is positive.\",a);\n\telse\n\t   printf (\"%.4f is negative.\",a);\n\t  \n\t \n\t  \n\t  \n\t  \n\t  \n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative."
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero."
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is positive."
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive."
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 is negative."
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000 is positive."
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "input is zero."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thừa dấu chấm so với oracle chấm bài",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thừa dấu chấm so với oracle chấm bài"
+    },
+    {
+      "number": 24,
+      "case_id": "case_85d9d4119aeb7f8f",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thiếu dấu chấm cuối thông báo",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi printf không có dấu chấm cuối câu",
+        "and": "output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle",
+        "then": "Thiếu dấu chấm cuối thông báo"
+      },
+      "reasoning": "Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.",
+      "teaching_hint": "Đối chiếu chuỗi output với mẫu, kể cả dấu câu.",
+      "source_lines": [
+        6,
+        7,
+        8
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\nint main(){\nfloat a,x,y,r,x1,y1;\nscanf(\"%f%f%f%f%f\",&x,&y,&r,&x1,&y1);\na=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r*r ;\nif(a==0) {printf(\"Point is on the Circle\");}\nelse if(a<0){printf(\"Point is inside the Circle\");} \nelse {printf(\"Point is outside the Circle\");}                        return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thiếu dấu chấm cuối thông báo",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thiếu dấu chấm cuối thông báo"
+    },
+    {
+      "number": 25,
+      "case_id": "case_8a259bc637baab56",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "So sánh bình phương khoảng cách với bán kính chưa bình phương",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "code dùng d² nhưng đối chiếu trực tiếp với r",
+        "and": "điểm trên đường tròn bán kính 5 bị báo là ở ngoài",
+        "then": "So sánh bình phương khoảng cách với bán kính chưa bình phương"
+      },
+      "reasoning": "Hai vế đang khác đại lượng: d² phải so với r², hoặc d so với r. Ở test 3, d² = 25 và r = 5, nên phép so sánh hiện tại làm lệch kết luận.",
+      "teaching_hint": "Cho học viên viết rõ d, d², r, r² rồi chọn một cặp nhất quán.",
+      "source_lines": [
+        6
+      ],
+      "test_ids": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "notes": "Bài 46 có tính sqrtf(c) vào d nhưng không dùng d để so sánh, đồng thời thiếu math.h. Nhãn này mô tả sai khác công thức thấy trong code/log, không chứng minh niềm tin của người học.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{float x,y,x1,y1,r,s;//s is for power of point\n scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n s=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r;//computes the power of point\n if(s>0)       //point is outside if s is +ive\n  printf(\"Point is outside the Circle.\");\n if(s==0) //point is on it if s=0\n  printf(\"Point is on the Circle.\");\n if(s<0)          //point is inside if s is -ive\n  printf(\"Point is inside the Circle.\");\n return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "So sánh bình phương khoảng cách với bán kính chưa bình phương",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "So sánh bình phương khoảng cách với bán kính chưa bình phương"
+    },
+    {
+      "number": 26,
+      "case_id": "case_8fc7b8f6d71052ef",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thoát vòng duyệt ngay khi gặp một bộ cạnh chưa hợp lệ",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "k đang tăng dần nhưng else lại break khi j+k <= i",
+        "and": "số đếm nhỏ hơn oracle, như N = 4 cho 10 thay vì 13",
+        "then": "Thoát vòng duyệt ngay khi gặp một bộ cạnh chưa hợp lệ"
+      },
+      "reasoning": "Một k nhỏ không thỏa chưa loại được những k lớn hơn. break bỏ luôn các bộ phía sau nên bài bị thiếu trường hợp.",
+      "teaching_hint": "Bỏ break ở nhánh không hợp lệ và tiếp tục thử các k tiếp theo.",
+      "source_lines": [
+        14,
+        20
+      ],
+      "test_ids": [
+        "1",
+        "3",
+        "4",
+        "5"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 10"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 6"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    int n;\n    int count=0;\n    scanf(\"%d\",&n);\n    for(int i=1;i<=n;i++)\n    {\n        for(int j=1;j<=i;j++)\n        {\n            for(int k=1;k<=j;k++)\n            {\n                if((j+k)>i)\n                {\n                    count=count+1;\n                }\n                else\n                {\n                    break;\n                }\n            }\n        }\n    }\n    printf(\"Number of possible triangles is %d\",count);\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 10"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 6"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangles is 15"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangles is 28"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangles is 3"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thoát vòng duyệt ngay khi gặp một bộ cạnh chưa hợp lệ",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thoát vòng duyệt ngay khi gặp một bộ cạnh chưa hợp lệ"
+    },
+    {
+      "number": 27,
+      "case_id": "case_9055f4a3678ba199",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Đặt biến vào chuỗi định dạng thay vì truyền đối số printf",
+      "category": "io_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi printf có %.4f và %n nhưng không truyền đối số tương ứng",
+        "and": "giá trị in trong log không khớp số đầu vào",
+        "then": "Đặt biến vào chuỗi định dạng thay vì truyền đối số printf"
+      },
+      "reasoning": "%n không có nghĩa là in biến tên n; đó là một conversion khác, cần con trỏ để ghi số ký tự đã in. Cả %.4f lẫn %n ở đây đều không có đối số.",
+      "teaching_hint": "Đưa n ra sau chuỗi định dạng: printf(\"%.4f is positive\", n), và sửa tương tự nhánh âm.",
+      "source_lines": [
+        8,
+        12,
+        14
+      ],
+      "test_ids": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "0.0000 is negative,"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "0.0000 is positive,"
+        }
+      ],
+      "notes": "Lời gọi thiếu đối số có hành vi không xác định. Không suy ra mọi lần chạy đều in 0 từ log lịch sử.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n    //to determine sign of a number\n    float n;\n    scanf(\"%f\",&n);\n    if(n>0){\n    printf(\"%.4f is positive,%n\");//number is positive\n    }\n    else{\n        if (n==0){\n        printf(\"input is zero\");//number is 0\n        }else{\n        printf(\"%.4f is negative,%n\");}}//number is negative\n    \n    \n\t\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "0.0000 is negative,"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "0.0000 is positive,"
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive,"
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "0.0000 is negative,"
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "0.0000 is positive,"
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "input is zero"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Đặt biến vào chuỗi định dạng thay vì truyền đối số printf",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Đặt biến vào chuỗi định dạng thay vì truyền đối số printf"
+    },
+    {
+      "number": 28,
+      "case_id": "case_90646fdebcac31f8",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Nhầm số 0 với ký tự 0 khi so sánh",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "biến số thực được so sánh với '0' thay vì 0",
+        "and": "các test nhập zero không có thông báo",
+        "then": "Nhầm số 0 với ký tự 0 khi so sánh"
+      },
+      "reasoning": "'0' là hằng ký tự, không phải giá trị số 0. Khi a bằng 0, hai nhánh >0 và <0 đều sai; điều kiện cuối cũng không nhận đúng zero.",
+      "teaching_hint": "Đổi a == '0' thành a == 0 và phân biệt giá trị số với ký tự.",
+      "source_lines": [
+        17
+      ],
+      "test_ids": [
+        "2",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": ""
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": ""
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    float a;\n    scanf(\"%f\",&a);\n    if(a>0)\n    {\n        printf(\"%.4f is positive\",a);\n    }\n    else\n    if(a<0)\n    {\n        printf(\"%.4f is negative\",a);\n    }\n    else\n    if(a=='0')\n    {\n      printf(\"input is zero\");\n    }\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": ""
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is positive"
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive"
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 is negative"
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000 is positive"
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": ""
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "fail",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Nhầm số 0 với ký tự 0 khi so sánh",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Nhầm số 0 với ký tự 0 khi so sánh"
+    },
+    {
+      "number": 29,
+      "case_id": "case_917708e5da75df5c",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Đưa &a vào chuỗi scanf thay vì truyền địa chỉ đối số",
+      "category": "io_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "lời gọi là scanf(\"%f,&a\") và không có đối số nhận dữ liệu",
+        "and": "log không ghi nhận output",
+        "then": "Đưa &a vào chuỗi scanf thay vì truyền địa chỉ đối số"
+      },
+      "reasoning": "Phần &a nằm trong dấu nháy nên không cung cấp địa chỉ biến cho %f. Cần viết scanf(\"%f\", &a).",
+      "teaching_hint": "Tách chuỗi định dạng khỏi danh sách đối số, rồi kiểm tra giá trị trả về của scanf.",
+      "source_lines": [
+        6
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": ""
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": ""
+        }
+      ],
+      "notes": "Đây là lỗi đối số trực tiếp; không suy đoán nguyên nhân kết thúc tiến trình chỉ từ output rỗng.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    float a;\n    scanf(\"%f,&a\");\n    if(a<0.0)\n{\tprintf(\"%.4f is negative\\n\",a);}\n\tif(a==0.0)\n{\tprintf(\"input is zero\");}\n\tif(a>0.0)\n{\tprintf(\"%.4f is positive\\n\",a);}\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": ""
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": ""
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": ""
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": ""
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": ""
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": ""
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": ""
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Đưa &a vào chuỗi scanf thay vì truyền địa chỉ đối số",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Đưa &a vào chuỗi scanf thay vì truyền địa chỉ đối số"
+    },
+    {
+      "number": 30,
+      "case_id": "case_9f89199d80d76687",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Tính độ lệch vị trí nhưng lại rẽ nhánh theo bán kính",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "code tính k = d² − r² rồi dùng dấu của r trong if",
+        "and": "cả điểm bên trong và trên biên đều bị in là bên ngoài khi r dương",
+        "then": "Tính độ lệch vị trí nhưng lại rẽ nhánh theo bán kính"
+      },
+      "reasoning": "Bán kính dương không cho biết điểm đang ở trong hay ngoài. Biến k đã tính đúng đại lượng cần xét nhưng bị bỏ qua khi rẽ nhánh.",
+      "teaching_hint": "Thay biến được kiểm tra từ r sang k và truy vết một điểm bên trong.",
+      "source_lines": [
+        7,
+        8,
+        12,
+        16
+      ],
+      "test_ids": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\nfloat x,y,r,x1,y1,k;\nscanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\nk=(x-x1)*(x-x1)+(y-y1)*(y-y1)-(r*r);\nif(r>0){\n    printf(\"Point is outside the Circle.\");\n    }\nelse\nif(r==0){\n    printf(\"Point is on the Circle.\");\n}\nelse\nif(r<0){\n    printf(\"Point is inside the Circle.\");\n}\n    // Fill this area with your code.\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Tính độ lệch vị trí nhưng lại rẽ nhánh theo bán kính",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Tính độ lệch vị trí nhưng lại rẽ nhánh theo bán kính"
+    },
+    {
+      "number": 31,
+      "case_id": "case_a64d890ffd811174",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thiếu dấu chấm cuối thông báo",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi printf không có dấu chấm cuối câu",
+        "and": "output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle",
+        "then": "Thiếu dấu chấm cuối thông báo"
+      },
+      "reasoning": "Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.",
+      "teaching_hint": "Đối chiếu chuỗi output với mẫu, kể cả dấu câu.",
+      "source_lines": [
+        7,
+        10,
+        13
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\nint main() {\n   float x,y,r,x1,y1;\n   scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n   float A=((x-x1)*(x-x1)+(y-y1)*(y-y1));   \n if(A<r*r){\n     printf(\"Point is inside the Circle\");\n }\n if(A==r*r){\n     printf(\"Point is on the Circle\");\n }    \n if(A>r*r){\n     printf(\"Point is outside the Circle\");\n }\n   return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thiếu dấu chấm cuối thông báo",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thiếu dấu chấm cuối thông báo"
+    },
+    {
+      "number": 32,
+      "case_id": "case_a6f61d6bf5e9e4f8",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thiếu dấu chấm cuối thông báo",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi printf không có dấu chấm cuối câu",
+        "and": "output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle",
+        "then": "Thiếu dấu chấm cuối thông báo"
+      },
+      "reasoning": "Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.",
+      "teaching_hint": "Đối chiếu chuỗi output với mẫu, kể cả dấu câu.",
+      "source_lines": [
+        11,
+        14,
+        17
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n#include<math.h>\nint main()\n{\n    float x,y,r,x1,y1;\n    float d,D;/*d=distance squared*/\n    scanf(\"%f%f%f%f%f\",&x,&y,&r,&x1,&y1);\n    d=((x-x1)*(x-x1))+((y-y1)*(y-y1));/*distance squared*/\n    D=sqrtf(d);\n    if (D<r){\n        printf(\"Point is inside the Circle\");\n    }\n    if (D==r){\n        printf(\"Point is on the Circle\");\n    }\n    if (D>r){\n        printf(\"Point is outside the Circle\");\n    }\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thiếu dấu chấm cuối thông báo",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thiếu dấu chấm cuối thông báo"
+    },
+    {
+      "number": 33,
+      "case_id": "case_a7b282a588ab29a3",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thừa dấu chấm so với oracle chấm bài",
+      "category": "oracle_presentation_mismatch",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "một hoặc nhiều chuỗi printf có dấu chấm cuối câu",
+        "and": "log mong đợi cùng nội dung nhưng không có dấu chấm",
+        "then": "Thừa dấu chấm so với oracle chấm bài"
+      },
+      "reasoning": "Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.",
+      "teaching_hint": "Kiểm tra lại mẫu output với người ra đề trước khi yêu cầu sửa dấu câu.",
+      "source_lines": [
+        7,
+        9,
+        11
+      ],
+      "test_ids": [
+        "3",
+        "4",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is positive."
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive."
+        }
+      ],
+      "notes": "Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n\tfloat input; \n\tscanf(\"%f\",&input);\n\tif(input==0)  /** if for 3 possible cases(either > , 0 , = 0) **/\n\t  {printf(\"input is zero\");}\n\telse if(input > 0)\n\t  {printf(\"%.4f is positive.\",input);} /** .4f for 4 digit decimal place **/\n\telse if(input < 0)\n\t  {printf(\"%.4f is negative\" ,input);}\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is positive."
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive."
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 is negative"
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000 is positive."
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "input is zero"
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "pass",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thừa dấu chấm so với oracle chấm bài",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thừa dấu chấm so với oracle chấm bài"
+    },
+    {
+      "number": 34,
+      "case_id": "case_a894cae81674bc6b",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Gõ sai Circle thành Cicle ở nhánh bên ngoài",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "printf của nhánh outside viết Cicle",
+        "and": "test bên ngoài khác oracle đúng một chữ r",
+        "then": "Gõ sai Circle thành Cicle ở nhánh bên ngoài"
+      },
+      "reasoning": "Log vẫn cho kết luận outside nhưng thông báo bị sai chính tả. Chưa có căn cứ coi đây là lỗi công thức hình học.",
+      "teaching_hint": "Sửa đúng chuỗi mẫu và kiểm tra cả ba nhánh in.",
+      "source_lines": [
+        13,
+        14,
+        16
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Cicle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Cicle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n#include<math.h>\n\nint main()\n{\n    float x,y,r,x1,y1;\n    scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);//input x,y,r,x1,y1\n    \n    float d=sqrtf((x1-x)*(x1-x)+(y1-y)*(y1-y));\n    //compute distance between point and centre of circle\n    \n    if ((d==r)||(d<r)) {\n        if (d==r) printf(\"Point is on the Circle.\");\n        else printf(\"Point is inside the Circle.\");\n    } else {\n        printf(\"Point is outside the Cicle.\");\n    }    \n    \n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Cicle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Cicle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Cicle."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Gõ sai Circle thành Cicle ở nhánh bên ngoài",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Gõ sai Circle thành Cicle ở nhánh bên ngoài"
+    },
+    {
+      "number": 35,
+      "case_id": "case_af057346e20493c4",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Dấu chấm phẩy sau for làm thân vòng lặp rỗng",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "mỗi câu for kết thúc ngay bằng dấu ; trước khối ngoặc nhọn",
+        "and": "nhiều input khác nhau đều chỉ cho số đếm 1",
+        "then": "Dấu chấm phẩy sau for làm thân vòng lặp rỗng"
+      },
+      "reasoning": "Khối đếm phía dưới không còn là thân của các vòng for. Nó chỉ chạy sau khi các vòng rỗng đã kết thúc, nên không duyệt từng bộ cạnh như dự định.",
+      "teaching_hint": "Bỏ dấu ; sau for rồi chỉ rõ khối lệnh thuộc từng vòng.",
+      "source_lines": [
+        8,
+        10,
+        12
+      ],
+      "test_ids": [
+        "1",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 1"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{ int N;\nint i,j,k;\n int count=0; \n scanf(\"%d\",&N);\n  for (i=1; i<=N; i++);  \n  {\n      for (j=i; j<=N; j=j+1);\n     {\n         for (k=j; k<=N; k=k+1);\n     {     if (i+j>k && j+k>i && i+k>j)\n     count=count+1;\n     }\n     }\n  } \n  printf (\"Number of possible triangles is %d\",count);\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangles is 1"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Dấu chấm phẩy sau for làm thân vòng lặp rỗng",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Dấu chấm phẩy sau for làm thân vòng lặp rỗng"
+    },
+    {
+      "number": 36,
+      "case_id": "case_be7e62b451ca8f22",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thừa dấu chấm so với oracle chấm bài",
+      "category": "oracle_presentation_mismatch",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "một hoặc nhiều chuỗi printf có dấu chấm cuối câu",
+        "and": "log mong đợi cùng nội dung nhưng không có dấu chấm",
+        "then": "Thừa dấu chấm so với oracle chấm bài"
+      },
+      "reasoning": "Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.",
+      "teaching_hint": "Kiểm tra lại mẫu output với người ra đề trước khi yêu cầu sửa dấu câu.",
+      "source_lines": [
+        8,
+        12,
+        16
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative."
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero."
+        }
+      ],
+      "notes": "Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n    float a;\n    scanf(\"%f\",&a);\n    if(a>0)\n    {\n        printf(\"%.4f is positive.\",a);\n    }\n\telse if(a==0)\n\t{\n\t    printf(\"input is zero.\");\n\t}\n\telse\n\t{\n\t    printf(\"%.4f is negative.\",a);\n\t}\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative."
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero."
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is positive."
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive."
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 is negative."
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000 is positive."
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "input is zero."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thừa dấu chấm so với oracle chấm bài",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thừa dấu chấm so với oracle chấm bài"
+    },
+    {
+      "number": 37,
+      "case_id": "case_c3e32b1a7204496b",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Sai từ trong mẫu output: triangle thay vì triangles",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi in dùng triangle ở số ít",
+        "and": "số đếm trong log khớp oracle nhưng phần chữ thiếu s",
+        "then": "Sai từ trong mẫu output: triangle thay vì triangles"
+      },
+      "reasoning": "Không nên gán lỗi đếm tổ hợp cho bài này chỉ vì toàn bộ test fail. Phần số đếm đã khớp ở các test ghi nhận; sai khác nằm ở từ triangles.",
+      "teaching_hint": "Giữ phần tính toán và sửa mẫu output theo oracle đã được kiểm chứng.",
+      "source_lines": [
+        15
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangle is 13"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangle is 1"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    int n,c=0,x,y,z;\n    scanf(\"%d\",&n);\n    for(x=1;x<=n;x=x+1){\n     for(y=1;y<=x;y=y+1){\n     for(z=1;z<=y;z=z+1){\n          if(x+y>z && y+z>x && z+x>y)\n     c++;\n    }   \n     }\n    }\n    printf(\"Number of possible triangle is %d\",c);\n    return 0;\n\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangle is 13"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangle is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangle is 7"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangle is 22"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangle is 50"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangle is 3"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Sai từ trong mẫu output: triangle thay vì triangles",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Sai từ trong mẫu output: triangle thay vì triangles"
+    },
+    {
+      "number": 38,
+      "case_id": "case_cc63868c9ce23567",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "hai if độc lập kiểm tra trong/ngoài, còn else gắn với if kiểm tra bên ngoài",
+        "and": "test điểm bên trong in cả inside và on",
+        "then": "Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận"
+      },
+      "reasoning": "Khi điểm ở bên trong, if đầu in inside. if thứ hai sai nên else của nó tiếp tục in on. Cần một chuỗi nhánh loại trừ nhau.",
+      "teaching_hint": "Đổi if thứ hai thành else if, rồi truy vết lại một test bên trong.",
+      "source_lines": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "test_ids": [
+        "4",
+        "5"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle.Point is on the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle.Point is on the Circle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n#include<math.h>\nint main()\n{\n  float x, y, r, x1, y1, d;\n  scanf(\"%f\",&x);\n  scanf(\"%f\",&y);\n  scanf(\"%f\",&r);\n  scanf(\"%f\",&x1);\n  scanf(\"%f\",&y1);\n  d =sqrt(pow(x-x1, 2)+pow(y-y1, 2));\n  if (d<r){\n  printf(\"Point is inside the Circle.\");}\n  if (d>r){\n  printf(\"Point is outside the Circle.\");}\n  else {\n  printf(\"Point is on the Circle.\");}\n \n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle.Point is on the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle.Point is on the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "pass",
+        "3": "pass",
+        "4": "fail",
+        "5": "fail",
+        "6": "pass",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận"
+    },
+    {
+      "number": 39,
+      "case_id": "case_cc772f29ff77aae8",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Đọc nhầm thứ tự bán kính và tọa độ điểm",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "scanf gán ba giá trị cuối lần lượt vào x1, y1, r",
+        "and": "test 0 0 5 3 7 bị phân loại bên trong thay vì bên ngoài",
+        "then": "Đọc nhầm thứ tự bán kính và tọa độ điểm"
+      },
+      "reasoning": "Cách đọc khiến 5 trở thành x1 và 7 trở thành bán kính. Theo thứ tự x, y, r, x1, y1 thể hiện trong bộ test, khoảng cách phải được tính cho điểm (3,7) với bán kính 5.",
+      "teaching_hint": "Ghi tên biến ngay dưới từng giá trị của một input mẫu rồi sửa thứ tự scanf.",
+      "source_lines": [
+        6,
+        7,
+        13
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is inside the Circle."
+        }
+      ],
+      "notes": "Cần đối chiếu thứ tự input với đề gốc vì packet này thiếu statement. Bài 17 còn gọi sqrt mà không include math.h; không bỏ qua vấn đề khai báo khi sửa code.",
+      "source_code": "#include<stdio.h>\n#include<math.h>\nint main()\n{\n    float x,y,x1,y1,r;\n    scanf(\"%f %f %f %f %f\",&x,&y,&x1,&y1,&r);\n    if(r==sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1))) \n{    \n    printf(\"Point is on the Circle.\");\n}\nelse\n{\n    if(r<sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1)))\n    printf(\"Point is outside the Circle.\"); \n    else \n    printf(\"Point is inside the Circle.\");\n        \n    }\n    // Fill this area with your code.\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "pass",
+        "5": "fail",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Đọc nhầm thứ tự bán kính và tọa độ điểm",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Đọc nhầm thứ tự bán kính và tọa độ điểm"
+    },
+    {
+      "number": 40,
+      "case_id": "case_d206b331ed6efff9",
+      "problem_id": "2833",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Khử trùng số đếm bằng một công thức không phù hợp",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "code đếm các hoán vị rồi thay tổng bằng ((count-n)/n)+n",
+        "and": "N = 4 cho 11 thay vì 13 dù một vài input nhỏ vẫn đúng",
+        "then": "Khử trùng số đếm bằng một công thức không phù hợp"
+      },
+      "reasoning": "Số hoán vị không cố định theo n: ba cạnh khác nhau, hai cạnh bằng nhau và ba cạnh bằng nhau có số lần lặp khác nhau. Chia tổng theo n không loại trùng đúng cho mọi trường hợp.",
+      "teaching_hint": "Giới hạn thứ tự ba cạnh ngay trong vòng duyệt thay vì sửa tổng bằng công thức này.",
+      "source_lines": [
+        7,
+        9,
+        11,
+        20
+      ],
+      "test_ids": [
+        "1",
+        "4",
+        "5"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 11"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangles is 17"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    int n,count=0,a,b,c;\n    scanf(\"%d\",&n);\n    for(a=1;a<=n;a++)\n    {\n        for(b=1;b<=n;b++)\n        {\n            for(c=1;c<=n;c++)\n            {\n               if((a+b)>c && (a+c)>b && (b+c)>a)\n               {\n                   count++;\n               }\n            }\n        }\n    }\n    count=(((count-n)/n)+n);\n    printf(\"Number of possible triangles is %d\",count);\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "4",
+          "expected": "Number of possible triangles is 13",
+          "output": "Number of possible triangles is 11"
+        },
+        {
+          "test_id": "2",
+          "input": "1",
+          "expected": "Number of possible triangles is 1",
+          "output": "Number of possible triangles is 1"
+        },
+        {
+          "test_id": "3",
+          "input": "3",
+          "expected": "Number of possible triangles is 7",
+          "output": "Number of possible triangles is 7"
+        },
+        {
+          "test_id": "4",
+          "input": "5",
+          "expected": "Number of possible triangles is 22",
+          "output": "Number of possible triangles is 17"
+        },
+        {
+          "test_id": "5",
+          "input": "7",
+          "expected": "Number of possible triangles is 50",
+          "output": "Number of possible triangles is 31"
+        },
+        {
+          "test_id": "6",
+          "input": "2",
+          "expected": "Number of possible triangles is 3",
+          "output": "Number of possible triangles is 3"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "pass",
+        "3": "pass",
+        "4": "fail",
+        "5": "fail",
+        "6": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Khử trùng số đếm bằng một công thức không phù hợp",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Khử trùng số đếm bằng một công thức không phù hợp"
+    },
+    {
+      "number": 41,
+      "case_id": "case_da6a96c98b77ce1a",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thiếu dấu chấm riêng ở nhánh trên đường tròn",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "nhánh on in chuỗi không có dấu chấm cuối",
+        "and": "chỉ các test trên biên khác oracle ở dấu câu",
+        "then": "Thiếu dấu chấm riêng ở nhánh trên đường tròn"
+      },
+      "reasoning": "Bài đã nhận đúng trường hợp trên đường tròn trong log. Lỗi quan sát được nằm ở chuỗi thông báo của nhánh đó.",
+      "teaching_hint": "Sửa chuỗi on cho thống nhất với mẫu, không đổi công thức khi chưa có bằng chứng cần đổi.",
+      "source_lines": [
+        14,
+        17,
+        20
+      ],
+      "test_ids": [
+        "3",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n#include<math.h>\n\nint main()\n{\n    float x , y , x1 , y1 , r ,s ;\n    // (x,y) are co-ordinates for center of circle .\n    // (x1,y1) is point whose relative loacation w.r.t circle we have to see .\n    // r is radius of circle .\n    // s is distance of point from center of circle .\n    scanf (\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n    s = sqrtf(((x - x1)*(x - x1)) + ((y - y1)*(y - y1))) ;\n    if (s>r){\n        printf(\"Point is outside the Circle.\");// if radius is less than distance from center , point is outside the circle .\n    }\n    else if (s==r){\n        printf(\"Point is on the Circle\");// if radius is equal to distance from center , point is on the circumference .\n    }\n    else{\n        printf(\"Point is inside the Circle.\");\n        \n    }\n    // if radius is greater than distance from center then point is inside the circle .\n    \n    \n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "pass",
+        "3": "fail",
+        "4": "pass",
+        "5": "pass",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thiếu dấu chấm riêng ở nhánh trên đường tròn",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thiếu dấu chấm riêng ở nhánh trên đường tròn"
+    },
+    {
+      "number": 42,
+      "case_id": "case_e0a24174dbc0a491",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Nhánh bên ngoài in nhầm thông báo trên đường tròn",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "else sau l<0 và l==0 vẫn in on",
+        "and": "test điểm bên ngoài bị báo là nằm trên đường tròn",
+        "then": "Nhánh bên ngoài in nhầm thông báo trên đường tròn"
+      },
+      "reasoning": "Cấu trúc đã dành nhánh cuối cho l>0, nhưng chuỗi in bị lặp từ nhánh l==0. Có thể là lỗi sao chép; chưa đủ căn cứ kết luận học viên không hiểu hình học.",
+      "teaching_hint": "Đổi thông báo trong else thành outside và kiểm tra một test bên ngoài.",
+      "source_lines": [
+        10,
+        11,
+        13,
+        15,
+        16
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is on the Circle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    float x,y,r,x1,y1,l;\n    scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n    l=(x-x1)*(x-x1)+(y-y1)*(y-y1)-(r*r);\n    if(l<0)\n    {\n      printf(\"Point is inside the Circle.\");}\n      else if(l==0)\n      {\n      printf(\"Point is on the Circle.\");\n      }\n    else\n    printf(\"Point is on the Circle.\");\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is on the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "pass",
+        "4": "pass",
+        "5": "pass",
+        "6": "pass",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Nhánh bên ngoài in nhầm thông báo trên đường tròn",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Nhánh bên ngoài in nhầm thông báo trên đường tròn"
+    },
+    {
+      "number": 43,
+      "case_id": "case_e15cd0218127818c",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Khác chữ hoa/chữ thường trong thông báo",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "printf dùng circle với chữ c thường",
+        "and": "oracle yêu cầu Circle với chữ C hoa",
+        "then": "Khác chữ hoa/chữ thường trong thông báo"
+      },
+      "reasoning": "Sai khác quan sát được là cách viết Circle, không phải vị trí trong/ngoài/trên đường tròn ở các test đã ghi nhận.",
+      "teaching_hint": "Đối chiếu từng ký tự của chuỗi thông báo theo mẫu.",
+      "source_lines": [
+        11,
+        15,
+        19
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n#include<math.h>\nint main()\n{\n    float x,y,r,x1,y1;\n    scanf(\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n    float m=(x-x1)*(x-x1)+(y-y1)*(y-y1);\n    float d=sqrtf(m);\n    if(d==r)\n    {\n        printf(\"Point is on the circle.\");\n    }\n    else if(d>r)\n        {\n            printf(\"Point is outside the circle.\");\n        }\n    else if(d<r)\n        {\n            printf(\"Point is inside the circle.\");\n        }\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Khác chữ hoa/chữ thường trong thông báo",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Khác chữ hoa/chữ thường trong thông báo"
+    },
+    {
+      "number": 44,
+      "case_id": "case_e707d929e1330208",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Khác chữ hoa/chữ thường trong thông báo",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "printf dùng circle với chữ c thường",
+        "and": "oracle yêu cầu Circle với chữ C hoa",
+        "then": "Khác chữ hoa/chữ thường trong thông báo"
+      },
+      "reasoning": "Sai khác quan sát được là cách viết Circle, không phải vị trí trong/ngoài/trên đường tròn ở các test đã ghi nhận.",
+      "teaching_hint": "Đối chiếu từng ký tự của chuỗi thông báo theo mẫu.",
+      "source_lines": [
+        12,
+        15,
+        19
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    float x,y,r,x1,y1,a,b,c;\n    scanf(\"%f%f%f%f%f\",&x,&y,&r,&x1,&y1);\n    a=(((x1-x)*(x1-x))+((y1-y)*(y1-y)));\n    b=r*r;\n    c=a-b;\nif (c<=0){\n    if (c==0){\n        printf(\"Point is on the circle.\");\n    }\n    else {\n         printf(\"Point is inside the circle.\");\n    }\n}\nelse {\n    printf(\"Point is outside the circle.\");\n}\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the circle."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Khác chữ hoa/chữ thường trong thông báo",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Khác chữ hoa/chữ thường trong thông báo"
+    },
+    {
+      "number": 45,
+      "case_id": "case_f4a64c7407896ece",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thừa dấu chấm so với oracle chấm bài",
+      "category": "oracle_presentation_mismatch",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "một hoặc nhiều chuỗi printf có dấu chấm cuối câu",
+        "and": "log mong đợi cùng nội dung nhưng không có dấu chấm",
+        "then": "Thừa dấu chấm so với oracle chấm bài"
+      },
+      "reasoning": "Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.",
+      "teaching_hint": "Kiểm tra lại mẫu output với người ra đề trước khi yêu cầu sửa dấu câu.",
+      "source_lines": [
+        7,
+        10,
+        12
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative."
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero."
+        }
+      ],
+      "notes": "Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n   float a;\n   scanf(\"%f\",&a);//input float value a.\n   if (a==0)        //Check if a=0.\n   { printf(\"input is zero.\");}//display of output.\n   \n   else { if (a>0) //using another subcondition to check if a>0 or a<0.\n          { printf(\"%.4f is positive.\",a);}\n          else \n          { printf(\"%.4f is negative.\",a);}\n   }\n\t\n\treturn 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 is negative."
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "input is zero."
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.0000 is positive."
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.0000 is positive."
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 is negative."
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000 is positive."
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "input is zero."
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thừa dấu chấm so với oracle chấm bài",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thừa dấu chấm so với oracle chấm bài"
+    },
+    {
+      "number": 46,
+      "case_id": "case_f756bf3700e93903",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "So sánh bình phương khoảng cách với bán kính chưa bình phương",
+      "category": "logic_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "code dùng d² nhưng đối chiếu trực tiếp với r",
+        "and": "điểm trên đường tròn bán kính 5 bị báo là ở ngoài",
+        "then": "So sánh bình phương khoảng cách với bán kính chưa bình phương"
+      },
+      "reasoning": "Hai vế đang khác đại lượng: d² phải so với r², hoặc d so với r. Ở test 3, d² = 25 và r = 5, nên phép so sánh hiện tại làm lệch kết luận.",
+      "teaching_hint": "Cho học viên viết rõ d, d², r, r² rồi chọn một cặp nhất quán.",
+      "source_lines": [
+        11,
+        12,
+        13,
+        15
+      ],
+      "test_ids": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "notes": "Bài 46 có tính sqrtf(c) vào d nhưng không dùng d để so sánh, đồng thời thiếu math.h. Nhãn này mô tả sai khác công thức thấy trong code/log, không chứng minh niềm tin của người học.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n float x,y;//cordinate of the center of the circle\n float r;// radius of the circle\n float x1,y1;// the another cordinate provided by user\n scanf(\"%f%f%f%f%f\",&x,&y,&r,&x1,&y1);\n float a=(x1-x)*(x1-x);\n float b=(y1-y)*(y1-y);\n float c=a+b;//distance between origen and cordinates providade by user\n float d=sqrtf(c);\n if(c<r)\n printf(\"Point is inside the Circle.\");\n else if(c==r)\n     printf(\"Point is on the Circle.\");\nelse\n    printf(\"Point is outside the Circle.\");\n    return 0;\n}\n",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is outside the Circle."
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle."
+        }
+      ],
+      "outcomes": {
+        "1": "pass",
+        "2": "pass",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "pass"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "So sánh bình phương khoảng cách với bán kính chưa bình phương",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "So sánh bình phương khoảng cách với bán kính chưa bình phương"
+    },
+    {
+      "number": 47,
+      "case_id": "case_fa7f4899a2792c11",
+      "problem_id": "2812",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "In số hai lần và dùng mẫu định dạng không thống nhất",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "code in số trước if rồi lại in số trong nhánh âm/dương",
+        "and": "log có hai giá trị số nối nhau, hoặc thêm số trước thông báo zero",
+        "then": "In số hai lần và dùng mẫu định dạng không thống nhất"
+      },
+      "reasoning": "Lệnh in trước chuỗi if luôn chạy. Các nhánh sau lại in giá trị lần nữa bằng %f, nên output vừa lặp số vừa khác số chữ số thập phân.",
+      "teaching_hint": "Bỏ lệnh in chung phía trước và để mỗi nhánh tự in đầy đủ một thông báo.",
+      "source_lines": [
+        9,
+        12,
+        15,
+        18
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 -12.000000 is negative"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "0.0000input is zero"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main(){\n    float n ;         /* variable declaration*/\n    \n        \n\n            scanf(\"%f\",&n);\n        printf(\"%.4f\",n);\n     \n    if(n<0)\n        {printf(\" %f is negative\",n);}\n    \n    else if(n>0)\n    {printf(\"%f is positive\",n);}\n    \n    else\n    {printf(\"input is zero\");}\n    \n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "-12",
+          "expected": "-12.0000 is negative",
+          "output": "-12.0000 -12.000000 is negative"
+        },
+        {
+          "test_id": "2",
+          "input": "0",
+          "expected": "input is zero",
+          "output": "0.0000input is zero"
+        },
+        {
+          "test_id": "3",
+          "input": "1",
+          "expected": "1.0000 is positive",
+          "output": "1.00001.000000 is positive"
+        },
+        {
+          "test_id": "4",
+          "input": "0.0000001",
+          "expected": "0.0000 is positive",
+          "output": "0.00000.000000 is positive"
+        },
+        {
+          "test_id": "5",
+          "input": "-0.0000001",
+          "expected": "-0.0000 is negative",
+          "output": "-0.0000 -0.000000 is negative"
+        },
+        {
+          "test_id": "6",
+          "input": "101",
+          "expected": "101.0000 is positive",
+          "output": "101.0000101.000000 is positive"
+        },
+        {
+          "test_id": "7",
+          "input": "0000000",
+          "expected": "input is zero",
+          "output": "0.0000input is zero"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "In số hai lần và dùng mẫu định dạng không thống nhất",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "In số hai lần và dùng mẫu định dạng không thống nhất"
+    },
+    {
+      "number": 48,
+      "case_id": "case_fa86ec75d995a3b5",
+      "problem_id": "2825",
+      "decision": "supported",
+      "evidence_supported": true,
+      "misconception_label": "Thiếu dấu chấm cuối thông báo",
+      "category": "presentation_error",
+      "rule_origin": "ai_authored_evidence_explanation_not_induced_rule",
+      "rule": {
+        "if": "chuỗi printf không có dấu chấm cuối câu",
+        "and": "output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle",
+        "then": "Thiếu dấu chấm cuối thông báo"
+      },
+      "reasoning": "Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.",
+      "teaching_hint": "Đối chiếu chuỗi output với mẫu, kể cả dấu câu.",
+      "source_lines": [
+        10,
+        15,
+        19
+      ],
+      "test_ids": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "illustrative_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "notes": "Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.",
+      "source_code": "#include<stdio.h>\n\nint main()\n{\n    float x, y, r, x1, y1;\n    scanf (\"%f %f %f %f %f\",&x,&y,&r,&x1,&y1);\n    {\n        if ((x1-x)*(x1-x)+(y1-y)*(y1-y)==r*r)\n        {\n            printf (\"Point is on the Circle\");\n        }\n        else\n        if ((x1-x)*(x1-x)+(y1-y)*(y1-y)>r*r)\n        {\n            printf (\"Point is outside the Circle\");\n        }\n        else\n        {\n            printf (\"Point is inside the Circle\");\n        }\n    }\n    return 0;\n}",
+      "logged_tests": [
+        {
+          "test_id": "1",
+          "input": "1.2 2.3 2.7 5.3 7.6",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "2",
+          "input": "0.0 0.0 5.0 3.0 7.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        },
+        {
+          "test_id": "3",
+          "input": "3.0 4.0 5.0 7.0 7.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "4",
+          "input": "3.0 4.0 5.0 5.6 6.2",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "5",
+          "input": "-1.0 -2.0 5.0 1.5 2.0",
+          "expected": "Point is inside the Circle.",
+          "output": "Point is inside the Circle"
+        },
+        {
+          "test_id": "6",
+          "input": "0.0 0.0 5.0 3.0 4.0",
+          "expected": "Point is on the Circle.",
+          "output": "Point is on the Circle"
+        },
+        {
+          "test_id": "7",
+          "input": "0.0 0.0 5.0 3.0 5.0",
+          "expected": "Point is outside the Circle.",
+          "output": "Point is outside the Circle"
+        }
+      ],
+      "outcomes": {
+        "1": "fail",
+        "2": "fail",
+        "3": "fail",
+        "4": "fail",
+        "5": "fail",
+        "6": "fail",
+        "7": "fail"
+      },
+      "annotation_source": "ai_proposed_human_confirmed",
+      "human_validated": true,
+      "status": "user_confirmed_project_reference",
+      "gold_label": "Thiếu dấu chấm cuối thông báo",
+      "cognitive_status": "unassessed",
+      "original_ai_decision": "supported",
+      "independent_blind_review": false,
+      "eligible_for_single_primary_scoring": true,
+      "primary_mechanism": "Thiếu dấu chấm cuối thông báo"
+    }
+  ]
+}

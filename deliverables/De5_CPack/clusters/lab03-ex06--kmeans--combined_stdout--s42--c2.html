@@ -1,0 +1,1140 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab03-ex06--kmeans--combined_stdout--s42--c2</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab03-ex06 · 16 bài</h1><p>lab03-ex06--kmeans--combined_stdout--s42--c2 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex06_1: 15/16 bài trượt (93.8%); 0 chưa chạy.</p><p>Test ex06_2: 15/16 bài trượt (93.8%); 0 chưa chạy.</p><p>Test ex06_3: 15/16 bài trượt (93.8%); 0 chưa chạy.</p><p>Test ex06_6: 15/16 bài trượt (93.8%); 0 chưa chạy.</p><p>Test ex06_0: 14/16 bài trượt (87.5%); 0 chưa chạy.</p><p>Test ex06_4: 14/16 bài trượt (87.5%); 0 chưa chạy.</p><p>Test ex06_5: 14/16 bài trượt (87.5%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này · 1/16 bài khớp.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.875,
+      &quot;cohort_rate&quot;: 0.208955223880597,
+      &quot;difference_from_cohort&quot;: 0.666044776119403
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_4:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.875,
+      &quot;cohort_rate&quot;: 0.23880597014925373,
+      &quot;difference_from_cohort&quot;: 0.6361940298507462
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.875,
+      &quot;cohort_rate&quot;: 0.2537313432835821,
+      &quot;difference_from_cohort&quot;: 0.6212686567164178
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.3582089552238806,
+      &quot;difference_from_cohort&quot;: 0.5792910447761195
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_5:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.875,
+      &quot;cohort_rate&quot;: 0.29850746268656714,
+      &quot;difference_from_cohort&quot;: 0.5764925373134329
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_3:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.40298507462686567,
+      &quot;difference_from_cohort&quot;: 0.5345149253731343
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.5522388059701493,
+      &quot;difference_from_cohort&quot;: 0.3852611940298507
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.11940298507462686,
+      &quot;difference_from_cohort&quot;: 0.3805970149253731
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.11940298507462686,
+      &quot;difference_from_cohort&quot;: 0.3805970149253731
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.11940298507462686,
+      &quot;difference_from_cohort&quot;: 0.3805970149253731
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_3:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.11940298507462686,
+      &quot;difference_from_cohort&quot;: 0.3805970149253731
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_4:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.11940298507462686,
+      &quot;difference_from_cohort&quot;: 0.3805970149253731
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_5:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.11940298507462686,
+      &quot;difference_from_cohort&quot;: 0.3805970149253731
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_6:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.11940298507462686,
+      &quot;difference_from_cohort&quot;: 0.3805970149253731
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_4&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.875,
+      &quot;cohort_rate&quot;: 0.5522388059701493,
+      &quot;difference_from_cohort&quot;: 0.3227611940298507
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.875,
+      &quot;cohort_rate&quot;: 0.582089552238806,
+      &quot;difference_from_cohort&quot;: 0.292910447761194
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 16,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7313432835820896,
+      &quot;difference_from_cohort&quot;: 0.26865671641791045
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.9375,
+      &quot;cohort_rate&quot;: 0.6716417910447762,
+      &quot;difference_from_cohort&quot;: 0.26585820895522383
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_5&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.875,
+      &quot;cohort_rate&quot;: 0.6119402985074627,
+      &quot;difference_from_cohort&quot;: 0.2630597014925373
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 9,
+      &quot;n_cluster&quot;: 16,
+      &quot;rate&quot;: 0.5625,
+      &quot;cohort_rate&quot;: 0.3283582089552239,
+      &quot;difference_from_cohort&quot;: 0.23414179104477612
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 2,
+      &quot;if&quot;: [
+        &quot;NOT (stdout:ex06_0:edit_band=medium)&quot;,
+        &quot;NOT (stdout:ex06_1:edit_band=__unknown__)&quot;
+      ],
+      &quot;then_cluster&quot;: 2,
+      &quot;train_support&quot;: 14,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 1,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_003 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+ char c;
+ int cont=0;
+ long soma=0;
+ while ((c=getchar()) != EOF)
+ {
+  if (c&gt;=&#x27;0&#x27; &amp;&amp; c&lt;=&#x27;9&#x27;)
+  {
+   soma+= (int)c-(int)&#x27;0&#x27;;
+   cont = 1;
+  }
+  else if ((c == &#x27; &#x27; || c == &#x27;\t&#x27; || c== &#x27;\n&#x27;) &amp;&amp; cont==1)
+  {
+   if (soma%9 ==0 &amp;&amp; soma &gt;= 9)
+    printf(&quot;yes\n&quot;);
+   else
+    printf(&quot;no\n&quot;);
+   soma=0;
+   cont=0;
+  }
+ }
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_009 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    char c;
+    int soma = 0;
+    while ((c=getchar()) != EOF)
+        soma += (c - &#x27;0&#x27; + 1);
+    if (soma % 9 == 0)
+        printf(&quot;yes\n&quot;);
+    else
+        printf(&quot;no\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_015 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int c, soma = 0;
+    char sim[] = &quot;yes&quot;, nao[] = &quot;no&quot;;
+    while((c = getchar()) != EOF){
+        if(c&gt;=0 &amp;&amp; c&lt;=9)
+            soma += (c - &#x27;0&#x27;);
+    }
+    if(soma%9 == 0)
+        printf(&quot;%s\n&quot;, sim);
+    else
+        printf(&quot;%s\n&quot;, nao);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  }
+]</pre></details><details><summary>sample_016 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 100
+
+int main() {
+    char s[MAX];
+    int i;
+    long int sum = 0;
+    scanf(&quot;%s&quot;, s);
+    for(i = 0; i &lt; MAX; i++){
+        if (s[i] == &#x27;\0&#x27;){
+            break;
+        }
+        sum += (int)(s[i] - &#x27;0&#x27;);
+    }
+    if (sum % 9 == 0){
+        printf(&quot;SIM\n&quot;);
+    }else{
+        printf(&quot;NAO\n&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;NAO\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;NAO\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;SIM\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;SIM\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;NAO\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;NAO\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;SIM\n&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>#include &lt;stdio.h&gt;
+
+int main()  {
+
+ char c;
+
+ int soma = 0;
+
+ while ((c = getchar()) !=EOF ) { 
+
+  if (&#x27;0&#x27; &lt; c &amp;&amp; c &lt;= &#x27;9&#x27;) 
+   soma += (c - &#x27;0&#x27;);
+
+ if (soma % 9 != 0) 
+
+  printf(&quot;no\n&quot;);
+
+ else if ( soma % 9 == 0)
+
+  printf(&quot;yes\n&quot;);
+ }
+
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no\nno\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\nyes\nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\nno\nyes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no\nno\nno\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nno\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;yes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\nyes\n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+ char c;
+ long soma=0;
+ while ((c=getchar()) != EOF)
+ {
+  if (c&gt;=&#x27;1&#x27; &amp;&amp; c&lt;=&#x27;9&#x27;)
+  {
+   soma+= (int)c-(int)&#x27;1&#x27;+1;
+  }
+  if (c == &#x27; &#x27; || c == &#x27;\t&#x27; || c== &#x27;\n&#x27;)
+  {
+   if (soma%9 ==0 &amp;&amp; soma != 0)
+    printf(&quot;yes\n&quot;);
+   else
+    printf(&quot;no\n&quot;);
+  }
+ }
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+ char c;
+ int cont=0;
+ long soma=0;
+ while ((c=getchar()) != EOF)
+ {
+  if (c&gt;=&#x27;0&#x27; &amp;&amp; c&lt;=&#x27;9&#x27;)
+  {
+   soma+= (int)c-(int)&#x27;0&#x27;;
+   cont = 1;
+  }
+  else if ((c == &#x27; &#x27; || c == &#x27;\t&#x27; || c== &#x27;\n&#x27;) &amp;&amp; cont==1)
+  {
+   if (soma%9 ==0 &amp;&amp; soma &gt;= 9)
+    printf(&quot;yes\n&quot;);
+   else
+    printf(&quot;no\n&quot;);
+   soma=0;
+   cont=0;
+  }
+ }
+ soma = 0;
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+ char c;
+ long soma=0;
+ while ((c=getchar()) != EOF)
+ {
+  if (c&gt;=&#x27;1&#x27; &amp;&amp; c&lt;=&#x27;9&#x27;)
+  {
+   soma+= (int)c-(int)&#x27;1&#x27;+1;
+  }
+  if (c == &#x27; &#x27; || c == &#x27;\t&#x27; || c== &#x27;\n&#x27;)
+  {
+   if (soma%9 ==0 &amp;&amp; soma &gt;= 9)
+    printf(&quot;yes\n&quot;);
+   else
+    printf(&quot;no\n&quot;);
+  }
+ }
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+ char c;
+ long soma=0;
+ while ((c=getchar()) != EOF)
+ {
+  if (c&gt;=&#x27;1&#x27; &amp;&amp; c&lt;=&#x27;9&#x27;)
+  {
+   soma+= (int)c-(int)&#x27;1&#x27;+1;
+  }
+  if (c == &#x27; &#x27; || c == &#x27;\t&#x27; || c== &#x27;\n&#x27;)
+  {
+   if (soma%9 ==0 &amp;&amp; soma &gt;= 9)
+    printf(&quot;yes\n&quot;);
+   else
+    printf(&quot;no\n&quot;);
+   soma=0;
+  }
+ }
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+ char c;
+ long soma=0;
+ while ((c=getchar()) != EOF)
+ {
+  if (c&gt;=&#x27;0&#x27; &amp;&amp; c&lt;=&#x27;9&#x27;)
+  {
+   soma+= (int)c-(int)&#x27;0&#x27;;
+  }
+  if (c == &#x27; &#x27; || c == &#x27;\t&#x27; || c== &#x27;\n&#x27;)
+  {
+   if (soma%9 ==0 &amp;&amp; soma &gt;= 9)
+    printf(&quot;yes\n&quot;);
+   else
+    printf(&quot;no\n&quot;);
+   soma=0;
+  }
+ }
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    char c;
+    int soma = 0;
+    while ((c = getchar()) != EOF)
+        soma = soma + (c - &#x27;0&#x27; + 1);
+    if (soma % 9 == 0)
+        printf(&quot;yes\n&quot;);
+    else
+        printf(&quot;no\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define MAX 1000000
+
+int main() {
+    int c;
+    int soma = 0;
+    int i = 0;
+
+    while ((c = getchar()) != &#x27;\n&#x27; &amp;&amp; i &lt;= 100){
+        soma += c;
+        i++;
+    }
+    if(soma%9 == 0)
+        printf(&quot;yes\n&quot;);
+    else 
+        printf(&quot;no\n&quot;);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+int main(){
+    char inv[550] = &quot;inv&quot;;
+    int s;
+    s = strcmp(inv, &quot;inv&quot;);
+    printf(&quot;%d&quot;, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;0&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+
+int soma_algarismos(int num)
+{
+    int soma = 0, digito;
+    while(num &gt; 0)
+    {
+        digito = num % 10;
+        num /= 10;
+        soma += digito;
+    }
+    return soma;
+}
+
+int divisivel_por_9(int num)
+{
+    int soma = soma_algarismos(num);
+    if(soma == 9)
+        return 0;
+    else if(soma &lt; 10)
+        return 1;
+    else
+        return divisivel_por_9(soma);
+}
+
+int main()
+{
+    int soma = 0, num;
+    while((num = getchar()) != EOF)
+    {
+        soma += num;
+    }
+    if(divisivel_por_9(soma))
+    {
+        printf(&quot;yes&quot;);
+    } else {
+        printf(&quot;no&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;yes&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+    
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;16&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;729&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;891&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_4&quot;,
+    &quot;input&quot;: &quot;890&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_5&quot;,
+    &quot;input&quot;: &quot;9999999999999991&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_6&quot;,
+    &quot;input&quot;: &quot;9999999999999&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details></html>

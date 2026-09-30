@@ -223,10 +223,26 @@ class Store:
 
     def recent_reports(self):
         with self.connect() as db:
-            return [dict(row) for row in db.execute("""SELECT reports.id,reports.created,
+            # Keep all reviewed snapshots discoverable; hide superseded empty snapshots.
+            # No deletion: historical IDs and evidence remain valid.
+            return [dict(row) for row in db.execute("""WITH history AS (
+                SELECT reports.id,reports.created,
                 json_extract(payload,'$.problem.title') AS title,
-                (SELECT count(*) FROM reviews WHERE report_id=reports.id) AS reviews
-                FROM reports ORDER BY created DESC LIMIT 25""")]
+                json_extract(payload,'$.problem.id') AS problem_id,
+                json_extract(payload,'$.config.k') AS k,
+                (SELECT count(*) FROM reviews WHERE report_id=reports.id) AS reviews,
+                row_number() OVER (PARTITION BY json_extract(payload,'$.problem.id')
+                    ORDER BY created DESC, reports.id DESC) AS position
+                FROM reports)
+                SELECT id,created,title,problem_id,k,reviews FROM history
+                WHERE position=1 OR reviews>0 ORDER BY created DESC""")]
+
+    def cached_report(self, analysis_key):
+        with self.connect() as db:
+            row = db.execute("""SELECT id FROM reports
+                WHERE json_extract(payload,'$.provenance.analysis_key')=?
+                ORDER BY created DESC LIMIT 1""", (analysis_key,)).fetchone()
+        return row['id'] if row else None
 
     def review(self, key, teacher, mappings):
         with self.connect() as db:

@@ -1,0 +1,599 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab04-ex04--kmeans--combined_stdout--s42--c0</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab04-ex04 · 10 bài</h1><p>lab04-ex04--kmeans--combined_stdout--s42--c0 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex04_0: 10/10 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex04_3: 7/10 bài trượt (70.0%); 0 chưa chạy.</p><p>Test ex04_1: 1/10 bài trượt (10.0%); 0 chưa chạy.</p><p>Test ex04_2: 0/10 bài trượt (0.0%); 0 chưa chạy.</p><p>Test ex04_4: 0/10 bài trượt (0.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này · 3/10 bài khớp.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;test:ex04_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.39285714285714285,
+      &quot;difference_from_cohort&quot;: 0.6071428571428572
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.6,
+      &quot;cohort_rate&quot;: 0.25,
+      &quot;difference_from_cohort&quot;: 0.35
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:relation&quot;,
+      &quot;value&quot;: &quot;other_oracle&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.4,
+      &quot;cohort_rate&quot;: 0.07142857142857142,
+      &quot;difference_from_cohort&quot;: 0.3285714285714286
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_3:relation&quot;,
+      &quot;value&quot;: &quot;other_oracle&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.4,
+      &quot;cohort_rate&quot;: 0.07142857142857142,
+      &quot;difference_from_cohort&quot;: 0.3285714285714286
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_4:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.6785714285714286,
+      &quot;difference_from_cohort&quot;: 0.3214285714285714
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_4:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.6785714285714286,
+      &quot;difference_from_cohort&quot;: 0.3214285714285714
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_4&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.6785714285714286,
+      &quot;difference_from_cohort&quot;: 0.3214285714285714
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_2:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7142857142857143,
+      &quot;difference_from_cohort&quot;: 0.2857142857142857
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_2:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7142857142857143,
+      &quot;difference_from_cohort&quot;: 0.2857142857142857
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_2&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7142857142857143,
+      &quot;difference_from_cohort&quot;: 0.2857142857142857
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.4,
+      &quot;cohort_rate&quot;: 0.14285714285714285,
+      &quot;difference_from_cohort&quot;: 0.2571428571428572
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_1:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 9,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.9,
+      &quot;cohort_rate&quot;: 0.6964285714285714,
+      &quot;difference_from_cohort&quot;: 0.20357142857142863
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_1:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 9,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.9,
+      &quot;cohort_rate&quot;: 0.6964285714285714,
+      &quot;difference_from_cohort&quot;: 0.20357142857142863
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_1&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 9,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.9,
+      &quot;cohort_rate&quot;: 0.6964285714285714,
+      &quot;difference_from_cohort&quot;: 0.20357142857142863
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_3:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.3,
+      &quot;cohort_rate&quot;: 0.10714285714285714,
+      &quot;difference_from_cohort&quot;: 0.19285714285714284
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_3:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.3,
+      &quot;cohort_rate&quot;: 0.10714285714285714,
+      &quot;difference_from_cohort&quot;: 0.19285714285714284
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_3&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.3,
+      &quot;cohort_rate&quot;: 0.10714285714285714,
+      &quot;difference_from_cohort&quot;: 0.19285714285714284
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.3,
+      &quot;cohort_rate&quot;: 0.125,
+      &quot;difference_from_cohort&quot;: 0.175
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.2,
+      &quot;cohort_rate&quot;: 0.07142857142857142,
+      &quot;difference_from_cohort&quot;: 0.1285714285714286
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 10,
+      &quot;rate&quot;: 0.3,
+      &quot;cohort_rate&quot;: 0.17857142857142858,
+      &quot;difference_from_cohort&quot;: 0.12142857142857141
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 4,
+      &quot;if&quot;: [
+        &quot;stdout:ex04_2:edit_band=__unknown__&quot;,
+        &quot;test:ex04_0=fail&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 10,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 0,
+      &quot;holdout_precision&quot;: null
+    }
+  ]
+}</pre></details><details><summary>sample_001 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+#define MAX 80
+
+int main()
+{
+	int stat = 0, dim = 1, i;
+	char s[MAX];
+
+	scanf(&quot;%s&quot;, s);
+
+	for(i = 0; s[i] == &#x27;\0&#x27;; i++){
+		dim++;}
+
+	for(i = 0; i &lt; dim; i++){
+		if (s[i] != s[dim-i-1]){
+			stat = 1;}}
+
+	printf(&quot;%s\n&quot;, stat == 0 ? &quot;yes&quot; : &quot;no&quot;);
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_004 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define VECMAX 100
+
+int palindromo(char v[]){
+    int i, j;
+    for (i = 0, j = strlen(v)-1 ; i &gt;= j; i++, j--)
+        if(v[i] != v[j])
+            return 0;
+    return 1;
+}
+
+int main(){
+    char s[VECMAX];
+    scanf(&quot;%s&quot;, s);
+    if (palindromo(s))
+        printf(&quot;yes\n&quot;);
+    else
+        printf(&quot;no\n&quot;);
+    return 0;
+} </pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_005 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 80
+#define TRUE 1
+#define FASLE 0
+
+int main(){
+    size_t i, j, value;
+    char palavra[MAX];
+
+    scanf(&quot;%s&quot;, palavra);
+    value = FASLE;
+    if (strlen(palavra) % 2 != 0){
+        for(i = 0; i &lt; strlen(palavra); i++){
+            if (i == ((strlen(palavra) / 2) + 1))
+                continue;
+            else{
+                if(palavra[i] != palavra[(strlen(palavra)-1) - i]){
+                    printf(&quot;no&quot;);
+                    value = FASLE;
+                    break;
+                }
+                value = TRUE;
+            }  
+        }
+    }
+    else{
+        for(j = 0; j &lt; strlen(palavra); j++){
+            if(palavra[j] != palavra[(strlen(palavra) - 1) - j]){
+                printf(&quot;no&quot;);
+                value = FASLE;
+                break;
+            };
+        }
+    }
+    if (value == TRUE)
+        printf(&quot;yes\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_008 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define DIM 80
+#define YES 1
+#define NO 0
+
+int main(){
+
+    char str[DIM];
+    int i, print = YES; 
+
+    scanf(&quot;%s&quot;, str);
+
+    for(i = 0; str[i] != &#x27;\0&#x27;; i++)
+        if(str[i] != str[(strlen(str)) - (i + 1)])
+            print = YES;
+
+    if(print == NO)
+        printf(&quot;no\n&quot;);
+    else
+        printf(&quot;yes\n&quot;);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define VECMAX 100
+
+int palindromo(char v[]){
+    int i, j;
+    for (i = 0, j = strlen(v)-1 ; i &gt; j; i++, j--)
+        if(v[i] != v[j])
+            return 0;
+    return 1;
+}
+
+
+
+
+int main(){
+    char s[VECMAX];
+    scanf(&quot;%s&quot;, s);
+    if (palindromo(s))
+        printf(&quot;yes\n&quot;);
+    else
+        printf(&quot;no\n&quot;);
+    return 0;
+} </pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define VECMAX 100
+
+int palindromo(char v[]){
+    int i, j;
+    for (i = 0, j = strlen(v)-1 ; i &gt; j; i++, j--)
+        if(v[i] != v[j])
+            return 0;
+    return 1;
+}
+
+
+
+
+int main(){
+    char s[VECMAX];
+    scanf(&quot;%s&quot;, s);
+    if (palindromo(s))
+        printf(&quot;yes\n&quot;);
+    else
+        printf(&quot;no\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;no\n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 80
+#define TRUE 1
+#define FASLE 0
+
+int main(){
+    size_t i, j, value;
+    char palavra[MAX];
+
+    scanf(&quot;%s&quot;, palavra);
+    value = FASLE;
+    if (strlen(palavra) % 2 != 0){
+        for(i = 0; i &lt; strlen(palavra); i++){
+            if (i == ((strlen(palavra) / 2) + 1))
+                continue;
+            else{
+                if(palavra[i] != palavra[(strlen(palavra)-1) - i]){
+                    printf(&quot;no&quot;);
+                    value = FASLE;
+                    break;
+                }
+                value = TRUE;
+            }  
+        }
+    }
+    else{
+        for(j = 0; j &lt; strlen(palavra); j++){
+            if(palavra[j] != palavra[(strlen(palavra) - 1) - j]){
+                printf(&quot;no&quot;);
+                value = FASLE;
+                break;
+            };
+            value = TRUE;
+        }
+    }
+    if (value == TRUE)
+        printf(&quot;yes\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#define MAX 80
+#define TRUE 1
+#define FASLE 0
+
+int main(){
+    size_t i, j, value;
+    char palavra[MAX];
+
+    scanf(&quot;%s&quot;, palavra);
+    value = FASLE;
+    if (strlen(palavra) % 2 != 0){
+        for(i = 0; i &lt; strlen(palavra); i++){
+            if (i == ((strlen(palavra) / 2) + 1))
+                continue;
+            else{
+                if(palavra[i] != palavra[(strlen(palavra)-1) - i]){
+                    printf(&quot;no&quot;);
+                    value = FASLE;
+                    break;
+                }
+                value = TRUE;
+            }  
+        }
+    }
+    else{
+        for(j = 0; j &lt; strlen(palavra); j++){
+            if(palavra[j] != palavra[(strlen(palavra) - 1) - j]){
+                printf(&quot;no\n&quot;);
+                value = FASLE;
+                break;
+            };
+            value = TRUE;
+        }
+    }
+    if (value == TRUE)
+        printf(&quot;yes\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;&quot;,
+    &quot;expected&quot;: &quot;yes\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 80
+
+
+
+int main()
+{
+    int i, j;
+    char s[MAX];
+
+    scanf(&quot;%s&quot;, s);
+
+    
+    for (j = 0; s[j] != &#x27;\0&#x27;; j++);
+    j--;
+
+    for (i = 0; i &lt; j; i++, j--){
+        if (s[i] != s[j]){
+            printf(&quot;no\n&quot;);
+            break;
+        }
+    }
+    printf(&quot;yes\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;no\nyes\n&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+#include &lt;stdio.h&gt;
+int main() {
+    #define MAX 80
+    char s[MAX];
+    int i,soma=0;
+    scanf(&quot;%s&quot;, s);
+    for (i=0;i&gt;0;i++) {
+        while (s[i]!=&#x27;\n&#x27; &amp;&amp; s[i]!=EOF) {
+            soma++;
+        }
+    }
+    if (soma&lt;MAX) {
+        for (i=0;i&lt;soma;i++) {
+            if (s[i]!=s[soma-i]) {
+                printf(&quot;no\n&quot;);
+                break;
+            }
+        }
+        printf(&quot;yes\n&quot;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;adeus&quot;,
+    &quot;expected&quot;: &quot;no\n&quot;,
+    &quot;output&quot;: &quot;yes\n&quot;
+  }
+]</pre></details></html>
