@@ -22,14 +22,18 @@ def main():
     parser.add_argument("--per-category", type=int, default=5)
     parser.add_argument("--seed", type=int, default=7)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--exclude", type=Path, nargs="*", default=[],
+                        help="earlier audit_packet.json files whose items must not be re-sampled")
     args = parser.parse_args()
+    excluded = {case["item_id"] for path in args.exclude
+                for case in json.loads(path.read_text(encoding="utf-8"))["cases"]}
     sources = {row.submission_id: row.source_code
                for _, _, rows in read_cohorts(args.data) for row in rows}
     by_category = defaultdict(list)
     for line in (args.bench / "real_repairs.jsonl").read_text(encoding="utf-8").splitlines():
         repair = json.loads(line)
         if repair.get("status") == "ok" and repair["partition"] in ("train", "validation") \
-                and repair.get("one_minimal"):
+                and repair.get("one_minimal") and repair["item_id"] not in excluded:
             by_category[repair["primary"]].append(repair)
     rng = random.Random(args.seed)
     cases = []
@@ -48,7 +52,8 @@ def main():
                           "review": {"decision": None, "reviewer_category": None, "note": None}})
     packet = {"schema": "repair_label_audit_v1", "bench_manifest_sha256": digest(args.bench / "manifest.json"),
               "sampling": {"per_category": args.per_category, "seed": args.seed,
-                           "partitions": ["train", "validation"]},
+                           "partitions": ["train", "validation"],
+                           "excluded_items_from": [p.as_posix() for p in args.exclude]},
               "instructions": "Judge only whether the category describes what the minimal repair changes "
                               "in the program. Do not judge the student's beliefs.",
               "cases": cases}
