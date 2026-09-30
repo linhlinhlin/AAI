@@ -1,4 +1,60 @@
-# Trạng thái nghiên cứu — 28/09/2026
+# Trạng thái nghiên cứu — 30/09/2026
+
+**Đề 5 đã có dữ liệu tự chuẩn bị, nhãn cơ chế kiểm chứng được, thực nghiệm đăng ký trước
+và bản thảo bài báo (EN + VI).** Quan niệm sai vẫn là giả thuyết cần xác nhận với sinh viên;
+nhãn trong benchmark mô tả thay đổi mức chương trình, không mô tả niềm tin.
+
+## Benchmark cơ chế tự xây dựng và đánh giá đăng ký trước — 30/09/2026
+
+Thầy không cung cấp dữ liệu, nên nhóm tự dựng dữ liệu đánh giá từ C-Pack-IPAs
+([tài liệu](../docs/mechanism-benchmark.md), [protocol + sửa đổi A1–A7](protocol-mechanism-v1.json)).
+
+| Cổng | Việc đã làm | Bằng chứng |
+|---|---|---|
+| G1 replay | Chạy lại 8.607 bài trong container cách ly (không mạng, uid riêng, rlimit); oracle giữ ở host | Khớp verdict lịch sử 98,42% (28.081 ô); stdout sai tái tạo 96,1%; lần replay độc lập thứ hai khớp 99,68%, 56 bài dao động bị loại (A5) — [audit](runs/replay-v2-20260930/), [tái lập](runs/replay-reproducibility-20260930.json) |
+| G2 nhãn thật | Ghép bài sai với lần nộp đạt kế tiếp của cùng sinh viên; delta debugging theo hunk, mọi phép thử chạy thật; phân loại 12 cơ chế | 750 sự kiện sửa, 7.040 lần thử; 339 nhãn đơn cơ chế (54,4% bản sửa là MULTI, bị loại) — [thống kê](runs/mechanism-bench-v1.1/stats.json) |
+| G2 audit | Hai mẫu train/validation, **AI thực hiện, không độc lập** | Nhãn đơn khớp 79/79 (cận dưới Wilson 95% 0,954); mẫu 1 dẫn tới bộ phân loại v1.1 (A6) — [mẫu 1](runs/label-audit-20260930/), [mẫu 2](runs/label-audit-v1.1-20260930/) |
+| G2 tiêm lỗi | Một thay đổi/mutant trên bài đạt, giữ nếu sạch cảnh báo và trượt ≥1 test | 3.320 mutant, 9 loại; unit test đảm bảo phép sửa ngược của mọi toán tử rơi đúng loại |
+| G3–G5 | Validation chọn hệ số phạt ILA-2 = 1,0 (A7); test niêm phong chạy **một lần** | [validation](runs/mechanism-v1.1-validation/summary.md), [test](runs/mechanism-v1.1-test/summary.md), [phân tích khám phá theo loại](runs/mechanism-v1.1-test/categories.md) |
+
+**Kết quả test đã đăng ký** (real: 21 cohort đầy đủ theo A3; tiêm lỗi: 20 cohort test):
+
+| Giả thuyết | Real | Tiêm lỗi | Kết luận theo quy tắc |
+|---|---|---|---|
+| H1a chữ ký test trộn cơ chế | trần 0,739 [0,696; 0,783] | trần 0,507 [0,429; 0,588] | ủng hộ |
+| H1b OAV độ lệch mang thông tin vượt độ mịn | +0,080 | +0,172 | ủng hộ |
+| H2 OAV độ lệch > kết quả test (ARI K-means) | +0,054 [−0,081; 0,182] | +0,235 [0,143; 0,331] | không ủng hộ tổng thể (chỉ đúng trên dữ liệu kiểm soát) |
+| H3 OAV bằng chứng > kết hợp+stdout | ≈0 | ≈0 | không ủng hộ |
+| H4 luật ILA-2 bằng chứng > tóm tắt kết quả (macro-F1, real) | +0,094 [−0,011; 0,171] | — | không ủng hộ (29 item test) |
+| H5 embedding gom theo chương trình gốc | — | +0,834 | ủng hộ |
+
+ARI K-means (k theo nhãn): real — kết quả test 0,29, kết quả+stdout 0,36, độ lệch 0,35,
+embedding 0,06; tiêm lỗi — kết quả test 0,09, kết quả+stdout 0,34, độ lệch 0,33, embedding −0,12.
+Khám phá (không đăng ký): 35,5% cặp real và 81,6% cặp tiêm lỗi cùng chữ ký test nhưng khác
+cơ chế; mức khôi phục trung bình theo loại tăng 0,54 → 0,71 (real) khi dùng OAV độ lệch, tập
+trung ở định dạng in, điều kiện rẽ nhánh, thiếu bước. Luật ILA-2 trên tiêm lỗi: macro-F1 0,65
+(bài đã thấy) và 0,35 (bài mới) so với 0,03/0,04 của tóm tắt kết quả.
+
+**Diễn giải được phép:** chữ ký test (OAV của đề) làm mất thông tin cơ chế; bằng chứng output
+khôi phục thêm, rõ trên dữ liệu kiểm soát; mô tả độ lệch không thắng quan hệ stdout đơn giản khi
+phân cụm nhưng cho luật chuyển được sang bài mới; embedding mã đóng băng gom theo nguồn gốc.
+**Không được nói:** phương pháp mới vượt baseline stdout; chẩn đoán niềm tin sinh viên; nhãn đã
+được người chấm độc lập xác nhận; kết quả tổng quát ngoài một khóa học C90.
+
+**App:** mỗi cụm trong dashboard giảng viên hiện giả thuyết cơ chế từ 14 luật ILA-2 đóng băng
+(`src/misconceptions/data/mechanism_rules.json`), kèm độ chính xác đo trên sinh viên chưa thấy,
+một câu hỏi kiểm tra nhanh và gợi ý giảng lại; không luật nào khớp thì hệ thống không đoán.
+
+**Bài báo:** [bản tiếng Anh](../paper/manuscript.pdf) (23 trang, template Elsevier, abstract
+248 từ) và [bản dịch tiếng Việt](../paper/vi/manuscript.pdf); mọi con số được điền từ artifact
+bằng `paper/build.py`. Kiểm tra phần mềm: harness `check` đạt (xem commit), Docker test của runner
+replay chạy riêng với `AAI_RUN_DOCKER_TESTS=1`.
+
+**Việc còn thiếu trước khi nộp:** audit nhãn độc lập bởi hai người am hiểu C; dữ liệu thứ hai
+(khóa học/ngôn ngữ khác); thông tin tác giả, khai báo dùng AI, người hướng dẫn duyệt.
+
+
+## Lịch sử trước 30/09/2026
 
 **Đã triển khai harness và nền thực nghiệm offline cho đề 5.** Mục tiêu bài báo
 vẫn là khám phá cơ chế lỗi có bằng chứng, với quan niệm sai là giả thuyết cần

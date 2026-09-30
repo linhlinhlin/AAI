@@ -1,0 +1,13 @@
+{
+  "built": "2026-09-30T20:29:16",
+  "lang": "en",
+  "exit": 0,
+  "issues": {
+    "undefined_references": [],
+    "undefined_citations": [],
+    "missing_glyphs": []
+  },
+  "tex_sha256": "f24bb854b03451c397c4bf6981abe76969cbae32febf887c10b34da4d4b289d6",
+  "pdf_sha256": "e64fd0543cfc9eeeb7a5569c487a9dcf5a6f14cbc3e505beeeca6473087d877b",
+  "tail": "ph at lines 121--121\nwarning: manuscript.tex:123: Underfull \\hbox (badness 1009) in paragraph at lines 122--123\nwarning: manuscript.tex:278: Underfull \\hbox (badness 10000) in paragraph at lines 278--278\nwarning: manuscript.tex:362: Overfull \\hbox (4.28394pt too wide) in paragraph at lines 362--362\nwarning: manuscript.tex:39: Overfull \\hbox (2.608pt too wide) has occurred while \\output is active\nwarning: manuscript.tex:113: Underfull \\hbox (badness 1490) in paragraph at lines 112--113\nwarning: manuscript.tex:113: Underfull \\hbox (badness 6625) in paragraph at lines 113--113\nwarning: manuscript.tex:114: Underfull \\hbox (badness 1502) in paragraph at lines 113--114\nwarning: manuscript.tex:114: Underfull \\hbox (badness 2486) in paragraph at lines 114--114\nwarning: manuscript.tex:115: Underfull \\hbox (badness 1107) in paragraph at lines 115--115\nwarning: manuscript.tex:116: Underfull \\hbox (badness 2512) in paragraph at lines 116--116\nwarning: manuscript.tex:117: Underfull \\hbox (badness 5533) in paragraph at lines 117--117\nwarning: manuscript.tex:121: Underfull \\hbox (badness 10000) in paragraph at lines 121--121\nwarning: manuscript.tex:123: Underfull \\hbox (badness 1009) in paragraph at lines 122--123\nwarning: manuscript.tex:278: Underfull \\hbox (badness 10000) in paragraph at lines 278--278\nwarning: manuscript.tex:362: Overfull \\hbox (4.28394pt too wide) in paragraph at lines 362--362\nwarning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.\n"
+}

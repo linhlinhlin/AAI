@@ -39,6 +39,22 @@ một thay đổi trong code không chứng minh sinh viên tin điều gì. Nh�
 các nghiên cứu về lỗi logic của người mới học, như Ettles, Luxton-Reilly & Denny
 (ACE 2018) và Qian & Lehman (TOCE 2017), cùng với cấu trúc cú pháp của C.
 
+## 2b. Kiểm chứng dữ liệu và nhãn (30/09/2026)
+
+| Kiểm chứng | Kết quả | Artifact |
+|---|---|---|
+| Replay so với verdict lịch sử (policy khớp chính xác + exit 0, chọn trên train) | 98,42% trong 28.081 ô test | `research/runs/replay-v2-20260930/` |
+| Replay độc lập lần 2 từ commit sạch | 99,68% ô test trùng; 56 bài dao động bị loại (A5) | `research/runs/replay-reproducibility-20260930.json` |
+| Audit nhãn mẫu 1 (64 ca train/validation, AI thực hiện) | 53/53 nhãn đơn đúng; 6 ca bị loại lẽ ra có nhãn → sửa bộ phân loại v1.1 (A6) | `research/runs/label-audit-20260930/` |
+| Audit nhãn mẫu 2 (29 ca mới, không trùng mẫu 1) | 29/29 khớp; tổng nhãn đơn 79/79, cận dưới Wilson 95% ≈ 0,954 | `research/runs/label-audit-v1.1-20260930/` |
+
+Audit do trợ lý AI thực hiện, **không phải người chấm độc lập**. Gói audit có sẵn
+để hai người am hiểu C chấm độc lập theo quy trình `docs/teacher_validation.md`.
+
+Benchmark dùng cho đánh giá: 750 sự kiện sửa → 339 nhãn đơn cơ chế (MULTI 406 ca bị loại
+khỏi gold); 3.320 mutant tiêm lỗi trên 9 loại. Thống kê đầy đủ:
+`research/runs/mechanism-bench-v1.1/stats.json`.
+
 ## 3. Biểu diễn so sánh
 
 | Mã | Nội dung | Ghi chú |
@@ -60,10 +76,11 @@ Từ `misconceptions-prototype`, sau khi đã có `.cache/cpack-v3`:
 
 ```text
 docker build -t aai-c-replay:1 sandbox-replay
-python scripts/replay_cpack.py --data ../.cache/cpack-v3 --split-lock ../research/splits/cpack-v3.json --output ../.cache/cpack-replay-v1
-python scripts/build_mechanism_benchmark.py --data ../.cache/cpack-v3 --replay ../.cache/cpack-replay-v1 --split-lock ../research/splits/cpack-v3.json --output ../.cache/mechanism-bench-v1
+python scripts/replay_cpack.py --data ../.cache/cpack-v3 --split-lock ../research/splits/cpack-v3.json --output ../.cache/cpack-replay-v2
+python scripts/build_mechanism_benchmark.py --data ../.cache/cpack-v3 --replay ../.cache/cpack-replay-v2 --split-lock ../research/splits/cpack-v3.json --output ../.cache/mechanism-bench-v1
+python scripts/relabel_repairs.py --data ../.cache/cpack-v3 --bench ../.cache/mechanism-bench-v1 --audit ../research/runs/label-audit-20260930/audit_decisions.json --output ../.cache/mechanism-bench-v1.1
 python scripts/run_mechanism_eval.py --partition validation ...
-python scripts/run_mechanism_eval.py --partition test --penalty <giá trị chốt từ validation> ...
+python scripts/run_mechanism_eval.py --partition test --scopes partition full --penalty 1.0 ...
 ```
 
 Runner replay tách khỏi runner của app học viên. Test mặc định không thực thi

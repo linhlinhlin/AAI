@@ -1,0 +1,157 @@
+{
+  "schema": "mechanism_rules_v1",
+  "algorithm": "ILA-2",
+  "penalty": 1.0,
+  "attributes": "problem-agnostic evidence (agg:*, code:*)",
+  "trained_on": "243 training-partition repair-grounded items of C-Pack-IPAs",
+  "held_out": {
+    "seen_problems": {
+      "macro_f1": 0.25555555555555554,
+      "coverage": 0.6896551724137931,
+      "selective_accuracy": 0.7,
+      "n": 29
+    },
+    "unseen_problems": {
+      "macro_f1": 0.35416666666666663,
+      "coverage": 1.0,
+      "selective_accuracy": 0.5,
+      "n": 8
+    }
+  },
+  "test_results_sha256": "cee0c4ea455f7bbf43c64a7815937122b56bae78905e79832a00127c9135bfb0",
+  "status": "hypothesis_rules_not_diagnoses",
+  "rules": [
+    {
+      "if": {
+        "code:output_calls": "0"
+      },
+      "then": "MISSING_STATEMENT",
+      "train_true_positives": 10,
+      "train_false_positives": 0,
+      "train_precision": 1.0
+    },
+    {
+      "if": {
+        "code:input_calls": "0"
+      },
+      "then": "MISSING_STATEMENT",
+      "train_true_positives": 8,
+      "train_false_positives": 0,
+      "train_precision": 1.0
+    },
+    {
+      "if": {
+        "agg:numbers": "format_only"
+      },
+      "then": "OUTPUT_FORMAT",
+      "train_true_positives": 8,
+      "train_false_positives": 0,
+      "train_precision": 1.0
+    },
+    {
+      "if": {
+        "agg:newline_end": "same",
+        "agg:numbers": "fewer"
+      },
+      "then": "OUTPUT_TEXT",
+      "train_true_positives": 7,
+      "train_false_positives": 0,
+      "train_precision": 1.0
+    },
+    {
+      "if": {
+        "agg:status": "timeout"
+      },
+      "then": "LOOP_BOUNDARY",
+      "train_true_positives": 4,
+      "train_false_positives": 0,
+      "train_precision": 1.0
+    },
+    {
+      "if": {
+        "agg:prefix": "truncated"
+      },
+      "then": "OUTPUT_TEXT",
+      "train_true_positives": 78,
+      "train_false_positives": 1,
+      "train_precision": 0.9873417721518988
+    },
+    {
+      "if": {
+        "agg:whitespace_only": "yes"
+      },
+      "then": "OUTPUT_TEXT",
+      "train_true_positives": 97,
+      "train_false_positives": 10,
+      "train_precision": 0.9065420560747663
+    },
+    {
+      "if": {
+        "agg:text": "extra_words"
+      },
+      "then": "OUTPUT_TEXT",
+      "train_true_positives": 20,
+      "train_false_positives": 4,
+      "train_precision": 0.8333333333333334
+    },
+    {
+      "if": {
+        "agg:status": "runtime_error"
+      },
+      "then": "CONTROL_FLOW",
+      "train_true_positives": 13,
+      "train_false_positives": 3,
+      "train_precision": 0.8125
+    },
+    {
+      "if": {
+        "agg:numbers": "other",
+        "code:output_calls": "2"
+      },
+      "then": "COMPUTATION",
+      "train_true_positives": 4,
+      "train_false_positives": 1,
+      "train_precision": 0.8
+    },
+    {
+      "if": {
+        "agg:text": "missing_words",
+        "code:output_calls": "1"
+      },
+      "then": "LOOP_BOUNDARY",
+      "train_true_positives": 4,
+      "train_false_positives": 1,
+      "train_precision": 0.8
+    },
+    {
+      "if": {
+        "agg:numbers": "none",
+        "code:loop_starts_nonzero": "1"
+      },
+      "then": "OUTPUT_TEXT",
+      "train_true_positives": 3,
+      "train_false_positives": 2,
+      "train_precision": 0.6
+    },
+    {
+      "if": {
+        "agg:fail_fraction": "some",
+        "code:modulo": "1"
+      },
+      "then": "COMPUTATION",
+      "train_true_positives": 3,
+      "train_false_positives": 2,
+      "train_precision": 0.6
+    },
+    {
+      "if": {
+        "agg:fail_fraction": "most",
+        "code:init_zero": "1"
+      },
+      "then": "COMPUTATION",
+      "train_true_positives": 8,
+      "train_false_positives": 7,
+      "train_precision": 0.5333333333333333
+    }
+  ]
+}

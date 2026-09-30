@@ -3,6 +3,42 @@
 Cập nhật triển khai: **27/09/2026**. Khảo sát tài liệu đang giữ mốc
 **26/09/2026**. Báo cáo này mô tả mã và kết quả đã có, không bổ sung tuyên bố SOTA.
 
+## Cập nhật 30/09/2026: tự chuẩn bị dữ liệu và kiểm chứng xem "rổ" có đúng không
+
+**Vấn đề.** Trước đây ta gom các bài sai vào "rổ" theo test bị trượt, nhưng không biết rổ có
+gom đúng *loại lỗi* hay không, vì không ai cho ta đáp án.
+
+**Cách tự làm đáp án (không cần thầy, không cần gán nhãn tay):**
+
+1. **Chạy lại toàn bộ 8.607 bài** trong một "phòng kín" an toàn: không mạng, giới hạn thời gian
+   và bộ nhớ. Kết quả khớp **98,42%** với hệ thống chấm cũ của trường, nên dữ liệu đáng tin.
+2. **Dùng chính bài sửa của sinh viên.** Sinh viên nộp sai, sau đó nộp lại và đạt. Máy thử bỏ
+   dần các thay đổi thừa, mỗi lần thử đều chạy thật, cho tới khi chỉ còn *đúng phần sửa cần thiết*.
+   Phần sửa đó cho biết lỗi nằm ở đâu: biên vòng lặp, điều kiện if, khởi tạo biến, định dạng in…
+   Kết quả: **339 bài có đáp án rõ ràng một loại lỗi**.
+3. **Tự "gài lỗi" có kiểm soát** vào 3.320 bản sao của các bài đúng, mỗi bản chỉ một lỗi biết trước.
+
+**Kết quả chính (đã đăng ký trước cách chấm, chạy tập kiểm tra đúng một lần):**
+
+- **Chỉ nhìn test trượt thì không đủ.** Hai bài trượt *cùng* các test thường sai *khác* nhau:
+  35,5% (bài thật) và 81,6% (bài gài lỗi). Dù thông minh đến đâu, máy chỉ đọc test trượt cũng
+  chỉ xếp đúng tối đa khoảng 74% bài thật và 51% bài gài lỗi.
+- **Nhìn thêm output in ra thì tốt hơn.** Trên bài gài lỗi, độ khớp của rổ với loại lỗi (ARI)
+  tăng từ 0,09 lên khoảng 0,33. Trên bài thật, mức tăng nhỏ và chưa chắc chắn về thống kê, vì
+  phần lớn lỗi thật là lỗi in sai chữ/xuống dòng, vốn đã dễ nhận ra.
+- **Mô hình AI đọc code (embedding) gom theo "ai viết" chứ không theo "sai gì".** Đây là cảnh
+  báo khi dùng AI để gom lỗi.
+- **Luật NẾU–THÌ (thuật toán ILA-2, bản cải tiến của ILA mà đề nêu)** học được các luật dễ đọc,
+  ví dụ "NẾU output là phần đầu bị cụt của đáp án THÌ lỗi văn bản in" (đúng 78/79 bài). Luật
+  dùng được cả cho bài tập mới.
+
+**Trong app:** mỗi nhóm bài của lớp giờ có một dòng "Giả thuyết cơ chế", kèm độ chính xác đã đo,
+một câu hỏi kiểm tra nhanh và gợi ý giảng lại. Không luật nào khớp thì app nói "không đoán".
+
+**Bài báo:** bản tiếng Anh `paper/manuscript.pdf` và bản dịch `paper/vi/manuscript.pdf`.
+Còn thiếu trước khi nộp: hai người am hiểu C chấm lại nhãn một cách độc lập, thêm một bộ dữ liệu
+thứ hai, và thầy hướng dẫn đọc duyệt.
+
 ## Giải thích như kể chuyện cho trẻ nhỏ
 
 Tưởng tượng cả lớp đang dạy những con robot biết đếm. Một số robot đếm sai.

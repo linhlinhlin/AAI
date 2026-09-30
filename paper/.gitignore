@@ -1,0 +1,7 @@
+# TeX by-products; manuscripts are rebuilt by paper/build.py
+*.log
+*.blg
+*.aux
+__pycache__/
+vi/references.bib
+vi/figures/

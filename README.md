@@ -34,6 +34,15 @@ Mở `http://127.0.0.1:8766` để đăng ký học viên. Đường dẫn thi�
 đầu tiên được in trong terminal. Đây là app local; xem hướng dẫn trước khi
 vận hành qua Internet. Dữ liệu lớp học mới tách khỏi bộ dữ liệu nghiên cứu.
 
+## Nghiên cứu đề 5 — cập nhật 30/09/2026
+
+Nhóm tự chuẩn bị dữ liệu: chạy lại 8.607 bài C-Pack-IPAs trong môi trường cách ly, tạo nhãn cơ chế từ bản sửa tối thiểu đã kiểm chứng của chính sinh viên và bộ tiêm lỗi có kiểm soát, rồi đánh giá theo protocol đăng ký trước.
+
+- [Benchmark cơ chế và cách tái lập](docs/mechanism-benchmark.md)
+- [Trạng thái và kết quả kiểm định](research/STATE.md)
+- [Bản thảo bài báo (EN)](paper/manuscript.pdf) · [bản dịch tiếng Việt](paper/vi/manuscript.pdf)
+- [Báo cáo dễ hiểu](docs/bao_cao_de5_de_hieu.md)
+
 ## Nghiên cứu đề 5 — cập nhật 26/09/2026
 
 Nhóm tự tìm dữ liệu công khai; mục tiêu là nghiên cứu cơ chế lỗi có bằng chứng,

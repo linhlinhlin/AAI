@@ -1,0 +1,83 @@
+\section{Data and benchmark construction}\label{sec:data}
+
+\subsection{Corpus and isolated replay}\label{sec:replay}
+We use the canonical submissions of C-Pack-IPAs release~26 \citep{orvalho2024cpack}: {{n_submissions}} C90 programs by {{n_students}} anonymised students for 25 assignments of three laboratory classes, with {{n_tests}} input/output tests. The historical logs record a verdict per test but often no output for passing tests, and {{n_not_run_cells}} test cells were never executed or not logged. To obtain complete execution evidence we replayed every non-empty program in a research-only container: no network, read-only root file system, all Linux capabilities dropped except those needed to switch to an unprivileged per-run user, and resource limits of {{cpu_limit}}~s CPU, {{wall_limit}}~s wall time and 512~MiB of address space per test. Programs were compiled with \texttt{gcc} {{gcc_version}} and the course flags (\texttt{-ansi -pedantic -Wall -Wextra}); because the course also used \texttt{-Werror}, we recorded whether compilation was warning-free instead of rejecting the program. The container returns raw output bytes; oracles stay on the host, which decides every verdict.
+
+The replay agreed with {{audit_cells_pct}}\% of the {{audit_cells}} historical test verdicts under the exact-match, zero-exit policy (selected on the training partition among four comparison policies; \cref{tab:audit}), reproduced the logged output of {{audit_stdout_pct}}\% of historically wrong answers byte for byte, and matched the historical compilation outcome under \texttt{-Werror} semantics for {{audit_compile_pct}}\% of programs. A second, independent replay from a clean commit agreed on {{repro_cells_pct}}\% of test cells; the {{n_unstable}} programs whose outcomes differed between the two replays (likely undefined behaviour) were excluded from all items (amendment~A5).
+
+\begin{table}[t]
+\centering
+\caption{Agreement (\%) of the isolated replay with the historical per-test verdicts under four output comparison policies. The policy was chosen on the training partition before any mechanism label existed.}\label{tab:audit}
+\small
+\begin{tabular}{lrrr}
+\toprule
+Comparison policy & Train & Validation & Test \\
+\midrule
+{{table_audit}}
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Split}
+Submissions were split before any label existed into training, validation and test partitions (70/15/15\% of connected components) such that all submissions of a student, across years and assignments, and all byte-identical sources fall into one partition. Every derived item inherits the partition of the submission it comes from.
+
+\subsection{Repair-grounded labels}\label{sec:real}
+For every failing submission (at least one test not passed) we looked for the same student's next submission to the same assignment in the same year that passed every test. For each such repair event we kept the latest failing attempt before it (amendment~A2), giving {{n_pairs}} failing--repaired pairs. The line difference between the two programs, ignoring indentation, was split into hunks. Hunk-level delta debugging \citep{zeller2002ddmin} then searched for a 1-minimal subset of hunks whose application to the failing program makes it pass every test, executing every candidate in the isolated runner (budget {{ddmin_budget}} probes per pair). Both endpoints were re-verified in the same runner before the search. The verified minimal change was classified into one of twelve program-level categories (\cref{tab:taxonomy}) by a deterministic classifier that works on each verified line hunk: whole statements that were inserted or deleted are recognised after sliding the token run to statement boundaries, identical lines that were deleted and re-inserted elsewhere are placement changes, and every other changed token is attributed to its innermost role-defining syntactic context (loop header, branch condition, initialiser, output format, and so on). A pair receives a single-mechanism label only when its minimal repair falls into exactly one category other than \textsc{Other}; repairs spanning several categories are kept as \textsc{Multi} and excluded from the primary gold. The repairing submission, the patch and the label are never used as features.
+
+\subsection{Controlled mechanism injection}\label{sec:injected}
+Real repairs are ecologically valid but noisy, imbalanced and specific to what students happened to do. We therefore also built a controlled benchmark. From accepted, warning-free programs (at most {{max_sources}} per assignment, one per student and year) we generated single-edit mutants with operators aligned with the same taxonomy: strictness of a loop or branch comparison, logical connective, loop start, constant initialiser, arithmetic operator, removed float cast or float literal, printf precision, dropped trailing newline, letter case of output text, deleted statement, duplicated statement, and statements moved into a loop. One random site per category and source was mutated with a fixed seed. A mutant was kept only if it compiled without warnings and failed at least one test, i.e., if it could have been a real failing submission of the course. A unit test checks that the classifier of \cref{sec:real} assigns every operator's inverse edit to the operator's category, so both label sets share one definition.
+
+\begin{table}[t]
+\centering
+\caption{Program-level mechanism taxonomy. A category describes what the verified minimal repair (or the injected edit) changes; the right column lists misconception hypotheses an instructor may check, not diagnoses.}\label{tab:taxonomy}
+\small
+\begin{tabular}{p{2.9cm}p{4.9cm}p{4.6cm}}
+\toprule
+Category & The minimal change edits\dots & Hypotheses to check \\
+\midrule
+Loop boundary & condition, start or update of a loop & off-by-one, 0- vs 1-based ranges \\
+Branch condition & condition or structure of if/switch/else & boundary of comparisons, \texttt{\&\&} vs \texttt{||} \\
+Initialisation & a declaration initialiser or constant assignment outside loops & accumulator or extremum initialisation \\
+Computation & operators or operands of assignments, returns, printed expressions & formula, precedence \\
+Numeric type & types, casts, float literals, math functions & integer division \\
+Output format & printf conversion specifications & precision, width \\
+Output text & literal output text or print-only statements & reading the output specification \\
+Input & scanf/getchar calls & input format, end of file \\
+Statement placement & a moved statement or brace & scope of blocks, reset inside loops \\
+Missing statement & inserted whole statements & missing update or case \\
+Extra statement & deleted whole statements & duplicated update, debug output \\
+Control flow & break/continue/return & premature exit \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Methods}\label{sec:methods}
+
+\subsection{Object--attribute--value representations}\label{sec:reps}
+Every failing program (the object) is described by categorical attributes. All representations are computed from the failing program and its own replayed runs only. Vocabularies are fitted, without labels, on training-partition failing submissions of the same assignment; values unseen in training are mapped to \emph{unknown}.
+\begin{itemize}
+\item \textbf{Outcomes} (the test-case OAV of the classic formulation): one attribute per test with value pass, fail, runtime error or timeout.
+\item \textbf{Structural}: presence of 16 C constructs (loop kinds, inclusive/strict comparisons, subscripts, pointers, \dots).
+\item \textbf{Outcomes+stdout} and \textbf{Combined+stdout}: the strongest representations of our earlier pipeline, adding per-test output relations (exact, whitespace, empty, another test's oracle, different) and edit-distance bands, and in the combined case also the structural block.
+\item \textbf{Deviation} (proposed): the outcome block plus, per test, nine label-free descriptors of \emph{how} the output deviates from the oracle---line count, trailing newline, whitespace-only difference, relation between corresponding numbers (off by one, truncated, precision, sign, zero, scale, format only), relation between words (case only, typo, missing or extra words), position of the first differing line, prefix relations and equality with another test's oracle---and the same descriptors aggregated over failing tests, which are problem-agnostic.
+\item \textbf{Evidence} (proposed): deviation plus eighteen static code cues (strict and inclusive loop comparisons, non-zero loop start, constant initialisers, division without a float operand, casts, printf precisions, output inside loops, output words absent from every oracle, \dots).
+\item \textbf{Embedding}: a frozen code embedding of the raw source (Qwen3-Embedding-0.6B, \citealt{zhang2025qwen3embedding}), L2-normalised.
+\end{itemize}
+Block masses were fixed in the registered protocol before any evaluation and were not tuned (outcomes $1$; outcomes+stdout $0.6/0.4$; combined+stdout $0.48/0.12/0.4$; deviation $0.3$ tests, $0.4$ per-test deviation, $0.3$ aggregate; evidence $0.2/0.3/0.2$ and $0.3$ code cues).
+
+\subsection{Clustering and rules}
+Each assignment's failing programs form a cohort that is clustered transductively. K-means runs on the one-hot encoding scaled by the square root of the attribute weights (seeds 7, 42, 91), and agglomerative clustering uses average linkage on the weighted Hamming distance; embeddings use Euclidean K-means and cosine distance. The primary analysis gives every method the number of gold categories present in the cohort (\emph{oracle} $k$, capped by the number of distinct representation patterns), which isolates the representation from model selection; a secondary analysis selects $k\in[2,10]$ by silhouette without labels. The cheapest baseline groups identical test signatures.
+
+For IF--THEN rules we use ILA \citep{tolun1998ila} and ILA-2 \citep{tolun1999ila2} over problem-agnostic attributes: the aggregated deviation descriptors and code cues (\emph{evidence}), or only the aggregated outcome state and the fraction of failing tests (\emph{outcome summary}). Rules are induced from training-partition labels, applied in precision order, and examples matched by no rule are counted as abstentions and errors. The ILA-2 penalty factor was the only quantity tuned, on the validation partition among $\{1,2,5\}$. We compare with a depth-4 CART tree on the same attributes and with the majority class, on seen assignments with unseen students, and on unseen assignments (laboratory~4) with unseen students.
+
+\subsection{Measures and registered hypotheses}\label{sec:hyp}
+The primary measure is the adjusted Rand index (ARI; \citealt{hubert1985ari}) between a cohort's clusters and its gold categories, macro-averaged over cohorts with at least six items and two categories; we also report adjusted mutual information \citep{vinh2010ami}, pairwise F1 and purity. The \emph{identifiability ceiling} of a representation is $\sum_b \max_y n_{b,y}/N$ over its buckets $b$ of identical attribute vectors: no clustering or classifier that only reads the representation can exceed it. Because deviation OAV refines the outcome OAV, its ceiling cannot be lower; we therefore compare it with the expected ceiling of a random refinement that splits every outcome bucket into sub-buckets of the same sizes (200 permutations).
+
+The protocol, registered before any mechanism evaluation, states five hypotheses with falsification criteria (seven dated amendments were recorded before the sealed test run, six of them before any evaluation result; \cref{app:protocol}):
+H1a, identical test signatures mix mechanisms (the upper 95\% bound of the mean outcome ceiling is below $0.95$);
+H1b, the refinement added by deviation OAV carries mechanism information beyond its granularity;
+H2, deviation OAV yields higher ARI than outcome OAV;
+H3, evidence OAV yields higher ARI than the strongest earlier baseline, combined+stdout;
+H4, ILA-2 rules over agnostic evidence reach a higher test macro-F1 than rules over the outcome summary on the real benchmark;
+H5, on the injected benchmark, frozen code-embedding clusters align more with the source program than with the injected mechanism.
+Differences are summarised by their mean over cohorts with a 95\% bootstrap interval (10{,}000 resamples) and Wilcoxon signed-rank tests with Holm correction; rule comparisons use a bootstrap over students. A hypothesis is supported only when the interval of the difference excludes zero in the stated direction on every benchmark it names. Because real single-mechanism items are sparse in the sealed test partition ({{real_test_cohorts}} eligible cohorts), the registered amendment A3 evaluates clustering on the real benchmark over full per-assignment cohorts (clustering fits nothing on labels); the injected benchmark is evaluated on test-partition cohorts, with full cohorts reported in the released results. Rule induction always trains on the training partition and is scored on the test partition.

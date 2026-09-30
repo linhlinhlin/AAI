@@ -1,0 +1,57 @@
+% Bản thảo tiếng Việt — bản dịch làm việc của paper/manuscript_template.tex (bản tiếng Anh là bản nộp).
+% Sinh bởi paper/build.py từ các run đã đăng ký; chỉ sửa tệp mẫu này hoặc sections/, không sửa manuscript.tex.
+\documentclass[a4paper,preprint,12pt,authoryear]{elsarticle}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+\usepackage[hidelinks,hypertexnames=false]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+\usepackage{microtype}
+\usepackage{float}
+\setlength{\emergencystretch}{3em}
+\pdfpagewidth=\paperwidth \pdfpageheight=\paperheight
+\crefname{section}{Mục}{Mục}\Crefname{section}{Mục}{Mục}
+\crefname{subsection}{Mục}{Mục}\Crefname{subsection}{Mục}{Mục}
+\crefname{figure}{Hình}{Hình}\Crefname{figure}{Hình}{Hình}
+\crefname{table}{Bảng}{Bảng}\Crefname{table}{Bảng}{Bảng}
+\crefname{appendix}{Phụ lục}{Phụ lục}\Crefname{appendix}{Phụ lục}{Phụ lục}
+\renewcommand{\appendixname}{Phụ lục}
+\abstracttitle{Tóm tắt}
+\keywordtitle{Từ khóa}
+\AtBeginDocument{\renewcommand{\figurename}{Hình}\renewcommand{\tablename}{Bảng}\renewcommand{\refname}{Tài liệu tham khảo}}
+\makeatletter
+\g@addto@macro\appendix{\@addtoreset{table}{section}\@addtoreset{figure}{section}}
+\makeatother
+\myfooter[L]{Bản dịch tiếng Việt — bản nộp là bản tiếng Anh}
+\journal{Comput. Educ.: Artif. Intell.}
+
+\begin{document}
+\begin{frontmatter}
+
+\title{Khi test trượt là chưa đủ: đánh giá phân cụm quan niệm sai lầm trong bài lập trình C bằng nhãn từ bản sửa của chính sinh viên}
+
+\begin{abstract}
+%%INCLUDE sections/abstract.tex
+\end{abstract}
+
+\begin{keyword}
+giáo dục lập trình \sep quan niệm sai lầm \sep phân cụm \sep sửa lỗi chương trình \sep quy nạp luật \sep khai phá dữ liệu giáo dục
+\end{keyword}
+
+\end{frontmatter}
+
+%%INCLUDE sections/intro.tex
+%%INCLUDE sections/related.tex
+%%INCLUDE sections/methods.tex
+%%INCLUDE sections/results.tex
+%%INCLUDE sections/discussion.tex
+%%INCLUDE sections/conclusion.tex
+
+\appendix
+%%INCLUDE sections/appendix.tex
+
+\bibliographystyle{elsarticle-harv}
+\bibliography{references}
+
+\end{document}
