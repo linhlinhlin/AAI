@@ -13,8 +13,8 @@ const VIEWS = {
   'nghien-cuu': {title: 'Nghiên cứu', render: viewStudy},
 };
 const SOURCE_LABEL = {
-  exercise_rule: 'Luật riêng của bài',
-  c_rule: 'Luật chung cho C',
+  exercise_rule: 'Luật viết tay cho bài này',
+  c_rule: 'Luật viết tay cho mọi bài C',
   cpack_rule: 'Luật ILA-2 học từ C-Pack',
 };
 const OUTCOME = {
@@ -127,14 +127,14 @@ function announce(text) {
 const reducedMotion = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 let toastTimer;
-function toast(message, action) {
+function toast(message, action, sticky = false) {
   clearTimeout(toastTimer);
   const parts = [h('span', {text: message})];
   if (action?.href) parts.push(h('a', {href: action.href, text: action.label, onclick: hideToast}));
   if (action?.run) parts.push(h('button', {type: 'button', text: action.label, onclick: () => { hideToast(); action.run(); }}));
-  if (action) parts.push(h('button', {type: 'button', class: 'icon-btn', 'aria-label': 'Đóng thông báo', onclick: hideToast}, icon('close')));
+  if (action || sticky) parts.push(h('button', {type: 'button', class: 'icon-btn', 'aria-label': 'Đóng thông báo', onclick: hideToast}, icon('close')));
   toastBox.replaceChildren(...parts);
-  if (!action) toastTimer = setTimeout(hideToast, 4000);
+  if (!action && !sticky) toastTimer = setTimeout(hideToast, 4000);
 }
 function hideToast() {
   clearTimeout(toastTimer);
@@ -399,12 +399,12 @@ function cohortContent(source, report) {
   };
   const refreshTab = (group) => {
     const tab = tabs.querySelector(`[data-index="${group.index}"]`);
-    tab?.replaceChildren(...groupTabContent(group));
+    tab?.replaceChildren(...groupTabContent(report, group));
   };
   for (const group of report.groups) {
     tabs.append(h('button', {type: 'button', role: 'tab', class: 'group-tab', id: `group-tab-${group.index}`,
       'data-index': String(group.index), 'aria-controls': 'group-panel',
-      onclick: (event) => select(group.index, event.detail > 0)}, groupTabContent(group)));
+      onclick: (event) => select(group.index, event.detail > 0)}, groupTabContent(report, group)));
   }
   tabs.addEventListener('keydown', (event) => {
     const list = [...tabs.children];
@@ -418,8 +418,15 @@ function cohortContent(source, report) {
     select(Number(target.dataset.index), false);
   });
   select(selected, false);
+  const several = report.groups.length > 1;
   return [summary, h('div', {class: 'workspace'},
-    h('div', {class: 'groups'}, tabs, h('p', {class: 'method', text: methodLine(report)})),
+    h('div', {class: 'groups'}, tabs,
+      several && h('div', {class: 'strip-legend', 'aria-hidden': 'true'},
+        h('p', {text: 'Mỗi ô là một test, theo thứ tự của đề:'}),
+        h('span', null, h('span', {class: 'cell', 'data-level': '0'}), 'cả nhóm đạt'),
+        h('span', null, h('span', {class: 'cell', 'data-level': '1'}), 'một số trượt'),
+        h('span', null, h('span', {class: 'cell', 'data-level': '2'}), 'đa số trượt')),
+      h('p', {class: 'method', text: methodLine(report)})),
     panel)];
 }
 
@@ -427,17 +434,24 @@ function methodLine(report) {
   if (report.n_failing < 4 || report.k === 1 && report.silhouette == null && report.groups.length === 1) {
     return 'Cần ít nhất 4 bài sai với cách trượt khác nhau để chia nhóm.';
   }
-  const how = report.silhouette == null ? 'do bạn chọn' : `theo silhouette ${decimal(report.silhouette)}`;
-  return `K-means trên kết quả test và cách output lệch; k = ${report.k} ${how}.`;
+  const how = report.silhouette == null ? 'do bạn chọn' : `chọn theo silhouette ${decimal(report.silhouette)}`;
+  return `Gom bằng K-means trên kết quả test và cách output lệch; k = ${report.k}, ${how}.`;
 }
 
-function groupTabContent(group) {
+function signature(group) {
+  return h('span', {class: 'strip', 'aria-hidden': 'true'}, group.tests.map((row) => {
+    const share = row.failing / row.size;
+    return h('span', {class: 'cell', 'data-level': share >= 0.6 ? '2' : share > 0 ? '1' : '0'});
+  }));
+}
+
+function groupTabContent(report, group) {
   const review = group.review?.status;
   return [
     h('span', {class: 'group-top'}, h('b', {text: `Nhóm ${group.index}`}),
-      h('span', {class: 'num', text: `${group.size} bài · ${percent(group.share)}`})),
+      h('span', {class: 'num', text: `${group.size}/${report.n_failing} bài`})),
     h('span', {class: 'group-title', text: group.title}),
-    h('span', {class: 'share', 'aria-hidden': 'true'}, h('span', {vars: {'--w': percent(group.share)}})),
+    report.groups.length > 1 && signature(group),
     h('span', {class: 'group-tags'},
       !group.hypothesis && (group.mixed ? tag(`Trộn ${group.mixed.length} giả thuyết`, 'warn') : tag('Chưa có giả thuyết')),
       review === 'confirmed' && tag('Đã xác nhận', 'pass', 'check'),
@@ -448,25 +462,25 @@ function groupTabContent(group) {
 function groupPanel(source, report, group, onReviewSaved) {
   const hypothesis = group.hypothesis;
   const head = h('header', {class: 'panel-head'},
-    h('p', {class: 'panel-meta num', text: `Nhóm ${group.index} · ${group.size} bài · ${percent(group.share)} số bài sai`}),
+    h('div', {class: 'panel-top'},
+      h('p', {class: 'panel-meta num', text: `Nhóm ${group.index} · ${group.size}/${report.n_failing} bài sai`}),
+      verdictControl(source, report, group, onReviewSaved)),
     h('h2', {text: group.title}),
     hypothesis && h('p', {class: 'hypothesis-line'},
       tag(SOURCE_LABEL[hypothesis.source], 'accent'),
       h('span', {class: 'num', text: `khớp ${hypothesis.matched}/${hypothesis.size} bài`
         + (hypothesis.source === 'cpack_rule' ? '' : ` · loại lỗi: ${hypothesis.family}`)})),
     hypothesis?.statement && h('p', {class: 'statement', text: hypothesis.statement}));
-  const advice = hypothesis
-    ? h('dl', {class: 'advice'},
-      h('dt', {text: 'Hỏi nhanh'}), h('dd', {text: hypothesis.check}),
-      h('dt', {text: 'Dạy lại'}), h('dd', {text: hypothesis.reteach}))
+  const teaching = hypothesis
+    ? teachingCards(hypothesis)
     : group.mixed
       ? h('div', {class: 'no-hypothesis'},
-        h('p', {text: `Các bài trong nhóm khớp ${group.mixed.length} luật khác nhau và không luật nào khớp quá nửa nhóm: cùng cách trượt test nhưng chưa chắc cùng một lỗi. Nên xem và dạy riêng từng trường hợp.`}),
+        h('p', {text: `Các bài trong nhóm khớp ${group.mixed.length} luật khác nhau, không luật nào khớp quá nửa nhóm: cùng cách trượt test nhưng chưa chắc cùng một lỗi. Nên xem và dạy riêng từng trường hợp.`}),
         h('ul', {class: 'observations'}, group.mixed.map((item) => h('li', null,
           h('span', {text: item.title}), h('span', {class: 'count', text: `${item.count} bài`})))))
       : h('p', {class: 'no-hypothesis', text: 'Chưa có luật nào khớp quá nửa nhóm. Mở bài tiêu biểu để tự nhận định lỗi chung.'});
   const evidence = h('div', {class: 'evidence'},
-    h('section', {class: 'block'}, h('h3', {text: 'Số bài trượt từng test'}), testBars(group)),
+    h('section', {class: 'block'}, h('h3', {text: 'Tỷ lệ trượt từng test'}), testBars(report, group)),
     (group.observations.length || group.rule) && h('div', {class: 'block-stack'},
       group.observations.length > 0 && h('section', {class: 'block'},
         h('h3', {text: 'Output lệch thế nào'}),
@@ -474,19 +488,33 @@ function groupPanel(source, report, group, onReviewSaved) {
           h('span', {text: o.text}), h('span', {class: 'count', text: `${o.count}/${o.size}`}))))),
       group.rule && ruleBlock(group.rule)),
     group.verified && verifiedBlock(group));
-  return [head, advice, evidence, membersBlock(source, report, group), reviewForm(source, report, group, onReviewSaved)];
+  return [head, teaching, evidence, membersBlock(source, report, group), noteBlock(source, report, group, onReviewSaved)];
 }
 
-function testBars(group) {
-  return h('ol', {class: 'test-bars'}, group.tests.map((row) => {
-    const clear = row.failing === 0;
+function teachingCards(hypothesis) {
+  return h('div', {class: 'teach'},
+    h('section', {class: 'teach-card'}, h('h3', {text: 'Câu hỏi kiểm tra'}), h('p', {text: hypothesis.question})),
+    h('section', {class: 'teach-card'}, h('h3', {text: 'Hoạt động dạy lại'}), h('p', {text: hypothesis.activity})));
+}
+
+function testBars(report, group) {
+  const others = report.groups.filter((g) => g !== group);
+  const otherSize = others.reduce((n, g) => n + g.size, 0);
+  const list = h('ol', {class: 'test-bars'}, group.tests.map((row, i) => {
+    const share = row.failing / row.size;
+    const rest = otherSize ? others.reduce((n, g) => n + g.tests[i].failing, 0) / otherSize : null;
     const outcome = row.outcome && row.outcome !== 'fail' ? ` (${OUTCOME[row.outcome]?.text})` : '';
-    return h('li', {class: 'test-bar', 'data-clear': String(clear), title: `${row.name}: ${row.failing}/${row.size} bài không đạt${outcome}`},
+    const spoken = `${row.failing} trên ${row.size} bài trượt${outcome}` + (rest == null ? '' : `; các nhóm khác ${percent(rest)}`);
+    return h('li', {class: 'test-bar', 'data-clear': String(row.failing === 0), title: `${row.name}: ${spoken}`},
       h('span', {class: 'name', text: row.name}),
-      h('span', {class: 'track', 'aria-hidden': 'true'}, h('span', {vars: {'--w': percent(row.failing / row.size)}})),
-      h('span', {class: 'count', text: clear ? 'đạt' : `${row.failing}/${row.size}`}),
-      h('span', {class: 'sr-only', text: clear ? 'cả nhóm đạt' : `${row.failing} trên ${row.size} bài không đạt${outcome}`}));
+      h('span', {class: 'track', 'aria-hidden': 'true'},
+        h('span', {class: 'fill', vars: {'--w': percent(share)}}),
+        rest != null && h('span', {class: 'mark', vars: {'--m': percent(rest)}})),
+      h('span', {class: 'count', 'aria-hidden': 'true', text: row.failing ? `${row.failing}/${row.size}` : 'đạt'}),
+      h('span', {class: 'sr-only', text: spoken}));
   }));
+  return [list, otherSize > 0 && h('p', {class: 'legend', 'aria-hidden': 'true'},
+    h('span', {class: 'legend-bar'}), 'nhóm này', h('span', {class: 'legend-mark'}), 'các nhóm khác')];
 }
 
 function ruleBlock(rule) {
@@ -495,7 +523,7 @@ function ruleBlock(rule) {
   return h('section', {class: 'block'},
     h('h3', {text: 'Luật NẾU–THÌ cho nhóm'}),
     h('div', {class: 'rule'}, lines, h('span', {class: 'kw', text: 'THÌ'}), h('span', {text: 'bài thuộc nhóm này'})),
-    h('p', {class: 'rule-stats num', text: `Đúng ${rule.support}/${rule.matched} bài khớp luật · phủ ${rule.support}/${rule.size} bài của nhóm`}));
+    h('p', {class: 'rule-stats num', text: `Đúng với ${rule.support}/${rule.matched} bài khớp luật · bao ${rule.support}/${rule.size} bài của nhóm`}));
 }
 
 function verifiedBlock(group) {
@@ -540,40 +568,58 @@ function membersBlock(source, report, group) {
   return h('section', {class: 'block'}, h('h3', {text: `Bài trong nhóm (${group.size})`}), list, more);
 }
 
-function reviewForm(source, report, group, onSaved) {
-  const id = `review-${group.index}`;
+async function saveReview(source, report, group, change, onSaved) {
   const current = group.review || {status: 'open', note: ''};
+  const next = {status: change.status ?? current.status, note: change.note ?? current.note ?? ''};
+  try {
+    group.review = await api('/api/review', {source, problem: report.problem.id, group: group.key, ...next});
+    onSaved();
+    toast(change.note === undefined ? `Đã lưu đánh giá nhóm ${group.index}.` : `Đã lưu ghi chú nhóm ${group.index}.`);
+    return true;
+  } catch (error) {
+    toast(`Chưa lưu được: ${error.message}`, null, true);
+    return false;
+  }
+}
+
+function verdictControl(source, report, group, onSaved) {
+  const name = `review-${group.index}`;
+  const current = group.review?.status || 'open';
   const options = [['open', 'Chưa xem', null], ['confirmed', 'Đúng', 'check'], ['rejected', 'Không', 'cross']];
-  const note = h('textarea', {id: `${id}-note`, maxlength: '2000', rows: '2',
-    placeholder: 'Ví dụ: chữa bài tiêu biểu trên bảng trong 10 phút', value: current.note});
-  const status = h('span', {class: 'muted small', role: 'status'});
-  const submit = h('button', {type: 'submit', class: 'btn', text: 'Lưu đánh giá'});
-  const form = h('form', {class: 'review', onsubmit: async (event) => {
-    event.preventDefault();
-    const chosen = form.querySelector('input[type="radio"]:checked')?.value || 'open';
-    submit.disabled = true;
-    submit.setAttribute('aria-busy', 'true');
-    status.textContent = '';
-    try {
-      group.review = await api('/api/review', {source, problem: report.problem.id, group: group.key,
-        status: chosen, note: note.value});
-      onSaved();
-      toast(`Đã lưu đánh giá cho nhóm ${group.index}.`);
-    } catch (error) {
-      status.textContent = error.message;
-    } finally {
-      submit.disabled = false;
-      submit.removeAttribute('aria-busy');
-    }
-  }},
-  h('fieldset', null,
-    h('legend', {text: 'Nhóm này có chung một lỗi không?'}),
+  const control = h('div', {class: 'verdict-control', role: 'radiogroup', 'aria-labelledby': `${name}-label`},
+    h('span', {class: 'label', id: `${name}-label`, text: 'Cùng một lỗi?'}),
     h('div', {class: 'segmented'}, options.flatMap(([value, label, iconName]) => [
-      h('input', {type: 'radio', name: id, id: `${id}-${value}`, value, checked: current.status === value}),
-      h('label', {for: `${id}-${value}`}, iconName && icon(iconName), label)]))),
-  h('label', {class: 'label', for: note.id, text: 'Ghi chú cho buổi dạy'}), note,
-  h('div', {class: 'review-actions'}, submit, status));
-  return form;
+      h('input', {type: 'radio', name, id: `${name}-${value}`, value, checked: current === value,
+        onchange: async () => {
+          if (!await saveReview(source, report, group, {status: value}, onSaved)) {
+            const back = control.querySelector(`input[value="${group.review?.status || 'open'}"]`);
+            if (back) back.checked = true;
+          }
+        }}),
+      h('label', {for: `${name}-${value}`}, iconName && icon(iconName), label)])));
+  return control;
+}
+
+function noteBlock(source, report, group, onSaved) {
+  const id = `note-${group.index}`;
+  const existing = group.review?.note || '';
+  const textarea = h('textarea', {id, maxlength: '2000', rows: '3', value: existing,
+    placeholder: 'Ví dụ: chữa bài tiêu biểu trên bảng trong 10 phút'});
+  const save = h('button', {type: 'submit', class: 'btn', text: 'Lưu ghi chú'});
+  const form = h('form', {class: 'note-form', onsubmit: async (event) => {
+    event.preventDefault();
+    save.disabled = true;
+    save.setAttribute('aria-busy', 'true');
+    await saveReview(source, report, group, {note: textarea.value}, onSaved);
+    save.disabled = false;
+    save.removeAttribute('aria-busy');
+  }},
+  h('label', {class: 'sr-only', for: id, text: 'Ghi chú cho buổi dạy'}), textarea,
+  h('div', {class: 'review-actions'}, save));
+  return h('details', {class: 'note', open: Boolean(existing)},
+    h('summary', null, icon('chevron', 'chev'), 'Ghi chú cho buổi dạy',
+      existing && h('span', {class: 'muted small', text: '· đã có'})),
+    form);
 }
 
 // ---------- submission sheet ----------
@@ -777,8 +823,7 @@ function runResult(problem, result) {
         hypothesis.source !== 'cpack_rule' && h('span', {text: `loại lỗi: ${hypothesis.family}`})),
       h('h3', {text: hypothesis.title}),
       hypothesis.statement && h('p', {class: 'statement', text: hypothesis.statement}),
-      h('dl', {class: 'advice'}, h('dt', {text: 'Hỏi nhanh'}), h('dd', {text: hypothesis.check}),
-        h('dt', {text: 'Dạy lại'}), h('dd', {text: hypothesis.reteach})))
+      teachingCards(hypothesis))
       : h('p', {class: 'card no-hypothesis', text: 'Chưa có luật nào khớp bài này; nhóm lỗi sẽ rõ hơn khi phân tích cùng cả lớp.'})),
     result.run_id && addForm(problem, result.run_id),
   ];

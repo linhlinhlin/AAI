@@ -287,6 +287,9 @@ def serve(service, port=8770, open_browser=True):
             webbrowser.open(url)
         return
     holder["port"] = server.server_address[1]
+    if service.cpack.available().get("available"):
+        # Read the C-Pack cohorts in the background so the first visit does not wait.
+        threading.Thread(target=service.cpack.load, daemon=True).start()
     url = f"http://127.0.0.1:{holder['port']}/"
     print(f"AAI Lab: {url}  (keep this window open; Ctrl+C stops the app)", flush=True)
     if open_browser:

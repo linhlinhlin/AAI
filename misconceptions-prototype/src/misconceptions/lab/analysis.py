@@ -21,6 +21,7 @@ from ..mechanism_feedback import FEEDBACK
 from ..mechanism_hypotheses import agnostic_values, load_rules, match
 from ..semantic_rules import diagnose
 from .phrases import ORDER, WEAK, condition_phrase, deviation_phrase, quoted
+from .teaching import CATEGORY, advice
 
 MASSES = {"test": 0.3, "dev": 0.4, "agg": 0.3}  # The registered 'deviation' representation.
 MAX_K = 6
@@ -30,7 +31,7 @@ AUTHORED_CATEGORY = {
     "SUM_INPUT": "COMPUTATION", "SUM_SQUARE": "COMPUTATION", "SUM_PREVIOUS": "LOOP_BOUNDARY",
     "COUNT_ZERO": "BRANCH_CONDITION", "MAX_ZERO": "INITIALIZATION", "ARRAY_LAST": "LOOP_BOUNDARY",
     "CIRCLE_RADIUS": "COMPUTATION", "SWAP_COPY": "PARAMETER_PASSING",
-    "SWAP_OVERWRITE": "MISSING_STATEMENT", "C_HARDCODED_OUTPUT": "COMPUTATION",
+    "SWAP_OVERWRITE": "MISSING_STATEMENT", "C_HARDCODED_OUTPUT": "MISSING_STATEMENT",
     "C_BRANCH_ATTACHMENT": "BRANCH_CONDITION", "C_SWAP_BY_VALUE": "PARAMETER_PASSING",
     "OUTPUT_PRESENTATION": "OUTPUT_TEXT",
 }
@@ -40,12 +41,6 @@ TITLES = {
     "C_BRANCH_ATTACHMENT": "Nhầm quan hệ if–else nên nhiều nhánh cùng chạy",
     "C_SWAP_BY_VALUE": "Hoán vị trên bản sao tham số nên a, b ở main không đổi",
     "OUTPUT_PRESENTATION": "Chỉ lệch cách trình bày output",
-}
-# Where the category's generic re-teaching advice does not fit the rule.
-RETEACH = {
-    "C_HARDCODED_OUTPUT": "Chạy lại với hai input khác nhau; kết quả phải được tính từ dữ liệu vừa đọc.",
-    "C_BRANCH_ATTACHMENT": "Vẽ sơ đồ if / else if / else: mỗi input chỉ đi vào đúng một nhánh.",
-    "SWAP_OVERWRITE": "Truy vết từng lệnh gán trên hai ô nhớ; dùng biến tạm giữ giá trị cũ.",
 }
 _RULES = None
 
@@ -96,8 +91,7 @@ def hand_written(findings):
     return {"rule_id": rule_id, "category": category,
             "source": "c_rule" if general else "exercise_rule",
             "title": TITLES.get(rule_id) or sentence(finding["then_vi"].removeprefix("Có dấu hiệu ")),
-            "check": finding.get("suggestion") or FEEDBACK[category]["check"],
-            "reteach": RETEACH.get(rule_id) or FEEDBACK[category]["reteach"]}
+            **advice(category, rule_id)}
 
 
 def hypotheses_for(item, problem_id, tests):
@@ -112,9 +106,8 @@ def hypotheses_for(item, problem_id, tests):
 
 def learned(category):
     feedback = FEEDBACK[category]
-    return {"source": "cpack_rule", "title": feedback["name"], "category": category,
-            "statement": feedback["hypothesis"], "check": feedback["check"],
-            "reteach": feedback["reteach"]}
+    return {"source": "cpack_rule", "title": CATEGORY[category]["title"], "category": category,
+            "statement": feedback["hypothesis"], **advice(category)}
 
 
 def choose_k(matrix, distances, requested, n, patterns):
@@ -204,8 +197,8 @@ def own_hypothesis(pair):
     authored, generic = pair
     if authored:
         return {"title": authored["title"], "category": authored["category"]}
-    if generic and generic["category"] in FEEDBACK:
-        return {"title": FEEDBACK[generic["category"]]["name"], "category": generic["category"]}
+    if generic and generic["category"] in CATEGORY:
+        return {"title": CATEGORY[generic["category"]]["title"], "category": generic["category"]}
     return None
 
 
@@ -217,12 +210,12 @@ def hypothesis_for_group(members, per_item):
         if count / size >= MAJORITY:
             sample = next(per_item[i][0] for i in members
                           if per_item[i][0] and per_item[i][0]["title"] == title)
-            return {key: sample[key] for key in ("source", "title", "category", "check", "reteach")} | {
+            return {key: sample[key] for key in ("source", "title", "category", "question", "activity")} | {
                 "family": FEEDBACK[sample["category"]]["name"], "matched": count, "size": size}
     generic = Counter(per_item[i][1]["category"] for i in members if per_item[i][1])
     if generic:
         category, count = generic.most_common(1)[0]
-        if count / size >= MAJORITY and category in FEEDBACK:
+        if count / size >= MAJORITY and category in CATEGORY:
             return learned(category) | {"family": FEEDBACK[category]["name"], "matched": count,
                                         "size": size}
     return None
@@ -292,9 +285,9 @@ def describe_submission(item, tests, problem_id):
                      "observations": [deviation_phrase(*pair) for pair in chosen]})
     hypothesis = None
     if authored:
-        hypothesis = {key: authored[key] for key in ("source", "title", "category", "check", "reteach")}
+        hypothesis = {key: authored[key] for key in ("source", "title", "category", "question", "activity")}
         hypothesis["family"] = FEEDBACK[authored["category"]]["name"]
-    elif generic and generic["category"] in FEEDBACK:
+    elif generic and generic["category"] in CATEGORY:
         hypothesis = learned(generic["category"]) | {"family": FEEDBACK[generic["category"]]["name"]}
     return {"id": item["id"], "author": item.get("author"), "code": item["code"], "tests": rows,
             "passed": sum(r["outcome"] == "pass" for r in rows), "total": len(rows),

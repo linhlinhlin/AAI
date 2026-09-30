@@ -28,7 +28,7 @@ DEVIATION = {
     ("prefix", "truncated"): "Chỉ in được phần đầu của đáp án",
     ("prefix", "extended"): "In đúng rồi in thêm phía sau",
     ("prefix", "empty"): "Không in gì",
-    ("other_oracle", "yes"): "In ra đáp án của một trường hợp khác",
+    ("other_oracle", "yes"): "In ra đáp án của một test khác",
 }
 # Most specific first when several phrases describe the same group.
 ORDER = ("status", "prefix", "other_oracle", "whitespace_only", "numbers", "text", "newline_end",
