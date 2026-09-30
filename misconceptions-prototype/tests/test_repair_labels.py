@@ -109,3 +109,25 @@ def test_missing_outcomes_never_become_a_repair_or_a_failure():
     reviews = {"a1": {"year": "y", "attempt": "sub_001"}, "a2": {"year": "y", "attempt": "sub_002"}}
     assert pair_repairs(rows, reviews, {"a1": None, "a2": {"t": "pass"}}) == []
     assert pair_repairs(rows, reviews, {"a1": {"t": "fail"}, "a2": None}) == []
+
+
+def test_deleting_a_prompt_line_is_output_text_not_a_mixture():
+    scan = '    scanf("%d", &n);\n'
+    prompt = BASE.replace(scan, '    printf("Introduza n:\\n");\n' + scan)
+    result = classify_repair(prompt, BASE)
+    assert result["categories"] == ["OUTPUT_TEXT"]
+    assert result["details"] == ["delete:output_literal_statement"]
+
+
+def test_indentation_changes_are_not_repairs_or_moves():
+    reindented = BASE.replace("        s = s + i;", "  s = s + i;").replace("i < n; i++", "i <= n; i++")
+    result = classify_repair(BASE, reindented)
+    assert result["categories"] == ["LOOP_BOUNDARY"]
+    _, _, opcodes = line_hunks(BASE, BASE.replace("        s = s + i;", "s = s + i;"))
+    assert all(op[0] == "equal" for op in opcodes)
+
+
+def test_adding_an_else_branch_is_branch_structure():
+    source = "int f(int x)\n{\n    int y = 0;\n    if (x > 0)\n        y = 1;\n    return y;\n}\n"
+    repaired = source.replace("        y = 1;\n", "        y = 1;\n    else\n        y = 2;\n")
+    assert "CONTROL_FLOW" not in classify_repair(source, repaired)["categories"]

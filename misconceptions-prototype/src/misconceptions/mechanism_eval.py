@@ -131,6 +131,29 @@ def ceiling(values, gold):
     return buckets[None] / len(gold)
 
 
+def random_refinement_ceiling(coarse, fine, gold, permutations=200, seed=0):
+    """Expected ceiling when each coarse bucket is split at random into sub-buckets of
+    exactly the sizes that `fine` induces inside it (a granularity-matched null)."""
+    rng = np.random.default_rng(seed)
+    coarse_keys = [tuple(row) for row in coarse]
+    fine_keys = [tuple(row) for row in fine]
+    groups = {}
+    for index, key in enumerate(coarse_keys):
+        groups.setdefault(key, []).append(index)
+    total = 0.0
+    for _ in range(permutations):
+        correct = 0
+        for members in groups.values():
+            sizes = Counter(fine_keys[i] for i in members).values()
+            labels = [gold[i] for i in rng.permutation(members)]
+            start = 0
+            for size in sizes:
+                correct += max(Counter(labels[start:start + size]).values())
+                start += size
+        total += correct / len(gold)
+    return total / permutations
+
+
 def score(predicted, gold):
     precision, recall, f1 = pairwise_scores(list(predicted), list(gold))
     return {"ari": adjusted_rand_score(gold, predicted),

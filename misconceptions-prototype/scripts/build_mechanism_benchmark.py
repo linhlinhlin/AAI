@@ -100,8 +100,14 @@ def build_real(cohorts, pool, split, budget, threads):
     for problem, cohort in cohorts.items():
         outcomes = {sid: outcomes_from_record(record, cohort["tests"], **POLICY)
                     for sid, record in cohort["records"].items()}
+        # Amendment A2: one item per repair event, the latest failing attempt before it.
+        latest = {}
         for row, later in pair_repairs(cohort["rows"], cohort["reviews"], outcomes):
-            jobs.append((problem, row, later))
+            attempt = cohort["reviews"][row.submission_id]["attempt"]
+            if later.submission_id not in latest or attempt > latest[later.submission_id][0]:
+                latest[later.submission_id] = (attempt, row, later)
+        jobs.extend((problem, row, later) for _, row, later in sorted(
+            latest.values(), key=lambda item: item[1].submission_id))
     print(f"real: {len(jobs)} failing->repaired pairs", flush=True)
     results = []
 
@@ -188,9 +194,13 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--max-sources", type=int, default=40)
     parser.add_argument("--only", choices=("real", "injected"))
+    parser.add_argument("--problems", nargs="*", help="Development subset; omit for the benchmark")
     args = parser.parse_args()
+    implementation = implementation_fingerprint(ROOT)  # Code as it is when the run starts.
     args.output.mkdir(parents=True, exist_ok=False)
     cohorts = load(args.data, args.replay)
+    if args.problems:
+        cohorts = {problem: cohorts[problem] for problem in args.problems}
     split = json.loads(args.split_lock.read_text(encoding="utf-8"))["assignments"]
     image = image_id()
     started = time.time()
@@ -209,13 +219,13 @@ def main():
             summary["injected"] = {"status": status,
                                    "category": dict(Counter(r["category"] for r in injected))}
     write_json(args.output / "manifest.json", {
-        "schema_version": 1, "image": image, "policy": {k: list(v) if isinstance(v, tuple) else v
+        "schema_version": 1, "problems": sorted(cohorts), "image": image, "policy": {k: list(v) if isinstance(v, tuple) else v
                                                         for k, v in POLICY.items()},
         "budget": args.budget, "seed": args.seed, "max_sources": args.max_sources,
         "input_dataset_complete_sha256": digest(args.data / "dataset_complete.json"),
         "replay_manifest_sha256": digest(args.replay / "replay_manifest.json"),
         "split_lock_sha256": digest(args.split_lock), "elapsed_seconds": round(time.time() - started, 1),
-        "summary": summary, "implementation": implementation_fingerprint(ROOT),
+        "summary": summary, "implementation": implementation,
         "files_sha256": {p.name: digest(p) for p in sorted(args.output.glob("*.jsonl"))}})
     print(json.dumps(summary, indent=1))
 

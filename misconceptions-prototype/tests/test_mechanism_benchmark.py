@@ -5,7 +5,13 @@ import pytest
 
 from misconceptions import ila
 from misconceptions.deviation_features import code_cues, deviation, deviation_oav
-from misconceptions.mechanism_eval import CategoricalSpace, ceiling, pairwise_scores, score
+from misconceptions.mechanism_eval import (
+    CategoricalSpace,
+    ceiling,
+    pairwise_scores,
+    random_refinement_ceiling,
+    score,
+)
 from misconceptions.mechanism_inject import apply_site, one_mutant_per_category, sites
 from misconceptions.repair_labels import classify_repair
 from misconceptions.replay import outcomes_from_record, relation, request_for
@@ -134,3 +140,15 @@ def test_replay_relation_and_missing_evidence_is_never_a_pass():
     request = request_for("id", "int main(){}", tests)
     assert [t["id"] for t in request["tests"]] == ["t0", "t1"]
     assert all("expected" not in t for t in request["tests"])  # Oracles never enter the sandbox.
+
+
+def test_random_refinement_null_matches_its_bounds():
+    coarse = np.asarray([["a"]] * 6, dtype=object)
+    gold = ["L", "L", "L", "M", "M", "M"]
+    same = random_refinement_ceiling(coarse, coarse, gold, permutations=20)
+    assert same == pytest.approx(ceiling(coarse, gold))
+    singletons = np.asarray([[str(i)] for i in range(6)], dtype=object)
+    assert random_refinement_ceiling(coarse, singletons, gold, permutations=20) == 1.0
+    halves = np.asarray([["x"]] * 3 + [["y"]] * 3, dtype=object)
+    assert ceiling(halves, gold) == 1.0
+    assert 0.5 <= random_refinement_ceiling(coarse, halves, gold, permutations=200) < 1.0

@@ -59,8 +59,10 @@ def pair_repairs(rows, reviews, outcomes):
 def line_hunks(old_source, new_source):
     old = old_source.splitlines(keepends=True)
     new = new_source.splitlines(keepends=True)
-    matcher = SequenceMatcher(None, [line.rstrip() for line in old],
-                              [line.rstrip() for line in new], autojunk=False)
+    # Leading/trailing whitespace carries no meaning in C; spaces inside a line are kept
+    # because they may sit inside a string literal.
+    matcher = SequenceMatcher(None, [line.strip() for line in old],
+                              [line.strip() for line in new], autojunk=False)
     return old, new, matcher.get_opcodes()
 
 
@@ -152,8 +154,12 @@ def token_context(token):
     Expression nodes (binary, unary, parenthesized) are transparent: `i < n` inside a
     `for` condition is a loop-header change, not a generic computation change.
     """
-    if token.type in ("break", "continue", "return", "goto", "else"):
+    if token.type in ("break", "continue", "return", "goto"):
         return "control_flow"
+    if token.type == "else":
+        return "branch_condition"  # Adding or removing an else changes branch structure.
+    if token.type in (";", ","):
+        return "separator"
     for ancestor in _ancestors(token):
         if ancestor.type == "call_expression":
             name = _call_name(ancestor)
@@ -250,88 +256,134 @@ CONTEXT_CATEGORY = {"loop_header": "LOOP_BOUNDARY", "branch_condition": "BRANCH_
                     "output_argument": "COMPUTATION", "control_flow": "CONTROL_FLOW"}
 
 
+def _statement_change(tokens, root, tag):
+    """Category for tokens that were wholly inserted or deleted, or None if not whole statements."""
+    statements = [s for s in _complete_statements(tokens, root) if s.type != "declaration"]
+    covered = all(t.type in ("{", "}", ";") or any(
+        s.start_byte <= t.start_byte and t.end_byte <= s.end_byte for s in statements) for t in tokens)
+    if statements and covered:
+        if all(_output_only(s) for s in statements):
+            return "OUTPUT_TEXT", f"{tag}:output_literal_statement"
+        if len(statements) == 1 and statements[0].type in (
+                "break_statement", "continue_statement", "return_statement"):
+            return "CONTROL_FLOW", f"{tag}:{statements[0].type}"
+        kind = "MISSING_STATEMENT" if tag == "insert" else "EXTRA_STATEMENT"
+        return kind, f"{tag}:" + "+".join(sorted({s.type for s in statements}))
+    if tokens and all(t.type in ("{", "}") for t in tokens):
+        return "STATEMENT_PLACEMENT", f"{tag}:brace"
+    if tokens and all(_inside_declaration(t) or t.type == ";" for t in tokens):
+        return "", "declaration_scaffolding"  # A helper declaration serves another change.
+    return None
+
+
+def _slides(texts, start, end):
+    """Equivalent positions of a pure insertion/deletion run inside `texts`."""
+    positions = [(start, end)]
+    a, b = start, end
+    while b < len(texts) and texts[a] == texts[b]:
+        a, b = a + 1, b + 1
+        positions.append((a, b))
+    a, b = start, end
+    while a > 0 and texts[a - 1] == texts[b - 1]:
+        a, b = a - 1, b - 1
+        positions.append((a, b))
+    return positions
+
+
+def _context_changes(changed_old, changed_new):
+    found = []
+    contexts = [token_context(t) for t in changed_old] + [token_context(t) for t in changed_new]
+    if any(o.type == n.type == "number_literal" and _is_float(o.text) != _is_float(n.text)
+           for o, n in zip(changed_old, changed_new)):
+        contexts = ["numeric_type"]
+    literal_pairs = [(o, n) for o, n in zip(changed_old, changed_new)
+                     if o.type == n.type == "string_literal"]
+    text = (b" ".join(t.text for t in changed_old).decode(errors="replace")[:40] + "->"
+            + b" ".join(t.text for t in changed_new).decode(errors="replace")[:40])
+    for context in contexts:
+        if context == "output_literal":
+            if literal_pairs:
+                for o, n in literal_pairs:
+                    old_text, new_text = o.text.decode(errors="replace"), n.text.decode(errors="replace")
+                    kind = _format_kind(old_text, new_text)
+                    found.append((kind, f"{kind.lower()}:{old_text[:30]}->{new_text[:30]}"))
+            else:
+                found.append(("OUTPUT_TEXT", "output_literal"))
+        elif context in CONTEXT_CATEGORY:
+            found.append((CONTEXT_CATEGORY[context], f"{context}:{text}"))
+        elif context == "structure":
+            found.append(("STATEMENT_PLACEMENT", "structure"))
+        elif context != "separator":
+            found.append(("OTHER", f"other:{text}"))
+    return found
+
+
 def classify_repair(old_source, new_source):
-    """Categories of the change old -> new (a verified minimal repair)."""
+    """Categories of the change old -> new (a verified minimal repair).
+
+    Works hunk by hunk on the same line hunks that delta debugging verified. Identical
+    lines deleted in one place and inserted in another are a placement change.
+    """
     old_root, old_tokens = _tokens(old_source)
     new_root, new_tokens = _tokens(new_source)
-    old_text = [t.text for t in old_tokens]
-    new_text = [t.text for t in new_tokens]
-    opcodes = [op for op in SequenceMatcher(None, old_text, new_text, autojunk=False).get_opcodes()
-               if op[0] != "equal"]
-    categories, details = set(), []
-    removed = [(i1, i2) for tag, i1, i2, _, _ in opcodes if tag == "delete"]
-    added = [(j1, j2) for tag, _, _, j1, j2 in opcodes if tag == "insert"]
-    moved_old, moved_new = set(), set()
-    for i1, i2 in removed:
-        for j1, j2 in added:
-            if (j1, j2) not in moved_new and i2 - i1 >= 3 and old_text[i1:i2] == new_text[j1:j2]:
-                moved_old.add((i1, i2))
-                moved_new.add((j1, j2))
-                categories.add("STATEMENT_PLACEMENT")
-                details.append("moved:" + b" ".join(old_text[i1:i2]).decode(errors="replace")[:60])
-                break
-    for tag, i1, i2, j1, j2 in opcodes:
-        if (i1, i2) in moved_old and tag == "delete" or (j1, j2) in moved_new and tag == "insert":
+    old_lines, new_lines, opcodes = line_hunks(old_source, new_source)
+    hunks = [op for op in opcodes if op[0] != "equal"]
+    deleted = {}
+    inserted = {}
+    for _, i1, i2, j1, j2 in hunks:
+        for i in range(i1, i2):
+            deleted.setdefault(old_lines[i].strip(), []).append(i)
+        for j in range(j1, j2):
+            inserted.setdefault(new_lines[j].strip(), []).append(j)
+    moved_old, moved_new, found = set(), set(), []
+    for text, rows in deleted.items():
+        if text and text in inserted:
+            pairs = min(len(rows), len(inserted[text]))
+            moved_old.update(rows[:pairs])
+            moved_new.update(inserted[text][:pairs])
+            found.append(("STATEMENT_PLACEMENT", "moved:" + text[:60]))
+    for _, i1, i2, j1, j2 in hunks:
+        old_rows = {i for i in range(i1, i2) if i not in moved_old}
+        new_rows = {j for j in range(j1, j2) if j not in moved_new}
+        old_part = [t for t in old_tokens if t.start_point[0] in old_rows]
+        new_part = [t for t in new_tokens if t.start_point[0] in new_rows]
+        if not old_part and not new_part:
             continue
-        changed_old, changed_new = old_tokens[i1:i2], new_tokens[j1:j2]
-        if tag in ("insert", "delete"):
-            side, root = (changed_new, new_root) if tag == "insert" else (changed_old, old_root)
-            statements = [s for s in _complete_statements(side, root) if s.type != "declaration"]
-            if statements and all(t.type in ("}", "{") or any(
-                    s.start_byte <= t.start_byte and t.end_byte <= s.end_byte for s in statements)
-                    for t in side):
-                if all(_output_only(s) for s in statements):
-                    categories.add("OUTPUT_TEXT")
-                    details.append(f"{tag}:output_literal_statement")
-                elif any(s.type in ("break_statement", "continue_statement", "return_statement")
-                         for s in statements) and len(statements) == 1:
-                    categories.add("CONTROL_FLOW")
-                    details.append(f"{tag}:{statements[0].type}")
-                else:
-                    categories.add("MISSING_STATEMENT" if tag == "insert" else "EXTRA_STATEMENT")
-                    details.append(f"{tag}:" + "+".join(sorted({s.type for s in statements})))
-                continue
-            if side and all(t.type in ("{", "}") for t in side):
-                categories.add("STATEMENT_PLACEMENT")
-                details.append(f"{tag}:brace")
-                continue
-            if all(_inside_declaration(t) for t in side):
-                continue  # Declaring a helper variable is scaffolding for another change.
-        contexts = [token_context(t) for t in changed_old] + [token_context(t) for t in changed_new]
-        if any(o.type == n.type == "number_literal" and _is_float(o.text) != _is_float(n.text)
-               for o, n in zip(changed_old, changed_new)):
-            contexts = ["numeric_type"]
-        literal_pairs = [(o, n) for o, n in zip(changed_old, changed_new)
-                         if o.type == n.type == "string_literal"]
-        for context in contexts:
-            if context == "output_literal":
-                if literal_pairs:
-                    for o, n in literal_pairs:
-                        kind = _format_kind(o.text.decode(errors="replace"), n.text.decode(errors="replace"))
-                        categories.add(kind)
-                        details.append(f"{kind.lower()}:{o.text.decode(errors='replace')[:30]}"
-                                       f"->{n.text.decode(errors='replace')[:30]}")
-                else:
-                    categories.add("OUTPUT_TEXT")
-                    details.append("output_literal")
-            elif context in CONTEXT_CATEGORY:
-                categories.add(CONTEXT_CATEGORY[context])
-                details.append(f"{context}:" + b" ".join(t.text for t in changed_old).decode(
-                    errors="replace")[:40] + "->" + b" ".join(t.text for t in changed_new).decode(
-                    errors="replace")[:40])
-            elif context == "structure":
-                categories.add("STATEMENT_PLACEMENT")
-                details.append("structure")
+        if not new_part or not old_part:
+            tag = "delete" if not new_part else "insert"
+            side, root = (old_part, old_root) if tag == "delete" else (new_part, new_root)
+            change = _statement_change(side, root, tag)
+            if change is not None:
+                found.append(change)
             else:
-                categories.add("OTHER")
-                details.append("other")
-    if not categories and opcodes:
+                found.extend(_context_changes(old_part, new_part))
+            continue
+        old_text = [t.text for t in old_part]
+        new_text = [t.text for t in new_part]
+        for tag, a1, a2, b1, b2 in SequenceMatcher(None, old_text, new_text,
+                                                   autojunk=False).get_opcodes():
+            if tag == "equal":
+                continue
+            if tag in ("insert", "delete"):
+                texts, part, root = (new_text, new_part, new_root) if tag == "insert" else                     (old_text, old_part, old_root)
+                start, end = (b1, b2) if tag == "insert" else (a1, a2)
+                change = None
+                for s1, s2 in _slides(texts, start, end):
+                    change = _statement_change(part[s1:s2], root, tag)
+                    if change is not None:
+                        break
+                if change is not None:
+                    found.append(change)
+                    continue
+            found.extend(_context_changes(old_part[a1:a2], new_part[b1:b2]))
+    categories = {category for category, _ in found if category}
+    if not categories and hunks and not all(detail == "declaration_scaffolding" for _, detail in found):
         categories.add("OTHER")
-    details = list(dict.fromkeys(details))
+    details = list(dict.fromkeys(detail for _, detail in found))
     return {"categories": sorted(categories), "details": details,
             "primary": next(iter(categories)) if len(categories) == 1 else
             ("MULTI" if categories else "NO_CHANGE"),
-            "token_edits": sum(max(i2 - i1, j2 - j1) for _, i1, i2, j1, j2 in opcodes)}
+            "hunks": len(hunks)}
 
 
 def _is_float(text):

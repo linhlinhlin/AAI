@@ -7,6 +7,7 @@ evaluation and must be run once with the frozen configuration.
 import argparse
 import hashlib
 import json
+import re
 import time
 import urllib.request
 from collections import Counter, defaultdict
@@ -28,6 +29,7 @@ from misconceptions.mechanism_eval import (
     cluster,
     distinct_patterns,
     paired_summary,
+    random_refinement_ceiling,
     score,
 )
 from misconceptions.output_features import output_oav
@@ -38,6 +40,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SEEDS = (7, 42, 91)
 EMBED_MODEL = "qwen3-embedding:0.6b"
 AGNOSTIC_OUTCOME = ("agg:status", "agg:fail_fraction")
+REFINES_OUTCOMES = ("deviation", "evidence", "outcomes_stdout", "combined_stdout")
 
 
 def runs_of(record, tests, outcomes):
@@ -68,10 +71,18 @@ def load_items(data, replay, bench):
                    (replay / "cohorts" / problem / "replay.jsonl").read_text(encoding="utf-8").splitlines()}
         cohorts[problem] = {"tests": tests, "rows": {r.submission_id: r for r in rows}, "records": records}
     items = {"real": [], "injected": []}
-    for line in (bench / "real_repairs.jsonl").read_text(encoding="utf-8").splitlines():
-        repair = json.loads(line)
-        if repair["status"] != "ok" or not repair["one_minimal"] or repair["primary"] in (
-                "MULTI", "OTHER", "NO_CHANGE"):
+    repairs = [json.loads(line) for line in
+               (bench / "real_repairs.jsonl").read_text(encoding="utf-8").splitlines()]
+    # Amendment A2: one item per repair event, the latest failing attempt before it.
+    latest = {}
+    for repair in repairs:
+        attempt = int(re.search(r"sub_(\d+)$", repair["item_id"]).group(1))
+        key = repair["repair_submission_id"]
+        if key not in latest or attempt > latest[key][0]:
+            latest[key] = (attempt, repair["item_id"])
+    keep = {item_id for _, item_id in latest.values()}
+    for repair in repairs:
+        if repair["item_id"] not in keep or repair["status"] != "ok" or not repair["one_minimal"]                 or repair["primary"] in ("MULTI", "OTHER", "NO_CHANGE"):
             continue
         cohort = cohorts[repair["problem_id"]]
         row, record = cohort["rows"][repair["item_id"]], cohort["records"][repair["item_id"]]
@@ -129,11 +140,14 @@ def evaluate_cohort(items, space_by_rep, embeddings):
     gold = [item["label"] for item in items]
     n_labels = len(set(gold))
     result = {"n": len(items), "labels": dict(Counter(gold)), "reps": {}}
+    outcome_values = space_by_rep["outcomes"].transform([item["values"] for item in items])
     for rep, space in space_by_rep.items():
         values = space.transform([item["values"] for item in items])
         matrix, distances = space.onehot(values), space.distances(values)
         patterns = distinct_patterns(matrix) if matrix.shape[1] else 1
         entry = {"ceiling": ceiling(values, gold), "patterns": patterns}
+        if rep in REFINES_OUTCOMES:
+            entry["null_ceiling"] = random_refinement_ceiling(outcome_values, values, gold)
         for method in ("kmeans", "hac"):
             for mode in ("oracle", "silhouette"):
                 runs = []
@@ -206,10 +220,13 @@ def summarize(cohort_results, reference="outcomes"):
                 comparisons[f"{rep}-{base}|{key}|ari"] = paired_summary(diffs)
     ceilings = {rep: _mean([c["reps"][rep]["ceiling"] for c in cohort_results if rep in c["reps"]
                             and "ceiling" in c["reps"][rep]]) for rep in REPRESENTATIONS}
-    comparisons["ceiling:deviation-outcomes"] = paired_summary(
-        [c["reps"]["deviation"]["ceiling"] - c["reps"]["outcomes"]["ceiling"] for c in cohort_results])
-    comparisons["ceiling:evidence-outcomes"] = paired_summary(
-        [c["reps"]["evidence"]["ceiling"] - c["reps"]["outcomes"]["ceiling"] for c in cohort_results])
+    comparisons["H1a:ceiling(outcomes)"] = paired_summary(
+        [c["reps"]["outcomes"]["ceiling"] for c in cohort_results])
+    for rep in REFINES_OUTCOMES:
+        comparisons[f"H1b:ceiling({rep})-null"] = paired_summary(
+            [c["reps"][rep]["ceiling"] - c["reps"][rep]["null_ceiling"] for c in cohort_results])
+        comparisons[f"ceiling:{rep}-outcomes"] = paired_summary(
+            [c["reps"][rep]["ceiling"] - c["reps"]["outcomes"]["ceiling"] for c in cohort_results])
     if any("embedding" in c["reps"] for c in cohort_results):
         comparisons["embedding:ari_source-ari_mechanism|kmeans_oracle"] = paired_summary(
             [c["reps"]["embedding"]["kmeans_oracle"]["ari_vs_source"] - c["reps"]["embedding"]["kmeans_oracle"]["ari"]
@@ -332,6 +349,25 @@ def paired_rule_difference(items, first, second, resamples=2000, seed=0):
 SPLIT = {}
 
 
+def evaluate_scope(benchmark, benchmark_items, members, pool, cohorts, embeddings):
+    by_problem = defaultdict(list)
+    for item in members:
+        by_problem[item["problem"]].append(item)
+    cohort_results, skipped = [], {}
+    for problem in sorted(by_problem):
+        cohort = by_problem[problem]
+        if len(cohort) < 6 or len({i["label"] for i in cohort}) < 2:
+            skipped[problem] = {"n": len(cohort), "labels": len({i["label"] for i in cohort})}
+            continue
+        spaces = cohort_spaces(problem, benchmark, benchmark_items, pool, cohorts)
+        result = evaluate_cohort(cohort, spaces, embeddings)
+        result["problem"] = problem
+        cohort_results.append(result)
+        print(f"{benchmark} {problem}: n={result['n']} labels={len(result['labels'])}", flush=True)
+    return {"cohorts": cohort_results, "skipped_cohorts": skipped,
+            "summary": summarize(cohort_results) if cohort_results else None}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--data", type=Path, required=True)
@@ -340,71 +376,74 @@ def main():
     parser.add_argument("--split-lock", type=Path, required=True)
     parser.add_argument("--protocol", type=Path, required=True)
     parser.add_argument("--partition", choices=("validation", "test"), required=True)
+    parser.add_argument("--scopes", nargs="+", choices=("partition", "full"), default=["partition"],
+                        help="full = all partitions of a problem (amendment A3); final run only")
     parser.add_argument("--penalty", type=float, help="ILA-2 penalty frozen after validation")
     parser.add_argument("--embed-cache", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    if "full" in args.scopes and args.partition != "test":
+        raise ValueError("Full-cohort scope includes sealed items; use it only in the final test run")
+    if args.partition == "test" and args.penalty is None:
+        raise ValueError("The final run needs the ILA-2 penalty frozen on validation")
+    implementation = implementation_fingerprint(ROOT)  # Code as it is when the run starts.
     args.output.mkdir(parents=True, exist_ok=False)
     SPLIT.update(json.loads(args.split_lock.read_text(encoding="utf-8"))["assignments"])
     audit = json.loads((args.replay / "oracle_audit.json").read_text(encoding="utf-8"))
     if audit["selected_policy"] != "exact_exit0":
-        raise ValueError("Replay audit selected a different outcome policy; update POLICY_DEFAULT first")
+        raise ValueError("Replay audit selected a different outcome policy; update POLICY_DEFAULT")
     started = time.time()
     items, cohorts, pool = load_items(args.data, args.replay, args.bench)
     embeddings = None
     if args.embed_cache:
         texts = sorted({item["code"] for benchmark in items.values() for item in benchmark
-                        if item["partition"] == args.partition})
+                        if "full" in args.scopes or item["partition"] == args.partition})
         embeddings = embed(texts, args.embed_cache)
-    report = {"partition": args.partition, "benchmarks": {}}
+    report = {"partition": args.partition, "scopes": args.scopes, "benchmarks": {}}
     for benchmark, benchmark_items in items.items():
-        by_problem = defaultdict(list)
-        for item in benchmark_items:
-            if item["partition"] == args.partition:
-                by_problem[item["problem"]].append(item)
-        cohort_results, skipped = [], {}
-        for problem in sorted(by_problem):
-            cohort = by_problem[problem]
-            if len(cohort) < 6 or len({i["label"] for i in cohort}) < 2:
-                skipped[problem] = {"n": len(cohort), "labels": len({i["label"] for i in cohort})}
-                continue
-            spaces = cohort_spaces(problem, benchmark, benchmark_items, pool, cohorts)
-            result = evaluate_cohort(cohort, spaces, embeddings)
-            result["problem"] = problem
-            cohort_results.append(result)
-            print(f"{benchmark} {problem}: n={result['n']} labels={len(result['labels'])}", flush=True)
-        penalties = {}
+        scopes = {}
+        for scope in args.scopes:
+            members = benchmark_items if scope == "full" else                 [i for i in benchmark_items if i["partition"] == args.partition]
+            scopes[scope] = evaluate_scope(benchmark, benchmark_items, members, pool, cohorts,
+                                           embeddings)
         if args.partition == "validation":
-            for pf in (1.0, 2.0, 5.0):
-                penalties[pf] = rule_experiments(benchmark_items, "validation", pf)
-            best = max(penalties, key=lambda pf: penalties[pf]["seen_problems|evidence|ila2"]["macro_f1"])
+            penalties = {pf: rule_experiments(benchmark_items, "validation", pf)
+                         for pf in (1.0, 2.0, 5.0)}
+            best = max(penalties,
+                       key=lambda pf: penalties[pf]["seen_problems|evidence|ila2"]["macro_f1"])
             rules = penalties[best]
             rules["selected_penalty"] = best
-            rules["penalty_scan"] = {pf: r["seen_problems|evidence|ila2"]["macro_f1"] for pf, r in penalties.items()}
+            rules["penalty_scan"] = {pf: r["seen_problems|evidence|ila2"]["macro_f1"]
+                                     for pf, r in penalties.items()}
         else:
             rules = rule_experiments(benchmark_items, "test", args.penalty)
         eval_items = [i for i in benchmark_items if i["partition"] == args.partition]
-        for track in ("seen_problems",):
-            a, b = rules.get(f"{track}|evidence|ila2"), rules.get(f"{track}|outcome_summary|ila2")
-            if a and b:
-                rules[f"{track}|H4_difference"] = paired_rule_difference(eval_items, a["predictions"], b["predictions"])
-        for key in list(rules):
-            if isinstance(rules[key], dict):
-                rules[key].pop("predictions", None)
+        a = rules.get("seen_problems|evidence|ila2")
+        b = rules.get("seen_problems|outcome_summary|ila2")
+        if a and b:
+            rules["seen_problems|H4_difference"] = paired_rule_difference(
+                eval_items, a["predictions"], b["predictions"])
+        for value in rules.values():
+            if isinstance(value, dict):
+                value.pop("predictions", None)
         report["benchmarks"][benchmark] = {
             "items_total": len(benchmark_items),
             "items_by_partition": dict(Counter(i["partition"] for i in benchmark_items)),
-            "labels_in_partition": dict(Counter(i["label"] for i in eval_items)),
-            "cohorts": cohort_results, "skipped_cohorts": skipped,
-            "summary": summarize(cohort_results), "rules": rules}
+            "labels_by_partition": {part: dict(Counter(i["label"] for i in benchmark_items
+                                                       if i["partition"] == part))
+                                    for part in ("train", "validation", "test")},
+            "scopes": scopes, "rules": rules}
     write_json(args.output / "results.json", report)
     write_json(args.output / "run_manifest.json", {
-        "protocol_sha256": digest(args.protocol), "partition": args.partition, "penalty": args.penalty,
+        "protocol_sha256": digest(args.protocol), "partition": args.partition,
+        "scopes": args.scopes, "penalty": args.penalty,
         "bench_manifest_sha256": digest(args.bench / "manifest.json"),
         "replay_manifest_sha256": digest(args.replay / "replay_manifest.json"),
-        "split_lock_sha256": digest(args.split_lock), "embedding_model": EMBED_MODEL if embeddings else None,
-        "elapsed_seconds": round(time.time() - started, 1), "implementation": implementation_fingerprint(ROOT)})
-    print(json.dumps({b: v["summary"]["comparisons"] for b, v in report["benchmarks"].items()}, indent=1)[:6000])
+        "split_lock_sha256": digest(args.split_lock),
+        "embedding_model": EMBED_MODEL if embeddings else None,
+        "elapsed_seconds": round(time.time() - started, 1), "implementation": implementation})
+    print(json.dumps({b: {s: v["summary"]["comparisons"] for s, v in r["scopes"].items()
+                          if v["summary"]} for b, r in report["benchmarks"].items()}, indent=1)[:8000])
 
 
 if __name__ == "__main__":
