@@ -1,0 +1,2700 @@
+{
+ "schema": "aai_lab_demo_class_v1",
+ "description": "Lớp mẫu: code do nhóm tự viết, chấm thật trong Docker; không phải dữ liệu sinh viên.",
+ "runner": {
+  "images": [
+   "sha256:127f356e6dfe36395deadf3802fab1a87b1328b932c90f4edf3a8efa460bf00c"
+  ],
+  "comparison": "whitespace_separated_tokens"
+ },
+ "submissions": [
+  {
+   "id": "demo-ab330624869d",
+   "problem_id": "sum-range",
+   "author": "Học viên mẫu 01",
+   "code": "#include <stdio.h>\nint main(void){int n;scanf(\"%d\",&n);printf(\"%d\\n\",0);return 0;}\n",
+   "created": 1790776510.4636922,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-1930b92ffaf1",
+   "problem_id": "sum-range",
+   "author": "Học viên mẫu 02",
+   "code": "#include <stdio.h>\nint main(void){int n;scanf(\"%d\",&n);printf(\"%d\\n\",1);return 0;}\n",
+   "created": 1790776517.707819,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-635ca04331a3",
+   "problem_id": "sum-range",
+   "author": "Học viên mẫu 03",
+   "code": "#include <stdio.h>\nint main(void){int n;scanf(\"%d\",&n);printf(\"%d\\n\",3);return 0;}\n",
+   "created": 1790776523.7384238,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-f766f0af5036",
+   "problem_id": "sum-range",
+   "author": "Học viên mẫu 04",
+   "code": "#include <stdio.h>\nint main(void){int n;scanf(\"%d\",&n);printf(\"%d\\n\",15);return 0;}\n",
+   "created": 1790776529.8366575,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "15\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "15\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "15\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "15\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "15\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "15\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-6156afdbe242",
+   "problem_id": "sum-range",
+   "author": "Học viên mẫu 05",
+   "code": "#include <stdio.h>\nint main(void){int n;scanf(\"%d\",&n);printf(\"%d\\n\",5050);return 0;}\n",
+   "created": 1790776535.8570614,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "5050\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "5050\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "5050\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "5050\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "5050\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "5050\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-cbcd21c1c531",
+   "problem_id": "sum-range",
+   "author": "Học viên mẫu 06",
+   "code": "#include <stdio.h>\nint main(void){int n;scanf(\"%d\",&n);printf(\"%d\\n\",n);return 0;}\n",
+   "created": 1790776541.0440197,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 2,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "5\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "100\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-dc21520b40ab",
+   "problem_id": "sum-range",
+   "author": "Học viên mẫu 07",
+   "code": "#include <stdio.h>\nint main(void){int n;scanf(\"%d\",&n);printf(\"%d\\n\",n*n);return 0;}\n",
+   "created": 1790776546.0121226,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 2,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "25\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "10000\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "100000000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-319bd7509e0e",
+   "problem_id": "sum-range",
+   "author": "Học viên mẫu 08",
+   "code": "#include <stdio.h>\nint main(void){int n;scanf(\"%d\",&n);printf(\"%d\\n\",n*(n-1)/2);return 0;}\n",
+   "created": 1790776551.66168,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "10\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "4950\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "49995000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-998ec00d28b2",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 09",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n for (int i=0;i<n;i++) { if (a[i] > answer) answer = a[i]; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776565.9996564,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 4,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-1f0be22089a9",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 09",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n for (int i=0;i<n;i++) { if (a[i] >= 0) answer += 1; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776571.3267624,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 3,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-c7506b9e7587",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 09",
+   "code": "#include <stdio.h>\nvoid exchange(int a,int b){int t=a;a=b;b=t;}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(a,b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776576.721029,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "2 7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "-3 5\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "0 8\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "-2 -9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "-10000 10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-d4a868dde433",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 09",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=x*x+y*y;\n int limit=r;\n if(distance<limit) puts(\"INSIDE\");\n else if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776581.127364,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 3,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "INSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-76021b6b67a6",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 10",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n int i=0; while (i<n) { if (a[i] > answer) answer = a[i]; i++; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776586.8223643,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 4,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-24247e185506",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 10",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n int i=0; while (i<n) { if (a[i] >= 0) answer += 1; i++; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776591.1319616,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 3,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-4a296bb9752c",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 10",
+   "code": "#include <stdio.h>\nvoid exchange(int a,int b){int copy=b;b=a;a=copy;}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(a,b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776595.9161193,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "2 7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "-3 5\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "0 8\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "-2 -9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "-10000 10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-adc7664b71a4",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 10",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=(x*x)+(y*y);\n int limit=r;\n if(distance<limit) puts(\"INSIDE\");\n else if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776602.2559197,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 3,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "INSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-24a3b87d1e59",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 11",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n for (int i=(n)-1;i>=0;i--) { if (a[i] > answer) answer = a[i]; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776607.1355467,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 4,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-b11a7506af8b",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 11",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n for (int i=(n)-1;i>=0;i--) { if (a[i] >= 0) answer += 1; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776610.8750017,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 3,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-dd982909f8b8",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 11",
+   "code": "#include <stdio.h>\nvoid exchange(int a,int b){if(a!=b){int old=a;a=b;b=old;}}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(a,b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776614.5943375,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "2 7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "-3 5\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "0 8\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "-2 -9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "-10000 10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-6153142d5dbb",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 11",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=y*y+x*x;\n int limit=r;\n if(distance<limit) puts(\"INSIDE\");\n else if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776618.8510022,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 3,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "INSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-fc054ca58dad",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 12",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n int i=0; if (n>0) do { if (a[i] > answer) answer = a[i]; ++i; } while (i<n);\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776623.6923084,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 4,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-5b89f1585e83",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 12",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n int i=0; if (n>0) do { if (a[i] >= 0) answer += 1; ++i; } while (i<n);\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776627.9467297,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 3,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-f3b8f04f827e",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 12",
+   "code": "#include <stdio.h>\nvoid exchange(int a,int b){int values[2]={a,b};a=values[1];b=values[0];}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(a,b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776632.2292268,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "2 7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "-3 5\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "0 8\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "-2 -9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "-10000 10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-77d2826ee935",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 12",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=x*x + y*y;\n int limit=r;\n if(distance<limit) puts(\"INSIDE\");\n else if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776638.0259893,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 3,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "INSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-115604b857f9",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 13",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=a[0];\n for (int i=0;i<n-1;i++) { if (a[i] > answer) answer = a[i]; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776642.8210368,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 5,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "-7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "-2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-168323d664cc",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 13",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n for (int i=0;i<n-1;i++) { if (a[i] > 0) answer += 1; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776647.0744884,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 2,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-52ab099492ca",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 13",
+   "code": "#include <stdio.h>\nvoid exchange(int *a,int *b){*a=*b;*b=*a;}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(&a,&b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776651.3035066,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "7 7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "5 5\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "8 8\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "-9 -9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "10000 10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-40a10fa745c8",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 13",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=x*x+y*y;\n int limit=r*r;\n if(distance<limit) puts(\"INSIDE\");\n if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776655.5834997,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 4,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "INSIDE\nON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "INSIDE\nON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-c9d80473ac3e",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 14",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=a[0];\n int i=0; while (i<n-1) { if (a[i] > answer) answer = a[i]; i++; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776660.394331,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 5,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "-7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "-2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-13311f9d04c8",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 14",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n int i=0; while (i<n-1) { if (a[i] > 0) answer += 1; i++; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776664.6558092,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 2,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-444c44e74b3a",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 14",
+   "code": "#include <stdio.h>\nvoid exchange(int *a,int *b){int temp=*b;*a=temp;*b=*a;}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(&a,&b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776670.1361535,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "7 7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "5 5\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "8 8\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "-9 -9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "10000 10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-57246a38983e",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 14",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=(x*x)+(y*y);\n int limit=r*r;\n if(distance<limit) puts(\"INSIDE\");\n if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776674.872479,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 4,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "INSIDE\nON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "INSIDE\nON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-128e78d9dc18",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 15",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=a[0];\n for (int i=(n-1)-1;i>=0;i--) { if (a[i] > answer) answer = a[i]; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776679.6439345,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 5,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "-7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "-2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-3795ac0c1eb2",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 15",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n for (int i=(n-1)-1;i>=0;i--) { if (a[i] > 0) answer += 1; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776683.9249623,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 2,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-9e8cd48c9e9b",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 15",
+   "code": "#include <stdio.h>\nvoid exchange(int *a,int *b){if(*a!=*b){*a=*b;*b=*a;}}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(&a,&b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776688.1940436,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "7 7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "5 5\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "8 8\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "-9 -9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "10000 10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-d4cf2686981f",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 15",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=y*y+x*x;\n int limit=r*r;\n if(distance<limit) puts(\"INSIDE\");\n if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776691.918587,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 4,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "INSIDE\nON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "INSIDE\nON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-8cecdbc3c938",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 16",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=a[0];\n int i=0; if (n-1>0) do { if (a[i] > answer) answer = a[i]; ++i; } while (i<n-1);\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776696.3170314,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 5,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "-7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "-2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-d24d722527a5",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 16",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n int i=0; if (n-1>0) do { if (a[i] > 0) answer += 1; ++i; } while (i<n-1);\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776700.5554118,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 2,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "3\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-c8deefe3855f",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 16",
+   "code": "#include <stdio.h>\nvoid exchange(int *a,int *b){int *left=a;int *right=b;*left=*right;*right=*left;}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(&a,&b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776704.2758994,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 1,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "7 7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "fail",
+      "output": "5 5\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "fail",
+      "output": "8 8\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "-9 -9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "fail",
+      "output": "10000 10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-5596adbb1c94",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 16",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=x*x + y*y;\n int limit=r*r;\n if(distance<limit) puts(\"INSIDE\");\n if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776708.5515919,
+   "result": {
+    "verdict": "needs_work",
+    "passed": 4,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "fail",
+      "output": "INSIDE\nON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "fail",
+      "output": "INSIDE\nON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-54c246d5e31a",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 17",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=a[0];\n for (int i=0;i<n;i++) { if (a[i] > answer) answer = a[i]; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776713.3345199,
+   "result": {
+    "verdict": "accepted",
+    "passed": 6,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "-7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "-2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-240703243a83",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 17",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n for (int i=0;i<n;i++) { if (a[i] > 0) answer += 1; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776717.5972812,
+   "result": {
+    "verdict": "accepted",
+    "passed": 6,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-88d0d344a60b",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 17",
+   "code": "#include <stdio.h>\nvoid exchange(int *a,int *b){int t=*a;*a=*b;*b=t;}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(&a,&b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776721.3239746,
+   "result": {
+    "verdict": "accepted",
+    "passed": 6,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "7 2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "5 -3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "8 0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "-9 -2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "10000 -10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-bd44a13171a4",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 17",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=x*x+y*y;\n int limit=r*r;\n if(distance<limit) puts(\"INSIDE\");\n else if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776725.5876575,
+   "result": {
+    "verdict": "accepted",
+    "passed": 6,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "INSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "INSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-3cf6103b04ff",
+   "problem_id": "max-array",
+   "author": "Học viên mẫu 18",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=a[0];\n int i=0; while (i<n) { if (a[i] > answer) answer = a[i]; i++; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776730.386183,
+   "result": {
+    "verdict": "accepted",
+    "passed": 6,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "-7\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "9\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "-2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-60b334a753d4",
+   "problem_id": "count-positive",
+   "author": "Học viên mẫu 18",
+   "code": "#include <stdio.h>\nint main(void) {\n int n, a[100];\n scanf(\"%d\", &n);\n for (int p=0;p<n;p++) scanf(\"%d\", &a[p]);\n int answer=0;\n int i=0; while (i<n) { if (a[i] > 0) answer += 1; i++; }\n printf(\"%d\\n\",answer);\n return 0;\n}\n",
+   "created": 1790776734.6368759,
+   "result": {
+    "verdict": "accepted",
+    "passed": 6,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "1\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "4\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-d5084120e943",
+   "problem_id": "swap",
+   "author": "Học viên mẫu 18",
+   "code": "#include <stdio.h>\nvoid exchange(int *a,int *b){if(a!=b){int saved=*b;*b=*a;*a=saved;}}\nint main(void){\n int a,b;\n scanf(\"%d %d\",&a,&b);\n exchange(&a,&b);\n printf(\"%d %d\\n\",a,b);\n return 0;\n}\n",
+   "created": 1790776738.8609664,
+   "result": {
+    "verdict": "accepted",
+    "passed": 6,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "7 2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "4 4\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "5 -3\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "8 0\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "-9 -2\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "10000 -10000\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "demo-ee03863151f0",
+   "problem_id": "circle-position",
+   "author": "Học viên mẫu 18",
+   "code": "#include <stdio.h>\nint main(void){\n int x,y,r;\n scanf(\"%d %d %d\",&x,&y,&r);\n int distance=(x*x)+(y*y);\n int limit=r*r;\n if(distance<limit) puts(\"INSIDE\");\n else if(distance>limit) puts(\"OUTSIDE\");\n else puts(\"ON\");\n return 0;\n}\n",
+   "created": 1790776743.1280093,
+   "result": {
+    "verdict": "accepted",
+    "passed": 6,
+    "total": 6,
+    "tests": [
+     {
+      "test_id": "t1",
+      "outcome": "pass",
+      "output": "INSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t2",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t3",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t4",
+      "outcome": "pass",
+      "output": "ON\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t5",
+      "outcome": "pass",
+      "output": "INSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     },
+     {
+      "test_id": "t6",
+      "outcome": "pass",
+      "output": "OUTSIDE\n",
+      "exit_code": 0,
+      "limit": null
+     }
+    ]
+   }
+  }
+ ]
+}

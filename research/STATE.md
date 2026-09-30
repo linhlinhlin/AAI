@@ -41,9 +41,13 @@ phân cụm nhưng cho luật chuyển được sang bài mới; embedding mã �
 **Không được nói:** phương pháp mới vượt baseline stdout; chẩn đoán niềm tin sinh viên; nhãn đã
 được người chấm độc lập xác nhận; kết quả tổng quát ngoài một khóa học C90.
 
-**App:** mỗi cụm trong dashboard giảng viên hiện giả thuyết cơ chế từ 14 luật ILA-2 đóng băng
-(`src/misconceptions/data/mechanism_rules.json`), kèm độ chính xác đo trên sinh viên chưa thấy,
-một câu hỏi kiểm tra nhanh và gợi ý giảng lại; không luật nào khớp thì hệ thống không đoán.
+**App:** [AAI Lab](../docs/aai_lab.md) (`misconceptions-prototype/start_lab.ps1`, cổng 8770,
+không đăng nhập) thay hai app cũ làm app chính. Mỗi nhóm lỗi dùng đúng biểu diễn OAV độ lệch đã
+đăng ký, có luật NẾU–THÌ do ILA-2 học trên chính lớp đó (kèm độ chính xác, độ phủ) và chỉ nêu
+giả thuyết khi một luật viết tay hoặc một trong 14 luật ILA-2 đóng băng
+(`src/misconceptions/data/mechanism_rules.json`) khớp ít nhất nửa nhóm; nhóm mà các bài khớp
+những luật khác nhau được báo là trộn cơ chế. Cùng phân tích chạy trên 25 cohort C-Pack để đối
+chiếu nhãn kiểm chứng; màn Nghiên cứu đọc số liệu từ `research/runs/`.
 
 **Bài báo:** [bản tiếng Anh](../paper/manuscript.pdf) (23 trang, template Elsevier, abstract
 248 từ) và [bản dịch tiếng Việt](../paper/vi/manuscript.pdf); mọi con số được điền từ artifact

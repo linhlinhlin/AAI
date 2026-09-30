@@ -11,7 +11,24 @@ Mã nguồn, dữ liệu demo/ITSP và hồ sơ nghiên cứu nằm tại
 [Kiểm chứng baseline/ablation mới](research/runs/validation-summary-20260928.md) ·
 [Quy trình nhãn giảng viên và xác thực misconception](docs/teacher_validation.md).
 
-## App học viên và giảng viên
+## AAI Lab — app chính (30/09/2026)
+
+Một app local, không cần đăng nhập, gom bài C sai thành nhóm lỗi để dạy lại:
+
+- **Lớp học**: nhóm lỗi, bằng chứng test, luật NẾU–THÌ (ILA-2), gợi ý dạy lại và đánh giá của giảng viên.
+- **Chạy thử**: chạy bài C trong Docker cách ly, xem giả thuyết lỗi, thêm bài vào lớp.
+- **Dữ liệu C-Pack**: cùng cách phân tích trên 25 bài thật, đối chiếu nhãn kiểm chứng.
+- **Nghiên cứu**: câu hỏi, giả thuyết, ARI và luật từ kết quả kiểm định đã niêm phong.
+
+```powershell
+Set-Location misconceptions-prototype
+./start_lab.ps1
+```
+
+App mở `http://127.0.0.1:8770`. [Cách dùng, cách hoạt động và giới hạn](docs/aai_lab.md).
+Hai app bên dưới (cổng 8766 và 8765) là bản cũ, giữ để tham khảo.
+
+## App học viên và giảng viên (bản cũ)
 
 [Chạy demo nghiệm thu môn học trong 10 phút](docs/demo_nghiem_thu.md):
 cổng 8767, tài khoản demo và tám bài minh họa tự viết trong database riêng.
@@ -58,7 +75,7 @@ hay dataset sẽ được giảng viên cung cấp.
 Harness thêm C-Pack-IPAs adapter, split toàn corpus và baseline dùng stdout.
 Các hồ sơ tháng 9 trước đây được giữ làm lịch sử; STATE.md là nguồn trạng thái hiện tại.
 
-## Chạy web trên Windows
+## Bàn nghiên cứu trên Windows (bản cũ)
 
 ```powershell
 Set-Location misconceptions-prototype

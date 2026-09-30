@@ -6,7 +6,14 @@ và [trạng thái nghiên cứu](../research/STATE.md). Các mục có ngày b�
 lịch sử prototype; hướng hiện tại có thêm C-Pack-IPAs, split toàn corpus và
 baseline stdout. Đã có app học viên và giảng viên chạy local nhiều tài khoản.
 
-## App học viên và giảng viên
+## AAI Lab — app chính
+
+Chạy `./start_lab.ps1` rồi mở **http://127.0.0.1:8770** (không cần đăng nhập).
+Bốn màn hình: Lớp học (nhóm lỗi, bằng chứng, luật NẾU–THÌ, gợi ý dạy lại),
+Chạy thử (Docker), Dữ liệu C-Pack và Nghiên cứu.
+[Cách dùng, cách hoạt động và giới hạn](../docs/aai_lab.md).
+
+## App học viên và giảng viên (bản cũ)
 
 Mở Docker Desktop Linux engine. Từ thư mục này, chạy
 `& .venv/Scripts/python.exe scripts/setup_learning.py`, sau đó

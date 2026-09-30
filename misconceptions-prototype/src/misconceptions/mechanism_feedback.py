@@ -67,6 +67,12 @@ FEEDBACK = {
         "check": "Hỏi mỗi câu lệnh trong vòng lặp phục vụ yêu cầu nào của đề.",
         "reteach": "Rà soát code theo đặc tả; xóa lệnh in gỡ lỗi trước khi nộp.",
     },
+    "PARAMETER_PASSING": {
+        "name": "Truyền tham số và con trỏ",
+        "hypothesis": "Có thể cho rằng đổi tham số trong hàm sẽ đổi biến ở nơi gọi.",
+        "check": "Hỏi giá trị của a, b trong main ngay sau lời gọi hàm hoán vị.",
+        "reteach": "Vẽ ô nhớ của main và của hàm; minh họa truyền địa chỉ và gán qua *p.",
+    },
     "CONTROL_FLOW": {
         "name": "Luồng điều khiển",
         "hypothesis": "Có thể thoát vòng lặp hoặc hàm quá sớm (break/return) hoặc thiếu điểm thoát.",

@@ -106,4 +106,36 @@ def exercise_signs(problem, nodes, failed):
             "Code tính distance=x*x+y*y, gán limit=r rồi so sánh distance với limit",
             limits + distances + comparisons if limits and distances and comparisons else [], tests,
             "So sánh hai đại lượng cùng đơn vị: x²+y² với r²; thử r lớn hơn 1.")
+    if problem == "swap":
+        pairs = []
+        for t in failed:
+            try:
+                given, shown = ([int(x) for x in t[key].split()] for key in ("input", "output"))
+            except ValueError:
+                continue
+            if len(given) == 2 and given[0] != given[1] and len(shown) == 2:
+                pairs.append((t, given, shown))
+
+        def parameters(node):
+            declarator = node.child_by_field_name("declarator")
+            if (node.type != "function_definition" or declarator is None
+                    or declarator.type != "function_declarator"
+                    or text(node.child_by_field_name("type")) != "void"):
+                return []
+            params = [p for p in declarator.child_by_field_name("parameters").named_children
+                      if p.type == "parameter_declaration"]
+            found_params = [p.child_by_field_name("declarator") for p in params]
+            return found_params if len(found_params) == 2 and None not in found_params else []
+
+        functions = [(n, [p.type for p in parameters(n)]) for n in nodes]
+        add("SWAP_COPY", "Có dấu hiệu hoán vị trên bản sao tham số nên a, b ở main không đổi",
+            "Hàm void nhận hai tham số thường, không nhận địa chỉ",
+            [n for n, kinds in functions if kinds == ["identifier", "identifier"]],
+            [t for t, given, shown in pairs if shown == given],
+            "Hỏi a và b trong main bằng bao nhiêu ngay sau lời gọi hàm, với input 2 7.")
+        add("SWAP_OVERWRITE", "Có dấu hiệu ghi đè một giá trị trước khi lưu lại nên hai số in ra trùng nhau",
+            "Hàm void nhận hai con trỏ và gán giá trị qua chúng",
+            [n for n, kinds in functions if kinds == ["pointer_declarator", "pointer_declarator"]],
+            [t for t, given, shown in pairs if shown[0] == shown[1] and shown[0] in given],
+            "Hỏi *a và *b bằng bao nhiêu ngay sau lệnh gán đầu tiên, với input 2 7.")
     return found
