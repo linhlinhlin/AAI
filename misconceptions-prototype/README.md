@@ -8,7 +8,8 @@ baseline stdout. Đã có app học viên và giảng viên chạy local nhiều
 
 ## AAI Lab — app chính
 
-Chạy `./start_lab.ps1` rồi mở **http://127.0.0.1:8770** (không cần đăng nhập).
+Chạy `./start_lab.ps1` (hoặc bấm đúp `start_lab.cmd`) rồi mở **http://127.0.0.1:8770**
+(không cần đăng nhập); giữ cửa sổ đó mở trong lúc dùng app.
 Bốn màn hình: Lớp học (nhóm lỗi, bằng chứng, luật NẾU–THÌ, gợi ý dạy lại),
 Chạy thử (Docker), Dữ liệu C-Pack và Nghiên cứu.
 [Cách dùng, cách hoạt động và giới hạn](../docs/aai_lab.md).

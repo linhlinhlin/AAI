@@ -24,7 +24,6 @@ if ($docker) {
 } else {
     Write-Warning 'Docker is not installed: trial runs stay off; class, C-Pack and study views still work.'
 }
-Write-Host "AAI Lab: http://127.0.0.1:$Port  (keep this window open; Ctrl+C stops the app)"
 $arguments = @('-X', 'utf8', '-m', 'misconceptions.lab', '--port', $Port)
 if ($NoBrowser) { $arguments += '--no-browser' }
 & .venv/Scripts/python.exe @arguments

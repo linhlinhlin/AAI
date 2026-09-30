@@ -8,7 +8,10 @@ every write, so other web pages cannot drive it. Student code runs only in Docke
 import argparse
 import json
 import secrets
+import socket
+import sys
 import threading
+import urllib.request
 import webbrowser
 from collections import OrderedDict
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -250,12 +253,42 @@ def make_handler(service, port_holder):
     return Handler
 
 
+class LocalServer(ThreadingHTTPServer):
+    """Owns its port: on Windows SO_REUSEADDR would let a second copy bind the same port."""
+
+    allow_reuse_address = sys.platform != "win32"
+
+    def server_bind(self):
+        if sys.platform == "win32":
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+        super().server_bind()
+
+
+def running_lab(url):
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    try:
+        with opener.open(url + "api/state", timeout=2) as response:
+            return "runner" in json.load(response)
+    except (OSError, ValueError):
+        return False
+
+
 def serve(service, port=8770, open_browser=True):
     holder = {"port": port}
-    server = ThreadingHTTPServer(("127.0.0.1", port), make_handler(service, holder))
+    try:
+        server = LocalServer(("127.0.0.1", port), make_handler(service, holder))
+    except OSError:
+        url = f"http://127.0.0.1:{port}/"
+        if not running_lab(url):
+            raise SystemExit(f"Port {port} is used by another program. Run again with another port, "
+                             f"for example: start_lab.ps1 -Port {port + 1}") from None
+        print(f"AAI Lab is already running: {url}", flush=True)
+        if open_browser:
+            webbrowser.open(url)
+        return
     holder["port"] = server.server_address[1]
     url = f"http://127.0.0.1:{holder['port']}/"
-    print(f"AAI Lab: {url}", flush=True)
+    print(f"AAI Lab: {url}  (keep this window open; Ctrl+C stops the app)", flush=True)
     if open_browser:
         threading.Timer(0.6, webbrowser.open, args=(url,)).start()
     try:

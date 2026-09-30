@@ -13,6 +13,10 @@ Từ thư mục `misconceptions-prototype`:
 ./start_lab.ps1 -Port 8771 -NoBrowser
 ```
 
+Hoặc bấm đúp `start_lab.cmd` trong Explorer. Giữ cửa sổ đó mở trong lúc dùng app;
+đóng cửa sổ (hoặc Ctrl+C) là tắt app. Nếu app đã chạy sẵn, lần khởi động sau chỉ mở
+trình duyệt vào bản đang chạy.
+
 Lần đầu, script tạo `.venv`, cài thư viện và dựng image Docker `aai-c-runner:1`
 nếu còn thiếu. Chỉ màn **Chạy thử** cần Docker Desktop; ba màn còn lại chạy được
 khi không có Docker. Dữ liệu app nằm ở `.cache/lab/lab.sqlite3` (không đưa lên Git);

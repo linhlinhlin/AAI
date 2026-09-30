@@ -25,7 +25,8 @@ Set-Location misconceptions-prototype
 ./start_lab.ps1
 ```
 
-App mở `http://127.0.0.1:8770`. [Cách dùng, cách hoạt động và giới hạn](docs/aai_lab.md).
+Hoặc bấm đúp `misconceptions-prototype/start_lab.cmd`. App mở `http://127.0.0.1:8770`
+và chỉ chạy khi cửa sổ đó còn mở. [Cách dùng, cách hoạt động và giới hạn](docs/aai_lab.md).
 Hai app bên dưới (cổng 8766 và 8765) là bản cũ, giữ để tham khảo.
 
 ## App học viên và giảng viên (bản cũ)

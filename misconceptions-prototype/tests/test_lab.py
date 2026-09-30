@@ -10,7 +10,7 @@ import pytest
 from misconceptions.lab import analysis, study
 from misconceptions.lab.cpack_source import CPackSource
 from misconceptions.lab.phrases import condition_phrase
-from misconceptions.lab.server import LabService, make_handler
+from misconceptions.lab.server import LabService, LocalServer, make_handler, serve
 from misconceptions.learning_sandbox import SandboxUnavailable
 
 MAX_ZERO = """#include <stdio.h>
@@ -156,6 +156,23 @@ def test_study_summary_uses_readable_rules():
 
 def test_frozen_rules_stay_loadable():
     assert analysis.frozen_rules()["rules"]
+
+
+def test_second_start_reuses_the_running_app_instead_of_sharing_the_port(service, capsys):
+    holder = {"port": 0}
+    server = LocalServer(("127.0.0.1", 0), make_handler(service, holder))
+    holder["port"] = port = server.server_address[1]
+    worker = threading.Thread(target=server.serve_forever, daemon=True)
+    worker.start()
+    try:
+        with pytest.raises(OSError):
+            LocalServer(("127.0.0.1", port), make_handler(service, holder))
+        serve(service, port, open_browser=False)  # Returns at once: the running copy keeps the port.
+        assert "already running" in capsys.readouterr().out
+    finally:
+        server.shutdown()
+        server.server_close()
+        worker.join(timeout=3)
 
 
 @pytest.fixture
