@@ -146,7 +146,10 @@ def embed(texts, cache_path):
 def evaluate_cohort(items, space_by_rep, embeddings):
     gold = [item["label"] for item in items]
     n_labels = len(set(gold))
-    result = {"n": len(items), "labels": dict(Counter(gold)), "reps": {}}
+    result = {"n": len(items), "labels": dict(Counter(gold)), "reps": {},
+              "items": [{"id": item["id"], "label": item["label"], "source": item["source_key"],
+                         "student": item["student"], "partition": item["partition"]} for item in items],
+              "assignments": {}}  # Primary configuration (K-means, oracle k, seed 42) per item.
     outcome_values = space_by_rep["outcomes"].transform([item["values"] for item in items])
     for rep, space in space_by_rep.items():
         values = space.transform([item["values"] for item in items])
@@ -164,11 +167,14 @@ def evaluate_cohort(items, space_by_rep, embeddings):
                     labels = cluster(matrix, distances, method, k, seed) if patterns > 1 else \
                         np.zeros(len(items), dtype=int)
                     runs.append(score(labels, gold))
+                    if (method, mode, seed) == ("kmeans", "oracle", 42):
+                        result["assignments"][rep] = labels.tolist()
                 entry[f"{method}_{mode}"] = {m: _mean([r[m] for r in runs]) for m in runs[0]}
         result["reps"][rep] = entry
     signature = [tuple(item["outcomes"][t] for t in sorted(item["outcomes"])) for item in items]
     _, exact = np.unique(np.asarray([str(s) for s in signature]), return_inverse=True)
     result["reps"]["exact_signature"] = {"exact": score(exact, gold)}
+    result["assignments"]["exact_signature"] = exact.tolist()
     if embeddings is not None:
         vectors = np.stack([embeddings[item["code"]] for item in items])
         vectors = vectors / np.linalg.norm(vectors, axis=1, keepdims=True)
@@ -183,6 +189,8 @@ def evaluate_cohort(items, space_by_rep, embeddings):
                     labels = cluster(vectors, distances, method, k, seed)
                     runs.append(score(labels, gold))
                     source_ari.append(adjusted_rand_score(sources, labels))
+                    if (method, mode, seed) == ("kmeans", "oracle", 42):
+                        result["assignments"]["embedding"] = labels.tolist()
                 entry[f"{method}_{mode}"] = {m: _mean([r[m] for r in runs]) for m in runs[0]}
                 entry[f"{method}_{mode}"]["ari_vs_source"] = _mean(source_ari)
         result["reps"]["embedding"] = entry

@@ -24,6 +24,13 @@ def holm(pvalues):
     return adjusted
 
 
+def selective(value):
+    """Accuracy on answered items; models without abstention answer every item."""
+    if value.get("selective_accuracy") is not None:
+        return value["selective_accuracy"]
+    return value.get("accuracy_abstain_as_error") or 0.0
+
+
 def verdict(summary, lower_bound_rule=True):
     if not summary or summary.get("n", 0) == 0:
         return "not_evaluable"
@@ -119,7 +126,7 @@ def main():
         for key, value in entry["rules"].items():
             if "macro_f1" in value:
                 lines.append(f"| {key} | {value['macro_f1']:.3f} | {value.get('coverage', 1.0):.3f} | "
-                             f"{value.get('selective_accuracy') or 0:.3f} | {value.get('n_rules', '-')} |")
+                             f"{selective(value):.3f} | {value.get('n_rules', '-')} |")
         lines.append("")
     args.output.mkdir(parents=True, exist_ok=True)
     write_json(args.output / "summary.json", out)

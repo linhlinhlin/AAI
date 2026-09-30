@@ -210,6 +210,25 @@
       "before_any_evaluation_result": true,
       "change": "Repair-label classifier v1.1: declaration diffs (a variable changes type; an initial value is added or removed without moving into an assignment in the same hunk), macro constants (computation) and wholly inserted or deleted functions (missing/extra statement) are classified. Stored verified minimal repairs are re-labelled offline with scripts/relabel_repairs.py; nothing is re-executed. Evaluation uses .cache/mechanism-bench-v1.1.",
       "reason": "a 64-case audit of train/validation labels (research/runs/label-audit-20260930, AI-performed, not independent) found 53/53 single-category labels correct but 6 of 11 excluded cases (NO_CHANGE/OTHER/MULTI) that have a clear single category under the taxonomy; the fix restores coverage. A validation run started earlier was stopped before writing any result and its empty output was deleted unread."
+    },
+    {
+      "id": "A7",
+      "recorded_at_utc": "2026-09-30T13:02:24Z",
+      "before_any_test_result": true,
+      "change": "The ILA-2 penalty factor is frozen at 1.0 for the test run, the value with the highest validation macro-F1 (seen problems, evidence attributes) on both benchmarks. The test run additionally stores per-item assignments of the primary configuration (K-means, oracle k, seed 42); per-category analyses derived from them are exploratory and reported as such.",
+      "validation_penalty_scan": {
+        "real": {
+          "1.0": 0.26903361977988843,
+          "2.0": 0.26483585858585856,
+          "5.0": 0.2553872053872054
+        },
+        "injected": {
+          "1.0": 0.6457925432056953,
+          "2.0": 0.5951683922599594,
+          "5.0": 0.5122331358516989
+        }
+      },
+      "reason": "the only tunable quantity of the protocol is fixed on validation before the sealed test run; storing assignments changes no registered analysis."
     }
   ]
 }

@@ -139,6 +139,17 @@ function inducedRulesForCluster(report, cluster) {
   return `<details class="induced-rules"><summary>Luật quy nạp phân biệt nhóm ${cluster+1} · ${rules.length} luật</summary><p class="small muted">${esc(report.teaching?.condition_scope_vi||"Luật giữ nguyên các trạng thái đã khai báo trong dữ liệu.")} Cây quyết định học từ các bài xây dựng cụm. Mỗi luật dưới đây dự đoán nhóm, không tự suy ra nguyên nhân hay hiểu biết của học viên. Sai khác ký tự chỉ đo hình thức output.</p>${rules.map(rule=>`<div class="rule induced-rule"><ol class="rule-conditions">${rule.if_vi.map((condition,i)=>`<li><b>${i ? "VÀ" : "NẾU"}</b> ${esc(condition)}</li>`).join("")}</ol><p><b>THÌ</b> dự đoán bài thuộc nhóm ${cluster+1}.</p><p class="small">${rule.train_support} bài dùng xây dựng luật; ${rule.holdout_support} bài dùng kiểm tra. Khớp ID nhóm ở phần kiểm tra: ${rule.holdout_precision==null?"chưa có mẫu":Math.round(rule.holdout_precision*100)+"%"}. Không phải tỷ lệ chẩn đoán đúng lỗi.</p><details><summary>Điều kiện OAV gốc</summary><pre>${esc(rule.if.join("\nAND "))}</pre></details></div>`).join("")}</details>`;
 }
 
+// Frozen ILA-2 rules from repair-grounded labels: a checked hypothesis with its held-out accuracy.
+function mechanismForCluster(report, cluster) {
+  const m = report.mechanism; if (!m || m.status !== "hypothesis") return "";
+  const c = (m.clusters || []).find(x => x.cluster === String(cluster)); if (!c) return "";
+  const held = m.held_out?.seen_problems, fresh = m.held_out?.unseen_problems;
+  const pct = v => v == null ? "—" : Math.round(v * 100) + "%";
+  const measured = held ? `Luật đúng ${pct(held.selective_accuracy)} số bài được trả lời ở sinh viên chưa thấy (trả lời ${pct(held.coverage)})${fresh ? `; ở bài tập mới: ${pct(fresh.selective_accuracy)}` : ""}.` : "";
+  if (!c.top_category) return `<section class="rule mechanism"><b>Giả thuyết cơ chế</b><p class="small muted">Không luật nào khớp ${c.abstained}/${c.members} bài; hệ thống không đoán.</p></section>`;
+  const f = c.feedback || {}, share = c.categories[c.top_category] || 0;
+  return `<section class="rule mechanism"><b>Giả thuyết cơ chế · ${esc(f.name || c.top_category)}</b><p>${share}/${c.members} bài khớp luật ILA-2${c.abstained ? `; ${c.abstained} bài không khớp luật nào` : ""}. ${esc(f.hypothesis || "")}</p><p><b>Kiểm tra nhanh:</b> ${esc(f.check || "")}</p><p><b>Giảng lại:</b> ${esc(f.reteach || "")}</p><p class="small muted">${esc(measured)} ${esc(m.caveat)}</p></section>`;
+}
 function renderReport(data){
   state.report=data;const r=data.report,assignments={...r.train_assignments,...r.holdout_assignments};
   const names=Object.fromEntries(r.students.map(s=>[s.id,s.name]));
@@ -155,7 +166,7 @@ function renderReport(data){
     ${clusters.map(c=>{const members=Object.keys(assignments).filter(id=>assignments[id]===c),representative=r.medoids[String(c)]||members[0];return `<article class="cluster-card">
       <div class="cluster-head"><h2>Nhóm ${c+1}</h2><span class="pill">${members.length} bài · chưa xác thực</span></div>
       <div class="cluster-members"><button class="member" data-evidence="${esc(representative)}">Bài đại diện · ${esc(labelFor(representative))}</button><details><summary>Tất cả ${members.length} bài</summary><div class="members">${members.map(id=>`<button class="member" data-evidence="${esc(id)}">${esc(labelFor(id))}</button>`).join("")}</div></details></div>
-      ${teachingRulesForCluster(r,c,members,labelFor)}${inducedRulesForCluster(r,c)}
+      ${mechanismForCluster(r,c)}${teachingRulesForCluster(r,c,members,labelFor)}${inducedRulesForCluster(r,c)}
       <div class="saved-note"></div>
       <form class="review-form" data-cluster="${c}"><div class="span-2"><button type="button" class="secondary" data-suggest>Gợi ý giảng lại</button><div class="suggestion-preview" aria-live="polite"></div></div>
       <details class="note-editor span-2"><summary>Ghi chú giảng viên · tùy chọn</summary><div class="note-fields">
