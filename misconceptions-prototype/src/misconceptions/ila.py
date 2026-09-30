@@ -23,13 +23,17 @@ def induce(rows, labels, *, max_conditions=2, penalty=None, min_support=2, attri
         outside = [i for i, label in enumerate(labels) if label != target]
         unmarked = set(inside)
         size = 1
+        negatives_cache = {}  # The other classes never change while this class is covered.
         while unmarked and size <= max_conditions:
             best = None
             for subset in combinations(attributes, size):
                 counts = Counter(tuple(rows[i].get(a) for a in subset) for i in unmarked)
                 if not counts:
                     continue
-                negatives = Counter(tuple(rows[i].get(a) for a in subset) for i in outside)
+                if subset not in negatives_cache:
+                    negatives_cache[subset] = Counter(
+                        tuple(rows[i].get(a) for a in subset) for i in outside)
+                negatives = negatives_cache[subset]
                 for values, positives in counts.items():
                     if positives < min_support or None in values:
                         continue

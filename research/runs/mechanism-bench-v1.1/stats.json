@@ -1,0 +1,203 @@
+{
+  "bench_manifest_sha256": "be9018714b51e717368fccc2eda7ef9c7d3f634652e2c4a03e05e1bc8a0cf3ce",
+  "real": {
+    "repair_events": 750,
+    "status": {
+      "ok": 746,
+      "endpoint_check_failed": 3,
+      "no_line_difference": 1
+    },
+    "one_minimal": 743,
+    "hunks_minimal": {
+      "1": 340,
+      "2": 200,
+      "3": 91,
+      "4": 52,
+      "5": 63
+    },
+    "hunks_total_mean": 2.784182305630027,
+    "hunks_minimal_mean": 2.1621983914209117,
+    "probes_total": 7040,
+    "primary_all": {
+      "MULTI": 406,
+      "OUTPUT_TEXT": 180,
+      "COMPUTATION": 30,
+      "MISSING_STATEMENT": 29,
+      "BRANCH_CONDITION": 19,
+      "CONTROL_FLOW": 18,
+      "LOOP_BOUNDARY": 17,
+      "OUTPUT_FORMAT": 13,
+      "EXTRA_STATEMENT": 9,
+      "INITIALIZATION": 8,
+      "STATEMENT_PLACEMENT": 7,
+      "INPUT": 6,
+      "NUMERIC_TYPE": 3,
+      "OTHER": 1
+    },
+    "gold": 339,
+    "gold_by_partition": {
+      "train": 243,
+      "validation": 67,
+      "test": 29
+    },
+    "gold_labels": {
+      "OUTPUT_TEXT": 180,
+      "COMPUTATION": 30,
+      "MISSING_STATEMENT": 29,
+      "BRANCH_CONDITION": 19,
+      "CONTROL_FLOW": 18,
+      "LOOP_BOUNDARY": 17,
+      "OUTPUT_FORMAT": 13,
+      "EXTRA_STATEMENT": 9,
+      "INITIALIZATION": 8,
+      "STATEMENT_PLACEMENT": 7,
+      "INPUT": 6,
+      "NUMERIC_TYPE": 3
+    },
+    "gold_labels_by_partition": {
+      "train": {
+        "OUTPUT_TEXT": 132,
+        "BRANCH_CONDITION": 11,
+        "MISSING_STATEMENT": 21,
+        "CONTROL_FLOW": 14,
+        "INPUT": 3,
+        "COMPUTATION": 24,
+        "INITIALIZATION": 3,
+        "OUTPUT_FORMAT": 12,
+        "LOOP_BOUNDARY": 15,
+        "STATEMENT_PLACEMENT": 3,
+        "EXTRA_STATEMENT": 4,
+        "NUMERIC_TYPE": 1
+      },
+      "validation": {
+        "OUTPUT_TEXT": 34,
+        "BRANCH_CONDITION": 4,
+        "MISSING_STATEMENT": 6,
+        "CONTROL_FLOW": 4,
+        "INPUT": 3,
+        "INITIALIZATION": 1,
+        "NUMERIC_TYPE": 2,
+        "OUTPUT_FORMAT": 1,
+        "COMPUTATION": 2,
+        "EXTRA_STATEMENT": 5,
+        "STATEMENT_PLACEMENT": 3,
+        "LOOP_BOUNDARY": 2
+      },
+      "test": {
+        "COMPUTATION": 4,
+        "STATEMENT_PLACEMENT": 1,
+        "BRANCH_CONDITION": 4,
+        "OUTPUT_TEXT": 14,
+        "INITIALIZATION": 4,
+        "MISSING_STATEMENT": 2
+      }
+    },
+    "eligible_cohorts": {
+      "train": 14,
+      "validation": 2,
+      "test": 0,
+      "full": 21
+    },
+    "unstable_excluded": 7
+  },
+  "injected": {
+    "mutants": 3320,
+    "by_partition": {
+      "train": 2240,
+      "validation": 634,
+      "test": 446
+    },
+    "labels": {
+      "OUTPUT_TEXT": 637,
+      "MISSING_STATEMENT": 502,
+      "EXTRA_STATEMENT": 458,
+      "LOOP_BOUNDARY": 449,
+      "INITIALIZATION": 365,
+      "COMPUTATION": 347,
+      "STATEMENT_PLACEMENT": 326,
+      "BRANCH_CONDITION": 194,
+      "OUTPUT_FORMAT": 42
+    },
+    "operators": {
+      "drop_newline": 581,
+      "delete_statement": 502,
+      "duplicate_statement": 458,
+      "constant_initializer": 365,
+      "arithmetic_operator": 347,
+      "move_output_into_loop": 261,
+      "loop_strictness": 242,
+      "loop_start": 207,
+      "branch_strictness": 101,
+      "branch_connective": 93,
+      "move_into_loop": 65,
+      "letter_case": 56,
+      "precision": 42
+    },
+    "sources": 964,
+    "eligible_cohorts": {
+      "train": 25,
+      "validation": 22,
+      "test": 20
+    },
+    "build_status": {
+      "equivalent_on_suite": 722,
+      "kept": 3320,
+      "compile_warning": 306,
+      "compile_error": 2
+    }
+  },
+  "build": {
+    "image": "sha256:ebc87762adb554826177c56cae8b80055855aa26c8fbf8d987aab4ebb8d509a2",
+    "budget": 64,
+    "seed": 42,
+    "max_sources": 40,
+    "elapsed_seconds": 933.5
+  },
+  "relabel": {
+    "transitions": {
+      "MULTI->MULTI": 400,
+      "OUTPUT_TEXT->OUTPUT_TEXT": 180,
+      "COMPUTATION->COMPUTATION": 29,
+      "BRANCH_CONDITION->BRANCH_CONDITION": 19,
+      "MISSING_STATEMENT->MISSING_STATEMENT": 18,
+      "CONTROL_FLOW->CONTROL_FLOW": 18,
+      "LOOP_BOUNDARY->LOOP_BOUNDARY": 17,
+      "OUTPUT_FORMAT->OUTPUT_FORMAT": 13,
+      "MULTI->MISSING_STATEMENT": 11,
+      "EXTRA_STATEMENT->EXTRA_STATEMENT": 9,
+      "STATEMENT_PLACEMENT->STATEMENT_PLACEMENT": 7,
+      "INPUT->INPUT": 6,
+      "NO_CHANGE->INITIALIZATION": 6,
+      "MISSING_STATEMENT->MULTI": 2,
+      "INITIALIZATION->INITIALIZATION": 2,
+      "NUMERIC_TYPE->NUMERIC_TYPE": 2,
+      "OUTPUT_TEXT->MULTI": 1,
+      "INPUT->MULTI": 1,
+      "OTHER->COMPUTATION": 1,
+      "BRANCH_CONDITION->MULTI": 1,
+      "LOOP_BOUNDARY->MULTI": 1,
+      "OTHER->OTHER": 1,
+      "NO_CHANGE->NUMERIC_TYPE": 1
+    },
+    "audit": {
+      "cases": 64,
+      "before": {
+        "agree": 58,
+        "disagree": 6
+      },
+      "after": {
+        "agree": 64
+      },
+      "single_label_precision_before": 1.0
+    }
+  },
+  "corpus": {
+    "submissions": 8607,
+    "students": 246,
+    "problems": 25,
+    "tests": 106,
+    "historical_cells": 37313,
+    "historical_not_run_cells": 9425,
+    "empty_sources": 32
+  }
+}
