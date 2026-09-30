@@ -196,6 +196,13 @@
       "before_any_evaluation_result": true,
       "change": "Interpretation only; criteria unchanged.",
       "reason": "on the injected benchmark, code-based features (structural, code_cues, evidence) inspect the same syntax that operators edit, so their injected scores are an optimistic bound; the real benchmark is the primary evidence for code-based representations."
+    },
+    {
+      "id": "A5",
+      "recorded_at_utc": "2026-09-30T12:30:54Z",
+      "before_any_evaluation_result": true,
+      "change": "Submissions whose replayed outcomes differ between the two independent corpus replays (research/runs/replay-reproducibility-20260930.json, outcome_differing_ids) are excluded as real items and as injection sources.",
+      "reason": "their verdicts are not reproducible (likely undefined behaviour), so neither features nor labels are stable; the criterion uses no label."
     }
   ]
 }

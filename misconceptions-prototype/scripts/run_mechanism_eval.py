@@ -62,7 +62,7 @@ def features(problem, source, outcomes, record, tests):
     return values
 
 
-def load_items(data, replay, bench):
+def load_items(data, replay, bench, unstable=frozenset()):
     cohorts = {}
     for folder, manifest, rows in read_cohorts(data):
         problem = manifest["problem_id"]
@@ -81,7 +81,11 @@ def load_items(data, replay, bench):
         if key not in latest or attempt > latest[key][0]:
             latest[key] = (attempt, repair["item_id"])
     keep = {item_id for _, item_id in latest.values()}
+    excluded = Counter()
     for repair in repairs:
+        if repair["item_id"] in unstable:
+            excluded["real_unstable"] += 1  # Amendment A5.
+            continue
         if repair["item_id"] not in keep or repair["status"] != "ok" or not repair["one_minimal"]                 or repair["primary"] in ("MULTI", "OTHER", "NO_CHANGE"):
             continue
         cohort = cohorts[repair["problem_id"]]
@@ -93,6 +97,9 @@ def load_items(data, replay, bench):
                               "outcomes": outcomes, "record": record})
     for line in (bench / "injected.jsonl").read_text(encoding="utf-8").splitlines():
         mutant = json.loads(line)
+        if mutant["source_submission_id"] in unstable:
+            excluded["injected_unstable_source"] += 1  # Amendment A5.
+            continue
         items["injected"].append({"id": mutant["item_id"], "problem": mutant["problem_id"],
                                   "student": mutant["student_id"], "partition": mutant["partition"],
                                   "label": mutant["category"], "source_key": mutant["source_submission_id"],
@@ -110,7 +117,7 @@ def load_items(data, replay, bench):
             if outcomes is None or all(v == "pass" for v in outcomes.values()):
                 continue
             pool[problem].append((sid, cohort["rows"][sid].source_code, outcomes, record))
-    return items, cohorts, pool
+    return items, cohorts, pool, dict(excluded)
 
 
 def embed(texts, cache_path):
@@ -379,6 +386,8 @@ def main():
     parser.add_argument("--scopes", nargs="+", choices=("partition", "full"), default=["partition"],
                         help="full = all partitions of a problem (amendment A3); final run only")
     parser.add_argument("--penalty", type=float, help="ILA-2 penalty frozen after validation")
+    parser.add_argument("--unstable", type=Path, required=True,
+                        help="replay reproducibility report; its unstable ids are excluded (A5)")
     parser.add_argument("--embed-cache", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
@@ -393,13 +402,15 @@ def main():
     if audit["selected_policy"] != "exact_exit0":
         raise ValueError("Replay audit selected a different outcome policy; update POLICY_DEFAULT")
     started = time.time()
-    items, cohorts, pool = load_items(args.data, args.replay, args.bench)
+    unstable = frozenset(json.loads(args.unstable.read_text(encoding="utf-8"))["outcome_differing_ids"])
+    items, cohorts, pool, excluded = load_items(args.data, args.replay, args.bench, unstable)
     embeddings = None
     if args.embed_cache:
         texts = sorted({item["code"] for benchmark in items.values() for item in benchmark
                         if "full" in args.scopes or item["partition"] == args.partition})
         embeddings = embed(texts, args.embed_cache)
-    report = {"partition": args.partition, "scopes": args.scopes, "benchmarks": {}}
+    report = {"partition": args.partition, "scopes": args.scopes, "excluded": excluded,
+              "benchmarks": {}}
     for benchmark, benchmark_items in items.items():
         scopes = {}
         for scope in args.scopes:
@@ -439,7 +450,7 @@ def main():
         "scopes": args.scopes, "penalty": args.penalty,
         "bench_manifest_sha256": digest(args.bench / "manifest.json"),
         "replay_manifest_sha256": digest(args.replay / "replay_manifest.json"),
-        "split_lock_sha256": digest(args.split_lock),
+        "split_lock_sha256": digest(args.split_lock), "unstable_sha256": digest(args.unstable),
         "embedding_model": EMBED_MODEL if embeddings else None,
         "elapsed_seconds": round(time.time() - started, 1), "implementation": implementation})
     print(json.dumps({b: {s: v["summary"]["comparisons"] for s, v in r["scopes"].items()
