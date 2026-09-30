@@ -1,0 +1,676 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab02-ex10--kmeans--combined_stdout--s42--c1</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab02-ex10 · 11 bài</h1><p>lab02-ex10--kmeans--combined_stdout--s42--c1 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex10_0: 11/11 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex10_1: 11/11 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex10_2: 11/11 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex10_3: 11/11 bài trượt (100.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex10_0:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.3333333333333333,
+      &quot;difference_from_cohort&quot;: 0.6666666666666667
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex10_1:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.3333333333333333,
+      &quot;difference_from_cohort&quot;: 0.6666666666666667
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex10_2:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.3333333333333333,
+      &quot;difference_from_cohort&quot;: 0.6666666666666667
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex10_3:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 0.9090909090909091,
+      &quot;cohort_rate&quot;: 0.30303030303030304,
+      &quot;difference_from_cohort&quot;: 0.606060606060606
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex10_1:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.45454545454545453,
+      &quot;difference_from_cohort&quot;: 0.5454545454545454
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex10_2:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 0.9090909090909091,
+      &quot;cohort_rate&quot;: 0.3939393939393939,
+      &quot;difference_from_cohort&quot;: 0.5151515151515151
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex10_0:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5757575757575758,
+      &quot;difference_from_cohort&quot;: 0.4242424242424242
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex10_3:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 0.9090909090909091,
+      &quot;cohort_rate&quot;: 0.5757575757575758,
+      &quot;difference_from_cohort&quot;: 0.33333333333333326
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex10_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7878787878787878,
+      &quot;difference_from_cohort&quot;: 0.21212121212121215
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8484848484848485,
+      &quot;difference_from_cohort&quot;: 0.1515151515151515
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex10_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8484848484848485,
+      &quot;difference_from_cohort&quot;: 0.1515151515151515
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex10_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8484848484848485,
+      &quot;difference_from_cohort&quot;: 0.1515151515151515
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 0.6363636363636364,
+      &quot;cohort_rate&quot;: 0.48484848484848486,
+      &quot;difference_from_cohort&quot;: 0.1515151515151515
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8787878787878788,
+      &quot;difference_from_cohort&quot;: 0.12121212121212122
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex10_3&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9090909090909091,
+      &quot;difference_from_cohort&quot;: 0.09090909090909094
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 0.9090909090909091,
+      &quot;cohort_rate&quot;: 0.8181818181818182,
+      &quot;difference_from_cohort&quot;: 0.09090909090909083
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9393939393939394,
+      &quot;difference_from_cohort&quot;: 0.06060606060606055
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex10_2:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 0.09090909090909091,
+      &quot;cohort_rate&quot;: 0.06060606060606061,
+      &quot;difference_from_cohort&quot;: 0.030303030303030304
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_do&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9696969696969697,
+      &quot;difference_from_cohort&quot;: 0.030303030303030276
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 11,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9696969696969697,
+      &quot;difference_from_cohort&quot;: 0.030303030303030276
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 3,
+      &quot;if&quot;: [
+        &quot;NOT (stdout:ex10_1:relation=different)&quot;,
+        &quot;test:ex10_1=fail&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 10,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 3,
+      &quot;holdout_precision&quot;: 0.3333333333333333
+    }
+  ]
+}</pre></details><details><summary>sample_001 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+int N;
+int dig, soma = 0, contador = 0;
+
+int main(){
+
+    scanf(&quot;%d&quot;, &amp;N);
+    while (N &gt; 0 ){
+        dig = N % 10;
+        N = N / 10;
+        contador += 1;
+        soma = soma + dig;
+    }   
+    printf(&quot;%d\t%d\n&quot;, contador, soma);
+    return 0;
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2\t3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3\t6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5\t15\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;2\t1\n&quot;
+  }
+]</pre></details><details><summary>sample_002 · đại diện</summary><pre>
+#include&lt;stdio.h&gt;
+
+int main() {
+    int N, digitos = 0, soma = 0;
+    
+    
+    scanf(&quot;%d&quot;, &amp;N);
+    
+    while (N != 0) {
+        digitos++;
+        soma += N % 10;
+        N /= 10;
+    }
+    
+    printf(&quot; %d\n%d\n&quot;, digitos, soma);
+    
+    return 0;
+}
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot; 2\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot; 3\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot; 5\n15\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot; 2\n1\n&quot;
+  }
+]</pre></details><details><summary>sample_003 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num, digito,soma=0, contador=0;
+    scanf(&quot;%d&quot;, &amp;num);
+    while (num&gt;0)
+    {
+        digito= num%10;
+        num= num/10;
+        soma += (digito);
+        contador++;
+    }
+    printf(&quot;%d\n%d&quot;, contador, soma);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5\n15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;2\n1&quot;
+  }
+]</pre></details><details><summary>sample_005 · đại diện</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    int n, dig = 0, soma_dig = 0;
+
+    scanf(&quot;%d&quot;, &amp;n);
+
+    while (n != 0) {
+        dig++;
+        soma_dig += n % 10;
+        n /= 10;
+    }
+
+    printf(&quot;%d\n&quot;, dig);
+    printf(&quot;%d&quot;, soma_dig);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5\n15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;2\n1&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main (){
+
+    int N, digito, contador_digitos=0, soma_digitos=0;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    while (N &gt; 0){
+        digito = N % 10;          
+        soma_digitos += digito;
+        contador_digitos ++;
+        N = N/10;
+    }    
+    printf(&quot;%d \n %d&quot;, contador_digitos, soma_digitos);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2 \n 3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3 \n 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5 \n 15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;2 \n 1&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int N, digitos = 0, soma = 0;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    while (N)
+    {
+        soma = soma + (N % 10);
+        digitos++;
+        N = N / 10;
+    }
+
+
+    printf(&quot;%d\n%d&quot;, digitos, soma);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5\n15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;2\n1&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int N, digitos = 0, soma = 0;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    while (N)
+    {
+        soma = soma + (N % 10);
+        digitos++;
+        N = N / 10;
+    }
+
+
+    printf(&quot;%d\n\n%d&quot;, digitos, soma);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2\n\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3\n\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5\n\n15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;2\n\n1&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int N;
+    int s;
+    int temp;
+    int counter = 0;
+    scanf(&quot;%d&quot;, &amp;N);
+
+    while(N != 0){
+        counter++;
+        temp = N%10;
+        s += temp; 
+        N = N/10;
+    }
+
+    printf(&quot;%d\n%d&quot;, counter, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5\n15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;2\n1&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+
+    int N, soma = 0, ndigitos = 0, digito;
+
+    scanf(&quot;%d&quot;,&amp;N);
+
+    while(N != 0){ 
+        digito = N % 10; 
+        N = N / 10; 
+        soma += digito; 
+        ndigitos ++;
+    }
+
+    printf(&quot;%d\n%d&quot;, ndigitos, soma);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5\n15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;2\n1&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int num, soma;
+    int contador = 0, dig;
+
+    scanf(&quot;%d&quot;,&amp;num);
+    dig = num % 10;
+    num = num / 10;
+
+    while (dig != 0){
+        contador++;
+        soma += dig;
+
+        dig = num % 10;
+        num = num / 10;
+    } 
+    printf(&quot;%d\n%d&quot;,contador,soma);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5\n15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;0\n0&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n, soma= 0, cont= 0;
+    scanf(&quot;%d&quot;, &amp;n);
+    while (n &gt; 0){
+        soma += n % 10;
+        cont++; 
+        n = n/10;  
+    }
+    printf (&quot;%d\n%d&quot;, cont, soma);
+    return 0;   
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex10_0&quot;,
+    &quot;input&quot;: &quot;12&quot;,
+    &quot;expected&quot;: &quot;2\n3\n&quot;,
+    &quot;output&quot;: &quot;2\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_1&quot;,
+    &quot;input&quot;: &quot;123&quot;,
+    &quot;expected&quot;: &quot;3\n6\n&quot;,
+    &quot;output&quot;: &quot;3\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_2&quot;,
+    &quot;input&quot;: &quot;12345&quot;,
+    &quot;expected&quot;: &quot;5\n15\n&quot;,
+    &quot;output&quot;: &quot;5\n15&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex10_3&quot;,
+    &quot;input&quot;: &quot;10&quot;,
+    &quot;expected&quot;: &quot;2\n1\n&quot;,
+    &quot;output&quot;: &quot;2\n1&quot;
+  }
+]</pre></details></html>

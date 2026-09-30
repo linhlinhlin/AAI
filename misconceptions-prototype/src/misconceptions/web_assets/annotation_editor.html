@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Phiếu gán nhãn · Đề tài 5</title>
+<style>
+:root{font:17px/1.5 'Segoe UI',sans-serif;color:#183d37;background:#f4f5ef}*{box-sizing:border-box}body{margin:0}header{padding:24px 32px;background:#173f37;color:white}h1{font:600 29px/1.2 Georgia,serif;margin:0 0 8px}h2{font-size:20px;margin:0 0 12px}h3{font-size:17px;margin:12px 0}p{margin:8px 0}.muted,small{color:#52655f}header p{color:#d5e4d9;max-width:1000px}.wrap{max-width:1600px;margin:auto;padding:24px 32px}.panel{min-width:0;border:1px solid #ccd7cd;border-radius:10px;background:white;padding:20px;margin-bottom:18px}.setup{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}label{display:block;font-weight:600;margin:10px 0 6px}input,select,textarea,button{font:inherit}input:not([type=checkbox]),select,textarea{width:100%;border:1px solid #aabeb3;border-radius:6px;padding:10px;color:#183d37;background:white}textarea{resize:vertical;min-height:90px}button,.file-button{display:inline-block;border:1px solid #aabeb3;border-radius:6px;padding:10px 16px;background:#eef3e8;color:#183d37;cursor:pointer;font-weight:600;margin:0}button.primary{background:#215a49;color:white;border-color:#215a49}button:disabled{opacity:.45;cursor:default}button:hover:not(:disabled),.file-button:hover{filter:brightness(.94)}:focus-visible{outline:3px solid #d39328;outline-offset:2px}.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.two{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(360px,1fr);gap:20px;align-items:start}.code{max-height:520px;overflow:auto;background:#f8faf7;border:1px solid #d6dfd7;padding:8px;border-radius:6px;font:.82rem/1.65 Consolas,monospace}.code label{display:flex;align-items:baseline;gap:10px;font:inherit;margin:0;font-weight:400;white-space:pre;min-width:max-content;padding:1px 6px}.code label:has(input:checked){background:#dceacb}.line-number{color:#74847b;min-width:30px;text-align:right}.code input{accent-color:#215a49}.test{border:1px solid #d6dfd7;border-radius:6px;padding:12px;margin:10px 0}.test label{margin:0}.io{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:.82rem/1.5 Consolas,monospace;margin:4px 0;background:#f4f6f1;padding:8px}.status{border-left:4px solid #d69a2c;padding:10px 16px;background:#fffae9;margin:14px 0;white-space:pre-wrap}.check{display:flex;gap:10px;align-items:start;font-weight:400}.check input{margin-top:7px}summary{cursor:pointer;font-weight:600}progress{width:180px;accent-color:#215a49}#position{min-width:110px}#saved{min-height:26px}#problem-text{max-height:240px;overflow:auto}#case-id{overflow-wrap:anywhere}.footer{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}.wide{grid-column:1/-1}input[type=file]{max-width:100%}@media(max-width:900px){.two,.setup{grid-template-columns:1fr}.wrap{padding:16px}header{padding:20px}.io{grid-template-columns:1fr}}@media(min-width:1100px){.rating{position:sticky;top:16px}}
+</style>
+<header><h1>Gán nhãn cơ chế lỗi</h1><p>Đọc bài → đánh dấu dòng và test → chọn nhãn → tải phiếu. Chạy hoàn toàn trên máy, không gửi dữ liệu đến AI.</p></header>
+<main class="wrap">
+<details class="panel" open id="settings"><summary>Thông tin người đánh giá và bộ nhãn chung</summary>
+<p class="muted" id="slot"></p>
+<div class="setup">
+<div><label for="reviewer">Mã / tên người đánh giá</label><input id="reviewer" placeholder="Ví dụ: GV01" autocomplete="off"></div>
+<div><label for="version">Phiên bản bộ nhãn</label><input id="version" placeholder="Ví dụ: co-che-v1"></div>
+<div><label for="approver">Người duyệt bộ nhãn</label><input id="approver" placeholder="Tên hoặc mã người duyệt"></div>
+<div class="wide"><label for="labels">Bộ nhãn đã thống nhất — mỗi dòng một nhãn</label><textarea id="labels" placeholder="Nhập bộ nhãn do người đánh giá thống nhất trước khi chấm"></textarea><small>Không lấy nhãn do cụm hoặc AI gợi ý làm đáp án mặc định. Hai người dùng cùng bộ nhãn.</small></div>
+</div>
+<label class="check"><input id="blind" type="checkbox"><span>Tôi tự chấm độc lập, chưa xem cụm, luật, gợi ý AI hoặc phiếu người khác cho các bài này.</span></label>
+<p class="muted">Nếu đã xem các kết quả đó, hãy nhờ một người chưa xem chấm độc lập. Phiếu này ghi cơ chế lỗi quan sát được; không tự xác nhận nhận thức của học viên.</p>
+</details>
+<div class="panel"><div class="tools">
+<button id="download" class="primary">Tải phiếu JSON</button><button id="draft">Tải bản nháp</button>
+<label class="file-button" for="import">Nhập lại JSON</label><input id="import" type="file" accept=".json,application/json" hidden>
+<button id="restore">Khôi phục nháp trên máy</button><button id="size">Chữ lớn</button>
+</div><p id="saved" class="muted" role="status">Chưa điền. Nháp được lưu trên trình duyệt này; tải JSON để có bản sao riêng.</p><div id="message" class="status" role="alert" hidden></div></div>
+<div class="tools panel"><button id="prev">← Trước</button><span id="position"></span><button id="next">Tiếp →</button><button id="pending">Bài chưa chấm tiếp theo</button><label for="jump">Đến bài</label><select id="jump" style="width:auto;max-width:100%"></select><progress id="progress"></progress><span id="count"></span></div>
+<div class="two">
+<section class="panel"><h2 id="case-title"></h2><small id="case-id"></small>
+<details><summary>Đề bài</summary><pre id="problem-text"></pre></details>
+<h3>Code gốc <small>— chọn số dòng làm căn cứ</small></h3><div class="code" id="code"></div>
+<h3>Test đã ghi nhận <small>— chọn test làm căn cứ</small></h3><p class="muted">Log lịch sử, không phải kết quả chạy lại. Ô trống khác với dữ liệu bị thiếu.</p><div id="tests"></div>
+</section>
+<section class="panel rating"><h2>Nhận định của bạn</h2>
+<label for="status">Kết luận</label><select id="status"><option value="pending">Chưa chấm</option><option value="supported">Có cơ chế lỗi được bằng chứng hỗ trợ</option><option value="uncertain">Chưa đủ bằng chứng</option><option value="multiple">Có nhiều cơ chế, chưa chọn được lỗi chính</option><option value="no_target_error">Không quan sát thấy lỗi mục tiêu</option></select>
+<label for="mechanism">Nhãn cơ chế lỗi chính</label><select id="mechanism"></select>
+<label for="rationale">Lý do / căn cứ</label><textarea id="rationale" rows="6" placeholder="Mô tả code ở dòng đã chọn và kết quả test hỗ trợ nhận định. Nêu giới hạn nếu chưa đủ bằng chứng."></textarea>
+<p id="refs" class="muted"></p><p class="muted">Nhận thức người học: chưa đánh giá (không có lời giải thích và quan sát kiểm tra tiếp).</p>
+<div class="footer"><button id="done" class="primary">Kiểm tra và sang bài tiếp</button><button id="clear">Để lại chưa chấm</button></div>
+<p class="muted">Bạn có thể dừng ở bất kỳ bài nào. Bài chưa chấm vẫn để trống, không được tính là nhãn đúng/sai.</p>
+</section>
+</div>
+<p class="muted">Một phiếu là một lượt đánh giá của con người. Gold dùng chấm điểm cần hai người chấm độc lập và người thứ ba phân xử theo quy trình của dự án.</p>
+</main>
+<script id="packet" type="application/json">__PACKET_JSON__</script>
+<script>
+'use strict';
+const data=JSON.parse(document.querySelector('#packet').textContent), cases=data.cases;
+const $=s=>document.querySelector(s), clone=x=>JSON.parse(JSON.stringify(x));
+let form=clone(data.form), index=0, dirty=false;
+// Attestation is deliberately unchecked until explicitly confirmed by this reviewer.
+form.independent_blind_review=false;
+const storageKey='aai-blind-review-v1:'+form.packet_id+':'+data.slot;
+const statuses={pending:'Chưa chấm',supported:'Có bằng chứng',uncertain:'Chưa chắc',multiple:'Nhiều cơ chế',no_target_error:'Không có lỗi mục tiêu'};
+const verdicts={pass:'Đạt',fail:'Sai kết quả',not_run:'Chưa chạy',runtime_error:'Lỗi thực thi',timeout:'Hết thời gian'};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function message(text){$('#message').hidden=!text;$('#message').textContent=text;}
+function syncMeta(){form.reviewer_id=$('#reviewer').value.trim();form.independent_blind_review=$('#blind').checked;form.codebook={version:$('#version').value.trim(),approved_by:$('#approver').value.trim(),label_policy:'single_primary',labels:$('#labels').value.split('\n').map(x=>x.trim()).filter(Boolean)};}
+function loadMeta(){$('#reviewer').value=form.reviewer_id;$('#blind').checked=form.independent_blind_review;$('#version').value=form.codebook.version;$('#approver').value=form.codebook.approved_by;$('#labels').value=form.codebook.labels.join('\n');}
+function save(){dirty=true;try{localStorage.setItem(storageKey,JSON.stringify({draft_format:'aai-human-review-draft-v1',form,index}));$('#saved').textContent='Đã lưu nháp trên trình duyệt · '+new Date().toLocaleTimeString('vi-VN')+' · tải JSON trước khi đổi máy/người chấm.';}catch{$('#saved').textContent='Trình duyệt không cho lưu nháp. Hãy bấm Tải bản nháp trước khi đóng.';}updateProgress();}
+function updateProgress(){let n=form.ratings.filter(r=>r.status!=='pending'&&!ratingError(r)).length;$('#count').textContent=n+'/'+cases.length+' bài hợp lệ';$('#progress').value=n;$('#progress').max=cases.length;$('#jump').innerHTML=cases.map((c,i)=>`<option value="${i}" ${i===index?'selected':''}>${i+1} · ${esc(c.problem_id)} · ${statuses[form.ratings[i].status]}</option>`).join('');}
+function labelOptions(){const r=form.ratings[index],labels=form.codebook.labels;$('#mechanism').innerHTML='<option value="">Chọn nhãn trong bộ nhãn chung</option>'+labels.map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join('');$('#mechanism').value=r.mechanism||'';$('#mechanism').disabled=r.status!=='supported';}
+function render(){const c=cases[index],r=form.ratings[index];$('#case-title').textContent='Bài '+(index+1)+' · Đề '+c.problem_id;$('#case-id').textContent=c.case_id;$('#position').textContent=(index+1)+' / '+cases.length;$('#prev').disabled=index===0;$('#next').disabled=index===cases.length-1;$('#problem-text').textContent=c.problem_statement?(typeof c.problem_statement==='string'?c.problem_statement:JSON.stringify(c.problem_statement,null,2)):'Gói này chưa có đề gốc. Cần người điều phối cung cấp đề đã kiểm chứng; chọn chưa đủ bằng chứng nếu không thể kết luận.';
+$('#code').innerHTML=c.source_code.split(/\r?\n/).map((line,i)=>`<label><input type="checkbox" data-line="${i+1}" aria-label="Dòng ${i+1}" ${r.source_lines.includes(i+1)?'checked':''}><span class="line-number">${i+1}</span><span>${esc(line)}</span></label>`).join('');
+const value=(t,k)=>Object.hasOwn(t,k)&&t[k]!=null?(t[k]===''?'(chuỗi rỗng)':String(t[k])):'(thiếu dữ liệu)';
+$('#tests').innerHTML=c.logged_tests.map((t,i)=>`<div class="test"><label><input type="checkbox" data-test="${i}" ${r.test_ids.includes(t.test_id)?'checked':''}> Test ${esc(t.test_id)} · ${esc(verdicts[c.outcomes[t.test_id]]||'Chưa xác định')}</label><div class="io">${[['input','Đầu vào'],['expected','Mong đợi'],['output','Thực tế']].map(([k,title])=>`<div><small>${title}</small><pre>${esc(value(t,k))}</pre></div>`).join('')}</div></div>`).join('')||'<p>Không có log test.</p>';
+$('#status').value=r.status;$('#rationale').value=r.rationale;labelOptions();refs();updateProgress();}
+function refs(){const r=form.ratings[index];$('#refs').textContent='Dòng: '+(r.source_lines.join(', ')||'chưa chọn')+' · Test: '+(r.test_ids.join(', ')||'chưa chọn');}
+function ratingError(r){const c=cases.find(c=>c.case_id===r.case_id);if(r.status==='pending')return Object.entries(data.form.ratings.find(x=>x.case_id===r.case_id)).every(([k,v])=>JSON.stringify(r[k])===JSON.stringify(v))?'':'Đã có nội dung nhưng chưa chọn kết luận.';if(!r.rationale.trim())return 'Cần ghi lý do.';if(r.status==='supported'&&(!form.codebook.labels.includes(r.mechanism)||!r.source_lines.length||!r.test_ids.length))return 'Cần chọn nhãn, ít nhất một dòng code và một test làm căn cứ.';if(r.status!=='supported'&&r.mechanism!==null)return 'Trạng thái này phải để nhãn trống.';if(r.source_lines.some(x=>!Number.isInteger(x)||x<1||x>c.source_code.split(/\r?\n/).length)||r.test_ids.some(t=>!c.logged_tests.some(x=>x.test_id===t)))return 'Tham chiếu dòng/test không hợp lệ.';return '';}
+function metaError(){const human=x=>x.trim()&&!x.toLowerCase().startsWith('ai:');if(!human(form.reviewer_id))return 'Nhập mã người đánh giá là con người.';if(!form.independent_blind_review)return 'Cần xác nhận đã chấm độc lập, không xem cụm/luật/AI.';if(!human(form.codebook.approved_by)||!form.codebook.version)return 'Cần phiên bản và người duyệt bộ nhãn.';if(!form.codebook.labels.length||new Set(form.codebook.labels).size!==form.codebook.labels.length)return 'Bộ nhãn phải có nội dung và không trùng nhau.';return '';}
+function download(obj,name){const url=URL.createObjectURL(new Blob([JSON.stringify(obj,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);dirty=false;}
+function importForm(doc){const f=doc.draft_format==='aai-human-review-draft-v1'?doc.form:doc;if(f.packet_id!==data.form.packet_id||f.schema_version!==1||f.annotation_source!=='human'||Object.hasOwn(f,'coordinator_verified_by'))throw Error('Không đúng phiếu người đánh giá hoặc không cùng gói bằng chứng.');if(typeof f.reviewer_id!=='string'||typeof f.independent_blind_review!=='boolean'||!f.codebook||typeof f.codebook.version!=='string'||typeof f.codebook.approved_by!=='string'||f.codebook.label_policy!=='single_primary'||!Array.isArray(f.codebook.labels)||f.codebook.labels.some(x=>typeof x!=='string'))throw Error('Thông tin người đánh giá/bộ nhãn sai định dạng.');if(!Array.isArray(f.ratings)||f.ratings.length!==cases.length||new Set(f.ratings.map(r=>r.case_id)).size!==cases.length)throw Error('Danh sách bài không khớp.');const sorted=cases.map(c=>f.ratings.find(r=>r.case_id===c.case_id));if(sorted.some(r=>!r||!Object.hasOwn(statuses,r.status)||typeof r.rationale!=='string'||!(r.mechanism===null||typeof r.mechanism==='string')||!Array.isArray(r.source_lines)||!Array.isArray(r.test_ids)||r.cognitive_status!=='unassessed'||r.learner_explanation!==''||r.follow_up_observation!==''))throw Error('Phiếu không đúng định dạng cơ chế lỗi; giao diện này không sửa đánh giá nhận thức.');if(!confirm('Nạp phiếu này sẽ thay bản nháp đang mở. Chỉ nạp phiếu của chính bạn. Tiếp tục?'))return;form=clone(f);form.ratings=sorted;index=0;loadMeta();render();save();message('Đã nạp phiếu. Hãy kiểm tra đúng tên người đánh giá.');}
+$('#slot').textContent=(data.slot==='reviewer_1'?'Phiếu người đánh giá 1':'Phiếu người đánh giá 2')+' · '+cases.length+' bài · không có nhãn điền sẵn.';
+$('#settings').addEventListener('input',()=>{syncMeta();labelOptions();save();});
+$('#status').onchange=()=>{const r=form.ratings[index];r.status=$('#status').value;if(r.status!=='supported')r.mechanism=null;labelOptions();save();};
+$('#mechanism').onchange=()=>{form.ratings[index].mechanism=$('#mechanism').value||null;save();};
+$('#rationale').oninput=()=>{form.ratings[index].rationale=$('#rationale').value;save();};
+$('#code').onchange=()=>{form.ratings[index].source_lines=Array.from(document.querySelectorAll('[data-line]:checked'),e=>Number(e.dataset.line));refs();save();};
+$('#tests').onchange=()=>{form.ratings[index].test_ids=Array.from(document.querySelectorAll('[data-test]:checked'),e=>cases[index].logged_tests[Number(e.dataset.test)].test_id);refs();save();};
+function go(i){index=i;render();message('');}
+$('#prev').onclick=()=>go(Math.max(0,index-1));$('#next').onclick=()=>go(Math.min(cases.length-1,index+1));$('#jump').onchange=()=>go(Number($('#jump').value));
+$('#pending').onclick=()=>{for(let n=1;n<=cases.length;n++){const i=(index+n)%cases.length;if(form.ratings[i].status==='pending'||ratingError(form.ratings[i])){go(i);return;}}message('Mọi bài đã có nhận định hợp lệ.');};
+$('#done').onclick=()=>{const r=form.ratings[index],error=metaError()||ratingError(r)||(r.status==='pending'?'Chọn kết luận trước khi hoàn tất bài.':'');if(error){message(error);return;}save();if(index<cases.length-1)go(index+1);else message('Đã đến bài cuối. Bấm Tải phiếu JSON để xuất kết quả.');};
+$('#clear').onclick=()=>{if(confirm('Xóa nhận định của bài này và để lại chưa chấm?')){form.ratings[index]=clone(data.form.ratings[index]);render();save();}};
+$('#draft').onclick=()=>download({draft_format:'aai-human-review-draft-v1',form,index},data.slot+'.draft.json');
+$('#download').onclick=()=>{syncMeta();const error=metaError();if(error){message(error);return;}for(let i=0;i<form.ratings.length;i++){const error=ratingError(form.ratings[i]);if(error){go(i);message('Bài '+(i+1)+': '+error);return;}}if(!form.ratings.some(r=>r.status!=='pending')){message('Chưa có bài nào được chấm. Bạn có thể tải bản nháp.');return;}download(form,data.slot+'.json');message('Đã tải phiếu. Các bài chưa chấm vẫn pending. Đây là một lượt đánh giá, chưa phải gold đã phân xử.');};
+$('#import').onchange=async()=>{try{if($('#import').files[0])importForm(JSON.parse(await $('#import').files[0].text()));}catch(e){message('Không nhập được: '+e.message);}finally{$('#import').value='';}};
+$('#restore').onclick=()=>{try{const s=localStorage.getItem(storageKey);if(!s){message('Chưa có nháp của phiếu này trên trình duyệt.');return;}importForm(JSON.parse(s));}catch(e){message('Không khôi phục được: '+e.message);}};
+$('#size').onclick=()=>{const large=document.documentElement.style.fontSize!=='20px';document.documentElement.style.fontSize=large?'20px':'17px';$('#size').textContent=large?'Cỡ chữ thường':'Chữ lớn';};
+window.addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue='';}});
+loadMeta();render();
+</script>
+</html>

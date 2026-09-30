@@ -4,6 +4,38 @@
 vẫn là khám phá cơ chế lỗi có bằng chứng, với quan niệm sai là giả thuyết cần
 xác nhận. Kết quả hiện tại chưa chứng minh SOTA hay niềm tin thật của người học.
 
+## Trình bày luật cho giảng viên — 29/09/2026
+
+Giao diện lớp học đưa luật cục bộ có evidence lên từng nhóm theo NẾU / VÀ / THÌ,
+kèm số bài khớp, code/log và bước kiểm tra tiếp; luật cây quy nạp vẫn có mục riêng
+với OAV gốc và support/precision. Không thay features, detector hoặc thực nghiệm;
+không gọi luật cục bộ viết sẵn là luật quy nạp hay tự gán nhãn misconception.
+[Cách đọc và giới hạn](../docs/luat_de_hieu.md). Chromium trên lớp demo đã kiểm tra
+luật hoán vị, phạm vi nhóm, mở evidence, escape HTML và thiếu mẫu kiểm tra.
+Không có nhãn giảng viên mới hay phép đo accuracy misconception mới.
+
+## Gói annotation theo cluster cho AI — 28/09/2026
+
+Đã bổ sung exporter/intake offline `export_cluster_annotations.py` và
+[hướng dẫn](../docs/cluster_annotation.md). Cấu hình chọn trước: K-means,
+combined_stdout, seed 42; train/validation khóa toàn corpus, không mở sealed test.
+Ngưỡng chọn là khả năng xem xét (>=4 bài, >=3 source, đủ code/log trượt,
+>=50% bài chung một test trượt), không dùng nhãn giả định hoặc fidelity để chọn cụm.
+
+[Gói gửi AI](../deliverables/De5_Annotation_20260928/README.md):
+ITSP 5/9 cụm, 38 bài, có statement; C-Pack 69/75 cụm, 2.151 bài, chưa có statement.
+Tổng 74 cụm đủ điều kiện; 10 cụm nhỏ bị loại và có audit lý do.
+Code/log toàn bộ thành viên được giữ nguyên, tối đa 4 đại diện được đánh dấu,
+OAV gốc tách khỏi OAV/rule chẩn đoán tại thời điểm xuất. Có schema cho decision,
+confidence, lý do, giải thích cạnh tranh và dẫn chứng; hỗ trợ nhận từng phần.
+
+Mọi cụm **pending_annotation**; chưa gọi AI để gán nhãn. Intake chỉ kiểm tra cấu trúc,
+hash và tham chiếu, không xác nhận reasoning đúng. AI review không là human gold;
+mechanism_accuracy vẫn null. Cụm đủ evidence vẫn có thể trộn cơ chế hoặc bị bác bỏ.
+Kiểm tra offline: **259 tests + 3 subtests pass**, 13 Docker tests skipped;
+**27/27 smoke**. 24 test mới kiểm tra xuất evidence, ngưỡng loại, không missing-as-pass,
+không lộ lời giải reference, split/hash guards và phản hồi AI không hợp lệ.
+
 ## Chẩn đoán in hằng số và context LLM — 28/09/2026
 
 Đã bổ sung OAV chẩn đoán `is_hardcoded_output` và rule AST/log hẹp cho output

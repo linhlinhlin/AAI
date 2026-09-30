@@ -1,0 +1,3358 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab03-ex04--kmeans--combined_stdout--s42--c1</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab03-ex04 · 49 bài</h1><p>lab03-ex04--kmeans--combined_stdout--s42--c1 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex04_5: 49/49 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex04_6: 49/49 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex04_8: 48/49 bài trượt (98.0%); 0 chưa chạy.</p><p>Test ex04_4: 45/49 bài trượt (91.8%); 0 chưa chạy.</p><p>Test ex04_3: 23/49 bài trượt (46.9%); 0 chưa chạy.</p><p>Test ex04_2: 22/49 bài trượt (44.9%); 0 chưa chạy.</p><p>Test ex04_0: 7/49 bài trượt (14.3%); 0 chưa chạy.</p><p>Test ex04_1: 0/49 bài trượt (0.0%); 0 chưa chạy.</p><p>Test ex04_7: 0/49 bài trượt (0.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_5:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 46,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.9387755102040817,
+      &quot;cohort_rate&quot;: 0.3507246376811594,
+      &quot;difference_from_cohort&quot;: 0.5880508725229223
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_6:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 46,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.9387755102040817,
+      &quot;cohort_rate&quot;: 0.3710144927536232,
+      &quot;difference_from_cohort&quot;: 0.5677610174504585
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_7:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 49,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5072463768115942,
+      &quot;difference_from_cohort&quot;: 0.49275362318840576
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_7:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 49,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5072463768115942,
+      &quot;difference_from_cohort&quot;: 0.49275362318840576
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_7&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 49,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5072463768115942,
+      &quot;difference_from_cohort&quot;: 0.49275362318840576
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_4:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 42,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.8571428571428571,
+      &quot;cohort_rate&quot;: 0.3710144927536232,
+      &quot;difference_from_cohort&quot;: 0.4861283643892339
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_5:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 31,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.6326530612244898,
+      &quot;cohort_rate&quot;: 0.1855072463768116,
+      &quot;difference_from_cohort&quot;: 0.44714581484767824
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_1:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 49,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.553623188405797,
+      &quot;difference_from_cohort&quot;: 0.44637681159420295
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_1:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 49,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.553623188405797,
+      &quot;difference_from_cohort&quot;: 0.44637681159420295
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_1&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 49,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.553623188405797,
+      &quot;difference_from_cohort&quot;: 0.44637681159420295
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_5&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 49,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5884057971014492,
+      &quot;difference_from_cohort&quot;: 0.41159420289855075
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_3:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 26,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.5306122448979592,
+      &quot;cohort_rate&quot;: 0.13623188405797101,
+      &quot;difference_from_cohort&quot;: 0.3943803608399882
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_3:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 26,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.5306122448979592,
+      &quot;cohort_rate&quot;: 0.13623188405797101,
+      &quot;difference_from_cohort&quot;: 0.3943803608399882
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_3&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 26,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.5306122448979592,
+      &quot;cohort_rate&quot;: 0.13623188405797101,
+      &quot;difference_from_cohort&quot;: 0.3943803608399882
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_6&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 49,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.6086956521739131,
+      &quot;difference_from_cohort&quot;: 0.3913043478260869
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_6:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 27,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.5510204081632653,
+      &quot;cohort_rate&quot;: 0.19130434782608696,
+      &quot;difference_from_cohort&quot;: 0.3597160603371783
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 22,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.4489795918367347,
+      &quot;cohort_rate&quot;: 0.1391304347826087,
+      &quot;difference_from_cohort&quot;: 0.30984915705412597
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_4&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 45,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.9183673469387755,
+      &quot;cohort_rate&quot;: 0.6086956521739131,
+      &quot;difference_from_cohort&quot;: 0.30967169476486245
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_4:edit_band&quot;,
+      &quot;value&quot;: &quot;small&quot;,
+      &quot;n&quot;: 31,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.6326530612244898,
+      &quot;cohort_rate&quot;: 0.3391304347826087,
+      &quot;difference_from_cohort&quot;: 0.29352262644188115
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 42,
+      &quot;n_cluster&quot;: 49,
+      &quot;rate&quot;: 0.8571428571428571,
+      &quot;cohort_rate&quot;: 0.5652173913043478,
+      &quot;difference_from_cohort&quot;: 0.2919254658385093
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 4,
+      &quot;if&quot;: [
+        &quot;NOT (test:ex04_1=fail)&quot;,
+        &quot;NOT (stdout:ex04_5:relation=__unknown__)&quot;,
+        &quot;test:ex04_7=pass&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 33,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 16,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_001 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+#define DENTRO 1
+#define FORA 0
+#define ZERO -1
+
+int main()
+{
+  int c;
+  int c_debug;
+  int estado;
+  
+  c = getchar();
+  
+  
+  
+  if (c == &#x27;0&#x27;) {
+    c_debug = c;
+    estado = ZERO;
+  }
+  else if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+    putchar(c);
+    estado = DENTRO;
+  }
+  else {
+    putchar(c);
+    estado = FORA;
+  }
+  
+  
+  while ((c = getchar()) != EOF) {
+    if (estado == FORA) {
+      if (c == &#x27;0&#x27;) {
+	estado = ZERO;
+      }
+      else if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+	putchar(c);
+	estado = DENTRO;
+      }
+      else {
+	putchar(c);
+      }
+    }
+    else if (estado == ZERO) {
+      if (c &gt; &#x27;9&#x27; || c &lt; &#x27;0&#x27;) {
+	c_debug = c;
+	putchar(&#x27;0&#x27;);
+	putchar(c);
+	estado = FORA;
+      }
+      else if (c != &#x27;0&#x27;) {
+	putchar(c);
+	estado = DENTRO;
+      }
+    }
+    else if (estado == DENTRO) {
+      if (c &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+	putchar(c);
+      }
+      else {
+	putchar(c);
+	estado = FORA;
+      }
+    }
+  }
+  if (c_debug != 0) {
+    putchar(c_debug);
+  }
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;10&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 0 303 &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 0 27770 &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 1 &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000  &quot;
+  }
+]</pre></details><details><summary>sample_007 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+#define FORA 0
+#define DENTRO 1
+
+
+
+int main() {
+  int c, estado = FORA;
+
+  while ((c = getchar()) != EOF)
+	if (estado == DENTRO)
+      putchar(c);
+    else if (c != 48) {
+      putchar(c);
+      estado = DENTRO;
+    }
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot; 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_010 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define true 1
+#define false 0
+
+void handle_char(int c, int *not_zero);
+
+int main() {
+
+    int n;
+    int not_zero = false;
+    n = getchar();
+    while (n != EOF) {
+        handle_char(n, &amp;not_zero);
+        n = getchar();
+    }
+    return 0;
+
+}
+
+void handle_char(int c, int *not_zero) {
+
+    switch (c) {
+        case &#x27;\n&#x27;:
+            if (*not_zero) {
+                *not_zero = false;
+            } else {
+                putchar(&#x27;0&#x27;);
+            }
+            putchar(c);
+            break;
+        case &#x27;0&#x27;:
+            if (*not_zero) 
+                putchar(c);
+            break;
+        default:
+            *not_zero = true;
+            putchar(c);
+    }
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot; 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_045 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    char c, res[500], prev;
+    int i;
+    prev = &#x27;F&#x27;;
+    i = 0;
+    while((c = getchar()) != EOF){
+        if(c &lt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;){
+            res[i++] = c;
+            prev = &#x27;N&#x27;;
+        } else if(c == &#x27;0&#x27;){
+            if(prev == &#x27;N&#x27;){
+                res[i++] = c;
+            } else if(prev == &#x27;F&#x27;){
+                prev = &#x27;Z&#x27;;
+            }
+        } else if(c == &#x27; &#x27; || c == &#x27;\n&#x27;){
+            if(prev == &#x27;N&#x27;){
+                prev = &#x27;F&#x27;;
+            } else if(prev == &#x27;Z&#x27;){
+                res[i++] = &#x27;0&#x27;;
+                prev = &#x27;F&#x27;;
+            }
+        }
+    }
+    res[i] = &#x27;\0&#x27;;
+    printf(&quot;%s&quot;, res);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;1 2 3&quot;,
+    &quot;output&quot;: &quot;1  &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;0 00 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01  0 000 00&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 00000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    int c;
+    while((c = getchar()) != EOF){
+        printf(&quot;%c&quot;, c);
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    int c, sequencia = 0;
+    while((c = getchar()) != EOF){
+        if(c == &#x27; &#x27;) {
+            printf(&quot;%c&quot;, c);
+            sequencia = 0;
+        } else if(c == &#x27;0&#x27;) {
+            if(sequencia == 1) printf(&quot;%c&quot;, c);
+        } else {
+            printf(&quot;%c&quot;, c);
+            sequencia = 1;
+        }
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202  303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2  27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1  1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot; 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    char c, previous_char;
+    int state = 0;
+    c = getchar();
+    while (c != EOF)
+    {
+        
+        if (c == &#x27;\n&#x27; || c == &#x27; &#x27;) {
+            if (state == 0 &amp;&amp; previous_char == &#x27;0&#x27;) {
+                putchar(&#x27;0&#x27;);
+            }
+            state = 0;
+        }
+        else if (c != &#x27;0&#x27;) {
+            state = 1;
+            putchar(c);
+        }
+        else if (c == &#x27;0&#x27; &amp;&amp; state == 1){
+            putchar(c);
+        }
+        previous_char = c;
+        c = getchar();
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;1 2 3&quot;,
+    &quot;output&quot;: &quot;123&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;2020303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;132027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;101&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0700000000000&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    char c, previous_char;
+    int state = 0;
+    c = getchar();
+    while (c != EOF)
+    {
+        
+        if (c == &#x27;\n&#x27; || c == &#x27; &#x27;) {
+            if (state == 0 &amp;&amp; previous_char == &#x27;0&#x27;) {
+                printf(&quot;yes&quot;);
+                putchar(previous_char);
+            }
+            putchar(c);
+            state = 0;
+        }
+        else if (c != &#x27;0&#x27;) {
+            state = 1;
+            putchar(c);
+        }
+        else if (c == &#x27;0&#x27; &amp;&amp; state == 1){
+            putchar(c);
+        }
+        previous_char = c;
+        c = getchar();
+    }
+    if (previous_char == &#x27;0&#x27; &amp;&amp; state == 0) {
+        putchar(&#x27;0&#x27;);
+        putchar(&#x27;\n&#x27;);
+    }
+    return 0; 
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 yes0 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 yes0 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 yes0 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;yes0 700000000000 0\n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    char c, previous_char;
+    int state = 0;
+    c = getchar();
+    while (c != EOF)
+    {
+        
+        if (c == &#x27;\n&#x27; || c == &#x27; &#x27;) {
+            if (state == 0 &amp;&amp; previous_char == &#x27;0&#x27;) {
+                printf(&quot;yes&quot;);
+                putchar(previous_char);
+            }
+            putchar(c);
+            state = 0;
+        }
+        else if (c != &#x27;0&#x27;) {
+            state = 1;
+            putchar(c);
+        }
+        else if (c == &#x27;0&#x27; &amp;&amp; state == 1){
+            putchar(c);
+        }
+        previous_char = c;
+        c = getchar();
+    }
+    if (previous_char == &#x27;0&#x27; &amp;&amp; state == 0) {
+        putchar(&#x27;0&#x27;);
+        
+    }
+    return 0; 
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 yes0 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 yes0 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 yes0 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;yes0 700000000000 0&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>#include &lt;stdio.h&gt;
+
+#define FORA 0
+#define DENTRO 1
+
+
+
+int main() {
+  int c, estado = FORA;
+
+  while ((c = getchar()) != EOF)
+	if (c == &#x27;\n&#x27;) {
+	  estado = FORA;
+	  printf(&quot;\n&quot;);
+	}
+	else if (estado == DENTRO)
+      putchar(c);
+    else if (c != 48) {
+      putchar(c);
+      estado = DENTRO;
+    }
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot; 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre># include &lt;stdio.h&gt;
+
+int main(){
+    int n,soma=0;
+    while((n=getchar())!=EOF){
+        soma+=n-&#x27;0&#x27;;
+        if (soma!=0){
+            putchar(n);
+        }
+        if (n==&#x27; &#x27; || n==&#x27;\n&#x27;){
+            soma=0;
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202  303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2  27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1  1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot; 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int spc(int);
+int nonzero(int);
+enum state{
+    FORA,
+    INI,
+    DENTRO
+};
+
+int main(){
+    enum state st = FORA;
+    int c;
+    while ((c = getchar()) != EOF){
+        switch(st){
+            case FORA:
+                if (nonzero(c)){
+                    st = DENTRO;
+                    putchar(c);
+                }
+                else if (c == &#x27;0&#x27;)
+                    st = INI;
+                else
+                    putchar(c);
+                break;
+            case INI:
+                if (spc(c)){
+                    putchar(&#x27;0&#x27;);
+                    putchar(c);
+                    st = FORA;
+                }
+                else if (nonzero(c)){
+                    putchar(c);
+                    st = DENTRO;
+                }
+                break;
+            case DENTRO:
+                putchar(c);
+                if (spc(c))
+                    st = FORA;
+                break;
+        }
+        if (st == INI)
+            putchar(&#x27;0&#x27;);
+    }
+    return 0;
+}
+
+int spc(int c){
+    return c ==&#x27; &#x27; || c == &#x27;\n&#x27; || c == EOF;
+}
+
+int nonzero(int c){
+    return &#x27;1&#x27; &lt;= c &amp;&amp; c &lt;= &#x27;9&#x27;;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 000 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 0000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 00 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;00 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+#include &lt;stdio.h&gt;
+ 
+
+int main() {
+    int c, teste = 0;
+    while((c = getchar()) != EOF){
+        if(c == &#x27;0&#x27; &amp;&amp; teste == 0){
+            while((c = getchar()) == &#x27;0&#x27;)
+            ;
+            if(c == &#x27; &#x27; || c == &#x27;\n&#x27;)   
+                printf(&quot;0%c&quot; ,c);
+            else if(c == EOF){
+                printf(&quot;0\n&quot;);
+                return 0;
+            }
+            else
+                printf(&quot;%c&quot;, c);
+            teste = 1;
+        }
+        else if(c == &#x27; &#x27;  || c == &#x27;\n&#x27;){
+            printf(&quot;%c&quot;, c);
+            teste = 0;
+        }
+        else{
+            printf(&quot;%c&quot;, c);
+            teste = 1;
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 0 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 0\n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+ 
+
+int main() {
+    int c, teste = 0;
+    while((c = getchar()) != EOF){
+        if(c == &#x27;0&#x27; &amp;&amp; teste == 0){
+            while((c = getchar()) == &#x27;0&#x27;)
+            ; 
+            if(c == &#x27; &#x27; || c == &#x27;\n&#x27;)  {
+                printf(&quot;0%c&quot; ,c);
+                teste = 0;
+            }
+            else if(c == EOF){
+                printf(&quot;0\n&quot;);
+                return 0;
+            }
+            else
+                printf(&quot;%c&quot;, c);
+            teste = 1;
+        }
+        else if(c == &#x27; &#x27;  || c == &#x27;\n&#x27;){
+            printf(&quot;%c&quot;, c);
+            teste = 0;
+        }
+        else{
+            printf(&quot;%c&quot;, c);
+            teste = 1;
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 0 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 0\n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+#include &lt;stdio.h&gt;
+#define FORA 0
+#define DENTRO 1
+int main(){
+    char c, last = &#x27; &#x27;;
+    int estado = FORA;
+    while ((c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;){
+        if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)
+            estado = DENTRO;
+        else if (c != &#x27;0&#x27;){
+            if (estado == FORA &amp;&amp; last == &#x27;0&#x27;)
+                putchar(&#x27;0&#x27;);
+            estado = FORA;
+        }
+        if ((estado = DENTRO) || (estado = FORA &amp;&amp; c != &#x27;0&#x27;))
+            putchar(c);
+        last = c;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>
+#include &lt;stdio.h&gt;
+#define FORA 0
+#define DENTRO 1
+int main(){
+    char c, last;
+    int estado = FORA;
+    while ((c = getchar()) != EOF){
+        if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)
+            estado = DENTRO;
+        else if (c != &#x27;0&#x27;){
+            if (estado == FORA &amp;&amp; last == &#x27;0&#x27;)
+                putchar(&#x27;0&#x27;);
+            estado = FORA;
+        }
+        if ((estado = DENTRO) || (estado = FORA &amp;&amp; c != &#x27;0&#x27;))
+            putchar(c);
+        last = c;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+#define FORA 0
+#define DENTRO 1
+int main(){
+    char c, last = &#x27; &#x27;;
+    int estado = FORA;
+    while ((c = getchar()) != EOF){
+        if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)
+            estado = DENTRO;
+        else if (c != &#x27;0&#x27;){
+            if (estado == FORA &amp;&amp; last == &#x27;0&#x27;)
+                putchar(&#x27;0&#x27;);
+            estado = FORA;
+        }
+        if ((estado = DENTRO) || (estado = FORA &amp;&amp; c != &#x27;0&#x27;))
+            putchar(c);
+        last = c;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+#include &lt;stdio.h&gt;
+#define FORA 0
+#define DENTRO 1
+int main(){
+    char c, last = &#x27; &#x27;;
+    int estado = FORA;
+    while ((c = getchar()) != EOF){
+        if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)
+            estado = DENTRO;
+        else if (c != &#x27;0&#x27;){
+            if (estado == FORA &amp;&amp; last == &#x27;0&#x27;)
+                putchar(&#x27;0&#x27;);
+            estado = FORA;
+        }
+        if ((estado = DENTRO) || (estado = FORA &amp;&amp; c != &#x27;0&#x27;))
+            putchar(c);
+        last = c;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>
+#include &lt;stdio.h&gt;
+#define FORA 0
+#define DENTRO 1
+int main(){
+    char c, last = &#x27; &#x27;;
+    int estado = FORA;
+    while ((c = getchar()) != EOF){
+        if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)
+            estado = DENTRO;
+        else if (c != &#x27;0&#x27;){
+            if (estado == FORA &amp;&amp; last == &#x27;0&#x27;)
+                putchar(&#x27;0&#x27;);
+            estado = FORA;
+        }
+        if ((estado = DENTRO) || (estado = FORA &amp;&amp; c != &#x27;0&#x27;))
+            putchar(c);
+        last = c;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main() {
+    enum state{ZERO, NUM, WS};
+    char c;
+    int state;
+    state = ZERO;
+    while ((c = getchar())!= EOF) {
+        if (state == ZERO) {
+            switch(c) {
+                case &#x27;0&#x27;:
+                    break;
+                case &#x27; &#x27;:
+                case &#x27;\n&#x27;:
+                    printf(&quot;0 &quot;);
+                    state = WS;
+                    break;
+                default:
+                    putchar(c);
+                    state = NUM;
+            }
+        }
+        else if (state == NUM) {
+            switch(c) {
+                case &#x27; &#x27;:
+                case &#x27;\n&#x27;:
+                    putchar(c);
+                    state = WS;
+                    break;
+                default:
+                    putchar(c);
+            }
+        }
+        else if (state == WS) {
+            switch(c) {
+                case &#x27;0&#x27;:
+                    break;
+                case &#x27; &#x27;:
+                case &#x27;\n&#x27;:
+                    putchar(c);
+                    break;
+                default:
+                    putchar(c);
+                    state = NUM;
+            }
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202  303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2  27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1  1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>
+
+#include &lt;stdio.h&gt;
+#define DENTRO 1
+#define FORA 0
+
+int main(){
+    char c, last;
+    int estado = FORA;
+    last = &#x27; &#x27;;
+    while((c = getchar())!=EOF){
+        if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)
+            estado = DENTRO;
+        else if (c != &#x27;0&#x27;){
+            if (estado == FORA &amp;&amp; last == &#x27;0&#x27;)
+                putchar(&#x27;1&#x27;);
+            estado = FORA;
+        }
+        if (estado == DENTRO || (estado == FORA &amp;&amp; c != &#x27;0&#x27;))
+            printf(&quot;%c&quot;, c);
+            
+        last = c;
+    }   
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 1 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 1 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 1 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;1 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_021</summary><pre>
+
+#include &lt;stdio.h&gt;
+#define DENTRO 1
+#define FORA 0
+
+int main(){
+    char c, last;
+    int estado = FORA;
+    last = &#x27; &#x27;;
+    while((c = getchar()) != EOF){
+        if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)
+            estado = DENTRO;
+        else if (c != &#x27;0&#x27;){
+            if (estado == FORA &amp;&amp; last == &#x27;0&#x27;)
+                putchar(&#x27;0&#x27;);
+            estado = FORA;
+        }
+        if (estado == DENTRO || (estado == FORA &amp;&amp; c!= 0))
+            printf(&quot;%c&quot;, c);
+        last = c;
+    }   
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 000 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 0000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 00 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;00 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+#define DENTRO 0
+#define FORA 1
+#define ZERO 2
+#define NZERO 3
+int main() {
+    int estado = FORA;
+    int estado2 = NZERO; 
+    int c; 
+
+    
+    while ((c = getchar()) != EOF) {
+        
+        if (c &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+            
+            if (c==&#x27;0&#x27;){
+                estado = ZERO;  
+            }
+            if (estado == FORA &amp;&amp; c == &#x27;0&#x27; &amp;&amp; estado2 == ZERO) {
+                    continue;
+            }
+            if (c==&#x27; &#x27; &amp;&amp; estado2==ZERO){
+                putchar(c);
+                estado2=ZERO;
+            }
+            putchar(c); 
+            estado = DENTRO; 
+            estado2=NZERO;
+            
+        } else {
+            
+            if (estado == DENTRO) {
+                putchar(&#x27; &#x27;); 
+                estado = FORA;
+                estado2=NZERO;
+            }
+        }
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101 0&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>#include &lt;stdio.h&gt;
+
+#define FORA 0
+#define DENTRO 1
+#define ZERO 3
+
+int is_whitespace(char current) {
+    return current == &#x27; &#x27; || current == &#x27;\n&#x27; || current == &#x27;\t&#x27;;
+}
+
+int main() {
+
+    int current;
+    int current_state = FORA;
+
+    while ((current = getchar()) != EOF) {
+        if (current_state == FORA) {
+            if (current &gt;= &#x27;1&#x27; &amp;&amp; current &lt;= &#x27;9&#x27;) {
+                putchar(current);
+                current_state = DENTRO;
+            } else if (current == &#x27;0&#x27;) {
+                current_state = ZERO;
+            } else {
+                putchar(current);
+            }
+
+        } else if (current_state == DENTRO) {
+            putchar(current);
+            if (is_whitespace(current)) {
+                current_state = FORA;
+            }
+
+        } else if (current_state == ZERO) {
+            if (is_whitespace(current)) {
+                putchar(&#x27;O&#x27;);
+                putchar(current);
+                current_state = FORA;
+            } else if (current &gt;= &#x27;1&#x27; &amp;&amp; current &lt;= &#x27;9&#x27;) {
+                putchar(current);
+                current_state = DENTRO;
+            }
+        }
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 O 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 O 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 O 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;O 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+
+#define FORA 0
+#define DENTRO 1
+#define ZERO 2
+
+bool is_whitespace(char current) {
+    return current == &#x27; &#x27; || current == &#x27;\n&#x27; || current == &#x27;\t&#x27;;
+}
+
+int main() {
+    int current;
+    int current_state = FORA;
+
+    while ((current = getchar()) != EOF) {
+        if (current_state == FORA) {
+            if (current &gt;= &#x27;1&#x27; &amp;&amp; current &lt;= &#x27;9&#x27;) {
+                putchar(current);
+                current_state = DENTRO;
+            } else if (current == &#x27;0&#x27;) {
+                current_state = ZERO;
+            } else {
+                putchar(current);
+            }
+        } else if (current_state == DENTRO) {
+            putchar(current);
+            if (is_whitespace(current)) {
+                current_state = FORA;
+            }
+        } else if (current_state == ZERO) {
+            if (is_whitespace(current)) {
+                putchar(&#x27;O&#x27;);
+                putchar(current);
+                current_state = FORA;
+            } else if (current &gt;= &#x27;1&#x27; &amp;&amp; current &lt;= &#x27;9&#x27;) {
+                putchar(current);
+                current_state = DENTRO;
+            }
+        }
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 O 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 O 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 O 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;O 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_025</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+
+#define FORA 0
+#define DENTRO 1
+#define ZERO 3
+
+bool is_whitespace(char current) {
+    return current == &#x27; &#x27; || current == &#x27;\n&#x27; || current == &#x27;\t&#x27;;
+}
+
+int main() {
+
+    int current;
+    int current_state = FORA;
+
+    while ((current = getchar()) != EOF) {
+        if (current_state == FORA) {
+            if (current &gt;= &#x27;1&#x27; &amp;&amp; current &lt;= &#x27;9&#x27;) {
+                putchar(current);
+                current_state = DENTRO;
+            } else if (current == &#x27;0&#x27;) {
+                current_state = ZERO;
+            } else {
+                putchar(current);
+            }
+
+        } else if (current_state == DENTRO) {
+            putchar(current);
+            if (is_whitespace(current)) {
+                current_state = FORA;
+            }
+
+        } else if (current_state == ZERO) {
+            if (is_whitespace(current)) {
+                putchar(&#x27;O&#x27;);
+                putchar(current);
+                current_state = FORA;
+            } else if (current &gt;= &#x27;1&#x27; &amp;&amp; current &lt;= &#x27;9&#x27;) {
+                putchar(current);
+                current_state = DENTRO;
+            }
+        }
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 O 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 O 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 O 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;O 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_026</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int c;
+    int zeroFlag = 0;
+    while ((c = getchar()) != EOF) {
+        if (c == &#x27; &#x27; || c == &#x27;\n&#x27;) {
+            printf(&quot;\n&quot;);
+            zeroFlag = 0;
+        } else if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+            putchar(c);
+            zeroFlag = 1;
+        } else if (c == &#x27;0&#x27;) {
+            if (zeroFlag == 1) {
+                putchar(c);
+            } else {
+                int next_c = getchar();
+                if (next_c == &#x27; &#x27; || next_c == &#x27;\n&#x27; || next_c == EOF) {
+                    printf(&quot;0\n&quot;);
+                    zeroFlag = 0;
+                } else if (next_c &gt;= &#x27;1&#x27; &amp;&amp; next_c &lt;= &#x27;9&#x27;) {
+                    putchar(next_c);
+                    zeroFlag = 1;
+                } else if (next_c == &#x27;0&#x27;) {
+                    ungetc(next_c, stdin);
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;1 2 3&quot;,
+    &quot;output&quot;: &quot;1\n2\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202\n0\n303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1\n3\n2\n0\n27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1\n0\n1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0\n700000000000\n0\n&quot;
+  }
+]</pre></details><details><summary>sample_027</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num = 0;
+    int c;
+    int flag = 1; 
+
+    while ((c = getchar()) != EOF) {
+        if (c &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) { 
+            if (c != &#x27;0&#x27;) {
+                flag = 0; 
+            }
+            if (!flag) {
+                putchar(c); 
+            }
+        } else if (c == &#x27; &#x27; || c == &#x27;\n&#x27;) {
+            flag = 1; 
+            if (num == 0) {
+                putchar(&#x27;0&#x27;); 
+            }
+            num = 0; 
+            if (c == &#x27; &#x27;) {
+                putchar(&#x27; &#x27;); 
+            }
+        }
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;1 2 3&quot;,
+    &quot;output&quot;: &quot;10 20 3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;1010&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;2020 0 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;10 30 20 0 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;10 0 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 7000000000000 &quot;
+  }
+]</pre></details><details><summary>sample_028</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define DENTRO 1
+#define FORA 0
+
+int main() {
+
+    int estado = FORA;
+    char c;
+
+    c = getchar();
+
+    while (c != EOF) {
+
+        if (estado == DENTRO &amp;&amp; (c &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)) {
+            putchar(c);
+        }
+        else if (estado == DENTRO) {
+            estado = FORA;
+            putchar(c);
+        }
+        else if (estado == FORA &amp;&amp; c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+            estado = DENTRO;
+            putchar(c);
+        }
+        
+        c = getchar();
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_029</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+    int c, prev = &#x27; &#x27;;
+    while((c = getchar()) != EOF){
+        if(c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;){
+            prev = c;
+            putchar(c);
+        } else {
+            if(prev == &#x27; &#x27; || prev == &#x27;\n&#x27; || prev == EOF){
+                int next = getchar();
+
+                if(next == &#x27; &#x27; || next == &#x27;\n&#x27; || next == EOF){
+                    putchar(&#x27;0&#x27;);
+                    if(next != EOF){
+                        putchar(next);
+                        prev = next;
+                    }
+                    else{prev = &#x27;0&#x27;;}
+                }
+                else{
+                    prev = &#x27;0&#x27;;
+                    ungetc(next, stdin);
+                }
+            }
+            else{
+                putchar(c);
+                prev = c;
+            }
+        }
+    }
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 00 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 00&quot;
+  }
+]</pre></details><details><summary>sample_030</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main()
+{
+    long c;
+    int in_word = 0;
+    while ((c = getchar()) != EOF)
+    {
+        if (isspace(c))
+        {
+            in_word = 0;
+            putchar(c);
+        }
+        else
+        {
+            if (!in_word)
+            {
+                in_word = 1;
+                if (c == &#x27;0&#x27;)
+                {
+                    in_word = 0;
+                }
+                else
+                {
+                    putchar(c);
+                }
+            }
+            else
+            {
+                putchar(c);
+            }
+        }
+    };
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202  303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2  27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1  1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot; 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_031</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+
+int main () {
+    int c;
+    bool leadingZero = true;
+
+    while ((c = getchar()) != EOF) {
+        if (c &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+            if (leadingZero &amp;&amp; c != &#x27;0&#x27;) {
+                leadingZero = false;
+            }
+            if(!leadingZero || c == &#x27;0&#x27;) {
+                putchar(c);
+            }
+        } else {
+            leadingZero = true;
+            putchar(c);
+        }
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_032</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdbool.h&gt;
+
+int main () {
+    int c;
+    bool leadingZero = true;
+
+    while ((c = getchar()) != EOF) {
+        if (c &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+            if (leadingZero &amp;&amp; c != &#x27;0&#x27;) {
+                leadingZero = false;
+            }
+            if(!leadingZero || c == &#x27;0&#x27;) {
+                putchar(c);
+            }
+        } else {
+            leadingZero = true;
+            putchar(c);
+        }
+    }
+
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_033</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;assert.h&gt;
+
+enum all_states {FORA, DENTRO, ZERO};
+
+int spaces (char c) {return c == &#x27; &#x27; || c == &#x27;\n&#x27; || c == EOF;}
+int nonzero(char c) {return c &gt; 0 &amp;&amp; c &lt;= &#x27;9&#x27;;}
+
+int main() {
+    enum all_states state = FORA;
+    int current;
+
+    while ((current = getchar()) != EOF) {
+        if (state == FORA) {
+            if (nonzero(current)) {
+                putchar(current);
+                state = DENTRO;
+            }
+            else if (current == 0) state = ZERO;
+            else putchar(current);
+        }
+        else if (state == DENTRO) {
+            if (spaces(current)) {
+                putchar(current);
+                state = FORA;
+            }
+            else putchar(current);
+        }
+        else if (state == ZERO) {
+            if (nonzero(current)) {
+                putchar(current);
+                state = DENTRO;
+            }
+            else if (spaces(current)) {
+                putchar(&#x27;0&#x27;);
+                putchar(current);
+                state = FORA;
+            }
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_034</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;assert.h&gt;
+
+enum all_states {FORA, DENTRO, ZERO};
+
+int spaces (char c) {return c == &#x27; &#x27; || c == &#x27;\n&#x27; || c == EOF;}
+int nonzero(char c) {return c &gt; 0 &amp;&amp; c &lt;= &#x27;9&#x27;;}
+
+int main() {
+    enum all_states state = FORA;
+    int current;
+
+    while ((current = getchar()) != EOF) {
+        if (state == FORA) {
+            if (nonzero(current)) {
+                putchar(current);
+                state = DENTRO;
+            }
+            else if (current == 0) state = ZERO;
+            else putchar(current);
+        }
+        else if (state == DENTRO) {
+            if (spaces(current)) {
+                putchar(current);
+                state = FORA;
+            }
+            else putchar(current);
+        }
+        else if (state == ZERO) {
+            if (nonzero(current)) {
+                putchar(current);
+                state = DENTRO;
+            }
+            else if (spaces(current)) {
+                putchar(&#x27;0&#x27;);
+                putchar(current);
+                state = FORA;
+            }
+        }
+    }
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_035</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;assert.h&gt;
+
+enum all_states {FORA, DENTRO, ZERO};
+
+int spaces (char c) {return c == &#x27; &#x27; || c == &#x27;\n&#x27; || c == EOF;}
+int nonzero(char c) {return c &gt; 0 &amp;&amp; c &lt;= &#x27;9&#x27;;}
+
+int main() {
+    enum all_states state = FORA;
+    int current;
+
+    while ((current = getchar()) != EOF) {
+        if (state == FORA) {
+            if (nonzero(current)) {
+                putchar(current);
+                state = DENTRO;
+            }
+            else if (current == &#x27;0&#x27;) state = ZERO;
+            else putchar(current);
+        }
+        else if (state == DENTRO) {
+            if (spaces(current)) {
+                putchar(current);
+                state = FORA;
+            }
+            else putchar(current);
+        }
+        else if (state == ZERO) {
+            if (nonzero(current)) {
+                putchar(current);
+                state = DENTRO;
+            }
+            else if (spaces(current)) {
+                putchar(&#x27;0&#x27;);
+                putchar(current);
+                state = FORA;
+            }
+        }
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_036</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;assert.h&gt;
+
+enum all_states {FORA, DENTRO, ZERO};
+
+int spaces (char c) {return c == &#x27; &#x27; || c == &#x27;\n&#x27; || c == EOF;}
+int nonzero(char c) {return c &gt; 0 &amp;&amp; c &lt;= &#x27;9&#x27;;}
+
+int main() {
+    enum all_states state = FORA;
+    int current;
+
+    while ((current = getchar()) != EOF) {
+        if (state == FORA) {
+            if (nonzero(current)) {
+                putchar(current);
+                state = DENTRO;
+            }
+            else if (current == 0) state = ZERO;
+            else putchar(current);
+        }
+        else if (state == DENTRO) {
+            if (spaces(current)) {
+                putchar(current);
+                state = FORA;
+            }
+            else putchar(current);
+        }
+        else if (state == ZERO) {
+            if (nonzero(current)) {
+                putchar(current);
+                state = DENTRO;
+            }
+            else if (spaces(current)) {
+                putchar(&#x27;0&#x27;);
+                putchar(current);
+                state = FORA;
+            }
+        }
+    }
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_037</summary><pre>
+#include &lt;stdio.h&gt;
+
+enum estado {FORA, ZERO, NAO_ZERO};
+
+int main() {
+  int c;
+  enum estado est = FORA;
+
+  while ((c = getchar()) != EOF) {
+    switch (est) {
+      case FORA:
+        if (c == &#x27;0&#x27;)
+          est = ZERO;
+        else if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+          putchar(c);
+          est = NAO_ZERO;
+        }
+        break;
+
+     case ZERO:
+       if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+          putchar(c);
+          est = NAO_ZERO;
+        } else if (c == &#x27; &#x27; || c == &#x27;\n&#x27;) {
+          printf(&quot;0%c&quot;, c);
+          est = FORA;
+        }
+        break;
+
+     case NAO_ZERO:
+        if (c &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)
+          putchar(c);
+        else if (c == &#x27; &#x27; || c == &#x27;\n&#x27;) {
+          putchar(&#x27;c&#x27;);
+          est = FORA;
+        }
+        break;
+    }
+  }
+  return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;1 2 3&quot;,
+    &quot;output&quot;: &quot;1c2c3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101c&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202c0 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1c3c2c0 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1c0 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000c&quot;
+  }
+]</pre></details><details><summary>sample_038</summary><pre>
+#include &lt;stdio.h&gt;
+
+enum estado {FORA, ZERO, NAO_ZERO};
+
+int main() {
+  int c;
+  enum estado est = FORA;
+
+  while ((c = getchar()) != EOF) {
+    switch (est) {
+      case FORA:
+        if (c == &#x27;0&#x27;)
+          est = ZERO;
+        else if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+          putchar(c);
+          est = NAO_ZERO;
+        }
+        break;
+
+     case ZERO:
+       if (c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;) {
+          putchar(c);
+          est = NAO_ZERO;
+        } else if (c == &#x27; &#x27; || c == &#x27;\n&#x27;) {
+          printf(&quot;0\n&quot;);
+          est = FORA;
+        }
+        break;
+
+     case NAO_ZERO:
+        if (c &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;)
+          putchar(c);
+        else if (c == &#x27; &#x27; || c == &#x27;\n&#x27;) {
+          putchar(&#x27;\n&#x27;);
+          est = FORA;
+        }
+        break;
+    }
+  }
+  return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;1 2 3&quot;,
+    &quot;output&quot;: &quot;1\n2\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202\n0\n303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1\n3\n2\n0\n27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1\n0\n1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0\n700000000000\n&quot;
+  }
+]</pre></details><details><summary>sample_039</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+    int ch, num = 0, zero = 0;
+
+    while ((ch = getchar()) != EOF) {
+        if (ch == &#x27;0&#x27;) {
+            if (num) {
+                printf(&quot;%c&quot;, ch);
+                zero = 0;
+            }
+            else zero = 1;
+        } else if (ch != &#x27; &#x27;) {
+            if (zero) printf(&quot;0&quot;);
+            printf(&quot;%c&quot;, ch);
+            num = 1;
+            zero = 0;
+        } else {
+            if (zero) printf(&quot;0&quot;);
+            printf(&quot;%c&quot;, ch);
+            zero = 0;
+            num = 0;
+        }
+    }
+    if (zero) printf(&quot;0&quot;);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 0 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 01&quot;
+  }
+]</pre></details><details><summary>sample_040</summary><pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main() {
+    int c;
+    int espaco = 0;         
+    int zeroesq = 1;        
+    int dig_dif_zero = 0;   
+
+    while ((c = getchar()) != EOF) {
+        if (isdigit(c)) {  
+            if (c != &#x27;0&#x27; || zeroesq == 0) {  
+                putchar(c);
+                zeroesq = 0;  
+                dig_dif_zero = 1;  
+                espaco = 0; 
+            }
+        } else {  
+            if (dig_dif_zero == 0) {  
+                putchar(&#x27;0&#x27;);
+            }
+            if (espaco == 0) {  
+                putchar(&#x27; &#x27;);
+                espaco = 1;  
+            }
+            zeroesq = 1;   
+            dig_dif_zero = 0;  
+        }
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101 &quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 0303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_041</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    char n;
+    n = getchar();
+    while(n != EOF) {
+        if(n != 0) {
+            putchar(n);
+            n = getchar();
+        }
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_042</summary><pre>
+#include &lt;stdio.h&gt;
+#define ON 1
+#define OFF 0
+
+int main() {
+    int state = OFF, zero = OFF;
+    int c = getchar();
+    while(c != EOF) {
+        
+        
+        if(state == OFF &amp;&amp; (c == &#x27; &#x27; || c == &#x27;\t&#x27; || c == &#x27;\n&#x27; )){
+            putchar(c);
+            c = getchar();
+        }else if(state == OFF &amp;&amp; c == &#x27;0&#x27;){
+            zero = ON;
+            c = getchar();
+        }
+        if (state == OFF &amp;&amp; c &gt;= &#x27;1&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;){
+            state = ON;
+            zero = OFF;
+            putchar(c);
+            c = getchar();
+        }
+        if (state == ON &amp;&amp; c &gt;= &#x27;0&#x27; &amp;&amp; c &lt;= &#x27;9&#x27;){
+            putchar(c);
+            c = getchar();
+        }
+        if(state == ON &amp;&amp; (c == &#x27; &#x27; || c == &#x27;\t&#x27; || c == &#x27;\n&#x27;)){
+            state = OFF;            
+            putchar(c);
+            c = getchar();
+        }
+        if (zero == ON &amp;&amp; state == OFF &amp;&amp; (c == &#x27; &#x27; || c == &#x27;\t&#x27; || c == &#x27;\n&#x27;)){
+            zero = OFF;
+            putchar(&#x27;0&#x27;);
+            
+            c = getchar();
+        }
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;101\n0&quot;,
+    &quot;expected&quot;: &quot;101\n0&quot;,
+    &quot;output&quot;: &quot;101\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 0303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_043</summary><pre>
+#include &lt;stdio.h&gt;
+#define PROCURA 0
+#define ZERO 1
+#define NUM 2
+int main(){
+    char a;
+    int estado = PROCURA;
+    while ((a = getchar()) != EOF){
+        if ((a&gt;&#x27;0&#x27;&amp;&amp; a&lt;=&#x27;9&#x27;)||(estado == NUM &amp;&amp; a == &#x27;0&#x27;)){
+            estado = NUM;
+        }
+        else if (a == &#x27;0&#x27; &amp;&amp; estado == PROCURA)
+            estado = ZERO;
+        else{
+            estado = PROCURA;
+        }
+        if (estado != ZERO)
+            putchar(a);
+        else if (estado == ZERO &amp;&amp; (a&lt;&#x27;0&#x27;&amp;&amp;a&gt;&#x27;9&#x27;)){
+            printf(&quot;0%c&quot;,a);
+            estado = PROCURA;
+        }
+        if (estado == ZERO)
+            putchar(&#x27;0&#x27;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_044</summary><pre>
+#include &lt;stdio.h&gt;
+#define PROCURA 0
+#define ZERO 1
+#define NUM 2
+int main(){
+    char a;
+    int estado = PROCURA;
+    while ((a = getchar()) != EOF){
+        if ((a&gt;&#x27;0&#x27;&amp;&amp; a&lt;=&#x27;9&#x27;)||(estado == NUM &amp;&amp; a == &#x27;0&#x27;)){
+            estado = NUM;
+        }
+        else if (a == &#x27;0&#x27; &amp;&amp; estado == PROCURA)
+            estado = ZERO;
+        else{
+            estado = PROCURA;
+        }
+        if (estado != ZERO)
+            putchar(a);
+        else if (estado == ZERO &amp;&amp; (a&lt;&#x27;0&#x27;&amp;&amp;a&gt;&#x27;9&#x27;)){
+            printf(&quot;0%c&quot;,a);
+            estado = PROCURA;
+        }
+        if (estado == 0)
+            putchar(&#x27;0&#x27;);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;1 2 3&quot;,
+    &quot;output&quot;: &quot;1 02 03&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 000 0303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 03 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot; 0700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_046</summary><pre>
+#include &lt;stdio.h&gt;
+
+int spc(int c);
+int nonzero(int c);
+enum state{
+    FORA,
+    DENTRO,
+    INI
+};
+
+int main()
+{
+    int c;
+    enum state st = FORA;
+    while((c = getchar())!= EOF){
+        switch(st){
+            case FORA:
+                if(nonzero(c)){
+                    st = DENTRO;
+                    putchar(c);
+                } else if(c == &#x27;0&#x27;){
+                    st = INI;
+                } else putchar(c);
+                break;
+            case INI:
+                if(spc(c)){
+                    st = FORA;
+                    putchar(&#x27;o&#x27;);
+                    putchar(c);
+                } else if (nonzero(c)){
+                    st = DENTRO;
+                    putchar(c);
+                }
+                break;
+            case DENTRO:
+                if(spc(c))
+                    st = FORA;
+                putchar(c);
+                break;
+        }
+    }
+    if(st == INI) putchar(&#x27;0&#x27;);
+    return 0;
+}
+
+int nonzero(int c){
+    return &#x27;1&#x27;&lt;= c &amp;&amp; c &lt;= &#x27;9&#x27;;
+}
+
+int spc(int c){
+    return c == &#x27; &#x27; || c == &#x27;\n&#x27; || c == EOF;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 o 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2 o 27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 o 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;o 700000000000 0&quot;
+  }
+]</pre></details><details><summary>sample_047</summary><pre>
+
+#include &lt;stdio.h&gt;
+#define ESPACO 0
+#define INVALIDO 1
+#define VALIDO 2
+
+int main ()
+{
+    int estado;
+    char c;
+    c = getchar();
+    
+    if (c == &#x27;0&#x27; || c == EOF)
+        estado = INVALIDO;
+    else if (c == &#x27; &#x27;)
+        estado = ESPACO;
+    else
+        estado = VALIDO;
+
+    while (c != EOF)
+    {
+
+        if (estado == ESPACO || estado == VALIDO)
+        {
+            printf(&quot;%c&quot;, c);
+            c = getchar ();
+
+            if (estado == ESPACO)
+            {
+
+                if (c == &#x27;0&#x27;)
+                    estado = INVALIDO;
+                else if(c == &#x27; &#x27;)
+                    estado = ESPACO;
+                else
+                    estado = VALIDO;
+            }
+            else
+                if (c != &#x27; &#x27;)
+                    estado = VALIDO;
+                else 
+                    estado = ESPACO;
+                
+        }
+        else if (estado == INVALIDO)
+        {
+            c = getchar();
+            if (c == &#x27;0&#x27;)
+                estado = INVALIDO;
+            else if (c == &#x27; &#x27;)
+                estado = ESPACO;
+            else                  
+                    estado = VALIDO;
+        }   
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202  303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;1 3 2  27770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1  1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot; 700000000000 &quot;
+  }
+]</pre></details><details><summary>sample_048</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define FORA 0
+#define DENTRO 1
+
+int main() {
+    int c;
+    int estado = FORA;
+    int imprimir = 0;
+
+    while((c = getchar()) != EOF) {
+        if (c == &#x27; &#x27; &amp;&amp; c == &#x27;\n&#x27;) {
+            estado = FORA;
+            imprimir = 0;
+            putchar(c);
+        }
+        else {
+            if (estado == FORA) {
+                estado = DENTRO;
+                if (c != &#x27;0&#x27;) {
+                    imprimir = 1;
+                    putchar(c);
+                }
+                else {
+                    imprimir = 0;
+                }
+            }
+            else {
+                if (c != &#x27;0&#x27; || imprimir) {
+                    putchar(c);
+                    imprimir = 1;
+                }
+            }
+            if (estado == DENTRO &amp;&amp; c == &#x27;0&#x27; &amp;&amp; !imprimir) {
+                putchar(c);
+                imprimir = 1;
+            }
+        }
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details><details><summary>sample_049</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define FORA 0
+#define DENTRO 1
+
+int main() {
+    int c;
+    int estado = FORA;
+    int imprimir = 0;
+
+    while ((c = getchar()) != EOF) {
+        if (c == &#x27; &#x27; || c == &#x27;\n&#x27;) {
+            estado = FORA;
+            imprimir = 0;
+            putchar(c);
+        } else {
+            if (estado == FORA) {
+                estado = DENTRO;
+                if (c != &#x27;0&#x27;) {
+                    putchar(c);
+                    imprimir = 1;
+                } else {
+                    imprimir = 0;
+                }
+            } else {
+                if (c != &#x27;0&#x27; || imprimir) {
+                    putchar(c);
+                    imprimir = 1;
+                }
+            }
+            if (estado == DENTRO &amp;&amp; c == &#x27;0&#x27; &amp;&amp; !imprimir) {
+                putchar(&#x27;0&#x27;);
+                imprimir = 1;
+            }
+        }
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;01&quot;,
+    &quot;expected&quot;: &quot;1&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_4&quot;,
+    &quot;input&quot;: &quot;202 00 303&quot;,
+    &quot;expected&quot;: &quot;202 0 303&quot;,
+    &quot;output&quot;: &quot;202 00 303&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_5&quot;,
+    &quot;input&quot;: &quot;01 3 02 000 027770&quot;,
+    &quot;expected&quot;: &quot;1 3 2 0 27770&quot;,
+    &quot;output&quot;: &quot;01 3 02 000 027770&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_6&quot;,
+    &quot;input&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;,
+    &quot;expected&quot;: &quot;1 0 1&quot;,
+    &quot;output&quot;: &quot;1 0 0000000000000000000000000000000000000001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_8&quot;,
+    &quot;input&quot;: &quot;0 700000000000 000&quot;,
+    &quot;expected&quot;: &quot;0 700000000000 0&quot;,
+    &quot;output&quot;: &quot;0 700000000000 000&quot;
+  }
+]</pre></details></html>

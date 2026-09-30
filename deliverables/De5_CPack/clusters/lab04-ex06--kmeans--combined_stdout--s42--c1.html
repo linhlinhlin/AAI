@@ -1,0 +1,1348 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab04-ex06--kmeans--combined_stdout--s42--c1</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab04-ex06 · 20 bài</h1><p>lab04-ex06--kmeans--combined_stdout--s42--c1 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex06_3: 20/20 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex06_0: 19/20 bài trượt (95.0%); 0 chưa chạy.</p><p>Test ex06_2: 19/20 bài trượt (95.0%); 0 chưa chạy.</p><p>Test ex06_1: 17/20 bài trượt (85.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 17,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.85,
+      &quot;cohort_rate&quot;: 0.425,
+      &quot;difference_from_cohort&quot;: 0.425
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.75,
+      &quot;cohort_rate&quot;: 0.375,
+      &quot;difference_from_cohort&quot;: 0.375
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.75,
+      &quot;cohort_rate&quot;: 0.4,
+      &quot;difference_from_cohort&quot;: 0.35
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_3:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 15,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.75,
+      &quot;cohort_rate&quot;: 0.4,
+      &quot;difference_from_cohort&quot;: 0.35
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.7,
+      &quot;cohort_rate&quot;: 0.35,
+      &quot;difference_from_cohort&quot;: 0.35
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.65,
+      &quot;cohort_rate&quot;: 0.325,
+      &quot;difference_from_cohort&quot;: 0.325
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_3:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 12,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.6,
+      &quot;cohort_rate&quot;: 0.3,
+      &quot;difference_from_cohort&quot;: 0.3
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 19,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.95,
+      &quot;cohort_rate&quot;: 0.65,
+      &quot;difference_from_cohort&quot;: 0.29999999999999993
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.275,
+      &quot;difference_from_cohort&quot;: 0.22499999999999998
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.35,
+      &quot;cohort_rate&quot;: 0.175,
+      &quot;difference_from_cohort&quot;: 0.175
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.35,
+      &quot;cohort_rate&quot;: 0.2,
+      &quot;difference_from_cohort&quot;: 0.14999999999999997
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_3:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.35,
+      &quot;cohort_rate&quot;: 0.2,
+      &quot;difference_from_cohort&quot;: 0.14999999999999997
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.7,
+      &quot;cohort_rate&quot;: 0.55,
+      &quot;difference_from_cohort&quot;: 0.1499999999999999
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.125,
+      &quot;difference_from_cohort&quot;: 0.125
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 9,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.45,
+      &quot;cohort_rate&quot;: 0.35,
+      &quot;difference_from_cohort&quot;: 0.10000000000000003
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_0:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.2,
+      &quot;cohort_rate&quot;: 0.1,
+      &quot;difference_from_cohort&quot;: 0.1
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_1:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.2,
+      &quot;cohort_rate&quot;: 0.1,
+      &quot;difference_from_cohort&quot;: 0.1
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_2:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.2,
+      &quot;cohort_rate&quot;: 0.1,
+      &quot;difference_from_cohort&quot;: 0.1
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex06_3:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 0.2,
+      &quot;cohort_rate&quot;: 0.1,
+      &quot;difference_from_cohort&quot;: 0.1
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex06_3&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 20,
+      &quot;n_cluster&quot;: 20,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9,
+      &quot;difference_from_cohort&quot;: 0.09999999999999998
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 2,
+      &quot;if&quot;: [
+        &quot;NOT (stdout:ex06_0:relation=whitespace)&quot;,
+        &quot;NOT (stdout:ex06_3:edit_band=__unknown__)&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 20,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 1,
+      &quot;holdout_precision&quot;: 0.0
+    }
+  ]
+}</pre></details><details><summary>sample_003 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]){
+	int i, c, cont = 0;
+
+	for (i = 0; i &lt; MAX-1 &amp;&amp; (c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;; i++){
+		s[i] = c;
+		cont++;
+	}
+	s[i] = &#x27;\0&#x27;;
+
+	return cont;
+}
+
+void maiusculas(char s[]){
+	int i;
+
+	for(i = 0; s[i] != &#x27;\0&#x27;; i++){
+		if(s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i] &lt;= &#x27;z&#x27;){
+			s[i] = (s[i] - &#x27;a&#x27;) + &#x27;A&#x27;;
+		}
+	}
+}
+
+int main(){
+	char s[MAX];
+	int cont = leLinha(s);
+	maiusculas(s);
+	printf(&quot;%s\nNumero de caracteres: %d\n&quot;, s, cont);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUS\nNumero de caracteres: 9\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA\nNumero de caracteres: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;HELLO WORLD!\nNumero de caracteres: 12\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA\nNumero de caracteres: 7\n&quot;
+  }
+]</pre></details><details><summary>sample_008 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int main()
+{
+    
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_015 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int leLinha(char s[]){
+    
+    int i=0; 
+    char c;
+    while ((c=getchar())!=&#x27;\n&#x27; &amp;&amp; c!=EOF){
+        s[i]=c;
+        i++;
+    }
+    s[i]=&#x27;\0&#x27;;
+    return i; 
+}
+
+void maiusculas(char s[]){
+    int i=0, palavraNova=1;
+
+    while(s[i]!=&#x27;\0&#x27;){
+        if (palavraNova &amp;&amp; s[i]&gt;=&#x27;a&#x27; &amp;&amp; s[i]&lt;=&#x27;z&#x27;){
+            s[i]=s[i]-32; 
+        }
+        palavraNova=(s[i]==&#x27; &#x27;);
+        i++;
+    }
+}
+
+int main(){
+    char s[80];
+    leLinha(s);
+    maiusculas(s);
+    printf(&quot;%s\n&quot;,s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;Abccba\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;Hello World!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDba\n&quot;
+  }
+]</pre></details><details><summary>sample_017 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]);
+void maiusculas(char s[]);
+
+int main() {
+    int e, i = 0;
+    char s[MAX];
+    char n = getchar();
+    while(n != &#x27;\n&#x27; &amp;&amp; n != EOF) {
+        s[i] = n;
+        n = getchar();
+        i++;
+    }
+    s[i] = &#x27;\n&#x27;;
+    e = leLinha(s);
+    s[e] = &#x27;\n&#x27;;
+    e++;
+    s[e] = &#x27;\0&#x27;;
+    maiusculas(s);
+    return 0;
+}
+
+int leLinha(char s[]) {
+    int i = 0;
+    while(s[i] != &#x27;\n&#x27;) {
+        ++i;
+    }
+    return i;
+}
+
+void maiusculas(char s[]) {
+    int e, i = 0;
+    e = &#x27;A&#x27; - &#x27;a&#x27;;
+    while(s[i] != &#x27;\n&#x27;) {
+        (s[i] == &#x27; &#x27;) ? s[i] = s[i] : (s[i] = s[i] + e);
+        ++i;
+    }
+    s[i] = &#x27;\n&#x27;;
+    ++i;
+    s[i] = &#x27;\0&#x27;;
+    printf(&quot;%s&quot;, s);
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;O,! A$%53\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;(ELLO WORLD\u0001\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;A\&quot;$$$BA\n&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]) {
+    int i = 0, length = 0, c;
+
+    while(i &lt; MAX &amp;&amp; (c = getchar()) != &#x27;\n&#x27; &amp;&amp; c != EOF){
+        s[i] = c;
+        length++;
+        i++;
+    }
+    s[i] = &#x27;\0&#x27;;
+    return length;
+}
+
+void maiusculas(char s[]) {
+    int i;
+    leLinha(s);
+
+    for(i = 0; i &lt; MAX &amp;&amp; s[i] != &#x27;\0&#x27;; i++){
+        s[i] = s[i] + (&#x27;A&#x27; - &#x27;a&#x27;);
+    }
+
+    printf(&quot;%s\n&quot;, s);
+
+}
+
+int main(){
+    char vector[MAX];
+    maiusculas(vector);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;O,!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;(ELLO\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;A\&quot;$$$BA\n&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]){
+    char c;
+    int num_char = 0;
+
+    scanf(&quot;%c&quot;, &amp;c);
+    while ((c != &#x27;\n&#x27;) &amp;&amp; (c != EOF)){
+        s[num_char] = c;
+        num_char++;
+
+        scanf(&quot;%c&quot;, &amp;c);
+        if (num_char &gt;= 80) {
+            break;
+        }
+    }
+
+    s[num_char] = &#x27;\0&#x27;;
+
+    return num_char;
+}
+
+void maiusculas(char s[]){
+    int contador = 0;
+    char c;
+
+    c = s[contador];
+    while (c != &#x27;\0&#x27;){
+        if ((c &gt;= &#x27;a&#x27;) &amp;&amp; (c &lt;= &#x27;z&#x27;)){
+            s[contador] = c - &#x27;a&#x27; + &#x27;A&#x27;;
+        }
+        contador++;
+        c = s[contador];
+    }
+
+}
+
+int main(){
+    char s[MAX];
+    int num_char, contador;
+
+    num_char = leLinha(s);
+
+    maiusculas(s);
+    
+    for (contador = 0; contador &lt; num_char; contador++) {
+        printf(&quot;%c&quot;, s[contador]);
+    }
+    printf(&quot;\n&quot;);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA ADEUSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX_C 100
+
+int leLinha(char s[]){
+    int c, ind;
+    for (ind = 0;ind &lt; MAX_C -1 &amp;&amp; ((c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;); ind++)
+        s[ind] = c;
+    s[ind] = &#x27;\0&#x27;;
+    return ind;
+}
+
+void maiusculas(char s[]){
+    int index;
+    for (index = 0; s[index] != &#x27;\0&#x27;; index++){
+        if (s[index] &lt;= &#x27;a&#x27;)
+            s[index] -= (&#x27;a&#x27; - &#x27;A&#x27;);
+    }
+}
+
+int main(){
+    char s[MAX_C];
+    leLinha(s);
+    maiusculas(s);
+    printf(&quot;%s&quot;,s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;o,!&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;AbccbA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;(ello&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;A\&quot;$$$bA&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]){
+    int i, c;
+    for(i = 0; i &lt; MAX &amp;&amp; ((c = getchar())!= &#x27;\n&#x27; &amp;&amp; c != EOF); i++)
+        s[i] = c;
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+
+void maiusculas(char s[]){
+    int i;
+    for (i = 0; s[i] != &#x27;\0&#x27;; i++){
+        if (s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i]&lt;= &#x27;z&#x27;)
+            s[i] -= &#x27;A&#x27;;
+    }
+}
+
+
+int main(){
+    char s[MAX];
+    leLinha(s);
+    maiusculas(s);
+    printf(&quot;%s\n&quot;, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;.LA  DEUS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot; !\&quot;\&quot;! \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;H$++. 6.1+#!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot; BDDD! \n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]){
+    int i, c;
+    for(i = 0; i &lt; MAX &amp;&amp; ((c = getchar())!= &#x27;\n&#x27; &amp;&amp; c != EOF); i++)
+        s[i] = c;
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+
+void maiusculas(char s[]){
+    int i;
+    for (i = 0; s[i] != &#x27;\0&#x27;; i++){
+        if (s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i]&lt;= &#x27;z&#x27;)
+            s[i] -= &#x27;A&#x27;;
+    }
+}
+
+int main(){
+    char s[MAX];
+    leLinha(s);
+    maiusculas(s);
+    printf(&quot;%s\n&quot;, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;.LA  DEUS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot; !\&quot;\&quot;! \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;H$++. 6.1+#!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot; BDDD! \n&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha (char s[]) {
+
+    int c, i;
+
+    for (i = 0; i &lt; MAX &amp;&amp; (c = getchar()) != &#x27;\n&#x27; &amp;&amp; c != EOF; i++) {
+        s[i] = c;
+    }
+
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+
+void maiusculas(char s[]) {
+
+    int i;
+
+    for (i = 0; s[i] != &#x27;\0&#x27;; i++)
+        if (s[i] &gt;= &#x27;a&#x27; || s[i] &lt;= &#x27;z&#x27;)
+            s[i] += &#x27;A&#x27; - &#x27;a&#x27;;
+}
+
+int main () {
+    
+    char s[MAX];
+
+    leLinha(s);
+    maiusculas(s);
+    printf(&quot;%s\n&quot;, s);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;O,!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;(ELLO\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;A\&quot;$$$BA\n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 80
+
+void maiusculas(char s[])
+{
+    int index = 0;
+    char c;
+    while ((c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;)
+    {
+        if (c &gt;= &#x27;a&#x27; &amp;&amp; c &lt;= &#x27;z&#x27;) 
+            c += (&#x27;A&#x27; - &#x27;a&#x27;);     
+        s[index++] = c;
+    }
+    s[index] = &#x27;\0&#x27;;
+}
+
+int main()
+{
+    char str[MAX];
+    maiusculas(str);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+#include &lt;stdio.h&gt;
+#define MAX 80
+
+int main(){
+
+
+    return 0;
+}
+
+
+
+int leLinha( char s[]){
+
+    int c, i = 0;
+    c = getchar();
+    while (c != &#x27;\n&#x27; &amp;&amp; c != EOF &amp;&amp; i &lt; MAX-1){
+        s[i++] = c;
+        c = getchar();
+    }
+    s[i] = &#x27;\0&#x27;;
+    return i;
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+#define MAX 80
+
+void maisculas(char s[]) {
+    int i = 0;
+    char c;
+    while ((c = s[i] != &#x27;\0&#x27;)) {
+        if (c &gt;= &#x27;a&#x27; &amp;&amp; c &lt;= &#x27;z&#x27;) {
+            s[i] = c - 32;
+        }
+        i++;
+    }
+
+}
+
+int lelinha(char s[]) {
+    int i = 0;
+    char c;
+    while ((c = getchar())!= &#x27;\n&#x27; &amp;&amp; c!= EOF) {
+        s[i++] = c;
+    }
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+int main() {
+    char palavra[MAX];
+    char linha[MAX];
+    int i;
+    
+    int numCarateres = lelinha(linha);
+    for (i = 0; i &lt; numCarateres; i++) {
+        palavra[i] = linha[i];
+    }
+    maisculas(palavra);
+
+    printf(&quot;%s\n&quot;, palavra);
+
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;oLA aDEUS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;abccba\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;Hello world!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;aBDDDba\n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+#define MAX 80
+
+void maisculas(char s[]) {
+    int i;
+    char c;
+    while ((c = getchar())!= &#x27;\n&#x27; &amp;&amp; c!= EOF) {
+         s[i + 32] = c;
+        i++;
+    }
+
+}
+
+int lelinha(char s[]) {
+    int i = 0;
+    char c;
+    while ((c = getchar())!= &#x27;\n&#x27; &amp;&amp; c!= EOF) {
+        s[i++] = c;
+    }
+    s[i] = &#x27;\0&#x27;;
+    return i;
+}
+int main() {
+    char palavra[MAX];
+    char linha[MAX];
+    int i;
+    
+    int numCarateres = lelinha(linha);
+    for (i = 0; i &lt; numCarateres; i++) {
+        palavra[i] = linha[i];
+    }
+    maisculas(palavra);
+
+    printf(&quot;%s\n&quot;, palavra);
+
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;oLA aDEUS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;abccba\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;Hello world!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;aBDDDba\n&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]) {
+  int charLido = 0;
+
+  while((s[charLido] = getchar()) != EOF &amp;&amp; s[charLido] != &#x27;\n&#x27; &amp;&amp; s[charLido] != &#x27; &#x27;) {charLido++;}
+  
+  s[charLido] = &#x27;\0&#x27;;
+  return charLido + 1;
+}
+
+void maiusculas(char s[]) {
+  int i, len = strlen(s);
+
+  for(i = 0; i &lt; len; i++) 
+    if (s[i] &gt;= &#x27;a&#x27; &amp;&amp; s[i] &lt;= &#x27;z&#x27;) 
+      s[i] = s[i] - 32;
+}
+
+int main() {
+  char s[MAX];
+
+  leLinha(s);
+  maiusculas(s);
+
+  printf(&quot;%s&quot;, s);
+
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;OLA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;HELLO&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDBA&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+#include &lt;stdio.h&gt;
+
+int leLinha(char s[]){
+    
+    int i=0; 
+    char c;
+    while ((c=getchar())!=&#x27;\n&#x27; &amp;&amp; c!=EOF){
+        s[i]=c;
+        i++;
+    }
+    s[i]=&#x27;\0&#x27;;
+    return i; 
+}
+
+void maiusculas(char s[]){
+    int i=0, palavraNova=1;
+
+    while(s[i]!=&#x27;\0&#x27;){
+        if (palavraNova &amp;&amp; s[i]&gt;=&#x27;a&#x27; &amp;&amp; s[i]&lt;=&#x27;a&#x27;){
+            s[i]=s[i]-32; 
+        }
+        palavraNova=(s[i]==&#x27; &#x27;);
+        i++;
+    }
+}
+
+int main(){
+    char s[80];
+    leLinha(s);
+    maiusculas(s);
+    printf(&quot;%s\n&quot;,s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;oLA ADEUS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;Abccba\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;Hello world!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;ABDDDba\n&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+
+int leLinha(char s[]){
+    
+    int i=0; 
+    char c;
+    while ((c=getchar())!=&#x27;\n&#x27; &amp;&amp; c!=EOF){
+        s[i]=c;
+        i++;
+    }
+    s[i]=&#x27;\0&#x27;;
+    return i; 
+}
+
+void minusculas(char s[]){
+    int i=0, palavraNova=1;
+
+    while(s[i]!=&#x27;\0&#x27;){
+        if (palavraNova &amp;&amp; s[i]&gt;=&#x27;A&#x27; &amp;&amp; s[i]&lt;=&#x27;Z&#x27;){
+            s[i]=s[i]+32; 
+        }
+        palavraNova=(s[i]==&#x27; &#x27;);
+        i++;
+    }
+}
+
+int main(){
+    char s[80];
+    leLinha(s);
+    minusculas(s);
+    printf(&quot;%s\n&quot;,s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;oLA aDEUS\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;abccba\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;hello world!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;aBDDDba\n&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]);
+void maiusculas(char s[]);
+
+int main() {
+    int e, i = 0;
+    char s[MAX];
+    char n = getchar();
+    while(n != &#x27;\n&#x27; &amp;&amp; n != EOF) {
+        s[i] = n;
+        n = getchar();
+        i++;
+    }
+    s[i] = &#x27;\n&#x27;;
+    e = leLinha(s);
+    s[e] = &#x27;\n&#x27;;
+    e++;
+    s[e] = &#x27;\0&#x27;;
+    maiusculas(s);
+    return 0;
+}
+
+int leLinha(char s[]) {
+    int i = 0;
+    while(s[i] != &#x27;\n&#x27;) {
+        ++i;
+    }
+    return i;
+}
+
+void maiusculas(char s[]) {
+    int e, i = 0;
+    e = &#x27;A&#x27; - &#x27;a&#x27;;
+    while(s[i] != &#x27;\n&#x27;) {
+        (s[i] == &#x27; &#x27;) ? s[i] = s[i] : (s[i] = s[i] + e);
+        ++i;
+    }
+    s[i] = &#x27;\n&#x27;;
+    s[i] = &#x27;\0&#x27;;
+    printf(&quot;%s&quot;, s);
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;O,! A$%53&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;(ELLO WORLD\u0001&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;A\&quot;$$$BA&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]);
+void maiusculas(char s[]);
+
+int main() {
+    int e, i = 0;
+    char s[MAX];
+    char n = getchar();
+    while(n != &#x27;\n&#x27; &amp;&amp; n != EOF) {
+        s[i] = n;
+        n = getchar();
+        i++;
+    }
+    s[i] = &#x27;\n&#x27;;
+    e = leLinha(s);
+    s[e] = &#x27;\n&#x27;;
+    e++;
+    s[e] = &#x27;\0&#x27;;
+    maiusculas(s);
+    return 0;
+}
+
+int leLinha(char s[]) {
+    int i = 0;
+    while(s[i] != &#x27;\n&#x27;) {
+        ++i;
+    }
+    return i;
+}
+
+void maiusculas(char s[]) {
+    int e, i = 0;
+    e = &#x27;A&#x27; - &#x27;a&#x27;;
+    while(s[i] != &#x27;\n&#x27;) {
+        s[i] = s[i] + e;
+        ++i;
+    }
+    s[i] = &#x27;\n&#x27;;
+    s[i] = &#x27;\0&#x27;;
+    printf(&quot;%s&quot;, s);
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;O,!&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;ABCCBA&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;(ELLO&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;A\&quot;$$$BA&quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define MAX 80
+
+int leLinha(char s[]) {
+    short i;
+    char c;
+
+    i = 0;  
+    while (i &lt; MAX - 1 &amp;&amp; (c = getchar()) != &#x27;\n&#x27; &amp;&amp; c != EOF) {
+        s[i] = c;
+        i++;
+    }
+
+    s[i] = &#x27;\0&#x27;;
+    
+    return i;
+}
+
+void maiusculas(char s[]) {
+    int i;
+    int c;
+
+    for(i = 0; i &lt; MAX &amp;&amp; (c = s[i]) != &#x27;\0&#x27;; i++) {
+        if (c &gt;= &#x27;a&#x27; &amp;&amp; c &lt;= &#x27;z&#x27;) {
+            s[i] = s[i] - 32; 
+        }
+    }
+}
+
+int main() {
+    char s[MAX];
+
+    maiusculas(s);
+
+    printf(&quot;%s&quot;, s);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex06_0&quot;,
+    &quot;input&quot;: &quot;oLA aDEUS&quot;,
+    &quot;expected&quot;: &quot;OLA ADEUS\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_1&quot;,
+    &quot;input&quot;: &quot;abccba&quot;,
+    &quot;expected&quot;: &quot;ABCCBA\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_2&quot;,
+    &quot;input&quot;: &quot;Hello world!\n&quot;,
+    &quot;expected&quot;: &quot;HELLO WORLD!\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex06_3&quot;,
+    &quot;input&quot;: &quot;aBDDDba&quot;,
+    &quot;expected&quot;: &quot;ABDDDBA\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details></html>

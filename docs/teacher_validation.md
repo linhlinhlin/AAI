@@ -4,6 +4,10 @@ Hệ thống đã có đường nhập và chấm nhãn độc lập. Hiện **c
 Các nhận xét lưu sau khi xem dashboard hoặc gợi ý AI không tự trở thành gold.
 Không cần API key để chạy bất kỳ bước đánh giá nào trong tài liệu này.
 
+Nếu muốn gửi **từng cluster kèm candidate và rule cho AI**, dùng
+[module annotation theo cluster](cluster_annotation.md). Gói đó có schema và intake riêng;
+không trộn kết quả AI vào các phiếu giảng viên độc lập bên dưới.
+
 ## Phân biệt những gì đang được xác nhận
 
 | Mức | Bằng chứng cần có | Kết quả có thể kết luận |
@@ -37,6 +41,37 @@ Code có thể chứa tên trong comment; điều phối viên cần kiểm tra 
 trước khi gửi dữ liệu thật. Không đưa dữ liệu lớp học/nhãn cá nhân vào Git.
 
 ## Cách điền phiếu
+
+### Giao diện offline
+
+Mở `deliverables/De5_GanNhan/reviewer_1.html` hoặc gửi `reviewer_2.html` cho người
+đánh giá thứ hai. Mỗi file có 48 bài ITSP development cùng packet đã chuẩn bị;
+không phải bài demo lớp học. Chọn dòng code/test trực tiếp, điền bộ nhãn do người
+phụ trách phê duyệt, chọn kết luận và tải JSON. Không có nhãn điền sẵn hoặc gọi AI.
+Các JSON tải xuống là lượt đánh giá độc lập, chưa phải gold đã phân xử.
+Xem `deliverables/De5_GanNhan/HUONG_DAN.md` để lưu/khôi phục nháp.
+
+Tạo giao diện cho packet khác (dùng thư mục output mới):
+
+```powershell
+& .\misconceptions-prototype\.venv\Scripts\python.exe `
+  misconceptions-prototype/scripts/create_annotation_editor.py `
+  --packet .cache/teacher-validation-itsp-20260928 --output .cache/my-review-forms
+```
+
+Kiểm tra file đã tải trước khi nhập vào bước đánh giá:
+
+```powershell
+& .\misconceptions-prototype\.venv\Scripts\python.exe `
+  misconceptions-prototype/scripts/create_annotation_editor.py `
+  --packet .cache/teacher-validation-itsp-20260928 --check PATH_TO_REVIEWER_JSON
+```
+
+Lệnh kiểm tra dùng cùng `validate_form` với evaluator. Bản nháp `.draft.json`
+phải mở lại bằng giao diện và xuất thành phiếu hợp lệ trước khi đánh giá.
+Đánh giá nhận thức và phân xử vẫn dùng schema/quy trình bên dưới.
+
+### Quy định của phiếu
 
 1. Giảng viên và điều phối viên chốt codebook: `version`, `approved_by`, danh sách
    `labels`, `label_policy: "single_primary"`. Các phiếu phải dùng cùng codebook.

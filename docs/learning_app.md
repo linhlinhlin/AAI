@@ -1,5 +1,8 @@
 # AAI Learning — app học viên và giảng viên
 
+Lớp DEMO riêng có thể bổ sung bài tự viết cho max/đếm/hoán vị/đường tròn theo
+[hướng dẫn dữ liệu demo](demo_bo_sung.md), có chấm Docker thật và sao lưu trước khi nạp.
+
 App chạy thực tế trên máy local tại `http://127.0.0.1:8766`, dùng tài khoản,
 SQLite và Docker Linux. Màn hình nghiên cứu cũ vẫn dùng cổng 8765. Hai app không
 chia sẻ phiên đăng nhập; app học viên không mở API của bàn nghiên cứu cũ.

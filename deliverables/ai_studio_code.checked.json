@@ -1,0 +1,180 @@
+{
+  "packet_id": "81c8ee12aa6fd6a6a2c114e9856139004fdbcb95b58c8fd30e6e5c8442dbe0a5",
+  "annotation_source": "ai",
+  "status": "ai_reviewed_pending_human_validation",
+  "human_validated": false,
+  "mechanism_accuracy": null,
+  "missing_cluster_ids": [],
+  "reviews": [
+    {
+      "cluster_id": "2812--kmeans--combined_stdout--s42--c0",
+      "misconception_label": null,
+      "evidence_supported": false,
+      "confidence": 0.95,
+      "reasoning": "Chưa có một cơ chế lỗi chung được hỗ trợ cho cả 8 bài. Phân nhóm quan sát: (1) sample_003/004/005, 3/8 bài, phân loại dấu phù hợp với các test được cung cấp nhưng thừa dấu chấm so với oracle; ví dụ test 1 expected '-12.0000 is negative', output '-12.0000 is negative.'. Statement lại có dấu chấm, nên đây còn là sự không nhất quán statement/oracle, không đủ để quy lỗi hiểu biết cho học viên. (2) sample_001, 1/8 bài, chỉ kiểm tra a == -12 rồi in zero cho các giá trị khác; test 3 input 1 cho '1.0000 is zero'. (3) sample_002, 1/8 bài, gọi printf với %.4f và %n nhưng thiếu các đối số tương ứng; code có hành vi không xác định, không suy ra output tất định từ lỗi này. (4) sample_006, 1/8 bài, chỉ in giá trị số, thiếu thông báo phân loại. (5) sample_007, 1/8 bài, in giá trị số lặp lại và sai định dạng. (6) sample_008, 1/8 bài, viết scanf(\"%f,&a\"), không truyền địa chỉ đối số cho %f; log ghi output rỗng nhưng không chứng minh chắc chắn chương trình đã crash. Không có chuỗi 'Cicle' trong cụm này. So sánh a == 0 tự nó không sai đối với nhiệm vụ phân loại dấu của số nhập trực tiếp; test 4/5 dùng ±0.0000001 và oracle vẫn yêu cầu phân biệt dương/âm. Nhãn cũ gộp output và kiểm tra input chỉ là mô tả nhiều nhóm lỗi, chưa xác nhận một misconception chung.",
+      "alternative_explanations": [
+        "Các bài có thể đang ở những mức độ hoàn thiện khác nhau; không có dữ liệu để xác nhận động cơ hay hiểu biết của tác giả.",
+        "Lệch dấu chấm giữa statement và oracle có thể giải thích thất bại của sample_003/004/005 mà không cần giả thuyết sai logic phân loại dấu."
+      ],
+      "decision": "uncertain",
+      "notes": "uncertain áp dụng cho cơ chế chung của toàn cụm, không phủ nhận các lỗi cụ thể đã chỉ ra. Rà soát bởi AI từ code và log lịch sử, không thực thi lại C, không có xác thực giảng viên hay bằng chứng nhận thức của người học. Confidence là mức tự tin chủ quan đối với decision, không phải accuracy hoặc xác suất đã hiệu chuẩn.",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_001/tests/3",
+        "members/sample_002/raw_code",
+        "members/sample_002/tests/1",
+        "members/sample_003/raw_code",
+        "members/sample_003/tests/1",
+        "members/sample_003/tests/4",
+        "members/sample_003/tests/5",
+        "members/sample_004/raw_code",
+        "members/sample_004/tests/1",
+        "members/sample_005/raw_code",
+        "members/sample_005/tests/1",
+        "members/sample_006/raw_code",
+        "members/sample_006/tests/1",
+        "members/sample_007/raw_code",
+        "members/sample_007/tests/1",
+        "members/sample_008/raw_code",
+        "members/sample_008/tests/1"
+      ]
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c0",
+      "misconception_label": "Toàn bộ 11 bài trong cụm chỉ mắc lỗi trình bày output",
+      "evidence_supported": false,
+      "confidence": 0.95,
+      "reasoning": "Bác bỏ phạm vi 'toàn bộ chỉ sai presentation', không bác bỏ sự hiện diện của lỗi presentation ở phần lớn cụm. Đối chiếu code/log cho thấy 10/11 bài có khác biệt trình bày: sample_001/002/003/004/007/009 (6 bài) thiếu dấu chấm cuối câu; sample_006/010/011 (3 bài) dùng 'circle' thay vì 'Circle'; sample_008 (1 bài) in thêm dòng debug, ví dụ test 1 là '6.700747 demo' trước thông báo outside. Phản ví dụ sample_005 (1/11 bài) truyền các biến float thay vì địa chỉ tương ứng vào scanf; log tất cả test ghi output rỗng, trong khi các chuỗi thông báo trong source có dấu chấm và chữ hoa phù hợp. Đây là lỗi đối số/kiểu đối số, không đơn thuần là sai chuỗi output và không phải lỗi cú pháp. Hành vi của lời gọi scanf này không xác định; không coi output rỗng là hậu quả runtime tất định. Các test đã cho không chứng minh 10 bài còn lại đúng với mọi đầu vào.",
+      "alternative_explanations": [
+        "Có thể tồn tại lỗi khác ngoài các test lịch sử, kể cả ở những bài hiện chỉ bộc lộ khác biệt trình bày.",
+        "Thất bại khi chấm có thể đến từ yêu cầu khớp chuỗi chính xác thay vì sai công thức hình học đối với nhóm 10 bài."
+      ],
+      "decision": "rejected",
+      "notes": "Decision rejected chỉ bác bỏ giả thuyết có lượng từ “toàn bộ ... chỉ”. Không diễn giải evidence_supported=false thành “không có bài nào sai presentation”. Rà soát bởi AI từ code và log lịch sử, không thực thi lại C, không có xác thực giảng viên hay bằng chứng nhận thức của người học. Confidence là mức tự tin chủ quan đối với decision, không phải accuracy hoặc xác suất đã hiệu chuẩn.",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_001/tests/1",
+        "members/sample_002/raw_code",
+        "members/sample_002/tests/1",
+        "members/sample_003/raw_code",
+        "members/sample_003/tests/1",
+        "members/sample_004/raw_code",
+        "members/sample_004/tests/1",
+        "members/sample_005/raw_code",
+        "members/sample_005/tests/1",
+        "members/sample_006/raw_code",
+        "members/sample_006/tests/1",
+        "members/sample_007/raw_code",
+        "members/sample_007/tests/1",
+        "members/sample_008/raw_code",
+        "members/sample_008/tests/1",
+        "members/sample_009/raw_code",
+        "members/sample_009/tests/1",
+        "members/sample_010/raw_code",
+        "members/sample_010/tests/1",
+        "members/sample_011/raw_code",
+        "members/sample_011/tests/1"
+      ]
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c1",
+      "misconception_label": null,
+      "evidence_supported": false,
+      "confidence": 0.95,
+      "reasoning": "Cụm gồm 7 bài với nhiều cơ chế. sample_003/004 (2/7) có dạng if (inside) ...; if (outside) ...; else ...; else gắn với if thứ hai, nên test 4/5 in cả 'Point is inside the Circle.' và 'Point is on the Circle.'. Hai điều kiện inside và outside vốn loại trừ nhau; vấn đề là phạm vi gắn else, không phải mọi chuỗi if độc lập đều sai. Các phản ví dụ với nhãn chung này: sample_001 (1/7) không xử lý riêng trường hợp on; sample_002 (1/7) tính khoảng cách bình phương trừ r thay vì r*r; sample_005 (1/7) so sánh khoảng cách bình phương c với r, dù có tính căn bậc hai d nhưng không sử dụng d trong điều kiện; sample_006 (1/7) chỉ thiếu dấu chấm ở thông báo on trong các test được cung cấp; sample_007 (1/7) tính k nhưng kiểm tra dấu của r thay vì k. Không nâng bằng chứng ở 2 bài thành nhãn misconception cho cả cụm.",
+      "alternative_explanations": [
+        "Sai sót gắn else có thể là sơ suất hiện thực, không đủ để kết luận học viên không hiểu tính loại trừ.",
+        "Các bài có cùng test fail có thể xuất phát từ lỗi công thức, chọn biến hoặc chuỗi output khác nhau."
+      ],
+      "decision": "uncertain",
+      "notes": "Giữ chẩn đoán gắn else ở cấp hai bài được dẫn, còn cơ chế chung toàn cụm là uncertain. Rà soát bởi AI từ code và log lịch sử, không thực thi lại C, không có xác thực giảng viên hay bằng chứng nhận thức của người học. Confidence là mức tự tin chủ quan đối với decision, không phải accuracy hoặc xác suất đã hiệu chuẩn.",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_001/tests/3",
+        "members/sample_002/raw_code",
+        "members/sample_002/tests/3",
+        "members/sample_002/tests/4",
+        "members/sample_003/raw_code",
+        "members/sample_003/tests/4",
+        "members/sample_003/tests/5",
+        "members/sample_004/raw_code",
+        "members/sample_004/tests/4",
+        "members/sample_004/tests/5",
+        "members/sample_005/raw_code",
+        "members/sample_005/tests/3",
+        "members/sample_005/tests/4",
+        "members/sample_006/raw_code",
+        "members/sample_006/tests/3",
+        "members/sample_007/raw_code",
+        "members/sample_007/tests/3",
+        "members/sample_007/tests/4"
+      ]
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c2",
+      "misconception_label": null,
+      "evidence_supported": false,
+      "confidence": 0.95,
+      "reasoning": "Cụm 4 bài trộn ít nhất ba dạng lỗi quan sát. sample_001 (1/4) có nhánh phân loại phù hợp với các test đã cho, nhưng nhánh outside in 'Cicle' thay vì 'Circle'; test 1/2/7 fail do khác biệt chuỗi này, các test inside/on pass. sample_002 (1/4) tính l = khoảng cách bình phương - r*r và đi vào nhánh else khi ở outside nhưng lại in thông báo on; test 1 expected outside, output on. Không suy ra tác giả không hiểu điều kiện nhánh chỉ từ một thông báo sai. sample_003/004 (2/4) nhận thứ tự x y x1 y1 r qua scanf trong khi đề quy định x y r x1 y1; test 1 expected outside nhưng output inside. Sai thứ tự nhận input là bằng chứng trực tiếp trong source, không phải chỉ một phỏng đoán về if/else. Vì các cơ chế khác nhau, nhãn cũ gộp 'thuật toán và nhập liệu' không phải một misconception chung đã được xác nhận.",
+      "alternative_explanations": [
+        "sample_002 có thể bị sao chép nhầm thông báo ở nhánh outside, thay vì sai hiểu biết về hình học.",
+        "Sai thứ tự scanf có thể do sơ suất hiện thực hoặc đọc nhầm thứ tự input; chưa có bằng chứng để chọn nguyên nhân nhận thức."
+      ],
+      "decision": "uncertain",
+      "notes": "Không gọi sample_001 là lỗi logic nhánh. Không suy ra lỗi công thức khoảng cách chung cho cụm từ các log này. Rà soát bởi AI từ code và log lịch sử, không thực thi lại C, không có xác thực giảng viên hay bằng chứng nhận thức của người học. Confidence là mức tự tin chủ quan đối với decision, không phải accuracy hoặc xác suất đã hiệu chuẩn.",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_001/tests/1",
+        "members/sample_001/tests/3",
+        "members/sample_002/raw_code",
+        "members/sample_002/tests/1",
+        "members/sample_002/tests/3",
+        "members/sample_003/raw_code",
+        "members/sample_003/tests/1",
+        "members/sample_003/tests/3",
+        "members/sample_004/raw_code",
+        "members/sample_004/tests/1",
+        "members/sample_004/tests/3"
+      ]
+    },
+    {
+      "cluster_id": "2833--kmeans--combined_stdout--s42--c1",
+      "misconception_label": null,
+      "evidence_supported": false,
+      "confidence": 0.95,
+      "reasoning": "Cụm 8 bài có ít nhất bốn dạng lỗi quan sát. sample_001/002/008 (3/8) có số đếm khớp oracle ở cả 6 test nhưng in 'triangle' thay vì 'triangles'; kể cả test 2 cũng fail do chuỗi, không phải mọi bài đều pass test 2. sample_003/004/005 (3/8) duyệt độc lập ba cạnh từ 1 đến N, kiểm tra ba bất đẳng thức bằng && và đếm các bộ ba có thứ tự thay vì mỗi bộ cạnh không thứ tự một lần; N=4 cho 34 thay vì 13. Ở ba bài này, bằng chứng chỉ ra đếm hoán vị, không chỉ ra toán tử && là sai. sample_006 (1/8) dùng || giữa ba bất đẳng thức và đồng thời duyệt các bộ ba có thứ tự; log N=4 cho 64, N=3 cho 27. sample_007 (1/8) có dấu chấm phẩy ngay sau các vòng for làm thân vòng lặp rỗng; các log đều cho số đếm 1. Mô tả 'đa dạng lỗi' phù hợp như tóm tắt thành phần cụm nhưng không phải một cơ chế misconception chung. Giữ uncertain ở cấp cụm, đồng thời giữ các nhóm con và dẫn chứng này.",
+      "alternative_explanations": [
+        "Sai thông báo số ít/số nhiều có thể gây thất bại dù số đếm khớp toàn bộ test được cung cấp.",
+        "Đếm bộ ba có thứ tự có thể do hiểu khác yêu cầu hoặc chưa loại trùng khi hiện thực; code/log không phân biệt được niềm tin của tác giả.",
+        "Dấu chấm phẩy sau for có thể là sơ suất gõ, không đủ để kết luận học viên không hiểu vòng lặp."
+      ],
+      "decision": "uncertain",
+      "notes": "Các tỷ lệ dựa trên 8 bài nộp, không coi chúng là 8 quan sát nhận thức độc lập. Không suy rộng số đếm khớp 6 test thành đúng mọi đầu vào. Rà soát bởi AI từ code và log lịch sử, không thực thi lại C, không có xác thực giảng viên hay bằng chứng nhận thức của người học. Confidence là mức tự tin chủ quan đối với decision, không phải accuracy hoặc xác suất đã hiệu chuẩn.",
+      "evidence_refs": [
+        "members/sample_001/raw_code",
+        "members/sample_001/tests/1",
+        "members/sample_001/tests/2",
+        "members/sample_002/raw_code",
+        "members/sample_002/tests/1",
+        "members/sample_002/tests/2",
+        "members/sample_003/raw_code",
+        "members/sample_003/tests/1",
+        "members/sample_003/tests/2",
+        "members/sample_004/raw_code",
+        "members/sample_004/tests/1",
+        "members/sample_005/raw_code",
+        "members/sample_005/tests/1",
+        "members/sample_006/raw_code",
+        "members/sample_006/tests/1",
+        "members/sample_006/tests/3",
+        "members/sample_007/raw_code",
+        "members/sample_007/tests/1",
+        "members/sample_007/tests/2",
+        "members/sample_008/raw_code",
+        "members/sample_008/tests/1",
+        "members/sample_008/tests/2"
+      ]
+    }
+  ],
+  "response_sha256": "ddfa20e1d53658a2c8a4a0887e4c05556eef41a79d07f0b3a9dcd73280060818"
+}

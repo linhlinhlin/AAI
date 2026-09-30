@@ -1,0 +1,2961 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab02-ex04--kmeans--combined_stdout--s42--c0</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab02-ex04 · 50 bài</h1><p>lab02-ex04--kmeans--combined_stdout--s42--c0 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex04_1: 48/50 bài trượt (96.0%); 0 chưa chạy.</p><p>Test ex04_2: 48/50 bài trượt (96.0%); 0 chưa chạy.</p><p>Test ex04_3: 48/50 bài trượt (96.0%); 0 chưa chạy.</p><p>Test ex04_0: 42/50 bài trượt (84.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 46,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.92,
+      &quot;cohort_rate&quot;: 0.5,
+      &quot;difference_from_cohort&quot;: 0.42000000000000004
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_3:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 46,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.92,
+      &quot;cohort_rate&quot;: 0.5,
+      &quot;difference_from_cohort&quot;: 0.42000000000000004
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 46,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.92,
+      &quot;cohort_rate&quot;: 0.5106382978723404,
+      &quot;difference_from_cohort&quot;: 0.40936170212765965
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 35,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.7,
+      &quot;cohort_rate&quot;: 0.3829787234042553,
+      &quot;difference_from_cohort&quot;: 0.31702127659574464
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 25,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.26595744680851063,
+      &quot;difference_from_cohort&quot;: 0.23404255319148937
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_3:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 24,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.48,
+      &quot;cohort_rate&quot;: 0.2553191489361702,
+      &quot;difference_from_cohort&quot;: 0.2246808510638298
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 24,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.48,
+      &quot;cohort_rate&quot;: 0.26595744680851063,
+      &quot;difference_from_cohort&quot;: 0.21404255319148935
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 23,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.46,
+      &quot;cohort_rate&quot;: 0.2553191489361702,
+      &quot;difference_from_cohort&quot;: 0.20468085106382983
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_2:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 24,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.48,
+      &quot;cohort_rate&quot;: 0.40425531914893614,
+      &quot;difference_from_cohort&quot;: 0.07574468085106384
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_3:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 24,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.48,
+      &quot;cohort_rate&quot;: 0.40425531914893614,
+      &quot;difference_from_cohort&quot;: 0.07574468085106384
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:edit_band&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.16,
+      &quot;cohort_rate&quot;: 0.0851063829787234,
+      &quot;difference_from_cohort&quot;: 0.0748936170212766
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:relation&quot;,
+      &quot;value&quot;: &quot;__unknown__&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.16,
+      &quot;cohort_rate&quot;: 0.0851063829787234,
+      &quot;difference_from_cohort&quot;: 0.0748936170212766
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex04_0&quot;,
+      &quot;value&quot;: &quot;pass&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.16,
+      &quot;cohort_rate&quot;: 0.0851063829787234,
+      &quot;difference_from_cohort&quot;: 0.0748936170212766
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 46,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.92,
+      &quot;cohort_rate&quot;: 0.851063829787234,
+      &quot;difference_from_cohort&quot;: 0.06893617021276599
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_1:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 23,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.46,
+      &quot;cohort_rate&quot;: 0.39361702127659576,
+      &quot;difference_from_cohort&quot;: 0.06638297872340426
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 47,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.94,
+      &quot;cohort_rate&quot;: 0.8829787234042553,
+      &quot;difference_from_cohort&quot;: 0.05702127659574463
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_subscript&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 45,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.9,
+      &quot;cohort_rate&quot;: 0.851063829787234,
+      &quot;difference_from_cohort&quot;: 0.04893617021276597
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex04_0:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 18,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.36,
+      &quot;cohort_rate&quot;: 0.32978723404255317,
+      &quot;difference_from_cohort&quot;: 0.03021276595744682
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 48,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.96,
+      &quot;cohort_rate&quot;: 0.9361702127659575,
+      &quot;difference_from_cohort&quot;: 0.0238297872340425
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 50,
+      &quot;rate&quot;: 0.2,
+      &quot;cohort_rate&quot;: 0.18085106382978725,
+      &quot;difference_from_cohort&quot;: 0.019148936170212766
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 6,
+      &quot;if&quot;: [
+        &quot;stdout:ex04_3:relation=different&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 36,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 11,
+      &quot;holdout_precision&quot;: 0.9090909090909091
+    }
+  ]
+}</pre></details><details><summary>sample_002 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main() {
+	int x;
+	int meio;
+	int menor;
+	printf(&quot;Introduza o primeiro inteiro:\n&quot;);
+	scanf(&quot;%d&quot;, &amp;meio);
+	printf(&quot;Introduza o segundo inteiro:\n&quot;);
+	scanf(&quot;%d&quot;, &amp;x);
+	if (x &lt; meio) {
+		menor = x;
+	} else {
+		menor = meio;
+		meio = x;
+	}
+	printf(&quot;Introduza o terceiro inteiro:\n&quot;);
+	scanf(&quot;%d&quot;, &amp;x);
+	if (x &lt; menor) {
+		printf(&quot;%d %d %d\n&quot;, x, menor, meio);
+	} else if (x &lt; meio) {
+		printf(&quot;%d %d %d\n&quot;, menor, x, meio);
+	} else {
+		printf(&quot;%d %d %d\n&quot;, menor, meio, x);
+	}
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro inteiro:\nIntroduza o segundo inteiro:\nIntroduza o terceiro inteiro:\n1 2 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro inteiro:\nIntroduza o segundo inteiro:\nIntroduza o terceiro inteiro:\n2 6 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro inteiro:\nIntroduza o segundo inteiro:\nIntroduza o terceiro inteiro:\n-8 -1 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro inteiro:\nIntroduza o segundo inteiro:\nIntroduza o terceiro inteiro:\n7 20 100\n&quot;
+  }
+]</pre></details><details><summary>sample_025 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num1, num2, num3;
+
+    scanf(&quot;%d %d %d&quot;, &amp;num1, &amp;num2, &amp;num3);
+    if(num1 &lt;= num2 &amp;&amp; num2 &lt;= num3)
+        printf(&quot;%d %d %d\n&quot;, num1, num2, num3);
+    else if(num1 &lt;= num3 &amp;&amp; num3 &lt;= num2)
+        printf(&quot;%d %d %d\n&quot;, num1, num3, num2);
+    else if(num2 &lt;= num1 &amp;&amp; num1 &lt;= num3)
+        printf(&quot;%d %d %d\n&quot;, num2, num1, num3);
+    else if(num2 &lt;= num3 &amp;&amp; num3 &lt;= num1)
+        printf(&quot;%d %d %d\n&quot;, num2, num3, num2);
+    else if(num3 &lt;= num1 &amp;&amp; num1 &lt;= num2)
+        printf(&quot;%d %d %d\n&quot;, num3, num1, num2);
+    else 
+        printf(&quot;%d %d %d\n&quot;, num3, num2, num1);
+    
+    return 0;    
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;1 2 1\n&quot;
+  }
+]</pre></details><details><summary>sample_036 · đại diện</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+
+    int  num[3], counter, maior, menor, meio;
+    scanf(&quot;%d%d%d&quot;, &amp;num[0], &amp;num[1], &amp;num[2]);
+
+    maior = num[0];
+    menor = num[0];
+    
+
+    for (counter = 1; counter &lt;3; counter++){
+        if (num[counter] &gt; maior)
+            maior = num[counter]; 
+    
+        if (num[counter] &lt; menor)
+            menor = num[counter]; 
+    }
+ 
+    
+    for (counter = 0; counter&lt;3 ;counter++){
+        if (num[counter]!= maior || num[counter]!= menor)
+            meio = num[counter];
+    }
+    
+    printf(&quot;%d %d %d\n&quot;, menor, meio, maior);
+  
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2 2 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8 -8 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7 7 100\n&quot;
+  }
+]</pre></details><details><summary>sample_040 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+void swap(int nums[], int idx)
+{
+    int numA;
+    numA = nums[idx];
+    nums[idx] = nums[idx + 1];
+    nums[idx + 1] = numA; 
+}
+
+int main()
+{
+    int nums[3];
+
+    scanf(&quot;%d%d%d&quot;, &amp;nums[0], &amp;nums[1], &amp;nums[2]);
+    
+    
+
+    if (nums[0] &gt;= nums [1])
+    {
+        swap(nums, 0);
+    }
+    
+    if (nums[1] &gt;= nums [2])
+    {
+        swap(nums, 1);
+    }
+
+     if (nums[0] &gt;= nums [1])
+    {
+        swap(nums, 0);
+    }
+    
+    printf(&quot;%d%d%d\n&quot;, nums[0], nums[1], nums[2]);
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100\n&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a,b,c;
+    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+
+    if (a &lt; b &amp;&amp; a &lt; c)
+    {
+        if (b &lt; c)
+        {
+            printf(&quot;%d&quot;,a);
+            printf(&quot;%d&quot;,b);
+            printf(&quot;%d&quot;,c);
+        }
+        else
+        {
+            printf(&quot;%d&quot;,a);
+            printf(&quot;%d&quot;,c);
+            printf(&quot;%d&quot;,b);
+        }
+    }
+    if (b&lt;a &amp;&amp; b&lt;c)
+    {
+        if (a&lt;c)
+        {
+            printf(&quot;%d&quot;,b);
+            printf(&quot;%d&quot;,a);
+            printf(&quot;%d&quot;,c);
+        }
+        else
+        {
+            printf(&quot;%d&quot;,b);
+            printf(&quot;%d&quot;,c);
+            printf(&quot;%d&quot;,a);
+        }
+    }
+    if (c&lt;b &amp;&amp; c&lt;a)
+    {
+        if (a&lt;b)
+        {
+            printf(&quot;%d&quot;,c);
+            printf(&quot;%d&quot;,a);
+            printf(&quot;%d&quot;,b);
+        }
+        else
+        {
+            printf(&quot;%d&quot;,c);
+            printf(&quot;%d&quot;,b);
+            printf(&quot;%d&quot;,a);
+        }
+        
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+	int n1, n2, n3, temp;
+	
+	printf(&quot;Insira 3 numeros: &quot;);
+	scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2, &amp;n3);
+
+	if (n1 &gt; n2)
+	{
+	temp = n1;
+       	n1 = n2;
+	n2 = temp;	
+	}
+
+	if (n1 &gt; n3)
+	{
+	temp = n1;
+	n1 = n3;
+	n3 = temp;
+	}
+
+	if (n2 &gt; n3)
+	{
+	temp = n2;
+	n2 = n3;
+	n3 = temp;
+	}
+
+	printf(&quot;%d %d %d\n&quot;, n1,n2,n3);
+	
+	return 0;}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros: 1 2 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros: 2 6 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros: -8 -1 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros: 7 20 100\n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main () {
+    int a, b, c, aux;
+
+    scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+
+    if (b &lt; a) {
+        aux = a;
+        a = b;
+        b = aux;
+    }
+    if (c &lt; a) {
+        aux = a;
+        a = c;
+        c = aux;
+    }
+
+    printf(&quot;%d %d %d&quot;, a, b, c);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;1 6 2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2 10 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8 10 -1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7 100 20&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+  int num1, num2, num3;
+
+  scanf(&quot;%d%d%d&quot;, &amp;num1, &amp;num2, &amp;num3);
+
+  if (num1 &lt;= num2)
+    {
+      if (num1 &lt;= num3)
+	{
+	  if (num2 &lt;= num3)
+	    printf(&quot;%d\t%d\t%d\n&quot;, num1, num2, num3);
+	  else
+	    printf(&quot;%d\t%d\t%d\n&quot;, num1, num3, num2);
+	}
+    }
+  else if (num2 &lt;= num1)
+    {
+      if (num2 &lt;= num3)
+	{
+	  if (num1 &lt;= num3)
+	    printf(&quot;%d\t%d\t%d\n&quot;, num2, num1, num3);
+	  else
+	    printf(&quot;%d\t%d\t%d\n&quot;, num2, num3, num1);
+	}
+    }
+  else
+    {
+      if (num2 &lt;= num1)
+	printf(&quot;%d\t%d\t%d\n&quot;, num3, num2, num1);
+      else
+	printf(&quot;%d\t%d\t%d\n&quot;, num3, num1, num2);
+    }
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>    #include &lt;stdio.h&gt;
+
+    int x, y , z;
+
+    int main(){
+
+        scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+
+        if (x &lt; y &amp;&amp; y &lt; z)
+            printf(&quot;%d\t%d\t%d\n&quot;, x, y, z);
+        else if (x &lt; y &amp;&amp; z &lt; y)
+            printf(&quot;%d\t%d\t%d\n&quot;, x, z, y);
+        else if (y &lt; x &amp;&amp; x &lt; z)
+            printf(&quot;%d\t%d\t%d\n&quot;, y, x, z);
+        else if (y &lt; x &amp;&amp; z &lt; x)
+            printf(&quot;%d\t%d\t%d\n&quot;, y, z, x);
+        else if (z &lt; x &amp;&amp; x &lt; y)
+            printf(&quot;%d\t%d\t%d\n&quot;, z, x ,y);
+        else
+            printf(&quot;%d\t%d\t%d\n&quot;, z, y ,x);
+
+        return 0;
+    }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;6\t2\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-1\t-8\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;20\t7\t100\n&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>#include &lt;stdio.h&gt;
+#include &lt;values.h&gt;
+
+int N, i;
+float x, min, max, y;
+
+int main()
+{
+    scanf(&quot;%d&quot;, &amp;N);
+    scanf(&quot;%f&quot;, &amp;x);
+    
+    min = x;
+    max = x;
+
+    for(i = 2; i &lt;= N; i += 1)
+    {
+        scanf(&quot;%f&quot;, &amp;y);
+        
+        if(y &lt; min)
+            min = y;
+        else if(y &gt; max)
+            max = y;       
+    }
+
+    printf(&quot;min: %f, max: %f\n&quot;, min, max);
+
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;min: 1.000000, max: 2.000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;min: 2.000000, max: 6.000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;min: -8.000000, max: -1.000000\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;min: 7.000000, max: 20.000000\n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+	float n1, n2, n3;
+	scanf(&quot;%f%f%f&quot;,&amp;n1,&amp;n2,&amp;n3);
+	if  ((n1 &lt; n2) &amp;&amp; (n1&lt;n3)) printf(&quot;%f&quot;,n1);
+	if  ((n2 &lt; n1) &amp;&amp; (n2&lt;n3)) printf(&quot;%f&quot;,n2);
+	if  ((n3 &lt; n2) &amp;&amp; (n3&lt;n1)) printf(&quot;%f&quot;,n3);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;1.000000&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2.000000&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8.000000&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7.000000&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int l, m, n;
+    int aux;
+    scanf(&quot;%d&quot;, &amp;l);
+    scanf(&quot;%d&quot;, &amp;m);
+    scanf(&quot;%d&quot;, &amp;n);
+    if (l &gt; m) {
+        aux = l;
+        l = m;
+        m = aux;
+    }
+    if (m &gt; n) {
+        aux = m;
+        m = n;
+        n = aux;
+    }
+    printf(&quot;%d %d %d\n&quot;, l, m, n);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;6 2 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-1 -8 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;20 7 100\n&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+
+int a,b,c ;
+
+printf(&quot;Insira 3 numeros por favor\n&quot;) ;    
+
+scanf(&quot;%d%d%d&quot; , &amp;a, &amp;b, &amp;c );
+
+if (a &gt; b &amp;&amp; a&gt;c &amp;&amp; c&gt;b){
+
+    printf ( &quot;%d\t%d\t%d\n&quot; , b , c , a);
+}
+
+else if (a &gt;b &amp;&amp; a &gt; c &amp;&amp; b &gt;c ){
+
+    printf ( &quot;%d\t%d\t%d\n&quot; , c , b , a);
+
+}
+else if (b&gt;a &amp;&amp; b&gt;c &amp;&amp; a&gt;c){
+
+    printf ( &quot;%d\t%d\t%d\n&quot; , c , a , b);
+
+}
+else if (b&gt;a &amp;&amp; b&gt;c &amp;&amp; c&gt;a){
+
+    printf ( &quot;%d\t%d\t%d\n&quot; , a , c , b);
+}
+
+else if (c&gt;a &amp;&amp; c&gt;b &amp;&amp; a&gt;b){
+
+    printf ( &quot;%d\t%d\t%d\n&quot; , b , a , c);
+}
+
+else if (c&gt;a &amp;&amp; c&gt;b &amp;&amp; a&lt;b){
+
+    printf ( &quot;%d\t%d\t%d\n&quot; , a , b , c);
+}
+    return 0;
+
+
+
+    
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros por favor\n1\t2\t6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros por favor\n2\t6\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros por favor\n-8\t-1\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros por favor\n7\t20\t100\n&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int num1, num2, num3, a, b, c;
+
+    scanf(&quot;%d%d%d&quot;, &amp;num1, &amp;num2, &amp;num3);
+
+    a = num1 &lt; num2 ? num1 : num2;
+    a = a &lt; num3 ? a : num3;
+
+    if (a == num1)
+    {
+        b = num2 &lt; num3 ? num2 : num3;
+        c = num2 &gt; num3 ? num2 : num3;
+    }
+    else if (a == num2)
+    {
+        b = num1 &lt; num3 ? num1 : num3;
+        c = num1 &gt; num3 ? num1 : num3;
+    }
+    else
+    {
+        b = num1 &lt; num2 ? num1 : num2;
+        c = num1 &gt; num2 ? num1 : num2;
+    }
+
+    printf(&quot;%d%d%d\n&quot;, a, b, c);
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100\n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int num1_ex4, num2_ex4, num3_ex4 = 0;
+    scanf(&quot;%d%d%d&quot;,&amp;num1_ex4,&amp;num2_ex4,&amp;num3_ex4);
+    if (num1_ex4 &gt; num2_ex4){
+        if (num2_ex4 &gt; num3_ex4){
+            printf(&quot;%d\t%d\t%d&quot;, num1_ex4, num2_ex4, num3_ex4);
+            }
+        else if (num3_ex4 &gt; num1_ex4){
+            printf(&quot;%d\t%d\t%d&quot;, num3_ex4, num1_ex4, num2_ex4);
+        }
+        else{
+            printf(&quot;%d\t%d\t%d&quot;, num1_ex4, num3_ex4, num2_ex4);
+        }
+        }
+    else{
+        if (num1_ex4 &gt; num3_ex4){
+            printf(&quot;%d\t%d\t%d&quot;, num2_ex4, num1_ex4, num3_ex4);
+        }
+        else if(num3_ex4 &gt; num2_ex4){
+            printf(&quot;%d\t%d\t%d&quot;, num3_ex4, num2_ex4, num1_ex4);
+        }
+        else{
+            printf(&quot;%d\t%d\t%d&quot;, num2_ex4, num3_ex4, num1_ex4);
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;6\t2\t1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;10\t6\t2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;10\t-1\t-8&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;100\t20\t7&quot;
+  }
+]</pre></details><details><summary>sample_013</summary><pre>
+#include &lt;stdio.h&gt;
+int main(){
+    int maior, meio, min, n1, n2, n3;
+    int m, n;
+    scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2, &amp;n3);
+
+    m = n1 &gt; n2 ? n1 : n2;
+    n = n1 &lt; n2 ? n1 : n2;
+    maior = m &gt; n3 ? m : n3;
+    meio = m &lt; n3 ? m : n3;
+    min = n &lt; n3 ? n : n3;
+    
+
+    printf(&quot;%d\t%d\t%d\n&quot;, min, meio, maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2\t2\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8\t-8\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7\t7\t100\n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n1, n2, n3;
+
+    scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2, &amp;n3);
+    if ((n1&lt;=n2) &amp; (n2&lt;=n3))
+        printf(&quot;%d %d %d\n&quot;, n1, n2, n3);
+    if ((n1==n2) &amp; (n2&lt;n3))
+        printf(&quot;%d %d %d\n&quot;, n1, n2, n3);
+    if ((n2==n3) &amp; (n1&lt;n2))
+        printf(&quot;%d %d %d\n&quot;, n1, n2, n3);
+    if ((n1&lt;n3) &amp; (n3&lt;n2))
+        printf(&quot;%d %d %d\n&quot;, n1, n3, n2);
+    if ((n3&lt;n1) &amp; (n2&gt;n3))
+        printf(&quot;%d %d %d\n&quot;, n3, n1, n2);
+    if ((n3&lt;n2) &amp; (n2&lt;n1))
+        printf(&quot;%d %d %d\n&quot;, n3, n2, n1);
+    if ((n2&lt;n1) &amp; (n1&lt;n3))
+        printf(&quot;%d %d %d\n&quot;, n2, n1, n3);
+    if ((n2&lt;n3) &amp; (n3&lt;n1))
+        printf(&quot;%d %d %d\n&quot;, n2, n3, n1);
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2 10 6\n2 6 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8 10 -1\n-8 -1 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7 100 20\n7 20 100\n&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int n1, n2, n3;
+
+    scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2, &amp;n3);
+    if ((n1&lt;=n2) &amp; (n2&lt;=n3))
+        printf(&quot;%d %d %d\n&quot;, n1, n2, n3);
+    if ((n1&lt;=n3) &amp; (n3&lt;n2))
+        printf(&quot;%d %d %d\n&quot;, n1, n3, n2);
+    if ((n3&lt;=n1) &amp; (n2&gt;n3))
+        printf(&quot;%d %d %d\n&quot;, n3, n1, n2);
+    if ((n3&lt;=n2) &amp; (n2&lt;n1))
+        printf(&quot;%d %d %d\n&quot;, n3, n2, n1);
+    if ((n2&lt;=n1) &amp; (n1&lt;n3))
+        printf(&quot;%d %d %d\n&quot;, n2, n1, n3);
+    if ((n2&lt;=n3) &amp; (n3&lt;n1))
+        printf(&quot;%d %d %d\n&quot;, n2, n3, n1);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2 10 6\n2 6 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8 10 -1\n-8 -1 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7 100 20\n7 20 100\n&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main ()
+{   int num1;
+    int num2;
+    int num3;
+    int maior;
+    int meio;
+    int menor;
+    scanf(&quot;%d%d%d&quot;, &amp;num1, &amp;num2, &amp;num3);
+    if (num1&gt;num2 &amp;&amp; num1&gt;num3)
+    {
+        maior = num1;
+        if (num2&gt;num3)
+        {
+            meio = num2;
+            menor = num3;
+        };
+        if (num3&gt;num2)
+        {
+            menor = num2;
+            meio = num3;
+        };      
+    };
+     if (num2&gt;num1 &amp;&amp; num2&gt;num3)
+    {
+        maior = num2;
+        if (num1&gt;num3)
+        {
+            meio = num1;
+            menor = num3;
+        };
+        if (num3&gt;num1)
+        {
+            menor = num1;
+            meio = num3;
+        };      
+    };
+     if (num3&gt;num1 &amp;&amp; num3&gt;num2)
+    {
+        maior = num3;
+        if (num1&gt;num2)
+        {
+            meio = num1;
+            menor = num2;
+        };
+        if (num2&gt;num1)
+        {
+            menor = num1;
+            meio = num2;
+        };      
+    }
+    printf(&quot;%d\n%d\n%d\n&quot;, maior, meio, menor);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;10\n6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n-8\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;100\n20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main ()
+{   int num1;
+    int num2;
+    int num3;
+    int maior;
+    int meio;
+    int menor;
+    scanf(&quot;%d%d%d&quot;, &amp;num1, &amp;num2, &amp;num3);
+    if (num1&gt;num2 &amp;&amp; num1&gt;num3)
+    {
+        maior = num1;
+        if (num2&gt;num3)
+        {
+            meio = num2;
+            menor = num3;
+        };
+        if (num3&gt;num2)
+        {
+            menor = num2;
+            meio = num3;
+        };      
+    };
+     if (num2&gt;num1 &amp;&amp; num2&gt;num3)
+    {
+        maior = num2;
+        if (num1&gt;num3)
+        {
+            meio = num1;
+            menor = num3;
+        };
+        if (num3&gt;num1)
+        {
+            menor = num1;
+            meio = num3;
+        };      
+    };
+     if (num3&gt;num1 &amp;&amp; num3&gt;num2)
+    {
+        maior = num3;
+        if (num1&gt;num2)
+        {
+            meio = num1;
+            menor = num2;
+        };
+        if (num2&gt;num1)
+        {
+            menor = num1;
+            meio = num2;
+        };      
+    }
+    printf(&quot;%d%d%d\n&quot;, menor, meio, maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100\n&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>
+
+#include &lt;stdio.h&gt;
+ int main ()
+ {
+    int v1, v2, v3, min, meio, max;
+    printf(&quot;Introduza 3 números inteiros: \n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;v1, &amp;v2, &amp;v3);
+
+    if ((v1 &lt; v2) &amp;&amp; (v1 &lt; v3))
+    {
+        min = v1;
+    }
+    if ((v2 &lt; v1) &amp;&amp; (v2 &lt; v3))
+    {
+        min = v2;
+    }
+    if ((v3 &lt; v1) &amp;&amp; (v3 &lt; v2))
+    {
+        min = v3;
+    }
+    if (min == v1)
+    {
+        if(v2 &lt; v3)
+        {
+            meio = v2;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v2;
+        }
+    }
+    if (min == v2)
+    {
+        if (v1 &lt; v3)
+        {
+            meio = v1;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v1;
+        }
+        
+    }
+    if (min == v3)
+    {
+        if (v1 &lt; v2)
+        {
+            meio = v1;
+            max = v2;
+        }
+        
+    }
+    printf(&quot;%d %d %d&quot;, min, meio, max);  
+    return 0;
+ }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n1 2 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n2 0 32765&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n-8 0 32767&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n7 0 32764&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>
+
+#include &lt;stdio.h&gt;
+ int main ()
+ {
+    int v1, v2, v3, min, meio, max;
+
+    printf(&quot;Introduza 3 números inteiros: \n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;v1, &amp;v2, &amp;v3);
+
+     if ((v1 &lt; v2) &amp;&amp; (v1 &lt; v3))
+    {
+        min = v1;
+    }
+     if ((v2 &lt; v1) &amp;&amp; (v2 &lt; v3))
+    {
+        min = v2;
+    }
+     if ((v3 &lt; v1) &amp;&amp; (v3 &lt; v2))
+    {
+        min = v3;
+    }
+    if (min == v1)
+    {
+        if(v2 &lt; v3)
+        {
+            meio = v2;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v2;
+        }
+    }
+    if (min == v2)
+    {
+        if (v1 &lt; v3)
+        {
+            meio = v1;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v1;
+        }
+        
+    }
+    if (min == v3)
+    {
+        if (v1 &lt; v2)
+        {
+            meio = v1;
+            max = v2;
+        }
+        
+    }
+    printf(&quot;%d\t%d\t%d\t&quot;, min, meio, max);  
+    return 0;
+ }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n1\t2\t6\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n2\t0\t32767\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n-8\t0\t32765\t&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n7\t0\t32766\t&quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>
+
+#include &lt;stdio.h&gt;
+ int main ()
+ {
+    int v1, v2, v3, min, meio, max;
+
+    printf(&quot;Introduza 3 números inteiros: \n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;v1, &amp;v2, &amp;v3);
+
+     if ((v1 &lt; v2) &amp;&amp; (v1 &lt; v3))
+    {
+        min = v1;
+    }
+     if ((v2 &lt; v1) &amp;&amp; (v2 &lt; v3))
+    {
+        min = v2;
+    }
+     if ((v3 &lt; v1) &amp;&amp; (v3 &lt; v2))
+    {
+        min = v3;
+    }
+
+     if (min == v1)
+    {
+        if(v2 &lt; v3)
+        {
+            meio = v2;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v2;
+        }
+    }
+     if (min == v2)
+    {
+        if (v1 &lt; v3)
+        {
+            meio = v1;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v1;
+        }  
+    }
+     if (min == v3)
+    {
+        if (v1 &lt; v2)
+        {
+            meio = v1;
+            max = v2;
+        }
+        else
+        {
+            meio = v2;
+            max = v1;
+        }
+    }
+    printf(&quot;%d %d %d\n&quot;, min, meio, max);  
+    return 0;
+ }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n1 2 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n2 6 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n-8 -1 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n7 20 100\n&quot;
+  }
+]</pre></details><details><summary>sample_021</summary><pre>
+
+#include &lt;stdio.h&gt;
+ int main ()
+ {
+    int v1, v2, v3, min, meio, max;
+
+    printf(&quot;Introduza 3 números inteiros: \n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;v1, &amp;v2, &amp;v3);
+
+     if ((v1 &lt; v2) &amp;&amp; (v1 &lt; v3))
+    {
+        min = v1;
+    }
+     if ((v2 &lt; v1) &amp;&amp; (v2 &lt; v3))
+    {
+        min = v2;
+    }
+     if ((v3 &lt; v1) &amp;&amp; (v3 &lt; v2))
+    {
+        min = v3;
+    }
+
+     if (min == v1)
+    {
+        if(v2 &lt; v3)
+        {
+            meio = v2;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v2;
+        }
+    }
+     if (min == v2)
+    {
+        if (v1 &lt; v3)
+        {
+            meio = v1;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v1;
+        }  
+    }
+     if (min == v3)
+    {
+        if (v1 &lt; v2)
+        {
+            meio = v1;
+            max = v2;
+        }
+    }
+    printf(&quot;%d %d %d\n&quot;, min, meio, max);  
+    return 0;
+ }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n1 2 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n2 0 32765\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n-8 0 32767\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n7 0 32767\n&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>
+
+#include &lt;stdio.h&gt;
+ int main ()
+ {
+    int v1, v2, v3, min, meio, max;
+
+    printf(&quot;Introduza 3 números inteiros: \n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;v1, &amp;v2, &amp;v3);
+
+     if ((v1 &lt; v2) &amp;&amp; (v1 &lt; v3))
+    {
+        min = v1;
+    }
+     if ((v2 &lt; v1) &amp;&amp; (v2 &lt; v3))
+    {
+        min = v2;
+    }
+     if ((v3 &lt; v1) &amp;&amp; (v3 &lt; v2))
+    {
+        min = v3;
+    }
+
+     if (min == v1)
+    {
+        if(v2 &lt; v3)
+        {
+            meio = v2;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v2;
+        }
+    }
+     if (min == v2)
+    {
+        if (v1 &lt; v3)
+        {
+            meio = v1;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v1;
+        }  
+    }
+     if (min == v3)
+    {
+        if (v1 &lt; v2)
+        {
+            meio = v1;
+            max = v2;
+        }
+    }
+    printf(&quot;%d\t%d\t%d\n&quot;, min, meio, max);  
+    return 0;
+ }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n1\t2\t6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n2\t0\t32765\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n-8\t0\t32764\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n7\t0\t32764\n&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>
+
+#include &lt;stdio.h&gt;
+ int main ()
+ {
+    int v1, v2, v3, min, meio, max;
+    
+    scanf(&quot;%d %d %d&quot;, &amp;v1, &amp;v2, &amp;v3);
+
+    if ((v1 &lt; v2) &amp;&amp; (v1 &lt; v3))
+    {
+        min = v1;
+    }
+    if ((v2 &lt; v1) &amp;&amp; (v2 &lt; v3))
+    {
+        min = v2;
+    }
+    if ((v3 &lt; v1) &amp;&amp; (v3 &lt; v2))
+    {
+        min = v3;
+    }
+    if (min == v1)
+    {
+        if(v2 &lt; v3)
+        {
+            meio = v2;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v2;
+        }
+    }
+    if (min == v2)
+    {
+        if (v1 &lt; v3)
+        {
+            meio = v1;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v1;
+        }
+        
+    }
+    if (min == v3)
+    {
+        if (v1 &lt; v2)
+        {
+            meio = v1;
+            max = v2;
+        }
+        
+    }
+    printf(&quot;%d %d %d&quot;, min, meio, max);  
+    return 0;
+ }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;1 2 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2 0 32767&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8 0 32766&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7 0 32767&quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>
+
+#include &lt;stdio.h&gt;
+ int main ()
+ {
+    int v1, v2, v3, min, meio, max;
+
+    printf(&quot;Introduza 3 números inteiros: \n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;v1, &amp;v2, &amp;v3);
+
+     if ((v1 &lt; v2) &amp;&amp; (v1 &lt; v3))
+    {
+        min = v1;
+    }
+     if ((v2 &lt; v1) &amp;&amp; (v2 &lt; v3))
+    {
+        min = v2;
+    }
+     if ((v3 &lt; v1) &amp;&amp; (v3 &lt; v2))
+    {
+        min = v3;
+    }
+
+     if (min == v1)
+    {
+        if(v2 &lt; v3)
+        {
+            meio = v2;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v2;
+        }
+    }
+     if (min == v2)
+    {
+        if (v1 &lt; v3)
+        {
+            meio = v1;
+            max = v3;
+        }
+        else
+        {
+            meio = v3;
+            max = v1;
+        }  
+    }
+     if (min == v3)
+    {
+        if (v1 &lt; v2)
+        {
+            meio = v1;
+            max = v2;
+        }
+        else
+        {
+            meio = v2;
+            max = v1;
+        }
+    }
+    printf(&quot;%d %d %d\n&quot;, min, meio, max);  
+    return 0;
+ }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n1 2 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n2 6 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n-8 -1 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros: \n7 20 100\n&quot;
+  }
+]</pre></details><details><summary>sample_026</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+#define INICIO 0
+#define LENGTH 3
+
+int main()
+{
+    int i, n, vetor[LENGTH], stand;
+    for (i = INICIO; i &lt; LENGTH; i++)
+        scanf(&quot;%d&quot;, &amp;vetor[i]);
+    for (i = INICIO; i &lt; LENGTH; i++)
+    {
+        for (n = INICIO; n &lt; LENGTH; n++)
+        {
+            if (vetor[i] &gt;= vetor[n])
+            {
+                stand = vetor[n];
+                vetor[n] = vetor[i];
+                vetor[i] = stand;
+            } 
+        }
+    } 
+    for (i = INICIO; i &lt; LENGTH; i++)
+        printf(&quot;%d\n&quot;, vetor[i]);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;6\n2\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;10\n6\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;10\n-1\n-8\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;100\n20\n7\n&quot;
+  }
+]</pre></details><details><summary>sample_027</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int a, b, c;
+
+    printf(&quot;Introduza 3 numeros inteiros:\n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+
+    if (a &gt; b) { int temp = a; a = b; b = temp; }
+    if (b &gt; c) { int temp = b; b = c; c = temp; }
+    if (a &gt; b) { int temp = a; a = b; b = temp; }
+
+    printf(&quot;%d%d%d\n&quot;, a, b, c);
+    return 0;    
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\n126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\n2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\n-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\n720100\n&quot;
+  }
+]</pre></details><details><summary>sample_028</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int a, b, c;
+    
+    scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+
+    if (a &gt; b) { int temp = a; a = b; b = temp; }
+    if (b &gt; c) { int temp = b; b = c; c = temp; }
+    if (a &gt; b) { int temp = a; a = b; b = temp; }
+
+    printf(&quot;%d%d%d\n&quot;, a, b, c);
+    return 0;    
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100\n&quot;
+  }
+]</pre></details><details><summary>sample_029</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int a, b, c, temp;
+    scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+
+    if (a &gt; b) {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+    if (b &gt; c) {
+        temp = b;
+        b = c;
+        c = temp;
+    }
+    if (a &gt; b) {
+        temp = a;
+        a = b;
+        b = temp;
+    }
+
+    printf(&quot;%d%d%d\n&quot;, a, b, c);
+    return 0;    
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100\n&quot;
+  }
+]</pre></details><details><summary>sample_030</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main () {
+
+    int numUm,numDois,numTres;
+
+    scanf(&quot;%d&quot;,&amp;numUm);
+    scanf(&quot;%d&quot;,&amp;numDois);
+    scanf(&quot;%d&quot;,&amp;numTres);
+
+    if (numUm &lt; numDois) {
+        if (numDois &lt; numTres) {
+            printf(&quot;%d %d %d\n&quot;,numUm,numDois,numTres);
+            return 0;
+        }
+
+    }
+
+    if (numUm &gt; numDois) {
+        if (numDois &gt; numTres) {
+            printf(&quot;%d %d %d\n&quot;,numTres,numDois,numUm);
+        return 0;
+        }
+
+    }
+
+    if (numDois &lt; numUm) {
+        if (numTres &gt; numUm) {
+            printf(&quot;%d %d %d\n&quot;,numDois,numUm,numTres);
+            return 0;
+        }
+
+    }
+
+    if (numDois &gt; numUm) {
+        if (numUm &gt; numTres) {
+            printf(&quot;%d %d %d\n&quot;,numUm,numTres,numDois);
+            return 0;
+        }
+
+    }
+
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_031</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num1,num2,num3;
+    scanf(&quot;%d %d %d&quot;,&amp;num1,&amp;num2,&amp;num3);
+    if (num1&gt;=num2&amp;&amp;num1&gt;=num3)
+    {
+        if (num2&gt;=num3)
+        {
+            printf(&quot;%d %d %d&quot;,num1,num2,num3);
+        }
+        else{
+            printf(&quot;%d %d %d&quot;,num1,num3,num2);
+        }
+    }
+    else if (num2&gt;=num1&amp;&amp;num2&gt;=num3)
+    {
+        if (num1&gt;=num3)
+        {
+            printf(&quot;%d %d %d&quot;,num2,num1,num3);
+        }
+        else {
+            printf(&quot;%d %d %d&quot;,num2,num3,num1);
+        }
+    }
+    else{
+        if (num2&gt;=num1)
+        {
+            printf(&quot;%d %d %d&quot;,num3,num2,num1);
+        }
+        else{
+            printf(&quot;%d %d %d&quot;,num3,num1,num2);
+        }        
+    }
+    return 0;
+    }</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;6 2 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;10 6 2&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;10 -1 -8&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;100 20 7&quot;
+  }
+]</pre></details><details><summary>sample_032</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x1,x2,x3,max,min,med;
+    scanf(&quot;%d %d %d&quot;,&amp;x1,&amp;x2,&amp;x3);
+    max = x1&gt;x2? (x1&gt;x3? x1:x3) : (x2&gt;x3? x2:x3);
+    min = x1&lt;x2? (x1&lt;x3? x1:x3) : (x2&lt;x3? x2:x3);
+    med = x1&lt;x2? (x1&gt;x3?x1:x3) : (x2&gt;x3?x2:x3);  
+    printf(&quot; max : %d\n&quot;,max);
+    printf(&quot;med :%d\n&quot;,med);
+    printf(&quot;min :%d\n&quot;,min);
+    return printf(&quot;%d %d %d\n&quot;,min,med,max)== EOF ;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot; max : 6\nmed :2\nmin :1\n1 2 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot; max : 10\nmed :6\nmin :2\n2 6 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot; max : 10\nmed :-1\nmin :-8\n-8 -1 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot; max : 100\nmed :20\nmin :7\n7 20 100\n&quot;
+  }
+]</pre></details><details><summary>sample_033</summary><pre>
+#include &lt;stdio.h&gt;
+int main()
+{
+    int v1, v2, v3, intmd;
+
+    scanf(&quot;%d%d%d&quot;, &amp;v1, &amp;v2, &amp;v3);
+    if (v1&gt;v2)
+    {
+        intmd = v2;
+        v2 = v1;
+        v1 = intmd;
+    }
+    if (v2&gt;v3)
+    {
+        intmd = v3;
+        v3 = v2;
+        v2 = intmd;
+    }
+    if (v1&gt;v2)
+    {
+        intmd = v2;
+        v2 = v1;
+        v1 = intmd;
+    }
+    printf(&quot;%d%d%d&quot;, v1, v2 ,v3);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100&quot;
+  }
+]</pre></details><details><summary>sample_034</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    
+    int a, b, c;
+    int aux;
+
+    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+
+    if (b &lt; a) {
+        aux = a;
+        a = b;
+        b = aux;
+    }
+
+    if (c &lt; b) {
+        aux = b;
+        b = c;
+        c = aux;
+    }
+
+    printf(&quot;%d %d %d\n&quot;,a,b,c);
+    
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;6 2 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-1 -8 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;20 7 100\n&quot;
+  }
+]</pre></details><details><summary>sample_035</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_037</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    int n1,n2,n3, aux;
+
+    scanf(&quot;%d%d%d&quot;,&amp;n1,&amp;n2,&amp;n3);
+    
+    if(n1 &gt; n2) {
+        aux = n1;
+        n1 = n2;
+        n2 = aux;
+    }
+    if(n3 &lt; n1) printf(&quot;%d%d%d&quot;,n3,n1,n2); 
+
+    else if(n3 &lt; n2) printf(&quot;%d%d%d&quot;,n1,n3,n2);
+
+    else printf(&quot;%d%d%d&quot;,n1,n2,n3);
+    
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100&quot;
+  }
+]</pre></details><details><summary>sample_038</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+
+    int n1,n2,n3, aux;
+
+    scanf(&quot;%d%d%d\n&quot;,&amp;n1,&amp;n2,&amp;n3);
+    
+    if(n1 &gt; n2) {
+        aux = n1;
+        n1 = n2;
+        n2 = aux;
+    }
+    if(n3 &lt; n1) printf(&quot;%d%d%d&quot;,n3,n1,n2);
+
+    else if(n3 &lt; n2) printf(&quot;%d%d%d&quot;,n1,n3,n2);
+
+    else printf(&quot;%d%d%d&quot;,n1,n2,n3);
+    
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100&quot;
+  }
+]</pre></details><details><summary>sample_039</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num_1, num_2, num_3, auxiliar;
+    scanf(&quot;%d %d %d&quot;, &amp;num_1,&amp;num_2,&amp;num_3);
+    if (num_1&gt;num_2) {
+        auxiliar=num_1;
+        num_1=num_2;
+        num_2=auxiliar;
+    }
+
+    if (num_3&gt;num_2) {
+        printf(&quot;%d %d %d\n&quot;, num_1,num_2,num_3);
+    } else {
+        printf(&quot;%d %d %d\n&quot;, num_1,num_3,num_2);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;6 2 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-1 -8 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;20 7 100\n&quot;
+  }
+]</pre></details><details><summary>sample_041</summary><pre>
+#include &lt;stdio.h&gt;
+
+void swap(int nums[], int idx)
+{
+    int numA;
+    numA = nums[idx];
+    nums[idx] = nums[idx + 1];
+    nums[idx + 1] = numA; 
+}
+
+int main()
+{
+    int nums[3];
+
+    scanf(&quot;%d&quot;, &amp;nums[0]);
+    scanf(&quot;%d&quot;, &amp;nums[1]);
+    scanf(&quot;%d&quot;, &amp;nums[2]);
+
+    if (nums[0] &gt;= nums [1])
+    {
+        swap(nums, 0);
+    }
+    
+    if (nums[1] &gt;= nums [2])
+    {
+        swap(nums, 1);
+    }
+
+     if (nums[0] &gt;= nums [1])
+    {
+        swap(nums, 0);
+    }
+    
+    printf(&quot;%d%d%d\n&quot;, nums[0], nums[1], nums[2]);
+    return 0;
+}
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100\n&quot;
+  }
+]</pre></details><details><summary>sample_042</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int contador=1, num, meio=0,menor=0,maior=0;
+    scanf(&quot;%d&quot;, &amp;num);
+    maior=num; 
+    menor=num; 
+    meio=num; 
+    while (contador&lt;3){
+        
+        scanf(&quot;%d&quot;, &amp;num);
+        if (maior&lt;num){ 
+            maior=num; 
+        }
+        if (menor&gt;num){ 
+            menor=num; 
+        }
+        else{
+            meio=num;
+        }
+        contador ++;
+    }
+
+    printf(&quot;%d\t%d\t%d\n&quot;, menor,meio,maior);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2\t10\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8\t10\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7\t100\t100\n&quot;
+  }
+]</pre></details><details><summary>sample_043</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int contador=1, num, meio=0,menor=0,maior=0;
+    scanf(&quot;%d&quot;, &amp;num);
+    maior=num; 
+    menor=num; 
+    meio=num; 
+    while (contador&lt;3){
+        
+        scanf(&quot;%d&quot;, &amp;num);
+        if (maior&lt;num){ 
+            maior=num; 
+        }
+        if (menor&gt;num){ 
+            menor=num; 
+        }
+        contador ++;
+    }
+
+    printf(&quot;%d\t%d\t%d\n&quot;, menor,meio,maior);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;1\t6\t6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2\t10\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8\t10\t10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7\t100\t100\n&quot;
+  }
+]</pre></details><details><summary>sample_044</summary><pre>
+#include &lt;stdio.h&gt;
+
+void swap(int* a, int* b){
+    int temp=*a;
+    *a=*b;
+    *b=temp;
+}
+
+int main(){
+    int a, b, c;
+    scanf(&quot;%d%d%d&quot;, &amp;a,&amp;b,&amp;c);
+    if (a&gt;b)swap(&amp;a, &amp;b);
+    if (b&gt;c)swap(&amp;b, &amp;c);
+    if (a&gt;c)swap(&amp;a,&amp;c);
+    printf(&quot;%d %d %d\n&quot;, a, b,c);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;6 2 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-1 -8 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;20 7 100\n&quot;
+  }
+]</pre></details><details><summary>sample_045</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+    if (a&lt;=b) {
+        if (c&lt;=b) {
+            (a&gt;=c) ? printf(&quot;%d%d%d\n&quot;, c, a, b) : printf(&quot;%d%d%d\n&quot;, a, c, b);
+        } else {
+            printf(&quot;%d%d%d\n&quot;, a, b, c);
+        }
+    } else {
+        if (c&lt;=a) {
+            (b&gt;=c) ? printf(&quot;%d%d%d\n&quot;, c, b, a) : printf(&quot;%d%d%d\n&quot;, b, c, a);
+        } else {
+            printf(&quot;%d%d%d\n&quot;, b, a, c);
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100\n&quot;
+  }
+]</pre></details><details><summary>sample_046</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n1,n2,n3;
+    scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2,&amp; n3);
+    if (n1&lt;n2) {
+        int aux = n1;
+        n1 = n2;
+        n2 = aux;
+    }
+    if (n3 &lt; n1) printf(&quot;%d %d %d&quot;,n3,n1,n2);
+    else if (n3 &gt; n2) printf(&quot;%d %d %d&quot;,n1,n2,n3);
+    else printf(&quot;%d %d %d&quot;,n1,n3,n2);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;2 6 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2 10 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8 10 -1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;7 100 20&quot;
+  }
+]</pre></details><details><summary>sample_047</summary><pre>
+#include&lt;stdio.h&gt;
+
+int N, M, P;
+
+
+
+int main () {
+    printf(&quot;Introduza o primeiro número: &quot;);
+    scanf(&quot;%d&quot;, &amp;N);        
+
+    printf(&quot;Introduza o segundo número: &quot;);
+    scanf(&quot;%d&quot;, &amp;M);
+
+    printf(&quot;Introduza o terceiro número: &quot;);
+    scanf(&quot;%d&quot;, &amp;P);
+
+   if (N &lt; M &amp;&amp; M &lt; P) {
+        printf(&quot;%d\n%d\n%d\n&quot;, N, M, P);
+    }
+    else if (N &lt; P &amp;&amp; P &lt; M) {
+         printf(&quot;%d\n%d\n%d\n&quot;, N, P, M);
+    }
+     else {
+         printf(&quot;%d\n%d\n%d\n&quot;, P, M, N);
+    }
+
+    return 0;                                        
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: Introduza o terceiro número: 2\n1\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: Introduza o terceiro número: 2\n6\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: Introduza o terceiro número: -8\n-1\n10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: Introduza o terceiro número: 7\n20\n100\n&quot;
+  }
+]</pre></details><details><summary>sample_048</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int num1, num2, num3;
+    int list[3];
+
+    scanf(&quot;%d %d %d&quot;, &amp;num1, &amp;num2, &amp;num3);
+
+    if (num1 &lt; num2){
+        if (num2 &lt; num3){
+            list[0] = num3;
+            list[1] = num2;
+            list[2] = num1;
+        }
+        else {
+            list[0] = num2;
+            list[1] = num3;
+            list[2] = num1;
+        }
+    }
+    else if (num1 &lt; num3){
+        list[0] = num3;
+        list[1] = num1;
+        list[2] = num2;
+    }
+    else {
+        list[0] = num1;
+        list[1] = num3;
+        list[2] = num2;
+    }
+
+    printf(&quot;%d %d %d\n&quot;, list[2], list[1], list[0]);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;6 2 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-1 -8 10\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;20 7 100\n&quot;
+  }
+]</pre></details><details><summary>sample_049</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a,b,c,maior,menor,meio;
+    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+    maior=a;
+    if(b&gt;maior) maior = b;
+    if(c&gt;maior) maior = c;
+    menor=a;
+    if(b&lt;menor) menor = b;
+    if(c&lt;menor) menor = c;
+    meio=a;
+    if (meio==maior) meio = b;
+    if (meio==menor) meio = c;
+    printf(&quot;%d%d%d\n&quot;,menor,meio,maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100\n&quot;
+  }
+]</pre></details><details><summary>sample_050</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a,b,c,maior,menor,meio;
+    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+    maior=a;
+    if(b&gt;maior) maior = b;
+    if(c&gt;maior) maior = c;
+    menor=a;
+    if(b&lt;menor) menor = b;
+    if(c&lt;menor) menor = c;
+    meio = a + b + c - maior - menor;
+    printf(&quot;%d%d%d\n&quot;,menor,meio,maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex04_0&quot;,
+    &quot;input&quot;: &quot;6 1 2&quot;,
+    &quot;expected&quot;: &quot;1 2 6\n&quot;,
+    &quot;output&quot;: &quot;126\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_1&quot;,
+    &quot;input&quot;: &quot;10 6 2&quot;,
+    &quot;expected&quot;: &quot;2 6 10\n&quot;,
+    &quot;output&quot;: &quot;2610\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_2&quot;,
+    &quot;input&quot;: &quot;10 -1 -8&quot;,
+    &quot;expected&quot;: &quot;-8 -1 10\n&quot;,
+    &quot;output&quot;: &quot;-8-110\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex04_3&quot;,
+    &quot;input&quot;: &quot;100 20 7&quot;,
+    &quot;expected&quot;: &quot;7 20 100\n&quot;,
+    &quot;output&quot;: &quot;720100\n&quot;
+  }
+]</pre></details></html>

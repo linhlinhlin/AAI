@@ -1,0 +1,283 @@
+{
+  "packet_id": "793b1b1e8bceeded702464b78ac2317269044d0d5080359747466c1029d5e0fb",
+  "annotation_source": "ai",
+  "annotation_status": "pending_annotation",
+  "pending_clusters": [
+    {
+      "cluster_id": "lab02-ex01--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex01--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex01--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex02--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex02--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex02--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex03--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex03--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex03--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex04--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex04--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex04--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex05--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex05--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex06--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex06--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex06--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex07--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex07--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex08--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex08--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex08--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex09--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex09--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex09--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex10--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex10--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab02-ex10--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex01--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex01--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex01--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex02--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex02--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex02--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex03--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex03--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex03--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex04--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex04--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex04--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex05--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex05--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex05--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex06--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex06--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex06--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex07--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex07--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab03-ex07--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex01--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex02--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex02--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex02--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex03--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex04--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex04--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex04--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex05--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex05--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex05--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex06--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex06--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex06--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex07--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex07--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex07--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex08--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex08--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "lab04-ex08--kmeans--combined_stdout--s42--c2",
+      "result": null
+    }
+  ]
+}

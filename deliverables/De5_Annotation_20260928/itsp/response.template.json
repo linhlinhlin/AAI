@@ -1,0 +1,27 @@
+{
+  "packet_id": "81c8ee12aa6fd6a6a2c114e9856139004fdbcb95b58c8fd30e6e5c8442dbe0a5",
+  "annotation_source": "ai",
+  "annotation_status": "pending_annotation",
+  "pending_clusters": [
+    {
+      "cluster_id": "2812--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c0",
+      "result": null
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c1",
+      "result": null
+    },
+    {
+      "cluster_id": "2825--kmeans--combined_stdout--s42--c2",
+      "result": null
+    },
+    {
+      "cluster_id": "2833--kmeans--combined_stdout--s42--c1",
+      "result": null
+    }
+  ]
+}

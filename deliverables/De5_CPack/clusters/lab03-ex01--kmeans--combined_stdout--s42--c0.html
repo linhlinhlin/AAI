@@ -1,0 +1,567 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab03-ex01--kmeans--combined_stdout--s42--c0</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab03-ex01 · 8 bài</h1><p>lab03-ex01--kmeans--combined_stdout--s42--c0 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex01_0: 8/8 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex01_1: 8/8 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex01_2: 8/8 bài trượt (100.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_0:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.19852941176470587,
+      &quot;difference_from_cohort&quot;: 0.8014705882352942
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_2:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 0.875,
+      &quot;cohort_rate&quot;: 0.16176470588235295,
+      &quot;difference_from_cohort&quot;: 0.7132352941176471
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_1:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 0.75,
+      &quot;cohort_rate&quot;: 0.19117647058823528,
+      &quot;difference_from_cohort&quot;: 0.5588235294117647
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_0:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7279411764705882,
+      &quot;difference_from_cohort&quot;: 0.2720588235294118
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_1:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7279411764705882,
+      &quot;difference_from_cohort&quot;: 0.2720588235294118
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_2:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7279411764705882,
+      &quot;difference_from_cohort&quot;: 0.2720588235294118
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8235294117647058,
+      &quot;difference_from_cohort&quot;: 0.17647058823529416
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 0.375,
+      &quot;cohort_rate&quot;: 0.21323529411764705,
+      &quot;difference_from_cohort&quot;: 0.16176470588235295
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.3382352941176471,
+      &quot;difference_from_cohort&quot;: 0.16176470588235292
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.8897058823529411,
+      &quot;difference_from_cohort&quot;: 0.11029411764705888
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 0.25,
+      &quot;cohort_rate&quot;: 0.13970588235294118,
+      &quot;difference_from_cohort&quot;: 0.11029411764705882
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 0.625,
+      &quot;cohort_rate&quot;: 0.5220588235294118,
+      &quot;difference_from_cohort&quot;: 0.1029411764705882
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_do&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 0.125,
+      &quot;cohort_rate&quot;: 0.029411764705882353,
+      &quot;difference_from_cohort&quot;: 0.09558823529411764
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_address_of&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9705882352941176,
+      &quot;difference_from_cohort&quot;: 0.02941176470588236
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9705882352941176,
+      &quot;difference_from_cohort&quot;: 0.02941176470588236
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex01_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9926470588235294,
+      &quot;difference_from_cohort&quot;: 0.007352941176470562
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex01_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex01_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 8,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_do&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 0.875,
+      &quot;cohort_rate&quot;: 0.9705882352941176,
+      &quot;difference_from_cohort&quot;: -0.09558823529411764
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 8,
+      &quot;rate&quot;: 0.375,
+      &quot;cohort_rate&quot;: 0.47794117647058826,
+      &quot;difference_from_cohort&quot;: -0.10294117647058826
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 3,
+      &quot;if&quot;: [
+        &quot;NOT (stdout:ex01_1:edit_band=small)&quot;,
+        &quot;stdout:ex01_2:relation=whitespace&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 8,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 1,
+      &quot;holdout_precision&quot;: 0.0
+    }
+  ]
+}</pre></details><details><summary>sample_001 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+void quadrado(int N);
+
+int main()
+{
+	int N = 0;
+
+	scanf(&quot;%d&quot;, &amp;N);
+	while (N &lt;= 2);
+	quadrado(N);
+	return 0;
+}
+
+void quadrado(int N)
+{	int valor, digito, contador;
+	for (digito = 1; digito &lt;= N; digito++)
+	{	valor = digito;
+		contador = 1;
+		do{
+			printf(&quot;%d &quot;, valor);
+			valor++;
+			contador++;
+		} while (contador &lt;= N);
+		putchar(&#x27;\n&#x27;);
+	}
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1 2 3 \n2 3 4 \n3 4 5 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1 2 3 4 \n2 3 4 5 \n3 4 5 6 \n4 5 6 7 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1 2 3 4 5 6 7 8 \n2 3 4 5 6 7 8 9 \n3 4 5 6 7 8 9 10 \n4 5 6 7 8 9 10 11 \n5 6 7 8 9 10 11 12 \n6 7 8 9 10 11 12 13 \n7 8 9 10 11 12 13 14 \n8 9 10 11 12 13 14 15 \n&quot;
+  }
+]</pre></details><details><summary>sample_002 · đại diện</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado (int N) {
+    int i, j;
+    for (i = 0; i &lt; N; i++) {
+        for (j = (i + 1); j &lt;= (N + i); j++)
+            printf(&quot;%d\t&quot;, j); 
+        printf(&quot;\t\n&quot;);
+    }
+}    
+
+int main() {
+    int N;
+    scanf(&quot;%d&quot;, &amp;N);
+    quadrado(N);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t\t\n2\t3\t4\t\t\n3\t4\t5\t\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t\t\n2\t3\t4\t5\t\t\n3\t4\t5\t6\t\t\n4\t5\t6\t7\t\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\t\t\n2\t3\t4\t5\t6\t7\t8\t9\t\t\n3\t4\t5\t6\t7\t8\t9\t10\t\t\n4\t5\t6\t7\t8\t9\t10\t11\t\t\n5\t6\t7\t8\t9\t10\t11\t12\t\t\n6\t7\t8\t9\t10\t11\t12\t13\t\t\n7\t8\t9\t10\t11\t12\t13\t14\t\t\n8\t9\t10\t11\t12\t13\t14\t15\t\t\n&quot;
+  }
+]</pre></details><details><summary>sample_003 · đại diện</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado (int N){
+
+    int i = 1, contador = 0;
+    while (i&lt;=N)
+    {
+        for(contador=i; contador&lt;i+N; contador++){
+            if(contador == i+N-1){
+                printf(&quot;%d&quot;, contador);
+            }
+            else
+                printf(&quot;%d &quot;, contador);
+        }
+        printf(&quot;\n&quot;);
+        i++;
+    }
+    
+}
+
+int main(){
+
+    int N=0;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    quadrado(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1 2 3\n2 3 4\n3 4 5\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1 2 3 4\n2 3 4 5\n3 4 5 6\n4 5 6 7\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1 2 3 4 5 6 7 8\n2 3 4 5 6 7 8 9\n3 4 5 6 7 8 9 10\n4 5 6 7 8 9 10 11\n5 6 7 8 9 10 11 12\n6 7 8 9 10 11 12 13\n7 8 9 10 11 12 13 14\n8 9 10 11 12 13 14 15\n&quot;
+  }
+]</pre></details><details><summary>sample_005 · đại diện</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+
+void quadrado(int n);
+
+
+int main() {
+    int n;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    
+    return 0;
+}
+
+void quadrado( int n) {
+    int i, j;
+    
+    for ( i = 1; i &lt;= n; i++)
+    {
+        for (j = i; j &lt;= n+i-1; j++)
+        {
+            printf(&quot;%d \t &quot;, j);
+        }
+        printf(&quot;\n&quot;);
+    }
+    
+    
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1 \t 2 \t 3 \t \n2 \t 3 \t 4 \t \n3 \t 4 \t 5 \t \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1 \t 2 \t 3 \t 4 \t \n2 \t 3 \t 4 \t 5 \t \n3 \t 4 \t 5 \t 6 \t \n4 \t 5 \t 6 \t 7 \t \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1 \t 2 \t 3 \t 4 \t 5 \t 6 \t 7 \t 8 \t \n2 \t 3 \t 4 \t 5 \t 6 \t 7 \t 8 \t 9 \t \n3 \t 4 \t 5 \t 6 \t 7 \t 8 \t 9 \t 10 \t \n4 \t 5 \t 6 \t 7 \t 8 \t 9 \t 10 \t 11 \t \n5 \t 6 \t 7 \t 8 \t 9 \t 10 \t 11 \t 12 \t \n6 \t 7 \t 8 \t 9 \t 10 \t 11 \t 12 \t 13 \t \n7 \t 8 \t 9 \t 10 \t 11 \t 12 \t 13 \t 14 \t \n8 \t 9 \t 10 \t 11 \t 12 \t 13 \t 14 \t 15 \t \n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+void quadrado (int N){
+
+    int i = 1, contador = 0;
+    while (i&lt;=N)
+    {
+        for(contador=i; contador&lt;i+N; contador++){
+            printf(&quot;%d &quot;, contador);
+        }
+        printf(&quot;\n&quot;);
+        i++;
+    }
+    
+}
+
+int main(){
+
+    int N=0;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    quadrado(N);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1 2 3 \n2 3 4 \n3 4 5 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1 2 3 4 \n2 3 4 5 \n3 4 5 6 \n4 5 6 7 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1 2 3 4 5 6 7 8 \n2 3 4 5 6 7 8 9 \n3 4 5 6 7 8 9 10 \n4 5 6 7 8 9 10 11 \n5 6 7 8 9 10 11 12 \n6 7 8 9 10 11 12 13 \n7 8 9 10 11 12 13 14 \n8 9 10 11 12 13 14 15 \n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+
+void quadrado(int n);
+
+
+int main() {
+    int n;
+    
+    scanf(&quot;%d&quot;, &amp;n);
+    quadrado(n);
+    
+    return 0;
+}
+
+void quadrado( int n) {
+    int i,j;
+    
+    for ( i = 1; i &lt;= n; i++)
+    {
+        for (j = i; j &lt;= n+i-1; j++)
+        {
+            printf(&quot;%d \t &quot;, j);
+        }
+        printf(&quot;\n&quot;);
+    }
+    
+    
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1 \t 2 \t 3 \t \n2 \t 3 \t 4 \t \n3 \t 4 \t 5 \t \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1 \t 2 \t 3 \t 4 \t \n2 \t 3 \t 4 \t 5 \t \n3 \t 4 \t 5 \t 6 \t \n4 \t 5 \t 6 \t 7 \t \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1 \t 2 \t 3 \t 4 \t 5 \t 6 \t 7 \t 8 \t \n2 \t 3 \t 4 \t 5 \t 6 \t 7 \t 8 \t 9 \t \n3 \t 4 \t 5 \t 6 \t 7 \t 8 \t 9 \t 10 \t \n4 \t 5 \t 6 \t 7 \t 8 \t 9 \t 10 \t 11 \t \n5 \t 6 \t 7 \t 8 \t 9 \t 10 \t 11 \t 12 \t \n6 \t 7 \t 8 \t 9 \t 10 \t 11 \t 12 \t 13 \t \n7 \t 8 \t 9 \t 10 \t 11 \t 12 \t 13 \t 14 \t \n8 \t 9 \t 10 \t 11 \t 12 \t 13 \t 14 \t 15 \t \n&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+
+void quadrado(int n){
+	int i,j;
+	
+	for(i = 1; i &lt;= n; i++){
+		for (j = 1; j &lt;= n; j++){
+			printf(&quot;%d\t&quot;, i + j - 1);
+			if (j != n) putchar(&#x27;\t&#x27;);	
+		}
+		
+		putchar(&#x27;\n&#x27;); 
+	} 
+}
+
+
+int main(){
+	int n;
+	scanf(&quot;%d&quot;, &amp;n);
+	
+	while(n &lt; 2){
+		scanf(&quot;%d&quot;, &amp;n);
+	}
+	quadrado(n);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t\t2\t\t3\t\n2\t\t3\t\t4\t\n3\t\t4\t\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t\t2\t\t3\t\t4\t\n2\t\t3\t\t4\t\t5\t\n3\t\t4\t\t5\t\t6\t\n4\t\t5\t\t6\t\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t\t2\t\t3\t\t4\t\t5\t\t6\t\t7\t\t8\t\n2\t\t3\t\t4\t\t5\t\t6\t\t7\t\t8\t\t9\t\n3\t\t4\t\t5\t\t6\t\t7\t\t8\t\t9\t\t10\t\n4\t\t5\t\t6\t\t7\t\t8\t\t9\t\t10\t\t11\t\n5\t\t6\t\t7\t\t8\t\t9\t\t10\t\t11\t\t12\t\n6\t\t7\t\t8\t\t9\t\t10\t\t11\t\t12\t\t13\t\n7\t\t8\t\t9\t\t10\t\t11\t\t12\t\t13\t\t14\t\n8\t\t9\t\t10\t\t11\t\t12\t\t13\t\t14\t\t15\t\n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>
+#include &lt;stdio.h&gt;
+
+void quadrado(int n)
+{
+    int i, j;
+    for (i = 1; i &lt;= n; i++){
+        for (j = 0; j &lt; n; j++){
+            if (j) putchar(&#x27;\t&#x27;);
+            printf(&quot;%d\t&quot;, i + j);
+        }
+        putchar(&#x27;\n&#x27;);
+    }
+}
+int main()
+{
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    if (n &lt; 2) {
+        printf(&quot;Número inválido!\n&quot;);
+        return 1;
+    }
+    quadrado(n);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\n2\t3\t4\n3\t4\t5\n&quot;,
+    &quot;output&quot;: &quot;1\t\t2\t\t3\t\n2\t\t3\t\t4\t\n3\t\t4\t\t5\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\n2\t3\t4\t5\n3\t4\t5\t6\n4\t5\t6\t7\n&quot;,
+    &quot;output&quot;: &quot;1\t\t2\t\t3\t\t4\t\n2\t\t3\t\t4\t\t5\t\n3\t\t4\t\t5\t\t6\t\n4\t\t5\t\t6\t\t7\t\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;8&quot;,
+    &quot;expected&quot;: &quot;1\t2\t3\t4\t5\t6\t7\t8\n2\t3\t4\t5\t6\t7\t8\t9\n3\t4\t5\t6\t7\t8\t9\t10\n4\t5\t6\t7\t8\t9\t10\t11\n5\t6\t7\t8\t9\t10\t11\t12\n6\t7\t8\t9\t10\t11\t12\t13\n7\t8\t9\t10\t11\t12\t13\t14\n8\t9\t10\t11\t12\t13\t14\t15\n&quot;,
+    &quot;output&quot;: &quot;1\t\t2\t\t3\t\t4\t\t5\t\t6\t\t7\t\t8\t\n2\t\t3\t\t4\t\t5\t\t6\t\t7\t\t8\t\t9\t\n3\t\t4\t\t5\t\t6\t\t7\t\t8\t\t9\t\t10\t\n4\t\t5\t\t6\t\t7\t\t8\t\t9\t\t10\t\t11\t\n5\t\t6\t\t7\t\t8\t\t9\t\t10\t\t11\t\t12\t\n6\t\t7\t\t8\t\t9\t\t10\t\t11\t\t12\t\t13\t\n7\t\t8\t\t9\t\t10\t\t11\t\t12\t\t13\t\t14\t\n8\t\t9\t\t10\t\t11\t\t12\t\t13\t\t14\t\t15\t\n&quot;
+  }
+]</pre></details></html>

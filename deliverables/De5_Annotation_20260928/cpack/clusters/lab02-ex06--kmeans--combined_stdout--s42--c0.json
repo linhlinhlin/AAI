@@ -1,0 +1,3652 @@
+{
+  "schema_version": 1,
+  "annotation_status": "pending_annotation",
+  "scope": "development_train_validation_only",
+  "annotation_source_requested": "ai",
+  "human_validated": false,
+  "mechanism_accuracy": null,
+  "selection_policy": {
+    "method": "kmeans",
+    "feature_mode": "combined_stdout",
+    "seed": 42,
+    "min_cluster_size": 4,
+    "min_distinct_sources": 3,
+    "required_failed_log_coverage": 1.0,
+    "min_common_failure_rate_cluster": 0.5,
+    "representatives": "medoid then diverse OAV/outcomes, max 4",
+    "ranking": "problem and cluster ID, no quality-score selection"
+  },
+  "limitations": [
+    "Historical logs, no fresh execution or cognitive evidence.",
+    "AI sees clusters/candidates: not independent blind human validation.",
+    "No sealed test members, correct repairs or reviewer labels exported.",
+    "Clustering OAV is archived; diagnostic OAV/rules are computed at export.",
+    "Missing/not_run outcomes are not passes; rates include denominators.",
+    "Counts/rates describe submissions, not independent students or beliefs.",
+    "C-Pack oracle/suite correspondence has not been replay-verified.",
+    "IDs and paths omitted; raw public source comments are preserved."
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "problem_id": "lab02-ex01",
+        "artifact": "lab02-ex01/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "27c52078ffeaf1aa4e35f43c544f3d4f89ab283c36789eece0dab2ac1cab0769",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-0931eb472b6b3a40b4df749f8bffc7b05998a323519210e2f8e046f0abb154ab",
+        "input_sha256": "04be433910f7142b1e472d79e74016bc0fe363dc6f8b9fc0611f7911f17e954f",
+        "evidence_sha256": "c9e28c99e8637276e64eeba0957654ec669b081dfb89a70835bcc7309a0c8a00"
+      },
+      {
+        "problem_id": "lab02-ex02",
+        "artifact": "lab02-ex02/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "cb2a703e388aeab9fd98764012deef02ed12b475e848846c8efb44247e9ef76a",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-edef6895426595a81e261684da4a3bd97938db60bec82add22bc33f06ba94f2a",
+        "input_sha256": "c8f451ae51f9fd2e1d928c6d3e3b482cec8a4239ff56669333f54eccbda2296f",
+        "evidence_sha256": "fdb123ee41aa4ae31d1f629893f5dbd9dc98397ae73834106c21727cf9f48ae6"
+      },
+      {
+        "problem_id": "lab02-ex03",
+        "artifact": "lab02-ex03/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "5a586ef720f054a3383e91c7f2bdc1d8b684f173908ec117f0057a2d00b159d6",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-b89a2ef8fbf15741c15f1f550399afc1b581af7a898657905d5780ee869ce38d",
+        "input_sha256": "e8e70eea8b88834e2cd6472daddf496e36f1bcef0da665e8146fc1d22e99a02c",
+        "evidence_sha256": "05f2a442b83b86a235ca3fc7a27100e50dda94649913c3ddbb38a473bb4bb008"
+      },
+      {
+        "problem_id": "lab02-ex04",
+        "artifact": "lab02-ex04/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "a7c6d1b9615134802ad6cc6d4f8c5925c462a3b719938a3fb4c328572c228bd0",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-6e31760075259117bd2765e27c8fbad0729442d129d489f52c2ed166433e5969",
+        "input_sha256": "1f21aedc899b07ca80737adde027949cc6cb457873f79a4b9336f7a730de696c",
+        "evidence_sha256": "12793992c8dfeaceb3057aeebee6bcd17268e7712e96251390cdab6b9e409cb3"
+      },
+      {
+        "problem_id": "lab02-ex05",
+        "artifact": "lab02-ex05/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "461c628e784a0d79583e3cb38fe331b370edaa6589841352b39f073e443c93e5",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-26c3dd6078d69974b65dba8f2196e58b0f1506d05139da8986a0f91824ccf920",
+        "input_sha256": "d69bdcf666ad11882309228f8a8870d70fdaefdcf25a634fcd20d60bf8fb6173",
+        "evidence_sha256": "32e6328092711ad1a411fdc1f9e645a5a7df55c669121d2c1c171e8661e9a2bb"
+      },
+      {
+        "problem_id": "lab02-ex06",
+        "artifact": "lab02-ex06/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "5cdf4c4a9b70d749639c230f57eeee2cb7e4f79ffa0ca463acd2ad98b5d953d5",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-dd8b787a67fc1726d514b4924a020b69a3f0799919e46692ab40c83b70caf190",
+        "input_sha256": "8a34f27b1680eaa91d93465222a6f3b4349253f3ae843a8e72743258bec2b7d1",
+        "evidence_sha256": "d6f3a6c6a6abd966a769d46127bff5554f3c3c1142ef5c70ebbae5b5cf06032d"
+      },
+      {
+        "problem_id": "lab02-ex07",
+        "artifact": "lab02-ex07/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "e3a293db4e70f6f04eb7800cc83381ceeca173313a27e0661f528f437d707386",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-aaa6a33f3ab964d590b63042ad64997b751702cc86b0894df3d72cbef67bac27",
+        "input_sha256": "9584439290e4c3f1479f509d6bdc75b66244203ea792d34c9e625504f7466973",
+        "evidence_sha256": "f080d0369c78725ecc5385c93b19c0058870ddc2dcf7027cdc3145940f909944"
+      },
+      {
+        "problem_id": "lab02-ex08",
+        "artifact": "lab02-ex08/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "76e380888f55cef3b69e3b7b02a332d213276f681da2e21f9fdaa72525a100d6",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-44fb9e3adf9d0f25199f840af7a0f417fc3939a0e58cc3b6cf514772a7ba948f",
+        "input_sha256": "da6fbb3b9624f6794b115565e16cb1f660a3b18419f0062b9db606f6906feb6d",
+        "evidence_sha256": "e8ddbb4db494dbdd20d2195a91a590d36fb0f1cb522485e2f123d2bfec7b19c8"
+      },
+      {
+        "problem_id": "lab02-ex09",
+        "artifact": "lab02-ex09/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "730d2e3b54be3d2a5ea1ce1a5c5882702938d7b909bf25b7adc1efd0a657d53e",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-ddbe961c8822631969a462914626831423bd90192b200396fb8ca7979b7394de",
+        "input_sha256": "c2c4bc4d1848f5ea4853405ced6930323f56b698f20864867fc7599934b04491",
+        "evidence_sha256": "5e345c049aff57a8907e31bf15e0b0467355ed7f32ec2c4e2c2509a4e784b612"
+      },
+      {
+        "problem_id": "lab02-ex10",
+        "artifact": "lab02-ex10/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "a03bc6611e86c76c8496faa9efa3cbcbf2e15b0e3de6c38f780d2cb3835989fb",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-71176db98e015223347ffa0d498f34c3a3f9944be176cbae97dc97188d63ac52",
+        "input_sha256": "4b9f02b5ea25db3c88fd02eca4fe2ca5422cc2645e34a2f3bf83c882af1f5e90",
+        "evidence_sha256": "8bedaecacbd06d7ebe06bcedb3e03e965c3cb466f620a93ea62d99cb6b64db46"
+      },
+      {
+        "problem_id": "lab03-ex01",
+        "artifact": "lab03-ex01/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "728a666111e54b8a0b85a635ce02b758d08afebba3acb684c4a5796a3934d7bb",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-e6076474d6bced6f38c4fff6c2f3b718f2ba27920ce6d6c507853e38f3d1b206",
+        "input_sha256": "5b2f4cce2c5348d2fd3fdf0787b16e48c1e8e64b23738c4a60e31545f6cab66e",
+        "evidence_sha256": "34b97f65682bdcb7b1004fbc1f2b898b0aad14e379f5a7336254162f52f1cd72"
+      },
+      {
+        "problem_id": "lab03-ex02",
+        "artifact": "lab03-ex02/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "a86291dff55b542772a5a367d0c722ddc3e6696bead6b3c56c007f000851feea",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-ab86e8f17453c977c0733338374260d23e790e628d9b2eb84ed855bc291c6c34",
+        "input_sha256": "0252493002178edd25fc63d8cc90b4178325a81cdfcd8f69da52fe143c146b0c",
+        "evidence_sha256": "062c22496a2a96365af32214ade118039055465d391537c116b27da8b02bc72f"
+      },
+      {
+        "problem_id": "lab03-ex03",
+        "artifact": "lab03-ex03/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "22c790a5d4453003f81458ef7e6fb725ae818c02369679b2c65d8e6bd4955ffc",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-d0f6682ddb66ef1c8172d41a4c7ac0ab1e8124729fb701322ca592ef79edc5e4",
+        "input_sha256": "3d28dc00b7b04621f16ff3dc5ff9842bddd8f975d7901611f9f498fcc8f12add",
+        "evidence_sha256": "c614f53f1b3afb1b02f38f2147351ee94e6852a4bfef115b3586cc9f3423f6ef"
+      },
+      {
+        "problem_id": "lab03-ex04",
+        "artifact": "lab03-ex04/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "9d15537a9a1199eb880090743a14a668db7b45d2776a2884adae769cd941da58",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-5bdeef72650ba56e68afab68c406b26e50c8a5f9e45226604bb7a5010843c21b",
+        "input_sha256": "b31b96c14fec6fdc82ec8855beb81d52f56c5f3ef3be35a164ce2f53878f4321",
+        "evidence_sha256": "ab8de5ee96574f6044d01ecbe91960d54c035f7b7df1b1624650c8b28332d171"
+      },
+      {
+        "problem_id": "lab03-ex05",
+        "artifact": "lab03-ex05/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "de53f4dbb55827bc42f4d48e481d6eaf89f36b53082c41fe4c382aacbc5a567c",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-6c67a33db47d481ad44bc05f27942c50cf4eb486567bc3a28c07713f74b801ca",
+        "input_sha256": "1dfb585fe0826633eafa84150bccaa44dc8d0aa47b29e0ba25ba98ad355b9213",
+        "evidence_sha256": "25b0d9799a2659788efa99fda472b630e05adc00e7006ac3644a9babe467f4a8"
+      },
+      {
+        "problem_id": "lab03-ex06",
+        "artifact": "lab03-ex06/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "3b9b68c96e21dbbb326b4a4b99f7953906052caaecd8c3aded1ac474a08703b8",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-8cc054bbd36ba4d21be47b453926165701ea0a12cb38f69e73b9daf71dc604f9",
+        "input_sha256": "ceb78f08df108c8b5188ef1a9d105bc2576ed294b179691fb4fdbc424d5d34ad",
+        "evidence_sha256": "079feee12e03b5ed9b88578bc32f0975e5a5dbfe699fef815d97dc28c4d7e33f"
+      },
+      {
+        "problem_id": "lab03-ex07",
+        "artifact": "lab03-ex07/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "4e9afb01d98741216e5656259b868131112b354823b2ea2a1191a7849ab609fb",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-fd3bfaa62ef3c7d6710967ef7df3410e60bb21b5319dc9ec0180f480b52a4c53",
+        "input_sha256": "146e7dc074f7e6390dc43d3440557808fb1ff6197f058d174fef572423a05ab4",
+        "evidence_sha256": "93a266c673d69a0af4d2cbf3f2ca069cf04cc066b810ecb8a18aefb7fc25dffe"
+      },
+      {
+        "problem_id": "lab04-ex01",
+        "artifact": "lab04-ex01/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "234124d90ba9d785cb535c8514b7d72ef6c545e5d8221e82e3d763209c137567",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-37373be2be0febcd28d8b99110eeeeb4bf58c1da92314c7e3d2cf69cd9d7a900",
+        "input_sha256": "30dfbaff5847503e4e7d5b054cc0c101a3bad1746a61c5ebf592fb31720ad04a",
+        "evidence_sha256": "ce5f980bb71d73a2d593de2c579e10990f5dbc91208ec3fa434210ba0b8ea3ae"
+      },
+      {
+        "problem_id": "lab04-ex02",
+        "artifact": "lab04-ex02/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "99e9d1140997f21ebff38d7604bf265a6ed9f47f93dfe5a1df9990310d1a0c05",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-8a90f87cf0a37ff9f8ba264f48444239cc56d7c9a48627c9880db3b958635916",
+        "input_sha256": "e37f9b07ca3fa9410a91a87d334176e619132091c54f9f7ba5854f57807f1191",
+        "evidence_sha256": "58f8bf32797d9b71dbfc90caa1f1a8524706b3bc877c02d6cbc19a0b75e6d512"
+      },
+      {
+        "problem_id": "lab04-ex03",
+        "artifact": "lab04-ex03/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "fb51d6ed71415a0db8dcf87461cbb6057eab1e4aaed108d27ac9f29ac8807367",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-953e3673d0c1ea31acbb04768142eb0d5a08c1c462a1592e4432ca93d7ca9f5c",
+        "input_sha256": "2739c648530af37f3d0ef43eb9c509e2048207f21ace450fbc5473b7b294461d",
+        "evidence_sha256": "824e15bb28e253c81f1d984d2875c6b92df3fe324c3e9d0acdb9f070dcff047f"
+      },
+      {
+        "problem_id": "lab04-ex04",
+        "artifact": "lab04-ex04/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "b2dcaf963fdde195874763137ad81e153e3c24bc15bdaa8de4ee2bd3bc43d728",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-fd8449e3114a29f73a7037ae1004741728f31ecabc3b5f8879a11ce3a04e543e",
+        "input_sha256": "df78736d8f5ab3bf9d1fabb321a48042f715991d37be18676a25889b9847aa19",
+        "evidence_sha256": "4d3d71b7de84eb6e0ef8ca92460ae4729d1d8fb86c7ea08d18fa9925e921978d"
+      },
+      {
+        "problem_id": "lab04-ex05",
+        "artifact": "lab04-ex05/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "e8421de3ebc2b7652aab6da9abbb3a93e9dd813bb3d8a1d783fd3cc13050d6a0",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-3ae154acb36c057cc1eadf584032e0206a9462b79a15b4ee7692307d9f06283b",
+        "input_sha256": "0c16eae26aaeedd7a925bdfeee2ea0247af82eaf1dcac87cb4374fa6e8d617aa",
+        "evidence_sha256": "43a061a62e37145daf81b444c3156a4afc274c7c7039baab809d488760f988be"
+      },
+      {
+        "problem_id": "lab04-ex06",
+        "artifact": "lab04-ex06/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "2aa5dc2dbefe00dacba6ee3ae480987bc040afff3e5c93bfb72849213676d260",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-5f312d6a4267d2cf602aab076e4763dd3dc617a619606b32cab05bda03d75ad3",
+        "input_sha256": "90b5dd56bedc6de39347c93bf41a99773aacbffc8c3b7dae44c576d5cbbeec82",
+        "evidence_sha256": "982ca1facd631a2d111c111edbca847ff2b1c909cf61aaf723bc2cb62b758f92"
+      },
+      {
+        "problem_id": "lab04-ex07",
+        "artifact": "lab04-ex07/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "2b9b5d88a96470ed948d76ea14f120ee2bda9f6fbd81c3d05fc041094f95a4dc",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-a5f0863f76c8893caba927fc0bacb1d00553c3e5b3056d37da50410d0dd66af0",
+        "input_sha256": "7d8a86b3fd55516f3968b1f20c324b4cd67e50b423f888f0e98b6556b08986e6",
+        "evidence_sha256": "a56db444383b9e86d718a0b35e4fe007376f931dc237f03e0cd3d41eff1385ef"
+      },
+      {
+        "problem_id": "lab04-ex08",
+        "artifact": "lab04-ex08/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "9ac86bb6e1368eb68abbeb43ab5e7e9376df0579a91a0b152e4d93c2771a9ff4",
+        "dataset": "C-Pack-IPAs-26",
+        "url": "https://github.com/pmorvalho/C-Pack-IPAs",
+        "source_commit": "76901e1223b250a093a02d5e29113ad735c3d2b9",
+        "suite_version": "cpack-771ca55a10618fe85f7f8d9b7f9aaf7869de28239c502c178060fc53932cc312",
+        "input_sha256": "31f93ad33a41759f3012f15aa36219e22d2f95b25d357f0e6760b59bf9509cdb",
+        "evidence_sha256": "b72d211014a9533df6782dc40d3b0975be4c020659cd9df5175bc52d287363eb"
+      }
+    ],
+    "split_sha256": "c4ba25fffcf1ea89b8a24296258b69138720eb30efb2e2de6933b4cd1757c78a",
+    "run_manifest_sha256": "40f194dfb15b9dca4c17c5d9ee310f56a2f6ca1692d56d51670220ab94a65739",
+    "exporter": {
+      "base_commit": null,
+      "working_tree_dirty": null,
+      "checkout_kind": "source_export",
+      "files_sha256": {
+        "misconceptions-prototype/src/misconceptions/__init__.py": "cb8e0be3c687e1e4aa4356575c9607ecc1bd98535e7eb64af46610b3bb549392",
+        "misconceptions-prototype/src/misconceptions/adapters.py": "42bbdfa71f9980a63380380a1f7671f59b0ef01b5cf46c7773ea7c2c7f567b00",
+        "misconceptions-prototype/src/misconceptions/ai_labeling.py": "43b70d00d768cacd5bb13fc4c337713ce55afa9fbc18f264c283a930cf4437ac",
+        "misconceptions-prototype/src/misconceptions/annotation_intake.py": "839f7fa18667bc15c12dcaba863ec93f0cedc4e9477cede8c9d71e674b83b7df",
+        "misconceptions-prototype/src/misconceptions/benchmark_validation.py": "483a584abbb85f12554f05d666a6392463ba4a862438cb576ff095c333b86bd1",
+        "misconceptions-prototype/src/misconceptions/cli.py": "71ab645ebc8cf170832ba0a36ed461b16de24030e139def889d9243c7737b3d4",
+        "misconceptions-prototype/src/misconceptions/cluster_annotation.py": "cf07afe7c857eb59764eb9a58186fa8a6472f8fceca5fbd385247c1f248d6033",
+        "misconceptions-prototype/src/misconceptions/cpack.py": "8ab17de4b637a407d699a3b43a7cd4b43be98767a3b477283e600fcba3d78a66",
+        "misconceptions-prototype/src/misconceptions/domain.py": "cac296ef1d9ee5849d57d675c319ed7b9b211fff8e1e0efb87ee562a4445dbbc",
+        "misconceptions-prototype/src/misconceptions/expert_validation.py": "52eff73e9d7141b79b3ee7518826c9b6d8eb9168be8dcd208f70077c4ffb2ef7",
+        "misconceptions-prototype/src/misconceptions/features.py": "a37cc78ea3a2eca813f859f33c98867c68f6571a5d408923573098ee7a979d12",
+        "misconceptions-prototype/src/misconceptions/hardcoded_output.py": "a26d84796080b64b8e58f3d117d6a07e8747c3e81de0816f1795a428851ad4ba",
+        "misconceptions-prototype/src/misconceptions/itsp.py": "fbcc952b0a0c19ef081b09b528f296ce70cef51807c5ce5ff8bd8f94b31064e4",
+        "misconceptions-prototype/src/misconceptions/learning_problems.py": "a376db67a1efd06e0c9122998f646312b33e5cfed823984604c024ed2876e5ba",
+        "misconceptions-prototype/src/misconceptions/learning_sandbox.py": "cebd881d03cf67f5f6122201cb4aa2558d6d44e1eb9c91f3d6b8818a737cc306",
+        "misconceptions-prototype/src/misconceptions/learning_service.py": "0096e4b6949d9e7ab983e0d1fd34d900e3387a4bbc2301cbf69d5027629a74af",
+        "misconceptions-prototype/src/misconceptions/learning_store.py": "2ad88899b327ec86c329d7df2f9698b9c0968ebcddcbe4a852c7f9d28b63f625",
+        "misconceptions-prototype/src/misconceptions/learning_web.py": "54ccdbd77c3de42b7786112b35fead9fd27146ae7186d2de36a14bd5d0c92de3",
+        "misconceptions-prototype/src/misconceptions/llm_client.py": "320804edc873212ed53b5ce2e991ad3545f14d2c2c183dcdaac32a4719035b4b",
+        "misconceptions-prototype/src/misconceptions/output_features.py": "9a33a957c77ca8f709fce86e127dbfa25a5aa2121174da5d5e7ae72f705564ed",
+        "misconceptions-prototype/src/misconceptions/pipeline.py": "890f2bd89fa7ab3c564064d11e8d1ea7421ce0a910934875aca5006d1637f20a",
+        "misconceptions-prototype/src/misconceptions/research_io.py": "1f25fbec4f1cc330c400488216a19d53621f5992533c9a7c752f230df7947aed",
+        "misconceptions-prototype/src/misconceptions/rule_style.py": "0a1d7ad4ba6b1fcc022d616867b9124b3bd74628166521dc124a3fa294ddf98a",
+        "misconceptions-prototype/src/misconceptions/semantic_rules.py": "4dc581789a944bf055e0b6f9a1384dee59b126df3bdca465b90fbf696b32b402",
+        "misconceptions-prototype/src/misconceptions/splits.py": "627020bc3e183e9917c43f35547d8a62bf303a8a30eb4787a9a4e02194ea4979",
+        "misconceptions-prototype/src/misconceptions/teacher_dashboard.py": "48663be4147b3afa68999ffce9fa0da39a21d4d5ef40df346816e192d7b9b3f0",
+        "misconceptions-prototype/src/misconceptions/teacher_validation.py": "193166ad9af10c71b507a2623432fa10a9bcaf2d960edc55c63247737b1e896c",
+        "misconceptions-prototype/src/misconceptions/teaching_report.py": "fbac4ab62cae42484ee49a77315f7af7fccf23f7cd32365f8d3905d91459d868",
+        "misconceptions-prototype/src/misconceptions/web.py": "8f7d60157f4b8b0efcd91295ba6e89b3e0aad25f780f1efe322281814748c38b",
+        "misconceptions-prototype/scripts/audit_human_review_packet.py": "202fad903465b16428d52419ede7d3c0ba264e6b96543d345e4a8faf1abc6691",
+        "misconceptions-prototype/scripts/check_itsp_review.py": "af1e462f0f6705f7479e4c012f6d0233e453366636354abaaab68f8c77c4b9f9",
+        "misconceptions-prototype/scripts/download_cpack.py": "4954f2d2d9cf4ea6c462a9de5ce612a395ade7040defa11d5a1c5970560c66d9",
+        "misconceptions-prototype/scripts/download_itsp.py": "4609226ceb98c2856a424d3ea7142a26a651518168a3c9eb0b12b4d87196af62",
+        "misconceptions-prototype/scripts/export_cluster_annotations.py": "7530cb9914b06e43072733fddf1ea7bd2cebc1061d949fb4d486da71b8ea8e74",
+        "misconceptions-prototype/scripts/export_learning_handoff.py": "18044317c5508672d074b878236dbb63d2b6b34217cabd4200304324d97d1d30",
+        "misconceptions-prototype/scripts/learning_browser_smoke.py": "22c5fb5c494ed00ed1291e470fc3446dfe414d3b55512aa15569aa9df30dbf83",
+        "misconceptions-prototype/scripts/lock_splits.py": "06f168d1cf961f1dbbab296ea5c86cf4c1ef7fba0f10114d926ef3daef1c0c10",
+        "misconceptions-prototype/scripts/make_demo.py": "a175506de8d7d229044169c4784510c77f3c5f1cf679fc2f13a7f550777ed756",
+        "misconceptions-prototype/scripts/merge_itsp_annotations.py": "d582847e38790145c8ee38ca81c5a540bed1c4696182c47e1b88d1b2271055a6",
+        "misconceptions-prototype/scripts/prepare_cpack.py": "465d22321665cbfcc7760b2f9219a1cef55107725f322d083f1e76375c449b3f",
+        "misconceptions-prototype/scripts/prepare_itsp.py": "9bfe5990faab197f84ac452347631932246e6795f34c61d059986bb3c683cc9b",
+        "misconceptions-prototype/scripts/prepare_learning_demo.py": "c00929262651079fd9361ba39dbae3584b141146f3e46eba2294bae5dd0cf594",
+        "misconceptions-prototype/scripts/report_itsp_experts.py": "84ddfb4d830148c5f89e4cf0c4878749d0d15e1e417b86897e0254c9f9d6ded1",
+        "misconceptions-prototype/scripts/run_ablation.py": "46e16ac2cc77b5c8434cfdbd3c5c227b1297491fa1b1080c9ceca1752c1642c6",
+        "misconceptions-prototype/scripts/run_itsp_experiments.py": "50b8faa803728c82a96342ea7aa47ec1cc6f623fdaa31fd0b687e24e4d22d214",
+        "misconceptions-prototype/scripts/run_topic5.py": "b6e1a7e31a75a36bb2bbb4493beda7b97a919de85cb9186306eeeba6e8181e35",
+        "misconceptions-prototype/scripts/score_itsp_experts.py": "c90dad13d9c2bec3a356a9d500f402cc7b841a584edf255441e1e9d0ce037485",
+        "misconceptions-prototype/scripts/setup_learning.py": "675a09542dd5bcc4bd203b0b56c4a9948cc3722e2190fd7ee34ea346ceab283c",
+        "misconceptions-prototype/scripts/validate_itsp_abc.py": "6be2ea50b4d8f48441fe0da975b49dde4bad7099b479e3988ebb3efb1913e55e",
+        "misconceptions-prototype/scripts/validate_topic5.py": "5d3310271e36fb9494b06f724f9ea681c7689c6956db4816371c14dec9dcf5af",
+        "scripts/audit_run.py": "36cab5481e92fe9015c13f430df5670b834d27477a4917e3d7d701a602ed5f39",
+        "scripts/harness.py": "7c2d22fac3a6c7b594db1a77945d6a5bab251bfa9858e409274e1856a461d66a",
+        "misconceptions-prototype/requirements-lock.txt": "b586a3639ce51b4544f0a06c6ecfd944d23e661f09674e248b1cc1c13093333c",
+        "misconceptions-prototype/pyproject.toml": "6869dc5f3ce975f77453f0b534fb8697db870009661fb609d4377c0966bdcebe",
+        "research/protocol.json": "d730a2419058aa2ea4f691c302cb03b9c22c42e2200ce955a25b94872690a9c3",
+        "research/course-validation-protocol.json": "fd861b97250aae788752a599319bda5768fa18c1d72d5d8d2250bd3c3cfa1977"
+      },
+      "implementation_sha256": "cf11db682d0f6f6320abec626de9cb5abf5531e3482d478037288aff13398b9f"
+    }
+  },
+  "packet_id": "793b1b1e8bceeded702464b78ac2317269044d0d5080359747466c1029d5e0fb",
+  "cluster": {
+    "cluster_id": "lab02-ex06--kmeans--combined_stdout--s42--c0",
+    "original_cluster_id": 0,
+    "annotation_status": "pending_annotation",
+    "human_validated": false,
+    "problem_id": "lab02-ex06",
+    "problem_statement": {
+      "text": null,
+      "source": null,
+      "limitation": "No statement available; reason only from recorded inputs/oracles/code."
+    },
+    "n_submissions": 28,
+    "n_distinct_sources": 28,
+    "n_known_students": 22,
+    "student_identity_complete": true,
+    "partition_counts": {
+      "train": 24,
+      "validation": 4
+    },
+    "test_statistics": [
+      {
+        "test_id": "ex06_0",
+        "n_cluster": 28,
+        "n_observed": 28,
+        "n_failed": 28,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 28
+        }
+      },
+      {
+        "test_id": "ex06_1",
+        "n_cluster": 28,
+        "n_observed": 28,
+        "n_failed": 28,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 28
+        }
+      },
+      {
+        "test_id": "ex06_2",
+        "n_cluster": 28,
+        "n_observed": 28,
+        "n_failed": 28,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 28
+        }
+      }
+    ],
+    "prominent_features": [
+      {
+        "feature": "test:ex06_2",
+        "value": "fail",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 0.6071428571428571,
+        "difference_from_cohort": 0.3928571428571429
+      },
+      {
+        "feature": "test:ex06_0",
+        "value": "fail",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 0.7142857142857143,
+        "difference_from_cohort": 0.2857142857142857
+      },
+      {
+        "feature": "stdout:ex06_2:relation",
+        "value": "different",
+        "n": 18,
+        "n_cluster": 28,
+        "rate": 0.6428571428571429,
+        "cohort_rate": 0.42857142857142855,
+        "difference_from_cohort": 0.21428571428571436
+      },
+      {
+        "feature": "stdout:ex06_0:edit_band",
+        "value": "large",
+        "n": 11,
+        "n_cluster": 28,
+        "rate": 0.39285714285714285,
+        "cohort_rate": 0.19642857142857142,
+        "difference_from_cohort": 0.19642857142857142
+      },
+      {
+        "feature": "stdout:ex06_1:edit_band",
+        "value": "large",
+        "n": 11,
+        "n_cluster": 28,
+        "rate": 0.39285714285714285,
+        "cohort_rate": 0.19642857142857142,
+        "difference_from_cohort": 0.19642857142857142
+      },
+      {
+        "feature": "test:ex06_1",
+        "value": "fail",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 0.8035714285714286,
+        "difference_from_cohort": 0.1964285714285714
+      },
+      {
+        "feature": "stdout:ex06_2:edit_band",
+        "value": "large",
+        "n": 10,
+        "n_cluster": 28,
+        "rate": 0.35714285714285715,
+        "cohort_rate": 0.17857142857142858,
+        "difference_from_cohort": 0.17857142857142858
+      },
+      {
+        "feature": "stdout:ex06_2:edit_band",
+        "value": "medium",
+        "n": 10,
+        "n_cluster": 28,
+        "rate": 0.35714285714285715,
+        "cohort_rate": 0.17857142857142858,
+        "difference_from_cohort": 0.17857142857142858
+      },
+      {
+        "feature": "stdout:ex06_0:relation",
+        "value": "different",
+        "n": 18,
+        "n_cluster": 28,
+        "rate": 0.6428571428571429,
+        "cohort_rate": 0.5357142857142857,
+        "difference_from_cohort": 0.1071428571428572
+      },
+      {
+        "feature": "stdout:ex06_0:relation",
+        "value": "empty",
+        "n": 6,
+        "n_cluster": 28,
+        "rate": 0.21428571428571427,
+        "cohort_rate": 0.10714285714285714,
+        "difference_from_cohort": 0.10714285714285714
+      },
+      {
+        "feature": "stdout:ex06_1:relation",
+        "value": "empty",
+        "n": 6,
+        "n_cluster": 28,
+        "rate": 0.21428571428571427,
+        "cohort_rate": 0.10714285714285714,
+        "difference_from_cohort": 0.10714285714285714
+      },
+      {
+        "feature": "stdout:ex06_2:relation",
+        "value": "empty",
+        "n": 6,
+        "n_cluster": 28,
+        "rate": 0.21428571428571427,
+        "cohort_rate": 0.10714285714285714,
+        "difference_from_cohort": 0.10714285714285714
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "0",
+        "n": 22,
+        "n_cluster": 28,
+        "rate": 0.7857142857142857,
+        "cohort_rate": 0.6785714285714286,
+        "difference_from_cohort": 0.1071428571428571
+      },
+      {
+        "feature": "stdout:ex06_1:edit_band",
+        "value": "medium",
+        "n": 5,
+        "n_cluster": 28,
+        "rate": 0.17857142857142858,
+        "cohort_rate": 0.08928571428571429,
+        "difference_from_cohort": 0.08928571428571429
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "0",
+        "n": 5,
+        "n_cluster": 28,
+        "rate": 0.17857142857142858,
+        "cohort_rate": 0.10714285714285714,
+        "difference_from_cohort": 0.07142857142857144
+      },
+      {
+        "feature": "stdout:ex06_0:relation",
+        "value": "whitespace",
+        "n": 4,
+        "n_cluster": 28,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.07142857142857142,
+        "difference_from_cohort": 0.07142857142857142
+      },
+      {
+        "feature": "stdout:ex06_1:relation",
+        "value": "whitespace",
+        "n": 4,
+        "n_cluster": 28,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.07142857142857142,
+        "difference_from_cohort": 0.07142857142857142
+      },
+      {
+        "feature": "stdout:ex06_2:relation",
+        "value": "whitespace",
+        "n": 4,
+        "n_cluster": 28,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.07142857142857142,
+        "difference_from_cohort": 0.07142857142857142
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "0",
+        "n": 3,
+        "n_cluster": 28,
+        "rate": 0.10714285714285714,
+        "cohort_rate": 0.05357142857142857,
+        "difference_from_cohort": 0.05357142857142857
+      },
+      {
+        "feature": "stdout:ex06_0:edit_band",
+        "value": "medium",
+        "n": 3,
+        "n_cluster": 28,
+        "rate": 0.10714285714285714,
+        "cohort_rate": 0.05357142857142857,
+        "difference_from_cohort": 0.05357142857142857
+      }
+    ],
+    "test_statistics_by_partition": {
+      "train": [
+        {
+          "test_id": "ex06_0",
+          "n_cluster": 24,
+          "n_observed": 24,
+          "n_failed": 24,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 24
+          }
+        },
+        {
+          "test_id": "ex06_1",
+          "n_cluster": 24,
+          "n_observed": 24,
+          "n_failed": 24,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 24
+          }
+        },
+        {
+          "test_id": "ex06_2",
+          "n_cluster": 24,
+          "n_observed": 24,
+          "n_failed": 24,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 24
+          }
+        }
+      ],
+      "validation": [
+        {
+          "test_id": "ex06_0",
+          "n_cluster": 4,
+          "n_observed": 4,
+          "n_failed": 4,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 4
+          }
+        },
+        {
+          "test_id": "ex06_1",
+          "n_cluster": 4,
+          "n_observed": 4,
+          "n_failed": 4,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 4
+          }
+        },
+        {
+          "test_id": "ex06_2",
+          "n_cluster": 4,
+          "n_observed": 4,
+          "n_failed": 4,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 4
+          }
+        }
+      ]
+    },
+    "feature_statistics": [
+      {
+        "feature": "test:ex06_2",
+        "value": "fail",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 0.6071428571428571,
+        "difference_from_cohort": 0.3928571428571429
+      },
+      {
+        "feature": "test:ex06_0",
+        "value": "fail",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 0.7142857142857143,
+        "difference_from_cohort": 0.2857142857142857
+      },
+      {
+        "feature": "stdout:ex06_2:relation",
+        "value": "different",
+        "n": 18,
+        "n_cluster": 28,
+        "rate": 0.6428571428571429,
+        "cohort_rate": 0.42857142857142855,
+        "difference_from_cohort": 0.21428571428571436
+      },
+      {
+        "feature": "stdout:ex06_0:edit_band",
+        "value": "large",
+        "n": 11,
+        "n_cluster": 28,
+        "rate": 0.39285714285714285,
+        "cohort_rate": 0.19642857142857142,
+        "difference_from_cohort": 0.19642857142857142
+      },
+      {
+        "feature": "stdout:ex06_1:edit_band",
+        "value": "large",
+        "n": 11,
+        "n_cluster": 28,
+        "rate": 0.39285714285714285,
+        "cohort_rate": 0.19642857142857142,
+        "difference_from_cohort": 0.19642857142857142
+      },
+      {
+        "feature": "test:ex06_1",
+        "value": "fail",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 0.8035714285714286,
+        "difference_from_cohort": 0.1964285714285714
+      },
+      {
+        "feature": "stdout:ex06_2:edit_band",
+        "value": "large",
+        "n": 10,
+        "n_cluster": 28,
+        "rate": 0.35714285714285715,
+        "cohort_rate": 0.17857142857142858,
+        "difference_from_cohort": 0.17857142857142858
+      },
+      {
+        "feature": "stdout:ex06_2:edit_band",
+        "value": "medium",
+        "n": 10,
+        "n_cluster": 28,
+        "rate": 0.35714285714285715,
+        "cohort_rate": 0.17857142857142858,
+        "difference_from_cohort": 0.17857142857142858
+      },
+      {
+        "feature": "stdout:ex06_0:relation",
+        "value": "different",
+        "n": 18,
+        "n_cluster": 28,
+        "rate": 0.6428571428571429,
+        "cohort_rate": 0.5357142857142857,
+        "difference_from_cohort": 0.1071428571428572
+      },
+      {
+        "feature": "stdout:ex06_0:relation",
+        "value": "empty",
+        "n": 6,
+        "n_cluster": 28,
+        "rate": 0.21428571428571427,
+        "cohort_rate": 0.10714285714285714,
+        "difference_from_cohort": 0.10714285714285714
+      },
+      {
+        "feature": "stdout:ex06_1:relation",
+        "value": "empty",
+        "n": 6,
+        "n_cluster": 28,
+        "rate": 0.21428571428571427,
+        "cohort_rate": 0.10714285714285714,
+        "difference_from_cohort": 0.10714285714285714
+      },
+      {
+        "feature": "stdout:ex06_2:relation",
+        "value": "empty",
+        "n": 6,
+        "n_cluster": 28,
+        "rate": 0.21428571428571427,
+        "cohort_rate": 0.10714285714285714,
+        "difference_from_cohort": 0.10714285714285714
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "0",
+        "n": 22,
+        "n_cluster": 28,
+        "rate": 0.7857142857142857,
+        "cohort_rate": 0.6785714285714286,
+        "difference_from_cohort": 0.1071428571428571
+      },
+      {
+        "feature": "stdout:ex06_1:edit_band",
+        "value": "medium",
+        "n": 5,
+        "n_cluster": 28,
+        "rate": 0.17857142857142858,
+        "cohort_rate": 0.08928571428571429,
+        "difference_from_cohort": 0.08928571428571429
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "0",
+        "n": 5,
+        "n_cluster": 28,
+        "rate": 0.17857142857142858,
+        "cohort_rate": 0.10714285714285714,
+        "difference_from_cohort": 0.07142857142857144
+      },
+      {
+        "feature": "stdout:ex06_0:relation",
+        "value": "whitespace",
+        "n": 4,
+        "n_cluster": 28,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.07142857142857142,
+        "difference_from_cohort": 0.07142857142857142
+      },
+      {
+        "feature": "stdout:ex06_1:relation",
+        "value": "whitespace",
+        "n": 4,
+        "n_cluster": 28,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.07142857142857142,
+        "difference_from_cohort": 0.07142857142857142
+      },
+      {
+        "feature": "stdout:ex06_2:relation",
+        "value": "whitespace",
+        "n": 4,
+        "n_cluster": 28,
+        "rate": 0.14285714285714285,
+        "cohort_rate": 0.07142857142857142,
+        "difference_from_cohort": 0.07142857142857142
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "0",
+        "n": 3,
+        "n_cluster": 28,
+        "rate": 0.10714285714285714,
+        "cohort_rate": 0.05357142857142857,
+        "difference_from_cohort": 0.05357142857142857
+      },
+      {
+        "feature": "stdout:ex06_0:edit_band",
+        "value": "medium",
+        "n": 3,
+        "n_cluster": 28,
+        "rate": 0.10714285714285714,
+        "cohort_rate": 0.05357142857142857,
+        "difference_from_cohort": 0.05357142857142857
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "1",
+        "n": 15,
+        "n_cluster": 28,
+        "rate": 0.5357142857142857,
+        "cohort_rate": 0.48214285714285715,
+        "difference_from_cohort": 0.05357142857142855
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "0",
+        "n": 19,
+        "n_cluster": 28,
+        "rate": 0.6785714285714286,
+        "cohort_rate": 0.6428571428571429,
+        "difference_from_cohort": 0.0357142857142857
+      },
+      {
+        "feature": "stdout:ex06_0:edit_band",
+        "value": "small",
+        "n": 14,
+        "n_cluster": 28,
+        "rate": 0.5,
+        "cohort_rate": 0.4642857142857143,
+        "difference_from_cohort": 0.0357142857142857
+      },
+      {
+        "feature": "stdout:ex06_2:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 28,
+        "rate": 0.2857142857142857,
+        "cohort_rate": 0.25,
+        "difference_from_cohort": 0.0357142857142857
+      },
+      {
+        "feature": "stdout:ex06_1:relation",
+        "value": "different",
+        "n": 18,
+        "n_cluster": 28,
+        "rate": 0.6428571428571429,
+        "cohort_rate": 0.625,
+        "difference_from_cohort": 0.017857142857142905
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 28,
+        "rate": 0.25,
+        "cohort_rate": 0.23214285714285715,
+        "difference_from_cohort": 0.01785714285714285
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "0",
+        "n": 3,
+        "n_cluster": 28,
+        "rate": 0.10714285714285714,
+        "cohort_rate": 0.08928571428571429,
+        "difference_from_cohort": 0.01785714285714285
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 25,
+        "n_cluster": 28,
+        "rate": 0.8928571428571429,
+        "cohort_rate": 0.9107142857142857,
+        "difference_from_cohort": -0.017857142857142794
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "1",
+        "n": 21,
+        "n_cluster": 28,
+        "rate": 0.75,
+        "cohort_rate": 0.7678571428571429,
+        "difference_from_cohort": -0.017857142857142905
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "1",
+        "n": 9,
+        "n_cluster": 28,
+        "rate": 0.32142857142857145,
+        "cohort_rate": 0.35714285714285715,
+        "difference_from_cohort": -0.0357142857142857
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 25,
+        "n_cluster": 28,
+        "rate": 0.8928571428571429,
+        "cohort_rate": 0.9464285714285714,
+        "difference_from_cohort": -0.05357142857142849
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "0",
+        "n": 13,
+        "n_cluster": 28,
+        "rate": 0.4642857142857143,
+        "cohort_rate": 0.5178571428571429,
+        "difference_from_cohort": -0.0535714285714286
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 23,
+        "n_cluster": 28,
+        "rate": 0.8214285714285714,
+        "cohort_rate": 0.8928571428571429,
+        "difference_from_cohort": -0.07142857142857151
+      },
+      {
+        "feature": "stdout:ex06_1:edit_band",
+        "value": "small",
+        "n": 12,
+        "n_cluster": 28,
+        "rate": 0.42857142857142855,
+        "cohort_rate": 0.5178571428571429,
+        "difference_from_cohort": -0.08928571428571436
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "1",
+        "n": 6,
+        "n_cluster": 28,
+        "rate": 0.21428571428571427,
+        "cohort_rate": 0.32142857142857145,
+        "difference_from_cohort": -0.10714285714285718
+      }
+    ],
+    "feature_definitions": [
+      {
+        "name": "test:ex06_0",
+        "weight": 0.16
+      },
+      {
+        "name": "test:ex06_1",
+        "weight": 0.16
+      },
+      {
+        "name": "test:ex06_2",
+        "weight": 0.16
+      },
+      {
+        "name": "ast:c_for",
+        "weight": 0.017142857142857137
+      },
+      {
+        "name": "ast:c_while",
+        "weight": 0.017142857142857137
+      },
+      {
+        "name": "ast:c_if",
+        "weight": 0.017142857142857137
+      },
+      {
+        "name": "ast:c_inclusive_comparison",
+        "weight": 0.017142857142857137
+      },
+      {
+        "name": "ast:c_strict_comparison",
+        "weight": 0.017142857142857137
+      },
+      {
+        "name": "ast:c_address_of",
+        "weight": 0.017142857142857137
+      },
+      {
+        "name": "ast:c_update",
+        "weight": 0.017142857142857137
+      },
+      {
+        "name": "stdout:ex06_0:relation",
+        "weight": 0.06666666666666667
+      },
+      {
+        "name": "stdout:ex06_0:edit_band",
+        "weight": 0.06666666666666667
+      },
+      {
+        "name": "stdout:ex06_1:relation",
+        "weight": 0.06666666666666667
+      },
+      {
+        "name": "stdout:ex06_1:edit_band",
+        "weight": 0.06666666666666667
+      },
+      {
+        "name": "stdout:ex06_2:relation",
+        "weight": 0.06666666666666667
+      },
+      {
+        "name": "stdout:ex06_2:edit_band",
+        "weight": 0.06666666666666667
+      }
+    ],
+    "common_ast_patterns": [
+      {
+        "feature": "ast:c_while",
+        "value": "1",
+        "n": 15,
+        "n_cluster": 28,
+        "rate": 0.5357142857142857,
+        "cohort_rate": 0.48214285714285715,
+        "difference_from_cohort": 0.05357142857142855
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "1",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 25,
+        "n_cluster": 28,
+        "rate": 0.8928571428571429,
+        "cohort_rate": 0.9107142857142857,
+        "difference_from_cohort": -0.017857142857142794
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "1",
+        "n": 21,
+        "n_cluster": 28,
+        "rate": 0.75,
+        "cohort_rate": 0.7678571428571429,
+        "difference_from_cohort": -0.017857142857142905
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 25,
+        "n_cluster": 28,
+        "rate": 0.8928571428571429,
+        "cohort_rate": 0.9464285714285714,
+        "difference_from_cohort": -0.05357142857142849
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 23,
+        "n_cluster": 28,
+        "rate": 0.8214285714285714,
+        "cohort_rate": 0.8928571428571429,
+        "difference_from_cohort": -0.07142857142857151
+      }
+    ],
+    "diagnostic_feature_statistics": [
+      {
+        "feature": "test:ex06_2",
+        "value": "fail",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 0.6071428571428571,
+        "difference_from_cohort": 0.3928571428571429
+      },
+      {
+        "feature": "test:ex06_0",
+        "value": "fail",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 0.7142857142857143,
+        "difference_from_cohort": 0.2857142857142857
+      },
+      {
+        "feature": "test:ex06_1",
+        "value": "fail",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 0.8035714285714286,
+        "difference_from_cohort": 0.1964285714285714
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "0",
+        "n": 22,
+        "n_cluster": 28,
+        "rate": 0.7857142857142857,
+        "cohort_rate": 0.6785714285714286,
+        "difference_from_cohort": 0.1071428571428571
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "0",
+        "n": 5,
+        "n_cluster": 28,
+        "rate": 0.17857142857142858,
+        "cohort_rate": 0.10714285714285714,
+        "difference_from_cohort": 0.07142857142857144
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "0",
+        "n": 3,
+        "n_cluster": 28,
+        "rate": 0.10714285714285714,
+        "cohort_rate": 0.05357142857142857,
+        "difference_from_cohort": 0.05357142857142857
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "1",
+        "n": 15,
+        "n_cluster": 28,
+        "rate": 0.5357142857142857,
+        "cohort_rate": 0.48214285714285715,
+        "difference_from_cohort": 0.05357142857142855
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "0",
+        "n": 19,
+        "n_cluster": 28,
+        "rate": 0.6785714285714286,
+        "cohort_rate": 0.6428571428571429,
+        "difference_from_cohort": 0.0357142857142857
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 28,
+        "rate": 0.25,
+        "cohort_rate": 0.23214285714285715,
+        "difference_from_cohort": 0.01785714285714285
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "0",
+        "n": 3,
+        "n_cluster": 28,
+        "rate": 0.10714285714285714,
+        "cohort_rate": 0.08928571428571429,
+        "difference_from_cohort": 0.01785714285714285
+      },
+      {
+        "feature": "ast:c_array_parameter",
+        "value": "0",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_dereference",
+        "value": "0",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_do",
+        "value": "0",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_one_index",
+        "value": "0",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_pointer_declarator",
+        "value": "0",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_pointer_parameter",
+        "value": "0",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "1",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_subscript",
+        "value": "0",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_zero_index",
+        "value": "0",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:parse",
+        "value": "ok",
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "is_hardcoded_output",
+        "value": false,
+        "n": 28,
+        "n_cluster": 28,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 25,
+        "n_cluster": 28,
+        "rate": 0.8928571428571429,
+        "cohort_rate": 0.9107142857142857,
+        "difference_from_cohort": -0.017857142857142794
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "1",
+        "n": 21,
+        "n_cluster": 28,
+        "rate": 0.75,
+        "cohort_rate": 0.7678571428571429,
+        "difference_from_cohort": -0.017857142857142905
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "1",
+        "n": 9,
+        "n_cluster": 28,
+        "rate": 0.32142857142857145,
+        "cohort_rate": 0.35714285714285715,
+        "difference_from_cohort": -0.0357142857142857
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 25,
+        "n_cluster": 28,
+        "rate": 0.8928571428571429,
+        "cohort_rate": 0.9464285714285714,
+        "difference_from_cohort": -0.05357142857142849
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "0",
+        "n": 13,
+        "n_cluster": 28,
+        "rate": 0.4642857142857143,
+        "cohort_rate": 0.5178571428571429,
+        "difference_from_cohort": -0.0535714285714286
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 23,
+        "n_cluster": 28,
+        "rate": 0.8214285714285714,
+        "cohort_rate": 0.8928571428571429,
+        "difference_from_cohort": -0.07142857142857151
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "1",
+        "n": 6,
+        "n_cluster": 28,
+        "rate": 0.21428571428571427,
+        "cohort_rate": 0.32142857142857145,
+        "difference_from_cohort": -0.10714285714285718
+      }
+    ],
+    "learned_if_then_rules": [
+      {
+        "rule_id": 3,
+        "if": [
+          "NOT (stdout:ex06_0:relation=__unknown__)",
+          "NOT (stdout:ex06_2:relation=__unknown__)",
+          "NOT (ast:c_inclusive_comparison=0)"
+        ],
+        "then_cluster": 0,
+        "train_support": 7,
+        "train_precision": 0.8571428571428571,
+        "holdout_support": 0,
+        "holdout_precision": null
+      },
+      {
+        "rule_id": 4,
+        "if": [
+          "NOT (stdout:ex06_0:relation=__unknown__)",
+          "NOT (stdout:ex06_2:relation=__unknown__)",
+          "ast:c_inclusive_comparison=0"
+        ],
+        "then_cluster": 0,
+        "train_support": 18,
+        "train_precision": 1.0,
+        "holdout_support": 4,
+        "holdout_precision": 1.0
+      }
+    ],
+    "semantic_patterns": [],
+    "semantic_findings": [],
+    "candidate_misconception": {
+      "source": "local_heuristic_not_gold",
+      "misconception_name": "Chưa đủ bằng chứng để đặt tên lỗi",
+      "misconception_type": null,
+      "reasoning": "Có 28 bài trong cụm. Chưa xác định được cơ chế chung; cần đối chiếu từng bài.",
+      "teaching_hint": "Đối chiếu input/output của bài đại diện; yêu cầu học viên truy vết và giải thích một trường hợp biên.",
+      "category": "unclear",
+      "evidence_samples": []
+    },
+    "representative_sample_ids": [
+      "sample_005",
+      "sample_018",
+      "sample_003",
+      "sample_007"
+    ],
+    "members": [
+      {
+        "sample_id": "sample_001",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include <stdio.h>\n\n\n\nint main() {\n  int count = 0, i;\n  float n, max, min;\n\n  scanf(\"%d\", &i);\n\n  while (count++ < i) {\n    scanf(\"%f\", &n);\n\n    if (count == 1) {\n      max = n;\n      min = n;\n    }\n    else if (n > max)\n      max = n;\n    else if (n < min)\n      min = n;\n  }\n\n  printf(\"\\nmin: %f, max: %f\\n\", min, max);\n\n  return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "656a9ce089301e803d590688d6b5e23f771822efff45be93da96652f40c3f3c1",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "\nmin: 1.500000, max: 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "\nmin: 0.000000, max: 6.800000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "\nmin: -1.800000, max: 3.140000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "whitespace",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "whitespace",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "whitespace",
+          "stdout:ex06_2:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_002",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include <stdio.h>\n\nint main() {\n    int n;\n    float x, min, max;\n\n    scanf(\"%d\", &n);\n    scanf(\"%f\", &x);\n\n    min = x;\n    \n    max = x;\n\n    while (--n > 0) {\n        scanf(\"%f\", &x);\n\n        if (x > max)\n            max = x;\n        \n        else if (x < min)\n            min = x;\n    }\n\n    printf(\"min: %.1f, max: %.1f\\n\", min, max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "ab18f722b4088b86b3e986a09333ae3dc3d3385722b0afac775c673c16eb50f8",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.5, max: 3.0\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 0.0, max: 6.8\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.8, max: 3.1\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "medium",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "medium",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_003",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include <stdio.h>\n\nint main()\n{\n\n    int N, cont = 1, l, min, max;\n\n    scanf(\"%d\", &N);\n    scanf(\"%d\", &min);\n    scanf(\"%d\", &max);\n\n    if (min > max){        \n        l = max;\n        max = min;\n        min = l;\n    }\n\n    while (cont <= N-2){\n        scanf(\"%d\", &l);\n        if (l < min)\n            min = l;\n        else if (l > max)\n            max = l;\n        cont++;\n    }\n\n    printf(\"min: %d, max: %d\\n\", min, max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "6fabbd19457f6eb31c601af26e8f293a605d12741e409d5ea04a719ba171ae2a",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1, max: 32764\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 6, max: 32764\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1, max: 32766\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "medium",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_004",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include<stdio.h>\n\nint main(){\n\nint N, contador;\nfloat a , min , max;\nprintf(\"Quantos numeros quer inserir?\\n\" );\n\nscanf(\"%d\", &N) ;\nmax = -9999 ;    \nmin = 9999 ;\n\n\nprintf(\"Digite os numeros\\n\" );\nfor (contador = 1 ; contador <= N ; contador++){\n\n    \n\n    scanf (\"%f\" , &a );\n\n    if ( a > max){\n\n        max = a ;\n\n    }\n\n    else if ( a < min ){\n\n        min = a;\n    }\n\n}\n\nprintf(\"min: %f, max: %f\\n\", min, max);\n\nreturn 0;\n\n\n\n\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "947db9cb89e6360a68db09995a4938cae5fc4b65e25c2cd2c5fa4272ea32db0f",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "Quantos numeros quer inserir?\nDigite os numeros\nmin: 9999.000000, max: 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "Quantos numeros quer inserir?\nDigite os numeros\nmin: 0.000000, max: 6.800000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "Quantos numeros quer inserir?\nDigite os numeros\nmin: 1.000000, max: 3.140000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_005",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": true,
+        "raw_code": "\n#include <stdio.h>\n\nint main()\n{\n    int num1, i;\n    float num2, min, max;\n\n    scanf(\"%d\", &num1);\n\n    for (i = 0; i < num1; i++)\n    {\n        if (i == 0)\n        {\n            scanf(\"%f\", &num2);\n            min = num2;\n            max = num2;\n        }\n        else\n        {\n            if (min > num2)\n            {\n                min = num2;\n            }\n            else if (max < num2)\n            {\n                max = num2;\n            }\n        }\n    }\n\n    printf(\"min: %f, max: %f\\n\", min, max);\n\n    return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "9a92cfc0b7883152394cf131b732aafa25c4a5609b0a5789f40fe097db921268",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.500000, max: 1.500000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 6.800000, max: 6.800000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000, max: -1.800000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_006",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\nint main()\n{\n    int num1, i;\n    float num2, min, max;\n\n    scanf(\"%d\", &num1);\n\n    for (i = 0; i < num1; i++)\n    {\n        if (i == 0)\n        {\n            scanf(\"%f\", &num2);\n            min = num2;\n            max = num2;\n        }\n        else\n        {\n            if (min < num2)\n            {\n                min = num2;\n            }\n            else if (max > num2)\n            {\n                max = num2;\n            }\n        }\n    }\n\n    printf(\"min: %f, max: %f\\n\", min, max);\n\n    return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "d7a6c8e51a1a778f7e4352a183f553cde8af4116b844244dc7d30f441f0fd692",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.500000, max: 1.500000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 6.800000, max: 6.800000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000, max: -1.800000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_007",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "\n\n#include <stdio.h>\n\nint main ()\n{\n    int N, i = 0;\n    float numintrod;\n\n    scanf(\"%d\", &N);\n\n    while (i < N)\n    {\n        scanf(\"%f\", &numintrod);\n        i = i + numintrod;\n    }\n     return 0;\n    \n}",
+        "raw_code_truncated": false,
+        "source_sha256": "11a2e851481edf1a91bf8c60c2c4add5389bd1a6903a144b8bc92c92d5e5e507",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": ""
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "0",
+          "stdout:ex06_0:relation": "empty",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "empty",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "empty",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_008",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n\n#include <stdio.h>\n\nint main(void) {\n\n    float min, max, num1, num2, num3, num4, num5, num6, num7;\n\n    scanf(\"%f %f %f %f %f %f %f\", &num1, &num2, &num3, &num4, &num5, &num6, &num7);\n    max = num1;\n    min = num1;\n    if (max < num2)\n        max = num2;\n    if (max < num3)\n        max = num3;\n    if (max < num4)\n        max = num4;\n    if (max < num5)\n        max = num5;\n    if (max < num6)\n        max = num6;\n    if (max < num7)\n        max = num7;\n    if (min > num2)\n        min = num2;\n    if (min > num3)\n        min = num3;\n    if (min > num4)\n        min = num4;\n    if (min > num5)\n        min = num5;\n    if (min > num6)\n        min = num6;\n    if (min > num7)\n        min = num7;\n    printf(\"min: %f, max: %f\\n\", min, max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "a3faa3b33817324c9066a9a98b150c60ae436abe36fe629f9ae6299462787bdb",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: -0.000000, max: 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: -0.000000, max: 6.800000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -483947788107776.000000, max: 3.140000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "0",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_009",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\n\n\n#define INICIO 1\n#define ZERO 0\n\nint main()\n{\n    int n, i;\n    float min = ZERO, max = ZERO, num;\n    scanf(\"%d\", &n);\n    for(i = INICIO; i <= n; i++)\n    {\n        scanf(\"%f\", &num);\n        if (i == INICIO)\n            max = num;\n        else if (i > INICIO && num < max)\n        {\n            max = min;\n            min = num;\n        }\n    }\n    printf(\"min: %f, max: %f\\n\", min, max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "faa9f6918af7a08ddd276be7a00b1189c7bb7a379ade217518bb0b0681f31f85",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 0.000000, max: 1.500000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 2.000000, max: 0.000000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: 0.000000, max: -1.800000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "medium",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "medium",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_010",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\n\n\n#define INICIO 0\n\nint main()\n{\n    int n, i;\n    float min, max, num;\n    scanf(\"%d\", &n);\n    for(i = INICIO; i <= n; i++)\n    {\n        scanf(\"%f\", &num);\n        if(num > min)\n            max = num;\n        else\n            min = num;\n    }\n    printf(\"min: %f, max: %f\\n\", min, max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "8fc36371fb7c913c34f6758aa0825bc8e4beb5f4044b8de68a414759c49d791d",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 0.000000, max: 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 0.000000, max: 1.000000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000, max: 1.000000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_011",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\n\n\n#define INICIO 1\n#define ZERO 0\n\nint main()\n{\n    int n, i;\n    float min, max = ZERO, num;\n    scanf(\"%d\", &n);\n    for(i = INICIO; i <= n; i++)\n    {\n        scanf(\"%f\", &num);\n        if (i == INICIO)\n            min = num;\n        else if (num < min && min > max)\n        {\n            max = min;\n            min = num;\n        }\n    }\n    printf(\"min: %f, max: %f\\n\", min, max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "cc98858db242f0955be42feb0ca0563e3510cc95cde3fd9dc1144827e400d52f",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.500000, max: 0.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 2.000000, max: 6.800000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000, max: 0.000000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_012",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\nint main() \n{\n    int contador;\n    float maior, menor = 10e100, numero;\n\n    scanf(\"%d\", &contador);\n\n    while (contador > 0) \n    {\n        scanf(\"%f\", &numero);\n        if (numero >= maior)\n        {\n            maior = numero;\n        } \n        \n        if (numero <= menor)\n        {\n            menor = numero;\n        }\n        \n        contador--;   \n    }\n\n    printf(\"min: %f, max: %f\", menor, maior);\n    \n    return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "efa1ff52227741013b526bd0034590af3d66c325ee6d5f38d38a43d448c3b43e",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.500000, max: 3.000000"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 0.000000, max: 6.800000"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000, max: 3.140000"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "whitespace",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "whitespace",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "whitespace",
+          "stdout:ex06_2:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_013",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n\n#include <stdio.h>\n\nint main(){\n    int n, valor, menor, maior;\n    scanf(\"%d\\n\", &n);\n    scanf(\"%d\\n\", &valor);\n    menor=valor;\n    maior=valor;\n    while(n>0){\n        scanf(\"%d\\n\", &valor);\n        if(valor>maior)\n            maior=valor;\n        if(valor<menor)\n            menor=valor;\n        n--;\n    }\n    return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "6c1830570d96d69fc1ea3b9dd620965b44f9cdc999dc8cc109f439e12fdbfd34",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": ""
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "empty",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "empty",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "empty",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_014",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n\n#include <stdio.h>\n\nint main(){\n    int n;\n    float valor, min, max;\n    scanf(\"%d\\n\", &n);\n    scanf(\"%f\\n\", &valor);\n    min=valor;\n    max=valor;\n    while(n>0){\n        scanf(\"%f\\n\", &valor);\n        if(valor>max)\n            max=valor;\n        if(valor<min)\n            min=valor;\n        n--;\n    printf(\"min: %f, max: %f\\n\", min, max);\n    }\n    return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "c4d1cde78afe822296a9241ebb587be87883ca529633e770bcf1ac9552a009b0",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.500000, max: 2.700000\nmin: 1.500000, max: 3.000000\nmin: 1.500000, max: 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 2.000000, max: 6.800000\nmin: 1.000000, max: 6.800000\nmin: 0.000000, max: 6.800000\nmin: 0.000000, max: 6.800000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000, max: 3.140000\nmin: -1.800000, max: 3.140000\nmin: -1.800000, max: 3.140000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_015",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n\n#include <stdio.h>\n\nint main(){\n    int n, valor, menor, maior;\n    scanf(\"%d\\n\", &n);\n    scanf(\"%d\\n\", &valor);\n    menor=maior=valor;\n    while(n>0){\n        scanf(\"%d\\n\", &valor);\n        if(valor>maior)\n            valor = maior;\n        if(valor<menor)\n            valor = menor;\n        n--;\n    }\n    return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "4a61c3944308ace05b577e880b4f82297b463dbd6ddcddf89817b231df72a850",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": ""
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "empty",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "empty",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "empty",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_016",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n\n#include <stdio.h>\n\nint main() {\n\n    int n, i;\n    float max , min, atual;\n\n    scanf(\"%d\", &n);\n    scanf(\"%f\", &atual);\n    min = max =  atual;\n\n    for (i = 0; i < n; i++) {\n        scanf(\"%f\", &atual);\n        if (atual > max) {\n            max = atual;\n        }\n        else if (atual < min) {\n            min = atual;\n        }\n    }\n\n    printf(\"min: %f max: %f\", min, max);\n\n    return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "bd5a7739768e9b76213ac9ce8beea376665554113a87e91e51b2b15424e58389",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.500000 max: 3.000000"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 0.000000 max: 6.800000"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000 max: 3.140000"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_017",
+        "partition": "validation",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\nint main() {\n    float max, min, num;\n\n    scanf(\"%f\", &num);\n    max = min = num;\n\n    while (scanf(\"%f\", &num) < 1) {\n        if (num > max) {\n            max = num;\n        }\n        if (num < min) {\n            min = num;\n        }\n    }\n\n    printf(\"min: %f, max: %f\\n\", min, max);\n\n    return 0;\n}\n",
+        "raw_code_truncated": false,
+        "source_sha256": "d7f2f50bfebb43dace3c0312a6cfecebcb4aa8fca576eff7f1c2b6b544a9adb1",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 3.000000, max: 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 4.000000, max: 4.000000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: 3.000000, max: 3.000000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "0",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "medium",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_018",
+        "partition": "validation",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n#include <stdlib.h>\n#include <ctype.h>\n#include <string.h>\n\nint main(){\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "f49c4fb585cc7b8c0a22f0fec550b668029b4e2884e7826195fe790fde87361c",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": ""
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "0",
+          "ast:c_address_of": "0",
+          "ast:c_update": "0",
+          "stdout:ex06_0:relation": "empty",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "empty",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "empty",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "0",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "0",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_019",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\nint main(){\n    int size,counter=1;\n    float current,max,min;\n    scanf(\"%d\",&size);\n    scanf(\"%f\",&current);\n    min=current;\n    max=current;\n    for(;counter<size;counter++){\n        scanf(\"%f\",&current);\n        if (current>max)\n            max=current;\n        if (current<min)\n            min=current;\n        \n    }\n    printf(\"min: %3.6f, max; %3.6f\\n\",min,max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "9c91b620bdbc0fbb8f7a3b1098f4e41c14cf19013adfba40068b8530060e04b9",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.500000, max; 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 0.000000, max; 6.800000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000, max; 3.140000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_020",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n\n#include <stdio.h>\n#include <float.h>\n\nfloat greater(float n1, float n2){\n    return (n1 > n2) ? n1: n2;\n}\nfloat smaller(float n1, float n2){\n    return (n1 < n2) ? n1: n2;\n}\n\nint main() {\n\n    int n;\n    float min = FLT_MAX, max = -FLT_MAX, curr;\n    scanf(\"%d\",&n);\n\n    while(n--){\n        scanf(\"%f\",&curr);\n        min = smaller(min, curr);\n        max = greater(max, curr);\n    }\n    printf(\"min: %f, max: %f\",min,max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "a89da79ddd50b71dc2cfdfb5a9310f078ce7337a69ad896377fcd89058a4f496",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.500000, max: 3.000000"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 0.000000, max: 6.800000"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000, max: 3.140000"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "whitespace",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "whitespace",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "whitespace",
+          "stdout:ex06_2:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_021",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\nfloat min, max, num_temp;\nint num;\n\nint main () {\n    scanf(\"%f\", &min);\n    max = min;\n    while (scanf(\"%f\", &num_temp) == 0) {\n        if (min > num_temp)\n            min = num_temp;\n        else if (max < num_temp)\n            max = num_temp;\n    }\n    printf(\"min: %f, max: %f\\n\", min, max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "fd9f939d069a5da2d0d6e4a9d585e7cb6ed4199c662e1218f1dec7f7186336f2",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 3.000000, max: 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 4.000000, max: 4.000000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: 3.000000, max: 3.000000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "0",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "medium",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_022",
+        "partition": "validation",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\nint main() {\n    int quantity, i;\n    float max, min, num;\n\n    printf(\"Introduza a quantidade de números: \");\n    scanf(\"%d\", &quantity);\n\n    printf(\"Intoduza um número: \");\n    scanf(\"%f\", &max); \n    min = max;\n    for (i = 1; i < quantity; i++) {\n       printf(\"Intoduza um número: \");\n        scanf(\"%f\", &num); \n        if (num > max) {\n            max = num;\n        }\n        if (num < min) {\n            min = num;\n        }\n    }\n    printf(\"min: %f, max: %f\\n\", min, max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "0527e1709c4bc36a5bee782f5661c590202309e23f328cc4e58fe8fbc03f92ea",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "Introduza a quantidade de números: Intoduza um número: Intoduza um número: Intoduza um número: min: 1.500000, max: 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "Introduza a quantidade de números: Intoduza um número: Intoduza um número: Intoduza um número: Intoduza um número: min: 0.000000, max: 6.800000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "Introduza a quantidade de números: Intoduza um número: Intoduza um número: Intoduza um número: min: -1.800000, max: 3.140000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_023",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n#include <values.h>\n\nint main()\n{\n    \n    int N;\n    float max = -FLT_MAX, min = FLT_MAX, valores;\n\n    \n    scanf(\"%d\", &N);\n\n    \n    while( N--)\n    {\n        scanf(\"%f\", &valores);\n\n        if(valores > max)\n            max = valores;\n        \n        else if( valores < min)\n            min = valores;\n\n    }\n\n    printf(\"min:%f max:%f\", min, max);  \n\n\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "ab3ab26eab8c9f24bcb831c379146d4b1256b284c4b5ed65c40ad8ab27f59a9a",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min:340282346638528859811704183484516925440.000000 max:3.000000"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min:0.000000 max:6.800000"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min:1.000000 max:3.140000"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_024",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n#include <values.h>\n\nint main()\n{\n    \n    int N;\n    float max = FLT_MAX, min = -FLT_MAX, valores;\n\n    \n    scanf(\"%d\", &N);\n    \n    \n    while( N--)\n    {\n        scanf(\"%f\", &valores);\n\n        if(valores > max)\n            max = valores;\n        \n        else if( valores < min)\n            min = valores;\n\n    }\n\n    printf(\"min:%f max:%f\", min, max);  \n\n\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "db150d93fdbc23eaac6c82e8236591225d362c61bf3bb03141bf3ec685f704e0",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min:-340282346638528859811704183484516925440.000000 max:340282346638528859811704183484516925440.000000"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min:-340282346638528859811704183484516925440.000000 max:340282346638528859811704183484516925440.000000"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min:-340282346638528859811704183484516925440.000000 max:340282346638528859811704183484516925440.000000"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_025",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\nint main() {\n    \n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "64d25e6aedb365482dc2769e2e5f6c311b1c3ff23379a9f5c9885a5ebf44ad16",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": ""
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "0",
+          "ast:c_address_of": "0",
+          "ast:c_update": "0",
+          "stdout:ex06_0:relation": "empty",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "empty",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "empty",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "0",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "0",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_026",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\nint main()\n{\n    int n;\n    float min, max, val;\n    scanf(\"%d\", &n);\n    scanf(\"%f\",&val);\n    min = max = val;\n    while(--n)\n        {\n            scanf(\"%f\", &val);\n            if(val < min)\n                min = val;\n            if(val > max)\n                max = val;\n        }\n    printf(\"min: %f, max: %f\", min, max);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "52597af6cedc7e922c2418a64f6a51c64dc392eb3d6fb7790b83097bf760cfe1",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 1.500000, max: 3.000000"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 0.000000, max: 6.800000"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: -1.800000, max: 3.140000"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "whitespace",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "whitespace",
+          "stdout:ex06_1:edit_band": "small",
+          "stdout:ex06_2:relation": "whitespace",
+          "stdout:ex06_2:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_027",
+        "partition": "validation",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n\n#include <stdio.h>\n\nint main(){\n\n    int n;\n    double val,max,min;\n\n    scanf(\"%n\",&n);\n\n    scanf(\"%lf\",&val);\n    min=max=val;\n    n--;\n\n    while (n>0){\n        scanf(\"%lf\",&val);\n        if (val>max)\n            max=val;\n        else if (val<max)\n            min=val;\n    }\n\n    printf(\"min: %f, max: %f\\n\", min, max);\n\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "8422dcbdcd6abd6d99b40d47415f3c9b2070d7d4c7c142bf32435fe99c3a1f4d",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": "min: 3.000000, max: 3.000000\n"
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": "min: 4.000000, max: 4.000000\n"
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": "min: 3.000000, max: 3.000000\n"
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_update": "1",
+          "stdout:ex06_0:relation": "different",
+          "stdout:ex06_0:edit_band": "small",
+          "stdout:ex06_1:relation": "different",
+          "stdout:ex06_1:edit_band": "medium",
+          "stdout:ex06_2:relation": "different",
+          "stdout:ex06_2:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_028",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "\n#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "a394a64700d59d01c4cd4546d63a88bbf7e268632b1649e6b84780a7d19b18f6",
+        "outcomes": {
+          "ex06_0": "fail",
+          "ex06_1": "fail",
+          "ex06_2": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "ex06_0",
+            "input": "3 1.5 2.7 3",
+            "expected": "min: 1.500000, max: 3.000000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_1",
+            "input": "4 6.8 2 1 0",
+            "expected": "min: 0.000000, max: 6.800000\n",
+            "output": ""
+          },
+          {
+            "test_id": "ex06_2",
+            "input": "3 -1.8 3.14 1",
+            "expected": "min: -1.800000, max: 3.140000\n",
+            "output": ""
+          }
+        ],
+        "clustering_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "0",
+          "ast:c_address_of": "0",
+          "ast:c_update": "0",
+          "stdout:ex06_0:relation": "empty",
+          "stdout:ex06_0:edit_band": "large",
+          "stdout:ex06_1:relation": "empty",
+          "stdout:ex06_1:edit_band": "large",
+          "stdout:ex06_2:relation": "empty",
+          "stdout:ex06_2:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:ex06_0": "fail",
+          "test:ex06_1": "fail",
+          "test:ex06_2": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "0",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "0",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      }
+    ],
+    "evidence_index": [
+      "test_statistics",
+      "feature_statistics",
+      "learned_if_then_rules",
+      "semantic_findings",
+      "problem_statement",
+      "members/sample_001/raw_code",
+      "members/sample_001/tests/ex06_0",
+      "members/sample_001/tests/ex06_1",
+      "members/sample_001/tests/ex06_2",
+      "members/sample_002/raw_code",
+      "members/sample_002/tests/ex06_0",
+      "members/sample_002/tests/ex06_1",
+      "members/sample_002/tests/ex06_2",
+      "members/sample_003/raw_code",
+      "members/sample_003/tests/ex06_0",
+      "members/sample_003/tests/ex06_1",
+      "members/sample_003/tests/ex06_2",
+      "members/sample_004/raw_code",
+      "members/sample_004/tests/ex06_0",
+      "members/sample_004/tests/ex06_1",
+      "members/sample_004/tests/ex06_2",
+      "members/sample_005/raw_code",
+      "members/sample_005/tests/ex06_0",
+      "members/sample_005/tests/ex06_1",
+      "members/sample_005/tests/ex06_2",
+      "members/sample_006/raw_code",
+      "members/sample_006/tests/ex06_0",
+      "members/sample_006/tests/ex06_1",
+      "members/sample_006/tests/ex06_2",
+      "members/sample_007/raw_code",
+      "members/sample_007/tests/ex06_0",
+      "members/sample_007/tests/ex06_1",
+      "members/sample_007/tests/ex06_2",
+      "members/sample_008/raw_code",
+      "members/sample_008/tests/ex06_0",
+      "members/sample_008/tests/ex06_1",
+      "members/sample_008/tests/ex06_2",
+      "members/sample_009/raw_code",
+      "members/sample_009/tests/ex06_0",
+      "members/sample_009/tests/ex06_1",
+      "members/sample_009/tests/ex06_2",
+      "members/sample_010/raw_code",
+      "members/sample_010/tests/ex06_0",
+      "members/sample_010/tests/ex06_1",
+      "members/sample_010/tests/ex06_2",
+      "members/sample_011/raw_code",
+      "members/sample_011/tests/ex06_0",
+      "members/sample_011/tests/ex06_1",
+      "members/sample_011/tests/ex06_2",
+      "members/sample_012/raw_code",
+      "members/sample_012/tests/ex06_0",
+      "members/sample_012/tests/ex06_1",
+      "members/sample_012/tests/ex06_2",
+      "members/sample_013/raw_code",
+      "members/sample_013/tests/ex06_0",
+      "members/sample_013/tests/ex06_1",
+      "members/sample_013/tests/ex06_2",
+      "members/sample_014/raw_code",
+      "members/sample_014/tests/ex06_0",
+      "members/sample_014/tests/ex06_1",
+      "members/sample_014/tests/ex06_2",
+      "members/sample_015/raw_code",
+      "members/sample_015/tests/ex06_0",
+      "members/sample_015/tests/ex06_1",
+      "members/sample_015/tests/ex06_2",
+      "members/sample_016/raw_code",
+      "members/sample_016/tests/ex06_0",
+      "members/sample_016/tests/ex06_1",
+      "members/sample_016/tests/ex06_2",
+      "members/sample_017/raw_code",
+      "members/sample_017/tests/ex06_0",
+      "members/sample_017/tests/ex06_1",
+      "members/sample_017/tests/ex06_2",
+      "members/sample_018/raw_code",
+      "members/sample_018/tests/ex06_0",
+      "members/sample_018/tests/ex06_1",
+      "members/sample_018/tests/ex06_2",
+      "members/sample_019/raw_code",
+      "members/sample_019/tests/ex06_0",
+      "members/sample_019/tests/ex06_1",
+      "members/sample_019/tests/ex06_2",
+      "members/sample_020/raw_code",
+      "members/sample_020/tests/ex06_0",
+      "members/sample_020/tests/ex06_1",
+      "members/sample_020/tests/ex06_2",
+      "members/sample_021/raw_code",
+      "members/sample_021/tests/ex06_0",
+      "members/sample_021/tests/ex06_1",
+      "members/sample_021/tests/ex06_2",
+      "members/sample_022/raw_code",
+      "members/sample_022/tests/ex06_0",
+      "members/sample_022/tests/ex06_1",
+      "members/sample_022/tests/ex06_2",
+      "members/sample_023/raw_code",
+      "members/sample_023/tests/ex06_0",
+      "members/sample_023/tests/ex06_1",
+      "members/sample_023/tests/ex06_2",
+      "members/sample_024/raw_code",
+      "members/sample_024/tests/ex06_0",
+      "members/sample_024/tests/ex06_1",
+      "members/sample_024/tests/ex06_2",
+      "members/sample_025/raw_code",
+      "members/sample_025/tests/ex06_0",
+      "members/sample_025/tests/ex06_1",
+      "members/sample_025/tests/ex06_2",
+      "members/sample_026/raw_code",
+      "members/sample_026/tests/ex06_0",
+      "members/sample_026/tests/ex06_1",
+      "members/sample_026/tests/ex06_2",
+      "members/sample_027/raw_code",
+      "members/sample_027/tests/ex06_0",
+      "members/sample_027/tests/ex06_1",
+      "members/sample_027/tests/ex06_2",
+      "members/sample_028/raw_code",
+      "members/sample_028/tests/ex06_0",
+      "members/sample_028/tests/ex06_1",
+      "members/sample_028/tests/ex06_2"
+    ]
+  }
+}

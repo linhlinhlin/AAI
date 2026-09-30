@@ -1,0 +1,1093 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nhãn AI đề xuất · 48 bài</title>
+<style>body{font:18px/1.65 'Segoe UI',sans-serif;background:#f3f5f0;color:#183c34;margin:0}header,main{max-width:1100px;margin:auto;padding:28px}h1{font:600 34px Georgia,serif}h2{font-size:23px;margin:10px 0}article{background:white;border:1px solid #cad6cd;padding:24px;border-radius:10px;margin:20px 0}small,.note{color:#56695e}.note{font-size:16px}blockquote{margin:16px 0;padding:14px 20px;background:#edf4e6;border-left:4px solid #356349}details{border-top:1px solid #dae2d9;padding-top:14px}summary{cursor:pointer;overflow-wrap:anywhere}pre{font:14px/1.6 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f7f3;padding:10px}.scroll{overflow:auto}table{border-collapse:collapse;width:100%;min-width:650px}td,th{padding:8px;text-align:left;border:1px solid #dce4dc}select,button,a{font:inherit}select,button{padding:8px;margin:8px;border:1px solid #9db3a5;border-radius:5px;background:white}a{color:#205b49}@media(max-width:600px){header,main{padding:14px}article{padding:16px}}</style>
+<header><p><a href="../De5_Gold_DaXacNhan/index.html">Mở bộ nhãn đã được bạn kiểm tra và xác nhận</a></p><h1>Nhãn AI đề xuất</h1><p>48 bài · đọc theo ngôn ngữ giảng dạy · có code và test để đối chiếu.</p><p>Bản gán nhãn thử cho 48 bài ITSP. Nguồn: AI; chưa được người đánh giá xác nhận, không phải gold standard. Luật dưới đây là lời giải thích do AI viết từ code/log, không phải kết quả vừa chạy thuật toán quy nạp. Không kết luận niềm tin người học. Gói thiếu đề gốc; nhãn phụ thuộc yêu cầu bài cần được đối chiếu lại. Đọc bản này sẽ thấy gợi ý AI, nên không dùng chính lượt đọc này làm chấm mù độc lập.</p><a href="nhan_ai.json" download>Tải JSON</a> · <a href="nhan_ai.md">Bản Markdown</a><br><label>Lọc đề <select id="filter"><option value="all">Tất cả 48 bài</option><option>2812</option><option>2825</option><option>2833</option></select></label><button id="size">Chữ lớn</button><p id="count">48 bài</p></header><main><article data-problem="2833"><small>BÀI 1 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Cập nhật biến lặp ngược chiều dừng</h2><blockquote>NẾU vòng lặp bắt đầu từ n, kiểm tra i &gt;= 1 nhưng lại tăng i VÀ các test ghi nhận không có output THÌ gợi ý lỗi: Cập nhật biến lặp ngược chiều dừng.</blockquote><p>Ở vòng ngoài, i++ làm i đi xa điều kiện dừng thay vì tiến về 0. Lệnh in nằm sau vòng lặp nên không có đường kết thúc bình thường trước khi có thể tràn số nguyên.</p>
+    <p><b>Giảng lại:</b> Cho học viên ghi ra ba giá trị liên tiếp của i và sửa hướng cập nhật.</p><p class="note">Log chỉ ghi output rỗng, không đủ kết luận đã timeout hay crash. Không gọi đây là vòng lặp vô hạn xác định vì tràn int có hành vi không xác định.</p>
+    <details><summary>Xem code và test làm căn cứ · case_09c0e4b691e12f98</summary><p>Dòng: [7]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      int n,c=0,i,j,k,d=0;
+  6      scanf(&quot;%d&quot;,&amp;n);
+  7      for(i=n;i&gt;=1;i++)
+  8      {
+  9          for(j=i;j&gt;=1;j--)
+ 10          {
+ 11              for(k=j;k&gt;=1;k--)
+ 12              {
+ 13                  if(j+k&gt;i)
+ 14                  c++;
+ 15                  else
+ 16                  d++;
+ 17              }
+ 18          }
+ 19      }
+ 20      printf(&quot;Number of possible triangles is %d&quot;,c);
+ 21      return 0;
+ 22  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 2 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Đếm trùng tam giác khi đổi thứ tự ba cạnh</h2><blockquote>NẾU cả ba cạnh đều được duyệt độc lập từ 1 đến N, không loại hoán vị trùng VÀ N = 4 cho số đếm 34 thay vì 13 trong log THÌ gợi ý lỗi: Đếm trùng tam giác khi đổi thứ tự ba cạnh.</blockquote><p>Các bộ cạnh đổi chỗ vẫn đi qua ba vòng lặp và đều được cộng vào tổng. Bộ ba cạnh của cùng một tam giác vì thế bị đếm nhiều lần.</p>
+    <p><b>Giảng lại:</b> Duyệt theo a ≤ b ≤ c rồi kiểm tra điều kiện tam giác; thử liệt kê các bộ khi N = 2.</p><p class="note">Nhãn dựa trên cấu trúc duyệt và oracle lịch sử. Gói chấm từng bài thiếu đề gốc; cần đối chiếu quy ước tam giác không phân biệt thứ tự trước khi duyệt nhãn.</p>
+    <details><summary>Xem code và test làm căn cứ · case_0a9886e56cec5919</summary><p>Dòng: [11, 12, 13, 14]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5  int N;
+  6  scanf(&quot;%d&quot;,&amp;N);
+  7  int a;
+  8  int b;
+  9  int c;
+ 10  int x;
+ 11  for(x=0,a=1;a&lt;=N;a=a+1){
+ 12      for(b=1;b&lt;=N;b=b+1){
+ 13          for(c=1;c&lt;=N;c=c+1){
+ 14               if((a+b&gt;c)&amp;&amp;(a+c&gt;b)&amp;&amp;(b+c&gt;a)){
+ 15           x=x+1;
+ 16               }
+ 17          }
+ 18          
+ 19      }
+ 20      
+ 21  }
+ 22  
+ 23  printf(&quot;Number of possible triangles is %d&quot;,x);
+ 24      
+ 25      return 0;
+ 26  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangles is 34</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangles is 15</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangles is 65</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangles is 175</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangles is 5</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 3 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Thiếu ngoặc nhọn {} gom nhóm lệnh và else tương ứng</h2><blockquote>NẾU if(a&lt;0) chỉ điều khiển một lệnh in, còn các lệnh in thông báo nằm ngoài nhánh VÀ output có cả thông báo âm và dương cho cùng một số THÌ gợi ý lỗi: Thiếu ngoặc nhọn {} gom nhóm lệnh và else tương ứng.</blockquote><p>Thụt lề không tạo thành khối lệnh trong C. Khi a khác 0, các dòng in negative và positive vẫn chạy; log số âm cho thấy hai thông báo nối nhau.</p>
+    <p><b>Giảng lại:</b> Gom các lệnh của mỗi nhánh vào dấu ngoặc nhọn và dùng if/else if/else.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_0acc01a295dbe087</summary><p>Dòng: [7, 10, 11, 12, 14, 15]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4  float a;
+  5  scanf(&quot;%f&quot;,&amp;a);
+  6  if(a==0)
+  7      printf(&quot;input is zero&quot;);
+  8      else
+  9      {
+ 10          if(a&lt;0)
+ 11      printf(&quot;%.4f&quot;,a);
+ 12      printf(&quot; is negative&quot;);
+ 13      
+ 14      printf(&quot;%.4f&quot;,a);
+ 15      printf(&quot; is positive&quot;);
+ 16      }
+ 17  	return 0;
+ 18  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 is negative-12.0000 is positive</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre> is negative1.0000 is positive</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre> is negative0.0000 is positive</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 is negative-0.0000 is positive</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre> is negative101.0000 is positive</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 4 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Đếm trùng tam giác khi đổi thứ tự ba cạnh</h2><blockquote>NẾU cả ba cạnh đều được duyệt độc lập từ 1 đến N, không loại hoán vị trùng VÀ N = 4 cho số đếm 34 thay vì 13 trong log THÌ gợi ý lỗi: Đếm trùng tam giác khi đổi thứ tự ba cạnh.</blockquote><p>Các bộ cạnh đổi chỗ vẫn đi qua ba vòng lặp và đều được cộng vào tổng. Bộ ba cạnh của cùng một tam giác vì thế bị đếm nhiều lần.</p>
+    <p><b>Giảng lại:</b> Duyệt theo a ≤ b ≤ c rồi kiểm tra điều kiện tam giác; thử liệt kê các bộ khi N = 2.</p><p class="note">Nhãn dựa trên cấu trúc duyệt và oracle lịch sử. Gói chấm từng bài thiếu đề gốc; cần đối chiếu quy ước tam giác không phân biệt thứ tự trước khi duyệt nhãn.</p>
+    <details><summary>Xem code và test làm căn cứ · case_0c6a60962328c1e8</summary><p>Dòng: [8, 9, 10, 11]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      int N,a,b,c,count;
+  6      count=0;
+  7      scanf(&quot;%d&quot;,&amp;N);
+  8      for(a=1;a&lt;=N;a=a+1){
+  9          for(b=1;b&lt;=N;b=b+1){
+ 10              for(c=1;c&lt;=N;c=c+1){
+ 11                  if ((a+b&gt;c)&amp;&amp;(b+c&gt;a)&amp;&amp;(c+a&gt;b)){
+ 12                      count=count+1;
+ 13                  }
+ 14              }
+ 15          }
+ 16      }
+ 17      printf(&quot;Number of possible triangles is %d&quot;,count);
+ 18      return 0;
+ 19  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangles is 34</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangles is 15</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangles is 65</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangles is 175</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangles is 5</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 5 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Chuỗi printf có định dạng nhưng thiếu đối số</h2><blockquote>NẾU printf có cả %.4f và %d nhưng chỉ truyền một giá trị VÀ test số dương xuất hiện thêm một số nguyên ngoài đáp án THÌ gợi ý lỗi: Chuỗi printf có định dạng nhưng thiếu đối số.</blockquote><p>Nhánh số dương thiếu đối số tương ứng với %d. Con số thừa trong log không phải kết quả tính toán hợp lệ của bài.</p>
+    <p><b>Giảng lại:</b> Đối chiếu từng ký hiệu định dạng với từng đối số; bỏ %d nếu đề không yêu cầu.</p><p class="note">printf thiếu đối số gây hành vi không xác định; không khẳng định số thừa sẽ luôn giống log.</p>
+    <details><summary>Xem code và test làm căn cứ · case_129510b9c7f5485c</summary><p>Dòng: [7, 11, 15]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4      float a;
+  5      scanf(&quot;%f&quot;,&amp;a);
+  6      if(a&gt;0)   {
+  7      printf(&quot;%.4f is positive %d&quot;,a);    
+  8      }
+  9      else if(a&lt;0)
+ 10      {
+ 11      printf( &quot;%0.4f is negative&quot;,a);    
+ 12      }
+ 13      else 
+ 14      {
+ 15      printf(&quot;input is zero&quot;);    
+ 16      }
+ 17  	
+ 18  	return 0;
+ 19  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 is negative</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.0000 is positive 7087920</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000 is positive 7087920</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 is negative</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000 is positive 7087920</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 6 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Bỏ sót trường hợp điểm nằm trên đường tròn</h2><blockquote>NẾU code chỉ chia thành bên trong và nhánh else bên ngoài VÀ test trên biên bị in thành bên ngoài THÌ gợi ý lỗi: Bỏ sót trường hợp điểm nằm trên đường tròn.</blockquote><p>Giá trị bằng 0 của bình phương khoảng cách trừ bình phương bán kính rơi vào else. Hai test trên đường tròn vì vậy nhận thông báo outside.</p>
+    <p><b>Giảng lại:</b> Tách ba trường hợp nhỏ hơn, bằng và lớn hơn.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_16555bff711ec177</summary><p>Dòng: [7, 8, 10, 11]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      float x,y,r,x1,y1;
+  6      scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  7      if((x1-x)*(x1-x)+(y1-y)*(y1-y)-r*r&lt;0)
+  8      printf(&quot;Point is inside the Circle.&quot;);
+  9      
+ 10      else
+ 11      printf(&quot;Point is outside the Circle.&quot;);
+ 12      return 0;
+ 13  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 7 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Chỉ in giá trị nhập, chưa in kết quả phân loại</h2><blockquote>NẾU chương trình đọc số rồi chỉ printf số đó VÀ output thiếu thông báo âm, dương hoặc zero mà oracle yêu cầu THÌ gợi ý lỗi: Chỉ in giá trị nhập, chưa in kết quả phân loại.</blockquote><p>Bài đã đọc được dữ liệu nhưng chưa có phần phân loại và in thông báo. Đây không phải lỗi in hằng số: giá trị in vẫn phụ thuộc đầu vào.</p>
+    <p><b>Giảng lại:</b> Bổ sung ba nhánh theo dấu và dùng đúng chuỗi thông báo.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_216c12a9dde9fca2</summary><p>Dòng: [4, 5]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){float a;
+  4  scanf(&quot;%f&quot;,&amp;a);
+  5  printf(&quot;%.4f&quot;,a);	
+  6  	return 0;
+  7  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>0.0000</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.0000</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>0.0000</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 8 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận</h2><blockquote>NẾU hai if độc lập kiểm tra trong/ngoài, còn else gắn với if kiểm tra bên ngoài VÀ test điểm bên trong in cả inside và on THÌ gợi ý lỗi: Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận.</blockquote><p>Khi điểm ở bên trong, if đầu in inside. if thứ hai sai nên else của nó tiếp tục in on. Cần một chuỗi nhánh loại trừ nhau.</p>
+    <p><b>Giảng lại:</b> Đổi if thứ hai thành else if, rồi truy vết lại một test bên trong.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_24cb26b6f2842d5a</summary><p>Dòng: [13, 14, 15, 16, 17, 18]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      float x;
+  6      float y;
+  7      float r;
+  8      float x1;
+  9      float y1;
+ 10      float n;
+ 11      scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+ 12      n=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r*r;
+ 13      if ( n &lt; 0 )
+ 14      printf(&quot;Point is inside the Circle.&quot;);
+ 15      if ( n &gt; 0 )
+ 16      printf(&quot;Point is outside the Circle.&quot;);
+ 17      else
+ 18      printf(&quot;Point is on the Circle.&quot;);
+ 19      return 0;
+ 20  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.Point is on the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.Point is on the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 9 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Thiếu địa chỉ biến khi gọi scanf</h2><blockquote>NẾU scanf dùng %f nhưng truyền giá trị x, y, r, x1, y1 thay cho địa chỉ các biến VÀ các log không ghi nhận output THÌ gợi ý lỗi: Thiếu địa chỉ biến khi gọi scanf.</blockquote><p>scanf cần địa chỉ nơi ghi dữ liệu. Lời gọi hiện tại truyền các biến float chưa được nhập thay vì &amp;x, &amp;y, &amp;r, &amp;x1, &amp;y1.</p>
+    <p><b>Giảng lại:</b> Thêm &amp; vào từng biến nhận dữ liệu và giải thích scanf ghi vào đâu.</p><p class="note">Lỗi đối số được thấy trực tiếp trong code. Output rỗng không đủ chứng minh crash; lời gọi này có hành vi không xác định.</p>
+    <details><summary>Xem code và test làm căn cứ · case_2abc3cc7bdaf6132</summary><p>Dòng: [6]</p><pre>  1  #include &lt;stdio.h&gt;
+  2  #include &lt;math.h&gt;
+  3  
+  4  int main(){
+  5      float x, y, r, x1, y1;
+  6      scanf(&quot;%f%f%f%f%f&quot;,x, y, r, x1, y1);
+  7      float s = sqrt(((x1-x)*(x1-x)) + ((y1-y)*(y1-y)));
+  8      if (s == r){
+  9          printf(&quot;Point is on the Circle.&quot;);
+ 10      }
+ 11      else{
+ 12          if (s &gt; r){
+ 13              printf(&quot;Point is outside the Circle.&quot;);
+ 14          }
+ 15          else{
+ 16              printf(&quot;Point is inside the Circle.&quot;);
+ 17          }
+ 18      }
+ 19  
+ 20      return 0;
+ 21  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 10 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ gợi ý lỗi: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p>
+    <p><b>Giảng lại:</b> Đối chiếu chuỗi output với mẫu, kể cả dấu câu.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_2d9e7435a0e0b846</summary><p>Dòng: [11, 13, 15]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  #include&lt;math.h&gt;
+  3  
+  4  int main()
+  5  {
+  6      float x,y,r,x1,y1,d,e;
+  7      scanf (&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  8      d = (x-x1)*(x-x1)+(y-y1)*(y-y1);
+  9      e = sqrt(d);
+ 10      if
+ 11      (e&lt;r) {printf(&quot;Point is inside the Circle&quot;);}
+ 12      else if
+ 13      (e==r) {printf(&quot;Point is on the Circle&quot;);}
+ 14      else if
+ 15      (e&gt;r) {printf(&quot;Point is outside the Circle&quot;);}
+ 16      return 0;
+ 17  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 11 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Đếm trùng tam giác khi đổi thứ tự ba cạnh</h2><blockquote>NẾU cả ba cạnh đều được duyệt độc lập từ 1 đến N, không loại hoán vị trùng VÀ N = 4 cho số đếm 34 thay vì 13 trong log THÌ gợi ý lỗi: Đếm trùng tam giác khi đổi thứ tự ba cạnh.</blockquote><p>Các bộ cạnh đổi chỗ vẫn đi qua ba vòng lặp và đều được cộng vào tổng. Bộ ba cạnh của cùng một tam giác vì thế bị đếm nhiều lần.</p>
+    <p><b>Giảng lại:</b> Duyệt theo a ≤ b ≤ c rồi kiểm tra điều kiện tam giác; thử liệt kê các bộ khi N = 2.</p><p class="note">Nhãn dựa trên cấu trúc duyệt và oracle lịch sử. Gói chấm từng bài thiếu đề gốc; cần đối chiếu quy ước tam giác không phân biệt thứ tự trước khi duyệt nhãn.</p>
+    <details><summary>Xem code và test làm căn cứ · case_37a5240b3b9aee8e</summary><p>Dòng: [6, 8, 10, 11]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {int n,i,j,k,s=0;
+  5  scanf(&quot;%d&quot;,&amp;n);
+  6  for (i=1;i&lt;=n;i=i+1)
+  7  {
+  8      for (j=1;j&lt;=n;j=j+1)
+  9      {
+ 10          for (k=1;k&lt;=n;k=k+1)
+ 11          {if (i+j&gt;k&amp;&amp;i+k&gt;j&amp;&amp;j+k&gt;i)
+ 12          {s=s+1;
+ 13              
+ 14          }
+ 15              
+ 16              
+ 17          }
+ 18          
+ 19      }
+ 20      
+ 21      
+ 22      
+ 23  }
+ 24      printf(&quot;Number of possible triangles is %d&quot;,s); 
+ 25      return 0;
+ 26  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangles is 34</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangles is 15</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangles is 65</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangles is 175</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangles is 5</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 12 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Dùng điều kiện lọc làm điều kiện dừng vòng lặp (vòng lặp bị ngắt sớm)</h2><blockquote>NẾU vòng while của cạnh c vừa kiểm tra giới hạn vừa yêu cầu a &lt; c+b ngay từ c=1 VÀ N = 4 chỉ đếm 10 thay vì 13 THÌ gợi ý lỗi: Dùng điều kiện lọc làm điều kiện dừng vòng lặp (vòng lặp bị ngắt sớm).</blockquote><p>Một c nhỏ chưa tạo tam giác không có nghĩa các c lớn hơn đều không tạo được. Khi điều kiện sai ngay đầu vòng, code bỏ qua các giá trị c tiếp theo có thể hợp lệ.</p>
+    <p><b>Giảng lại:</b> Duyệt hết c trong giới hạn; đặt điều kiện tam giác bên trong vòng lặp.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_476e8d8cdbb2d69f</summary><p>Dòng: [12, 15]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4      int N,a,b,c,i;
+  5      scanf(&quot;%d&quot;,&amp;N);
+  6      i=0;
+  7      a=1;b=1;c=1;
+  8     while(a&lt;=N){
+  9         b=1;
+ 10         while(b&lt;=a){
+ 11             c=1;
+ 12              while(c&lt;=b&amp;&amp;a&lt;c+b){
+ 13                  i=i+1;
+ 14                  
+ 15                  c=c+1;
+ 16             }
+ 17              b=b+1;
+ 18         }
+ 19          a=a+1;
+ 20          
+ 21     }
+ 22  
+ 23  /*Here, N-1 cases must be removed from i because in these cases, a&gt;b+c. And, the number of possible triangles becomes i-(N-1)*/
+ 24      printf(&quot;Number of possible triangles is %d&quot;,i);
+ 25  
+ 26      return 0;
+ 27  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangles is 10</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangles is 6</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangles is 15</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangles is 28</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangles is 3</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 13 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>In thừa giá trị số ở nhánh zero</h2><blockquote>NẾU nhánh a == 0 in thêm %f trước thông báo VÀ test zero nhận 0.000000 input is zero thay vì input is zero THÌ gợi ý lỗi: In thừa giá trị số ở nhánh zero.</blockquote><p>Bài đã đi đúng nhánh zero, nhưng mẫu output của nhánh này không yêu cầu in giá trị a.</p>
+    <p><b>Giảng lại:</b> Giữ nhánh phân loại, sửa chuỗi in riêng cho trường hợp zero.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_4772fe3beb0b26f4</summary><p>Dòng: [7, 9, 10, 13]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4  	float a;
+  5  	scanf(&quot;%f&quot;,&amp;a);
+  6  	if(a&gt;0)
+  7  	    { printf(&quot;%.4f is positive&quot;,a);
+  8  	    }
+  9  	 if(a==0)
+ 10  	    {printf(&quot;%f input is zero&quot;,a);
+ 11  	    }
+ 12  	 if(a&lt;0)
+ 13  	    {printf(&quot;%.4f is negative&quot;,a);
+ 14  	    }
+ 15  	   
+ 16  	return 0;
+ 17  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 is negative</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>0.000000 input is zero</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.0000 is positive</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000 is positive</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 is negative</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000 is positive</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>0.000000 input is zero</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 14 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Dùng HOẶC thay cho VÀ và đếm cả các hoán vị cạnh</h2><blockquote>NẾU ba bất đẳng thức tam giác nối bằng ||, đồng thời ba cạnh duyệt độc lập VÀ N = 4 cho 64, tức mọi bộ ba đều được đếm THÌ gợi ý lỗi: Dùng HOẶC thay cho VÀ và đếm cả các hoán vị cạnh.</blockquote><p>Chỉ cần một bất đẳng thức đúng là code cộng tổng, trong khi điều kiện tam giác cần cả ba. Ngoài ra, miền duyệt hiện tại vẫn đếm các hoán vị như những bộ khác nhau.</p>
+    <p><b>Giảng lại:</b> Sửa || thành &amp;&amp; rồi giới hạn thứ tự ba cạnh; kiểm tra từng thay đổi riêng.</p><p class="note">Có ít nhất hai cơ chế lỗi cùng hiện diện. Không ép bài này thành nhãn một lỗi duy nhất.</p>
+    <details><summary>Xem code và test làm căn cứ · case_515052c01c42773f</summary><p>Dòng: [12, 15, 18, 20]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      int N;
+  6      int a,b,c;
+  7      a=1;
+  8      b=1;
+  9      c=1;
+ 10      int count=0;
+ 11      scanf(&quot;%d&quot;, &amp;N);
+ 12      while(a&lt;=N)
+ 13      { 
+ 14          b=1;
+ 15          while(b&lt;=N)
+ 16          {
+ 17             c=1;
+ 18             while(c&lt;=N)
+ 19              {
+ 20                  if(a&lt;b+c||b&lt;a+c||c&lt;a+b)
+ 21                  {
+ 22                      count+=1;
+ 23                  }
+ 24                  c+=1;
+ 25              }
+ 26              b+=1;
+ 27          }
+ 28          a+=1;
+ 29      }
+ 30      printf(&quot;Number of possible triangles is %d&quot;, count);
+ 31      return 0;
+ 32  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangles is 64</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangles is 27</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangles is 125</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangles is 343</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangles is 8</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 15 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Kiểm tra một giá trị mẫu thay vì phân loại theo dấu</h2><blockquote>NẾU code chỉ xét a == -12 và gọi mọi giá trị còn lại là zero VÀ đầu vào 1 lại được in là zero THÌ gợi ý lỗi: Kiểm tra một giá trị mẫu thay vì phân loại theo dấu.</blockquote><p>Điều kiện hiện tại nhận riêng -12 chứ không nhận mọi số âm. Nhánh else cũng gộp cả số dương, số âm khác và số 0.</p>
+    <p><b>Giảng lại:</b> Thay giá trị mẫu bằng điều kiện a &lt; 0, a &gt; 0 và trường hợp còn lại.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_5507a905e6d6eca8</summary><p>Dòng: [6, 7, 9]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4  	float a;
+  5  	scanf(&quot;%f&quot;,&amp;a);
+  6  	if (a==-12){
+  7  	    printf(&quot;%.4f is negative&quot;,a);
+  8  	} else {
+  9  	    printf(&quot;%.4f is zero&quot;,a);
+ 10  	}
+ 11  	return 0;
+ 12  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 is negative</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>0.0000 is zero</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.0000 is zero</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000 is zero</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 is zero</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000 is zero</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>0.0000 is zero</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 16 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Bài mới đọc đầu vào, chưa tính và chưa in kết quả</h2><blockquote>NẾU main chỉ scanf rồi return VÀ mọi test ghi nhận output rỗng THÌ gợi ý lỗi: Bài mới đọc đầu vào, chưa tính và chưa in kết quả.</blockquote><p>Không có vòng duyệt, phép đếm hoặc lệnh in nào sau khi đọc N. Có thể đây là bài đang làm dở; chưa thể suy ra học viên hiểu sai khái niệm cụ thể.</p>
+    <p><b>Giảng lại:</b> Yêu cầu viết các bước giải trước, rồi hoàn thiện phần đếm và in.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_5f142f7662ff032b</summary><p>Dòng: [6, 8]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      int N;
+  6      scanf(&quot;%d&quot;,&amp;N);
+  7      
+  8      return 0;
+  9  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 17 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Đọc nhầm thứ tự bán kính và tọa độ điểm</h2><blockquote>NẾU scanf gán ba giá trị cuối lần lượt vào x1, y1, r VÀ test 0 0 5 3 7 bị phân loại bên trong thay vì bên ngoài THÌ gợi ý lỗi: Đọc nhầm thứ tự bán kính và tọa độ điểm.</blockquote><p>Cách đọc khiến 5 trở thành x1 và 7 trở thành bán kính. Theo thứ tự x, y, r, x1, y1 thể hiện trong bộ test, khoảng cách phải được tính cho điểm (3,7) với bán kính 5.</p>
+    <p><b>Giảng lại:</b> Ghi tên biến ngay dưới từng giá trị của một input mẫu rồi sửa thứ tự scanf.</p><p class="note">Cần đối chiếu thứ tự input với đề gốc vì packet này thiếu statement. Bài 17 còn gọi sqrt mà không include math.h; không bỏ qua vấn đề khai báo khi sửa code.</p>
+    <details><summary>Xem code và test làm căn cứ · case_5fc7964e49628250</summary><p>Dòng: [6, 7]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      float x,y,r,x1,y1,s;
+  6      scanf (&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;x1,&amp;y1,&amp;r);
+  7      s=sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1));
+  8      if  (r &gt;s )
+  9      {
+ 10          printf (&quot;Point is inside the Circle.&quot;);
+ 11          
+ 12      }
+ 13      else if(r == s)
+ 14      {
+ 15          printf (&quot;Point is on the Circle.&quot;); 
+ 16      }
+ 17      else
+ 18      {
+ 19              printf (&quot;Point is outside the Circle.&quot;);
+ 20      }
+ 21      return 0;
+ 22  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 18 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Khác chữ hoa/chữ thường trong thông báo</h2><blockquote>NẾU printf dùng circle với chữ c thường VÀ oracle yêu cầu Circle với chữ C hoa THÌ gợi ý lỗi: Khác chữ hoa/chữ thường trong thông báo.</blockquote><p>Sai khác quan sát được là cách viết Circle, không phải vị trí trong/ngoài/trên đường tròn ở các test đã ghi nhận.</p>
+    <p><b>Giảng lại:</b> Đối chiếu từng ký tự của chuỗi thông báo theo mẫu.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_781af59e6dab0a70</summary><p>Dòng: [9, 12, 15]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      float x, y, r, x1, y1;
+  6      scanf(&quot;%f %f %f %f %f&quot;, &amp;x, &amp;y, &amp;r, &amp;x1, &amp;y1);
+  7      float dsquared = ((x-x1)*(x-x1)) + ((y-y1)*(y-y1));
+  8      if(dsquared &lt; (r*r)){
+  9          printf(&quot;Point is inside the circle.&quot;);
+ 10      }
+ 11      else if(dsquared &gt; (r*r)){
+ 12          printf(&quot;Point is outside the circle.&quot;);
+ 13      }
+ 14      else{
+ 15          printf(&quot;Point is on the circle.&quot;);
+ 16      }
+ 17      return 0;
+ 18  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 19 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Quên bỏ dòng in debug</h2><blockquote>NẾU code in khoảng cách kèm chữ demo trước khi in kết luận VÀ output có thêm một dòng không nằm trong đáp án THÌ gợi ý lỗi: Quên bỏ dòng in debug.</blockquote><p>Lệnh printf phục vụ kiểm tra tạm vẫn còn trong bài nộp. Ví dụ test đầu in thêm 6.700747 demo trước thông báo outside.</p>
+    <p><b>Giảng lại:</b> Bỏ dòng debug khỏi output nộp bài, giữ lại phần in đáp án.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_78847a573ca84ffd</summary><p>Dòng: [13]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  #include&lt;math.h&gt;
+  3  int main()
+  4  {
+  5      float x,y,r;
+  6      float x1;
+  7      float y1;
+  8      float h;
+  9      float g;
+ 10      scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);/*input*/
+ 11      h=(x1-x)*(x1-x)+(y1-y)*(y1-y);
+ 12      g=sqrt(h);/*distance formula*/
+ 13      printf(&quot;%f demo\n&quot;,g);
+ 14      if(g&lt;r)/*condition for point to be inside the circle*/
+ 15      {
+ 16          printf(&quot;Point is inside the Circle.&quot;);
+ 17      }
+ 18      else if(g==r)/*condition for point to be on the circle*/
+ 19      {
+ 20          printf(&quot;Point is on the Circle.&quot;);
+ 21      }
+ 22      else 
+ 23      {
+ 24          printf(&quot;Point is outside the Circle.&quot;);
+ 25      }
+ 26      return 0;
+ 27  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>6.700747 demo
+Point is outside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>7.615773 demo
+Point is outside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>5.000000 demo
+Point is on the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>3.405877 demo
+Point is inside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>4.716990 demo
+Point is inside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>5.000000 demo
+Point is on the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>5.830952 demo
+Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 20 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Sai từ trong mẫu output: triangle thay vì triangles</h2><blockquote>NẾU chuỗi in dùng triangle ở số ít VÀ số đếm trong log khớp oracle nhưng phần chữ thiếu s THÌ gợi ý lỗi: Sai từ trong mẫu output: triangle thay vì triangles.</blockquote><p>Không nên gán lỗi đếm tổ hợp cho bài này chỉ vì toàn bộ test fail. Phần số đếm đã khớp ở các test ghi nhận; sai khác nằm ở từ triangles.</p>
+    <p><b>Giảng lại:</b> Giữ phần tính toán và sửa mẫu output theo oracle đã được kiểm chứng.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_7e464114951ec19e</summary><p>Dòng: [20]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      int n,a,b,c,x=0;// x is the no. of triangles formed.a,b,c are sides of                      triangle.n is the input value.
+  6      scanf(&quot;%d&quot;,&amp;n);
+  7      for(a=1;a&lt;=n;a++)
+  8      {
+  9          for(b=a;b&lt;=n;b++)
+ 10          {
+ 11              for(c=b;c&lt;=n;c++)
+ 12              {
+ 13                  if((a+b)&gt;c&amp;&amp;(a+c)&gt;b&amp;&amp;(b+c)&gt;a)
+ 14                  {
+ 15                      x++;
+ 16                  }
+ 17              }
+ 18          }
+ 19      }
+ 20      printf(&quot;Number of possible triangle is %d&quot;,x);
+ 21      return 0;
+ 22  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangle is 13</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangle is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangle is 7</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangle is 22</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangle is 50</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangle is 3</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 21 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Sai từ trong mẫu output: triangle thay vì triangles</h2><blockquote>NẾU chuỗi in dùng triangle ở số ít VÀ số đếm trong log khớp oracle nhưng phần chữ thiếu s THÌ gợi ý lỗi: Sai từ trong mẫu output: triangle thay vì triangles.</blockquote><p>Không nên gán lỗi đếm tổ hợp cho bài này chỉ vì toàn bộ test fail. Phần số đếm đã khớp ở các test ghi nhận; sai khác nằm ở từ triangles.</p>
+    <p><b>Giảng lại:</b> Giữ phần tính toán và sửa mẫu output theo oracle đã được kiểm chứng.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_7e5705531d22bbf6</summary><p>Dòng: [14]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5  int i,j,k, N,count=0;
+  6  scanf ( &quot;%d&quot;,&amp;N);/*input variable*/
+  7  for( i=1;i&lt;=N;i=i+1)
+  8  {for (j=1 ; j&lt;=i ; j=j+1)
+  9  {for (k=1;k&lt;=j; k=k+1)
+ 10  {if ((j+k&gt;i) &amp;&amp; (k+i&gt;j)&amp;&amp; (i+j&gt;k))/*tiangle inequality*/
+ 11  count++;}
+ 12  }
+ 13  }
+ 14  printf (&quot;Number of possible triangle is %d&quot;, count);
+ 15      return 0;
+ 16  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangle is 13</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangle is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangle is 7</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangle is 22</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangle is 50</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangle is 3</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 22 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ gợi ý lỗi: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p>
+    <p><b>Giảng lại:</b> Đối chiếu chuỗi output với mẫu, kể cả dấu câu.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_7e6cf30748dd79a5</summary><p>Dòng: [16, 19, 22]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  #include&lt;math.h&gt;
+  3  
+  4  int main()
+  5  {
+  6      float x, y, r, x1, y1;
+  7      scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  8      float A=x-x1;
+  9       float B=y-y1;
+ 10      float D,E;
+ 11      D=pow(A,2);
+ 12      E=pow(B,2);
+ 13      float F;
+ 14      F=sqrt(D+E);
+ 15      if(F&gt;r){
+ 16          printf(&quot;Point is outside the Circle&quot;);
+ 17      }
+ 18      else if(F&lt;r){
+ 19          printf(&quot;Point is inside the Circle&quot;);
+ 20      }
+ 21      else{
+ 22          printf (&quot;Point is on the Circle&quot;);
+ 23      };
+ 24      return 0;
+ 25  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 23 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Thừa dấu chấm so với oracle chấm bài</h2><blockquote>NẾU một hoặc nhiều chuỗi printf có dấu chấm cuối câu VÀ log mong đợi cùng nội dung nhưng không có dấu chấm THÌ gợi ý lỗi: Thừa dấu chấm so với oracle chấm bài.</blockquote><p>Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.</p>
+    <p><b>Giảng lại:</b> Kiểm tra lại mẫu output với người ra đề trước khi yêu cầu sửa dấu câu.</p><p class="note">Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.</p>
+    <details><summary>Xem code và test làm căn cứ · case_7fb0598798544be0</summary><p>Dòng: [7, 9, 11]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4      float a; // input variable
+  5  	scanf(&quot;%f&quot;,&amp;a);
+  6  	  if (a==0)
+  7  	    printf (&quot;input is zero.&quot;);
+  8  	  else if (a&gt;0)
+  9  	  printf (&quot;%.4f is positive.&quot;,a);
+ 10  	else
+ 11  	   printf (&quot;%.4f is negative.&quot;,a);
+ 12  	  
+ 13  	 
+ 14  	  
+ 15  	  
+ 16  	  
+ 17  	  
+ 18  	return 0;
+ 19  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 is negative.</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero.</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.0000 is positive.</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000 is positive.</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 is negative.</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000 is positive.</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 24 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ gợi ý lỗi: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p>
+    <p><b>Giảng lại:</b> Đối chiếu chuỗi output với mẫu, kể cả dấu câu.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_85d9d4119aeb7f8f</summary><p>Dòng: [6, 7, 8]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  int main(){
+  3  float a,x,y,r,x1,y1;
+  4  scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  5  a=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r*r ;
+  6  if(a==0) {printf(&quot;Point is on the Circle&quot;);}
+  7  else if(a&lt;0){printf(&quot;Point is inside the Circle&quot;);} 
+  8  else {printf(&quot;Point is outside the Circle&quot;);}                        return 0;
+  9  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 25 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>So sánh bình phương khoảng cách với bán kính chưa bình phương</h2><blockquote>NẾU code dùng d² nhưng đối chiếu trực tiếp với r VÀ điểm trên đường tròn bán kính 5 bị báo là ở ngoài THÌ gợi ý lỗi: So sánh bình phương khoảng cách với bán kính chưa bình phương.</blockquote><p>Hai vế đang khác đại lượng: d² phải so với r², hoặc d so với r. Ở test 3, d² = 25 và r = 5, nên phép so sánh hiện tại làm lệch kết luận.</p>
+    <p><b>Giảng lại:</b> Cho học viên viết rõ d, d², r, r² rồi chọn một cặp nhất quán.</p><p class="note">Bài 46 có tính sqrtf(c) vào d nhưng không dùng d để so sánh, đồng thời thiếu math.h. Nhãn này mô tả sai khác công thức thấy trong code/log, không chứng minh niềm tin của người học.</p>
+    <details><summary>Xem code và test làm căn cứ · case_8a259bc637baab56</summary><p>Dòng: [6]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {float x,y,x1,y1,r,s;//s is for power of point
+  5   scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  6   s=(x-x1)*(x-x1)+(y-y1)*(y-y1)-r;//computes the power of point
+  7   if(s&gt;0)       //point is outside if s is +ive
+  8    printf(&quot;Point is outside the Circle.&quot;);
+  9   if(s==0) //point is on it if s=0
+ 10    printf(&quot;Point is on the Circle.&quot;);
+ 11   if(s&lt;0)          //point is inside if s is -ive
+ 12    printf(&quot;Point is inside the Circle.&quot;);
+ 13   return 0;
+ 14  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 26 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Thoát vòng duyệt ngay khi gặp một bộ cạnh chưa hợp lệ</h2><blockquote>NẾU k đang tăng dần nhưng else lại break khi j+k &lt;= i VÀ số đếm nhỏ hơn oracle, như N = 4 cho 10 thay vì 13 THÌ gợi ý lỗi: Thoát vòng duyệt ngay khi gặp một bộ cạnh chưa hợp lệ.</blockquote><p>Một k nhỏ không thỏa chưa loại được những k lớn hơn. break bỏ luôn các bộ phía sau nên bài bị thiếu trường hợp.</p>
+    <p><b>Giảng lại:</b> Bỏ break ở nhánh không hợp lệ và tiếp tục thử các k tiếp theo.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_8fc7b8f6d71052ef</summary><p>Dòng: [14, 20]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      int n;
+  6      int count=0;
+  7      scanf(&quot;%d&quot;,&amp;n);
+  8      for(int i=1;i&lt;=n;i++)
+  9      {
+ 10          for(int j=1;j&lt;=i;j++)
+ 11          {
+ 12              for(int k=1;k&lt;=j;k++)
+ 13              {
+ 14                  if((j+k)&gt;i)
+ 15                  {
+ 16                      count=count+1;
+ 17                  }
+ 18                  else
+ 19                  {
+ 20                      break;
+ 21                  }
+ 22              }
+ 23          }
+ 24      }
+ 25      printf(&quot;Number of possible triangles is %d&quot;,count);
+ 26      return 0;
+ 27  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangles is 10</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangles is 6</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangles is 15</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangles is 28</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangles is 3</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 27 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Đặt biến vào chuỗi định dạng thay vì truyền đối số printf</h2><blockquote>NẾU chuỗi printf có %.4f và %n nhưng không truyền đối số tương ứng VÀ giá trị in trong log không khớp số đầu vào THÌ gợi ý lỗi: Đặt biến vào chuỗi định dạng thay vì truyền đối số printf.</blockquote><p>%n không có nghĩa là in biến tên n; đó là một conversion khác, cần con trỏ để ghi số ký tự đã in. Cả %.4f lẫn %n ở đây đều không có đối số.</p>
+    <p><b>Giảng lại:</b> Đưa n ra sau chuỗi định dạng: printf(&quot;%.4f is positive&quot;, n), và sửa tương tự nhánh âm.</p><p class="note">Lời gọi thiếu đối số có hành vi không xác định. Không suy ra mọi lần chạy đều in 0 từ log lịch sử.</p>
+    <details><summary>Xem code và test làm căn cứ · case_9055f4a3678ba199</summary><p>Dòng: [8, 12, 14]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4      //to determine sign of a number
+  5      float n;
+  6      scanf(&quot;%f&quot;,&amp;n);
+  7      if(n&gt;0){
+  8      printf(&quot;%.4f is positive,%n&quot;);//number is positive
+  9      }
+ 10      else{
+ 11          if (n==0){
+ 12          printf(&quot;input is zero&quot;);//number is 0
+ 13          }else{
+ 14          printf(&quot;%.4f is negative,%n&quot;);}}//number is negative
+ 15      
+ 16      
+ 17  	
+ 18  	return 0;
+ 19  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>0.0000 is negative,</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>0.0000 is positive,</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000 is positive,</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>0.0000 is negative,</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>0.0000 is positive,</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 28 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Nhầm số 0 với ký tự 0 khi so sánh</h2><blockquote>NẾU biến số thực được so sánh với &#x27;0&#x27; thay vì 0 VÀ các test nhập zero không có thông báo THÌ gợi ý lỗi: Nhầm số 0 với ký tự 0 khi so sánh.</blockquote><p>&#x27;0&#x27; là hằng ký tự, không phải giá trị số 0. Khi a bằng 0, hai nhánh &gt;0 và &lt;0 đều sai; điều kiện cuối cũng không nhận đúng zero.</p>
+    <p><b>Giảng lại:</b> Đổi a == &#x27;0&#x27; thành a == 0 và phân biệt giá trị số với ký tự.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_90646fdebcac31f8</summary><p>Dòng: [17]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      float a;
+  6      scanf(&quot;%f&quot;,&amp;a);
+  7      if(a&gt;0)
+  8      {
+  9          printf(&quot;%.4f is positive&quot;,a);
+ 10      }
+ 11      else
+ 12      if(a&lt;0)
+ 13      {
+ 14          printf(&quot;%.4f is negative&quot;,a);
+ 15      }
+ 16      else
+ 17      if(a==&#x27;0&#x27;)
+ 18      {
+ 19        printf(&quot;input is zero&quot;);
+ 20      }
+ 21  	return 0;
+ 22  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 is negative</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.0000 is positive</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000 is positive</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 is negative</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000 is positive</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 29 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Đưa &amp;a vào chuỗi scanf thay vì truyền địa chỉ đối số</h2><blockquote>NẾU lời gọi là scanf(&quot;%f,&amp;a&quot;) và không có đối số nhận dữ liệu VÀ log không ghi nhận output THÌ gợi ý lỗi: Đưa &amp;a vào chuỗi scanf thay vì truyền địa chỉ đối số.</blockquote><p>Phần &amp;a nằm trong dấu nháy nên không cung cấp địa chỉ biến cho %f. Cần viết scanf(&quot;%f&quot;, &amp;a).</p>
+    <p><b>Giảng lại:</b> Tách chuỗi định dạng khỏi danh sách đối số, rồi kiểm tra giá trị trả về của scanf.</p><p class="note">Đây là lỗi đối số trực tiếp; không suy đoán nguyên nhân kết thúc tiến trình chỉ từ output rỗng.</p>
+    <details><summary>Xem code và test làm căn cứ · case_917708e5da75df5c</summary><p>Dòng: [6]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      float a;
+  6      scanf(&quot;%f,&amp;a&quot;);
+  7      if(a&lt;0.0)
+  8  {	printf(&quot;%.4f is negative\n&quot;,a);}
+  9  	if(a==0.0)
+ 10  {	printf(&quot;input is zero&quot;);}
+ 11  	if(a&gt;0.0)
+ 12  {	printf(&quot;%.4f is positive\n&quot;,a);}
+ 13  	return 0;
+ 14  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>(chuỗi rỗng)</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 30 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Tính độ lệch vị trí nhưng lại rẽ nhánh theo bán kính</h2><blockquote>NẾU code tính k = d² − r² rồi dùng dấu của r trong if VÀ cả điểm bên trong và trên biên đều bị in là bên ngoài khi r dương THÌ gợi ý lỗi: Tính độ lệch vị trí nhưng lại rẽ nhánh theo bán kính.</blockquote><p>Bán kính dương không cho biết điểm đang ở trong hay ngoài. Biến k đã tính đúng đại lượng cần xét nhưng bị bỏ qua khi rẽ nhánh.</p>
+    <p><b>Giảng lại:</b> Thay biến được kiểm tra từ r sang k và truy vết một điểm bên trong.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_9f89199d80d76687</summary><p>Dòng: [7, 8, 12, 16]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5  float x,y,r,x1,y1,k;
+  6  scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  7  k=(x-x1)*(x-x1)+(y-y1)*(y-y1)-(r*r);
+  8  if(r&gt;0){
+  9      printf(&quot;Point is outside the Circle.&quot;);
+ 10      }
+ 11  else
+ 12  if(r==0){
+ 13      printf(&quot;Point is on the Circle.&quot;);
+ 14  }
+ 15  else
+ 16  if(r&lt;0){
+ 17      printf(&quot;Point is inside the Circle.&quot;);
+ 18  }
+ 19      // Fill this area with your code.
+ 20      return 0;
+ 21  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 31 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ gợi ý lỗi: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p>
+    <p><b>Giảng lại:</b> Đối chiếu chuỗi output với mẫu, kể cả dấu câu.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_a64d890ffd811174</summary><p>Dòng: [7, 10, 13]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  int main() {
+  3     float x,y,r,x1,y1;
+  4     scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  5     float A=((x-x1)*(x-x1)+(y-y1)*(y-y1));   
+  6   if(A&lt;r*r){
+  7       printf(&quot;Point is inside the Circle&quot;);
+  8   }
+  9   if(A==r*r){
+ 10       printf(&quot;Point is on the Circle&quot;);
+ 11   }    
+ 12   if(A&gt;r*r){
+ 13       printf(&quot;Point is outside the Circle&quot;);
+ 14   }
+ 15     return 0;
+ 16  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 32 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ gợi ý lỗi: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p>
+    <p><b>Giảng lại:</b> Đối chiếu chuỗi output với mẫu, kể cả dấu câu.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_a6f61d6bf5e9e4f8</summary><p>Dòng: [11, 14, 17]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  #include&lt;math.h&gt;
+  3  int main()
+  4  {
+  5      float x,y,r,x1,y1;
+  6      float d,D;/*d=distance squared*/
+  7      scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  8      d=((x-x1)*(x-x1))+((y-y1)*(y-y1));/*distance squared*/
+  9      D=sqrtf(d);
+ 10      if (D&lt;r){
+ 11          printf(&quot;Point is inside the Circle&quot;);
+ 12      }
+ 13      if (D==r){
+ 14          printf(&quot;Point is on the Circle&quot;);
+ 15      }
+ 16      if (D&gt;r){
+ 17          printf(&quot;Point is outside the Circle&quot;);
+ 18      }
+ 19      return 0;
+ 20  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 33 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Thừa dấu chấm so với oracle chấm bài</h2><blockquote>NẾU một hoặc nhiều chuỗi printf có dấu chấm cuối câu VÀ log mong đợi cùng nội dung nhưng không có dấu chấm THÌ gợi ý lỗi: Thừa dấu chấm so với oracle chấm bài.</blockquote><p>Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.</p>
+    <p><b>Giảng lại:</b> Kiểm tra lại mẫu output với người ra đề trước khi yêu cầu sửa dấu câu.</p><p class="note">Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.</p>
+    <details><summary>Xem code và test làm căn cứ · case_a7b282a588ab29a3</summary><p>Dòng: [7, 9, 11]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4  	float input; 
+  5  	scanf(&quot;%f&quot;,&amp;input);
+  6  	if(input==0)  /** if for 3 possible cases(either &gt; , 0 , = 0) **/
+  7  	  {printf(&quot;input is zero&quot;);}
+  8  	else if(input &gt; 0)
+  9  	  {printf(&quot;%.4f is positive.&quot;,input);} /** .4f for 4 digit decimal place **/
+ 10  	else if(input &lt; 0)
+ 11  	  {printf(&quot;%.4f is negative&quot; ,input);}
+ 12  	return 0;
+ 13  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 is negative</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.0000 is positive.</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000 is positive.</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 is negative</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000 is positive.</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 34 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Gõ sai Circle thành Cicle ở nhánh bên ngoài</h2><blockquote>NẾU printf của nhánh outside viết Cicle VÀ test bên ngoài khác oracle đúng một chữ r THÌ gợi ý lỗi: Gõ sai Circle thành Cicle ở nhánh bên ngoài.</blockquote><p>Log vẫn cho kết luận outside nhưng thông báo bị sai chính tả. Chưa có căn cứ coi đây là lỗi công thức hình học.</p>
+    <p><b>Giảng lại:</b> Sửa đúng chuỗi mẫu và kiểm tra cả ba nhánh in.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_a894cae81674bc6b</summary><p>Dòng: [13, 14, 16]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  #include&lt;math.h&gt;
+  3  
+  4  int main()
+  5  {
+  6      float x,y,r,x1,y1;
+  7      scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);//input x,y,r,x1,y1
+  8      
+  9      float d=sqrtf((x1-x)*(x1-x)+(y1-y)*(y1-y));
+ 10      //compute distance between point and centre of circle
+ 11      
+ 12      if ((d==r)||(d&lt;r)) {
+ 13          if (d==r) printf(&quot;Point is on the Circle.&quot;);
+ 14          else printf(&quot;Point is inside the Circle.&quot;);
+ 15      } else {
+ 16          printf(&quot;Point is outside the Cicle.&quot;);
+ 17      }    
+ 18      
+ 19      return 0;
+ 20  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Cicle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Cicle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Cicle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 35 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Dấu chấm phẩy sau for làm thân vòng lặp rỗng</h2><blockquote>NẾU mỗi câu for kết thúc ngay bằng dấu ; trước khối ngoặc nhọn VÀ nhiều input khác nhau đều chỉ cho số đếm 1 THÌ gợi ý lỗi: Dấu chấm phẩy sau for làm thân vòng lặp rỗng.</blockquote><p>Khối đếm phía dưới không còn là thân của các vòng for. Nó chỉ chạy sau khi các vòng rỗng đã kết thúc, nên không duyệt từng bộ cạnh như dự định.</p>
+    <p><b>Giảng lại:</b> Bỏ dấu ; sau for rồi chỉ rõ khối lệnh thuộc từng vòng.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_af057346e20493c4</summary><p>Dòng: [8, 10, 12]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  { int N;
+  5  int i,j,k;
+  6   int count=0; 
+  7   scanf(&quot;%d&quot;,&amp;N);
+  8    for (i=1; i&lt;=N; i++);  
+  9    {
+ 10        for (j=i; j&lt;=N; j=j+1);
+ 11       {
+ 12           for (k=j; k&lt;=N; k=k+1);
+ 13       {     if (i+j&gt;k &amp;&amp; j+k&gt;i &amp;&amp; i+k&gt;j)
+ 14       count=count+1;
+ 15       }
+ 16       }
+ 17    } 
+ 18    printf (&quot;Number of possible triangles is %d&quot;,count);
+ 19      return 0;
+ 20  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 36 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Thừa dấu chấm so với oracle chấm bài</h2><blockquote>NẾU một hoặc nhiều chuỗi printf có dấu chấm cuối câu VÀ log mong đợi cùng nội dung nhưng không có dấu chấm THÌ gợi ý lỗi: Thừa dấu chấm so với oracle chấm bài.</blockquote><p>Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.</p>
+    <p><b>Giảng lại:</b> Kiểm tra lại mẫu output với người ra đề trước khi yêu cầu sửa dấu câu.</p><p class="note">Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.</p>
+    <details><summary>Xem code và test làm căn cứ · case_be7e62b451ca8f22</summary><p>Dòng: [8, 12, 16]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4      float a;
+  5      scanf(&quot;%f&quot;,&amp;a);
+  6      if(a&gt;0)
+  7      {
+  8          printf(&quot;%.4f is positive.&quot;,a);
+  9      }
+ 10  	else if(a==0)
+ 11  	{
+ 12  	    printf(&quot;input is zero.&quot;);
+ 13  	}
+ 14  	else
+ 15  	{
+ 16  	    printf(&quot;%.4f is negative.&quot;,a);
+ 17  	}
+ 18  	return 0;
+ 19  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 is negative.</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero.</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.0000 is positive.</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000 is positive.</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 is negative.</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000 is positive.</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero.</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 37 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Sai từ trong mẫu output: triangle thay vì triangles</h2><blockquote>NẾU chuỗi in dùng triangle ở số ít VÀ số đếm trong log khớp oracle nhưng phần chữ thiếu s THÌ gợi ý lỗi: Sai từ trong mẫu output: triangle thay vì triangles.</blockquote><p>Không nên gán lỗi đếm tổ hợp cho bài này chỉ vì toàn bộ test fail. Phần số đếm đã khớp ở các test ghi nhận; sai khác nằm ở từ triangles.</p>
+    <p><b>Giảng lại:</b> Giữ phần tính toán và sửa mẫu output theo oracle đã được kiểm chứng.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_c3e32b1a7204496b</summary><p>Dòng: [15]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      int n,c=0,x,y,z;
+  6      scanf(&quot;%d&quot;,&amp;n);
+  7      for(x=1;x&lt;=n;x=x+1){
+  8       for(y=1;y&lt;=x;y=y+1){
+  9       for(z=1;z&lt;=y;z=z+1){
+ 10            if(x+y&gt;z &amp;&amp; y+z&gt;x &amp;&amp; z+x&gt;y)
+ 11       c++;
+ 12      }   
+ 13       }
+ 14      }
+ 15      printf(&quot;Number of possible triangle is %d&quot;,c);
+ 16      return 0;
+ 17  
+ 18  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangle is 13</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangle is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangle is 7</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangle is 22</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangle is 50</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangle is 3</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 38 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận</h2><blockquote>NẾU hai if độc lập kiểm tra trong/ngoài, còn else gắn với if kiểm tra bên ngoài VÀ test điểm bên trong in cả inside và on THÌ gợi ý lỗi: Gắn else vào if thứ hai, khiến một điểm nhận hai kết luận.</blockquote><p>Khi điểm ở bên trong, if đầu in inside. if thứ hai sai nên else của nó tiếp tục in on. Cần một chuỗi nhánh loại trừ nhau.</p>
+    <p><b>Giảng lại:</b> Đổi if thứ hai thành else if, rồi truy vết lại một test bên trong.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_cc63868c9ce23567</summary><p>Dòng: [12, 13, 14, 15, 16, 17]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  #include&lt;math.h&gt;
+  3  int main()
+  4  {
+  5    float x, y, r, x1, y1, d;
+  6    scanf(&quot;%f&quot;,&amp;x);
+  7    scanf(&quot;%f&quot;,&amp;y);
+  8    scanf(&quot;%f&quot;,&amp;r);
+  9    scanf(&quot;%f&quot;,&amp;x1);
+ 10    scanf(&quot;%f&quot;,&amp;y1);
+ 11    d =sqrt(pow(x-x1, 2)+pow(y-y1, 2));
+ 12    if (d&lt;r){
+ 13    printf(&quot;Point is inside the Circle.&quot;);}
+ 14    if (d&gt;r){
+ 15    printf(&quot;Point is outside the Circle.&quot;);}
+ 16    else {
+ 17    printf(&quot;Point is on the Circle.&quot;);}
+ 18   
+ 19      return 0;
+ 20  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.Point is on the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.Point is on the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 39 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Đọc nhầm thứ tự bán kính và tọa độ điểm</h2><blockquote>NẾU scanf gán ba giá trị cuối lần lượt vào x1, y1, r VÀ test 0 0 5 3 7 bị phân loại bên trong thay vì bên ngoài THÌ gợi ý lỗi: Đọc nhầm thứ tự bán kính và tọa độ điểm.</blockquote><p>Cách đọc khiến 5 trở thành x1 và 7 trở thành bán kính. Theo thứ tự x, y, r, x1, y1 thể hiện trong bộ test, khoảng cách phải được tính cho điểm (3,7) với bán kính 5.</p>
+    <p><b>Giảng lại:</b> Ghi tên biến ngay dưới từng giá trị của một input mẫu rồi sửa thứ tự scanf.</p><p class="note">Cần đối chiếu thứ tự input với đề gốc vì packet này thiếu statement. Bài 17 còn gọi sqrt mà không include math.h; không bỏ qua vấn đề khai báo khi sửa code.</p>
+    <details><summary>Xem code và test làm căn cứ · case_cc772f29ff77aae8</summary><p>Dòng: [6, 7, 13]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  #include&lt;math.h&gt;
+  3  int main()
+  4  {
+  5      float x,y,x1,y1,r;
+  6      scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;x1,&amp;y1,&amp;r);
+  7      if(r==sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1))) 
+  8  {    
+  9      printf(&quot;Point is on the Circle.&quot;);
+ 10  }
+ 11  else
+ 12  {
+ 13      if(r&lt;sqrt((x-x1)*(x-x1)+(y-y1)*(y-y1)))
+ 14      printf(&quot;Point is outside the Circle.&quot;); 
+ 15      else 
+ 16      printf(&quot;Point is inside the Circle.&quot;);
+ 17          
+ 18      }
+ 19      // Fill this area with your code.
+ 20      return 0;
+ 21  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2833"><small>BÀI 40 · ĐỀ 2833 · AI ĐỀ XUẤT</small>
+    <h2>Khử trùng số đếm bằng một công thức không phù hợp</h2><blockquote>NẾU code đếm các hoán vị rồi thay tổng bằng ((count-n)/n)+n VÀ N = 4 cho 11 thay vì 13 dù một vài input nhỏ vẫn đúng THÌ gợi ý lỗi: Khử trùng số đếm bằng một công thức không phù hợp.</blockquote><p>Số hoán vị không cố định theo n: ba cạnh khác nhau, hai cạnh bằng nhau và ba cạnh bằng nhau có số lần lặp khác nhau. Chia tổng theo n không loại trùng đúng cho mọi trường hợp.</p>
+    <p><b>Giảng lại:</b> Giới hạn thứ tự ba cạnh ngay trong vòng duyệt thay vì sửa tổng bằng công thức này.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_d206b331ed6efff9</summary><p>Dòng: [7, 9, 11, 20]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      int n,count=0,a,b,c;
+  6      scanf(&quot;%d&quot;,&amp;n);
+  7      for(a=1;a&lt;=n;a++)
+  8      {
+  9          for(b=1;b&lt;=n;b++)
+ 10          {
+ 11              for(c=1;c&lt;=n;c++)
+ 12              {
+ 13                 if((a+b)&gt;c &amp;&amp; (a+c)&gt;b &amp;&amp; (b+c)&gt;a)
+ 14                 {
+ 15                     count++;
+ 16                 }
+ 17              }
+ 18          }
+ 19      }
+ 20      count=(((count-n)/n)+n);
+ 21      printf(&quot;Number of possible triangles is %d&quot;,count);
+ 22      return 0;
+ 23  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>4</pre></td><td><pre>Number of possible triangles is 13</pre></td><td><pre>Number of possible triangles is 11</pre></td></tr><tr><td>2</td><td><pre>1</pre></td><td><pre>Number of possible triangles is 1</pre></td><td><pre>Number of possible triangles is 1</pre></td></tr><tr><td>3</td><td><pre>3</pre></td><td><pre>Number of possible triangles is 7</pre></td><td><pre>Number of possible triangles is 7</pre></td></tr><tr><td>4</td><td><pre>5</pre></td><td><pre>Number of possible triangles is 22</pre></td><td><pre>Number of possible triangles is 17</pre></td></tr><tr><td>5</td><td><pre>7</pre></td><td><pre>Number of possible triangles is 50</pre></td><td><pre>Number of possible triangles is 31</pre></td></tr><tr><td>6</td><td><pre>2</pre></td><td><pre>Number of possible triangles is 3</pre></td><td><pre>Number of possible triangles is 3</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 41 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Thiếu dấu chấm riêng ở nhánh trên đường tròn</h2><blockquote>NẾU nhánh on in chuỗi không có dấu chấm cuối VÀ chỉ các test trên biên khác oracle ở dấu câu THÌ gợi ý lỗi: Thiếu dấu chấm riêng ở nhánh trên đường tròn.</blockquote><p>Bài đã nhận đúng trường hợp trên đường tròn trong log. Lỗi quan sát được nằm ở chuỗi thông báo của nhánh đó.</p>
+    <p><b>Giảng lại:</b> Sửa chuỗi on cho thống nhất với mẫu, không đổi công thức khi chưa có bằng chứng cần đổi.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_da6a96c98b77ce1a</summary><p>Dòng: [14, 17, 20]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  #include&lt;math.h&gt;
+  3  
+  4  int main()
+  5  {
+  6      float x , y , x1 , y1 , r ,s ;
+  7      // (x,y) are co-ordinates for center of circle .
+  8      // (x1,y1) is point whose relative loacation w.r.t circle we have to see .
+  9      // r is radius of circle .
+ 10      // s is distance of point from center of circle .
+ 11      scanf (&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+ 12      s = sqrtf(((x - x1)*(x - x1)) + ((y - y1)*(y - y1))) ;
+ 13      if (s&gt;r){
+ 14          printf(&quot;Point is outside the Circle.&quot;);// if radius is less than distance from center , point is outside the circle .
+ 15      }
+ 16      else if (s==r){
+ 17          printf(&quot;Point is on the Circle&quot;);// if radius is equal to distance from center , point is on the circumference .
+ 18      }
+ 19      else{
+ 20          printf(&quot;Point is inside the Circle.&quot;);
+ 21          
+ 22      }
+ 23      // if radius is greater than distance from center then point is inside the circle .
+ 24      
+ 25      
+ 26      return 0;
+ 27  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 42 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Nhánh bên ngoài in nhầm thông báo trên đường tròn</h2><blockquote>NẾU else sau l&lt;0 và l==0 vẫn in on VÀ test điểm bên ngoài bị báo là nằm trên đường tròn THÌ gợi ý lỗi: Nhánh bên ngoài in nhầm thông báo trên đường tròn.</blockquote><p>Cấu trúc đã dành nhánh cuối cho l&gt;0, nhưng chuỗi in bị lặp từ nhánh l==0. Có thể là lỗi sao chép; chưa đủ căn cứ kết luận học viên không hiểu hình học.</p>
+    <p><b>Giảng lại:</b> Đổi thông báo trong else thành outside và kiểm tra một test bên ngoài.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_e0a24174dbc0a491</summary><p>Dòng: [10, 11, 13, 15, 16]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      float x,y,r,x1,y1,l;
+  6      scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  7      l=(x-x1)*(x-x1)+(y-y1)*(y-y1)-(r*r);
+  8      if(l&lt;0)
+  9      {
+ 10        printf(&quot;Point is inside the Circle.&quot;);}
+ 11        else if(l==0)
+ 12        {
+ 13        printf(&quot;Point is on the Circle.&quot;);
+ 14        }
+ 15      else
+ 16      printf(&quot;Point is on the Circle.&quot;);
+ 17      return 0;
+ 18  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is on the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 43 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Khác chữ hoa/chữ thường trong thông báo</h2><blockquote>NẾU printf dùng circle với chữ c thường VÀ oracle yêu cầu Circle với chữ C hoa THÌ gợi ý lỗi: Khác chữ hoa/chữ thường trong thông báo.</blockquote><p>Sai khác quan sát được là cách viết Circle, không phải vị trí trong/ngoài/trên đường tròn ở các test đã ghi nhận.</p>
+    <p><b>Giảng lại:</b> Đối chiếu từng ký tự của chuỗi thông báo theo mẫu.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_e15cd0218127818c</summary><p>Dòng: [11, 15, 19]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  #include&lt;math.h&gt;
+  3  int main()
+  4  {
+  5      float x,y,r,x1,y1;
+  6      scanf(&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  7      float m=(x-x1)*(x-x1)+(y-y1)*(y-y1);
+  8      float d=sqrtf(m);
+  9      if(d==r)
+ 10      {
+ 11          printf(&quot;Point is on the circle.&quot;);
+ 12      }
+ 13      else if(d&gt;r)
+ 14          {
+ 15              printf(&quot;Point is outside the circle.&quot;);
+ 16          }
+ 17      else if(d&lt;r)
+ 18          {
+ 19              printf(&quot;Point is inside the circle.&quot;);
+ 20          }
+ 21      return 0;
+ 22  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 44 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Khác chữ hoa/chữ thường trong thông báo</h2><blockquote>NẾU printf dùng circle với chữ c thường VÀ oracle yêu cầu Circle với chữ C hoa THÌ gợi ý lỗi: Khác chữ hoa/chữ thường trong thông báo.</blockquote><p>Sai khác quan sát được là cách viết Circle, không phải vị trí trong/ngoài/trên đường tròn ở các test đã ghi nhận.</p>
+    <p><b>Giảng lại:</b> Đối chiếu từng ký tự của chuỗi thông báo theo mẫu.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_e707d929e1330208</summary><p>Dòng: [12, 15, 19]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      float x,y,r,x1,y1,a,b,c;
+  6      scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  7      a=(((x1-x)*(x1-x))+((y1-y)*(y1-y)));
+  8      b=r*r;
+  9      c=a-b;
+ 10  if (c&lt;=0){
+ 11      if (c==0){
+ 12          printf(&quot;Point is on the circle.&quot;);
+ 13      }
+ 14      else {
+ 15           printf(&quot;Point is inside the circle.&quot;);
+ 16      }
+ 17  }
+ 18  else {
+ 19      printf(&quot;Point is outside the circle.&quot;);
+ 20  }
+ 21      return 0;
+ 22  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 45 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>Thừa dấu chấm so với oracle chấm bài</h2><blockquote>NẾU một hoặc nhiều chuỗi printf có dấu chấm cuối câu VÀ log mong đợi cùng nội dung nhưng không có dấu chấm THÌ gợi ý lỗi: Thừa dấu chấm so với oracle chấm bài.</blockquote><p>Các nhánh đang phân loại dấu phù hợp với test; sai khác được trích dẫn là dấu chấm. Bài 33 chỉ thêm dấu chấm ở nhánh dương.</p>
+    <p><b>Giảng lại:</b> Kiểm tra lại mẫu output với người ra đề trước khi yêu cầu sửa dấu câu.</p><p class="note">Tài liệu rà soát trước đó ghi nhận ví dụ đề 2812 có dấu chấm nhưng oracle không có. Đây là bất nhất cần kiểm chứng, không phải bằng chứng chắc chắn học viên sai kiến thức.</p>
+    <details><summary>Xem code và test làm căn cứ · case_f4a64c7407896ece</summary><p>Dòng: [7, 10, 12]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4     float a;
+  5     scanf(&quot;%f&quot;,&amp;a);//input float value a.
+  6     if (a==0)        //Check if a=0.
+  7     { printf(&quot;input is zero.&quot;);}//display of output.
+  8     
+  9     else { if (a&gt;0) //using another subcondition to check if a&gt;0 or a&lt;0.
+ 10            { printf(&quot;%.4f is positive.&quot;,a);}
+ 11            else 
+ 12            { printf(&quot;%.4f is negative.&quot;,a);}
+ 13     }
+ 14  	
+ 15  	return 0;
+ 16  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 is negative.</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero.</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.0000 is positive.</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.0000 is positive.</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 is negative.</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000 is positive.</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>input is zero.</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 46 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>So sánh bình phương khoảng cách với bán kính chưa bình phương</h2><blockquote>NẾU code dùng d² nhưng đối chiếu trực tiếp với r VÀ điểm trên đường tròn bán kính 5 bị báo là ở ngoài THÌ gợi ý lỗi: So sánh bình phương khoảng cách với bán kính chưa bình phương.</blockquote><p>Hai vế đang khác đại lượng: d² phải so với r², hoặc d so với r. Ở test 3, d² = 25 và r = 5, nên phép so sánh hiện tại làm lệch kết luận.</p>
+    <p><b>Giảng lại:</b> Cho học viên viết rõ d, d², r, r² rồi chọn một cặp nhất quán.</p><p class="note">Bài 46 có tính sqrtf(c) vào d nhưng không dùng d để so sánh, đồng thời thiếu math.h. Nhãn này mô tả sai khác công thức thấy trong code/log, không chứng minh niềm tin của người học.</p>
+    <details><summary>Xem code và test làm căn cứ · case_f756bf3700e93903</summary><p>Dòng: [11, 12, 13, 15]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5   float x,y;//cordinate of the center of the circle
+  6   float r;// radius of the circle
+  7   float x1,y1;// the another cordinate provided by user
+  8   scanf(&quot;%f%f%f%f%f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  9   float a=(x1-x)*(x1-x);
+ 10   float b=(y1-y)*(y1-y);
+ 11   float c=a+b;//distance between origen and cordinates providade by user
+ 12   float d=sqrtf(c);
+ 13   if(c&lt;r)
+ 14   printf(&quot;Point is inside the Circle.&quot;);
+ 15   else if(c==r)
+ 16       printf(&quot;Point is on the Circle.&quot;);
+ 17  else
+ 18      printf(&quot;Point is outside the Circle.&quot;);
+ 19      return 0;
+ 20  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle.</pre></td></tr></tbody></table></div></details></article><article data-problem="2812"><small>BÀI 47 · ĐỀ 2812 · AI ĐỀ XUẤT</small>
+    <h2>In số hai lần và dùng mẫu định dạng không thống nhất</h2><blockquote>NẾU code in số trước if rồi lại in số trong nhánh âm/dương VÀ log có hai giá trị số nối nhau, hoặc thêm số trước thông báo zero THÌ gợi ý lỗi: In số hai lần và dùng mẫu định dạng không thống nhất.</blockquote><p>Lệnh in trước chuỗi if luôn chạy. Các nhánh sau lại in giá trị lần nữa bằng %f, nên output vừa lặp số vừa khác số chữ số thập phân.</p>
+    <p><b>Giảng lại:</b> Bỏ lệnh in chung phía trước và để mỗi nhánh tự in đầy đủ một thông báo.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_fa7f4899a2792c11</summary><p>Dòng: [9, 12, 15, 18]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main(){
+  4      float n ;         /* variable declaration*/
+  5      
+  6          
+  7  
+  8              scanf(&quot;%f&quot;,&amp;n);
+  9          printf(&quot;%.4f&quot;,n);
+ 10       
+ 11      if(n&lt;0)
+ 12          {printf(&quot; %f is negative&quot;,n);}
+ 13      
+ 14      else if(n&gt;0)
+ 15      {printf(&quot;%f is positive&quot;,n);}
+ 16      
+ 17      else
+ 18      {printf(&quot;input is zero&quot;);}
+ 19      
+ 20  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>-12</pre></td><td><pre>-12.0000 is negative</pre></td><td><pre>-12.0000 -12.000000 is negative</pre></td></tr><tr><td>2</td><td><pre>0</pre></td><td><pre>input is zero</pre></td><td><pre>0.0000input is zero</pre></td></tr><tr><td>3</td><td><pre>1</pre></td><td><pre>1.0000 is positive</pre></td><td><pre>1.00001.000000 is positive</pre></td></tr><tr><td>4</td><td><pre>0.0000001</pre></td><td><pre>0.0000 is positive</pre></td><td><pre>0.00000.000000 is positive</pre></td></tr><tr><td>5</td><td><pre>-0.0000001</pre></td><td><pre>-0.0000 is negative</pre></td><td><pre>-0.0000 -0.000000 is negative</pre></td></tr><tr><td>6</td><td><pre>101</pre></td><td><pre>101.0000 is positive</pre></td><td><pre>101.0000101.000000 is positive</pre></td></tr><tr><td>7</td><td><pre>0000000</pre></td><td><pre>input is zero</pre></td><td><pre>0.0000input is zero</pre></td></tr></tbody></table></div></details></article><article data-problem="2825"><small>BÀI 48 · ĐỀ 2825 · AI ĐỀ XUẤT</small>
+    <h2>Thiếu dấu chấm cuối thông báo</h2><blockquote>NẾU chuỗi printf không có dấu chấm cuối câu VÀ output ghi nhận khớp nội dung phân loại nhưng thiếu dấu chấm so với oracle THÌ gợi ý lỗi: Thiếu dấu chấm cuối thông báo.</blockquote><p>Khác biệt nhìn thấy trong các test là dấu chấm cuối câu. Không có căn cứ từ sai khác này để kết luận học viên chưa hiểu công thức khoảng cách.</p>
+    <p><b>Giảng lại:</b> Đối chiếu chuỗi output với mẫu, kể cả dấu câu.</p><p class="note">Đây là cơ chế lỗi AI đề xuất từ code và log đã có; chưa xác nhận người học hiểu sai khái niệm nào.</p>
+    <details><summary>Xem code và test làm căn cứ · case_fa86ec75d995a3b5</summary><p>Dòng: [10, 15, 19]</p><pre>  1  #include&lt;stdio.h&gt;
+  2  
+  3  int main()
+  4  {
+  5      float x, y, r, x1, y1;
+  6      scanf (&quot;%f %f %f %f %f&quot;,&amp;x,&amp;y,&amp;r,&amp;x1,&amp;y1);
+  7      {
+  8          if ((x1-x)*(x1-x)+(y1-y)*(y1-y)==r*r)
+  9          {
+ 10              printf (&quot;Point is on the Circle&quot;);
+ 11          }
+ 12          else
+ 13          if ((x1-x)*(x1-x)+(y1-y)*(y1-y)&gt;r*r)
+ 14          {
+ 15              printf (&quot;Point is outside the Circle&quot;);
+ 16          }
+ 17          else
+ 18          {
+ 19              printf (&quot;Point is inside the Circle&quot;);
+ 20          }
+ 21      }
+ 22      return 0;
+ 23  }</pre>
+    <div class="scroll"><table><thead><tr><th>Test</th><th>Input</th><th>Mong đợi</th><th>Thực tế</th></tr></thead><tbody><tr><td>1</td><td><pre>1.2 2.3 2.7 5.3 7.6</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>2</td><td><pre>0.0 0.0 5.0 3.0 7.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr><tr><td>3</td><td><pre>3.0 4.0 5.0 7.0 7.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>4</td><td><pre>3.0 4.0 5.0 5.6 6.2</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>5</td><td><pre>-1.0 -2.0 5.0 1.5 2.0</pre></td><td><pre>Point is inside the Circle.</pre></td><td><pre>Point is inside the Circle</pre></td></tr><tr><td>6</td><td><pre>0.0 0.0 5.0 3.0 4.0</pre></td><td><pre>Point is on the Circle.</pre></td><td><pre>Point is on the Circle</pre></td></tr><tr><td>7</td><td><pre>0.0 0.0 5.0 3.0 5.0</pre></td><td><pre>Point is outside the Circle.</pre></td><td><pre>Point is outside the Circle</pre></td></tr></tbody></table></div></details></article></main>
+<script>document.querySelector('#filter').onchange=e=>{let n=0;document.querySelectorAll('article').forEach(a=>{a.hidden=e.target.value!=='all'&&a.dataset.problem!==e.target.value;if(!a.hidden)n++});document.querySelector('#count').textContent=n+' bài'};document.querySelector('#size').onclick=()=>{document.body.style.fontSize=document.body.style.fontSize==='21px'?'18px':'21px'};</script></html>

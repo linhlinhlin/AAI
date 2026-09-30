@@ -7,10 +7,12 @@ from itertools import pairwise
 import tree_sitter_c
 from tree_sitter import Language, Parser
 
+from .exercise_signs import exercise_signs
 from .hardcoded_output import LABEL, hardcoded_output
+from .output_features import OUTPUT_CATEGORIES
 from .rule_style import STYLE_VERSION, explanation_for
 
-VERSION = "teaching-rules-v3-hardcoded-output"
+VERSION = "teaching-rules-v5-exercise-evidence"
 RULE_OAV = {
     "C_HARDCODED_OUTPUT": [
         ("Bài làm", "is_hardcoded_output", "True"),
@@ -29,7 +31,7 @@ RULE_OAV = {
         ("Ca kiểm thử trượt", "Output giữ nguyên input trong khi expected đảo thứ tự", "Có"),
     ],
     "OUTPUT_PRESENTATION": [
-        ("Mã bài làm", "Chứa chuỗi output quan sát được", "Có"),
+        ("Mã bài làm", "Có lời gọi xuất dữ liệu", "Có"),
         ("Ca kiểm thử trượt", "Sai khác expected và actual",
          "Chỉ hoa/thường, khoảng trắng hoặc dấu chấm cuối thông báo đường tròn"),
     ],
@@ -46,7 +48,7 @@ AST_LABELS = {
     "address_of": "toán tử lấy địa chỉ &", "dereference": "toán tử giải tham chiếu *",
     "update": "phép tăng/giảm ++ hoặc --", "augassign": "phép gán kết hợp như +=",
 }
-STATES = {"pass": "đạt", "fail": "không đạt", "not_run": "chưa chạy",
+STATES = {"pass": "đạt", "fail": "sai kết quả", "not_run": "chưa chạy",
           "runtime_error": "lỗi thực thi", "timeout": "hết thời gian",
           "__unknown__": "chưa xác định"}
 
@@ -66,11 +68,33 @@ def source_evidence(node):
             "code": node.text.decode("utf-8")}
 
 
-def describe_condition(condition, test_labels):
+def describe_condition(condition, test_labels, *, eligible_tests=False):
+    negated = False
+    while condition.startswith("NOT (") and condition.endswith(")"):
+        negated = not negated
+        condition = condition[5:-1]
     if condition == "TRUE":
-        return "mọi bài trong phạm vi của luật"
-    if condition.startswith("NOT (") and condition.endswith(")"):
-        return "không thỏa điều kiện: [" + describe_condition(condition[5:-1], test_labels) + "]"
+        return "không bài nào thỏa luật này" if negated else "mọi bài trong phạm vi của luật"
+    if negated:
+        feature, separator, value = condition.rpartition("=")
+        if not separator:
+            return f"điều kiện gốc phải sai: {condition}"
+        if feature.startswith("test:"):
+            domain = ("pass", "fail") if eligible_tests else tuple(STATES)
+        elif feature.startswith("ast:"):
+            domain = ("0", "1", "__unknown__")
+        elif feature.startswith("stdout:"):
+            domain = OUTPUT_CATEGORIES.get(feature.rsplit(":", 1)[-1], ())
+        else:
+            domain = ()
+        if domain and value in domain:
+            alternatives = [describe_condition(f"{feature}={other}", test_labels,
+                                               eligible_tests=eligible_tests)
+                            for other in domain if other != value]
+            if len(alternatives) == 1:
+                return alternatives[0]
+            return "một trong các trường hợp: " + " HOẶC ".join(alternatives)
+        return f"{feature}: giá trị khác «{value}»"
     feature, _, value = condition.rpartition("=")
     if feature.startswith("test:"):
         test = feature[5:]
@@ -93,6 +117,42 @@ def describe_condition(condition, test_labels):
         description = (relation if descriptor == 'relation' else bands).get(value, value)
         return f"{test_labels.get(test, 'Ca kiểm thử ' + test)}: {description}"
     return condition
+
+
+def rule_test_scope(report):
+    """Only the routing contract establishes binary outcomes; observed categories alone do not."""
+    ids = set(report.get("train_assignments", {})) | set(report.get("holdout_assignments", {}))
+    routes = report.get("routes", {})
+    return bool(ids) and all(routes.get(sid) == "eligible" for sid in ids)
+
+
+def refresh_rule_descriptions(report):
+    """Refresh a returned snapshot's wording without rewriting historical rules or assignments."""
+    # Saved reports retain their original payload; derive current diagnostics only
+    # on the returned copy, from the same source and recorded tests.
+    if (report.get("submissions") and report.get("teaching", {}).get("version") != VERSION):
+        from dataclasses import fields
+
+        from .domain import Submission
+
+        keys = {field.name for field in fields(Submission)}
+        rows = [Submission(**{k: v for k, v in item.items() if k in keys})
+                for item in report["submissions"]]
+        logs = {item["submission_id"]: item.get("logged_tests", []) for item in report["submissions"]}
+        report["teaching"] = build_teaching_report(rows, logs, report)
+    teaching = report.get("teaching")
+    if not teaching:
+        return report
+    labels = {test["test_id"]: "Ca «" + test.get("name", test["test_id"]) + "»"
+              for test in report.get("problem", {}).get("tests", [])}
+    for rule in teaching.get("cluster_rules", []):
+        rule["if_vi"] = [describe_condition(c, labels, eligible_tests=rule_test_scope(report))
+                         for c in rule["if"]]
+    teaching["condition_wording_version"] = "categorical-complement-v2"
+    teaching["condition_scope_vi"] = (
+        "Luật áp dụng cho bài đủ điều kiện phân cụm: mọi test đã chạy, kết quả là đạt hoặc sai kết quả."
+        if rule_test_scope(report) else "Chưa xác nhận phạm vi hai trạng thái; giữ các trạng thái chưa biết và lỗi thực thi.")
+    return report
 
 
 def _independent_branches(root):
@@ -193,11 +253,14 @@ def diagnose(row, logs):
         LABEL, "observed_error", hardcoded_output(row.source_code, row.outcomes),
         failed if len(failed) >= 2 else [],
         "Đây là mẫu code quan sát được, chưa chứng minh nhận thức của người học.",
-        "Với hai giá trị n khác nhau, truy vết tổng từ 1 đến n rồi thay hằng số bằng kết quả tính.")
+        "Đổi dữ liệu nhập, truy vết kết quả cần tính rồi thay hằng số bằng biểu thức phụ thuộc input.")
     branch_tests = []
     for test in failed:
         messages = re.findall(r"Point is (?:inside|on|outside) the Circle\.", test["output"])
-        if test["expected"] in CIRCLE and len(set(messages)) >= 2:
+        if ((test["expected"] in CIRCLE and len(set(messages)) >= 2)
+            or (test["expected"].strip() in {"INSIDE", "ON", "OUTSIDE"}
+              and len(set(test["output"].split())) >= 2
+              and set(test["output"].split()) <= {"INSIDE", "ON", "OUTSIDE"})):
             branch_tests.append(test)
     add("C_BRANCH_ATTACHMENT", ["mã có hai if liên tiếp; else thuộc if thứ hai",
                                 "một test yêu cầu một vị trí nhưng output chứa nhiều vị trí"],
@@ -217,16 +280,29 @@ def diagnose(row, logs):
         or (t["expected"] in CIRCLE
             and _output_form(t["expected"]).removesuffix(".")
             == _output_form(t["output"]).removesuffix(".")))]
-    literals = [source_evidence(n) for n in walk(root) if n.type == "string_literal"
-                and any(t["output"].strip() and t["output"].strip() in n.text.decode()
-                        for t in formatting)]
-    add("OUTPUT_PRESENTATION", ["mã chứa chuỗi được in trong test trượt",
+    output_calls = [source_evidence(n) for n in walk(root) if n.type == "call_expression"
+                    and n.child_by_field_name("function").text in {b"printf", b"puts", b"putchar"}]
+    add("OUTPUT_PRESENTATION", ["mã có lời gọi xuất dữ liệu; log ghi nhận output thực tế",
                                  ("expected và actual chỉ khác chữ hoa/thường, khoảng trắng "
                                   "hoặc dấu chấm cuối thông báo vị trí đường tròn")],
         "Sai khác trình bày output; chưa có bằng chứng về lỗi khái niệm từ sai khác này",
-        "presentation_issue", literals, formatting,
+        "presentation_issue", output_calls, formatting,
         "Các test khác vẫn có thể chứa lỗi logic; không gán kết luận cho toàn bộ bài.",
         "Đối chiếu chuỗi output với yêu cầu chấm trước khi diễn giải thành misconception.")
+    for key, title, pattern, code, tests, hint in exercise_signs(row.problem_id, list(walk(root)), failed):
+        behavior = "Test trượt có đầu ra khớp mẫu sai đang xét; đáp án yêu cầu khác đầu ra này"
+        caveat = "Đây là giả thuyết từ code và các test được dẫn, chưa xác nhận nhận thức người học."
+        findings.append({
+            "rule_id": key, "submission_id": row.submission_id,
+            "if_vi": [pattern, behavior], "then_vi": title,
+            "category": "observed_error", "status": "candidate_requires_human_review",
+            "source": code, "tests": tests, "alternative": caveat, "suggestion": hint,
+            "conditions_oav": [
+                {"object": "Mã bài làm", "attribute": pattern, "operator": "=", "value": "Có"},
+                {"object": "Log test", "attribute": behavior, "operator": "=", "value": "Có"}],
+            "explanation": {"title": title, "code_pattern": [pattern], "behavioral_pattern": [behavior],
+                            "hypothesis": ["Có thể bài làm mắc lỗi: " + title],
+                            "caveat": [caveat], "suggested_follow_up": [hint]}})
     return findings
 
 
@@ -252,7 +328,7 @@ def build_teaching_report(rows, logs, report):
         expected = {t["expected"] for tests in logs.values() for t in tests if t["test_id"] == test}
         if len(expected) == 1 and next(iter(expected)) in CIRCLE:
             labels[test] = f"Ca {test} — yêu cầu thông báo điểm {CIRCLE[next(iter(expected))]} đường tròn"
-    translated = [dict(rule, if_vi=[describe_condition(c, labels) for c in rule["if"]])
+    translated = [dict(rule, if_vi=[describe_condition(c, labels, eligible_tests=rule_test_scope(report)) for c in rule["if"]])
                   for rule in report.get("explanation", {}).get("rules", [])]
     matched_ids = {f["submission_id"] for f in findings}
     return {"version": VERSION, "style_version": STYLE_VERSION,

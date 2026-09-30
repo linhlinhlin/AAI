@@ -1,0 +1,437 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab02-ex05--kmeans--combined_stdout--s42--c1</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab02-ex05 · 6 bài</h1><p>lab02-ex05--kmeans--combined_stdout--s42--c1 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex05_0: 6/6 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex05_1: 6/6 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex05_2: 6/6 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex05_3: 6/6 bài trượt (100.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_3:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.5,
+      &quot;difference_from_cohort&quot;: 0.5
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_0:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.8333333333333334,
+      &quot;cohort_rate&quot;: 0.35714285714285715,
+      &quot;difference_from_cohort&quot;: 0.4761904761904762
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_1:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.8333333333333334,
+      &quot;cohort_rate&quot;: 0.42857142857142855,
+      &quot;difference_from_cohort&quot;: 0.4047619047619048
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_2:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.6428571428571429,
+      &quot;difference_from_cohort&quot;: 0.3571428571428571
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7857142857142857,
+      &quot;difference_from_cohort&quot;: 0.2142857142857143
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex05_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.7857142857142857,
+      &quot;difference_from_cohort&quot;: 0.2142857142857143
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.2857142857142857,
+      &quot;difference_from_cohort&quot;: 0.2142857142857143
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.8333333333333334,
+      &quot;cohort_rate&quot;: 0.6428571428571429,
+      &quot;difference_from_cohort&quot;: 0.19047619047619047
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_0:relation&quot;,
+      &quot;value&quot;: &quot;whitespace&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.3333333333333333,
+      &quot;cohort_rate&quot;: 0.14285714285714285,
+      &quot;difference_from_cohort&quot;: 0.19047619047619047
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 4,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.6666666666666666,
+      &quot;cohort_rate&quot;: 0.5,
+      &quot;difference_from_cohort&quot;: 0.16666666666666663
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.35714285714285715,
+      &quot;difference_from_cohort&quot;: 0.14285714285714285
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.8333333333333334,
+      &quot;cohort_rate&quot;: 0.7142857142857143,
+      &quot;difference_from_cohort&quot;: 0.11904761904761907
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_do&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9285714285714286,
+      &quot;difference_from_cohort&quot;: 0.0714285714285714
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex05_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex05_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex05_3&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 1.0,
+      &quot;difference_from_cohort&quot;: 0.0
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.16666666666666666,
+      &quot;cohort_rate&quot;: 0.2857142857142857,
+      &quot;difference_from_cohort&quot;: -0.11904761904761904
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.6428571428571429,
+      &quot;difference_from_cohort&quot;: -0.1428571428571429
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 1,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.16666666666666666,
+      &quot;cohort_rate&quot;: 0.35714285714285715,
+      &quot;difference_from_cohort&quot;: -0.1904761904761905
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 6,
+      &quot;rate&quot;: 0.5,
+      &quot;cohort_rate&quot;: 0.7142857142857143,
+      &quot;difference_from_cohort&quot;: -0.2142857142857143
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 3,
+      &quot;if&quot;: [
+        &quot;stdout:ex05_2:edit_band=medium&quot;,
+        &quot;NOT (stdout:ex05_0:edit_band=__unknown__)&quot;
+      ],
+      &quot;then_cluster&quot;: 1,
+      &quot;train_support&quot;: 5,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 1,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_001 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main()
+{
+    int i, num;
+    scanf(&quot;%d&quot;, &amp;num);
+    for(i = 1; i&lt;=num; i++)
+        printf(&quot;%d&quot;, i);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;12&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n&quot;,
+    &quot;output&quot;: &quot;123&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n4\n&quot;,
+    &quot;output&quot;: &quot;1234&quot;
+  }
+]</pre></details><details><summary>sample_002 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main() {
+  int n, i;
+
+  scanf(&quot;%d&quot;, &amp;n);
+  for (i = 0; i &lt;= n; i++)
+    printf(&quot;%d\n&quot;, i);
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n2\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n4\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n2\n3\n4\n&quot;
+  }
+]</pre></details><details><summary>sample_003 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+
+    int v, contador;
+
+    scanf(&quot;%d&quot;, &amp;v);
+
+    while (contador &lt;= v){
+        printf(&quot;%d&quot;, contador);
+        contador++;
+    }
+return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;01&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;012&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n&quot;,
+    &quot;output&quot;: &quot;0123&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n4\n&quot;,
+    &quot;output&quot;: &quot;01234&quot;
+  }
+]</pre></details><details><summary>sample_005 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+int main() {
+
+int num;
+int numf;
+num = 0;
+
+scanf(&quot;%d&quot;, &amp;numf);
+
+
+while (num &lt; numf) {
+
+    num++;
+    printf(&quot;%d \n&quot;, num);
+    
+
+}
+
+
+return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;1 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;1 \n2 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n&quot;,
+    &quot;output&quot;: &quot;1 \n2 \n3 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n4\n&quot;,
+    &quot;output&quot;: &quot;1 \n2 \n3 \n4 \n&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() 
+{
+    int x, i=0;
+    scanf(&quot;%d&quot;, &amp;x);
+    while (i &lt;= x)
+    {
+        printf(&quot;%d\n&quot;, i);
+        ++i;
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n2\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n4\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n2\n3\n4\n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+int main(){
+
+    int N, i;
+
+    scanf(&quot;%d&quot;, &amp;N);
+
+    for(i=0; i&lt;=N; ++i) {
+        printf(&quot;%d\n&quot;,i);
+    }
+    return 0;
+
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;1&quot;,
+    &quot;expected&quot;: &quot;1\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;2&quot;,
+    &quot;expected&quot;: &quot;1\n2\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;3&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n2\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;4&quot;,
+    &quot;expected&quot;: &quot;1\n2\n3\n4\n&quot;,
+    &quot;output&quot;: &quot;0\n1\n2\n3\n4\n&quot;
+  }
+]</pre></details></html>

@@ -1,0 +1,1363 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab03-ex05--kmeans--combined_stdout--s42--c0</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab03-ex05 · 18 bài</h1><p>lab03-ex05--kmeans--combined_stdout--s42--c0 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex05_0: 18/18 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex05_1: 18/18 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex05_2: 18/18 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex05_3: 18/18 bài trượt (100.0%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>Chưa có mẫu cục bộ khớp. Cần đọc code/test để đặt nhãn.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_3:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 14,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.7777777777777778,
+      &quot;cohort_rate&quot;: 0.13675213675213677,
+      &quot;difference_from_cohort&quot;: 0.641025641025641
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.7222222222222222,
+      &quot;cohort_rate&quot;: 0.1111111111111111,
+      &quot;difference_from_cohort&quot;: 0.6111111111111112
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.7222222222222222,
+      &quot;cohort_rate&quot;: 0.1111111111111111,
+      &quot;difference_from_cohort&quot;: 0.6111111111111112
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.7222222222222222,
+      &quot;cohort_rate&quot;: 0.11965811965811966,
+      &quot;difference_from_cohort&quot;: 0.6025641025641025
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.7222222222222222,
+      &quot;cohort_rate&quot;: 0.1452991452991453,
+      &quot;difference_from_cohort&quot;: 0.5769230769230769
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 11,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.6111111111111112,
+      &quot;cohort_rate&quot;: 0.09401709401709402,
+      &quot;difference_from_cohort&quot;: 0.5170940170940171
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.5555555555555556,
+      &quot;cohort_rate&quot;: 0.08547008547008547,
+      &quot;difference_from_cohort&quot;: 0.4700854700854701
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex05_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 18,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.6153846153846154,
+      &quot;difference_from_cohort&quot;: 0.3846153846153846
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex05_1&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 18,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.6153846153846154,
+      &quot;difference_from_cohort&quot;: 0.3846153846153846
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_0:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.3888888888888889,
+      &quot;cohort_rate&quot;: 0.05982905982905983,
+      &quot;difference_from_cohort&quot;: 0.32905982905982906
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_1:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 7,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.3888888888888889,
+      &quot;cohort_rate&quot;: 0.05982905982905983,
+      &quot;difference_from_cohort&quot;: 0.32905982905982906
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex05_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 18,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.6923076923076923,
+      &quot;difference_from_cohort&quot;: 0.3076923076923077
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 6,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.3333333333333333,
+      &quot;cohort_rate&quot;: 0.06837606837606838,
+      &quot;difference_from_cohort&quot;: 0.2649572649572649
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_1:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.2777777777777778,
+      &quot;cohort_rate&quot;: 0.042735042735042736,
+      &quot;difference_from_cohort&quot;: 0.23504273504273504
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_2:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.2777777777777778,
+      &quot;cohort_rate&quot;: 0.042735042735042736,
+      &quot;difference_from_cohort&quot;: 0.23504273504273504
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_3:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.2777777777777778,
+      &quot;cohort_rate&quot;: 0.042735042735042736,
+      &quot;difference_from_cohort&quot;: 0.23504273504273504
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_subscript&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.16666666666666666,
+      &quot;cohort_rate&quot;: 0.03418803418803419,
+      &quot;difference_from_cohort&quot;: 0.13247863247863245
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_3:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 13,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.7222222222222222,
+      &quot;cohort_rate&quot;: 0.6239316239316239,
+      &quot;difference_from_cohort&quot;: 0.09829059829059827
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex05_2:edit_band&quot;,
+      &quot;value&quot;: &quot;medium&quot;,
+      &quot;n&quot;: 5,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.2777777777777778,
+      &quot;cohort_rate&quot;: 0.18803418803418803,
+      &quot;difference_from_cohort&quot;: 0.08974358974358976
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 18,
+      &quot;rate&quot;: 0.1111111111111111,
+      &quot;cohort_rate&quot;: 0.02564102564102564,
+      &quot;difference_from_cohort&quot;: 0.08547008547008547
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 2,
+      &quot;if&quot;: [
+        &quot;NOT (stdout:ex05_0:relation=whitespace)&quot;,
+        &quot;NOT (stdout:ex05_0:relation=__unknown__)&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 13,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 4,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_012 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define Fora 0
+#define Dentro 1
+
+int main()
+{
+    int c;
+    int state = Fora;
+    while ((c = getchar()) != EOF)
+    {
+        if (state == Fora &amp;&amp; c == &#x27;&quot;&#x27;)
+        {
+                state = Dentro;
+        }
+
+        if (state == Dentro)
+        {
+            if (c == &#x27;&quot;&#x27;)
+            {
+                state = Fora;
+                printf(&quot;\n&quot;);
+                
+            }
+            else 
+            {
+                printf(&quot;%c&quot;,c);
+            }
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\n\n\n\n\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\n\n\n\n\n\n\n\n&quot;
+  }
+]</pre></details><details><summary>sample_013 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+    
+    
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_015 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#define DIM 100
+
+int main(void) {
+    int c, i;
+    char s[DIM];
+    c = getchar();
+    
+    
+    for (i = 0; i &lt; DIM-1 &amp;&amp; c != EOF &amp;&amp; c != &#x27;\n&#x27;; i++) {
+        s[i] = c;
+        c = getchar();
+    }
+    s[i] = &#x27;\0&#x27;;
+    printf(&quot;%s\n&quot;, s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;\&quot;foo\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\&quot;foo bar\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;\n&quot;
+  }
+]</pre></details><details><summary>sample_016 · đại diện</summary><pre>
+#include &lt;stdio.h&gt;
+#define DIM 100
+#define FORA 0
+#define DENTRO 1
+#define BLASHT 1
+#define BLASHF 0
+
+
+int main(void) {
+    int c;
+    char charAnterior;
+    int i = 0;
+    char s[DIM];
+    int estado = FORA;
+
+    while((c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;){ 
+        
+        
+        if(c == &#x27;\n&#x27; || c == &#x27;\t&#x27; || c == &#x27; &#x27;){
+            estado = FORA;
+            
+        }
+        else if(c == &#x27;&quot;&#x27; &amp;&amp; estado == FORA){
+            estado = DENTRO;
+            
+            
+        }
+        else if(c == &#x27;&quot;&#x27; &amp;&amp; estado == DENTRO){
+            printf(&quot;entrou&quot;);
+            charAnterior = c;
+        
+            c = getchar();
+            if(c == &#x27; &#x27;){
+                estado = FORA;
+                s[i] = &#x27;\n&#x27;;
+            }
+            else{
+                s[i] = charAnterior;
+                ++i;
+                s[i] = c;
+            }
+
+        }
+        else if(c == &#x27;\\&#x27;){
+            charAnterior = c;
+            c = getchar();
+            if(c == &#x27;\\&#x27;){
+                s[i] = charAnterior;
+                ++i;
+                s[i] = c;
+            }
+        }
+        else if(estado == DENTRO){
+           
+            s[i] = c;
+        }
+        ++i;
+    }
+    s[i] = &#x27;\0&#x27;;
+    printf(&quot;%s&quot;,s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;entrou&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;entrouentrou&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;entrou&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+ char c;
+ int cont=0;
+ long soma=0;
+ while ((c=getchar()) != EOF)
+ {
+  if (c&gt;=&#x27;0&#x27; &amp;&amp; c&lt;=&#x27;9&#x27;)
+  {
+   soma+= (int)c-(int)&#x27;0&#x27;;
+   cont = 1;
+  }
+  else if ((c == &#x27; &#x27; || c == &#x27;\t&#x27; || c== &#x27;\n&#x27;) &amp;&amp; cont==1)
+  {
+   if (soma%9 ==0 &amp;&amp; soma &gt;= 9)
+    printf(&quot;yes\n&quot;);
+   else
+    printf(&quot;no\n&quot;);
+   soma=0;
+   cont=0;
+  }
+ }
+ return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>
+
+#include &lt;stdio.h&gt;
+#define FORA 0
+#define DENTRO 1
+int main(){
+    int estado = FORA;
+    char c, last;
+
+    last = &#x27; &#x27;;
+    while ((c = getchar()) != EOF) {
+        if (estado == FORA){
+            if (c==&#x27;&quot;&#x27;){
+                estado = DENTRO;
+                putchar(c);
+            }
+        }
+        else if (estado == DENTRO &amp;&amp; c==&#x27;&quot;&#x27;){
+            if (last == &#x27;\\&#x27;)
+                putchar(c);
+            else {
+                printf(&quot;%c\n&quot;, c);
+                estado = FORA;
+            }
+                
+        } 
+        else if (estado == DENTRO &amp;&amp; c == &#x27;\\&#x27;){
+            if (last == &#x27;\\&#x27;)
+                putchar(c);
+        }
+        else
+            putchar(c);
+        last = c;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;\&quot;foo\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\&quot;foo bar\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\&quot;foo\&quot;\n\&quot;bar\&quot;\n\&quot;baz zap\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\&quot;Disse: \&quot;ola, como estai?\&quot;\&quot;\n\&quot;foo bar\&quot;\n\&quot;////\\\\\\***\\\\\\\&quot;&quot;
+  }
+]</pre></details><details><summary>sample_003</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+enum state {DENTRO, FORA};
+
+int main(){
+
+    enum state st = DENTRO;
+    int c, a;
+    while( (c= getchar())!= EOF){
+
+        switch(st){
+
+            case DENTRO:
+                if (c == &#x27;&quot;&#x27;){
+                    a = a + 1;
+                    putchar(c);
+                }
+                    if (a == 2){
+                        putchar(c);
+                        putchar(&#x27;\n&#x27;);
+                        st = FORA;
+                    }
+                else
+                    putchar(c);
+                break;
+
+            case FORA:
+                if (c == &#x27; &#x27;)
+                    st = DENTRO;
+                break;
+            
+            
+
+
+
+        }
+    }
+    return 0; 
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;\&quot;\&quot;foo\&quot;\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\&quot;\&quot;foo bar\&quot;\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\&quot;\&quot;foo\&quot;\&quot;\n\&quot;\&quot;bar\&quot;\&quot; \&quot;\&quot;baz zap\&quot;\&quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\&quot;\&quot;Disse: \\\&quot;\&quot;\nc\ne\n\&quot;\&quot;foo bar\&quot;\&quot; \&quot;\&quot;////\\\\\\\\***\\\\\\\\\&quot;\&quot;&quot;
+  }
+]</pre></details><details><summary>sample_004</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define FALSO 0
+#define VERDADE 1
+
+int main () {
+
+    int c, entre_aspas = FALSO, enter_seg = FALSO;
+
+    while ((c = getchar() != EOF)) {
+        if (c == &#x27;&quot;&#x27; &amp;&amp;  enter_seg == FALSO) {
+            entre_aspas = VERDADE;
+            putchar(c);
+        }
+        else if (c == &#x27;\\&#x27; &amp;&amp; enter_seg == FALSO)
+            enter_seg = VERDADE;
+        
+        else if (entre_aspas == VERDADE) {
+            putchar(c);
+            enter_seg = FALSO;
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int nonspecial(int c) {
+    return c &gt;= &#x27;a&#x27; &amp;&amp; c &lt;= &#x27;Z&#x27;;
+}
+
+enum state {FORA, BACKSLASH, DENTRO};
+
+int main () {
+
+    enum state st = FORA;
+    int current;
+
+    while ((current = getchar())!= EOF) {
+        switch(st) {
+            case FORA:
+                if (current == &#x27;&quot;&#x27;)
+                    st = DENTRO;
+                else
+                    st = FORA;
+                break;
+            case BACKSLASH:
+                if (current == &#x27;\\&#x27; || current == &#x27;&quot;&#x27; || nonspecial(current)) {
+                    putchar(current);
+                    st = DENTRO;
+                }
+                break;
+            case DENTRO:
+                if (nonspecial(current))
+                    putchar(current);
+                else if (current == &#x27;\\&#x27;)
+                    st = BACKSLASH;
+                else if (current == &#x27;&quot;&#x27;){
+                    putchar(&#x27;\n&#x27;);
+                    st = FORA;
+                }
+        }
+    }
+    return 0;
+}
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\n\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\&quot;\&quot;\n\n\\\\\\\\\n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define FALSO 0
+#define VERDADE 1
+
+int main () {
+
+    int c, entre_aspas = FALSO, backlash_antes = FALSO;
+
+    while ((c = getchar() != EOF)) {
+        if (c == &#x27;&quot;&#x27; &amp;&amp; backlash_antes == FALSO)
+            entre_aspas = VERDADE;
+
+        else if (c == &#x27;&quot;&#x27; &amp;&amp; backlash_antes == VERDADE) {
+            entre_aspas = VERDADE;
+            putchar(c);
+        }
+        else if (c == &#x27;\\&#x27; &amp;&amp; backlash_antes == FALSO)
+            backlash_antes = VERDADE;
+
+        else if (c == &#x27;\\&#x27; &amp;&amp; backlash_antes == VERDADE) {
+            backlash_antes = FALSO;
+            putchar(c);
+        }
+        else if (entre_aspas == VERDADE)
+            putchar(c);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int nonspecial(int c) {
+    return c &gt;= &#x27;a&#x27; &amp;&amp; c &lt;= &#x27;Z&#x27;;
+}
+
+enum state {FORA, BACKSLASH, DENTRO};
+
+int main () {
+
+    enum state st = FORA;
+    int current;
+
+    while ((current = getchar())!= EOF) {
+        switch(st) {
+            case FORA:
+                if (current == &#x27;&quot;&#x27;)
+                    st = DENTRO;
+                break;
+            case BACKSLASH:
+                if (current == &#x27;\\&#x27; || current == &#x27;&quot;&#x27; || nonspecial(current)) {
+                    putchar(current);
+                    st = DENTRO;
+                }
+                break;
+            case DENTRO:
+                if (nonspecial(current))
+                    putchar(current);
+                else if (current == &#x27;\\&#x27;)
+                    st = BACKSLASH;
+                else if (current == &#x27;&quot;&#x27;){
+                    putchar(&#x27;\n&#x27;);
+                    st = FORA;
+                break;
+                }
+        }
+    }
+    return 0;
+}
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\n\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\&quot;\&quot;\n\n\\\\\\\\\n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int nonspecial(int c) {
+    return c &gt;= &#x27;a&#x27; &amp;&amp; c &lt;= &#x27;Z&#x27;;
+}
+
+enum state {FORA, BACKSLASH, DENTRO};
+
+int main () {
+
+    enum state st = FORA;
+    int current;
+
+    while ((current = getchar())!= EOF) {
+        switch(st) {
+            case FORA:
+                if (current == &#x27;&quot;&#x27;)
+                    st = DENTRO;
+                break;
+            case BACKSLASH:
+                if (current == &#x27;\\&#x27; || current == &#x27;&quot;&#x27; || nonspecial(current)) {
+                    putchar(current);
+                    st = DENTRO;
+                }
+                break;
+            case DENTRO:
+                if (nonspecial(current))
+                    putchar(current);
+                else if (current == &#x27;\\&#x27;)
+                    st = BACKSLASH;
+                else if (current == &#x27;&quot;&#x27;){
+                    putchar(&#x27;\n&#x27;);
+                    st = FORA;
+                }
+                break;
+        }
+    }
+    if (st == BACKSLASH)
+        putchar(&#x27;\n&#x27;);
+    return 0;
+}
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\n\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\&quot;\&quot;\n\n\\\\\\\\\n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int nonaspas(int c) {
+    return c &gt;= &#x27;a&#x27; &amp;&amp; c &lt;= &#x27;Z&#x27;;
+}
+int backlash(int c) {
+    return c == &#x27;\\&#x27;;
+}
+
+int spc(int c) {
+    return c == &#x27; &#x27; || c == &#x27;\n&#x27; || c == EOF;
+}
+
+enum state {FORA, ASPAS, BACKLASH, DENTRO};
+
+int main () {
+
+    enum state st = FORA;
+    int current;
+
+    while ((current = getchar())!= EOF) {
+        switch(st) {
+            case FORA:
+                if (current == &#x27;&quot;&#x27;)
+                    st = ASPAS;
+                break;
+            case ASPAS:
+                if (nonaspas(current)) {
+                    putchar(current);
+                    st = DENTRO;
+                }
+                else if (backlash(current))
+                    st = BACKLASH;
+                    
+                else if (spc(current)) {
+                    putchar(&#x27;\n&#x27;);
+                    st = FORA;
+                }
+                break;
+            case BACKLASH:
+                if(current == &#x27;&quot;&#x27; || backlash(current) || nonaspas(current)) {
+                    putchar(current);
+                    st = DENTRO;
+                }
+                break;
+            case DENTRO:
+                if (current == &#x27;&quot;&#x27;) {
+                    st = ASPAS;
+                }
+                else if (nonaspas(current))
+                    putchar(current);
+                else if (backlash(current))
+                    st = BACKLASH;
+                break;
+        }
+    }
+    return 0;
+}
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\n\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\n\n\n\n\n\\\\\\\\&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int c,estado=0;
+    while((c=getchar())!=EOF){
+        if(estado==2 &amp;&amp; c==&#x27;&quot;&#x27;){
+            estado=1;
+            break;
+        }
+        if(c==&#x27;\\&#x27;){
+            estado=2;
+            break;
+        }
+        if(estado==0 &amp;&amp; c==&#x27;&quot;&#x27;){
+            estado=1;
+            break;
+        }
+        if(estado==1 &amp;&amp; c==&#x27;&quot;&#x27;){
+            estado=0;
+            putchar(&#x27;\n&#x27;);
+            break;
+        }
+        if(c!=&#x27;&quot;&#x27; &amp;&amp; c!=&#x27;\\&#x27;)
+            printf(&quot;%c&quot;,c);
+    }
+    return 0;
+}
+    
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+
+
+
+
+
+#define ASPAS 0
+#define BACKSLASH 1
+#define CHAR 2
+
+int eh_char(char caracter) {
+
+    return (65 &lt;= caracter &amp;&amp; caracter &lt;= 90) || (97 &lt;= caracter &amp;&amp; caracter &lt;= 122);
+
+}
+
+int eh_bckslh(char caracter) {
+
+    return caracter == 92; 
+
+}
+
+int eh_aspas(char caracter) {
+
+    return caracter == 34; 
+
+}
+
+
+int main () {
+
+    int current = ASPAS, current_status;
+
+    while ((current_status = getchar()) != EOF) {
+
+        if (eh_aspas(current_status)) {
+
+
+            if (current == BACKSLASH) {
+
+                putchar(current_status);
+            }
+        
+        current = ASPAS;
+
+        } else if (eh_char(current_status)) {
+
+            if (current == CHAR) {
+
+                putchar(current_status);
+
+            } else if (current == ASPAS) {
+
+                putchar(current_status);
+        
+            } else if (current == BACKSLASH) {
+
+                putchar(current_status);
+            }
+        current = CHAR;
+        }
+
+
+        else if (eh_bckslh(current_status)) {
+
+            if (current == BACKSLASH) {
+
+                putchar(current_status);
+
+            } else if (current == CHAR) {
+
+            }
+
+             current = BACKSLASH;
+        }
+
+    }
+
+
+    return 0;
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;foo&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;foobar&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;foobarbazzap&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;Disse\&quot;olacomoestai\&quot;foobar\\\\\\\\\\\\\\\&quot;&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+int main()
+{
+    char c;
+    int inside_line = 0;
+    while ((c = getchar()) != EOF)
+    {
+        if (c == 22)
+        {
+            printf(&quot;in\n&quot;);
+            if (!inside_line)
+            {
+                inside_line = 1;
+            }
+            else
+            {
+                inside_line = 0;
+            }
+        }
+        else
+        {
+            if (inside_line)
+            {
+                putchar(c);
+            }
+            else
+            {
+                if (isspace(c))
+                {
+                    putchar(&#x27;\n&#x27;);
+                }
+            }
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\n\n\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\n\n\n\n\n\n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>
+#include &lt;stdio.h&gt;
+#define DIM 100
+#define FORA 0
+#define DENTRO 1
+#define BLASHT 1
+#define BLASHF 0
+
+
+int main(void) {
+    int c;
+    char charAnterior;
+    int i = 0;
+    char s[DIM];
+    int estado = FORA;
+
+    while((c = getchar()) != EOF &amp;&amp; c != &#x27;\n&#x27;){ 
+        
+        
+        if(c == &#x27;\n&#x27; || c == &#x27;\t&#x27; || c == &#x27; &#x27;){
+            estado = FORA;
+            
+        }
+        else if(c == &#x27;&quot;&#x27; &amp;&amp; estado == FORA){
+            estado = DENTRO;
+            
+            
+        }
+        else if(c == &#x27;&quot;&#x27; &amp;&amp; estado == DENTRO){
+            printf(&quot;entrou&quot;);
+            charAnterior = c;
+        
+            c = getchar();
+            if(c == &#x27; &#x27;){
+                estado = FORA;
+                s[i] = &#x27;\n&#x27;;
+            }
+            else{
+                s[i] = charAnterior;
+                ++i;
+                s[i] = c;
+            }
+            printf(&quot;%sakufgyuf&quot;,s);
+        }
+        else if(c == &#x27;\\&#x27;){
+            charAnterior = c;
+            c = getchar();
+            if(c == &#x27;\\&#x27;){
+                s[i] = charAnterior;
+                ++i;
+                s[i] = c;
+            }
+        }
+        else if(estado == DENTRO){
+           
+            s[i] = c;
+        }
+        ++i;
+    }
+    s[i] = &#x27;\0&#x27;;
+    printf(&quot;%s&quot;,s);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;entrouakufgyuf&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;entrouakufgyufentrouakufgyuf&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;entrouakufgyuf&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    char n;
+    n = getchar();
+    while(n != EOF) {
+        if(n == &#x27;\&quot;&#x27;) {
+            putchar(n);
+            n = getchar();
+            while(n != &#x27;\&quot;&#x27;) {
+                putchar(n);
+                n = getchar();
+            }
+            if(n == &#x27;\&quot;&#x27;) {
+                putchar(n);
+                printf(&quot;\n&quot;);
+            }
+        }
+        n = getchar();
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex05_0&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\n&quot;,
+    &quot;output&quot;: &quot;\&quot;foo\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_1&quot;,
+    &quot;input&quot;: &quot;\&quot;foo bar\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo bar\n&quot;,
+    &quot;output&quot;: &quot;\&quot;foo bar\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_2&quot;,
+    &quot;input&quot;: &quot;\&quot;foo\&quot; \&quot;bar\&quot; \&quot;baz zap\&quot;&quot;,
+    &quot;expected&quot;: &quot;foo\nbar\nbaz zap\n&quot;,
+    &quot;output&quot;: &quot;\&quot;foo\&quot;\n\&quot;bar\&quot;\n\&quot;baz zap\&quot;\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex05_3&quot;,
+    &quot;input&quot;: &quot;\&quot;Disse: \\\&quot;ola, como estai?\\\&quot;\&quot; \&quot;foo bar\&quot; \&quot;////\\\\\\\\***\\\\\\\\\&quot;&quot;,
+    &quot;expected&quot;: &quot;Disse: \&quot;ola, como estai?\&quot;\nfoo bar\n////\\\\***\\\\\n&quot;,
+    &quot;output&quot;: &quot;\&quot;Disse: \\\&quot;\n\&quot;\&quot;\n\&quot;foo bar\&quot;\n\&quot;////\\\\\\\\***\\\\\\\\\&quot;\n&quot;
+  }
+]</pre></details></html>

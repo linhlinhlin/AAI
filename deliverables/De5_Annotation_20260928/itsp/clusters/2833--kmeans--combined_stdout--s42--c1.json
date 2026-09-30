@@ -1,0 +1,2247 @@
+{
+  "schema_version": 1,
+  "annotation_status": "pending_annotation",
+  "scope": "development_train_validation_only",
+  "annotation_source_requested": "ai",
+  "human_validated": false,
+  "mechanism_accuracy": null,
+  "selection_policy": {
+    "method": "kmeans",
+    "feature_mode": "combined_stdout",
+    "seed": 42,
+    "min_cluster_size": 4,
+    "min_distinct_sources": 3,
+    "required_failed_log_coverage": 1.0,
+    "min_common_failure_rate_cluster": 0.5,
+    "representatives": "medoid then diverse OAV/outcomes, max 4",
+    "ranking": "problem and cluster ID, no quality-score selection"
+  },
+  "limitations": [
+    "Historical logs, no fresh execution or cognitive evidence.",
+    "AI sees clusters/candidates: not independent blind human validation.",
+    "No sealed test members, correct repairs or reviewer labels exported.",
+    "Clustering OAV is archived; diagnostic OAV/rules are computed at export.",
+    "Missing/not_run outcomes are not passes; rates include denominators.",
+    "Counts/rates describe submissions, not independent students or beliefs.",
+    "C-Pack oracle/suite correspondence has not been replay-verified.",
+    "IDs and paths omitted; raw public source comments are preserved."
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "problem_id": "2812",
+        "artifact": "2812/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "b5e24d2a9b80eea7d49b77113891b11c438f9f92ac35a86227dbc56ce50f13e7",
+        "dataset": "ITSP public prototype",
+        "url": "https://github.com/jyi/ITSP",
+        "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+        "suite_version": "itsp-76fea3dca9be741f",
+        "input_sha256": "25f2efad35022d7f100a47161f181ddd6b7926b8b1cd92b8661bbb18802f5a94",
+        "evidence_sha256": "60b674a0947c7b696efae295b3fbdac39767dcf1e799c68ddbec1da9139e32f5"
+      },
+      {
+        "problem_id": "2825",
+        "artifact": "2825/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "0a0bdc7642b4ce9903f2a61d8b9e2a68dc99c768fb482d67f0e34f3a00f9a0fd",
+        "dataset": "ITSP public prototype",
+        "url": "https://github.com/jyi/ITSP",
+        "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+        "suite_version": "itsp-c96bee8ccdc960e4",
+        "input_sha256": "131e151709770f24b03a0fde6820952cc9ffb0aad9dd68b9b482ea1975e227c1",
+        "evidence_sha256": "3a2e48c9516fa9c5b95be9eaf1ff20a7853999ac2f88badcb4cbdc7e71e1e385"
+      },
+      {
+        "problem_id": "2833",
+        "artifact": "2833/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "f72285aad4129085a6e3cc11826bca00b839bdba9fbb7d41ace5184bed8fce93",
+        "dataset": "ITSP public prototype",
+        "url": "https://github.com/jyi/ITSP",
+        "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+        "suite_version": "itsp-e1116cbdb78d65ae",
+        "input_sha256": "1bfb0f162bb996c79776307ac5cafec93943cd0d94ca731b8b472eb74d704a3e",
+        "evidence_sha256": "3a5ae5d42e47d345f3c20ecb479c9dfb7f8bf62783a2dde48aa77d230c814c29"
+      }
+    ],
+    "split_sha256": "28714f310d5768bebdf724b10e368153180d5ab93ecd9aaa1ba949457dacb3de",
+    "run_manifest_sha256": "312c827539650ffba92dc2d47d7e8e5499589b32b5f2b130ab7ee00992bdcc45",
+    "exporter": {
+      "base_commit": null,
+      "working_tree_dirty": null,
+      "checkout_kind": "source_export",
+      "files_sha256": {
+        "misconceptions-prototype/src/misconceptions/__init__.py": "cb8e0be3c687e1e4aa4356575c9607ecc1bd98535e7eb64af46610b3bb549392",
+        "misconceptions-prototype/src/misconceptions/adapters.py": "42bbdfa71f9980a63380380a1f7671f59b0ef01b5cf46c7773ea7c2c7f567b00",
+        "misconceptions-prototype/src/misconceptions/ai_labeling.py": "43b70d00d768cacd5bb13fc4c337713ce55afa9fbc18f264c283a930cf4437ac",
+        "misconceptions-prototype/src/misconceptions/annotation_intake.py": "839f7fa18667bc15c12dcaba863ec93f0cedc4e9477cede8c9d71e674b83b7df",
+        "misconceptions-prototype/src/misconceptions/benchmark_validation.py": "483a584abbb85f12554f05d666a6392463ba4a862438cb576ff095c333b86bd1",
+        "misconceptions-prototype/src/misconceptions/cli.py": "71ab645ebc8cf170832ba0a36ed461b16de24030e139def889d9243c7737b3d4",
+        "misconceptions-prototype/src/misconceptions/cluster_annotation.py": "cf07afe7c857eb59764eb9a58186fa8a6472f8fceca5fbd385247c1f248d6033",
+        "misconceptions-prototype/src/misconceptions/cpack.py": "8ab17de4b637a407d699a3b43a7cd4b43be98767a3b477283e600fcba3d78a66",
+        "misconceptions-prototype/src/misconceptions/domain.py": "cac296ef1d9ee5849d57d675c319ed7b9b211fff8e1e0efb87ee562a4445dbbc",
+        "misconceptions-prototype/src/misconceptions/expert_validation.py": "52eff73e9d7141b79b3ee7518826c9b6d8eb9168be8dcd208f70077c4ffb2ef7",
+        "misconceptions-prototype/src/misconceptions/features.py": "a37cc78ea3a2eca813f859f33c98867c68f6571a5d408923573098ee7a979d12",
+        "misconceptions-prototype/src/misconceptions/hardcoded_output.py": "a26d84796080b64b8e58f3d117d6a07e8747c3e81de0816f1795a428851ad4ba",
+        "misconceptions-prototype/src/misconceptions/itsp.py": "fbcc952b0a0c19ef081b09b528f296ce70cef51807c5ce5ff8bd8f94b31064e4",
+        "misconceptions-prototype/src/misconceptions/learning_problems.py": "a376db67a1efd06e0c9122998f646312b33e5cfed823984604c024ed2876e5ba",
+        "misconceptions-prototype/src/misconceptions/learning_sandbox.py": "cebd881d03cf67f5f6122201cb4aa2558d6d44e1eb9c91f3d6b8818a737cc306",
+        "misconceptions-prototype/src/misconceptions/learning_service.py": "0096e4b6949d9e7ab983e0d1fd34d900e3387a4bbc2301cbf69d5027629a74af",
+        "misconceptions-prototype/src/misconceptions/learning_store.py": "2ad88899b327ec86c329d7df2f9698b9c0968ebcddcbe4a852c7f9d28b63f625",
+        "misconceptions-prototype/src/misconceptions/learning_web.py": "54ccdbd77c3de42b7786112b35fead9fd27146ae7186d2de36a14bd5d0c92de3",
+        "misconceptions-prototype/src/misconceptions/llm_client.py": "320804edc873212ed53b5ce2e991ad3545f14d2c2c183dcdaac32a4719035b4b",
+        "misconceptions-prototype/src/misconceptions/output_features.py": "9a33a957c77ca8f709fce86e127dbfa25a5aa2121174da5d5e7ae72f705564ed",
+        "misconceptions-prototype/src/misconceptions/pipeline.py": "890f2bd89fa7ab3c564064d11e8d1ea7421ce0a910934875aca5006d1637f20a",
+        "misconceptions-prototype/src/misconceptions/research_io.py": "1f25fbec4f1cc330c400488216a19d53621f5992533c9a7c752f230df7947aed",
+        "misconceptions-prototype/src/misconceptions/rule_style.py": "0a1d7ad4ba6b1fcc022d616867b9124b3bd74628166521dc124a3fa294ddf98a",
+        "misconceptions-prototype/src/misconceptions/semantic_rules.py": "4dc581789a944bf055e0b6f9a1384dee59b126df3bdca465b90fbf696b32b402",
+        "misconceptions-prototype/src/misconceptions/splits.py": "627020bc3e183e9917c43f35547d8a62bf303a8a30eb4787a9a4e02194ea4979",
+        "misconceptions-prototype/src/misconceptions/teacher_dashboard.py": "48663be4147b3afa68999ffce9fa0da39a21d4d5ef40df346816e192d7b9b3f0",
+        "misconceptions-prototype/src/misconceptions/teacher_validation.py": "193166ad9af10c71b507a2623432fa10a9bcaf2d960edc55c63247737b1e896c",
+        "misconceptions-prototype/src/misconceptions/teaching_report.py": "fbac4ab62cae42484ee49a77315f7af7fccf23f7cd32365f8d3905d91459d868",
+        "misconceptions-prototype/src/misconceptions/web.py": "8f7d60157f4b8b0efcd91295ba6e89b3e0aad25f780f1efe322281814748c38b",
+        "misconceptions-prototype/scripts/audit_human_review_packet.py": "202fad903465b16428d52419ede7d3c0ba264e6b96543d345e4a8faf1abc6691",
+        "misconceptions-prototype/scripts/check_itsp_review.py": "af1e462f0f6705f7479e4c012f6d0233e453366636354abaaab68f8c77c4b9f9",
+        "misconceptions-prototype/scripts/download_cpack.py": "4954f2d2d9cf4ea6c462a9de5ce612a395ade7040defa11d5a1c5970560c66d9",
+        "misconceptions-prototype/scripts/download_itsp.py": "4609226ceb98c2856a424d3ea7142a26a651518168a3c9eb0b12b4d87196af62",
+        "misconceptions-prototype/scripts/export_cluster_annotations.py": "7530cb9914b06e43072733fddf1ea7bd2cebc1061d949fb4d486da71b8ea8e74",
+        "misconceptions-prototype/scripts/export_learning_handoff.py": "18044317c5508672d074b878236dbb63d2b6b34217cabd4200304324d97d1d30",
+        "misconceptions-prototype/scripts/learning_browser_smoke.py": "22c5fb5c494ed00ed1291e470fc3446dfe414d3b55512aa15569aa9df30dbf83",
+        "misconceptions-prototype/scripts/lock_splits.py": "06f168d1cf961f1dbbab296ea5c86cf4c1ef7fba0f10114d926ef3daef1c0c10",
+        "misconceptions-prototype/scripts/make_demo.py": "a175506de8d7d229044169c4784510c77f3c5f1cf679fc2f13a7f550777ed756",
+        "misconceptions-prototype/scripts/merge_itsp_annotations.py": "d582847e38790145c8ee38ca81c5a540bed1c4696182c47e1b88d1b2271055a6",
+        "misconceptions-prototype/scripts/prepare_cpack.py": "465d22321665cbfcc7760b2f9219a1cef55107725f322d083f1e76375c449b3f",
+        "misconceptions-prototype/scripts/prepare_itsp.py": "9bfe5990faab197f84ac452347631932246e6795f34c61d059986bb3c683cc9b",
+        "misconceptions-prototype/scripts/prepare_learning_demo.py": "c00929262651079fd9361ba39dbae3584b141146f3e46eba2294bae5dd0cf594",
+        "misconceptions-prototype/scripts/report_itsp_experts.py": "84ddfb4d830148c5f89e4cf0c4878749d0d15e1e417b86897e0254c9f9d6ded1",
+        "misconceptions-prototype/scripts/run_ablation.py": "46e16ac2cc77b5c8434cfdbd3c5c227b1297491fa1b1080c9ceca1752c1642c6",
+        "misconceptions-prototype/scripts/run_itsp_experiments.py": "50b8faa803728c82a96342ea7aa47ec1cc6f623fdaa31fd0b687e24e4d22d214",
+        "misconceptions-prototype/scripts/run_topic5.py": "b6e1a7e31a75a36bb2bbb4493beda7b97a919de85cb9186306eeeba6e8181e35",
+        "misconceptions-prototype/scripts/score_itsp_experts.py": "c90dad13d9c2bec3a356a9d500f402cc7b841a584edf255441e1e9d0ce037485",
+        "misconceptions-prototype/scripts/setup_learning.py": "675a09542dd5bcc4bd203b0b56c4a9948cc3722e2190fd7ee34ea346ceab283c",
+        "misconceptions-prototype/scripts/validate_itsp_abc.py": "6be2ea50b4d8f48441fe0da975b49dde4bad7099b479e3988ebb3efb1913e55e",
+        "misconceptions-prototype/scripts/validate_topic5.py": "5d3310271e36fb9494b06f724f9ea681c7689c6956db4816371c14dec9dcf5af",
+        "scripts/audit_run.py": "36cab5481e92fe9015c13f430df5670b834d27477a4917e3d7d701a602ed5f39",
+        "scripts/harness.py": "7c2d22fac3a6c7b594db1a77945d6a5bab251bfa9858e409274e1856a461d66a",
+        "misconceptions-prototype/requirements-lock.txt": "b586a3639ce51b4544f0a06c6ecfd944d23e661f09674e248b1cc1c13093333c",
+        "misconceptions-prototype/pyproject.toml": "6869dc5f3ce975f77453f0b534fb8697db870009661fb609d4377c0966bdcebe",
+        "research/protocol.json": "d730a2419058aa2ea4f691c302cb03b9c22c42e2200ce955a25b94872690a9c3",
+        "research/course-validation-protocol.json": "fd861b97250aae788752a599319bda5768fa18c1d72d5d8d2250bd3c3cfa1977"
+      },
+      "implementation_sha256": "cf11db682d0f6f6320abec626de9cb5abf5531e3482d478037288aff13398b9f"
+    }
+  },
+  "packet_id": "81c8ee12aa6fd6a6a2c114e9856139004fdbcb95b58c8fd30e6e5c8442dbe0a5",
+  "cluster": {
+    "cluster_id": "2833--kmeans--combined_stdout--s42--c1",
+    "original_cluster_id": 1,
+    "annotation_status": "pending_annotation",
+    "human_validated": false,
+    "problem_id": "2833",
+    "problem_statement": {
+      "text": "ANNOUNCEMENT: Up to 20% marks will be allotted for good programming practice. These include \n- Comments for non trivial code \n- Indentation: align your code properly \n- Use of character constants instead of ASCII values ('a', 'b, ..., 'A', 'B', ..., '0', '1' etc instead of ASCII values like 65, 66, 48 etc.\n\nYou are given a natural number N as input. You need to calculate the number of triangles with integral sides which can be formed with side lengths less than or equal to N.\n\nInput:\n4\n\nOutput:\nNumber of possible triangles is 13",
+      "source": "ITSP Main.c leading comment only",
+      "source_sha256": "2b4af6e0f73b698dd8cc811a741da75c440a78e2f80a4e903035951690347ccf"
+    },
+    "n_submissions": 8,
+    "n_distinct_sources": 8,
+    "n_known_students": 0,
+    "student_identity_complete": false,
+    "partition_counts": {
+      "validation": 3,
+      "train": 5
+    },
+    "test_statistics": [
+      {
+        "test_id": "1",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 8,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 8
+        }
+      },
+      {
+        "test_id": "3",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 8,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 8
+        }
+      },
+      {
+        "test_id": "4",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 8,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 8
+        }
+      },
+      {
+        "test_id": "5",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 8,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 8
+        }
+      },
+      {
+        "test_id": "6",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 8,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 8
+        }
+      },
+      {
+        "test_id": "2",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 3,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.375,
+        "failure_rate_cluster": 0.375,
+        "outcome_counts": {
+          "fail": 3,
+          "pass": 5
+        }
+      }
+    ],
+    "prominent_features": [
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.3846153846153846
+      },
+      {
+        "feature": "stdout:6:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": 0.33653846153846156
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.23076923076923073
+      },
+      {
+        "feature": "test:6",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.23076923076923073
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.1826923076923077
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:1:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "stdout:2:relation",
+        "value": "different",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "test:3",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "other_oracle",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "other_oracle",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      }
+    ],
+    "test_statistics_by_partition": {
+      "train": [
+        {
+          "test_id": "1",
+          "n_cluster": 5,
+          "n_observed": 5,
+          "n_failed": 5,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 5
+          }
+        },
+        {
+          "test_id": "3",
+          "n_cluster": 5,
+          "n_observed": 5,
+          "n_failed": 5,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 5
+          }
+        },
+        {
+          "test_id": "4",
+          "n_cluster": 5,
+          "n_observed": 5,
+          "n_failed": 5,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 5
+          }
+        },
+        {
+          "test_id": "5",
+          "n_cluster": 5,
+          "n_observed": 5,
+          "n_failed": 5,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 5
+          }
+        },
+        {
+          "test_id": "6",
+          "n_cluster": 5,
+          "n_observed": 5,
+          "n_failed": 5,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 5
+          }
+        },
+        {
+          "test_id": "2",
+          "n_cluster": 5,
+          "n_observed": 5,
+          "n_failed": 1,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.2,
+          "failure_rate_cluster": 0.2,
+          "outcome_counts": {
+            "fail": 1,
+            "pass": 4
+          }
+        }
+      ],
+      "validation": [
+        {
+          "test_id": "1",
+          "n_cluster": 3,
+          "n_observed": 3,
+          "n_failed": 3,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 3
+          }
+        },
+        {
+          "test_id": "3",
+          "n_cluster": 3,
+          "n_observed": 3,
+          "n_failed": 3,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 3
+          }
+        },
+        {
+          "test_id": "4",
+          "n_cluster": 3,
+          "n_observed": 3,
+          "n_failed": 3,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 3
+          }
+        },
+        {
+          "test_id": "5",
+          "n_cluster": 3,
+          "n_observed": 3,
+          "n_failed": 3,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 3
+          }
+        },
+        {
+          "test_id": "6",
+          "n_cluster": 3,
+          "n_observed": 3,
+          "n_failed": 3,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 3
+          }
+        },
+        {
+          "test_id": "2",
+          "n_cluster": 3,
+          "n_observed": 3,
+          "n_failed": 2,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.6666666666666666,
+          "failure_rate_cluster": 0.6666666666666666,
+          "outcome_counts": {
+            "fail": 2,
+            "pass": 1
+          }
+        }
+      ]
+    },
+    "feature_statistics": [
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.3846153846153846
+      },
+      {
+        "feature": "stdout:6:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": 0.33653846153846156
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.23076923076923073
+      },
+      {
+        "feature": "test:6",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.23076923076923073
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.1826923076923077
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:1:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "small",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "stdout:2:relation",
+        "value": "different",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "test:3",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "other_oracle",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "other_oracle",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "other_oracle",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "other_oracle",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:6:relation",
+        "value": "other_oracle",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "0",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.46153846153846156,
+        "difference_from_cohort": 0.038461538461538436
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.028846153846153855
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "zero",
+        "n": 5,
+        "n_cluster": 8,
+        "rate": 0.625,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.009615384615384581
+      },
+      {
+        "feature": "stdout:2:relation",
+        "value": "exact",
+        "n": 5,
+        "n_cluster": 8,
+        "rate": 0.625,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.009615384615384581
+      },
+      {
+        "feature": "test:2",
+        "value": "pass",
+        "n": 5,
+        "n_cluster": 8,
+        "rate": 0.625,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.009615384615384581
+      },
+      {
+        "feature": "test:1",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "test:4",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "test:5",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "test:2",
+        "value": "fail",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": -0.009615384615384637
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "1",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": -0.028846153846153855
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "1",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": -0.038461538461538436
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "0",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": -0.10576923076923078
+      }
+    ],
+    "feature_definitions": [
+      {
+        "name": "test:1",
+        "weight": 0.08
+      },
+      {
+        "name": "test:2",
+        "weight": 0.08
+      },
+      {
+        "name": "test:3",
+        "weight": 0.08
+      },
+      {
+        "name": "test:4",
+        "weight": 0.08
+      },
+      {
+        "name": "test:5",
+        "weight": 0.08
+      },
+      {
+        "name": "test:6",
+        "weight": 0.08
+      },
+      {
+        "name": "ast:c_for",
+        "weight": 0.019999999999999993
+      },
+      {
+        "name": "ast:c_while",
+        "weight": 0.019999999999999993
+      },
+      {
+        "name": "ast:c_if",
+        "weight": 0.019999999999999993
+      },
+      {
+        "name": "ast:c_inclusive_comparison",
+        "weight": 0.019999999999999993
+      },
+      {
+        "name": "ast:c_strict_comparison",
+        "weight": 0.019999999999999993
+      },
+      {
+        "name": "ast:c_update",
+        "weight": 0.019999999999999993
+      },
+      {
+        "name": "stdout:1:relation",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:1:edit_band",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:2:relation",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:2:edit_band",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:3:relation",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:3:edit_band",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:4:relation",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:4:edit_band",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:5:relation",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:5:edit_band",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:6:relation",
+        "weight": 0.03333333333333333
+      },
+      {
+        "name": "stdout:6:edit_band",
+        "weight": 0.03333333333333333
+      }
+    ],
+    "common_ast_patterns": [
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "1",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": -0.038461538461538436
+      }
+    ],
+    "diagnostic_feature_statistics": [
+      {
+        "feature": "test:6",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.23076923076923073
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "test:3",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": 0.07692307692307687
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "0",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.46153846153846156,
+        "difference_from_cohort": 0.038461538461538436
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "0",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.028846153846153855
+      },
+      {
+        "feature": "test:2",
+        "value": "pass",
+        "n": 5,
+        "n_cluster": 8,
+        "rate": 0.625,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.009615384615384581
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_array_parameter",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_dereference",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_do",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_one_index",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_pointer_declarator",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_pointer_parameter",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "1",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_subscript",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_zero_index",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:parse",
+        "value": "ok",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "is_hardcoded_output",
+        "value": false,
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "test:1",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "test:4",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "test:5",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "test:2",
+        "value": "fail",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": -0.009615384615384637
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "1",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": -0.028846153846153855
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "1",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": -0.038461538461538436
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "0",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": -0.10576923076923078
+      }
+    ],
+    "learned_if_then_rules": [
+      {
+        "rule_id": 4,
+        "if": [
+          "stdout:6:edit_band=small"
+        ],
+        "then_cluster": 1,
+        "train_support": 5,
+        "train_precision": 1.0,
+        "holdout_support": 3,
+        "holdout_precision": 1.0
+      }
+    ],
+    "semantic_patterns": [],
+    "semantic_findings": [],
+    "candidate_misconception": {
+      "source": "local_heuristic_not_gold",
+      "misconception_name": "Chưa đủ bằng chứng để đặt tên lỗi",
+      "misconception_type": null,
+      "reasoning": "Có 8 bài trong cụm. Chưa xác định được cơ chế chung; cần đối chiếu từng bài.",
+      "teaching_hint": "Đối chiếu input/output của bài đại diện; yêu cầu học viên truy vết và giải thích một trường hợp biên.",
+      "category": "unclear",
+      "evidence_samples": []
+    },
+    "representative_sample_ids": [
+      "sample_003",
+      "sample_001",
+      "sample_006",
+      "sample_007"
+    ],
+    "members": [
+      {
+        "sample_id": "sample_001",
+        "partition": "validation",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\n    int n,c=0,x,y,z;\n    scanf(\"%d\",&n);\n    for(x=1;x<=n;x=x+1){\n     for(y=1;y<=x;y=y+1){\n     for(z=1;z<=y;z=z+1){\n          if(x+y>z && y+z>x && z+x>y)\n     c++;\n    }   \n     }\n    }\n    printf(\"Number of possible triangle is %d\",c);\n    return 0;\n\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "402c981f58dc14ac0098f7730f8682b984f0fa87af8f94de2c53f4355f9bea87",
+        "outcomes": {
+          "1": "fail",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "4",
+            "expected": "Number of possible triangles is 13",
+            "output": "Number of possible triangle is 13"
+          },
+          {
+            "test_id": "2",
+            "input": "1",
+            "expected": "Number of possible triangles is 1",
+            "output": "Number of possible triangle is 1"
+          },
+          {
+            "test_id": "3",
+            "input": "3",
+            "expected": "Number of possible triangles is 7",
+            "output": "Number of possible triangle is 7"
+          },
+          {
+            "test_id": "4",
+            "input": "5",
+            "expected": "Number of possible triangles is 22",
+            "output": "Number of possible triangle is 22"
+          },
+          {
+            "test_id": "5",
+            "input": "7",
+            "expected": "Number of possible triangles is 50",
+            "output": "Number of possible triangle is 50"
+          },
+          {
+            "test_id": "6",
+            "input": "2",
+            "expected": "Number of possible triangles is 3",
+            "output": "Number of possible triangle is 3"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_update": "1",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "different",
+          "stdout:2:edit_band": "small",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_002",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\nint i,j,k, N,count=0;\nscanf ( \"%d\",&N);/*input variable*/\nfor( i=1;i<=N;i=i+1)\n{for (j=1 ; j<=i ; j=j+1)\n{for (k=1;k<=j; k=k+1)\n{if ((j+k>i) && (k+i>j)&& (i+j>k))/*tiangle inequality*/\ncount++;}\n}\n}\nprintf (\"Number of possible triangle is %d\", count);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "b0753d2fd69e2b1e7fa05a735c9544afc05e178f458fad20d21b896a5ca51658",
+        "outcomes": {
+          "1": "fail",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "4",
+            "expected": "Number of possible triangles is 13",
+            "output": "Number of possible triangle is 13"
+          },
+          {
+            "test_id": "2",
+            "input": "1",
+            "expected": "Number of possible triangles is 1",
+            "output": "Number of possible triangle is 1"
+          },
+          {
+            "test_id": "3",
+            "input": "3",
+            "expected": "Number of possible triangles is 7",
+            "output": "Number of possible triangle is 7"
+          },
+          {
+            "test_id": "4",
+            "input": "5",
+            "expected": "Number of possible triangles is 22",
+            "output": "Number of possible triangle is 22"
+          },
+          {
+            "test_id": "5",
+            "input": "7",
+            "expected": "Number of possible triangles is 50",
+            "output": "Number of possible triangle is 50"
+          },
+          {
+            "test_id": "6",
+            "input": "2",
+            "expected": "Number of possible triangles is 3",
+            "output": "Number of possible triangle is 3"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_update": "1",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "different",
+          "stdout:2:edit_band": "small",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_003",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": true,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\n    int N,a,b,c,count;\n    count=0;\n    scanf(\"%d\",&N);\n    for(a=1;a<=N;a=a+1){\n        for(b=1;b<=N;b=b+1){\n            for(c=1;c<=N;c=c+1){\n                if ((a+b>c)&&(b+c>a)&&(c+a>b)){\n                    count=count+1;\n                }\n            }\n        }\n    }\n    printf(\"Number of possible triangles is %d\",count);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "3f585b140b8bbecafd16c36fdcf2dc80616af3f2f4b471cee26be2d308dfbff6",
+        "outcomes": {
+          "1": "fail",
+          "2": "pass",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "4",
+            "expected": "Number of possible triangles is 13",
+            "output": "Number of possible triangles is 34"
+          },
+          {
+            "test_id": "2",
+            "input": "1",
+            "expected": "Number of possible triangles is 1",
+            "output": "Number of possible triangles is 1"
+          },
+          {
+            "test_id": "3",
+            "input": "3",
+            "expected": "Number of possible triangles is 7",
+            "output": "Number of possible triangles is 15"
+          },
+          {
+            "test_id": "4",
+            "input": "5",
+            "expected": "Number of possible triangles is 22",
+            "output": "Number of possible triangles is 65"
+          },
+          {
+            "test_id": "5",
+            "input": "7",
+            "expected": "Number of possible triangles is 50",
+            "output": "Number of possible triangles is 175"
+          },
+          {
+            "test_id": "6",
+            "input": "2",
+            "expected": "Number of possible triangles is 3",
+            "output": "Number of possible triangles is 5"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_update": "0",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_004",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{int n,i,j,k,s=0;\nscanf(\"%d\",&n);\nfor (i=1;i<=n;i=i+1)\n{\n    for (j=1;j<=n;j=j+1)\n    {\n        for (k=1;k<=n;k=k+1)\n        {if (i+j>k&&i+k>j&&j+k>i)\n        {s=s+1;\n            \n        }\n            \n            \n        }\n        \n    }\n    \n    \n    \n}\n    printf(\"Number of possible triangles is %d\",s); \n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "dce7f814afdbbbbf2fc3a579a1fd8e6ea113d8d6c3de6b744b22c9a4fed747ff",
+        "outcomes": {
+          "1": "fail",
+          "2": "pass",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "4",
+            "expected": "Number of possible triangles is 13",
+            "output": "Number of possible triangles is 34"
+          },
+          {
+            "test_id": "2",
+            "input": "1",
+            "expected": "Number of possible triangles is 1",
+            "output": "Number of possible triangles is 1"
+          },
+          {
+            "test_id": "3",
+            "input": "3",
+            "expected": "Number of possible triangles is 7",
+            "output": "Number of possible triangles is 15"
+          },
+          {
+            "test_id": "4",
+            "input": "5",
+            "expected": "Number of possible triangles is 22",
+            "output": "Number of possible triangles is 65"
+          },
+          {
+            "test_id": "5",
+            "input": "7",
+            "expected": "Number of possible triangles is 50",
+            "output": "Number of possible triangles is 175"
+          },
+          {
+            "test_id": "6",
+            "input": "2",
+            "expected": "Number of possible triangles is 3",
+            "output": "Number of possible triangles is 5"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_update": "0",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_005",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\nint N;\nscanf(\"%d\",&N);\nint a;\nint b;\nint c;\nint x;\nfor(x=0,a=1;a<=N;a=a+1){\n    for(b=1;b<=N;b=b+1){\n        for(c=1;c<=N;c=c+1){\n             if((a+b>c)&&(a+c>b)&&(b+c>a)){\n         x=x+1;\n             }\n        }\n        \n    }\n    \n}\n\nprintf(\"Number of possible triangles is %d\",x);\n    \n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "f269133ceaea94254cb1ff5deb5b55e9b2156f914134a7a28c823e5093b38968",
+        "outcomes": {
+          "1": "fail",
+          "2": "pass",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "4",
+            "expected": "Number of possible triangles is 13",
+            "output": "Number of possible triangles is 34"
+          },
+          {
+            "test_id": "2",
+            "input": "1",
+            "expected": "Number of possible triangles is 1",
+            "output": "Number of possible triangles is 1"
+          },
+          {
+            "test_id": "3",
+            "input": "3",
+            "expected": "Number of possible triangles is 7",
+            "output": "Number of possible triangles is 15"
+          },
+          {
+            "test_id": "4",
+            "input": "5",
+            "expected": "Number of possible triangles is 22",
+            "output": "Number of possible triangles is 65"
+          },
+          {
+            "test_id": "5",
+            "input": "7",
+            "expected": "Number of possible triangles is 50",
+            "output": "Number of possible triangles is 175"
+          },
+          {
+            "test_id": "6",
+            "input": "2",
+            "expected": "Number of possible triangles is 3",
+            "output": "Number of possible triangles is 5"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_update": "0",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_006",
+        "partition": "validation",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\n    int N;\n    int a,b,c;\n    a=1;\n    b=1;\n    c=1;\n    int count=0;\n    scanf(\"%d\", &N);\n    while(a<=N)\n    { \n        b=1;\n        while(b<=N)\n        {\n           c=1;\n           while(c<=N)\n            {\n                if(a<b+c||b<a+c||c<a+b)\n                {\n                    count+=1;\n                }\n                c+=1;\n            }\n            b+=1;\n        }\n        a+=1;\n    }\n    printf(\"Number of possible triangles is %d\", count);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "b27e0932b2880753b9fe99265e10aa2a1cc7e678fd5ad8ab57586022d681742d",
+        "outcomes": {
+          "1": "fail",
+          "2": "pass",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "4",
+            "expected": "Number of possible triangles is 13",
+            "output": "Number of possible triangles is 64"
+          },
+          {
+            "test_id": "2",
+            "input": "1",
+            "expected": "Number of possible triangles is 1",
+            "output": "Number of possible triangles is 1"
+          },
+          {
+            "test_id": "3",
+            "input": "3",
+            "expected": "Number of possible triangles is 7",
+            "output": "Number of possible triangles is 27"
+          },
+          {
+            "test_id": "4",
+            "input": "5",
+            "expected": "Number of possible triangles is 22",
+            "output": "Number of possible triangles is 125"
+          },
+          {
+            "test_id": "5",
+            "input": "7",
+            "expected": "Number of possible triangles is 50",
+            "output": "Number of possible triangles is 343"
+          },
+          {
+            "test_id": "6",
+            "input": "2",
+            "expected": "Number of possible triangles is 3",
+            "output": "Number of possible triangles is 8"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_update": "0",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "1",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_007",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{ int N;\nint i,j,k;\n int count=0; \n scanf(\"%d\",&N);\n  for (i=1; i<=N; i++);  \n  {\n      for (j=i; j<=N; j=j+1);\n     {\n         for (k=j; k<=N; k=k+1);\n     {     if (i+j>k && j+k>i && i+k>j)\n     count=count+1;\n     }\n     }\n  } \n  printf (\"Number of possible triangles is %d\",count);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "13e87c0d59d3719c01493b457735e335530988aa455974f198a355c775718271",
+        "outcomes": {
+          "1": "fail",
+          "2": "pass",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "4",
+            "expected": "Number of possible triangles is 13",
+            "output": "Number of possible triangles is 1"
+          },
+          {
+            "test_id": "2",
+            "input": "1",
+            "expected": "Number of possible triangles is 1",
+            "output": "Number of possible triangles is 1"
+          },
+          {
+            "test_id": "3",
+            "input": "3",
+            "expected": "Number of possible triangles is 7",
+            "output": "Number of possible triangles is 1"
+          },
+          {
+            "test_id": "4",
+            "input": "5",
+            "expected": "Number of possible triangles is 22",
+            "output": "Number of possible triangles is 1"
+          },
+          {
+            "test_id": "5",
+            "input": "7",
+            "expected": "Number of possible triangles is 50",
+            "output": "Number of possible triangles is 1"
+          },
+          {
+            "test_id": "6",
+            "input": "2",
+            "expected": "Number of possible triangles is 3",
+            "output": "Number of possible triangles is 1"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_update": "1",
+          "stdout:1:relation": "other_oracle",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "other_oracle",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "other_oracle",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "other_oracle",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "other_oracle",
+          "stdout:6:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_008",
+        "partition": "validation",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\n    int n,a,b,c,x=0;// x is the no. of triangles formed.a,b,c are sides of                      triangle.n is the input value.\n    scanf(\"%d\",&n);\n    for(a=1;a<=n;a++)\n    {\n        for(b=a;b<=n;b++)\n        {\n            for(c=b;c<=n;c++)\n            {\n                if((a+b)>c&&(a+c)>b&&(b+c)>a)\n                {\n                    x++;\n                }\n            }\n        }\n    }\n    printf(\"Number of possible triangle is %d\",x);\n    return 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "fde796b0db3d417579b4220b30d72bd25fc3d034de1cab74955617ddf1543f64",
+        "outcomes": {
+          "1": "fail",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "4",
+            "expected": "Number of possible triangles is 13",
+            "output": "Number of possible triangle is 13"
+          },
+          {
+            "test_id": "2",
+            "input": "1",
+            "expected": "Number of possible triangles is 1",
+            "output": "Number of possible triangle is 1"
+          },
+          {
+            "test_id": "3",
+            "input": "3",
+            "expected": "Number of possible triangles is 7",
+            "output": "Number of possible triangle is 7"
+          },
+          {
+            "test_id": "4",
+            "input": "5",
+            "expected": "Number of possible triangles is 22",
+            "output": "Number of possible triangle is 22"
+          },
+          {
+            "test_id": "5",
+            "input": "7",
+            "expected": "Number of possible triangles is 50",
+            "output": "Number of possible triangle is 50"
+          },
+          {
+            "test_id": "6",
+            "input": "2",
+            "expected": "Number of possible triangles is 3",
+            "output": "Number of possible triangle is 3"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_update": "1",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "different",
+          "stdout:2:edit_band": "small",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "ast:c_for": "1",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "1",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      }
+    ],
+    "evidence_index": [
+      "test_statistics",
+      "feature_statistics",
+      "learned_if_then_rules",
+      "semantic_findings",
+      "problem_statement",
+      "members/sample_001/raw_code",
+      "members/sample_001/tests/1",
+      "members/sample_001/tests/2",
+      "members/sample_001/tests/3",
+      "members/sample_001/tests/4",
+      "members/sample_001/tests/5",
+      "members/sample_001/tests/6",
+      "members/sample_002/raw_code",
+      "members/sample_002/tests/1",
+      "members/sample_002/tests/2",
+      "members/sample_002/tests/3",
+      "members/sample_002/tests/4",
+      "members/sample_002/tests/5",
+      "members/sample_002/tests/6",
+      "members/sample_003/raw_code",
+      "members/sample_003/tests/1",
+      "members/sample_003/tests/2",
+      "members/sample_003/tests/3",
+      "members/sample_003/tests/4",
+      "members/sample_003/tests/5",
+      "members/sample_003/tests/6",
+      "members/sample_004/raw_code",
+      "members/sample_004/tests/1",
+      "members/sample_004/tests/2",
+      "members/sample_004/tests/3",
+      "members/sample_004/tests/4",
+      "members/sample_004/tests/5",
+      "members/sample_004/tests/6",
+      "members/sample_005/raw_code",
+      "members/sample_005/tests/1",
+      "members/sample_005/tests/2",
+      "members/sample_005/tests/3",
+      "members/sample_005/tests/4",
+      "members/sample_005/tests/5",
+      "members/sample_005/tests/6",
+      "members/sample_006/raw_code",
+      "members/sample_006/tests/1",
+      "members/sample_006/tests/2",
+      "members/sample_006/tests/3",
+      "members/sample_006/tests/4",
+      "members/sample_006/tests/5",
+      "members/sample_006/tests/6",
+      "members/sample_007/raw_code",
+      "members/sample_007/tests/1",
+      "members/sample_007/tests/2",
+      "members/sample_007/tests/3",
+      "members/sample_007/tests/4",
+      "members/sample_007/tests/5",
+      "members/sample_007/tests/6",
+      "members/sample_008/raw_code",
+      "members/sample_008/tests/1",
+      "members/sample_008/tests/2",
+      "members/sample_008/tests/3",
+      "members/sample_008/tests/4",
+      "members/sample_008/tests/5",
+      "members/sample_008/tests/6"
+    ]
+  }
+}

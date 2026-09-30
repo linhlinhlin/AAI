@@ -1,0 +1,2606 @@
+{
+  "schema_version": 1,
+  "annotation_status": "pending_annotation",
+  "scope": "development_train_validation_only",
+  "annotation_source_requested": "ai",
+  "human_validated": false,
+  "mechanism_accuracy": null,
+  "selection_policy": {
+    "method": "kmeans",
+    "feature_mode": "combined_stdout",
+    "seed": 42,
+    "min_cluster_size": 4,
+    "min_distinct_sources": 3,
+    "required_failed_log_coverage": 1.0,
+    "min_common_failure_rate_cluster": 0.5,
+    "representatives": "medoid then diverse OAV/outcomes, max 4",
+    "ranking": "problem and cluster ID, no quality-score selection"
+  },
+  "limitations": [
+    "Historical logs, no fresh execution or cognitive evidence.",
+    "AI sees clusters/candidates: not independent blind human validation.",
+    "No sealed test members, correct repairs or reviewer labels exported.",
+    "Clustering OAV is archived; diagnostic OAV/rules are computed at export.",
+    "Missing/not_run outcomes are not passes; rates include denominators.",
+    "Counts/rates describe submissions, not independent students or beliefs.",
+    "C-Pack oracle/suite correspondence has not been replay-verified.",
+    "IDs and paths omitted; raw public source comments are preserved."
+  ],
+  "provenance": {
+    "sources": [
+      {
+        "problem_id": "2812",
+        "artifact": "2812/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "b5e24d2a9b80eea7d49b77113891b11c438f9f92ac35a86227dbc56ce50f13e7",
+        "dataset": "ITSP public prototype",
+        "url": "https://github.com/jyi/ITSP",
+        "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+        "suite_version": "itsp-76fea3dca9be741f",
+        "input_sha256": "25f2efad35022d7f100a47161f181ddd6b7926b8b1cd92b8661bbb18802f5a94",
+        "evidence_sha256": "60b674a0947c7b696efae295b3fbdac39767dcf1e799c68ddbec1da9139e32f5"
+      },
+      {
+        "problem_id": "2825",
+        "artifact": "2825/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "0a0bdc7642b4ce9903f2a61d8b9e2a68dc99c768fb482d67f0e34f3a00f9a0fd",
+        "dataset": "ITSP public prototype",
+        "url": "https://github.com/jyi/ITSP",
+        "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+        "suite_version": "itsp-c96bee8ccdc960e4",
+        "input_sha256": "131e151709770f24b03a0fde6820952cc9ffb0aad9dd68b9b482ea1975e227c1",
+        "evidence_sha256": "3a2e48c9516fa9c5b95be9eaf1ff20a7853999ac2f88badcb4cbdc7e71e1e385"
+      },
+      {
+        "problem_id": "2833",
+        "artifact": "2833/kmeans_combined_stdout_seed42.json",
+        "report_sha256": "f72285aad4129085a6e3cc11826bca00b839bdba9fbb7d41ace5184bed8fce93",
+        "dataset": "ITSP public prototype",
+        "url": "https://github.com/jyi/ITSP",
+        "source_commit": "0553f683f99403efb5ef440af826c1d229a52376",
+        "suite_version": "itsp-e1116cbdb78d65ae",
+        "input_sha256": "1bfb0f162bb996c79776307ac5cafec93943cd0d94ca731b8b472eb74d704a3e",
+        "evidence_sha256": "3a5ae5d42e47d345f3c20ecb479c9dfb7f8bf62783a2dde48aa77d230c814c29"
+      }
+    ],
+    "split_sha256": "28714f310d5768bebdf724b10e368153180d5ab93ecd9aaa1ba949457dacb3de",
+    "run_manifest_sha256": "312c827539650ffba92dc2d47d7e8e5499589b32b5f2b130ab7ee00992bdcc45",
+    "exporter": {
+      "base_commit": null,
+      "working_tree_dirty": null,
+      "checkout_kind": "source_export",
+      "files_sha256": {
+        "misconceptions-prototype/src/misconceptions/__init__.py": "cb8e0be3c687e1e4aa4356575c9607ecc1bd98535e7eb64af46610b3bb549392",
+        "misconceptions-prototype/src/misconceptions/adapters.py": "42bbdfa71f9980a63380380a1f7671f59b0ef01b5cf46c7773ea7c2c7f567b00",
+        "misconceptions-prototype/src/misconceptions/ai_labeling.py": "43b70d00d768cacd5bb13fc4c337713ce55afa9fbc18f264c283a930cf4437ac",
+        "misconceptions-prototype/src/misconceptions/annotation_intake.py": "839f7fa18667bc15c12dcaba863ec93f0cedc4e9477cede8c9d71e674b83b7df",
+        "misconceptions-prototype/src/misconceptions/benchmark_validation.py": "483a584abbb85f12554f05d666a6392463ba4a862438cb576ff095c333b86bd1",
+        "misconceptions-prototype/src/misconceptions/cli.py": "71ab645ebc8cf170832ba0a36ed461b16de24030e139def889d9243c7737b3d4",
+        "misconceptions-prototype/src/misconceptions/cluster_annotation.py": "cf07afe7c857eb59764eb9a58186fa8a6472f8fceca5fbd385247c1f248d6033",
+        "misconceptions-prototype/src/misconceptions/cpack.py": "8ab17de4b637a407d699a3b43a7cd4b43be98767a3b477283e600fcba3d78a66",
+        "misconceptions-prototype/src/misconceptions/domain.py": "cac296ef1d9ee5849d57d675c319ed7b9b211fff8e1e0efb87ee562a4445dbbc",
+        "misconceptions-prototype/src/misconceptions/expert_validation.py": "52eff73e9d7141b79b3ee7518826c9b6d8eb9168be8dcd208f70077c4ffb2ef7",
+        "misconceptions-prototype/src/misconceptions/features.py": "a37cc78ea3a2eca813f859f33c98867c68f6571a5d408923573098ee7a979d12",
+        "misconceptions-prototype/src/misconceptions/hardcoded_output.py": "a26d84796080b64b8e58f3d117d6a07e8747c3e81de0816f1795a428851ad4ba",
+        "misconceptions-prototype/src/misconceptions/itsp.py": "fbcc952b0a0c19ef081b09b528f296ce70cef51807c5ce5ff8bd8f94b31064e4",
+        "misconceptions-prototype/src/misconceptions/learning_problems.py": "a376db67a1efd06e0c9122998f646312b33e5cfed823984604c024ed2876e5ba",
+        "misconceptions-prototype/src/misconceptions/learning_sandbox.py": "cebd881d03cf67f5f6122201cb4aa2558d6d44e1eb9c91f3d6b8818a737cc306",
+        "misconceptions-prototype/src/misconceptions/learning_service.py": "0096e4b6949d9e7ab983e0d1fd34d900e3387a4bbc2301cbf69d5027629a74af",
+        "misconceptions-prototype/src/misconceptions/learning_store.py": "2ad88899b327ec86c329d7df2f9698b9c0968ebcddcbe4a852c7f9d28b63f625",
+        "misconceptions-prototype/src/misconceptions/learning_web.py": "54ccdbd77c3de42b7786112b35fead9fd27146ae7186d2de36a14bd5d0c92de3",
+        "misconceptions-prototype/src/misconceptions/llm_client.py": "320804edc873212ed53b5ce2e991ad3545f14d2c2c183dcdaac32a4719035b4b",
+        "misconceptions-prototype/src/misconceptions/output_features.py": "9a33a957c77ca8f709fce86e127dbfa25a5aa2121174da5d5e7ae72f705564ed",
+        "misconceptions-prototype/src/misconceptions/pipeline.py": "890f2bd89fa7ab3c564064d11e8d1ea7421ce0a910934875aca5006d1637f20a",
+        "misconceptions-prototype/src/misconceptions/research_io.py": "1f25fbec4f1cc330c400488216a19d53621f5992533c9a7c752f230df7947aed",
+        "misconceptions-prototype/src/misconceptions/rule_style.py": "0a1d7ad4ba6b1fcc022d616867b9124b3bd74628166521dc124a3fa294ddf98a",
+        "misconceptions-prototype/src/misconceptions/semantic_rules.py": "4dc581789a944bf055e0b6f9a1384dee59b126df3bdca465b90fbf696b32b402",
+        "misconceptions-prototype/src/misconceptions/splits.py": "627020bc3e183e9917c43f35547d8a62bf303a8a30eb4787a9a4e02194ea4979",
+        "misconceptions-prototype/src/misconceptions/teacher_dashboard.py": "48663be4147b3afa68999ffce9fa0da39a21d4d5ef40df346816e192d7b9b3f0",
+        "misconceptions-prototype/src/misconceptions/teacher_validation.py": "193166ad9af10c71b507a2623432fa10a9bcaf2d960edc55c63247737b1e896c",
+        "misconceptions-prototype/src/misconceptions/teaching_report.py": "fbac4ab62cae42484ee49a77315f7af7fccf23f7cd32365f8d3905d91459d868",
+        "misconceptions-prototype/src/misconceptions/web.py": "8f7d60157f4b8b0efcd91295ba6e89b3e0aad25f780f1efe322281814748c38b",
+        "misconceptions-prototype/scripts/audit_human_review_packet.py": "202fad903465b16428d52419ede7d3c0ba264e6b96543d345e4a8faf1abc6691",
+        "misconceptions-prototype/scripts/check_itsp_review.py": "af1e462f0f6705f7479e4c012f6d0233e453366636354abaaab68f8c77c4b9f9",
+        "misconceptions-prototype/scripts/download_cpack.py": "4954f2d2d9cf4ea6c462a9de5ce612a395ade7040defa11d5a1c5970560c66d9",
+        "misconceptions-prototype/scripts/download_itsp.py": "4609226ceb98c2856a424d3ea7142a26a651518168a3c9eb0b12b4d87196af62",
+        "misconceptions-prototype/scripts/export_cluster_annotations.py": "7530cb9914b06e43072733fddf1ea7bd2cebc1061d949fb4d486da71b8ea8e74",
+        "misconceptions-prototype/scripts/export_learning_handoff.py": "18044317c5508672d074b878236dbb63d2b6b34217cabd4200304324d97d1d30",
+        "misconceptions-prototype/scripts/learning_browser_smoke.py": "22c5fb5c494ed00ed1291e470fc3446dfe414d3b55512aa15569aa9df30dbf83",
+        "misconceptions-prototype/scripts/lock_splits.py": "06f168d1cf961f1dbbab296ea5c86cf4c1ef7fba0f10114d926ef3daef1c0c10",
+        "misconceptions-prototype/scripts/make_demo.py": "a175506de8d7d229044169c4784510c77f3c5f1cf679fc2f13a7f550777ed756",
+        "misconceptions-prototype/scripts/merge_itsp_annotations.py": "d582847e38790145c8ee38ca81c5a540bed1c4696182c47e1b88d1b2271055a6",
+        "misconceptions-prototype/scripts/prepare_cpack.py": "465d22321665cbfcc7760b2f9219a1cef55107725f322d083f1e76375c449b3f",
+        "misconceptions-prototype/scripts/prepare_itsp.py": "9bfe5990faab197f84ac452347631932246e6795f34c61d059986bb3c683cc9b",
+        "misconceptions-prototype/scripts/prepare_learning_demo.py": "c00929262651079fd9361ba39dbae3584b141146f3e46eba2294bae5dd0cf594",
+        "misconceptions-prototype/scripts/report_itsp_experts.py": "84ddfb4d830148c5f89e4cf0c4878749d0d15e1e417b86897e0254c9f9d6ded1",
+        "misconceptions-prototype/scripts/run_ablation.py": "46e16ac2cc77b5c8434cfdbd3c5c227b1297491fa1b1080c9ceca1752c1642c6",
+        "misconceptions-prototype/scripts/run_itsp_experiments.py": "50b8faa803728c82a96342ea7aa47ec1cc6f623fdaa31fd0b687e24e4d22d214",
+        "misconceptions-prototype/scripts/run_topic5.py": "b6e1a7e31a75a36bb2bbb4493beda7b97a919de85cb9186306eeeba6e8181e35",
+        "misconceptions-prototype/scripts/score_itsp_experts.py": "c90dad13d9c2bec3a356a9d500f402cc7b841a584edf255441e1e9d0ce037485",
+        "misconceptions-prototype/scripts/setup_learning.py": "675a09542dd5bcc4bd203b0b56c4a9948cc3722e2190fd7ee34ea346ceab283c",
+        "misconceptions-prototype/scripts/validate_itsp_abc.py": "6be2ea50b4d8f48441fe0da975b49dde4bad7099b479e3988ebb3efb1913e55e",
+        "misconceptions-prototype/scripts/validate_topic5.py": "5d3310271e36fb9494b06f724f9ea681c7689c6956db4816371c14dec9dcf5af",
+        "scripts/audit_run.py": "36cab5481e92fe9015c13f430df5670b834d27477a4917e3d7d701a602ed5f39",
+        "scripts/harness.py": "7c2d22fac3a6c7b594db1a77945d6a5bab251bfa9858e409274e1856a461d66a",
+        "misconceptions-prototype/requirements-lock.txt": "b586a3639ce51b4544f0a06c6ecfd944d23e661f09674e248b1cc1c13093333c",
+        "misconceptions-prototype/pyproject.toml": "6869dc5f3ce975f77453f0b534fb8697db870009661fb609d4377c0966bdcebe",
+        "research/protocol.json": "d730a2419058aa2ea4f691c302cb03b9c22c42e2200ce955a25b94872690a9c3",
+        "research/course-validation-protocol.json": "fd861b97250aae788752a599319bda5768fa18c1d72d5d8d2250bd3c3cfa1977"
+      },
+      "implementation_sha256": "cf11db682d0f6f6320abec626de9cb5abf5531e3482d478037288aff13398b9f"
+    }
+  },
+  "packet_id": "81c8ee12aa6fd6a6a2c114e9856139004fdbcb95b58c8fd30e6e5c8442dbe0a5",
+  "cluster": {
+    "cluster_id": "2812--kmeans--combined_stdout--s42--c0",
+    "original_cluster_id": 0,
+    "annotation_status": "pending_annotation",
+    "human_validated": false,
+    "problem_id": "2812",
+    "problem_statement": {
+      "text": "ANNOUNCEMENT: Up to 20% marks will be allotted for good programming practice. These include \n- Comments: for the non trivial part of the code \n- Indentation: align your code properly \n---------------------------------\n\nWrite a C program to output the sign of an input float number. On input $a$ you have to output positive, zero or negative.\n\nINPUT format: a\nOUTPUT format: input is zero. OR a is positive/negative. Use 4 decimal places.\n\nExample 1: On input -12,\nOUTPUT: -12.0000 is negative. \n\nExample 2: On input 0,\nOUTPUT: input is zero.\n\nExample 3: On input 1,\nOUTPUT: 1.0000 is positive.",
+      "source": "ITSP Main.c leading comment only",
+      "source_sha256": "702d4268bb997fd370640ef0a822c3eec8fc544161fc0520134b74eddb50cd1f"
+    },
+    "n_submissions": 8,
+    "n_distinct_sources": 8,
+    "n_known_students": 0,
+    "student_identity_complete": false,
+    "partition_counts": {
+      "train": 7,
+      "validation": 1
+    },
+    "test_statistics": [
+      {
+        "test_id": "3",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 8,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 8
+        }
+      },
+      {
+        "test_id": "4",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 8,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 8
+        }
+      },
+      {
+        "test_id": "5",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 8,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 8
+        }
+      },
+      {
+        "test_id": "6",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 8,
+        "n_not_run": 0,
+        "failure_rate_observed": 1.0,
+        "failure_rate_cluster": 1.0,
+        "outcome_counts": {
+          "fail": 8
+        }
+      },
+      {
+        "test_id": "1",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 7,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.875,
+        "failure_rate_cluster": 0.875,
+        "outcome_counts": {
+          "pass": 1,
+          "fail": 7
+        }
+      },
+      {
+        "test_id": "2",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 7,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.875,
+        "failure_rate_cluster": 0.875,
+        "outcome_counts": {
+          "fail": 7,
+          "pass": 1
+        }
+      },
+      {
+        "test_id": "7",
+        "n_cluster": 8,
+        "n_observed": 8,
+        "n_failed": 7,
+        "n_not_run": 0,
+        "failure_rate_observed": 0.875,
+        "failure_rate_cluster": 0.875,
+        "outcome_counts": {
+          "fail": 7,
+          "pass": 1
+        }
+      }
+    ],
+    "prominent_features": [
+      {
+        "feature": "test:5",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.3076923076923077
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.2596153846153846
+      },
+      {
+        "feature": "test:1",
+        "value": "fail",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.2596153846153846
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "different",
+        "n": 6,
+        "n_cluster": 8,
+        "rate": 0.75,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": 0.21153846153846156
+      },
+      {
+        "feature": "stdout:2:relation",
+        "value": "different",
+        "n": 6,
+        "n_cluster": 8,
+        "rate": 0.75,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": 0.21153846153846156
+      },
+      {
+        "feature": "stdout:7:relation",
+        "value": "different",
+        "n": 6,
+        "n_cluster": 8,
+        "rate": 0.75,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": 0.21153846153846156
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "small",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": 0.1923076923076923
+      },
+      {
+        "feature": "test:2",
+        "value": "fail",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.1826923076923077
+      },
+      {
+        "feature": "test:7",
+        "value": "fail",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.1826923076923077
+      },
+      {
+        "feature": "test:3",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "test:4",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "test:6",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:1:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "stdout:7:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "small",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": 0.11538461538461536
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "small",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": 0.11538461538461536
+      },
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "small",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": 0.11538461538461536
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      }
+    ],
+    "test_statistics_by_partition": {
+      "train": [
+        {
+          "test_id": "2",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 7,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 7
+          }
+        },
+        {
+          "test_id": "3",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 7,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 7
+          }
+        },
+        {
+          "test_id": "4",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 7,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 7
+          }
+        },
+        {
+          "test_id": "5",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 7,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 7
+          }
+        },
+        {
+          "test_id": "6",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 7,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 7
+          }
+        },
+        {
+          "test_id": "7",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 7,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 7
+          }
+        },
+        {
+          "test_id": "1",
+          "n_cluster": 7,
+          "n_observed": 7,
+          "n_failed": 6,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.8571428571428571,
+          "failure_rate_cluster": 0.8571428571428571,
+          "outcome_counts": {
+            "pass": 1,
+            "fail": 6
+          }
+        }
+      ],
+      "validation": [
+        {
+          "test_id": "1",
+          "n_cluster": 1,
+          "n_observed": 1,
+          "n_failed": 1,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 1
+          }
+        },
+        {
+          "test_id": "3",
+          "n_cluster": 1,
+          "n_observed": 1,
+          "n_failed": 1,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 1
+          }
+        },
+        {
+          "test_id": "4",
+          "n_cluster": 1,
+          "n_observed": 1,
+          "n_failed": 1,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 1
+          }
+        },
+        {
+          "test_id": "5",
+          "n_cluster": 1,
+          "n_observed": 1,
+          "n_failed": 1,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 1
+          }
+        },
+        {
+          "test_id": "6",
+          "n_cluster": 1,
+          "n_observed": 1,
+          "n_failed": 1,
+          "n_not_run": 0,
+          "failure_rate_observed": 1.0,
+          "failure_rate_cluster": 1.0,
+          "outcome_counts": {
+            "fail": 1
+          }
+        },
+        {
+          "test_id": "2",
+          "n_cluster": 1,
+          "n_observed": 1,
+          "n_failed": 0,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.0,
+          "failure_rate_cluster": 0.0,
+          "outcome_counts": {
+            "pass": 1
+          }
+        },
+        {
+          "test_id": "7",
+          "n_cluster": 1,
+          "n_observed": 1,
+          "n_failed": 0,
+          "n_not_run": 0,
+          "failure_rate_observed": 0.0,
+          "failure_rate_cluster": 0.0,
+          "outcome_counts": {
+            "pass": 1
+          }
+        }
+      ]
+    },
+    "feature_statistics": [
+      {
+        "feature": "test:5",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.3076923076923077
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.2596153846153846
+      },
+      {
+        "feature": "test:1",
+        "value": "fail",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.2596153846153846
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "different",
+        "n": 6,
+        "n_cluster": 8,
+        "rate": 0.75,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": 0.21153846153846156
+      },
+      {
+        "feature": "stdout:2:relation",
+        "value": "different",
+        "n": 6,
+        "n_cluster": 8,
+        "rate": 0.75,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": 0.21153846153846156
+      },
+      {
+        "feature": "stdout:7:relation",
+        "value": "different",
+        "n": 6,
+        "n_cluster": 8,
+        "rate": 0.75,
+        "cohort_rate": 0.5384615384615384,
+        "difference_from_cohort": 0.21153846153846156
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "small",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": 0.1923076923076923
+      },
+      {
+        "feature": "test:2",
+        "value": "fail",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.1826923076923077
+      },
+      {
+        "feature": "test:7",
+        "value": "fail",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.1826923076923077
+      },
+      {
+        "feature": "test:3",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "test:4",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "test:6",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "stdout:1:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "stdout:7:edit_band",
+        "value": "small",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.14423076923076922
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "small",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": 0.11538461538461536
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "small",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": 0.11538461538461536
+      },
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "small",
+        "n": 4,
+        "n_cluster": 8,
+        "rate": 0.5,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": 0.11538461538461536
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "stdout:6:relation",
+        "value": "different",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.7692307692307693,
+        "difference_from_cohort": 0.10576923076923073
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "0",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": 0.09615384615384615
+      },
+      {
+        "feature": "stdout:1:edit_band",
+        "value": "large",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": 0.09615384615384615
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "large",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": 0.09615384615384615
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "large",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": 0.09615384615384615
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "large",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": 0.09615384615384615
+      },
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "large",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": 0.09615384615384615
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "large",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": 0.06730769230769229
+      },
+      {
+        "feature": "stdout:7:edit_band",
+        "value": "large",
+        "n": 3,
+        "n_cluster": 8,
+        "rate": 0.375,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": 0.06730769230769229
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "0",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "0",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "0",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "empty",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:3:relation",
+        "value": "empty",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:4:relation",
+        "value": "empty",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:5:relation",
+        "value": "empty",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:6:relation",
+        "value": "empty",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "stdout:1:edit_band",
+        "value": "medium",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.019230769230769218
+      },
+      {
+        "feature": "stdout:5:edit_band",
+        "value": "medium",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.23076923076923078,
+        "difference_from_cohort": 0.019230769230769218
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "medium",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": -0.028846153846153855
+      },
+      {
+        "feature": "stdout:2:relation",
+        "value": "empty",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": -0.028846153846153855
+      },
+      {
+        "feature": "stdout:7:edit_band",
+        "value": "medium",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": -0.028846153846153855
+      },
+      {
+        "feature": "stdout:7:relation",
+        "value": "empty",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": -0.028846153846153855
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": -0.04807692307692313
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": -0.04807692307692313
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": -0.04807692307692313
+      },
+      {
+        "feature": "stdout:3:edit_band",
+        "value": "medium",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.05769230769230771
+      },
+      {
+        "feature": "stdout:4:edit_band",
+        "value": "medium",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.05769230769230771
+      },
+      {
+        "feature": "stdout:6:edit_band",
+        "value": "medium",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.05769230769230771
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 6,
+        "n_cluster": 8,
+        "rate": 0.75,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": -0.09615384615384615
+      },
+      {
+        "feature": "stdout:2:edit_band",
+        "value": "zero",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.1826923076923077
+      },
+      {
+        "feature": "stdout:2:relation",
+        "value": "exact",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.1826923076923077
+      },
+      {
+        "feature": "stdout:7:edit_band",
+        "value": "zero",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.1826923076923077
+      },
+      {
+        "feature": "stdout:7:relation",
+        "value": "exact",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.1826923076923077
+      },
+      {
+        "feature": "test:2",
+        "value": "pass",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.1826923076923077
+      },
+      {
+        "feature": "test:7",
+        "value": "pass",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.1826923076923077
+      },
+      {
+        "feature": "stdout:1:edit_band",
+        "value": "zero",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": -0.25961538461538464
+      },
+      {
+        "feature": "stdout:1:relation",
+        "value": "exact",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": -0.25961538461538464
+      },
+      {
+        "feature": "test:1",
+        "value": "pass",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": -0.25961538461538464
+      }
+    ],
+    "feature_definitions": [
+      {
+        "name": "test:1",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:2",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:3",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:4",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:5",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:6",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "test:7",
+        "weight": 0.06857142857142857
+      },
+      {
+        "name": "ast:c_if",
+        "weight": 0.029999999999999992
+      },
+      {
+        "name": "ast:c_strict_comparison",
+        "weight": 0.029999999999999992
+      },
+      {
+        "name": "ast:c_address_of",
+        "weight": 0.029999999999999992
+      },
+      {
+        "name": "ast:c_return",
+        "weight": 0.029999999999999992
+      },
+      {
+        "name": "stdout:1:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:1:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:2:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:2:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:3:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:3:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:4:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:4:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:5:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:5:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:6:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:6:edit_band",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:7:relation",
+        "weight": 0.028571428571428574
+      },
+      {
+        "name": "stdout:7:edit_band",
+        "weight": 0.028571428571428574
+      }
+    ],
+    "common_ast_patterns": [
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": -0.04807692307692313
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": -0.04807692307692313
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": -0.04807692307692313
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 6,
+        "n_cluster": 8,
+        "rate": 0.75,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": -0.09615384615384615
+      }
+    ],
+    "diagnostic_feature_statistics": [
+      {
+        "feature": "test:5",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.3076923076923077
+      },
+      {
+        "feature": "test:1",
+        "value": "fail",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6153846153846154,
+        "difference_from_cohort": 0.2596153846153846
+      },
+      {
+        "feature": "test:2",
+        "value": "fail",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.1826923076923077
+      },
+      {
+        "feature": "test:7",
+        "value": "fail",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.6923076923076923,
+        "difference_from_cohort": 0.1826923076923077
+      },
+      {
+        "feature": "test:3",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "test:4",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "test:6",
+        "value": "fail",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": 0.15384615384615385
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "0",
+        "n": 2,
+        "n_cluster": 8,
+        "rate": 0.25,
+        "cohort_rate": 0.15384615384615385,
+        "difference_from_cohort": 0.09615384615384615
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "0",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "0",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "0",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.07692307692307693,
+        "difference_from_cohort": 0.04807692307692307
+      },
+      {
+        "feature": "ast:c_array_parameter",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_dereference",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_do",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_for",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_inclusive_comparison",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_one_index",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_pointer_declarator",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_pointer_parameter",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_subscript",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_update",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_while",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_zero_index",
+        "value": "0",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:parse",
+        "value": "ok",
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "is_hardcoded_output",
+        "value": false,
+        "n": 8,
+        "n_cluster": 8,
+        "rate": 1.0,
+        "cohort_rate": 1.0,
+        "difference_from_cohort": 0.0
+      },
+      {
+        "feature": "ast:c_address_of",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": -0.04807692307692313
+      },
+      {
+        "feature": "ast:c_if",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": -0.04807692307692313
+      },
+      {
+        "feature": "ast:c_return",
+        "value": "1",
+        "n": 7,
+        "n_cluster": 8,
+        "rate": 0.875,
+        "cohort_rate": 0.9230769230769231,
+        "difference_from_cohort": -0.04807692307692313
+      },
+      {
+        "feature": "ast:c_strict_comparison",
+        "value": "1",
+        "n": 6,
+        "n_cluster": 8,
+        "rate": 0.75,
+        "cohort_rate": 0.8461538461538461,
+        "difference_from_cohort": -0.09615384615384615
+      },
+      {
+        "feature": "test:2",
+        "value": "pass",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.1826923076923077
+      },
+      {
+        "feature": "test:7",
+        "value": "pass",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.3076923076923077,
+        "difference_from_cohort": -0.1826923076923077
+      },
+      {
+        "feature": "test:1",
+        "value": "pass",
+        "n": 1,
+        "n_cluster": 8,
+        "rate": 0.125,
+        "cohort_rate": 0.38461538461538464,
+        "difference_from_cohort": -0.25961538461538464
+      }
+    ],
+    "learned_if_then_rules": [
+      {
+        "rule_id": 2,
+        "if": [
+          "NOT (stdout:2:relation=exact)",
+          "NOT (stdout:7:edit_band=medium)"
+        ],
+        "then_cluster": 0,
+        "train_support": 6,
+        "train_precision": 1.0,
+        "holdout_support": 1,
+        "holdout_precision": 0.0
+      },
+      {
+        "rule_id": 3,
+        "if": [
+          "NOT (stdout:2:relation=exact)",
+          "stdout:7:edit_band=medium"
+        ],
+        "then_cluster": 0,
+        "train_support": 2,
+        "train_precision": 0.5,
+        "holdout_support": 0,
+        "holdout_precision": null
+      }
+    ],
+    "semantic_patterns": [],
+    "semantic_findings": [],
+    "candidate_misconception": {
+      "source": "local_heuristic_not_gold",
+      "misconception_name": "Chưa đủ bằng chứng để đặt tên lỗi",
+      "misconception_type": null,
+      "reasoning": "Có 8 bài trong cụm. Chưa xác định được cơ chế chung; cần đối chiếu từng bài.",
+      "teaching_hint": "Đối chiếu input/output của bài đại diện; yêu cầu học viên truy vết và giải thích một trường hợp biên.",
+      "category": "unclear",
+      "evidence_samples": []
+    },
+    "representative_sample_ids": [
+      "sample_003",
+      "sample_002",
+      "sample_001",
+      "sample_006"
+    ],
+    "members": [
+      {
+        "sample_id": "sample_001",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main(){\n\tfloat a;\n\tscanf(\"%f\",&a);\n\tif (a==-12){\n\t    printf(\"%.4f is negative\",a);\n\t} else {\n\t    printf(\"%.4f is zero\",a);\n\t}\n\treturn 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "197bd7d23e017d2317c97413b7d7a1c148ed24c164a7168896a8da8e8432b6d1",
+        "outcomes": {
+          "1": "pass",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "-12",
+            "expected": "-12.0000 is negative",
+            "output": "-12.0000 is negative"
+          },
+          {
+            "test_id": "2",
+            "input": "0",
+            "expected": "input is zero",
+            "output": "0.0000 is zero"
+          },
+          {
+            "test_id": "3",
+            "input": "1",
+            "expected": "1.0000 is positive",
+            "output": "1.0000 is zero"
+          },
+          {
+            "test_id": "4",
+            "input": "0.0000001",
+            "expected": "0.0000 is positive",
+            "output": "0.0000 is zero"
+          },
+          {
+            "test_id": "5",
+            "input": "-0.0000001",
+            "expected": "-0.0000 is negative",
+            "output": "-0.0000 is zero"
+          },
+          {
+            "test_id": "6",
+            "input": "101",
+            "expected": "101.0000 is positive",
+            "output": "101.0000 is zero"
+          },
+          {
+            "test_id": "7",
+            "input": "0000000",
+            "expected": "input is zero",
+            "output": "0.0000 is zero"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "pass",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_if": "1",
+          "ast:c_strict_comparison": "0",
+          "ast:c_address_of": "1",
+          "ast:c_return": "1",
+          "stdout:1:relation": "exact",
+          "stdout:1:edit_band": "zero",
+          "stdout:2:relation": "different",
+          "stdout:2:edit_band": "large",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "medium",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "medium",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "medium",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "medium",
+          "stdout:7:relation": "different",
+          "stdout:7:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:1": "pass",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "0",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_002",
+        "partition": "validation",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main(){\n    //to determine sign of a number\n    float n;\n    scanf(\"%f\",&n);\n    if(n>0){\n    printf(\"%.4f is positive,%n\");//number is positive\n    }\n    else{\n        if (n==0){\n        printf(\"input is zero\");//number is 0\n        }else{\n        printf(\"%.4f is negative,%n\");}}//number is negative\n    \n    \n\t\n\treturn 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "3d9b3646a197ebf6dc7a7c7c77acb746b23d3655c6cf1426ccee0b8a57cf0bf4",
+        "outcomes": {
+          "1": "fail",
+          "2": "pass",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "pass"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "-12",
+            "expected": "-12.0000 is negative",
+            "output": "0.0000 is negative,"
+          },
+          {
+            "test_id": "2",
+            "input": "0",
+            "expected": "input is zero",
+            "output": "input is zero"
+          },
+          {
+            "test_id": "3",
+            "input": "1",
+            "expected": "1.0000 is positive",
+            "output": "0.0000 is positive,"
+          },
+          {
+            "test_id": "4",
+            "input": "0.0000001",
+            "expected": "0.0000 is positive",
+            "output": "0.0000 is positive,"
+          },
+          {
+            "test_id": "5",
+            "input": "-0.0000001",
+            "expected": "-0.0000 is negative",
+            "output": "0.0000 is negative,"
+          },
+          {
+            "test_id": "6",
+            "input": "101",
+            "expected": "101.0000 is positive",
+            "output": "0.0000 is positive,"
+          },
+          {
+            "test_id": "7",
+            "input": "0000000",
+            "expected": "input is zero",
+            "output": "input is zero"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_if": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_return": "1",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "medium",
+          "stdout:2:relation": "exact",
+          "stdout:2:edit_band": "zero",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small",
+          "stdout:7:relation": "exact",
+          "stdout:7:edit_band": "zero"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "pass",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "pass",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_003",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": true,
+        "raw_code": "#include<stdio.h>\n\nint main(){\n   float a;\n   scanf(\"%f\",&a);//input float value a.\n   if (a==0)        //Check if a=0.\n   { printf(\"input is zero.\");}//display of output.\n   \n   else { if (a>0) //using another subcondition to check if a>0 or a<0.\n          { printf(\"%.4f is positive.\",a);}\n          else \n          { printf(\"%.4f is negative.\",a);}\n   }\n\t\n\treturn 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "6de1de5c7bc67116a9a0af083256256eeb313a6424282c9cfbdd34146f097add",
+        "outcomes": {
+          "1": "fail",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "-12",
+            "expected": "-12.0000 is negative",
+            "output": "-12.0000 is negative."
+          },
+          {
+            "test_id": "2",
+            "input": "0",
+            "expected": "input is zero",
+            "output": "input is zero."
+          },
+          {
+            "test_id": "3",
+            "input": "1",
+            "expected": "1.0000 is positive",
+            "output": "1.0000 is positive."
+          },
+          {
+            "test_id": "4",
+            "input": "0.0000001",
+            "expected": "0.0000 is positive",
+            "output": "0.0000 is positive."
+          },
+          {
+            "test_id": "5",
+            "input": "-0.0000001",
+            "expected": "-0.0000 is negative",
+            "output": "-0.0000 is negative."
+          },
+          {
+            "test_id": "6",
+            "input": "101",
+            "expected": "101.0000 is positive",
+            "output": "101.0000 is positive."
+          },
+          {
+            "test_id": "7",
+            "input": "0000000",
+            "expected": "input is zero",
+            "output": "input is zero."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_if": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_return": "1",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "different",
+          "stdout:2:edit_band": "small",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small",
+          "stdout:7:relation": "different",
+          "stdout:7:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_004",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main(){\n    float a; // input variable\n\tscanf(\"%f\",&a);\n\t  if (a==0)\n\t    printf (\"input is zero.\");\n\t  else if (a>0)\n\t  printf (\"%.4f is positive.\",a);\n\telse\n\t   printf (\"%.4f is negative.\",a);\n\t  \n\t \n\t  \n\t  \n\t  \n\t  \n\treturn 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "ae1d46195692cf25ede42cf69957eb22138df4cedf4fc1e7facc9b2a932eb3af",
+        "outcomes": {
+          "1": "fail",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "-12",
+            "expected": "-12.0000 is negative",
+            "output": "-12.0000 is negative."
+          },
+          {
+            "test_id": "2",
+            "input": "0",
+            "expected": "input is zero",
+            "output": "input is zero."
+          },
+          {
+            "test_id": "3",
+            "input": "1",
+            "expected": "1.0000 is positive",
+            "output": "1.0000 is positive."
+          },
+          {
+            "test_id": "4",
+            "input": "0.0000001",
+            "expected": "0.0000 is positive",
+            "output": "0.0000 is positive."
+          },
+          {
+            "test_id": "5",
+            "input": "-0.0000001",
+            "expected": "-0.0000 is negative",
+            "output": "-0.0000 is negative."
+          },
+          {
+            "test_id": "6",
+            "input": "101",
+            "expected": "101.0000 is positive",
+            "output": "101.0000 is positive."
+          },
+          {
+            "test_id": "7",
+            "input": "0000000",
+            "expected": "input is zero",
+            "output": "input is zero."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_if": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_return": "1",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "different",
+          "stdout:2:edit_band": "small",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small",
+          "stdout:7:relation": "different",
+          "stdout:7:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_005",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main(){\n    float a;\n    scanf(\"%f\",&a);\n    if(a>0)\n    {\n        printf(\"%.4f is positive.\",a);\n    }\n\telse if(a==0)\n\t{\n\t    printf(\"input is zero.\");\n\t}\n\telse\n\t{\n\t    printf(\"%.4f is negative.\",a);\n\t}\n\treturn 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "db38a4b9aaee7287afa223ddf589b342ccddf552faef6a37b241acfd32901549",
+        "outcomes": {
+          "1": "fail",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "-12",
+            "expected": "-12.0000 is negative",
+            "output": "-12.0000 is negative."
+          },
+          {
+            "test_id": "2",
+            "input": "0",
+            "expected": "input is zero",
+            "output": "input is zero."
+          },
+          {
+            "test_id": "3",
+            "input": "1",
+            "expected": "1.0000 is positive",
+            "output": "1.0000 is positive."
+          },
+          {
+            "test_id": "4",
+            "input": "0.0000001",
+            "expected": "0.0000 is positive",
+            "output": "0.0000 is positive."
+          },
+          {
+            "test_id": "5",
+            "input": "-0.0000001",
+            "expected": "-0.0000 is negative",
+            "output": "-0.0000 is negative."
+          },
+          {
+            "test_id": "6",
+            "input": "101",
+            "expected": "101.0000 is positive",
+            "output": "101.0000 is positive."
+          },
+          {
+            "test_id": "7",
+            "input": "0000000",
+            "expected": "input is zero",
+            "output": "input is zero."
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_if": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_return": "1",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "small",
+          "stdout:2:relation": "different",
+          "stdout:2:edit_band": "small",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "small",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "small",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "small",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "small",
+          "stdout:7:relation": "different",
+          "stdout:7:edit_band": "small"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_006",
+        "partition": "train",
+        "representative": true,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main(){float a;\nscanf(\"%f\",&a);\nprintf(\"%.4f\",a);\t\n\treturn 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "660ed08bdc7066111b3adca6f9729efc31d832f153e2811e4a03199f0cfb49af",
+        "outcomes": {
+          "1": "fail",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "-12",
+            "expected": "-12.0000 is negative",
+            "output": "-12.0000"
+          },
+          {
+            "test_id": "2",
+            "input": "0",
+            "expected": "input is zero",
+            "output": "0.0000"
+          },
+          {
+            "test_id": "3",
+            "input": "1",
+            "expected": "1.0000 is positive",
+            "output": "1.0000"
+          },
+          {
+            "test_id": "4",
+            "input": "0.0000001",
+            "expected": "0.0000 is positive",
+            "output": "0.0000"
+          },
+          {
+            "test_id": "5",
+            "input": "-0.0000001",
+            "expected": "-0.0000 is negative",
+            "output": "-0.0000"
+          },
+          {
+            "test_id": "6",
+            "input": "101",
+            "expected": "101.0000 is positive",
+            "output": "101.0000"
+          },
+          {
+            "test_id": "7",
+            "input": "0000000",
+            "expected": "input is zero",
+            "output": "0.0000"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_if": "0",
+          "ast:c_strict_comparison": "0",
+          "ast:c_address_of": "1",
+          "ast:c_return": "1",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "large",
+          "stdout:2:relation": "different",
+          "stdout:2:edit_band": "large",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "large",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "large",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "large",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "large",
+          "stdout:7:relation": "different",
+          "stdout:7:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "0",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "0",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_007",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main(){\n    float n ;         /* variable declaration*/\n    \n        \n\n            scanf(\"%f\",&n);\n        printf(\"%.4f\",n);\n     \n    if(n<0)\n        {printf(\" %f is negative\",n);}\n    \n    else if(n>0)\n    {printf(\"%f is positive\",n);}\n    \n    else\n    {printf(\"input is zero\");}\n    \n}",
+        "raw_code_truncated": false,
+        "source_sha256": "5f5f28c3e1974eec0d2ce63289166e1a0ad09592bd87dfef0a5a3a98a0cd3fc1",
+        "outcomes": {
+          "1": "fail",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "-12",
+            "expected": "-12.0000 is negative",
+            "output": "-12.0000 -12.000000 is negative"
+          },
+          {
+            "test_id": "2",
+            "input": "0",
+            "expected": "input is zero",
+            "output": "0.0000input is zero"
+          },
+          {
+            "test_id": "3",
+            "input": "1",
+            "expected": "1.0000 is positive",
+            "output": "1.00001.000000 is positive"
+          },
+          {
+            "test_id": "4",
+            "input": "0.0000001",
+            "expected": "0.0000 is positive",
+            "output": "0.00000.000000 is positive"
+          },
+          {
+            "test_id": "5",
+            "input": "-0.0000001",
+            "expected": "-0.0000 is negative",
+            "output": "-0.0000 -0.000000 is negative"
+          },
+          {
+            "test_id": "6",
+            "input": "101",
+            "expected": "101.0000 is positive",
+            "output": "101.0000101.000000 is positive"
+          },
+          {
+            "test_id": "7",
+            "input": "0000000",
+            "expected": "input is zero",
+            "output": "0.0000input is zero"
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_if": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "1",
+          "ast:c_return": "0",
+          "stdout:1:relation": "different",
+          "stdout:1:edit_band": "medium",
+          "stdout:2:relation": "different",
+          "stdout:2:edit_band": "medium",
+          "stdout:3:relation": "different",
+          "stdout:3:edit_band": "medium",
+          "stdout:4:relation": "different",
+          "stdout:4:edit_band": "medium",
+          "stdout:5:relation": "different",
+          "stdout:5:edit_band": "medium",
+          "stdout:6:relation": "different",
+          "stdout:6:edit_band": "medium",
+          "stdout:7:relation": "different",
+          "stdout:7:edit_band": "medium"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "1",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "0",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      },
+      {
+        "sample_id": "sample_008",
+        "partition": "train",
+        "representative": false,
+        "is_train_medoid": false,
+        "raw_code": "#include<stdio.h>\n\nint main()\n{\n    float a;\n    scanf(\"%f,&a\");\n    if(a<0.0)\n{\tprintf(\"%.4f is negative\\n\",a);}\n\tif(a==0.0)\n{\tprintf(\"input is zero\");}\n\tif(a>0.0)\n{\tprintf(\"%.4f is positive\\n\",a);}\n\treturn 0;\n}",
+        "raw_code_truncated": false,
+        "source_sha256": "ba4855732648e974b7e999f42750c06fbc912b0c19d0621ca7f75576450a5957",
+        "outcomes": {
+          "1": "fail",
+          "2": "fail",
+          "3": "fail",
+          "4": "fail",
+          "5": "fail",
+          "6": "fail",
+          "7": "fail"
+        },
+        "logged_tests": [
+          {
+            "test_id": "1",
+            "input": "-12",
+            "expected": "-12.0000 is negative",
+            "output": ""
+          },
+          {
+            "test_id": "2",
+            "input": "0",
+            "expected": "input is zero",
+            "output": ""
+          },
+          {
+            "test_id": "3",
+            "input": "1",
+            "expected": "1.0000 is positive",
+            "output": ""
+          },
+          {
+            "test_id": "4",
+            "input": "0.0000001",
+            "expected": "0.0000 is positive",
+            "output": ""
+          },
+          {
+            "test_id": "5",
+            "input": "-0.0000001",
+            "expected": "-0.0000 is negative",
+            "output": ""
+          },
+          {
+            "test_id": "6",
+            "input": "101",
+            "expected": "101.0000 is positive",
+            "output": ""
+          },
+          {
+            "test_id": "7",
+            "input": "0000000",
+            "expected": "input is zero",
+            "output": ""
+          }
+        ],
+        "clustering_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_if": "1",
+          "ast:c_strict_comparison": "1",
+          "ast:c_address_of": "0",
+          "ast:c_return": "1",
+          "stdout:1:relation": "empty",
+          "stdout:1:edit_band": "large",
+          "stdout:2:relation": "empty",
+          "stdout:2:edit_band": "large",
+          "stdout:3:relation": "empty",
+          "stdout:3:edit_band": "large",
+          "stdout:4:relation": "empty",
+          "stdout:4:edit_band": "large",
+          "stdout:5:relation": "empty",
+          "stdout:5:edit_band": "large",
+          "stdout:6:relation": "empty",
+          "stdout:6:edit_band": "large",
+          "stdout:7:relation": "empty",
+          "stdout:7:edit_band": "large"
+        },
+        "diagnostic_oav": {
+          "test:1": "fail",
+          "test:2": "fail",
+          "test:3": "fail",
+          "test:4": "fail",
+          "test:5": "fail",
+          "test:6": "fail",
+          "test:7": "fail",
+          "ast:c_for": "0",
+          "ast:c_while": "0",
+          "ast:c_do": "0",
+          "ast:c_if": "1",
+          "ast:c_inclusive_comparison": "0",
+          "ast:c_strict_comparison": "1",
+          "ast:c_subscript": "0",
+          "ast:c_zero_index": "0",
+          "ast:c_one_index": "0",
+          "ast:c_pointer_declarator": "0",
+          "ast:c_pointer_parameter": "0",
+          "ast:c_array_parameter": "0",
+          "ast:c_address_of": "0",
+          "ast:c_dereference": "0",
+          "ast:c_update": "0",
+          "ast:c_return": "1",
+          "ast:parse": "ok",
+          "is_hardcoded_output": false
+        }
+      }
+    ],
+    "evidence_index": [
+      "test_statistics",
+      "feature_statistics",
+      "learned_if_then_rules",
+      "semantic_findings",
+      "problem_statement",
+      "members/sample_001/raw_code",
+      "members/sample_001/tests/1",
+      "members/sample_001/tests/2",
+      "members/sample_001/tests/3",
+      "members/sample_001/tests/4",
+      "members/sample_001/tests/5",
+      "members/sample_001/tests/6",
+      "members/sample_001/tests/7",
+      "members/sample_002/raw_code",
+      "members/sample_002/tests/1",
+      "members/sample_002/tests/2",
+      "members/sample_002/tests/3",
+      "members/sample_002/tests/4",
+      "members/sample_002/tests/5",
+      "members/sample_002/tests/6",
+      "members/sample_002/tests/7",
+      "members/sample_003/raw_code",
+      "members/sample_003/tests/1",
+      "members/sample_003/tests/2",
+      "members/sample_003/tests/3",
+      "members/sample_003/tests/4",
+      "members/sample_003/tests/5",
+      "members/sample_003/tests/6",
+      "members/sample_003/tests/7",
+      "members/sample_004/raw_code",
+      "members/sample_004/tests/1",
+      "members/sample_004/tests/2",
+      "members/sample_004/tests/3",
+      "members/sample_004/tests/4",
+      "members/sample_004/tests/5",
+      "members/sample_004/tests/6",
+      "members/sample_004/tests/7",
+      "members/sample_005/raw_code",
+      "members/sample_005/tests/1",
+      "members/sample_005/tests/2",
+      "members/sample_005/tests/3",
+      "members/sample_005/tests/4",
+      "members/sample_005/tests/5",
+      "members/sample_005/tests/6",
+      "members/sample_005/tests/7",
+      "members/sample_006/raw_code",
+      "members/sample_006/tests/1",
+      "members/sample_006/tests/2",
+      "members/sample_006/tests/3",
+      "members/sample_006/tests/4",
+      "members/sample_006/tests/5",
+      "members/sample_006/tests/6",
+      "members/sample_006/tests/7",
+      "members/sample_007/raw_code",
+      "members/sample_007/tests/1",
+      "members/sample_007/tests/2",
+      "members/sample_007/tests/3",
+      "members/sample_007/tests/4",
+      "members/sample_007/tests/5",
+      "members/sample_007/tests/6",
+      "members/sample_007/tests/7",
+      "members/sample_008/raw_code",
+      "members/sample_008/tests/1",
+      "members/sample_008/tests/2",
+      "members/sample_008/tests/3",
+      "members/sample_008/tests/4",
+      "members/sample_008/tests/5",
+      "members/sample_008/tests/6",
+      "members/sample_008/tests/7"
+    ]
+  }
+}

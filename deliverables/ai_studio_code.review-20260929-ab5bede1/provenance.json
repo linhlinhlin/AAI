@@ -1,0 +1,9 @@
+{
+  "source_file": "deliverables/ai_studio_code.json",
+  "source_sha256": "ab5bede1384816d3d7a6e9b08ba45ada7d3dabb85cf95c749c2666d224c96c91",
+  "packet_id": "81c8ee12aa6fd6a6a2c114e9856139004fdbcb95b58c8fd30e6e5c8442dbe0a5",
+  "structural_validation": "passed",
+  "semantic_review": "revision_needed",
+  "reviewer_source": "ai",
+  "human_validated": false
+}

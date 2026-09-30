@@ -1,0 +1,3735 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{font:18px/1.6 Segoe UI,sans-serif;background:#f3f5f0;color:#183c34;max-width:1100px;margin:auto;padding:24px}article,details{background:white;border:1px solid #ccd8cf;border-radius:8px;padding:18px;margin:14px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 Consolas,monospace}a{color:#205b49}summary{cursor:pointer}h1{font:600 32px Georgia,serif}</style><title>lab02-ex01--kmeans--combined_stdout--s42--c0</title><a href="../index.html">← C-Pack-IPAs</a><h1>lab02-ex01 · 90 bài</h1><p>lab02-ex01--kmeans--combined_stdout--s42--c0 · pending_annotation · chưa có gold được duyệt.</p><h2>Dấu hiệu lỗi quan sát được</h2><p>Test ex01_2: 90/90 bài trượt (100.0%); 0 chưa chạy.</p><p>Test ex01_1: 89/90 bài trượt (98.9%); 0 chưa chạy.</p><p>Test ex01_0: 88/90 bài trượt (97.8%); 0 chưa chạy.</p><h2>Mẫu chẩn đoán cục bộ</h2><p>Chỉ áp dụng cho bài khớp; không kết luận cả cụm cùng lỗi.</p><p>In hằng số / Chưa tính toán theo đầu vào · 1/90 bài khớp.</p><details><summary>OAV và luật phân nhóm gốc</summary><p>Luật dự đoán ID cụm, không phải nhãn nguyên nhân đã xác nhận.</p><pre>{
+  &quot;features&quot;: [
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_0:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 87,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9666666666666667,
+      &quot;cohort_rate&quot;: 0.5432098765432098,
+      &quot;difference_from_cohort&quot;: 0.4234567901234568
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_2:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 89,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9888888888888889,
+      &quot;cohort_rate&quot;: 0.5740740740740741,
+      &quot;difference_from_cohort&quot;: 0.41481481481481486
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_0:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 85,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9444444444444444,
+      &quot;cohort_rate&quot;: 0.5308641975308642,
+      &quot;difference_from_cohort&quot;: 0.4135802469135802
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_2:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 87,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9666666666666667,
+      &quot;cohort_rate&quot;: 0.5617283950617284,
+      &quot;difference_from_cohort&quot;: 0.4049382716049382
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_1:edit_band&quot;,
+      &quot;value&quot;: &quot;large&quot;,
+      &quot;n&quot;: 86,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9555555555555556,
+      &quot;cohort_rate&quot;: 0.5864197530864198,
+      &quot;difference_from_cohort&quot;: 0.3691358024691358
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_1:relation&quot;,
+      &quot;value&quot;: &quot;different&quot;,
+      &quot;n&quot;: 85,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9444444444444444,
+      &quot;cohort_rate&quot;: 0.5925925925925926,
+      &quot;difference_from_cohort&quot;: 0.35185185185185186
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex01_0&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 88,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9777777777777777,
+      &quot;cohort_rate&quot;: 0.9135802469135802,
+      &quot;difference_from_cohort&quot;: 0.06419753086419755
+    },
+    {
+      &quot;feature&quot;: &quot;test:ex01_2&quot;,
+      &quot;value&quot;: &quot;fail&quot;,
+      &quot;n&quot;: 90,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9444444444444444,
+      &quot;difference_from_cohort&quot;: 0.05555555555555558
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_update&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 80,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.8888888888888888,
+      &quot;cohort_rate&quot;: 0.8518518518518519,
+      &quot;difference_from_cohort&quot;: 0.03703703703703698
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_while&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 82,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9111111111111111,
+      &quot;cohort_rate&quot;: 0.8765432098765432,
+      &quot;difference_from_cohort&quot;: 0.03456790123456788
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_if&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 83,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9222222222222223,
+      &quot;cohort_rate&quot;: 0.8950617283950617,
+      &quot;difference_from_cohort&quot;: 0.02716049382716057
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_strict_comparison&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 81,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.9,
+      &quot;cohort_rate&quot;: 0.8765432098765432,
+      &quot;difference_from_cohort&quot;: 0.023456790123456805
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_one_index&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 90,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9876543209876543,
+      &quot;difference_from_cohort&quot;: 0.012345679012345734
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_zero_index&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 90,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 1.0,
+      &quot;cohort_rate&quot;: 0.9876543209876543,
+      &quot;difference_from_cohort&quot;: 0.012345679012345734
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_for&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 10,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.1111111111111111,
+      &quot;cohort_rate&quot;: 0.09876543209876543,
+      &quot;difference_from_cohort&quot;: 0.012345679012345678
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_0:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.022222222222222223,
+      &quot;cohort_rate&quot;: 0.012345679012345678,
+      &quot;difference_from_cohort&quot;: 0.009876543209876545
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_1:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.022222222222222223,
+      &quot;cohort_rate&quot;: 0.012345679012345678,
+      &quot;difference_from_cohort&quot;: 0.009876543209876545
+    },
+    {
+      &quot;feature&quot;: &quot;stdout:ex01_2:relation&quot;,
+      &quot;value&quot;: &quot;empty&quot;,
+      &quot;n&quot;: 2,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.022222222222222223,
+      &quot;cohort_rate&quot;: 0.012345679012345678,
+      &quot;difference_from_cohort&quot;: 0.009876543209876545
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_subscript&quot;,
+      &quot;value&quot;: &quot;1&quot;,
+      &quot;n&quot;: 3,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.03333333333333333,
+      &quot;cohort_rate&quot;: 0.030864197530864196,
+      &quot;difference_from_cohort&quot;: 0.002469135802469137
+    },
+    {
+      &quot;feature&quot;: &quot;ast:c_inclusive_comparison&quot;,
+      &quot;value&quot;: &quot;0&quot;,
+      &quot;n&quot;: 73,
+      &quot;n_cluster&quot;: 90,
+      &quot;rate&quot;: 0.8111111111111111,
+      &quot;cohort_rate&quot;: 0.808641975308642,
+      &quot;difference_from_cohort&quot;: 0.0024691358024691024
+    }
+  ],
+  &quot;rules&quot;: [
+    {
+      &quot;rule_id&quot;: 7,
+      &quot;if&quot;: [
+        &quot;stdout:ex01_0:edit_band=large&quot;,
+        &quot;NOT (stdout:ex01_2:relation=different)&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 3,
+      &quot;train_precision&quot;: 0.6666666666666666,
+      &quot;holdout_support&quot;: 1,
+      &quot;holdout_precision&quot;: 1.0
+    },
+    {
+      &quot;rule_id&quot;: 8,
+      &quot;if&quot;: [
+        &quot;stdout:ex01_0:edit_band=large&quot;,
+        &quot;stdout:ex01_2:relation=different&quot;
+      ],
+      &quot;then_cluster&quot;: 0,
+      &quot;train_support&quot;: 60,
+      &quot;train_precision&quot;: 1.0,
+      &quot;holdout_support&quot;: 24,
+      &quot;holdout_precision&quot;: 1.0
+    }
+  ]
+}</pre></details><details><summary>sample_003 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main() {
+	int x;
+	int horas;
+	int min;
+	int seg;
+	
+	scanf(&quot;%d&quot;, &amp;x);
+	while (x &lt;= 0) {
+		
+		scanf(&quot;%d&quot;, &amp;x);
+	}
+	horas = x / (60*60);
+	x = x % (60*60);
+	min = x / (60);
+	x = x % (60);
+	seg = x;
+	printf(&quot;%02d:%02d:%02d\n&quot;, horas, min, seg);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;00:00:01\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;00:00:06\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;00:00:03\n&quot;
+  }
+]</pre></details><details><summary>sample_004 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+
+	int n1, n2, n3;
+
+	printf(&quot;Insira 3 numeros:\n&quot;);
+	scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2, &amp;n3);
+
+	if ((n1 &gt; n2) &amp;&amp; (n1 &gt; n3)) {
+		printf(&quot;%d\n&quot;, n1);}
+
+	else if ((n2 &gt; n1) &amp;&amp; (n2 &gt; n3)) {
+		printf(&quot;%d\n&quot;, n2);}
+
+	else {
+		printf(&quot;%d\n&quot;, n3);};
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_013 · đại diện</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    printf(&quot;Hello world!\n&quot;);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Hello world!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Hello world!\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Hello world!\n&quot;
+  }
+]</pre></details><details><summary>sample_087 · đại diện</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int x,y,z;
+
+    scanf(&quot;%d%d%d&quot;,&amp;x,&amp;y,&amp;z);
+
+    if (x&gt;=y &amp;&amp; x&gt;=z)
+        printf(&quot;%d\n&quot;,x);
+
+    else if (x&gt;=z)
+        printf(&quot;%d\n&quot;,y);
+    
+    else
+        printf(&quot;%d\n&quot;,z);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;1\n&quot;
+  }
+]</pre></details><details><summary>sample_001</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a,b,c;
+    printf(&quot;Introduza 3 números inteiros\n&quot;);
+    scanf(&quot;%d%d%d&quot;,&amp;a,&amp;b,&amp;c);
+    if (a&gt;=b &amp;&amp; a &gt;= c){
+        printf(&quot;%d\n&quot;,a);
+    }
+
+    if ( b &gt;= a &amp;&amp; b &gt;= c){
+        printf(&quot;%d\n&quot;,b);
+    }
+
+    if (c &gt;= b &amp;&amp; c &gt;= a){
+        printf(&quot;%d\n&quot;,c);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 números inteiros\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_002</summary><pre>#include &lt;stdio.h&gt;
+
+#define INFERIOR 1
+#define SUPERIOR 3
+#define PASSO 1
+
+int main()
+{
+	int maior;
+	int input;
+	int contador;
+
+	for (contador = INFERIOR; contador &lt;= SUPERIOR; contador += PASSO)
+	{
+		scanf(&quot;%d&quot;, &amp;input);
+		if (contador == 1 || maior &lt; input) {
+			maior = input;
+		}
+	}
+	printf(&quot;Maior: %d\n&quot;, maior);
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Maior: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Maior: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Maior: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_005</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+
+	int n1, n2, n3;
+
+	printf(&quot;Insira 3 numeros:\n&quot;);
+	scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2, &amp;n3);
+
+	if ((n1 &gt; n2) &amp; (n1 &gt; n3)) {
+		printf(&quot;%d\n&quot;, n1);}
+
+	else if ((n2 &gt; n1) &amp; (n2 &gt; n3)) {
+		printf(&quot;%d\n&quot;, n2);}
+
+	else {
+		printf(&quot;%d\n&quot;, n3);};
+
+	return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_006</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+
+int n1, n2, n3;
+
+printf(&quot;Insira 3 numeros:\n&quot;);
+scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2, &amp;n3);
+
+if ((n1 &gt; n2) &amp; (n1 &gt; n3)) {
+	printf(&quot;%d\n&quot;, n1);}
+
+else if ((n2 &gt; n1) &amp; (n2 &gt; n3)) {
+	printf(&quot;%d\n&quot;, n2);}
+
+else {
+	printf(&quot;%d\n&quot;, n3);};
+
+return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 numeros:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_007</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+
+ int a,b,c;
+ printf(&quot;Introduza tres inteiros: &quot;);
+ scanf(&quot;%d %d %d&quot;, &amp;a, &amp;b, &amp;c);
+
+ if (a &gt; b &amp;&amp; a &gt; c){
+ 	printf(&quot;%d\n&quot;, a);
+ }
+
+ if (b &gt; a &amp;&amp; b &gt; c){
+    printf(&quot;%d\n&quot;, b);
+ }
+ 	
+
+ if (c &gt; a &amp;&amp; c &gt; b){
+ 	printf(&quot;%d\n&quot;, c );
+ }
+return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_008</summary><pre>#include &lt;stdio.h&gt;
+
+int maior(int a, int b,int c){
+
+	if (a &gt; b &amp;&amp; a &gt; c){
+ 	return a;
+ }
+
+ if (b &gt; a &amp;&amp; b &gt; c){
+    return b;
+ }
+ 	
+
+ if (c &gt; a &amp;&amp; c &gt; b){
+ 	return c;
+ }
+ return 0;
+}
+
+int main(){
+
+ int a, b, c, m;
+ printf(&quot;Introduza tres inteiros: &quot;);
+ scanf(&quot;%d %d %d&quot;, &amp;a, &amp;b, &amp;c);
+ m = maior(a, b, c);
+ printf(&quot;%d\n&quot;, m);
+
+ return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_009</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+
+ int a,b,c;
+ printf(&quot;Introduza tres inteiros: &quot;);
+ scanf(&quot;%d %d %d&quot;, &amp;a, &amp;b, &amp;c);
+ 
+ if (a &gt; b &amp;&amp; a &gt; c){
+ 	printf(&quot;%d&quot;, a);
+ }
+
+ if (b &gt; a &amp;&amp; b &gt; c){
+    printf(&quot;%d&quot;, b);
+ }
+ 	
+
+ if (c &gt; a &amp;&amp; c &gt; b){
+ 	printf(&quot;%d&quot;, c );
+ }
+return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3&quot;
+  }
+]</pre></details><details><summary>sample_010</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+
+ int a,b,c;
+ printf(&quot;Introduza tres inteiros: &quot;);
+ scanf(&quot;%d&quot;, &amp;a);
+ scanf(&quot;%d&quot;, &amp;b);
+ scanf(&quot;%d&quot;, &amp;c);
+
+ if (a &gt; b &amp;&amp; a &gt; c){
+ 	printf(&quot;%d&quot;, a);
+ }
+
+ if (b &gt; a &amp;&amp; b &gt; c){
+    printf(&quot;%d&quot;, b);
+ }
+ 	
+
+ if (c &gt; a &amp;&amp; c &gt; b){
+ 	printf(&quot;%d&quot;, c );
+ }
+return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3&quot;
+  }
+]</pre></details><details><summary>sample_011</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+
+ int a,b,c;
+ printf(&quot;Introduza tres inteiros: &quot;);
+ scanf(&quot;%d&quot;, &amp;a);
+ scanf(&quot;%d&quot;, &amp;b);
+ scanf(&quot;%d&quot;, &amp;c);
+
+ if (a &gt; b &amp;&amp; a &gt; c){
+ 	printf(&quot;%d\n&quot;, a);
+ }
+
+ if (b &gt; a &amp;&amp; b &gt; c){
+    printf(&quot;%d\n&quot;, b);
+ }
+ 	
+
+ if (c &gt; a &amp;&amp; c &gt; b){
+ 	printf(&quot;%d\n&quot;, c );
+ }
+return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_012</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+
+	int a, b, c;
+
+	printf(&quot;Introduza tres numeros:\n&quot;);
+	scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+	if (a &gt; b &amp;&amp; a &gt; c){
+		printf(&quot;%d\n&quot;, a);
+	}
+	if (b &gt; a &amp;&amp; b &gt; c){
+		printf(&quot;%d\n&quot;, b);
+	}
+	if (c &gt; a &amp;&amp; c &gt; b){
+		printf(&quot;%d\n&quot;, c );
+	}
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres numeros:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres numeros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres numeros:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_014</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+ int x,y,z,maior;
+ printf(&quot;Insira 3 inteiros: \n&quot;);
+ scanf (&quot; %d%d%d&quot;,&amp;x,&amp;y,&amp;z);
+ maior = x;
+
+ if (y &gt; maior) {
+  maior = y; }
+ if (z &gt; maior) {
+  maior = z;
+ }
+
+ printf(&quot;O numero e: %d\n&quot;,maior);
+return 0;
+}
+
+ 
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 inteiros: \nO numero e: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 inteiros: \nO numero e: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira 3 inteiros: \nO numero e: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_015</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main()
+{
+    int primeiro,segundo,terceiro,maior;
+
+    printf(&quot;Insira três números &quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;primeiro,&amp;segundo,&amp;terceiro);
+
+    {if (primeiro &gt; segundo)    
+        {
+        if (primeiro &gt; terceiro)
+            {maior = primeiro;}
+        }
+    }
+
+    {
+    if (segundo &gt; primeiro)    
+        {   
+        if (segundo &gt; terceiro)
+            {maior = segundo;}
+        }   
+    }
+
+    {
+    if (terceiro &gt; primeiro)    
+        {   
+        if (terceiro &gt; segundo)
+            {maior = terceiro;}
+        }   
+    }
+    printf(&quot;O maior número é %d\n&quot;,maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três números O maior número é 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira três números O maior número é 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três números O maior número é 3\n&quot;
+  }
+]</pre></details><details><summary>sample_016</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main()
+{
+    int primeiro,segundo,terceiro,maior;
+
+    printf(&quot;Insira três números &quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;primeiro,&amp;segundo,&amp;terceiro);
+
+    {if (segundo &gt; primeiro)
+        maior = segundo;
+     else
+        if(terceiro &gt; primeiro)
+            maior = terceiro;
+        else
+            maior = primeiro;
+    }
+
+    printf(&quot;O maior número é %d \n&quot;,maior);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três números O maior número é 2 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira três números O maior número é 6 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três números O maior número é 3 \n&quot;
+  }
+]</pre></details><details><summary>sample_017</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main()
+{
+
+    int primeiro,segundo,terceiro,maior;
+
+    printf(&quot;Insira três números &quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;primeiro,&amp;segundo,&amp;terceiro);
+
+    {if (primeiro &gt; segundo)    
+        {
+        if (primeiro &gt; terceiro)
+            maior = primeiro;
+        }
+    }
+
+    {
+    if (segundo &gt; primeiro)    
+        {   
+        if (segundo &gt; terceiro)
+            maior = segundo;
+        }   
+    }
+
+    {
+    if (terceiro &gt; primeiro)    
+        {   
+        if (terceiro &gt; segundo)
+            maior = terceiro;
+        }   
+    }
+    printf(&quot;O maior lido foi %d\n&quot;,maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três números O maior lido foi 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira três números O maior lido foi 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três números O maior lido foi 3\n&quot;
+  }
+]</pre></details><details><summary>sample_018</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main()
+{
+    int num, max, i;
+    printf(&quot;Introduza 3 numeros inteiros:\n&quot;);
+    scanf(&quot;%d&quot;, &amp;max);
+    for(i = 0; i &lt; 2; i = i + 1)
+    {
+        scanf(&quot;%d&quot;, &amp;num);
+        if (num &gt; max)
+        {
+            max = num;
+        }
+    }
+    printf(&quot;O maior numero e:\n&quot;);
+    printf( &quot;%d\n&quot;, max);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\nO maior numero e:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\nO maior numero e:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\nO maior numero e:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_019</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    printf(&quot;Introduza 3 numeros inteiros: \n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+    if (a &lt;= b) {
+        if (b &lt;= c) {
+            printf(&quot;%d&quot;, c);
+        }
+        else{
+            printf(&quot;%d&quot;, b);
+        }
+    } 
+    else {
+        if (a &lt;= c) {
+            printf(&quot;%d&quot;, c);
+        }
+        else {
+            printf(&quot;%d&quot;, a);
+        }
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros: \n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros: \n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros: \n3&quot;
+  }
+]</pre></details><details><summary>sample_020</summary><pre>#include &lt;stdio.h&gt;
+
+
+int main()
+{
+int maior,cont,num;
+scanf (&quot;%d&quot;,&amp;maior);
+for(cont =0;cont &lt;2; cont++)
+  {
+   scanf(&quot;%d&quot;,&amp;num);
+   if (num &gt; maior)
+     {
+     maior = num;
+     } 
+  }
+printf (&quot;O maior e %d\n&quot;,maior);
+return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior e 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;O maior e 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior e 3\n&quot;
+  }
+]</pre></details><details><summary>sample_021</summary><pre>#include &lt;stdio.h&gt;
+
+
+int main()
+{
+int maior,b,c;
+scanf (&quot;%d%d%d&quot;,&amp;maior,&amp;b,&amp;c);
+if (b &gt;maior)
+  {
+   maior = b;
+  }
+if(c&gt; maior)
+  {
+  maior = c;
+  }
+printf (&quot;O maior e %d\n&quot;,maior);
+return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior e 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;O maior e 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior e 3\n&quot;
+  }
+]</pre></details><details><summary>sample_022</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    int num, i, maior;
+    maior = 0;
+    for(i = 1; i &lt;= 3; ++i){
+        printf(&quot;Insira um número: &quot;);
+        scanf(&quot;%d&quot;, &amp;num);
+        if(num &gt; maior){
+            maior = num;
+        }
+    }
+    printf(&quot;O maior número é: %d\n&quot;, maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira um número: Insira um número: Insira um número: O maior número é: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira um número: Insira um número: Insira um número: O maior número é: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira um número: Insira um número: Insira um número: O maior número é: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_023</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    int num1, num2, num3;
+    printf(&quot;Insira três inteiros: &quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;num1, &amp;num2, &amp;num3);
+    if(num1 &gt; num2 &amp;&amp; num1 &gt; num3){
+        printf(&quot;%d\n&quot;, num1);
+    } else if(num2 &gt; num1 &amp;&amp; num2 &gt; num3){
+        printf(&quot;%d\n&quot;, num2);
+    } else{
+        printf(&quot;%d\n&quot;, num3);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três inteiros: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira três inteiros: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três inteiros: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_024</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main () {
+    int a;
+    int b;
+    int c;
+
+    printf (&quot;Introduza três numeros:\n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+
+    if (a &gt; b) {
+        if (a &gt; c) {
+            printf(&quot; O numero maior é %d\n&quot;, a);
+        }
+        else {
+            printf( &quot; O maior numero é %d\n&quot;, c);
+        }}
+    else {
+        if (b &gt; c) {
+            printf(&quot; O maior numero é %d\n&quot;, b);
+        }
+        else {
+            printf(&quot;O maior numero é %d\n&quot;, c);
+        }
+    }
+    return 0;
+
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três numeros:\nO maior numero é 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três numeros:\n O numero maior é 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três numeros:\n O maior numero é 3\n&quot;
+  }
+]</pre></details><details><summary>sample_025</summary><pre>#include &lt;stdio.h&gt;
+
+#define NUM_PEDIDO 3
+
+
+
+int main() {
+  int i, maior, cont=0;
+
+  printf(&quot;Insira três números inteiros para ver qual é o maior:\n1º número -&gt; &quot;);
+  scanf(&quot;%d&quot;, &amp;i);
+  maior = i;
+  while (++cont &lt; NUM_PEDIDO) {
+    printf(&quot;%dº número -&gt; &quot;, cont+1);
+    scanf(&quot;%d&quot;, &amp;i);
+    if (i &gt; maior)
+      maior = i;
+  }
+
+  printf(&quot;O maior número inserido pelo utilizardor é: %d\n&quot;, maior);
+
+  return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três números inteiros para ver qual é o maior:\n1º número -&gt; 2º número -&gt; 3º número -&gt; O maior número inserido pelo utilizardor é: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira três números inteiros para ver qual é o maior:\n1º número -&gt; 2º número -&gt; 3º número -&gt; O maior número inserido pelo utilizardor é: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira três números inteiros para ver qual é o maior:\n1º número -&gt; 2º número -&gt; 3º número -&gt; O maior número inserido pelo utilizardor é: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_026</summary><pre>#include &lt;stdio.h&gt;
+int main() {
+  int a, b, c;
+  printf(&quot;Introduz o primeiro número: &quot;);
+  scanf(&quot;%d&quot;, &amp;a);
+  printf(&quot;Introduz o segundo número: &quot;);
+  scanf(&quot;%d&quot;, &amp;b);
+  printf(&quot;Introduz o terceiro número: &quot;);
+  scanf(&quot;%d&quot;, &amp;c);
+  if (a &gt;= b) {
+    if (c &gt;= a) {
+      printf(&quot;%d\n&quot;, c);
+    } else {
+      printf(&quot;%d\n&quot;, a);
+    }
+  } else {
+    if (c &gt;= b) {
+      printf(&quot;%d\n&quot;, c);
+    } else {
+      printf(&quot;%d\n&quot;, b);
+    }
+  }
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz o primeiro número: Introduz o segundo número: Introduz o terceiro número: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduz o primeiro número: Introduz o segundo número: Introduz o terceiro número: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz o primeiro número: Introduz o segundo número: Introduz o terceiro número: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_027</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b, c;
+    scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+
+    if (a &gt; b &amp;&amp; a &gt; c)
+    {
+        printf(&quot;The highest number is: %d\n&quot;, a);
+    }
+    else if (b &gt; a &amp;&amp; b &gt; c)
+    {
+        printf(&quot;The highest value is: %d\n&quot;, b);
+    }
+    else
+    {
+        printf(&quot;The highest value is %d\n&quot;, c);
+    }
+
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;The highest value is 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;The highest number is: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;The highest value is: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_028</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main () {
+    int n1, n2, n3, max;
+    printf(&quot;Introduza tres numeros:\n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2, &amp;n3);
+    max = n1;
+    if (n2 &gt; max) 
+        max = n2;
+    if (n3 &gt; max) 
+        max = n3;
+    printf(&quot;o maximo é:%d\n&quot;, max);
+    return 0;
+   
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres numeros:\no maximo é:3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres numeros:\no maximo é:6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres numeros:\no maximo é:3\n&quot;
+  }
+]</pre></details><details><summary>sample_029</summary><pre>#include &lt;stdio.h&gt;
+
+
+
+int main()
+{
+    int x, y, z, max;
+    printf(&quot;Introduza tres inteiros:\n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+    max = x;
+    if (y &gt; max)
+        max = y;
+    if (z &gt; max)
+        max = z;
+    printf(&quot;%d\n&quot;, max);
+    
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza tres inteiros:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_030</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    int a;
+    int b;
+    int c;
+    printf(&quot;? &quot;);
+    scanf(&quot;%d&quot;, &amp;a);
+    printf(&quot;? &quot;);
+    scanf(&quot;%d&quot;, &amp;b);
+    printf(&quot;? &quot;);
+    scanf(&quot;%d&quot;, &amp;c);
+    if(a &lt; 1 || b &lt; 1 || c &lt; 1){
+        printf(&quot;As dimensões dos lados dos triângulos devem ser todas positivas&quot;);
+    }
+    else{
+        if(a + b &lt;= c || a + c &lt;= b || c + b &lt;= a){
+            printf(&quot;Não é triângulo&quot;);
+        }
+        else{
+            if(a == b &amp;&amp; b == c){
+                printf(&quot;O triângulo é equilátero&quot;);
+            }
+            else{
+                if(a == b || b == c || c == a){
+                    printf(&quot;O triângulo é isósceles&quot;);
+                }
+                else{
+                    printf(&quot;O triângulo é escaleno&quot;);
+                }
+            }
+        }
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;? ? ? Não é triângulo&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;? ? ? Não é triângulo&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;? ? ? As dimensões dos lados dos triângulos devem ser todas positivas&quot;
+  }
+]</pre></details><details><summary>sample_031</summary><pre>#include &lt;stdio.h&gt;
+
+int main(){
+    int a;
+    int b;
+    int c;
+    printf(&quot;? &quot;);
+    scanf(&quot;%d&quot;, &amp;a);
+    printf(&quot;? &quot;);
+    scanf(&quot;%d&quot;, &amp;b);
+    printf(&quot;? &quot;);
+    scanf(&quot;%d&quot;, &amp;c);
+    if(a &lt; 1 || b &lt; 1 || c &lt; 1){
+        printf(&quot;As dimensões dos lados do triângulo devem ser todas positivas&quot;);
+    }
+    else{
+        if(a + b &lt;= c || a + c &lt;= b || c + b &lt;= a){
+            printf(&quot;Não é triângulo&quot;);
+        }
+        else{
+            if(a == b &amp;&amp; b == c){
+                printf(&quot;O triângulo é equilátero&quot;);
+            }
+            else{
+                if(a == b || b == c || c == a){
+                    printf(&quot;O triângulo é isósceles&quot;);
+                }
+                else{
+                    printf(&quot;O triângulo é escaleno&quot;);
+                }
+            }
+        }
+    }
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;? ? ? Não é triângulo&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;? ? ? Não é triângulo&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;? ? ? As dimensões dos lados do triângulo devem ser todas positivas&quot;
+  }
+]</pre></details><details><summary>sample_032</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x, y, z;
+    printf(&quot;Introduza três inteiros.\n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+    if(x &gt; y &amp;&amp; x &gt; z)
+        printf(&quot;%d\n&quot;, x);    
+    else if(y &gt; z)
+        printf(&quot;%d\n&quot;, y);
+    else
+        printf(&quot;%d\n&quot;, z);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_033</summary><pre>#include &lt;stdio.h&gt;
+int main()
+{
+    int x, y, z;
+    printf(&quot;Introduza três inteiros.\n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;x, &amp;y, &amp;z);
+    if(x &gt; y &amp;&amp; x &gt; z)
+        printf(&quot;%d\n&quot;, x);    
+    else if(y &gt; z)
+        printf(&quot;%d\n&quot;, y);
+    else
+        printf(&quot;%d\n&quot;, z);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_034</summary><pre>#include &lt;stdio.h&gt;
+int main()
+{
+    int x, y, z;
+    printf(&quot;Introduza três inteiros.\n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+    if(x &gt; y &amp;&amp; x &gt; z)
+        printf(&quot;%d\n&quot;, x);    
+    else if(y &gt; z)
+        printf(&quot;%d\n&quot;, y);
+    else
+        printf(&quot;%d\n&quot;, z);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_035</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x, y, z;
+    printf(&quot;Introduza três inteiros.\n&quot;);
+    scanf(&quot;%d\n%d\n%d&quot;, &amp;x, &amp;y, &amp;z);
+    if(x &gt; y &amp;&amp; x &gt; z)
+        printf(&quot;O maior dos três números é: %d\n&quot;, x);    
+    else if(y &gt; z)
+        printf(&quot;O maior dos três números é: %d\n&quot;, y);
+    else
+        printf(&quot;O maior dos três números é: %d\n&quot;, z);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\nO maior dos três números é: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\nO maior dos três números é: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\nO maior dos três números é: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_036</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x, y, z;
+    printf(&quot;Introduza três inteiros.\n&quot;);
+    scanf(&quot;%d\n%d\n%d&quot;, &amp;x, &amp;y, &amp;z);
+    if(x &gt; y &amp;&amp; x &gt; z)
+        printf(&quot;%d&quot;, x);    
+    else if(y &gt; z)
+        printf(&quot;%d&quot;, y);
+    else
+        printf(&quot;%d&quot;, z);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três inteiros.\n3&quot;
+  }
+]</pre></details><details><summary>sample_037</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+	int num1, cont=0, num, maior;
+	printf(&quot;Escreva um numero inteiro:&quot;);
+	scanf(&quot;%d&quot;, &amp;num1);
+	maior = num1;
+	while (cont &lt; 2)
+	{
+		printf(&quot;Escreva um numero inteiro:&quot;);
+		scanf(&quot;%d&quot;, &amp;num);
+		if (num &gt;= num1)
+		{
+			maior = num;
+		}
+		cont++;
+	}
+	printf(&quot;%d\n&quot;, maior);
+	return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Escreva um numero inteiro:Escreva um numero inteiro:Escreva um numero inteiro:3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Escreva um numero inteiro:Escreva um numero inteiro:Escreva um numero inteiro:6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Escreva um numero inteiro:Escreva um numero inteiro:Escreva um numero inteiro:1\n&quot;
+  }
+]</pre></details><details><summary>sample_038</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+  int a, b, c;
+
+  printf(&quot;Escreva 3 números:\n&quot;);
+  scanf(&quot;%d\n%d\n%d&quot;, &amp;a, &amp;b, &amp;c);
+
+  if (a &gt; b &amp;&amp; a &gt; c)
+    printf(&quot;%d é o maior número\n&quot;, a);
+  else if (b &gt; a &amp;&amp; b &gt; c)
+    printf(&quot;%d é o maior número\n&quot;, b);   
+   else
+    printf(&quot;%d é o maior número\n&quot;, c); 
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Escreva 3 números:\n3 é o maior número\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Escreva 3 números:\n6 é o maior número\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Escreva 3 números:\n3 é o maior número\n&quot;
+  }
+]</pre></details><details><summary>sample_039</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+  int a, b, c;
+
+  scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+
+  if (a &gt; b &amp;&amp; a &gt; c)
+    printf(&quot;%d é o maior número\n&quot;, a);
+  else if (b &gt; a &amp;&amp; b &gt; c)
+    printf(&quot;%d é o maior número\n&quot;, b);   
+  else
+    printf(&quot;%d é o maior número\n&quot;, c); 
+
+    
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3 é o maior número\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;6 é o maior número\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3 é o maior número\n&quot;
+  }
+]</pre></details><details><summary>sample_040</summary><pre>#include &lt;stdio.h&gt;
+
+int main()
+{
+  int N, M;
+
+  scanf(&quot;%d%d&quot;, &amp;N, &amp;M);
+
+  if(N &gt; M)
+    printf(&quot;\n%d\n%d\n&quot;, M, N);
+  else
+    printf(&quot;\n%d\n%d\n&quot;, N, M);
+
+  return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;\n1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;\n2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;\n-1\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_041</summary><pre>#include &lt;stdio.h&gt;
+int n_original, dig, numero_dig = 0, soma, n;
+
+int main(){
+    printf(&quot;Escreva um numero\n&quot;);
+    scanf(&quot;%d&quot;, &amp;n_original);
+
+    n = n_original;
+    while (n &gt; 0)
+    {
+        dig = n % 10;
+        soma = soma + dig;
+        numero_dig++;
+        n = n/10;
+    }
+    printf(&quot;%d\n%d&quot;, numero_dig, soma);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Escreva um numero\n1\n1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Escreva um numero\n1\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Escreva um numero\n0\n0&quot;
+  }
+]</pre></details><details><summary>sample_042</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+    int n1, n2, n3, n4;
+    printf(&quot;Insira tres numeros, separados por virgulas:&quot;);
+    scanf(&quot;%d,%d,%d&quot;,&amp;n1,&amp;n2,&amp;n3);
+    if (n1&gt;n2 &amp;&amp; n1&gt;n3)
+        n4 = n1;
+    else if(n2&gt;n1 &amp;&amp; n2&gt;n3)
+        n4 = n2;
+    else n4 = n3;
+    printf(&quot;O maior numero e&#x27;: %d&quot;,n4);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira tres numeros, separados por virgulas:O maior numero e&#x27;: 32767&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira tres numeros, separados por virgulas:O maior numero e&#x27;: 817556320&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira tres numeros, separados por virgulas:O maior numero e&#x27;: 607572544&quot;
+  }
+]</pre></details><details><summary>sample_043</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+    int n1, n2, n3, n4;
+    printf(&quot;Insira tres numeros, separados por virgulas:&quot;);
+    scanf(&quot;%d %d    %d&quot;,&amp;n1,&amp;n2,&amp;n3);
+    if (n1&gt;n2 &amp;&amp; n1&gt;n3)
+        n4 = n1;
+    else if(n2&gt;n1 &amp;&amp; n2&gt;n3)
+        n4 = n2;
+    else n4 = n3;
+    printf(&quot;%d&quot;,n4);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira tres numeros, separados por virgulas:3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira tres numeros, separados por virgulas:6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira tres numeros, separados por virgulas:3&quot;
+  }
+]</pre></details><details><summary>sample_044</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+    int n1, n2, n3, n4;
+    printf(&quot;Insira tres numeros, separados por virgulas:&quot;);
+    scanf(&quot;%d,%d,%d&quot;,&amp;n1,&amp;n2,&amp;n3);
+    if (n1&gt;n2 &amp;&amp; n1&gt;n3)
+        n4 = n1;
+    else if(n2&gt;n1 &amp;&amp; n2&gt;n3)
+        n4 = n2;
+    else n4 = n3;
+    printf(&quot;%d&quot;,n4);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira tres numeros, separados por virgulas:128461856&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira tres numeros, separados por virgulas:32764&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira tres numeros, separados por virgulas:32766&quot;
+  }
+]</pre></details><details><summary>sample_045</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int i, n, maior = 0;
+    for (i = 0; i &lt; 3; i++){
+        scanf(&quot;%d&quot;, &amp;n);
+        if (n &gt; maior)
+            maior = n;
+    }
+    printf(&quot;%d\n&quot;, n);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;1\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;1\n&quot;
+  }
+]</pre></details><details><summary>sample_046</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main(){
+    int i, n, maior = 0;
+    for (i = 0; i &lt; 3; i++){
+        scanf(&quot;%d&quot;, &amp;n);
+        if (n &gt; maior)
+            maior = n;
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_047</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2, num3, maior;
+    
+    printf(&quot;Digite três números inteiros: &quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;num1, &amp;num2, &amp;num3);
+    
+    maior = num1;
+    
+    while (num2 &gt; maior) {
+        maior = num2;
+    }
+    
+    while (num3 &gt; maior) {
+        maior = num3;
+    }
+    
+    printf(&quot;O maior número é %d&quot;, maior);
+    
+    return 0;
+}
+
+ </pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Digite três números inteiros: O maior número é 3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Digite três números inteiros: O maior número é 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Digite três números inteiros: O maior número é 3&quot;
+  }
+]</pre></details><details><summary>sample_048</summary><pre>
+#include &lt;stdio.h&gt;
+int main (){
+    int num1,num2,num3;
+    int contador;
+    for(contador=0;contador&lt;3;contador+=1){
+        if (contador==0) 
+            scanf( &quot;%d&quot;,&amp;num1);
+        if (contador==1)
+            scanf( &quot;%d&quot;,&amp;num2);
+        if (contador==2)
+            scanf( &quot;%d&quot;,&amp;num3);
+    }
+    if ((num1&gt;=num2) &amp;&amp; (num1&gt;=num3)) 
+        printf(&quot;n%d\n&quot;,num1);
+    else if ((num2&gt;=num1) &amp;&amp; (num2&gt;=num3)) 
+        printf(&quot;n%d\n&quot;,num2);
+    else if ((num3&gt;=num2) &amp;&amp; (num3&gt;=num1)) 
+        printf(&quot;n%d\n&quot;,num3); 
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;n3\n&quot;
+  }
+]</pre></details><details><summary>sample_049</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2, num3;
+    scanf(&quot;%d&quot;, &amp;num1);
+    scanf(&quot;%d&quot;, &amp;num2);
+    scanf(&quot;%d&quot;, &amp;num3);
+    
+    if (num1 &gt; num2 &amp;&amp; num1 &gt; num3)
+        printf(&quot;%d é o maior numero&quot;, num1);
+    else if (num1 &lt; num2 &amp;&amp; num2 &gt; num3)
+        printf(&quot;%d é o maior numero&quot;, num2);
+    else if (num3 &gt; num1 &amp;&amp; num3 &gt; num2)
+        printf(&quot;%d é o maior numero&quot;, num3);
+
+    return 0;
+    }
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3 é o maior numero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;6 é o maior numero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3 é o maior numero&quot;
+  }
+]</pre></details><details><summary>sample_050</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2, num3;
+    scanf(&quot;%d&quot;, &amp;num1);
+    scanf(&quot;%d&quot;, &amp;num2);
+    scanf(&quot;%d&quot;, &amp;num3);
+    
+    if (num1 &gt; num2 &amp;&amp; num1 &gt; num3)
+        printf(&quot;%d é o maior numero&quot;, num1);
+    else if (num1 &lt; num2 &amp;&amp; num2 &gt; num3)
+        printf(&quot;%d\n é o maior numero&quot;, num2);
+    else if (num3 &gt; num1 &amp;&amp; num3 &gt; num2)
+        printf(&quot;%d\n é o maior numero&quot;, num3);
+
+    return 0;
+    }
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3\n é o maior numero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;6 é o maior numero&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3\n é o maior numero&quot;
+  }
+]</pre></details><details><summary>sample_051</summary><pre>
+#include&lt;stdio.h&gt;
+
+int main (){
+
+int a, b, c;
+
+printf(&quot;Insira os 3 numeros pff\n&quot;);
+
+scanf(&quot;%d%d%d&quot;, &amp;a, &amp;b, &amp;c);
+
+if (a&gt;b &amp;&amp; a&gt;c){
+
+    printf(&quot;O maior numero inserido é %d \n&quot;, a );
+}
+
+else if (b&gt;a &amp;&amp; b&gt;c){
+
+    printf(&quot;O maior numero inserido é%d \n&quot;, b );
+
+}
+
+else {
+
+printf(&quot;O maior numero inserido é %d \n&quot;, c );
+
+}
+
+return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira os 3 numeros pff\nO maior numero inserido é 3 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insira os 3 numeros pff\nO maior numero inserido é 6 \n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insira os 3 numeros pff\nO maior numero inserido é3 \n&quot;
+  }
+]</pre></details><details><summary>sample_052</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int min;
+    int a, b, c;
+    scanf(&quot;%d %d %d&quot;, &amp;a, &amp;b, &amp;c);
+    min = a;
+    if (b &lt; min)
+        min = b;
+    if (c &lt; min)
+        min = c;
+    printf(&quot;%d&quot;, min);
+    return 0;   
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;-1&quot;
+  }
+]</pre></details><details><summary>sample_053</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int num1_ex1, num2_ex1, num3_ex1 = 0;   
+    scanf(&quot;%d%d%d&quot;,&amp;num1_ex1,&amp;num2_ex1,&amp;num3_ex1);
+    if (num1_ex1 &gt; num2_ex1){
+        if (num1_ex1 &gt; num3_ex1){
+            printf(&quot;O maior numero e: %d&quot;, num1_ex1);
+        }
+        else{
+            printf(&quot;O maior numero e: %d&quot;, num3_ex1);
+        }
+    }
+    else if (num2_ex1 &gt; num1_ex1){
+        if (num2_ex1 &gt; num3_ex1){
+            printf(&quot;O maior numero e: %d&quot;, num2_ex1);
+        }
+        else{
+            printf(&quot;O maior numero e: %d&quot;, num3_ex1);
+        }
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior numero e: 3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;O maior numero e: 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior numero e: 3&quot;
+  }
+]</pre></details><details><summary>sample_054</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+int main()
+{
+    int num1;
+    int num2;
+    int num3;
+    scanf(&quot;%d, %d, %d&quot;,&amp;num1, &amp;num2, &amp;num3);
+    if (num1&gt;num2 &amp;&amp; num1&gt;num3)
+    {
+        printf(&quot;%d&quot;, num1);
+    }
+    if (num2&gt;num1 &amp;&amp; num2&gt;num3)
+    {
+        printf(&quot;%d&quot;, num2);
+    }
+    if (num3&gt;num2 &amp;&amp; num1&lt;num3)
+    {
+        printf(&quot;%d&quot;, num3);
+    }
+    return 0;
+} 
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;32766&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;32766&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;32766&quot;
+  }
+]</pre></details><details><summary>sample_055</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+int main()
+{
+    int num1;
+    int num2;
+    int num3;
+    scanf(&quot;%d, %d, %d&quot;,&amp;num1, &amp;num2, &amp;num3);
+    if (num1&gt;num2 &amp;&amp; num1&gt;num3)
+    {
+        printf(&quot;%d&quot;, num1);
+    }
+    if (num2&gt;num1 &amp;&amp; num2&gt;num3)
+    {
+        printf(&quot;%d&quot;, num2);
+    }
+    if (num3&gt;num2 &amp;&amp; num1&lt;num3)
+    {
+        printf(&quot;%d&quot;, num3);
+    }
+    return 0;
+} 
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;32764&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;32765&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;32764&quot;
+  }
+]</pre></details><details><summary>sample_056</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x, y, z, vm;
+
+    printf(&quot;Introduz 3 números inteiros: \n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+    if ((x &gt; y) &amp;&amp; (x &gt; z))
+    {
+        vm = x;
+    }
+    if ((y &gt; x) &amp;&amp; (y &gt; z))
+    {
+        vm = y;
+    }
+    if ((z &gt; x) &amp;&amp; (z &gt; y))
+    {
+        vm = z;
+    }
+    printf(&quot;O valor maior é %d\n&quot;, vm);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 3\n&quot;
+  }
+]</pre></details><details><summary>sample_057</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x, y, z, vm;
+
+    printf(&quot;Introduz 3 números inteiros: \n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+    if ((x &gt; y) &amp;&amp; (x &gt; z))
+    {
+        vm = x;
+    }
+    if ((y &gt; x) &amp;&amp; (y &gt; z))
+    {
+        vm = y;
+    }
+    if ((z &gt; x) &amp;&amp; (z &gt; y))
+    {
+        vm = z;
+    }
+    printf(&quot;O valor maior é %d\n&quot;, vm);
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 3\n&quot;
+  }
+]</pre></details><details><summary>sample_058</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x, y, z, vm;
+
+    printf(&quot;Introduz 3 números inteiros: \n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+    if ((x &gt; y) &amp;&amp; (x &gt; z))
+    {
+        vm = x;
+    }
+    if ((y &gt; x) &amp;&amp; (y &gt; z))
+    {
+        vm = y;
+    }
+    if ((z &gt; x) &amp;&amp; (z &gt; y))
+    {
+        vm = z;
+    }
+    printf(&quot;O valor maior é %d\n&quot;, vm);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 3\n&quot;
+  }
+]</pre></details><details><summary>sample_059</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x, y, z, vm;
+
+    printf(&quot;Introduz 3 números inteiros: \n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+    if ((x &gt; y) &amp;&amp; (x &gt; z))
+    {
+        vm = x;
+    }
+    if ((y &gt; x) &amp;&amp; (y &gt; z))
+    {
+        vm = y;
+    }
+    if ((z &gt; x) &amp;&amp; (z &gt; y))
+    {
+        vm = z;
+    }
+    printf(&quot;%d\n&quot;, vm);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \n3\n&quot;
+  }
+]</pre></details><details><summary>sample_060</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x, y, z, vm;
+
+    printf(&quot;Introduz 3 números inteiros: \n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;x, &amp;y, &amp;z);
+    if ((x &gt; y) &amp;&amp; (x &gt; z))
+    {
+        vm = x;
+    }
+    if ((y &gt; x) &amp;&amp; (y &gt; z))
+    {
+        vm = y;
+    }
+    if ((z &gt; x) &amp;&amp; (z &gt; y))
+    {
+        vm = z;
+    }
+    printf(&quot;O valor maior é %d\n&quot;, vm);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduz 3 números inteiros: \nO valor maior é 3\n&quot;
+  }
+]</pre></details><details><summary>sample_061</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int input = 0;
+    int output = 0;
+    int i = 0;
+
+    scanf(&quot;%d&quot;, &amp;input);
+    output = input;
+
+    while(i&lt;2){
+        scanf(&quot;%d&quot;, &amp;input);
+        if(input &lt; output)
+            output = input;
+
+        i++;
+    }
+
+    printf(&quot;%d&quot;, output);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;-1&quot;
+  }
+]</pre></details><details><summary>sample_062</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int primeiro, segundo , terceiro;
+    scanf(&quot;%d&quot;,&amp;primeiro);
+    scanf(&quot;%d&quot;,&amp;segundo);
+    scanf(&quot;%d&quot;,&amp;terceiro);
+    
+    if (primeiro &lt; segundo &amp;&amp; primeiro &lt; terceiro)
+    {
+        printf(&quot;%d&quot;,primeiro);
+    }
+    if (primeiro &gt; segundo &amp;&amp; segundo &lt; terceiro)
+    {
+        printf(&quot;%d&quot;,segundo);
+    }
+    if (primeiro &gt; terceiro &amp;&amp; segundo &gt; terceiro)
+    {
+        printf(&quot;%d&quot;,terceiro);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;-1&quot;
+  }
+]</pre></details><details><summary>sample_063</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+
+#define PASSO 1
+#define INICIO 0
+#define FIM 2
+
+int main()
+{
+    int n_maior = INICIO, contador, lista[3];
+    printf(&quot;Introduza três números inteiros:\n&quot;);
+    for (contador = INICIO; contador &lt;= FIM; contador = contador + PASSO)
+        scanf(&quot;%d&quot;, &amp;lista[contador]);
+    for (contador = INICIO; contador &lt;= FIM; contador = contador + PASSO)
+    {
+        if (lista[contador] &gt; n_maior)
+            n_maior = lista[contador];
+    } 
+    printf(&quot;%d\n&quot;, n_maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_064</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+#define PASSO 1
+#define INICIO 0
+#define FIM 2
+
+int main()
+{
+    int n_maior = INICIO, contador, lista[3];
+    printf(&quot;Introduza três números inteiros:\n&quot;);
+    for (contador = INICIO; contador &lt;= FIM; contador = contador + PASSO)
+        scanf(&quot;%d&quot;, &amp;lista[contador]);
+    for (contador = INICIO; contador &lt;= FIM; contador = contador + PASSO)
+    {
+        if (lista[contador] &gt; n_maior)
+            n_maior = lista[contador];
+    } 
+    printf(&quot;%d\n&quot;, n_maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_065</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+
+
+#define PASSO 1
+#define INICIO 0
+#define FIM 2
+
+int main()
+{
+    int n_maior = INICIO, contador, lista[3];
+    printf(&quot;Introduza três números inteiros:\n&quot;);
+    for (contador = INICIO; contador &lt;= FIM; contador = contador + PASSO)
+        scanf(&quot;%d&quot;, &amp;lista[contador]);
+    for (contador = INICIO; contador &lt;= FIM; contador = contador + PASSO)
+    {
+        if (lista[contador] &gt; n_maior)
+            n_maior = lista[contador];
+    } 
+    printf(&quot;%d\n&quot;, n_maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza três números inteiros:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_066</summary><pre>
+#include &lt;stdio.h&gt;
+int main() {
+    int a, b, c;
+    scanf(&quot;%d %d %d&quot;, &amp;a, &amp;b, &amp;c);
+    if (a&gt;b &amp;&amp; a&gt;c) {
+        printf(&quot;O maior numero: %d&quot;, a);
+    }
+    if (b&gt;a &amp;&amp; b&gt;c){
+        printf(&quot;o maior numero: %d&quot;, b);
+    }
+    if (c&gt;a &amp;&amp; c&gt;b){
+        printf(&quot;o maior numero: %d&quot;, c);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;o maior numero: 3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;O maior numero: 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;o maior numero: 3&quot;
+  }
+]</pre></details><details><summary>sample_067</summary><pre>
+#include &lt;stdio.h&gt;
+
+int biggest(int num1, int num2, int num3) {
+    if ((num1 &gt; num2) &amp;&amp; (num1 &gt; num3)) {
+        return num1;
+    }
+    else if ((num2 &gt; num1) &amp;&amp; (num2 &gt; num3)) {
+        return num2;
+    }
+    else {
+        return num3;
+    }
+}
+
+int main() {
+    int num1, num2, num3;
+  
+    printf(&quot;Num:&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;num1,&amp;num2,&amp;num3);
+
+    printf(&quot;%d&quot;, biggest(num1, num2, num3));
+  
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Num:3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Num:6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Num:3&quot;
+  }
+]</pre></details><details><summary>sample_068</summary><pre>
+#include &lt;stdio.h&gt;
+
+int biggest(int num1, int num2, int num3) {
+    if ((num1 &gt; num2) &amp;&amp; (num1 &gt; num3)) {
+        return num1;
+    }
+    else if ((num2 &gt; num1) &amp;&amp; (num2 &gt; num3)) {
+        return num2;
+    }
+    else {
+        return num3;
+    }
+}
+
+int main() {
+    int num1, num2, num3;
+  
+    printf(&quot; &quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;num1,&amp;num2,&amp;num3);
+
+    printf(&quot;%d&quot;, biggest(num1, num2, num3));
+  
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot; 3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot; 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot; 3&quot;
+  }
+]</pre></details><details><summary>sample_069</summary><pre>
+#include &lt;stdio.h&gt;
+
+int biggest(int num1, int num2, int num3) {
+    if ((num1 &gt; num2) &amp;&amp; (num1 &gt; num3)) {
+        return num1;
+    }
+    else if ((num2 &gt; num1) &amp;&amp; (num2 &gt; num3)) {
+        return num2;
+    }
+    else {
+        return num3;
+    }
+}
+
+int main() {
+    int num1, num2, num3;
+  
+    printf(&quot;Numbers: &quot;);
+    scanf(&quot;%d,%d,%d&quot;, &amp;num1,&amp;num2,&amp;num3);
+
+    printf(&quot;%d&quot;, biggest(num1, num2, num3));
+  
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Numbers: 1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Numbers: 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Numbers: 0&quot;
+  }
+]</pre></details><details><summary>sample_070</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n1, n2, n3;
+
+    printf(&quot;Digite três números com o seguinte formato: n1 n2 n3\n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;n1, &amp;n2, &amp;n3);
+
+    if( n1 &gt; n2 &amp;&amp; n1 &gt; n3)
+    {
+        printf(&quot;%d\n&quot;, n1);
+    }
+    else if( n2 &gt; n3)
+    {
+        printf(&quot;%d\n&quot;, n2);
+    }
+    else
+    {
+        printf(&quot;%d\n&quot;,n3);
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Digite três números com o seguinte formato: n1 n2 n3\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Digite três números com o seguinte formato: n1 n2 n3\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Digite três números com o seguinte formato: n1 n2 n3\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_071</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int x1, x2, x3;
+    printf(&quot;Introduza 3 numeros inteiros:\n&quot;);
+    scanf(&quot;%d%d%d&quot;, &amp;x1, &amp;x2, &amp;x3);
+    return printf(&quot;%d\n&quot;, x1&gt;x2?(x1&gt;x3?x1:x3):(x2&gt;x3?x2:x3))==EOF;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\n3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros inteiros:\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_072</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+    
+    int numUm, numDois, numTres;
+
+    printf(&quot;Enter three numbers: &quot;);
+    scanf(&quot;%d&quot;, &amp;numUm);
+    scanf(&quot;%d&quot;, &amp;numDois);
+    scanf(&quot;%d&quot;, &amp;numTres);
+
+    if (numUm &gt; numDois &amp;&amp; numUm &gt; numTres) {
+        printf(&quot;Maximum number is: %d\n&quot;, numUm);
+    } else if (numDois &gt; numTres) {
+        printf(&quot;Maximum number is: %d\n&quot;, numDois);
+    } else {
+        printf(&quot;Maximum number is: %d\n&quot;, numTres);
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Enter three numbers: Maximum number is: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Enter three numbers: Maximum number is: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Enter three numbers: Maximum number is: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_073</summary><pre>#include &lt;stdio.h&gt;
+
+int main() {
+    
+    int numUm, numDois, numTres;
+
+    printf(&quot;Enter three numbers: &quot;);
+    scanf(&quot;%d&quot;, &amp;numUm);
+    scanf(&quot;%d&quot;, &amp;numDois);
+    scanf(&quot;%d&quot;, &amp;numTres);
+
+    if (numUm &gt; numDois &amp;&amp; numUm &gt; numTres) {
+        printf(&quot;%d&quot;, numUm);
+    } else if (numDois &gt; numTres) {
+        printf(&quot;%d&quot;, numDois);
+    } else {
+        printf(&quot;%d&quot;, numTres);
+    }
+
+    return 0;
+}
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Enter three numbers: 3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Enter three numbers: 6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Enter three numbers: 3&quot;
+  }
+]</pre></details><details><summary>sample_074</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int num1, num2, num3;
+
+    printf(&quot;Insere tres numeros inteiros:&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;num1, &amp;num2, &amp;num3);
+
+    if (num1 &gt;= num2 &amp;&amp; num1 &gt;= num3)
+        printf(&quot;%d\n&quot;, num1);
+    else if (num2 &gt;= num1 &amp;&amp; num2 &gt;= num3)
+        printf(&quot;%d\n&quot;, num2);
+    else
+        printf(&quot;%d\n&quot;, num3);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insere tres numeros inteiros:3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insere tres numeros inteiros:6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insere tres numeros inteiros:3\n&quot;
+  }
+]</pre></details><details><summary>sample_075</summary><pre>
+#include &lt;stdio.h&gt;
+
+
+
+int main()
+{
+    int num1, num2, num3;
+
+    printf(&quot;Insert three diferent numbers.&quot;);
+    scanf(&quot;%d&quot;, &amp;num1);
+    scanf(&quot;%d&quot;, &amp;num2);
+    scanf(&quot;%d&quot;, &amp;num3);
+    if (num1&gt;num2)
+    {
+        if (num1&gt;num3)
+        {
+            printf(&quot;%d is the biggest&quot;, num1);
+        }
+        else
+        {
+            printf(&quot;%d is the biggest&quot;, num3); 
+        }
+    }
+    else
+    {
+        if (num2&gt;num3)
+        {
+            printf(&quot;%d is the biggest&quot;, num2);
+        }
+        else
+        {
+            printf(&quot;%d is the biggest&quot;, num3); 
+        }
+    }
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insert three diferent numbers.3 is the biggest&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Insert three diferent numbers.6 is the biggest&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Insert three diferent numbers.3 is the biggest&quot;
+  }
+]</pre></details><details><summary>sample_076</summary><pre>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+#include &lt;string.h&gt;
+
+int main(){
+    int num1, num2, num3, max;
+    printf(&quot;Introduza 3 numeros: &quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;num1, &amp;num2, &amp;num3);
+
+    max = num1;
+    if(num2 &gt; max){
+        max = num2;
+    }
+    if (num3 &gt; max){
+        max = num3;
+    }
+    printf(&quot;%d\n&quot;, max);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza 3 numeros: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_077</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int n_1, n_2, n_3, foo;
+
+    printf(&quot;Input: &quot;);
+
+    scanf(&quot;%d %d %d&quot;, &amp;n_1, &amp;n_2, &amp;n_3);
+    
+    foo = n_1 &gt; n_2 ? n_1 : n_2;
+    foo = foo &gt; n_3 ? foo : n_3;
+
+    printf(&quot;%d\n&quot;, foo);
+
+    return 0;
+
+}    </pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Input: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Input: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Input: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_078</summary><pre>
+#include &lt;stdio.h&gt;
+
+int num1, num2, num3, num_maior;
+
+int main() { 
+    scanf(&quot;%d%d%d&quot;, &amp;num1, &amp;num2, &amp;num3);
+
+    if (num1 &gt;= num2) 
+        num_maior = num1;
+    
+    else 
+        num_maior = num2;
+    
+    if (num3 &gt;= num_maior) 
+        num_maior = num3;
+
+    printf(&quot;%d.&quot;, num_maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;6.&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3.&quot;
+  }
+]</pre></details><details><summary>sample_079</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int n_1, n_2, n_3;
+
+    scanf(&quot;%d %d %d&quot;, &amp;n_1, &amp;n_2, &amp;n_3);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;&quot;
+  }
+]</pre></details><details><summary>sample_080</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    int x, y, z;
+    printf(&quot;Hello\n&quot;);
+    scanf(&quot;%d %d %d&quot;, &amp;x, &amp;y, &amp;z);
+    if (x &gt; y &amp;&amp; x &gt; z) {
+        printf(&quot;%d&quot;, x);
+    }
+    else if (y &gt; x &amp;&amp; y &gt; z) {
+        printf(&quot;%d&quot;, y);
+    }
+    else {
+        printf(&quot;%d&quot;, z);
+    }
+    
+    return 0;
+}
+
+
+
+
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Hello\n3&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Hello\n6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Hello\n3&quot;
+  }
+]</pre></details><details><summary>sample_081</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+    int maior, numero, contador = 0;
+
+    scanf(&quot;%d&quot;, &amp;maior);
+
+    while (contador &lt; 2) {
+        if (numero &gt; maior)
+            maior = numero;      
+        ++contador;
+        scanf(&quot;%d&quot;, &amp;numero);
+    }
+
+    printf(&quot;O maior número é %d.\n&quot;, maior);
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior número é 2.\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;O maior número é 6.\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior número é 3.\n&quot;
+  }
+]</pre></details><details><summary>sample_082</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a, b;
+    scanf(&quot;%d%d&quot;, &amp;a, &amp;b);
+
+    if (a &gt; b) {
+        printf(&quot;%d\n%d\n&quot;, b, a);
+    }
+    else {
+        printf(&quot;%d\n%d\n&quot;, a, b);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;1\n2\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;2\n6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;-1\n3\n&quot;
+  }
+]</pre></details><details><summary>sample_083</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main(){
+    int maior,n1,n2,n3;
+    scanf(&quot;%d,%d,%d&quot;,&amp;n1,&amp;n2,&amp;n3);
+    if (n2&gt;n1){
+        maior=n2;
+    }
+    if (n3&gt;n2){
+        maior=n3;
+    }       
+    printf(&quot;%d\n&quot;,maior);
+    return 0;
+}
+
+</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;0\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;0\n&quot;
+  }
+]</pre></details><details><summary>sample_084</summary><pre>
+#include &lt;stdio.h&gt;
+
+int main() {
+    int a, b, c;
+    scanf(&quot;%d%d%d/n&quot;, &amp;a, &amp;b, &amp;c);
+    if (a&gt;b) {
+        (c&gt;=a) ? (printf(&quot;%d/n&quot;, c)) : printf(&quot;%d/n&quot;, a);
+    } else {
+        (c&gt;=b) ? (printf(&quot;%d/n&quot;, c)) : printf(&quot;%d/n&quot;, b);
+    }
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3/n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;6/n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;3/n&quot;
+  }
+]</pre></details><details><summary>sample_085</summary><pre>
+
+#include &lt;stdio.h&gt;
+
+int main() {
+	int a, b, c;
+
+	printf(&quot;Diga 3 numeros: &quot;);
+	scanf(&quot;%d %d %d&quot;,&amp;a, &amp;b, &amp;c);
+
+	if (a &gt; b &amp;&amp; a &gt; c) {
+		printf(&quot;O maior numero e:%d\n&quot;,a);
+	} else if (b &gt; a &amp;&amp; b &gt; c) {
+		printf(&quot;O maior numero e:%d\n&quot;,b);
+	} else {
+		printf(&quot;O maior numero e:%d\n&quot;,c);
+	}
+	return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Diga 3 numeros: O maior numero e:3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Diga 3 numeros: O maior numero e:6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Diga 3 numeros: O maior numero e:3\n&quot;
+  }
+]</pre></details><details><summary>sample_086</summary><pre>
+
+#include &lt;stdio.h&gt;
+int main() {
+    int a, b, c;
+    printf(&quot;Digite 3 números: &quot;);
+    if (scanf(&quot;%d %d %d&quot;, &amp;a, &amp;b, &amp;c) != 3) return 1;
+    printf(&quot;%d\n&quot;, (a &gt; b &amp;&amp; a &gt; c) ? a : (b &gt; c ? b : c));
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Digite 3 números: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Digite 3 números: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Digite 3 números: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_088</summary><pre>
+#include &lt;stdio.h&gt;
+
+#define QUANTIDADE 3
+
+int main() {
+    int value;
+    int maior;
+    int i;
+
+    scanf(&quot;%d&quot;, &amp;maior);
+
+    i = 1;
+    while (i &lt; QUANTIDADE) {
+        scanf(&quot;%d&quot;, &amp;value);
+        if (value &gt; maior) {
+            value = maior;
+        }
+        i++;
+    } 
+
+    printf(&quot;%d&quot;, maior);
+
+    return 0;
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;1&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;6&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;-1&quot;
+  }
+]</pre></details><details><summary>sample_089</summary><pre>
+#include&lt;stdio.h&gt;
+
+int a, b, c, maior;
+
+
+
+int main () {
+   
+    scanf(&quot;%d %d %d&quot;, &amp;a, &amp;b, &amp;c);
+
+    if(a &gt; b) b=a;
+    if(b &gt; c) c=b;
+    if( a &gt; c) c=a;
+
+    printf(&quot;O maior número é: %d\n&quot;, c);
+    return 0;                                        
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior número é: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;O maior número é: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;O maior número é: 3\n&quot;
+  }
+]</pre></details><details><summary>sample_090</summary><pre>
+#include&lt;stdio.h&gt;
+
+int a, b, c, maior;
+
+
+
+int main () {
+    printf(&quot;Introduza o primeiro número: &quot;);
+    scanf(&quot;%d&quot;, &amp;a);        
+
+    printf(&quot;Introduza o segundo número: &quot;);
+    scanf(&quot;%d&quot;, &amp;b);
+
+    printf(&quot;Introduza o terceiro número: &quot;);
+    scanf(&quot;%d&quot;, &amp;c);
+
+    maior = a;
+    if (b &gt; maior) {
+        maior = b;
+    }
+    if (c &gt; maior){
+        maior = c;
+    }
+
+    printf(&quot;O maior número é: %d\n&quot;, maior);
+    return 0;                                        
+}</pre><pre>[
+  {
+    &quot;test_id&quot;: &quot;ex01_0&quot;,
+    &quot;input&quot;: &quot;1 2 3&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: Introduza o terceiro número: O maior número é: 3\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_1&quot;,
+    &quot;input&quot;: &quot;6 2 1&quot;,
+    &quot;expected&quot;: &quot;6\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: Introduza o terceiro número: O maior número é: 6\n&quot;
+  },
+  {
+    &quot;test_id&quot;: &quot;ex01_2&quot;,
+    &quot;input&quot;: &quot;-1 3 1&quot;,
+    &quot;expected&quot;: &quot;3\n&quot;,
+    &quot;output&quot;: &quot;Introduza o primeiro número: Introduza o segundo número: Introduza o terceiro número: O maior número é: 3\n&quot;
+  }
+]</pre></details></html>

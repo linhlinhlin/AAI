@@ -107,6 +107,42 @@ def test_latest_attempt_classroom_and_teacher_boundaries(service):
     assert len(service.overview()['recent_reports']) == 1
 
 
+def test_analysis_reuses_snapshot_and_keeps_reviews_but_invalidates_new_data(service):
+    alice, teacher = account(service.store, 'alice'), account(service.store, 'teacher', 'teacher')
+    key = service.submit(alice, {'problem_id': 'sum-range', 'source': 'int main(){return 0;}'})['id']
+    wait_attempt(service, key, alice)
+    first = service.analyze(teacher, 'sum-range')
+    # Store an authored historical note; its presence must not invalidate analysis inputs.
+    service.store.review(first['id'], teacher, [{'label': 'fixture annotation, not gold'}])
+    reused = service.analyze(teacher, 'sum-range')
+    assert reused['id'] == first['id'] and reused['reused']
+    assert reused['reviews'][0]['payload'][0]['label'] == 'fixture annotation, not gold'
+    changed_k = service.analyze(teacher, 'sum-range', k=3)
+    assert changed_k['id'] != first['id']
+    key = service.submit(alice, {'problem_id': 'sum-range', 'source': 'int main(){return 1;}'})['id']
+    wait_attempt(service, key, alice)
+    changed_data = service.analyze(teacher, 'sum-range')
+    assert changed_data['id'] not in (first['id'], changed_k['id'])
+    assert changed_data['reviews'] == []
+    history = service.overview()['recent_reports']
+    assert {row['id'] for row in history} == {first['id'], changed_data['id']}
+    # Hidden, unreviewed versions are retained, not destroyed.
+    assert service.store.report(changed_k['id'])[0]['config']['k'] == 3
+
+
+def test_reviewed_history_is_not_lost_after_many_empty_snapshots(service):
+    teacher = account(service.store, 'teacher', 'teacher')
+    payload = {'problem': get_problem('swap'), 'config': {'k': 2}}
+    first = service.store.save_report(teacher, payload)
+    service.store.review(first, teacher, [{'label': 'fixture only'}])
+    for _ in range(30):
+        last = service.store.save_report(teacher, payload)
+    other = service.store.save_report(teacher, {'problem': get_problem('max-array')})
+    history = service.store.recent_reports()
+    assert {r['id'] for r in history} == {first, last, other}
+    assert next(r for r in history if r['id'] == first)['reviews'] == 1
+
+
 def test_restart_marks_pending_as_infrastructure_interruption(service):
     alice = account(service.store, 'alice')
     key = service.store.create_attempt(alice, get_problem('swap'), 'int main(){}', '')
