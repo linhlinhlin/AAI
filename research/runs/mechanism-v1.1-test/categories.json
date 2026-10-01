@@ -1,0 +1,338 @@
+{
+  "status": "exploratory_not_registered",
+  "benchmarks": {
+    "real": {
+      "scope": "full",
+      "items_per_category": {
+        "OUTPUT_TEXT": 177,
+        "COMPUTATION": 28,
+        "MISSING_STATEMENT": 27,
+        "BRANCH_CONDITION": 17,
+        "LOOP_BOUNDARY": 16,
+        "OUTPUT_FORMAT": 13,
+        "CONTROL_FLOW": 12,
+        "EXTRA_STATEMENT": 8,
+        "INITIALIZATION": 7,
+        "INPUT": 6,
+        "STATEMENT_PLACEMENT": 6,
+        "NUMERIC_TYPE": 3
+      },
+      "recovered_share": {
+        "exact_signature": {
+          "OUTPUT_TEXT": 0.9830508474576272,
+          "BRANCH_CONDITION": 0.29411764705882354,
+          "COMPUTATION": 0.5357142857142857,
+          "MISSING_STATEMENT": 0.37037037037037035,
+          "CONTROL_FLOW": 0.8333333333333334,
+          "INPUT": 0.5,
+          "STATEMENT_PLACEMENT": 0.5,
+          "INITIALIZATION": 0.5714285714285714,
+          "OUTPUT_FORMAT": 0.0,
+          "EXTRA_STATEMENT": 0.125,
+          "NUMERIC_TYPE": 1.0,
+          "LOOP_BOUNDARY": 0.875
+        },
+        "outcomes": {
+          "OUTPUT_TEXT": 0.9830508474576272,
+          "BRANCH_CONDITION": 0.23529411764705882,
+          "COMPUTATION": 0.5357142857142857,
+          "MISSING_STATEMENT": 0.37037037037037035,
+          "CONTROL_FLOW": 0.8333333333333334,
+          "INPUT": 0.5,
+          "STATEMENT_PLACEMENT": 0.5,
+          "INITIALIZATION": 0.5714285714285714,
+          "OUTPUT_FORMAT": 0.0,
+          "EXTRA_STATEMENT": 0.125,
+          "NUMERIC_TYPE": 1.0,
+          "LOOP_BOUNDARY": 0.875
+        },
+        "combined_stdout": {
+          "OUTPUT_TEXT": 0.9209039548022598,
+          "BRANCH_CONDITION": 0.6470588235294118,
+          "COMPUTATION": 0.6428571428571429,
+          "MISSING_STATEMENT": 0.6666666666666666,
+          "CONTROL_FLOW": 0.8333333333333334,
+          "INPUT": 0.5,
+          "STATEMENT_PLACEMENT": 0.3333333333333333,
+          "INITIALIZATION": 1.0,
+          "OUTPUT_FORMAT": 0.6923076923076923,
+          "EXTRA_STATEMENT": 0.375,
+          "NUMERIC_TYPE": 1.0,
+          "LOOP_BOUNDARY": 0.9375
+        },
+        "deviation": {
+          "OUTPUT_TEXT": 0.9491525423728814,
+          "BRANCH_CONDITION": 0.5882352941176471,
+          "COMPUTATION": 0.5714285714285714,
+          "MISSING_STATEMENT": 0.5555555555555556,
+          "CONTROL_FLOW": 0.8333333333333334,
+          "INPUT": 0.5,
+          "STATEMENT_PLACEMENT": 0.5,
+          "INITIALIZATION": 1.0,
+          "OUTPUT_FORMAT": 0.6923076923076923,
+          "EXTRA_STATEMENT": 0.5,
+          "NUMERIC_TYPE": 1.0,
+          "LOOP_BOUNDARY": 0.8125
+        },
+        "evidence": {
+          "OUTPUT_TEXT": 0.9378531073446328,
+          "BRANCH_CONDITION": 0.5882352941176471,
+          "COMPUTATION": 0.6071428571428571,
+          "MISSING_STATEMENT": 0.6296296296296297,
+          "CONTROL_FLOW": 0.9166666666666666,
+          "INPUT": 0.5,
+          "STATEMENT_PLACEMENT": 0.3333333333333333,
+          "INITIALIZATION": 1.0,
+          "OUTPUT_FORMAT": 0.6923076923076923,
+          "EXTRA_STATEMENT": 0.5,
+          "NUMERIC_TYPE": 1.0,
+          "LOOP_BOUNDARY": 0.8125
+        },
+        "embedding": {
+          "OUTPUT_TEXT": 0.9209039548022598,
+          "BRANCH_CONDITION": 0.17647058823529413,
+          "COMPUTATION": 0.32142857142857145,
+          "MISSING_STATEMENT": 0.7037037037037037,
+          "CONTROL_FLOW": 0.3333333333333333,
+          "INPUT": 0.5,
+          "STATEMENT_PLACEMENT": 0.3333333333333333,
+          "INITIALIZATION": 0.5714285714285714,
+          "OUTPUT_FORMAT": 0.7692307692307693,
+          "EXTRA_STATEMENT": 0.625,
+          "NUMERIC_TYPE": 0.6666666666666666,
+          "LOOP_BOUNDARY": 0.3125
+        }
+      },
+      "same_signature_pairs": 2087,
+      "same_signature_different_mechanism_pairs": 740,
+      "top_collisions": [
+        {
+          "pair": [
+            "OUTPUT_FORMAT",
+            "OUTPUT_TEXT"
+          ],
+          "count": 156
+        },
+        {
+          "pair": [
+            "MISSING_STATEMENT",
+            "OUTPUT_TEXT"
+          ],
+          "count": 140
+        },
+        {
+          "pair": [
+            "COMPUTATION",
+            "OUTPUT_TEXT"
+          ],
+          "count": 118
+        },
+        {
+          "pair": [
+            "BRANCH_CONDITION",
+            "OUTPUT_TEXT"
+          ],
+          "count": 117
+        },
+        {
+          "pair": [
+            "EXTRA_STATEMENT",
+            "OUTPUT_TEXT"
+          ],
+          "count": 31
+        },
+        {
+          "pair": [
+            "BRANCH_CONDITION",
+            "COMPUTATION"
+          ],
+          "count": 25
+        },
+        {
+          "pair": [
+            "INPUT",
+            "OUTPUT_TEXT"
+          ],
+          "count": 19
+        },
+        {
+          "pair": [
+            "MISSING_STATEMENT",
+            "OUTPUT_FORMAT"
+          ],
+          "count": 19
+        },
+        {
+          "pair": [
+            "OUTPUT_TEXT",
+            "STATEMENT_PLACEMENT"
+          ],
+          "count": 16
+        },
+        {
+          "pair": [
+            "COMPUTATION",
+            "MISSING_STATEMENT"
+          ],
+          "count": 14
+        }
+      ]
+    },
+    "injected": {
+      "scope": "partition",
+      "items_per_category": {
+        "MISSING_STATEMENT": 72,
+        "EXTRA_STATEMENT": 65,
+        "OUTPUT_TEXT": 60,
+        "INITIALIZATION": 53,
+        "LOOP_BOUNDARY": 50,
+        "STATEMENT_PLACEMENT": 48,
+        "COMPUTATION": 43,
+        "BRANCH_CONDITION": 29,
+        "OUTPUT_FORMAT": 9
+      },
+      "recovered_share": {
+        "exact_signature": {
+          "OUTPUT_TEXT": 0.6166666666666667,
+          "EXTRA_STATEMENT": 0.49230769230769234,
+          "LOOP_BOUNDARY": 0.62,
+          "STATEMENT_PLACEMENT": 0.125,
+          "MISSING_STATEMENT": 0.5555555555555556,
+          "INITIALIZATION": 0.39622641509433965,
+          "COMPUTATION": 0.5116279069767442,
+          "OUTPUT_FORMAT": 1.0,
+          "BRANCH_CONDITION": 0.3793103448275862
+        },
+        "outcomes": {
+          "OUTPUT_TEXT": 0.6166666666666667,
+          "EXTRA_STATEMENT": 0.46153846153846156,
+          "LOOP_BOUNDARY": 0.56,
+          "STATEMENT_PLACEMENT": 0.08333333333333333,
+          "MISSING_STATEMENT": 0.4861111111111111,
+          "INITIALIZATION": 0.39622641509433965,
+          "COMPUTATION": 0.5116279069767442,
+          "OUTPUT_FORMAT": 1.0,
+          "BRANCH_CONDITION": 0.3448275862068966
+        },
+        "combined_stdout": {
+          "OUTPUT_TEXT": 0.9,
+          "EXTRA_STATEMENT": 0.676923076923077,
+          "LOOP_BOUNDARY": 0.68,
+          "STATEMENT_PLACEMENT": 0.6666666666666666,
+          "MISSING_STATEMENT": 0.6944444444444444,
+          "INITIALIZATION": 0.6037735849056604,
+          "COMPUTATION": 0.6976744186046512,
+          "OUTPUT_FORMAT": 1.0,
+          "BRANCH_CONDITION": 0.4482758620689655
+        },
+        "deviation": {
+          "OUTPUT_TEXT": 0.9666666666666667,
+          "EXTRA_STATEMENT": 0.8153846153846154,
+          "LOOP_BOUNDARY": 0.62,
+          "STATEMENT_PLACEMENT": 0.7916666666666666,
+          "MISSING_STATEMENT": 0.5972222222222222,
+          "INITIALIZATION": 0.5283018867924528,
+          "COMPUTATION": 0.6744186046511628,
+          "OUTPUT_FORMAT": 1.0,
+          "BRANCH_CONDITION": 0.4482758620689655
+        },
+        "evidence": {
+          "OUTPUT_TEXT": 0.95,
+          "EXTRA_STATEMENT": 0.8153846153846154,
+          "LOOP_BOUNDARY": 0.62,
+          "STATEMENT_PLACEMENT": 0.5833333333333334,
+          "MISSING_STATEMENT": 0.6388888888888888,
+          "INITIALIZATION": 0.5849056603773585,
+          "COMPUTATION": 0.7674418604651163,
+          "OUTPUT_FORMAT": 0.8888888888888888,
+          "BRANCH_CONDITION": 0.4827586206896552
+        },
+        "embedding": {
+          "OUTPUT_TEXT": 0.18333333333333332,
+          "EXTRA_STATEMENT": 0.5692307692307692,
+          "LOOP_BOUNDARY": 0.2,
+          "STATEMENT_PLACEMENT": 0.22916666666666666,
+          "MISSING_STATEMENT": 0.18055555555555555,
+          "INITIALIZATION": 0.1509433962264151,
+          "COMPUTATION": 0.7906976744186046,
+          "OUTPUT_FORMAT": 0.0,
+          "BRANCH_CONDITION": 0.9310344827586207
+        }
+      },
+      "same_signature_pairs": 2901,
+      "same_signature_different_mechanism_pairs": 2367,
+      "top_collisions": [
+        {
+          "pair": [
+            "INITIALIZATION",
+            "OUTPUT_TEXT"
+          ],
+          "count": 146
+        },
+        {
+          "pair": [
+            "EXTRA_STATEMENT",
+            "STATEMENT_PLACEMENT"
+          ],
+          "count": 137
+        },
+        {
+          "pair": [
+            "OUTPUT_TEXT",
+            "STATEMENT_PLACEMENT"
+          ],
+          "count": 128
+        },
+        {
+          "pair": [
+            "COMPUTATION",
+            "OUTPUT_TEXT"
+          ],
+          "count": 122
+        },
+        {
+          "pair": [
+            "EXTRA_STATEMENT",
+            "LOOP_BOUNDARY"
+          ],
+          "count": 104
+        },
+        {
+          "pair": [
+            "EXTRA_STATEMENT",
+            "OUTPUT_TEXT"
+          ],
+          "count": 103
+        },
+        {
+          "pair": [
+            "LOOP_BOUNDARY",
+            "STATEMENT_PLACEMENT"
+          ],
+          "count": 102
+        },
+        {
+          "pair": [
+            "EXTRA_STATEMENT",
+            "MISSING_STATEMENT"
+          ],
+          "count": 94
+        },
+        {
+          "pair": [
+            "MISSING_STATEMENT",
+            "OUTPUT_TEXT"
+          ],
+          "count": 93
+        },
+        {
+          "pair": [
+            "COMPUTATION",
+            "EXTRA_STATEMENT"
+          ],
+          "count": 91
+        }
+      ]
+    }
+  }
+}

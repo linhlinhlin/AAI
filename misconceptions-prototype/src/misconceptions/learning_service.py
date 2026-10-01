@@ -30,6 +30,7 @@ from .llm_client import (
     request_label,
     validate_label,
 )
+from .mechanism_hypotheses import mechanism_report
 from .output_features import output_oav
 from .pipeline import run_experiment
 from .project_reference import attach_reference
@@ -185,6 +186,9 @@ class LearningService:
         report['population'] = {r.submission_id: r.student_id for r in rows}
         report['observed_oav'] = {r.submission_id: extract_oav(r) | output_oav(r, logs) for r in rows}
         report['teaching'] = build_teaching_report(rows, logs, report)
+        report['mechanism'] = mechanism_report(
+            rows, logs, problem['tests'],
+            report.get('train_assignments', {}) | report.get('holdout_assignments', {}))
         report['teacher'] = build_dashboard(report)
         report['problem'] = problem
         refresh_rule_descriptions(report)

@@ -1,0 +1,9 @@
+# TeX by-products; manuscripts are rebuilt by paper/build.py
+*.log
+*.blg
+*.aux
+__pycache__/
+vi/references.bib
+vi/figures/
+# Figure previews; the PDFs are what the manuscripts include
+figures/*.png

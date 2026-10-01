@@ -1,0 +1,62 @@
+\section{Registered protocol and amendments}\label{app:protocol}
+
+The protocol (\texttt{research/protocol-mechanism-v1.json}) was committed at {{protocol_registered}} before any mechanism evaluation. Amendments A1--A6 were recorded before any evaluation result was viewed and A7 before the sealed test run; each is dated in the protocol file.
+\begin{description}
+\item[A1] The original H1 compared the ceilings of the deviation and outcome representations. Because the deviation representation refines the outcome representation, that comparison could not fail; it was replaced by H1a (absolute outcome ceiling) and H1b (gain over a granularity-matched random refinement).
+\item[A2] One item per repair event: the latest failing attempt before the repairing submission, since earlier attempts of the same student are near-duplicates.
+\item[A3] If fewer than ten test-partition cohorts of the real benchmark were eligible, its clustering hypotheses would use full per-assignment cohorts, because clustering fits nothing on labels. The condition held ({{real_test_cohorts}} eligible test cohorts).
+\item[A4] Code-based features inspect the syntax that injection operators edit, so their injected scores are an optimistic bound.
+\item[A5] Programs whose outcomes differed between the two independent replays were excluded.
+\item[A6] Classifier v1.1 after a label audit of training and validation items (below). A validation run started before this amendment was stopped before it wrote any result.
+\item[A7] The ILA-2 penalty was frozen at {{ila_penalty}}, the value with the best validation macro-F1 on both benchmarks, and per-item assignments of the primary configuration were stored for exploratory per-category analyses.
+\end{description}
+
+\section{Label audit}\label{app:audit}
+Two stratified samples of training and validation items were reviewed by the analysis assistant (an AI model; this is not an independent human annotation). The first sample ({{audit1_cases}} cases, up to five per assigned label) found all {{audit1_single}} single-category labels correct and {{audit1_excluded_wrong}} of {{audit1_excluded}} excluded cases to have a clear category under the taxonomy (initial values added to declarations, a type change by moving a declarator, a macro constant, and a wholly missing implementation). Classifier v1.1 handles these patterns; re-labelling the stored repairs changed {{relabel_changes}} primary labels. A second, disjoint sample of {{audit2_cases}} cases of the v1.1 labels agreed in {{audit2_agree}} cases. Over both samples, the single-category labels agreed in {{audit_single_agree}} cases (Wilson 95\% lower bound {{audit_wilson_low}}). An independent human audit with two raters is future work; the packets and decisions are released.
+
+\section{Reproducibility}\label{app:repro}
+All steps run from the repository with Docker and Python~3.12:
+\begin{verbatim}
+docker build -t aai-c-replay:1 sandbox-replay
+python scripts/replay_cpack.py --data DATA --split-lock SPLIT \
+    --output REPLAY
+python scripts/build_mechanism_benchmark.py --data DATA \
+    --replay REPLAY --split-lock SPLIT --output BENCH_V1
+python scripts/relabel_repairs.py --data DATA --bench BENCH_V1 \
+    --audit AUDIT --output BENCH
+python scripts/run_mechanism_eval.py --partition validation ...
+python scripts/run_mechanism_eval.py --partition test \
+    --scopes partition full --penalty {{ila_penalty}} ...
+\end{verbatim}
+Every run records the code fingerprint at start, the container image, input and split hashes. The figures are redrawn from the committed run artifacts with \texttt{python paper/make\_figures.py --lang en}; \cref{fig:example} reads the three programs exported by \texttt{paper/export\_example.py}, and \cref{fig:tool} a screenshot taken by \texttt{paper/capture\_tool.py} from a fresh instance of the tool. The replay took {{replay_minutes}} minutes on a four-core Docker VM; building the benchmarks executed {{probes_total}} delta-debugging probes and {{injected_candidates}} candidate mutants.
+
+\section{Per-category recovery}\label{app:categories}
+Exploratory analysis (amendment A7): share of items whose K-means cluster (oracle $k$, seed 42) has the item's category as its majority label.
+
+\begin{table}[H]
+\centering
+\caption{Per-category recovery on real repairs (full cohorts).}\label{tab:cat-real}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Category & $n$ & Signature & Outcomes & Comb.+stdout & Deviation & Evidence & Embedding \\
+\midrule
+{{table_categories_real}}
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Per-category recovery on injected mutants (test cohorts).}\label{tab:cat-injected}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Category & $n$ & Signature & Outcomes & Comb.+stdout & Deviation & Evidence & Embedding \\
+\midrule
+{{table_categories_injected}}
+\bottomrule
+\end{tabular}}
+\end{table}

@@ -1,0 +1,106 @@
+{
+  "schema": "repair_label_audit_decisions_v1",
+  "annotation_source": "ai_audit",
+  "reviewer": "ai:claude-opus-5.5 (analysis session 2026-09-30)",
+  "independent_human_review": false,
+  "scope": "29 train/validation cases of the v1.1 labels, disjoint from the first audit sample (seed 11, up to 3 per label)",
+  "criterion": "Does the category describe what the verified minimal repair changes in the program, under docs/mechanism-benchmark.md? Student beliefs are not judged.",
+  "result": "all 29 assigned labels agree with the reviewer category (26 single-category, 3 MULTI)",
+  "decisions": {
+    "audit-001": {
+      "category": "BRANCH_CONDITION"
+    },
+    "audit-002": {
+      "category": "BRANCH_CONDITION"
+    },
+    "audit-003": {
+      "category": "BRANCH_CONDITION"
+    },
+    "audit-004": {
+      "category": "COMPUTATION"
+    },
+    "audit-005": {
+      "category": "COMPUTATION",
+      "note": "order of printed values swapped"
+    },
+    "audit-006": {
+      "category": "COMPUTATION"
+    },
+    "audit-007": {
+      "category": "CONTROL_FLOW",
+      "note": "missing return 0 in main"
+    },
+    "audit-008": {
+      "category": "CONTROL_FLOW",
+      "note": "missing return 0 in main"
+    },
+    "audit-009": {
+      "category": "CONTROL_FLOW",
+      "note": "missing return 0 in main"
+    },
+    "audit-010": {
+      "category": "EXTRA_STATEMENT"
+    },
+    "audit-011": {
+      "category": "EXTRA_STATEMENT"
+    },
+    "audit-012": {
+      "category": "EXTRA_STATEMENT"
+    },
+    "audit-013": {
+      "category": "INPUT"
+    },
+    "audit-014": {
+      "category": "LOOP_BOUNDARY"
+    },
+    "audit-015": {
+      "category": "LOOP_BOUNDARY"
+    },
+    "audit-016": {
+      "category": "LOOP_BOUNDARY",
+      "note": "reading until newline instead of EOF"
+    },
+    "audit-017": {
+      "category": "MISSING_STATEMENT"
+    },
+    "audit-018": {
+      "category": "MISSING_STATEMENT"
+    },
+    "audit-019": {
+      "category": "MISSING_STATEMENT",
+      "note": "whole implementation was missing"
+    },
+    "audit-020": {
+      "category": "MULTI"
+    },
+    "audit-021": {
+      "category": "MULTI"
+    },
+    "audit-022": {
+      "category": "MULTI"
+    },
+    "audit-023": {
+      "category": "OUTPUT_FORMAT"
+    },
+    "audit-024": {
+      "category": "OUTPUT_FORMAT"
+    },
+    "audit-025": {
+      "category": "OUTPUT_FORMAT"
+    },
+    "audit-026": {
+      "category": "OUTPUT_TEXT",
+      "note": "separator spacing"
+    },
+    "audit-027": {
+      "category": "OUTPUT_TEXT"
+    },
+    "audit-028": {
+      "category": "OUTPUT_TEXT"
+    },
+    "audit-029": {
+      "category": "STATEMENT_PLACEMENT",
+      "note": "missing braces around the loop body; the array declaration change is scaffolding"
+    }
+  }
+}

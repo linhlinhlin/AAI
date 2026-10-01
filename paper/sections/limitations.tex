@@ -1,0 +1,13 @@
+\subsection{Limitations and threats to validity}\label{sec:limits}
+
+\paragraph{Labels describe programs, not minds} A repair-grounded label records what the student changed so that the program passes; the same change can follow from a misconception, a slip or a misread specification, and a student may fix a symptom without revising a belief. We therefore evaluate program-level mechanisms and phrase teaching output as hypotheses to check. Claims about beliefs require think-aloud, explanation or prediction tasks with students \citep{lu2024smol}.
+
+\paragraph{Label construction} Delta debugging works on line hunks, so two changes on one line are inseparable and a minimal repair can include a formatting edit adjacent to a logic fix. The classifier is rule-based and was revised once after an audit of training and validation items (amendment A6); both audits were performed by an AI assistant and are not independent human annotation. Excluding multi-category repairs (\textsc{Multi}, {{multi_share}}\% of repair events) keeps the gold precise but biases it towards simple, often output-level, mechanisms. We treat attempts \texttt{sub\_NNN} as chronological within a student, assignment and year.
+
+\paragraph{Injected mutants} Mutants are cleaner than real errors, their category distribution is chosen by us, and code-based features inspect the edited syntax (amendment A4). Mutation-based evaluation is informative about what a representation \emph{can} separate \citep{just2014mutants}, not about how often mechanisms occur in class.
+
+\paragraph{Scope} One course, one language standard (C90), one grader policy (exact output match) and one institution. Deviation descriptors are problem-agnostic by design, but their value depends on output-based grading; courses with property-based or unit tests may see different patterns. The sealed test partition of the real benchmark was too small for cohort-level clustering statistics, which is why amendment A3 evaluates full cohorts; rule induction always used held-out students.
+
+\paragraph{Statistics} Cohorts differ in size and label balance; ARI is sensitive to dominant categories. We report cohort-level bootstrap intervals, Wilcoxon tests with Holm correction and silhouette-based $k$ as a secondary analysis, but the number of cohorts (tens) limits power, and items within a cohort are not independent across representations of the same program.
+
+\paragraph{The tool} AAI Lab has been exercised on a demonstration class of programs written by the authors and on the C-Pack cohorts, not with instructors or students. Its hand-written exercise rules cover six exercises only, and its thresholds (60\% for shared evidence, 50\% for a hypothesis) are design choices that were not tuned or validated.

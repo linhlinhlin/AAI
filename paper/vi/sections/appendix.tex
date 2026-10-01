@@ -1,0 +1,62 @@
+\section{Protocol đã đăng ký và các sửa đổi}\label{app:protocol}
+
+Protocol (\texttt{research/protocol-mechanism-v1.json}) được commit lúc {{protocol_registered}}, trước mọi đánh giá cơ chế. Các sửa đổi A1--A6 được ghi trước khi xem bất kỳ kết quả đánh giá nào và A7 được ghi trước lần chạy kiểm tra niêm phong; mỗi sửa đổi đều có ghi ngày trong tệp protocol.
+\begin{description}
+\item[A1] H1 ban đầu so trần của biểu diễn độ lệch với biểu diễn kết quả test. Vì biểu diễn độ lệch mịn hơn biểu diễn kết quả test, phép so sánh đó không thể thất bại; nó được thay bằng H1a (trần tuyệt đối theo kết quả test) và H1b (mức tăng so với phân hoạch ngẫu nhiên cùng độ mịn).
+\item[A2] Mỗi sự kiện sửa một item: lần nộp sai cuối cùng trước lần nộp sửa, vì các lần nộp sai trước đó của cùng sinh viên gần như trùng lặp.
+\item[A3] Nếu benchmark thật có ít hơn mười cohort kiểm tra đủ điều kiện, các giả thuyết phân cụm của nó dùng cohort đầy đủ theo bài tập, vì phân cụm không khớp gì trên nhãn. Điều kiện đã xảy ra ({{real_test_cohorts}} cohort kiểm tra đủ điều kiện).
+\item[A4] Đặc trưng dựa trên mã xem xét đúng phần cú pháp mà toán tử tiêm lỗi sửa, nên điểm số của chúng trên bài tiêm lỗi là một cận lạc quan.
+\item[A5] Loại các chương trình có kết quả khác nhau giữa hai lần chạy lại độc lập.
+\item[A6] Bộ phân loại v1.1 sau khi audit nhãn các item huấn luyện và kiểm định (xem dưới). Một lượt kiểm định bắt đầu trước sửa đổi này đã bị dừng trước khi ghi bất kỳ kết quả nào.
+\item[A7] Hệ số phạt ILA-2 được cố định ở {{ila_penalty}}, giá trị có macro-F1 kiểm định tốt nhất trên cả hai benchmark, và cách gán cụm theo từng item của cấu hình chính được lưu cho các phân tích khám phá theo loại.
+\end{description}
+
+\section{Audit nhãn}\label{app:audit}
+Hai mẫu phân tầng gồm các item huấn luyện và kiểm định được trợ lý phân tích (một mô hình AI) xem xét; đây không phải gán nhãn độc lập của con người. Mẫu thứ nhất ({{audit1_cases}} ca, tối đa năm ca mỗi nhãn được gán) xác nhận cả {{audit1_single}} nhãn đơn loại đều đúng, và {{audit1_excluded_wrong}} trong {{audit1_excluded}} ca bị loại thực ra có một loại rõ ràng theo taxonomy (thêm giá trị khởi tạo vào khai báo, đổi kiểu bằng cách chuyển biến sang khai báo khác, hằng macro, và thiếu toàn bộ phần cài đặt). Bộ phân loại v1.1 xử lý các mẫu này; gán nhãn lại các bản sửa đã lưu làm thay đổi {{relabel_changes}} nhãn chính. Mẫu thứ hai, không trùng mẫu đầu, gồm {{audit2_cases}} ca của nhãn v1.1 và khớp {{audit2_agree}} ca. Trên cả hai mẫu, nhãn đơn loại khớp {{audit_single_agree}} ca (cận dưới Wilson 95\% là {{audit_wilson_low}}). Audit độc lập của hai người chấm là việc cần làm tiếp; các gói audit và quyết định được công bố.
+
+\section{Tái lập}\label{app:repro}
+Mọi bước chạy từ repository với Docker và Python~3.12:
+\begin{verbatim}
+docker build -t aai-c-replay:1 sandbox-replay
+python scripts/replay_cpack.py --data DATA --split-lock SPLIT \
+    --output REPLAY
+python scripts/build_mechanism_benchmark.py --data DATA \
+    --replay REPLAY --split-lock SPLIT --output BENCH_V1
+python scripts/relabel_repairs.py --data DATA --bench BENCH_V1 \
+    --audit AUDIT --output BENCH
+python scripts/run_mechanism_eval.py --partition validation ...
+python scripts/run_mechanism_eval.py --partition test \
+    --scopes partition full --penalty {{ila_penalty}} ...
+\end{verbatim}
+Mỗi lượt chạy ghi dấu vân tay mã nguồn lúc bắt đầu, image container, hash đầu vào và hash chia dữ liệu. Các hình được vẽ lại từ artifact đã commit bằng \texttt{python paper/make\_figures.py --lang vi}; \cref{fig:example} đọc ba chương trình do \texttt{paper/export\_example.py} xuất ra, và \cref{fig:tool} đọc ảnh chụp do \texttt{paper/capture\_tool.py} chụp từ một phiên bản mới của công cụ. Lần chạy lại mất {{replay_minutes}} phút trên máy ảo Docker bốn nhân; dựng benchmark đã thực thi {{probes_total}} lần thử delta debugging và {{injected_candidates}} mutant ứng viên.
+
+\section{Khôi phục theo từng loại}\label{app:categories}
+Phân tích khám phá (sửa đổi A7): tỷ lệ item mà cụm K-means ($k$ theo nhãn, seed 42) chứa nó có loại của item là nhãn đa số.
+
+\begin{table}[H]
+\centering
+\caption{Khôi phục theo loại trên bản sửa thật (cohort đầy đủ).}\label{tab:cat-real}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Loại & $n$ & Chữ ký & Kết quả & Kết hợp+stdout & Độ lệch & Bằng chứng & Embedding \\
+\midrule
+{{table_categories_real}}
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Khôi phục theo loại trên mutant tiêm lỗi (cohort kiểm tra).}\label{tab:cat-injected}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+Loại & $n$ & Chữ ký & Kết quả & Kết hợp+stdout & Độ lệch & Bằng chứng & Embedding \\
+\midrule
+{{table_categories_injected}}
+\bottomrule
+\end{tabular}}
+\end{table}

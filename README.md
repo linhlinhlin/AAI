@@ -11,7 +11,25 @@ Mã nguồn, dữ liệu demo/ITSP và hồ sơ nghiên cứu nằm tại
 [Kiểm chứng baseline/ablation mới](research/runs/validation-summary-20260928.md) ·
 [Quy trình nhãn giảng viên và xác thực misconception](docs/teacher_validation.md).
 
-## App học viên và giảng viên
+## AAI Lab — app chính (30/09/2026)
+
+Một app local, không cần đăng nhập, gom bài C sai thành nhóm lỗi để dạy lại:
+
+- **Lớp học**: nhóm lỗi, bằng chứng test, luật NẾU–THÌ (ILA-2), gợi ý dạy lại và đánh giá của giảng viên.
+- **Chạy thử**: chạy bài C trong Docker cách ly, xem giả thuyết lỗi, thêm bài vào lớp.
+- **Dữ liệu C-Pack**: cùng cách phân tích trên 25 bài thật, đối chiếu nhãn kiểm chứng.
+- **Nghiên cứu**: câu hỏi, giả thuyết, ARI và luật từ kết quả kiểm định đã niêm phong.
+
+```powershell
+Set-Location misconceptions-prototype
+./start_lab.ps1
+```
+
+Hoặc bấm đúp `misconceptions-prototype/start_lab.cmd`. App mở `http://127.0.0.1:8770`
+và chỉ chạy khi cửa sổ đó còn mở. [Cách dùng, cách hoạt động và giới hạn](docs/aai_lab.md).
+Hai app bên dưới (cổng 8766 và 8765) là bản cũ, giữ để tham khảo.
+
+## App học viên và giảng viên (bản cũ)
 
 [Chạy demo nghiệm thu môn học trong 10 phút](docs/demo_nghiem_thu.md):
 cổng 8767, tài khoản demo và tám bài minh họa tự viết trong database riêng.
@@ -34,6 +52,15 @@ Mở `http://127.0.0.1:8766` để đăng ký học viên. Đường dẫn thi�
 đầu tiên được in trong terminal. Đây là app local; xem hướng dẫn trước khi
 vận hành qua Internet. Dữ liệu lớp học mới tách khỏi bộ dữ liệu nghiên cứu.
 
+## Nghiên cứu đề 5 — cập nhật 30/09/2026
+
+Nhóm tự chuẩn bị dữ liệu: chạy lại 8.607 bài C-Pack-IPAs trong môi trường cách ly, tạo nhãn cơ chế từ bản sửa tối thiểu đã kiểm chứng của chính sinh viên và bộ tiêm lỗi có kiểm soát, rồi đánh giá theo protocol đăng ký trước.
+
+- [Benchmark cơ chế và cách tái lập](docs/mechanism-benchmark.md)
+- [Trạng thái và kết quả kiểm định](research/STATE.md)
+- [Bản thảo bài báo (EN)](paper/manuscript.pdf) · [bản dịch tiếng Việt](paper/vi/manuscript.pdf)
+- [Báo cáo dễ hiểu](docs/bao_cao_de5_de_hieu.md)
+
 ## Nghiên cứu đề 5 — cập nhật 26/09/2026
 
 Nhóm tự tìm dữ liệu công khai; mục tiêu là nghiên cứu cơ chế lỗi có bằng chứng,
@@ -49,7 +76,7 @@ hay dataset sẽ được giảng viên cung cấp.
 Harness thêm C-Pack-IPAs adapter, split toàn corpus và baseline dùng stdout.
 Các hồ sơ tháng 9 trước đây được giữ làm lịch sử; STATE.md là nguồn trạng thái hiện tại.
 
-## Chạy web trên Windows
+## Bàn nghiên cứu trên Windows (bản cũ)
 
 ```powershell
 Set-Location misconceptions-prototype

@@ -1,0 +1,212 @@
+{
+  "voice": "vi-VN-HoaiMyNeural",
+  "rate": "-6%",
+  "fps": 30,
+  "scenes": [
+    {
+      "id": "intro",
+      "chapter": "",
+      "lines": [
+        {"show": "Xin chào! Hôm nay mình kể cho bạn nghe câu chuyện của đề tài 5."},
+        {"show": "Câu chuyện về những bài tập bị sai, và cách tìm ra vì sao chúng sai."}
+      ]
+    },
+    {
+      "id": "problem",
+      "chapter": "Bài toán",
+      "lines": [
+        {"show": "Hãy tưởng tượng cô giáo có một trăm bạn nộp bài lập trình."},
+        {"show": "Một cái máy chấm tự động thử từng bài bằng những bài kiểm tra nhỏ, gọi là test.",
+         "say": "Một cái máy chấm tự động thử từng bài bằng những bài kiểm tra nhỏ, gọi là tét."},
+        {"show": "Qua hết test là bài đúng. Trượt dù chỉ một test là bài sai.",
+         "say": "Qua hết tét là bài đúng. Trượt dù chỉ một tét là bài sai."},
+        {"show": "Bài sai thì nhiều lắm, cô không đọc kịp từng bài."},
+        {"show": "Nên cô muốn gom các bài sai giống nhau vào chung một hộp, rồi dạy lại một lần cho cả hộp."}
+      ]
+    },
+    {
+      "id": "classic",
+      "chapter": "Cách làm quen thuộc",
+      "lines": [
+        {"show": "Cách làm quen thuộc có ba bước."},
+        {"show": "Bước một: mỗi bài được ghi thành một tấm phiếu. Test 1 trượt, test 2 đạt, test 3 trượt.",
+         "say": "Bước một: mỗi bài được ghi thành một tấm phiếu. Tét một trượt, tét hai đạt, tét ba trượt."},
+        {"show": "Tấm phiếu này tên là OAV: Đối tượng, Thuộc tính, Giá trị.",
+         "say": "Tấm phiếu này tên là ô a vê: đối tượng, thuộc tính, giá trị."},
+        {"show": "Bước hai: thuật toán K-means gom những tấm phiếu giống nhau vào cùng một hộp.",
+         "say": "Bước hai: thuật toán ca min gom những tấm phiếu giống nhau vào cùng một hộp."},
+        {"show": "Bước ba: thuật toán ILA viết ra luật NẾU–THÌ. Ví dụ: NẾU trượt test 3 THÌ có thể sai ở vòng lặp.",
+         "say": "Bước ba: thuật toán i la viết ra luật nếu thì. Ví dụ: nếu trượt tét ba, thì có thể sai ở vòng lặp."}
+      ]
+    },
+    {
+      "id": "question",
+      "chapter": "Câu hỏi lớn",
+      "lines": [
+        {"show": "Nhưng có một câu hỏi rất quan trọng."},
+        {"show": "Hai bài trượt cùng những test, có chắc là sai vì cùng một lý do không?",
+         "say": "Hai bài trượt cùng những tét, có chắc là sai vì cùng một lý do không?"},
+        {"show": "Giống như ba bạn cùng nướng bánh bị hỏng."},
+        {"show": "Một bạn quên cho đường, một bạn nướng quá lửa, một bạn lấy nhầm muối."},
+        {"show": "Bánh đều dở, nhưng lý do khác nhau, nên cách chỉ cho mỗi bạn cũng phải khác nhau."}
+      ]
+    },
+    {
+      "id": "example",
+      "chapter": "Ví dụ thật",
+      "lines": [
+        {"show": "Chuyện này có thật trong dữ liệu của nhóm."},
+        {"show": "Đề bài: đổi 60 giây thành 00:01:00.",
+         "say": "Đề bài: đổi sáu mươi giây thành không giờ, một phút, không giây."},
+        {"show": "Có 89 bài sai, và 78 bài trong đó trượt cả bốn test. Tấm phiếu của chúng giống hệt nhau.",
+         "say": "Có tám mươi chín bài sai, và bảy mươi tám bài trong đó trượt cả bốn tét. Tấm phiếu của chúng giống hệt nhau."},
+        {"show": "Nhưng bài A chỉ quên xuống dòng ở cuối."},
+        {"show": "Bài B quên in số 0 đứng trước, nên in ra 0:1:0.",
+         "say": "Bài B quên in số không đứng trước, nên in ra không, một, không."},
+        {"show": "Bài C thiếu một cặp ngoặc, nên tính ra tận 60 giờ.",
+         "say": "Bài C thiếu một cặp ngoặc, nên tính ra tận sáu mươi giờ."},
+        {"show": "Cùng một tấm phiếu, nhưng là ba lỗi khác nhau."}
+      ]
+    },
+    {
+      "id": "repair",
+      "chapter": "Tìm lý do thật",
+      "lines": [
+        {"show": "Muốn biết cách gom có đúng không, ta cần đáp án: mỗi bài sai vì lý do gì."},
+        {"show": "Chấm tay hàng nghìn bài thì quá mệt, lại dễ nhầm."},
+        {"show": "Mẹo của nhóm: bạn sinh viên thường nộp lại một bài đúng ngay sau đó."},
+        {"show": "So bài sai với bài đúng, ta thấy bạn ấy đã sửa những gì."},
+        {"show": "Nhưng bạn ấy hay sửa nhiều chỗ, có chỗ chẳng liên quan."},
+        {"show": "Nên máy thử bỏ bớt từng chỗ sửa rồi chạy lại, cho tới khi chỉ còn ít chỗ sửa nhất mà bài vẫn đúng."},
+        {"show": "Cách tìm này gọi là delta debugging, giống như tìm đúng viên Lego cần đặt lại để cái tháp đứng vững.",
+         "say": "Cách tìm này gọi là đen ta đi bấc ging, giống như tìm đúng viên lê gô cần đặt lại để cái tháp đứng vững."},
+        {"show": "Rồi máy xếp chỗ sửa nhỏ nhất đó vào một trong mười hai loại lỗi."},
+        {"show": "Kết quả: 339 đáp án thật, cái nào cũng kiểm chứng được bằng cách chạy lại.",
+         "say": "Kết quả: ba trăm ba mươi chín đáp án thật, cái nào cũng kiểm chứng được bằng cách chạy lại."}
+      ]
+    },
+    {
+      "id": "sandbox",
+      "chapter": "Chạy lại an toàn",
+      "lines": [
+        {"show": "Để làm được vậy, nhóm chạy lại toàn bộ 8.607 bài.",
+         "say": "Để làm được vậy, nhóm chạy lại toàn bộ tám nghìn sáu trăm linh bảy bài."},
+        {"show": "Mỗi bài chạy trong một phòng kín tên là Docker: không có mạng, không có quyền đặc biệt, có đồng hồ bấm giờ.",
+         "say": "Mỗi bài chạy trong một phòng kín tên là đốc cơ: không có mạng, không có quyền đặc biệt, có đồng hồ bấm giờ."},
+        {"show": "Đáp án được giữ bên ngoài phòng, để bài không thể nhìn trộm."},
+        {"show": "Kết quả khớp 98,4% với máy chấm năm xưa, và chạy lại lần hai khớp 99,7%.",
+         "say": "Kết quả khớp chín mươi tám phẩy bốn phần trăm với máy chấm năm xưa, và chạy lại lần hai khớp chín mươi chín phẩy bảy phần trăm."},
+        {"show": "Nghĩa là dữ liệu đáng tin."}
+      ]
+    },
+    {
+      "id": "mutants",
+      "chapter": "Bài hỏng có chủ đích",
+      "lines": [
+        {"show": "Dữ liệu thật lại bị lệch: hơn một nửa là lỗi in sai chữ."},
+        {"show": "Nên nhóm lấy 964 bài đúng, rồi cố ý làm hỏng, mỗi bài hỏng chỉ đúng một chỗ, theo một kiểu biết trước.",
+         "say": "Nên nhóm lấy chín trăm sáu mươi tư bài đúng, rồi cố ý làm hỏng, mỗi bài hỏng chỉ đúng một chỗ, theo một kiểu biết trước."},
+        {"show": "Như cố tình giấu một món đồ, rồi xem thám tử có tìm ra không."},
+        {"show": "Được 3.320 bài hỏng, bài nào cũng có đáp án chắc chắn.",
+         "say": "Được ba nghìn ba trăm hai mươi bài hỏng, bài nào cũng có đáp án chắc chắn."}
+      ]
+    },
+    {
+      "id": "deviation",
+      "chapter": "Ý tưởng mới",
+      "lines": [
+        {"show": "Và đây là ý tưởng chính của đề tài."},
+        {"show": "Đừng chỉ ghi bài trượt hay đạt. Hãy ghi thêm output sai thế nào.",
+         "say": "Đừng chỉ ghi bài trượt hay đạt. Hãy ghi thêm: kết quả in ra, sai thế nào."},
+        {"show": "Thiếu xuống dòng? Số đúng mà viết khác? Số lệch một? Hay không in gì cả?"},
+        {"show": "Nhóm gọi đó là OAV độ lệch. Máy tự tính được, không cần ai chấm tay, và dùng chung cho mọi bài tập.",
+         "say": "Nhóm gọi đó là ô a vê độ lệch. Máy tự tính được, không cần ai chấm tay, và dùng chung cho mọi bài tập."},
+        {"show": "Nhờ vậy, ba bài A, B, C lúc nãy có ba tấm phiếu khác nhau, nên tách ra được."}
+      ]
+    },
+    {
+      "id": "protocol",
+      "chapter": "Luật chơi công bằng",
+      "lines": [
+        {"show": "Để không tự lừa mình, nhóm viết sẵn luật chơi trước khi xem kết quả."},
+        {"show": "Viết trước giả thuyết, cách đo, thế nào là thắng, thế nào là thua. Việc này gọi là đăng ký trước."},
+        {"show": "Dữ liệu chia ba phần: phần để học, phần để thử, và một phần niêm phong."},
+        {"show": "Phần niêm phong chỉ được mở đúng một lần, ở cuối cùng."},
+        {"show": "Mọi thay đổi giữa chừng đều ghi ngày tháng rõ ràng, ai cũng kiểm tra lại được."}
+      ]
+    },
+    {
+      "id": "metrics",
+      "chapter": "Chấm điểm thế nào",
+      "lines": [
+        {"show": "Nhóm dùng ba thước đo."},
+        {"show": "Một: trần khả phân biệt. Hai bài có phiếu giống hệt thì thám tử giỏi nhất cũng không tách được."},
+        {"show": "Trần cho biết tối đa bao nhiêu phần trăm bài có thể xếp đúng."},
+        {"show": "Hai: điểm ARI, từ 0 là xếp hú họa như tung đồng xu, đến 1 là xếp hoàn hảo.",
+         "say": "Hai: điểm a ri, từ không là xếp hú họa như tung đồng xu, đến một là xếp hoàn hảo."},
+        {"show": "Ba: điểm F1 cho luật NẾU–THÌ, tính công bằng cả cho những loại lỗi hiếm.",
+         "say": "Ba: điểm ép một cho luật nếu thì, tính công bằng cả cho những loại lỗi hiếm."}
+      ]
+    },
+    {
+      "id": "results",
+      "chapter": "Kết quả",
+      "lines": [
+        {"show": "Và đây là kết quả."},
+        {"show": "Một: chỉ nhìn kết quả test, tối đa 74% bài thật và 51% bài hỏng có chủ đích được xếp đúng.",
+         "say": "Một: chỉ nhìn kết quả tét, tối đa bảy mươi tư phần trăm bài thật, và năm mươi mốt phần trăm bài hỏng có chủ đích, được xếp đúng."},
+        {"show": "Trong các cặp bài có phiếu giống nhau, 35% cặp bài thật và 82% cặp bài hỏng thực ra sai vì lý do khác.",
+         "say": "Trong các cặp bài có phiếu giống nhau, ba mươi lăm phần trăm cặp bài thật, và tám mươi hai phần trăm cặp bài hỏng, thực ra sai vì lý do khác."},
+        {"show": "Hai: thêm OAV độ lệch, điểm ARI trên dữ liệu có kiểm soát tăng từ 0,09 lên 0,33, gấp hơn ba lần.",
+         "say": "Hai: thêm ô a vê độ lệch, điểm a ri trên dữ liệu có kiểm soát tăng từ không phẩy không chín lên không phẩy ba ba, gấp hơn ba lần."},
+        {"show": "Trên dữ liệu thật, điểm tăng từ 0,29 lên 0,35, nhưng chưa đủ chắc chắn về thống kê.",
+         "say": "Trên dữ liệu thật, điểm tăng từ không phẩy hai chín lên không phẩy ba lăm, nhưng chưa đủ chắc chắn về thống kê."},
+        {"show": "Ba: luật NẾU–THÌ do ILA-2 học từ độ lệch dùng được cho cả bài tập mới, F1 đạt 0,35. Luật chỉ dựa vào kết quả test gần như bằng 0.",
+         "say": "Ba: luật nếu thì do i la hai học từ độ lệch dùng được cho cả bài tập mới, ép một đạt không phẩy ba lăm. Luật chỉ dựa vào kết quả tét gần như bằng không."},
+        {"show": "Bốn: mô hình AI đọc code lại gom bài theo chương trình gốc, tức là theo cách viết của từng người, chứ không theo lỗi.",
+         "say": "Bốn: mô hình ây ai đọc code lại gom bài theo chương trình gốc, tức là theo cách viết của từng người, chứ không theo lỗi."}
+      ]
+    },
+    {
+      "id": "tool",
+      "chapter": "Ứng dụng cho giáo viên",
+      "lines": [
+        {"show": "Từ những kết quả đó, nhóm làm một ứng dụng cho giáo viên, tên là AAI Lab.",
+         "say": "Từ những kết quả đó, nhóm làm một ứng dụng cho giáo viên, tên là a a i láp."},
+        {"show": "Ứng dụng gom bài sai của cả lớp, và cho mỗi nhóm thấy bằng chứng chung cùng một luật NẾU–THÌ.",
+         "say": "Ứng dụng gom bài sai của cả lớp, và cho mỗi nhóm thấy bằng chứng chung, cùng một luật nếu thì."},
+        {"show": "Nó chỉ đưa ra giả thuyết khi luật đúng với ít nhất một nửa nhóm."},
+        {"show": "Nếu trong nhóm có nhiều lý do khác nhau, nó nói thẳng: nhóm này trộn nhiều giả thuyết."},
+        {"show": "Và giáo viên luôn là người quyết định cuối cùng: đúng, hay không."}
+      ]
+    },
+    {
+      "id": "conclusion",
+      "chapter": "Kết luận",
+      "lines": [
+        {"show": "Tóm lại, bài học lớn nhất là:"},
+        {"show": "Đừng chỉ hỏi bài có sai không. Hãy hỏi output sai thế nào.",
+         "say": "Đừng chỉ hỏi bài có sai không. Hãy hỏi: kết quả in ra, sai thế nào."},
+        {"show": "Cải tiến rẻ nhất nằm ngay trong những gì máy chấm đã có sẵn."}
+      ]
+    },
+    {
+      "id": "limits",
+      "chapter": "Còn gì phải làm",
+      "lines": [
+        {"show": "Nhóm cũng thành thật về giới hạn."},
+        {"show": "Đáp án cho biết chương trình đã đổi gì, chưa cho biết bạn sinh viên nghĩ gì trong đầu."},
+        {"show": "Mới có một khóa học, một ngôn ngữ C, và việc kiểm tra nhãn mới do AI làm.",
+         "say": "Mới có một khóa học, một ngôn ngữ xi, và việc kiểm tra nhãn mới do ây ai làm."},
+        {"show": "Việc tiếp theo: nhờ hai thầy cô chấm lại nhãn, thử ở khóa học khác, và dùng ứng dụng trong lớp học thật."}
+      ]
+    },
+    {
+      "id": "outro",
+      "chapter": "",
+      "lines": [
+        {"show": "Cảm ơn bạn đã xem hết câu chuyện!"}
+      ]
+    }
+  ]
+}

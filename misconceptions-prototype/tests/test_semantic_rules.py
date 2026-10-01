@@ -212,6 +212,10 @@ def test_refresh_old_diagnostics_preserves_assignments_and_input_snapshot():
      "2 1 3", "3", "1", "ARRAY_LAST"),
     ("circle-position", 'int main(){int x,y,r;int distance=x*x+y*y;int limit=r;if(distance<limit)puts("INSIDE");else if(distance>limit)puts("OUTSIDE");else puts("ON");}',
      "2 0 3", "INSIDE", "OUTSIDE", "CIRCLE_RADIUS"),
+    ("swap", 'void f(int a,int b){int c=b;b=a;a=c;} int main(){int a=2,b=7;f(a,b);}',
+     "2 7", "7 2", "2 7", "SWAP_COPY"),
+    ("swap", 'void f(int *a,int *b){*a=*b;*b=*a;} int main(){int a=2,b=7;f(&a,&b);}',
+     "2 7", "7 2", "7 7", "SWAP_OVERWRITE"),
 ])
 def test_exercise_hypotheses_require_problem_code_and_concordant_failed_log(problem, source, inputs, expected, actual, key):
     submission = replace(row(source), problem_id=problem)

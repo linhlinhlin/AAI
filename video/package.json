@@ -1,0 +1,24 @@
+{
+  "name": "aai-topic5-explainer",
+  "private": true,
+  "description": "Motion-graphics explainer of the AAI topic 5 study, in Vietnamese, rendered with Remotion.",
+  "scripts": {
+    "voice": "python scripts/make_voice.py",
+    "studio": "remotion studio",
+    "render": "remotion render src/index.ts Explainer out/de5_giai_thich.mp4",
+    "still": "remotion still src/index.ts Explainer out/still.png"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.531",
+    "@remotion/google-fonts": "4.0.531",
+    "@remotion/media-utils": "4.0.531",
+    "@remotion/transitions": "4.0.531",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.531"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.2",
+    "typescript": "5.9.3"
+  }
+}
